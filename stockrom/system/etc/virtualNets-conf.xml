@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<virtualNets version="1">
+    <virtualNet 
+        carrier="o2 (Postpaid)"
+        numeric="26207" 
+        virtual_net_rule="1"
+        imsi_start="2620739"
+        apn_filter="name=o2 Internet Prepaid&amp;&amp;apn=pinternet.interkom.de||name=LIDL Internet&amp;&amp;apn=pinternet.interkom.de||name=Tchibo Internet&amp;&amp;apn=webmobil1||name=Fonic Internet&amp;&amp;apn=pinternet.interkom.de"
+        ons_name="o2 - de"
+    />
+    <virtualNet 
+        carrier="o2 (Prepaid)"
+        numeric="26207" 
+        virtual_net_rule="1"
+        imsi_start="2620749"
+        apn_filter="name=o2 Internet&amp;&amp;apn=internet||name=LIDL Internet&amp;&amp;apn=pinternet.interkom.de||name=Tchibo Internet&amp;&amp;apn=webmobil1||name=Fonic Internet&amp;&amp;apn=pinternet.interkom.de"
+        ons_name="o2 - de"
+    /> 
+    <virtualNet 
+        carrier="LIDL"
+        numeric="26207" 
+        virtual_net_rule="1"
+        imsi_start="26207520"
+        apn_filter="name=o2 Internet Prepaid&amp;&amp;apn=pinternet.interkom.de||name=o2 Internet Prepaid&amp;&amp;apn=pinternet.interkom.de||name=Tchibo Internet&amp;&amp;apn=webmobil1||name=Fonic Internet&amp;&amp;apn=pinternet.interkom.de"
+        ons_name="LIDL MOBILE"
+    /> 
+    <virtualNet 
+        carrier="Tchibo"
+        numeric="26207" 
+        virtual_net_rule="1"
+        imsi_start="26207500"
+        apn_filter="name=o2 Internet Prepaid&amp;&amp;apn=pinternet.interkom.de||name=o2 Internet Prepaid&amp;&amp;apn=pinternet.interkom.de||name=LIDL Internet&amp;&amp;apn=pinternet.interkom.de||name=Fonic Internet&amp;&amp;apn=pinternet.interkom.de"
+        ons_name="Tchibo"
+    /> 
+    <virtualNet 
+        carrier="Fonic"
+        numeric="26207" 
+        virtual_net_rule="1"
+        imsi_start="26207515"
+        apn_filter="name=o2 Internet Prepaid&amp;&amp;apn=pinternet.interkom.de||name=o2 Internet Prepaid&amp;&amp;apn=pinternet.interkom.de||name=LIDL Internet&amp;&amp;apn=pinternet.interkom.de||name=Tchibo Internet&amp;&amp;apn=webmobil1"
+        ons_name="Fonic"
+    /> 
+    <virtualNet 
+        carrier="O2 UK (Pre-paid)"
+        numeric="23410" 
+        virtual_net_rule="4"
+        match_path="0x3F007F43"
+        match_file="0x6f02"
+        match_value="0x00"
+        match_mask="0x01"
+        apn_filter="name=O2 Mobile Web&amp;&amp;apn=mobile.o2.co.uk||name=O2 Pay monthly&amp;&amp;apn=wap.o2.co.uk||name=O2 MMS&amp;&amp;apn=wap.o2.co.uk"
+    />  
+    <virtualNet 
+        carrier="O2 UK (Post-paid)"
+        numeric="23410" 
+        virtual_net_rule="4"
+        match_path="0x3F007F43"
+        match_file="0x6f02"
+        match_value="0x01"
+        match_mask="0x01"
+        apn_filter="name=O2 Pay &amp; Go&amp;&amp;apn=payandgo.o2.co.uk"
+    /> 
+    <virtualNet 
+        carrier="Mundo-R"
+        numeric="21406" 
+        virtual_net_rule="1"
+        imsi_start="2140612"
+        ons_name="Mundo-R"
+    /> 
+    <virtualNet 
+        carrier="RACC"
+        numeric="21406" 
+        virtual_net_rule="1"
+        imsi_start="2140610"
+        ons_name="RACC"
+    /> 
+</virtualNets>          

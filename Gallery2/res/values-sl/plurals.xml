@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="details_title">
+        <item quantity="other">%1$d od %2$d elementov:</item>
+        <item quantity="zero">%1$d od %2$d elementov:</item>
+        <item quantity="one">%1$d od %2$d elementov:</item>
+        <item quantity="two">%1$d od %2$d elementov:</item>
+        <item quantity="few">%1$d od %2$d elementov:</item>
+        <item quantity="many">%1$d od %2$d elementov:</item>
+    </plurals>
+    <plurals name="number_of_items_selected">
+        <item quantity="other">"Št. Izbr.:  %1$d"</item>
+        <item quantity="zero">"Št. Izbr.:  %1$d"</item>
+        <item quantity="one">"Št. Izbr.:  %1$d"</item>
+    </plurals>
+    <plurals name="number_of_albums_selected">
+        <item quantity="other">"Št. Izbr.:  %1$d"</item>
+        <item quantity="zero">"Št. Izbr.:  %1$d"</item>
+        <item quantity="one">"Št. Izbr.:  %1$d"</item>
+    </plurals>
+    <plurals name="number_of_groups_selected">
+        <item quantity="other">"Št. Izbr.:  %1$d"</item>
+        <item quantity="zero">"Št. Izbr.:  %1$d"</item>
+        <item quantity="one">"Št. Izbr.:  %1$d"</item>
+    </plurals>
+    <plurals name="make_albums_available_offline">
+        <item quantity="other">Albumi so na voljo brez povezave.</item>
+        <item quantity="one">Album je na voljo brez povezave.</item>
+    </plurals>
+    <plurals name="delete_selection">
+        <item quantity="other">Želite izbrisati te elemente?</item>
+        <item quantity="one">Želite izbrisati ta element?</item>
+    </plurals>
+</resources>

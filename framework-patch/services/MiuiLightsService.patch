@@ -1,0 +1,32 @@
+From b2bb90354bd1fd3104d1fcfc7dd3121fe578e965 Mon Sep 17 00:00:00 2001
+From: yumingyang <yumingyang@xiaomi.com>
+Date: Tue, 18 Dec 2012 20:56:04 +0800
+Subject: [PATCH] b
+
+---
+ .../android/server/MiuiLightsService$Light.smali   |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+--- a/smali/com/android/server/MiuiLightsService$Light.smali
++++ b/smali/com/android/server/MiuiLightsService$Light.smali
+@@ -445,7 +445,7 @@
+     move-result v0
+ 
+     .local v0, color:I
+-    const/16 v2, 0x1f4
++    const/16 v2, 0x5dc
+ 
+     const/4 v3, 0x0
+ 
+@@ -463,7 +463,7 @@
+ 
+     move-result-object v3
+ 
+-    const-wide/16 v4, 0x1f4
++    const-wide/16 v4, 0x5dc
+ 
+     invoke-virtual {v2, v3, v4, v5}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
+ 
+-- 
+1.7.5.4
+

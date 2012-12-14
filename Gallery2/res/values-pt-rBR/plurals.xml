@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="details_title">
+        <item quantity="other">%1$d de %2$d itens:</item>
+        <item quantity="zero">%1$d de %2$d itens:</item>
+        <item quantity="one">%1$d de %2$d item:</item>
+        <item quantity="two">%1$d de %2$d itens:</item>
+        <item quantity="few">%1$d de %2$d itens:</item>
+        <item quantity="many">%1$d de %2$d itens:</item>
+    </plurals>
+    <plurals name="number_of_items_selected">
+        <item quantity="other">%1$d selecionado</item>
+        <item quantity="zero">%1$d selecionado</item>
+        <item quantity="one">%1$d selecionado</item>
+    </plurals>
+    <plurals name="number_of_albums_selected">
+        <item quantity="other">%1$d selecionado</item>
+        <item quantity="zero">%1$d selecionado</item>
+        <item quantity="one">%1$d selecionado</item>
+    </plurals>
+    <plurals name="number_of_groups_selected">
+        <item quantity="other">%1$d selecionado</item>
+        <item quantity="zero">%1$d selecionado</item>
+        <item quantity="one">%1$d selecionado</item>
+    </plurals>
+    <plurals name="make_albums_available_offline">
+        <item quantity="other">Álbuns disponíveis offline.</item>
+        <item quantity="one">Álbum disponível offline.</item>
+    </plurals>
+    <plurals name="delete_selection">
+        <item quantity="other">Apagar itens selecionados?</item>
+        <item quantity="one">Apagar o item selecionado?</item>
+    </plurals>
+</resources>

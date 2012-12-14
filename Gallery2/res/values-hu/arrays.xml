@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="months_abbreviated">
+        <item>Jan.</item>
+        <item>Febr.</item>
+        <item>Márc.</item>
+        <item>Ápr.</item>
+        <item>Máj.</item>
+        <item>Jún.</item>
+        <item>Júl.</item>
+        <item>Aug.</item>
+        <item>Szept.</item>
+        <item>Okt.</item>
+        <item>Nov.</item>
+        <item>Dec.</item>
+    </string-array>
+    <string-array name="dts_type_choices">
+        <item>Ki</item>
+        <item>Zene</item>
+        <item>Film</item>
+    </string-array>
+</resources>

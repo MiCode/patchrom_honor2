@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/root_view" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/FrameLayout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <ImageView android:layout_gravity="center" android:id="@id/MainImageView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:color/black" />
+    </FrameLayout>
+    <Button android:id="@id/CancelButton" android:background="@drawable/btn_cancel" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:layout_marginRight="6.0dip" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+    <com.scalado.prototype.strobe.widgets.HorizontalScrollView android:id="@id/BottomBarScrollView" android:background="@drawable/bg_frame" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/bottomBarHeight" android:layout_alignParentBottom="true">
+        <LinearLayout android:orientation="horizontal" android:id="@id/BottomBarContent" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+    </com.scalado.prototype.strobe.widgets.HorizontalScrollView>
+    <ProgressBar android:id="@id/ProgressSpinner" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" style="@android:style/Widget.ProgressBar.Inverse" />
+    <Button android:id="@id/SaveButton" android:background="@drawable/btn_save" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.0dip" android:layout_above="@id/BottomBarScrollView" android:layout_alignParentRight="true" />
+</RelativeLayout>

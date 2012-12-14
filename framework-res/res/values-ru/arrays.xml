@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailAddressTypes">
+        <item>Дом.</item>
+        <item>Раб.</item>
+        <item>Другой</item>
+        <item>"Настроить "</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>Yahoo</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>Раб.</item>
+        <item>Другое</item>
+        <item>"Настроить "</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>Дом.</item>
+        <item>Мобильная</item>
+        <item>Раб.</item>
+        <item>Раб. факс</item>
+        <item>Дом. факс</item>
+        <item>Пейджер</item>
+        <item>Другой</item>
+        <item>"Настроить "</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>Дом.</item>
+        <item>Раб.</item>
+        <item>Другой</item>
+        <item>"Настроить "</item>
+    </string-array>
+    <string-array name="imAddressTypes">
+        <item>Дом.</item>
+        <item>Раб.</item>
+        <item>Другое</item>
+        <item>"Настроить "</item>
+    </string-array>
+</resources>

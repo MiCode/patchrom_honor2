@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="details_title">
+        <item quantity="other">%1$d من %2$d عناصر:</item>
+        <item quantity="zero">%1$d من %2$d عناصر:</item>
+        <item quantity="one">%1$d من %2$d عنصر:</item>
+        <item quantity="two">%1$d من %2$d عناصر:</item>
+        <item quantity="few">%1$d من %2$d عناصر:</item>
+        <item quantity="many">%1$d من %2$d عناصر:</item>
+    </plurals>
+    <plurals name="number_of_items_selected">
+        <item quantity="other">تم تحديد %1$d</item>
+        <item quantity="zero">تم تحديد %1$d</item>
+        <item quantity="one">تم تحديد %1$d</item>
+    </plurals>
+    <plurals name="number_of_albums_selected">
+        <item quantity="other">تم تحديد %1$d</item>
+        <item quantity="zero">تم تحديد %1$d</item>
+        <item quantity="one">تم تحديد %1$d</item>
+    </plurals>
+    <plurals name="number_of_groups_selected">
+        <item quantity="other">تم تحديد %1$d</item>
+        <item quantity="zero">تم تحديد %1$d</item>
+        <item quantity="one">تم تحديد %1$d</item>
+    </plurals>
+    <plurals name="make_albums_available_offline">
+        <item quantity="other">الألبومات المتاحة في وضع عدم الاتصال.</item>
+        <item quantity="one">الألبوم المتاح في وضع عدم الاتصال.</item>
+    </plurals>
+    <plurals name="delete_selection">
+        <item quantity="other">هل تريد حذف العناصر المحددة؟</item>
+        <item quantity="one">هل تريد حذف العنصر المحدد؟</item>
+    </plurals>
+</resources>

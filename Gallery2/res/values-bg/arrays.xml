@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="months_abbreviated">
+        <item>Яну</item>
+        <item>Фев</item>
+        <item>Мар</item>
+        <item>Апр</item>
+        <item>Май</item>
+        <item>Юни</item>
+        <item>Юли</item>
+        <item>Авг</item>
+        <item>Сеп</item>
+        <item>Окт</item>
+        <item>Ное</item>
+        <item>Дек</item>
+    </string-array>
+    <string-array name="dts_type_choices">
+        <item>Изкл.</item>
+        <item>Музика</item>
+        <item>Филм</item>
+    </string-array>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <translate android:interpolator="@android:anim/accelerate_interpolator" android:duration="@integer/controlbar_anim_time" android:fromXDelta="0.0" android:toXDelta="0.0" android:fromYDelta="0.0" android:toYDelta="100.0%" />
+    <alpha android:duration="@integer/controlbar_anim_time" android:fromAlpha="0.5" android:toAlpha="1.0" />
+</set>

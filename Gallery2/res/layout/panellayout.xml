@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/control_pannel" android:background="#00ffffff" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentLeft="true"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:panel="http://schemas.android.com/apk/res/com.android.gallery3d">
+    <com.android.hwcamera.hwui.SuperPanel android:id="@id/topPanel" android:paddingBottom="20.0dip" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" panel:animationDuration="150" panel:position="top" panel:linearFlying="true" panel:openedHandle="@drawable/top_switcher_expanded_background" panel:closedHandle="@drawable/top_switcher_collapsed_background">
+        <ImageButton android:layout_gravity="center" android:id="@id/panelHandle" android:paddingTop="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="33.0dip" />
+        <LinearLayout android:orientation="vertical" android:id="@id/panelContent" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:background="@drawable/btn_quick_settings" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="60.0dip">
+                <com.android.hwcamera.RotateImageView android:id="@id/firstPanelItem" android:background="@drawable/menu_bg_default" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/ic_btn_advanced_settings" android:layout_weight="1.0" />
+                <com.android.hwcamera.RotateImageView android:id="@id/secondPanelItem" android:background="@drawable/menu_bg_default" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/ic_btn_distortion" android:layout_weight="1.0" />
+                <com.android.hwcamera.RotateImageView android:id="@id/thirdPanelItem" android:background="@drawable/menu_bg_default" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/ic_btn_effects" android:layout_weight="1.0" />
+                <com.android.hwcamera.RotateImageView android:id="@id/fourthPanelItem" android:background="@drawable/menu_bg_default" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/ic_btn_shooting_single" android:layout_weight="1.0" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/panelSubContent" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.android.hwcamera.hwui.RotateLinearLayout android:orientation="horizontal" android:id="@id/panelSubContentSub" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <include layout="@layout/viewflipper" />
+                </com.android.hwcamera.hwui.RotateLinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </com.android.hwcamera.hwui.SuperPanel>
+</RelativeLayout>

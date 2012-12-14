@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="months_abbreviated">
+        <item>Ian.</item>
+        <item>Feb.</item>
+        <item>Mar.</item>
+        <item>Apr.</item>
+        <item>Mai</item>
+        <item>Iun.</item>
+        <item>Iul.</item>
+        <item>Aug.</item>
+        <item>Sep.</item>
+        <item>Oct.</item>
+        <item>Noi.</item>
+        <item>Dec.</item>
+    </string-array>
+    <string-array name="dts_type_choices">
+        <item>Dezactivat</item>
+        <item>Muzică</item>
+        <item>Film</item>
+    </string-array>
+</resources>

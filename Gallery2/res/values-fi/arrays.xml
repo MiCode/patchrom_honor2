@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="months_abbreviated">
+        <item>tam</item>
+        <item>hel</item>
+        <item>maa</item>
+        <item>huh</item>
+        <item>tou</item>
+        <item>kes</item>
+        <item>hei</item>
+        <item>elo</item>
+        <item>syy</item>
+        <item>lok</item>
+        <item>mar</item>
+        <item>jou</item>
+    </string-array>
+    <string-array name="dts_type_choices">
+        <item>Pois käytöstä</item>
+        <item>Music</item>
+        <item>Elokuva</item>
+    </string-array>
+</resources>

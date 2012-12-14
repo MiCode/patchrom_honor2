@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="make_albums_available_offline">
+        <item quantity="other">Albamu zinafanywa zipatikane nje ya mtandao</item>
+        <item quantity="one">Albamu inafanywa ipatikane nje ya mtandao</item>
+    </plurals>
+</resources>

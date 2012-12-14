@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="details_title">
+        <item quantity="other">%1$d no %2$d vienumiem:</item>
+        <item quantity="zero">%1$d no %2$d vienumiem:</item>
+        <item quantity="one">%1$d no %2$d vienuma:</item>
+        <item quantity="two">%1$d no %2$d vienumiem:</item>
+        <item quantity="few">%1$d no %2$d vienumiem:</item>
+        <item quantity="many">%1$d no %2$d vienumiem:</item>
+    </plurals>
+    <plurals name="number_of_items_selected">
+        <item quantity="other">Atl. %1$d vien.</item>
+        <item quantity="zero">%1$d atlasīti</item>
+        <item quantity="one">Atl. %1$d vien.</item>
+    </plurals>
+    <plurals name="number_of_albums_selected">
+        <item quantity="other">Atl. %1$d vien.</item>
+        <item quantity="zero">%1$d atlasīti</item>
+        <item quantity="one">Atl. %1$d vien.</item>
+    </plurals>
+    <plurals name="number_of_groups_selected">
+        <item quantity="other">Atl. %1$d vien.</item>
+        <item quantity="zero">%1$d atlasīti</item>
+        <item quantity="one">Atl. %1$d vien.</item>
+    </plurals>
+    <plurals name="make_albums_available_offline">
+        <item quantity="other">Albumi pieejami bezsaistē.</item>
+        <item quantity="one">Albums pieejams bezsaistē.</item>
+    </plurals>
+    <plurals name="delete_selection">
+        <item quantity="other">Vai dzēst atlasītos vienumus?</item>
+        <item quantity="one">Vai dzēst atlasīto vienumu?</item>
+    </plurals>
+</resources>

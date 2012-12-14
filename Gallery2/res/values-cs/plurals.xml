@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="details_title">
+        <item quantity="other">%1$d z %2$d položek:</item>
+        <item quantity="zero">%1$d z %2$d položek:</item>
+        <item quantity="one">%1$d z %2$d položky:</item>
+        <item quantity="two">%1$d z %2$d položek:</item>
+        <item quantity="few">%1$d z %2$d položek:</item>
+        <item quantity="many">%1$d z %2$d položek:</item>
+    </plurals>
+    <plurals name="number_of_items_selected">
+        <item quantity="other">Vybráno: %1$d</item>
+        <item quantity="zero">Vybráno: %1$d</item>
+        <item quantity="one">Vybráno: %1$d</item>
+    </plurals>
+    <plurals name="number_of_albums_selected">
+        <item quantity="other">Vybráno: %1$d</item>
+        <item quantity="zero">Vybráno: %1$d</item>
+        <item quantity="one">Vybráno: %1$d</item>
+    </plurals>
+    <plurals name="number_of_groups_selected">
+        <item quantity="other">Vybráno: %1$d</item>
+        <item quantity="zero">Vybráno: %1$d</item>
+        <item quantity="one">Vybráno: %1$d</item>
+    </plurals>
+    <plurals name="make_albums_available_offline">
+        <item quantity="other">Alba dostupná v režimu offline.</item>
+        <item quantity="one">Album dostupné v režimu offline.</item>
+    </plurals>
+    <plurals name="delete_selection">
+        <item quantity="other">Smazat vybrané položky?</item>
+        <item quantity="one">Smazat vybranou položku?</item>
+    </plurals>
+</resources>

@@ -1,0 +1,24 @@
+#U9500E
+board id: 0x400,U9500E,U9500E,http://wap1.huawei.com/uaprof/HUAWEI_U9500E_UAProfile.xml,http://wap1.huawei.com/uaprof/HUAWEI_U9500E_UAProfile.xml,U9500E
+
+#U9200
+board id: 0x200,U9200,U9200,,,U9200-1
+board id: 0x201,U9200,U9200,,,U9200-1
+board id: 0x202,U9200,U9200,,,U9200-1
+board id: 0x203,U9200,U9200,,,U9200-1
+board id: 0x204,U9200,U9200,,,U9200-1
+board id: 0x210,U9200,U9200,,,U9200-1
+board id: 0x211,U9200,U9200,,,U9200-1
+board id: 0x212,U9200,U9200,,,U9200-1
+board id: 0x214,U9200,U9200,,,U9200-1
+
+#U9200E
+board id: 0x300,U9200E,U9200E,,,U9200E
+
+#U9510
+0x57,HUAWEI U9510,U9510,http://wap1.huawei.com/uaprof/HUAWEI_U9510_UAProfile.xml,http://wap1.huawei.com/uaprof/HUAWEI_U9510_UAProfile.xml,U9510,hwu9510
+0x67,HUAWEI U9510,U9510,http://wap1.huawei.com/uaprof/HUAWEI_U9510_UAProfile.xml,http://wap1.huawei.com/uaprof/HUAWEI_U9510_UAProfile.xml,U9510,hwu9510
+0x77,HUAWEI U9510,U9510,http://wap1.huawei.com/uaprof/HUAWEI_U9510_UAProfile.xml,http://wap1.huawei.com/uaprof/HUAWEI_U9510_UAProfile.xml,U9510,hwu9510
+
+#U9510E
+0x66,HUAWEI U9510E,U9510E,http://wap1.huawei.com/uaprof/HUAWEI_U9510E_UAProfile.xml,http://wap1.huawei.com/uaprof/HUAWEI_U9510E_UAProfile.xml,U9510E,hwu9510e

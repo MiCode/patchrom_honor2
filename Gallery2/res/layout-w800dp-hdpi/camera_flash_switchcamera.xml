@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout android:id="@id/camera_flash_switchcamera" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="20.0dip" android:layout_alignParentTop="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableRow>
+        <com.android.hwcamera.RotateImageView android:id="@id/camera_switch_image" android:background="@drawable/btn_flash_hdr_selector" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_btn_switch_camera_back" />
+        <com.android.hwcamera.RotateImageView android:id="@id/camera_flash_image" android:background="@drawable/btn_flash_hdr_selector" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_btn_flash_auto" />
+    </TableRow>
+    <TableRow>
+        <com.android.hwcamera.RotateImageView android:id="@id/camera_timer_image" android:background="@drawable/btn_flash_hdr_selector" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_btn_timer_none" />
+    </TableRow>
+</TableLayout>

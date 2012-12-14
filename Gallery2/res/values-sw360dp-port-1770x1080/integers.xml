@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="widgetunit_view_width">514</integer>
+    <integer name="widgetunit_view_height">508</integer>
+    <integer name="widgetunit_view_radius">10</integer>
+    <integer name="widgetunit_view_cut_width">2</integer>
+    <integer name="widgetunit_view_cut_height">4</integer>
+</resources>

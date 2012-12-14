@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<hwouc_presets version="1">
+	
+	<!-- URL(phone and pad) --> 
+	  
+	 
+	<string name="phone_firmware_uri">http://query.hicloud.com:80/sp_ard_common/v2/Check.action?latest=true</string>
+    <string name="phone_firmware_report_uri">http://query.hicloud.com:80/sp_ard_common/v2/UpdateReport.action</string>
+    
+    <string name="phone_app_conditions_uri">http://query.hicloud.com:80/sp_ard_app_common/v2/GetCondition.action</string>
+    <string name="phone_app_uri">http://query.hicloud.com:80/sp_ard_app_common/v2/CheckEx.action</string>
+    <string name="phone_app_report_uri">http://query.hicloud.com:80/sp_ard_app_common/v2/UpdateReport.action</string>
+    
+    <string name="pad_firmware_uri">http://query.hicloud.com:80/hid_and_common/v2/Check.action?latest=true</string>
+    <string name="pad_firmware_report_uri">http://query.hicloud.com:80/hid_and_common/v2/UpdateReport.action</string>
+    
+    <string name="pad_app_conditions_uri">http://query.hicloud.com:80/hid_and_app_common/v2/GetCondition.action</string>
+    <string name="pad_app_uri">http://query.hicloud.com:80/hid_and_app_common/v2/CheckEx.action</string>
+    <string name="pad_app_report_uri">http://query.hicloud.com:80/hid_and_app_common/v2/UpdateReport.action</string>
+        
+     
+   <!--
+    <string name="phone_firmware_uri">http://183.62.156.65:8180/test_wuhan/v2/Check.action?latest=true</string>
+    <string name="phone_firmware_report_uri">http://183.62.156.65:8180/test_wuhan/v2/UpdateReport.action</string>
+    
+    <string name="phone_app_conditions_uri">http://183.62.156.65:8180/test_wuhan_app/v2/GetCondition.action</string>
+    <string name="phone_app_uri">http://183.62.156.65:8180/test_wuhan_app/v2/CheckEx.action</string>
+    <string name="phone_app_report_uri">http://183.62.156.65:8180/test_wuhan_app/v2/UpdateReport.action</string>
+    
+    <string name="pad_firmware_uri">http://183.62.156.65:8180/test_wuhan/v2/Check.action?latest=true</string>
+    <string name="pad_firmware_report_uri">http://183.62.156.65:8180/test_wuhan/v2/UpdateReport.action</string>
+    
+    <string name="pad_app_conditions_uri">http://183.62.156.65:8180/test_wuhan_app/v2/GetCondition.action</string>
+    <string name="pad_app_uri">http://183.62.156.65:8180/test_wuhan_app/v2/CheckEx.action</string>
+    <string name="pad_app_report_uri">http://183.62.156.65:8180/test_wuhan_app/v2/UpdateReport.action</string>
+     -->
+     
+    <int name="socket_timeout">20000</int>
+    <int name="connection_timeout">20000</int>
+    
+    <!-- max download count in one time,only for app -->
+    <int name="app_download_limit_count">3</int>
+ 
+    <!-- default value in settings -->
+    <bool name="auto_check_switch_on">true</bool>
+    <bool name="auto_check_setting_UI_show">true</bool>
+    
+    <!-- this value indicates the whether whole function of forcedUpdate is used or not in this version-->
+    <!--<bool name="forcedUpdate_first_switch">false</bool>-->
+    
+    <!-- free download proxy and port info -->
+    <string name="free_download_proxy_host"></string>
+    <string name="free_download_proxy_port"></string>
+    
+    <string name="hota_internal_command">--update_package=/HWUserData</string>
+    <string name="hota_external_command">--update_package=/sdcard</string>
+    
+    <!-- begin add by KF46624 for DTS2011072000596 -->
+    <!-- flag of test version -->    
+    <bool name="test_version">false</bool>
+    <!-- end -->
+    
+    <!-- unit is minute -->
+    <int name="forcedUpdate_install_interval_remind">30</int>
+    
+    <int name="autoPollingCycle">2</int>
+    
+    <!-- unit is MB,only for firmware -->
+<!--     <int name="maxNetDefault">2</int>
+    <int name="maxNet2G">2</int>
+    <int name="maxNet3G">30</int>
+    <int name="maxNet4G">50</int> -->
+    
+    <!-- begin 20111226 add -->
+    <string name="user_agent"></string>
+    <!-- end 20111226 add -->
+    
+    <!-- If flag is true, not allowed to download in roaming.Else OK-->
+    <string name="roaming_flag">false</string>
+    
+    <!-- If flag is false, not allowed to show changelog.Else OK-->
+    <bool name="changelog_show_flag">true</bool>
+    
+    <!-- if this version support beta or stable version,it is true,or false -->
+    <bool name="beta_and_stable_version_flag">true</bool>
+    
+    <!-- unit is MB,when larger than this value,nofity user to use wifi to download-->
+    <int name="download_limit_size">20</int>
+    
+    <!-- whether cancel button is show or not when downloading,it show when it is true,or not show when it is false-->
+    <bool name="fw_cancelbtn_show_flag">false</bool>
+    
+</hwouc_presets>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="albumset_rows_land">2</integer>
+    <integer name="albumset_rows_port">4</integer>
+    <integer name="album_rows_land">2</integer>
+    <integer name="album_rows_port">4</integer>
+    <integer name="subpopupwindow_anim_in_time">250</integer>
+    <integer name="subpopupwindow_anim_out_time">250</integer>
+    <integer name="controlbar_anim_time">150</integer>
+    <integer name="galleryex_out_anim_time">200</integer>
+    <integer name="focus_rectangle_size">80</integer>
+    <integer name="superpanel_step_px">30</integer>
+</resources>

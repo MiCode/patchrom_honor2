@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="details_title">
+        <item quantity="other">%1$d от %2$d елемента:</item>
+        <item quantity="zero">%1$d от %2$d елемента:</item>
+        <item quantity="one">%1$d от %2$d елемент:</item>
+        <item quantity="two">%1$d от %2$d елемента:</item>
+        <item quantity="few">%1$d от %2$d елемента:</item>
+        <item quantity="many">%1$d от %2$d елемента:</item>
+    </plurals>
+    <plurals name="number_of_items_selected">
+        <item quantity="other">Избрани: %1$d</item>
+        <item quantity="zero">Избрани: %1$d</item>
+        <item quantity="one">Избрани: %1$d</item>
+    </plurals>
+    <plurals name="number_of_albums_selected">
+        <item quantity="other">Избрани: %1$d</item>
+        <item quantity="zero">Избрани: %1$d</item>
+        <item quantity="one">Избрани: %1$d</item>
+    </plurals>
+    <plurals name="number_of_groups_selected">
+        <item quantity="other">Избрани: %1$d</item>
+        <item quantity="zero">Избрани: %1$d</item>
+        <item quantity="one">Избрани: %1$d</item>
+    </plurals>
+    <plurals name="make_albums_available_offline">
+        <item quantity="other">Албумите са достъпни офлайн.</item>
+        <item quantity="one">Албумът е достъпен офлайн.</item>
+    </plurals>
+    <plurals name="delete_selection">
+        <item quantity="other">Да се изтрият ли избраните?</item>
+        <item quantity="one">Да се изтрие ли избраното?</item>
+    </plurals>
+</resources>

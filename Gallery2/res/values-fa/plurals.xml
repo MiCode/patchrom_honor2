@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="details_title">
+        <item quantity="other">%1$d از %2$d مورد:</item>
+        <item quantity="zero">%1$d از %2$d مورد:</item>
+        <item quantity="one">%1$d از %2$d مورد:</item>
+        <item quantity="two">%1$d از %2$d مورد:</item>
+        <item quantity="few">%1$d از %2$d مورد:</item>
+        <item quantity="many">%1$d از %2$d مورد:</item>
+    </plurals>
+    <plurals name="number_of_items_selected">
+        <item quantity="other">%1$d انتخاب شده</item>
+        <item quantity="zero">%1$d انتخاب شده</item>
+        <item quantity="one">%1$d انتخاب شده</item>
+    </plurals>
+    <plurals name="number_of_albums_selected">
+        <item quantity="other">%1$d انتخاب شده</item>
+        <item quantity="zero">%1$d انتخاب شده</item>
+        <item quantity="one">%1$d انتخاب شده</item>
+    </plurals>
+    <plurals name="number_of_groups_selected">
+        <item quantity="other">%1$d انتخاب شده</item>
+        <item quantity="zero">%1$d انتخاب شده</item>
+        <item quantity="one">%1$d انتخاب شده</item>
+    </plurals>
+    <plurals name="make_albums_available_offline">
+        <item quantity="other">آلبوم ها به صورت آفلاین موجود هستند.</item>
+        <item quantity="one">آلبوم به صورت آفلاین موجود است.</item>
+    </plurals>
+    <plurals name="delete_selection">
+        <item quantity="other">موارد انتخابی حذف شوند؟</item>
+        <item quantity="one">مورد انتخابی حذف شود؟</item>
+    </plurals>
+</resources>

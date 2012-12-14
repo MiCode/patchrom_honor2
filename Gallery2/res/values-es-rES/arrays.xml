@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="months_abbreviated">
+        <item>Ene.</item>
+        <item>Feb.</item>
+        <item>Mar.</item>
+        <item>Abr.</item>
+        <item>May.</item>
+        <item>Jun.</item>
+        <item>Jul.</item>
+        <item>Ago.</item>
+        <item>Set.</item>
+        <item>Oct.</item>
+        <item>Nov.</item>
+        <item>Dic.</item>
+    </string-array>
+</resources>

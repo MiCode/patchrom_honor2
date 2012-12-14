@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="details_title">
+        <item quantity="other">%1$d của %2$d mục:</item>
+        <item quantity="zero">%1$d của %2$d mục:</item>
+        <item quantity="one">%1$d của %2$d mục:</item>
+        <item quantity="two">%1$d của %2$d mục:</item>
+        <item quantity="few">%1$d của %2$d mục:</item>
+        <item quantity="many">%1$d của %2$d mục:</item>
+    </plurals>
+    <plurals name="number_of_items_selected">
+        <item quantity="other">%1$d mục được chọn</item>
+        <item quantity="zero">%1$d mục được chọn</item>
+        <item quantity="one">%1$d mục được chọn</item>
+    </plurals>
+    <plurals name="number_of_albums_selected">
+        <item quantity="other">%1$d anbom đ.chọn</item>
+        <item quantity="zero">%1$d anbom đ.chọn</item>
+        <item quantity="one">%1$d anbom đ.chọn</item>
+    </plurals>
+    <plurals name="number_of_groups_selected">
+        <item quantity="other">%1$d nhóm được chọn</item>
+        <item quantity="zero">%1$d nhóm được chọn</item>
+        <item quantity="one">%1$d nhóm được chọn</item>
+    </plurals>
+    <plurals name="make_albums_available_offline">
+        <item quantity="other">Các album khả dụng ở chế độ ngoại tuyến.</item>
+        <item quantity="one">Album khả dụng ở chế độ ngoại tuyến.</item>
+    </plurals>
+    <plurals name="delete_selection">
+        <item quantity="other">Xóa các mục đã chọn?</item>
+        <item quantity="one">Xóa mục đã chọn?</item>
+    </plurals>
+</resources>

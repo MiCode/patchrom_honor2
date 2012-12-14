@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="details_title">
+        <item quantity="other">%1$d iš %2$d elementų:</item>
+        <item quantity="zero">%1$d iš %2$d elementų:</item>
+        <item quantity="one">%1$d iš %2$d elemento:</item>
+        <item quantity="two">%1$d iš %2$d elementų:</item>
+        <item quantity="few">%1$d iš %2$d elementų:</item>
+        <item quantity="many">%1$d iš %2$d elementų:</item>
+    </plurals>
+    <plurals name="number_of_items_selected">
+        <item quantity="other">Pasirinkta: %1$d</item>
+        <item quantity="zero">Pasirinkta: %1$d</item>
+        <item quantity="one">Pasirinkta: %1$d</item>
+    </plurals>
+    <plurals name="number_of_albums_selected">
+        <item quantity="other">Pasirinkta: %1$d</item>
+        <item quantity="zero">Pasirinkta: %1$d</item>
+        <item quantity="one">Pasirinkta: %1$d</item>
+    </plurals>
+    <plurals name="number_of_groups_selected">
+        <item quantity="other">Pasirinkta: %1$d</item>
+        <item quantity="zero">Pasirinkta: %1$d</item>
+        <item quantity="one">Pasirinkta: %1$d</item>
+    </plurals>
+    <plurals name="make_albums_available_offline">
+        <item quantity="other">Albumai prieinami be interneto.</item>
+        <item quantity="one">Albumas prieinamas be interneto.</item>
+    </plurals>
+    <plurals name="delete_selection">
+        <item quantity="other">Ištrinti pasirink. elementus?</item>
+        <item quantity="one">Ištrinti pasirinktą elementą?</item>
+    </plurals>
+</resources>

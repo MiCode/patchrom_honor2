@@ -1,0 +1,4 @@
+/system ext4 /dev/block/mmcblk0p15
+/cache ext4 /dev/block/mmcblk0p16
+/data ext4 /dev/block/mmcblk0p18
+/data/peers tmpfs tmpfs

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.hwcamera.hwui.RotateLinearLayout android:orientation="horizontal" android:id="@id/galleryex_rotate" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@id/galleryex_frame" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <HorizontalScrollView android:id="@id/horizontalScroll" android:background="@drawable/bg_frame" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/galleryexs" android:paddingTop="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </HorizontalScrollView>
+    </LinearLayout>
+</com.android.hwcamera.hwui.RotateLinearLayout>

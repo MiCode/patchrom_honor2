@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="months_abbreviated">
+        <item>Ιαν</item>
+        <item>Φεβ</item>
+        <item>Μαρ</item>
+        <item>Απρ</item>
+        <item>Μάι</item>
+        <item>Ιουν</item>
+        <item>Ιουλ</item>
+        <item>Αυγ</item>
+        <item>Σεπ</item>
+        <item>Οκτ</item>
+        <item>Νοε</item>
+        <item>Δεκ</item>
+    </string-array>
+    <string-array name="dts_type_choices">
+        <item>Απενεργοποίηση</item>
+        <item>Μουσική</item>
+        <item>Ταινία</item>
+    </string-array>
+</resources>

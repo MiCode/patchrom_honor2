@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="details_title">
+        <item quantity="other">%1$d av %2$d elementer:</item>
+        <item quantity="zero">%1$d av %2$d elementer:</item>
+        <item quantity="one">%1$d av %2$d element:</item>
+        <item quantity="two">%1$d av %2$d elementer:</item>
+        <item quantity="few">%1$d av %2$d elementer:</item>
+        <item quantity="many">%1$d av %2$d elementer:</item>
+    </plurals>
+    <plurals name="number_of_items_selected">
+        <item quantity="other">%1$d valgt</item>
+        <item quantity="zero">%1$d valgt</item>
+        <item quantity="one">%1$d valgt</item>
+    </plurals>
+    <plurals name="number_of_albums_selected">
+        <item quantity="other">%1$d valgt</item>
+        <item quantity="zero">%1$d valgt</item>
+        <item quantity="one">%1$d valgt</item>
+    </plurals>
+    <plurals name="number_of_groups_selected">
+        <item quantity="other">%1$d valgt</item>
+        <item quantity="zero">%1$d valgt</item>
+        <item quantity="one">%1$d valgt</item>
+    </plurals>
+    <plurals name="make_albums_available_offline">
+        <item quantity="other">Album tilgjengelige i frakoblet modus.</item>
+        <item quantity="one">Album tilgjengelig i frakoblet modus.</item>
+    </plurals>
+    <plurals name="delete_selection">
+        <item quantity="other">Vil du slette de valgte medieelementene?</item>
+        <item quantity="one">Vil du slette det valgte medieelementet?</item>
+    </plurals>
+</resources>

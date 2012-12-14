@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="months_abbreviated">
+        <item>Jan</item>
+        <item>Feb</item>
+        <item>Mar</item>
+        <item>Apr</item>
+        <item>Maí</item>
+        <item>Jún</item>
+        <item>Júl</item>
+        <item>Ágú</item>
+        <item>Sept</item>
+        <item>Okt</item>
+        <item>Nóv</item>
+        <item>Des</item>
+    </string-array>
+</resources>

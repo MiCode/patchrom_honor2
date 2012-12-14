@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/movie_view_root" android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:huawei="http://cn.real.com">
+    <VideoView android:id="@id/surface_view" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerInParent="true" />
+    <LinearLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignParentBottom="true">
+        <cn.real.device.SubTitleView android:textSize="20.0dip" android:textColor="#ffffffff" android:gravity="bottom|center" android:id="@id/mSubTitle" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="10.0dip" android:layout_centerHorizontal="true" huawei:picSrc="" />
+    </LinearLayout>
+</RelativeLayout>

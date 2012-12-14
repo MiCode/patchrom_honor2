@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.hwcamera.hwui.RotateLinearLayout android:orientation="horizontal" android:id="@id/review_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_alignParentBottom="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@drawable/bg_invoke_after_capture" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="60.0dip">
+        <Button android:textAppearance="?android:textAppearanceMedium" android:textColor="@color/text_color" android:id="@id/review_share_button" android:background="@drawable/btn_invoke_capture" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="54.0dip" android:text="@string/review_share" android:layout_weight="1.0" />
+        <Button android:textAppearance="?android:textAppearanceMedium" android:textColor="@color/text_color" android:id="@id/review_setas_button" android:background="@drawable/btn_invoke_capture" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="54.0dip" android:text="@string/review_setas" android:layout_weight="1.0" />
+        <Button android:textAppearance="?android:textAppearanceMedium" android:textColor="@color/text_color" android:id="@id/review_play_button" android:background="@drawable/btn_invoke_capture" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="54.0dip" android:text="@string/review_play_video" android:layout_weight="1.0" />
+        <Button android:textAppearance="?android:textAppearanceMedium" android:textColor="@color/text_color" android:id="@id/review_delete_button" android:background="@drawable/btn_invoke_capture" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="54.0dip" android:text="@string/review_delete" android:layout_weight="1.0" />
+    </LinearLayout>
+</com.android.hwcamera.hwui.RotateLinearLayout>

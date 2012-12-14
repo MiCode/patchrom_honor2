@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="details_title">
+        <item quantity="other">%1$d de %2$d elements:</item>
+        <item quantity="zero">%1$d de %2$d elements:</item>
+        <item quantity="one">%1$d de %2$d element:</item>
+        <item quantity="two">%1$d de %2$d elements:</item>
+        <item quantity="few">%1$d de %2$d elements:</item>
+        <item quantity="many">%1$d de %2$d elements:</item>
+    </plurals>
+    <plurals name="number_of_items_selected">
+        <item quantity="other">%1$d seleccionats</item>
+        <item quantity="zero">%1$d seleccionats</item>
+        <item quantity="one">%1$d seleccionat</item>
+    </plurals>
+    <plurals name="number_of_albums_selected">
+        <item quantity="other">%1$d seleccionats</item>
+        <item quantity="zero">%1$d seleccionats</item>
+        <item quantity="one">%1$d seleccionat</item>
+    </plurals>
+    <plurals name="number_of_groups_selected">
+        <item quantity="other">%1$d seleccionats</item>
+        <item quantity="zero">%1$d seleccionats</item>
+        <item quantity="one">%1$d seleccionat</item>
+    </plurals>
+    <plurals name="make_albums_available_offline">
+        <item quantity="other">Àlbums disponibles fora de línia.</item>
+        <item quantity="one">Àlbum disponible fora de línia.</item>
+    </plurals>
+    <plurals name="delete_selection">
+        <item quantity="other">Vols supr. els elements sel.?</item>
+        <item quantity="one">"Vols supr. l'element selecc.?"</item>
+    </plurals>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="months_abbreviated">
+        <item>“қаңт“</item>
+        <item>“ақп“</item>
+        <item>“наур“</item>
+        <item>“сәу“</item>
+        <item>“мам“</item>
+        <item>“маус“</item>
+        <item>“шіл“</item>
+        <item>“там“</item>
+        <item>“қрқ“</item>
+        <item>“қаз“</item>
+        <item>“қар“</item>
+        <item>“желт“</item>
+    </string-array>
+</resources>

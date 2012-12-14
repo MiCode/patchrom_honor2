@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="details_title">
+        <item quantity="other">%1$d од %2$d ставки:</item>
+        <item quantity="zero">%1$d од %2$d ставки:</item>
+        <item quantity="one">%1$d од %2$d ставка:</item>
+        <item quantity="two">%1$d од %2$d ставки:</item>
+        <item quantity="few">%1$d од %2$d ставки:</item>
+        <item quantity="many">%1$d од %2$d ставки:</item>
+    </plurals>
+    <plurals name="number_of_items_selected">
+        <item quantity="other">%1$d обележано</item>
+        <item quantity="zero">%1$d обележано</item>
+        <item quantity="one">%1$d обележано</item>
+    </plurals>
+    <plurals name="number_of_albums_selected">
+        <item quantity="other">%1$d избрани</item>
+        <item quantity="zero">%1$d избрани</item>
+        <item quantity="one">%1$d избрани</item>
+    </plurals>
+    <plurals name="number_of_groups_selected">
+        <item quantity="other">%1$d избрани</item>
+        <item quantity="zero">%1$d избрани</item>
+        <item quantity="one">%1$d избрани</item>
+    </plurals>
+    <plurals name="make_albums_available_offline">
+        <item quantity="other">Албумите се достапни без мрежа.</item>
+        <item quantity="one">Албумот е достапен без мрежа.</item>
+    </plurals>
+    <plurals name="delete_selection">
+        <item quantity="other">Избриши ги избраните ставки?</item>
+        <item quantity="one">Избриши ја избраната ставка?</item>
+    </plurals>
+</resources>

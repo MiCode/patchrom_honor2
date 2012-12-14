@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/control_bar" android:layout_width="60.0dip" android:layout_height="fill_parent" android:layout_alignParentRight="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="@drawable/bg_invoke_after_capture_land" android:layout_width="60.0dip" android:layout_height="fill_parent" android:layout_alignParentRight="true" />
+    <com.android.hwcamera.RotateImageView android:id="@id/camera_switch" android:layout_width="43.0dip" android:layout_height="43.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="15.0dip" android:src="@drawable/ic_camera" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+    <com.android.hwcamera.ShutterButton android:id="@id/shutter_button" android:background="@drawable/btn_shutter_rotate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <com.android.hwcamera.RotateImageView android:id="@id/shutter_button_center" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_ic_camera_shutter" android:scaleType="center" android:layout_centerInParent="true" />
+    </com.android.hwcamera.ShutterButton>
+    <com.android.hwcamera.RotateImageView android:id="@id/review_thumbnail" android:background="@drawable/border_last_picture" android:padding="2.0dip" android:focusable="false" android:clickable="true" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_marginRight="6.0dip" android:layout_marginBottom="7.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    <com.android.hwcamera.RotateImageView android:id="@id/review_thumbnail_mask" android:background="@drawable/border_last_picture_pressed" android:padding="2.0dip" android:focusable="false" android:clickable="true" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_marginRight="6.0dip" android:layout_marginBottom="7.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" android:alpha="0.0" />
+</RelativeLayout>

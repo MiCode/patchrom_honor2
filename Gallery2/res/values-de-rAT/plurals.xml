@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="details_title">
+        <item quantity="other">%1$d von %2$d Elementen:</item>
+        <item quantity="zero">%1$d von %2$d Elementen:</item>
+        <item quantity="one">%1$d von %2$d Element:</item>
+        <item quantity="two">%1$d von %2$d Elementen:</item>
+        <item quantity="few">%1$d von %2$d Elementen:</item>
+        <item quantity="many">%1$d von %2$d Elementen:</item>
+    </plurals>
+    <plurals name="make_albums_available_offline">
+        <item quantity="other">Alben offline bereitgestellt.</item>
+        <item quantity="one">Album offline bereitgestellt.</item>
+    </plurals>
+</resources>

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider android:minWidth="150.6dip" android:minHeight="204.0dip" android:updatePeriodMillis="0" android:initialLayout="@layout/widgetunit_view" android:configure="com.android.gallery3d.widgetunit.PickAlbum" android:previewImage="@drawable/widgetunit_preview_image"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

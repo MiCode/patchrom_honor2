@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="details_title">
+        <item quantity="other">%1$d of %2$d üksust:</item>
+        <item quantity="zero">%1$d of %2$d üksust:</item>
+        <item quantity="one">%1$d of %2$d üksus:</item>
+        <item quantity="two">%1$d of %2$d üksust:</item>
+        <item quantity="few">%1$d of %2$d üksust:</item>
+        <item quantity="many">%1$d of %2$d üksust:</item>
+    </plurals>
+    <plurals name="number_of_items_selected">
+        <item quantity="other">Valitud %1$d</item>
+        <item quantity="zero">Valitud %1$d</item>
+        <item quantity="one">Valitud %1$d</item>
+    </plurals>
+    <plurals name="number_of_albums_selected">
+        <item quantity="other">Valitud %1$d</item>
+        <item quantity="zero">Valitud %1$d</item>
+        <item quantity="one">Valitud %1$d</item>
+    </plurals>
+    <plurals name="number_of_groups_selected">
+        <item quantity="other">Valitud %1$d</item>
+        <item quantity="zero">Valitud %1$d</item>
+        <item quantity="one">Valitud %1$d</item>
+    </plurals>
+    <plurals name="make_albums_available_offline">
+        <item quantity="other">Albumid on saadaval võrguühenduseta.</item>
+        <item quantity="one">Album on saadaval võrguühenduseta.</item>
+    </plurals>
+    <plurals name="delete_selection">
+        <item quantity="other">Kas kustutada valitud üksused?</item>
+        <item quantity="one">Kas kustutada valitud üksus?</item>
+    </plurals>
+</resources>

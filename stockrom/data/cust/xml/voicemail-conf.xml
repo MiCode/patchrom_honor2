@@ -1,0 +1,1418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright 2006, Google Inc.
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<!--DTS2012020901435 chenzhong 20120216 created -->
+
+<voicemail version="6">
+<voicemail numeric="20210"
+        carrier="Wind"
+        vmnumber="122"
+        vmtag="voicemail"
+    />
+<voicemail numeric="73406"
+        carrier="Movilnet"
+        vmnumber="*9"
+        vmtag="voicemail"
+    />
+    <!--DTS2011112906501 yuliang 20111129 begin -->
+    <!--Deleted three voicemail numbers that do not use  -->
+    <!--DTS2011112906501 yuliang 20111129 end -->
+    <voicemail numeric="65507"
+        carrier="Cell C"
+        vmnumber="084144"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="53024"
+        carrier="2degrees"
+        vmnumber="+64222022002"
+        vmtag="voicemail"
+    />   
+    <voicemail numeric="44020"
+        carrier="SoftBank"
+        vmnumber="1416"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012051005158 chenzhong 20120510 end -->
+    <voicemail numeric="21404"
+        carrier="Yoigo"
+        vmnumber="+34633633633"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012051005158 chenzhong 20120510 end -->
+    <!--DTS2011112906501 yuliang 20111129 begin -->
+    <!--Deleted two voicemail numbers that do not use  -->
+    <!--DTS2011112906501 yuliang 20111129 end -->
+<voicemail numeric="26801"
+        carrier="Vodafone"
+        vmnumber="123"
+        vmtag="voicemail"
+/>
+    <voicemail numeric="52501"
+        carrier="SingTel"
+        vmnumber="1389"
+        vmtag="voicemail"
+    />
+    <!--DTS2011112906501 yuliang 20111129 begin -->
+    <!--Deleted one voicemail number that do not use  -->
+    <!--DTS2011112906501 yuliang 20111129 end -->
+    <voicemail numeric="26001"
+        carrier="Polkomtel"
+        vmnumber="+48601222222"
+        vmtag="voicemail"
+    />
+       <voicemail numeric="21670"
+        carrier="Vodafone"
+        vmnumber="170"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="46692"
+        carrier=""
+        vmnumber="777"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="46601"
+        carrier=""
+        vmnumber="222"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="46697"
+        carrier=""
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="46689"
+        carrier=""
+        vmnumber="777"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="21902"
+        carrier="Tele2"
+        vmnumber="+385951000223"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="40102"
+        carrier="Kcell"
+        vmnumber="2000"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="50503"
+        carrier="Vodafone"
+        vmnumber="121"
+        vmtag="voicemail"
+    />
+    <!--DTS2011112906501 yuliang 20111129 begin -->
+    <voicemail numeric="53005"
+        carrier="Telecom"
+        vmnumber="+6483083210"
+        vmtag="voicemail"
+    />
+    <!--DTS2011112906501 yuliang 20111129 end -->
+    <voicemail numeric="53001"
+        carrier="Vodafone"
+        vmnumber="+6421700700"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="28602"
+        carrier="Vodafone"
+        vmnumber="905427543000"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="310420"
+        carrier="CBW"
+        vmnumber="15132400190"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="74002"
+        carrier="CNT"
+        vmnumber="*123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="71201"
+        carrier="ICE"
+        vmnumber="1190"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="73002"
+        carrier="Movistar"
+        vmnumber="500"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012051005158 chenzhong 20120510 begin -->
+    <voicemail numeric="71403"
+        carrier="Claro"
+        vmnumber="*111"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012051005158 chenzhong 20120510 end -->
+    <voicemail numeric="334020"
+        carrier="Telecel"
+        vmnumber="*86"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012071106267 chenzhong 20120711 begin -->
+    <voicemail numeric="73008"
+        carrier="vtr"
+        vmnumber="#111"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012071106267 chenzhong 20120711 end -->
+    <!-- DTS2012051005158 chenzhong 20120510 begin -->
+    <voicemail numeric="714020"
+        carrier="movistar"
+        vmnumber="*86"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="71606"
+        carrier="Movistar"
+        vmnumber="*169"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="74001"
+        carrier="Claro"
+        vmnumber="999"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012071106267 chenzhong 20120711 begin -->
+    <voicemail numeric="71401"
+        carrier="NLA"
+        vmnumber="*111"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012071106267 chenzhong 20120711 end -->
+    <voicemail numeric="71404"
+        carrier="Digicel"
+        vmnumber="*123"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012051005158 chenzhong 20120510 end -->
+    <!--DTS2011112906501 yuliang 20111129 begin -->
+    <!--Deleted one voicemail number that do not use  -->
+    <!--DTS2011112906501 yuliang 20111129 end -->
+    <voicemail numeric="73404"
+        carrier="Movistar"
+        vmnumber="*2"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="74801"
+        carrier="Antel"
+        vmnumber="*66"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="65510"
+        carrier="MTN"
+        vmnumber="100"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="63402"
+        carrier="MTN"
+        vmnumber="303"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="60201"
+        carrier="Mobinil"
+        vmnumber="777"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="65501"
+        carrier="Vodacom"
+        vmnumber="121"
+        vmtag="voicemail"
+    />
+    <!--DTS2011112906501 yuliang 20111129 begin -->
+    <!--Deleted one voicemail number that do not use  -->
+    <!--DTS2011112906501 yuliang 20111129 end -->
+    <voicemail numeric="63510"
+        carrier="MTN"
+        vmnumber="333"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="63102"
+        carrier="Unitel"
+        vmnumber="+244923119123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="24601"
+        carrier="Omnitel"
+        vmnumber="+37069890001"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="24603"
+        carrier="Tele2"
+        vmnumber="+37068400222"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012051005158 chenzhong 20120510 begin -->
+    <voicemail numeric="21421"
+        carrier="Jazztel"
+        vmnumber="+34640009030"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012051005158 chenzhong 20120510 end -->
+    <!-- DTS2012052300878 chenzhong 20120523 begin -->
+    <voicemail numeric="29401"
+        carrier="T-Mobile"
+        vmnumber="+38970121212"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012052300878 chenzhong 20120523 end -->
+    <voicemail numeric="23410"
+        carrier="Tesco"
+        vmnumber="901"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="26202"
+        carrier="Vodafone"
+        vmnumber="5500"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="21401"
+        carrier="Vodafone"
+        vmnumber="177"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="21405"
+        carrier="Tuenti"
+        vmnumber="22123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="25702"
+        carrier="MTS"
+        vmnumber="0881"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="43701"
+        carrier="Sky Mobile"
+        vmnumber="350"
+        vmtag="voicemail"
+    />
+<!-- DTS2012032104973 chenzhong 20120321 begin -->
+    
+<!--Deleted one voicemail number that do not use  -->
+<!-- DTS2012032104973 chenzhong 20120321 end -->
+    <!--DTS2011112906501 yuliang 20111129 begin -->
+    <!--Deleted one voicemail number that do not use  -->
+    <!--DTS2011112906501 yuliang 20111129 end -->
+    <voicemail numeric="310410"
+        carrier="ATT"
+        vmnumber="*08"
+        vmtag="voicemail"
+    />
+<!-- DTS2012032104973 chenzhong 20120321 begin -->
+    <voicemail numeric="26803"
+        carrier="Optimus"
+        vmnumber="133"
+        vmtag="voicemail"
+    />
+<!-- DTS2012032104973 chenzhong 20120321 end -->
+<!-- DTS2012071106267 chenzhong 20120711 begin -->
+    <voicemail numeric="21407"
+        carrier="Movistar"
+        vmnumber="555"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="73003"
+        carrier="claro"
+        vmnumber="*20"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="71610"
+        carrier="CLARO"
+        vmnumber="131"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="71617"
+        carrier="Nextel"
+        vmnumber="124"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="72207"
+        carrier="Movistar"
+        vmnumber="555"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012071106267 chenzhong 20120711 end -->
+    <voicemail numeric="65502"
+        carrier="Telkom"
+        vmnumber="181"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="63407"
+        carrier="Sudani"
+        vmnumber="120120000"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="334050"
+        carrier="IUSACELL"
+        vmnumber="*86"
+        vmtag="voicemail"
+    />
+    <!--DTS2011112906501 yuliang 20111129 begin -->
+    <!--Deleted one voicemail number that do not use  -->
+    <!--DTS2011112906501 yuliang 20111129 end -->
+    <voicemail numeric="222010"
+        carrier="IUSACELL"
+        vmnumber="*86"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="222011"
+        carrier="IUSACELL"
+        vmnumber="*86"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="222012"
+        carrier="IUSACELL"
+        vmnumber="*86"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="222013"
+        carrier="IUSACELL"
+        vmnumber="*86"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012051005158 chenzhong 20120510 begin -->
+    <!-- DTS2012051608465 chenzhong 20120516 begin -->
+    <!-- delete by requirement-->
+    <!-- DTS2012051608465 chenzhong 20120516 end -->
+    <!-- DTS2012051005158 chenzhong 20120510 end -->
+    <voicemail numeric="222014"
+        carrier="IUSACELL"
+        vmnumber="*86"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="222015"
+        carrier="IUSACELL"
+        vmnumber="*86"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="222016"
+        carrier="IUSACELL"
+        vmnumber="*86"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="222017"
+        carrier="IUSACELL"
+        vmnumber="*86"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="222018"
+        carrier="IUSACELL"
+        vmnumber="*86"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="222019"
+        carrier="IUSACELL"
+        vmnumber="*86"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="37001"
+        carrier="Orange"
+        vmnumber="*777"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="73401"
+        carrier="Digitel"
+        vmnumber="124"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="73402"
+        carrier="Digitel"
+        vmnumber="124"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="73403"
+        carrier="Digitel"
+        vmnumber="124"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012071106267 chenzhong 20120711 begin -->
+    <!-- DTS2012051005158 chenzhong 20120510 begin -->
+    <voicemail numeric="73001"
+        carrier="entel"
+        vmnumber="#123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="73010"
+        carrier="entel"
+        vmnumber="#123"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012051005158 chenzhong 20120510 end -->
+    <!-- DTS2012071106267 chenzhong 20120711 end -->
+    <voicemail numeric="334030"
+        carrier="Movistar"
+        vmnumber="186"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="33403"
+        carrier="Movistar"
+        vmnumber="186"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="33430"
+        carrier="Movistar"
+        vmnumber="186"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012051608465 chenzhong 20120516 begin -->
+    <!-- DTS2012051005158 chenzhong 20120510 begin -->
+    <voicemail numeric="732101"
+        carrier="Comcel"
+        vmnumber="*123"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012051005158 chenzhong 20120510 end -->
+    <!-- DTS2012051608465 chenzhong 20120516 end -->
+    <voicemail numeric="732111"
+        carrier="Comcel"
+        vmnumber="*123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="732103"
+        carrier="TIGO"
+        vmnumber="*123"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012071106267 chenzhong 20120711 begin -->
+    <voicemail numeric="732123"
+        carrier="Movistar"
+        vmnumber="*123"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012071106267 chenzhong 20120711 end -->
+    <!--DTS2011112906501 yuliang 20111129 begin -->
+    <!--Deleted one voicemail number that do not use  -->
+    <!--DTS2011112906501 yuliang 20111129 end-->
+    <voicemail numeric="20201"
+        carrier="Cosmote"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012071106267 chenzhong 20120711 delete -->
+    <voicemail numeric="37002"
+        carrier="Claro"
+        vmnumber="*99"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="338180"
+        carrier="LIME"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012052300878 chenzhong 20120523 begin -->
+    <!-- delete by requirement-->
+    <!-- DTS2012052300878 chenzhong 20120523 end -->
+    <voicemail numeric="70403"
+        carrier="movistar"
+        vmnumber="*86"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="70604"
+        carrier="movistar"
+        vmnumber="*86"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012051005158 chenzhong 20120510 begin -->
+    <voicemail numeric="70603"
+        carrier="Tigo"
+        vmnumber="*80"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="708001"
+        carrier="Claro"
+        vmnumber="*80"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="71030"
+        carrier="movistar"
+        vmnumber="*86"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="710300"
+        carrier="movistar"
+        vmnumber="*86"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012051005158 chenzhong 20120510 end -->
+    <voicemail numeric="71402"
+        carrier="movistar"
+        vmnumber="*86"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="71204"
+        carrier="movistar"
+        vmnumber="*1690"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="74000"
+        carrier="movistar"
+        vmnumber="*82"
+        vmtag="voicemail"
+    />
+    <!--DTS2011112906501 yuliang 20111129 begin-->
+    <voicemail numeric="32420"
+        carrier="Telcel"
+        vmnumber="*86"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012042007526 chenzhong 20120420 begin -->
+    <voicemail numeric="20205"
+        carrier="vodafone"
+        vmnumber="121"
+        vmtag="voicemail"
+    />
+        <!-- DTS2012042007526 chenzhong 20120420 end -->
+    <!-- DTS2012071106267 chenzhong 20120711 delete -->
+    <voicemail numeric="25704"
+        carrier="life:)"
+        vmnumber="985"
+        vmtag="voicemail"
+    />
+    <!--DTS2011112906501 yuliang 20111129 end-->
+        <voicemail numeric="60203"
+        carrier="etisalat"
+        vmnumber="444"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="60202"
+        carrier="Vodafone"
+        vmnumber="808"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="41701"
+        carrier="Syriatel"
+        vmnumber="1777"
+        vmtag="voicemail"
+    />
+<!-- DTS2012032104973 chenzhong 20120321 begin -->
+        <voicemail numeric="41702"
+        carrier="MTN Syria"
+        vmnumber="094941"
+        vmtag="voicemail"
+    />
+<!-- DTS2012032104973 chenzhong 20120321 end -->
+        <voicemail numeric="61002"
+        carrier="Orange"
+        vmnumber="130"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="63401"
+        carrier="Zain"
+        vmnumber="1240"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="42102"
+        carrier="MTN"
+        vmnumber="777"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="42101"
+        carrier="SabaFon"
+        vmnumber="707"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="60303"
+        carrier="Watanya Telecom Algérie"
+        vmnumber="555"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="60302"
+        carrier="Orascom Telecom Algérie"
+        vmnumber="555"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="60301"
+        carrier="ATM MOBILIS"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="62203"
+        carrier="Tigo"
+        vmnumber="130"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="60803"
+        carrier="expresso"
+        vmnumber="1115"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="60801"
+        carrier="Sonatel"
+        vmnumber="602"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="21910"
+        carrier="Vodafone"
+        vmnumber="+385917000"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="21901"
+        carrier="TM HR"
+        vmnumber="+385981511"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="62160"
+        carrier="etisalat"
+        vmnumber="252"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="62130"
+        carrier="MTN"
+        vmnumber="100"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="62150"
+        carrier="Globacom"
+        vmnumber="111"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="27205"
+        carrier="3"
+        vmnumber="171"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="27203"
+        carrier="Meteor"
+        vmnumber="171"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="27211"
+        carrier="Tesco"
+        vmnumber="171"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="27202"
+        carrier="02"
+        vmnumber="171"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="27201"
+        carrier="Vodafone"
+        vmnumber="171"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="20601"
+        carrier="Proximus"
+        vmnumber="1230"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="20620"
+        carrier="Base Belgium"
+        vmnumber="1955"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="20610"
+        carrier="Mobistar"
+        vmnumber="5555"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="20810"
+        carrier="F SFR"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="20820"
+        carrier="Bouygues"
+        vmnumber="+33660660001"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="20801"
+        carrier="Orange"
+        vmnumber="888"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="20408"
+        carrier="KPN"
+        vmnumber="1233"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="20404"
+        carrier="Vodafone"
+        vmnumber="1233"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="20416"
+        carrier="T-Mobile"
+        vmnumber="1233"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="21403"
+        carrier="Orange"
+        vmnumber="242"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="23415"
+        carrier="Vodafone"
+        vmnumber="121"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="23433"
+        carrier="Orange"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012042007526 chenzhong 20120420 begin -->
+    <voicemail numeric="23434"
+        carrier="Orange"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="23486"
+        carrier="Orange"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012042007526 chenzhong 20120420 end -->
+    <!-- DTS2012071106267 chenzhong 20120711 begin -->
+        <voicemail numeric="23430"
+        carrier="T-mobile UK"
+        vmnumber="222"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="23431"
+        carrier="T-mobile UK"
+        vmnumber="222"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="23432"
+        carrier="T-mobile UK"
+        vmnumber="222"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012071106267 chenzhong 20120711 end -->
+        <voicemail numeric="23420"
+        carrier="3"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="26806"
+        carrier="TMN"
+        vmnumber="+351962000000"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="28601"
+        carrier="Turkcell"
+        vmnumber="905327533111"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="28603"
+        carrier="Avea"
+        vmnumber="999"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="28604"
+        carrier="Avea"
+        vmnumber="999"
+        vmtag="voicemail"
+    />
+<!-- DTS2012032104973 chenzhong 20120321 begin -->
+    <!-- DTS2012051608465 chenzhong 20120516 begin -->
+    <!-- delete by requirement-->
+    <!-- DTS2012051608465 chenzhong 20120516 end -->
+<!-- DTS2012032104973 chenzhong 20120321 end -->
+    <!-- DTS2012051608465 chenzhong 20120516 begin -->
+    <!-- delete by requirement-->
+    <!-- DTS2012051608465 chenzhong 20120516 end -->
+        <voicemail numeric="25002"
+        carrier="MegaFon"
+        vmnumber="0525"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012022105931 chenzhong 20120222 begin -->
+
+    <!-- delete by requirement-->
+    <!-- DTS2012022105931 chenzhong 20120222 end -->
+<!-- DTS2012042007526 chenzhong 20120420 begin -->
+<!-- requirement bases delete -->
+<!-- DTS2012042007526 chenzhong 20120420 begin -->
+        <voicemail numeric="28305"
+        carrier="VivaCell / MTS"
+        vmnumber="130"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="28310"
+        carrier="Orange Armenia"
+        vmnumber="444"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012051608465 chenzhong 20120516 begin -->
+    <!-- delete by requirement-->
+    <!-- DTS2012051608465 chenzhong 20120516 end -->
+        <voicemail numeric="44010"
+        carrier="Asia"
+        vmnumber="1417"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="40177"
+        carrier="Tele2"
+        vmnumber="2000"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="62120"
+        carrier="Airtel"
+        vmnumber="122"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012022105931 chenzhong 20120222 begin -->
+    <!-- DTS2012071106267 chenzhong 20120711 begin -->
+    <voicemail numeric="722310"
+        carrier="Claro AR"
+        vmnumber="*2747"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="72234"
+        carrier="personal"
+        vmnumber="*555"
+        vmtag="voicemail"
+    />
+        <voicemail numeric="722314"
+        carrier="personal"
+        vmnumber="*555"
+        vmtag="voicemail"
+    />   
+    <!-- DTS2012071106267 chenzhong 20120711 end -->
+    <!-- DTS2012031408010 chenzhong 20120314 begin -->
+    <voicemail numeric="36801"
+        carrier="ETECSA"
+        vmnumber="*123"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012031408010 chenzhong 20120314 end -->
+    <!-- DTS2012022105931 chenzhong 20120222 end -->
+    <!-- DTS2012030607891 chenzhong 20120306 begin -->
+    
+    <!-- basis requirement delete -->
+    
+    <!-- DTS2012030607891 chenzhong 20120306 end -->
+    <!-- DTS2012032104973 chenzhong 20120321 begin -->
+    <voicemail numeric="60501"
+        carrier="Orange"
+        vmnumber="1188"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="60502"
+        carrier="Tunisie Telecom"
+        vmnumber="1700"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="60503"
+        carrier="Tunisiana"
+        vmnumber="1777"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012041203463 chenzhong 20120412 begin -->
+    <voicemail numeric="20802"
+        carrier="Orange"
+        vmnumber="888"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012041203463 chenzhong 20120412 end -->
+    <!-- DTS2012042007526 chenzhong 20120420 begin -->
+    <voicemail numeric="21419"
+        carrier="KPN ES"
+        vmnumber="1213"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012051005158 chenzhong 20120510 begin -->
+    <!-- delete by requirement-->
+    <!-- DTS2012051005158 chenzhong 20120510 end -->
+    <voicemail numeric="21406"
+        carrier="Mundo-R"
+        vmnumber="0034698111277"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012051608465 chenzhong 20120516 begin -->
+    <!-- delete by requirement-->
+    <!-- DTS2012051608465 chenzhong 20120516 end -->
+    <voicemail numeric="21405"
+        carrier="Tuenti"
+        vmnumber="22123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="43701"
+        carrier="Sky Mobile"
+        vmnumber="350"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="21601"
+        carrier="Telenor"
+        vmnumber="+36209400404"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="21630"
+        carrier="T-Mobile"
+        vmnumber="+36309888444"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="21805"
+        carrier="Telekom Srpske"
+        vmnumber="+3876555400"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="22005"
+        carrier="Vip mobile"
+        vmnumber="7777"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="22603"
+        carrier="Cosmote"
+        vmnumber="+40766177177"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="22606"
+        carrier="Cosmote"
+        vmnumber="+40766177177"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="23102"
+        carrier="DT"
+        vmnumber="+421903333999"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="22003"
+        carrier="Telekom Srbija"
+        vmnumber="+38164711"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="25905"
+        carrier="Moldtelecom"
+        vmnumber="333"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="25902"
+        carrier="Moldcell"
+        vmnumber="9494"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="28001"
+        carrier="Cytamobile-Vodafone"
+        vmnumber="121"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="28010"
+        carrier="MTN"
+        vmnumber="121"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012042007526 chenzhong 20120420 end -->
+    <!-- DTS2012051005158 chenzhong 20120510 begin -->
+    <voicemail numeric="70401"
+        carrier="Claro"
+        vmnumber="*80"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012051608465 chenzhong 20120516 begin -->
+    <voicemail numeric="70402"
+        carrier="Tigo"
+        vmnumber="*77"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012051608465 chenzhong 20120516 end -->
+    <!-- DTS2012071106267 chenzhong 20120711 begin -->
+    <voicemail numeric="71021"
+        carrier="Claro"
+        vmnumber="*80"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012071106267 chenzhong 20120711 end -->
+    <voicemail numeric="70601"
+        carrier="Claro"
+        vmnumber="*80"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="70802"
+        carrier="Tigo"
+        vmnumber="*90"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="708020"
+        carrier="Tigo"
+        vmnumber="*90"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="71203"
+        carrier="Claro"
+        vmnumber="*80"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="330110"
+        carrier="Claro"
+        vmnumber="*86"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="36302"
+        carrier="Digicel"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="363020"
+        carrier="Digicel"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="36269"
+        carrier="Digicel"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="362690"
+        carrier="Digicel"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="34020"
+        carrier="Digicel"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="340020"
+        carrier="Digicel"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="73801"
+        carrier="Digicel"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="738010"
+        carrier="Digicel"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="70602"
+        carrier="Digicel"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="706020"
+        carrier="Digicel"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="37413"
+        carrier="Digicel"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="374130"
+        carrier="Digicel"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012052300878 chenzhong 20120523 begin -->
+    <!-- delete by requirement-->
+    <!-- DTS2012052300878 chenzhong 20120523 end -->
+    <voicemail numeric="537030"
+        carrier="Digicel"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="74603"
+        carrier="Digicel"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="746030"
+        carrier="Digicel"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012062107380 chenzhong 20120621 begin -->
+<!-- delete by requirement-->
+<!-- DTS2012062107380 chenzhong 20120621 end -->
+<!-- DTS2012052300878 chenzhong 20120523 begin -->
+<!-- delete by requirement-->
+<!-- DTS2012052300878 chenzhong 20120523 end -->
+<!-- DTS2012062107380 chenzhong 20120621 begin -->
+<!-- delete by requirement-->
+<!-- DTS2012062107380 chenzhong 20120621 end -->
+    <voicemail numeric="34877"
+        carrier="Digicel"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="348770"
+        carrier="Digicel"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="33818"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="338180"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="34614"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="346140"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="34492"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="344920"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="36584"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="365840"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="34260"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="342600"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="34817"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="348170"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="36611"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="366110"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="35211"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="352110"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="35486"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="354860"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="35611"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="356110"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="35811"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="358110"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="36011"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="360110"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="37635"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="376350"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="37412"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="374120"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="36439"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="364390"
+        carrier="Jamaica"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="21418"
+        carrier="Spain"
+        vmnumber="1214"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="71073"
+        carrier="Claro"
+        vmnumber="*80"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012051608465 chenzhong 20120516 begin -->
+    <!-- DTS2012051005158 chenzhong 20120510 end -->
+    <voicemail numeric="70804"
+        carrier="Digicel"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="708040"
+        carrier="Digicel"
+        vmnumber="123"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012052300878 chenzhong 20120523 begin -->
+    <voicemail numeric="22001"
+        carrier="Telenor"
+        vmnumber="+38163909"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012051608465 chenzhong 20120516 end -->
+    <!-- DTS2012052300878 chenzhong 20120523 end -->
+        <!-- DTS2012062107380 chenzhong 20120621 begin -->
+    <voicemail numeric="25701"
+        carrier="FE Velcom"
+        vmnumber="441"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="28301"
+        carrier="BeeLine / ArmenTel"
+        vmnumber="0600"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="25001"
+        carrier="MTS"
+        vmnumber="0860"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="25099"
+        carrier="VIP"
+        vmnumber="0600"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012071106267 chenzhong 20120711 begin -->
+    <voicemail numeric="73603"
+        carrier="TIGO"
+        vmnumber="*123"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="73602"
+        carrier="Entel"
+        vmnumber="106"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="73601"
+        carrier="Nuevatel"
+        vmnumber="106"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="74404"
+        carrier="Tigo"
+        vmnumber="*98"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="74402"
+        carrier="Claro"
+        vmnumber="555"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="74405"
+        carrier="Personal"
+        vmnumber="*555"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="74401"
+        carrier="Vox"
+        vmnumber="*222"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="74801"
+        carrier="Antel"
+        vmnumber="*66"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="74810"
+        carrier="Claro"
+        vmnumber="555"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="74807"
+        carrier="Movistar"
+        vmnumber="6684"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="20412"
+        carrier="Telfort"
+        vmnumber="1233"
+        vmtag="voicemail"
+    />
+    <voicemail numeric="21803"
+        carrier="Eronet"
+        vmnumber="+387633888"
+        vmtag="voicemail"
+    />
+    <!-- DTS2012071106267 chenzhong 20120711 end -->
+    <!-- DTS2012062107380 chenzhong 20120621 end -->
+</voicemail>

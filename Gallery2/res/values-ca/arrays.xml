@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="months_abbreviated">
+        <item>gen.</item>
+        <item>febr.</item>
+        <item>març</item>
+        <item>abr.</item>
+        <item>maig</item>
+        <item>juny</item>
+        <item>jul.</item>
+        <item>ag.</item>
+        <item>set.</item>
+        <item>oct.</item>
+        <item>nov.</item>
+        <item>des.</item>
+    </string-array>
+    <string-array name="dts_type_choices">
+        <item>Desactivat</item>
+        <item>Música</item>
+        <item>Pel·lícula</item>
+    </string-array>
+</resources>

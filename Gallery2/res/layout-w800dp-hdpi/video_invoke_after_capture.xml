@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.hwcamera.hwui.RotateLinearLayout android:orientation="horizontal" android:id="@id/video_invoke_after_capture_rotate" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_alignParentBottom="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@drawable/bg_invoke_after_capture" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+            <LinearLayout android:gravity="center_vertical" android:layout_width="1.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <Button android:textAppearance="?android:textAppearanceMedium" android:textSize="17.0sp" android:textColor="@color/text_color" android:layout_gravity="center" android:id="@id/btn_video_ok" android:background="@drawable/btn_invoke_capture" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="54.0dip" android:text="@string/review_ok" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:layout_width="1.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <Button android:textAppearance="?android:textAppearanceMedium" android:textSize="17.0sp" android:textColor="@color/text_color" android:layout_gravity="center" android:id="@id/btn_video_play" android:background="@drawable/btn_invoke_capture" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="54.0dip" android:text="@string/review_play" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:layout_width="1.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <Button android:textAppearance="?android:textAppearanceMedium" android:textSize="17.0sp" android:textColor="@color/text_color" android:layout_gravity="center" android:id="@id/btn_video_retake" android:background="@drawable/btn_invoke_capture" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="54.0dip" android:text="@string/review_retake" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:layout_width="1.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <Button android:textAppearance="?android:textAppearanceMedium" android:textSize="17.0sp" android:textColor="@color/text_color" android:layout_gravity="center" android:id="@id/btn_video_cancel" android:background="@drawable/btn_invoke_capture" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="54.0dip" android:text="@string/review_cancel" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</com.android.hwcamera.hwui.RotateLinearLayout>

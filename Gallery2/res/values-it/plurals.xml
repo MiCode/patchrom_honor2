@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="details_title">
+        <item quantity="other">%1$d su %2$d elementi:</item>
+        <item quantity="zero">%1$d su %2$d elementi:</item>
+        <item quantity="one">%1$d su %2$d elementi:</item>
+        <item quantity="two">%1$d su %2$d elementi:</item>
+        <item quantity="few">%1$d su %2$d elementi:</item>
+        <item quantity="many">%1$d su %2$d elementi:</item>
+    </plurals>
+    <plurals name="number_of_items_selected">
+        <item quantity="other">%1$d selezionati</item>
+        <item quantity="zero">%1$d selezionati</item>
+        <item quantity="one">%1$d selezionato</item>
+    </plurals>
+    <plurals name="number_of_albums_selected">
+        <item quantity="other">%1$d selezionati</item>
+        <item quantity="zero">%1$d selezionati</item>
+        <item quantity="one">%1$d selezionato</item>
+    </plurals>
+    <plurals name="number_of_groups_selected">
+        <item quantity="other">%1$d selezionati</item>
+        <item quantity="zero">%1$d selezionati</item>
+        <item quantity="one">%1$d selezionato</item>
+    </plurals>
+    <plurals name="make_albums_available_offline">
+        <item quantity="other">Album disponibili non in linea.</item>
+        <item quantity="one">Album disponibile non in linea.</item>
+    </plurals>
+    <plurals name="delete_selection">
+        <item quantity="other">Eliminare elementi selezionati?</item>
+        <item quantity="one">Eliminare elemento selezionato?</item>
+    </plurals>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="details_title">
+        <item quantity="other">%1$d από %2$d στοιχεία:</item>
+        <item quantity="zero">%1$d από %2$d στοιχεία:</item>
+        <item quantity="one">%1$d από %2$d στοιχείο:</item>
+        <item quantity="two">%1$d από %2$d στοιχεία:</item>
+        <item quantity="few">%1$d από %2$d στοιχεία:</item>
+        <item quantity="many">%1$d από %2$d στοιχεία:</item>
+    </plurals>
+    <plurals name="number_of_items_selected">
+        <item quantity="other">Επιλέχθ. %1$d</item>
+        <item quantity="zero">Επιλέχθ. %1$d</item>
+        <item quantity="one">Επιλέχθ. %1$d</item>
+    </plurals>
+    <plurals name="number_of_albums_selected">
+        <item quantity="other">Επιλέχθ. %1$d</item>
+        <item quantity="zero">Επιλέχθ. %1$d</item>
+        <item quantity="one">Επιλέχθ. %1$d</item>
+    </plurals>
+    <plurals name="number_of_groups_selected">
+        <item quantity="other">Επιλέχθ. %1$d</item>
+        <item quantity="zero">Επιλέχθ. %1$d</item>
+        <item quantity="one">Επιλέχθ. %1$d</item>
+    </plurals>
+    <plurals name="make_albums_available_offline">
+        <item quantity="other">Διάθεση λευκωμάτων εκτός σύνδεσης.</item>
+        <item quantity="one">Διάθεση λευκώματος εκτός σύνδεσης.</item>
+    </plurals>
+    <plurals name="delete_selection">
+        <item quantity="other">Διαγραφή επιλεγμέν. στοιχείων;</item>
+        <item quantity="one">Διαγραφή επιλεγμέν. στοιχείου;</item>
+    </plurals>
+</resources>

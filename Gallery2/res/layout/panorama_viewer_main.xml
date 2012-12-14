@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/reLayout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.scalado.hwcamera.panoramaviewer.MyGLSurfaceView android:orientation="horizontal" android:id="@id/myglview" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ImageView android:id="@id/modeSwitchBtn" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="4.0dip" android:src="@drawable/button_flat_view" android:scaleType="center" android:layout_alignParentTop="true" android:layout_centerInParent="true" />
+    <include layout="@layout/review" />
+</RelativeLayout>

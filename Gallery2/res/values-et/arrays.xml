@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="months_abbreviated">
+        <item>Jaan</item>
+        <item>Veebr</item>
+        <item>Märts</item>
+        <item>Apr</item>
+        <item>Mai</item>
+        <item>Juuni</item>
+        <item>Juuli</item>
+        <item>August</item>
+        <item>Sept</item>
+        <item>Okt</item>
+        <item>Nov</item>
+        <item>Dets</item>
+    </string-array>
+    <string-array name="dts_type_choices">
+        <item>Väljas</item>
+        <item>Muusika</item>
+        <item>Film</item>
+    </string-array>
+</resources>

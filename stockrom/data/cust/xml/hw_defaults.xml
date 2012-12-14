@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2009, The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0 
+ *
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and 
+ * limitations under the License.
+ */
+-->
+
+<resources>
+    <!-- DTS2012061905791  liwenq KF66783 20120627 begin -->
+    <integer settings.secure.mobile_data="1"/>
+    <!-- DTS2012061905791  liwenqi KF66783 20120627 end -->
+    <!-- DTS2011021702092 xiongshiyi begin -->
+    <string default_input_method="com.huawei.inputmethod.hwpal/.PinyinIME"/>
+    <!-- DTS2011021702092 xiongshiyi end -->
+    <!-- DTS2011120504027 luowentao59275 20111205 begin -->
+    <!-- Show settings preference of toolbox or not. If value of toolBoxSwitch is set to "1", then value of toolBoxDisplayWidgetNameArray must also available. -->
+    <integer toolBoxSwitch="1"/>
+    <string toolBoxDisplayWidgetNameArray="com.huawei.android.toolbox,com.huawei.android.toolbox.ToolBoxProvider"/>
+    <!-- DTS2011120504027 luowentao59275 20111205 end -->
+    <!-- DTS2011121304270 luowentao 20111213 begin -->
+    <integer hwfeature_earphone="1"/>
+    <!-- DTS2011121304270 luowentao 20111213 end -->
+    <!--DTS2011121307393 luowentao 20111213 begin-->
+    <integer hwfeature_mmssound="1"/>
+    <!--DTS2011121307393 luowentao 20111213 end-->
+    <!-- DTS2011112802074 yangchenghai 00184280 20111208 begin --> 
+    <!-- When remote hand up ,whether screen should wakeup or not ,here we set value is wakeup-->
+    <bool hw_call_wakeup="true"/>
+    <!-- DTS2011112802074 yangchenghai 00184280 20111208 end -->
+    <!-- DTS2012013103297 f00189446 20120131 begin -->
+    <!-- DTS2012042002201 jkf59269 20120420 begin -->
+    <!-- roll back DTS2011121204996 -->
+    <string settings.secure.default_input_method="com.huawei.inputmethod.hwpal/.PinyinIME" />
+    <!-- DTS2012042002201 jkf59269 20120420 end -->
+   <!-- DTS2012020106584 f00189446 20120201 end -->
+    <!-- DTS2012013103297 f00189446 20120131 end -->
+    <!-- DTS2012020106584 f00189446 20120201 begin -->
+    <!-- DTS2012020700535  fengwei 00209624 20120207 begin -->
+    <!-- DTS2012021100251 fengwei 00209624 20120211 begin -->
+    <string white_languages="zh_CN,en_US"/>
+	<!-- string white_languages="zh_CN,en_GB,en_US,pt_PT,es_ES,fr_FR,de_DE,ru_RU,it_IT,zh_TW,zh_HK,es_US,pt_BR,ja_JP,sv_SE,nb_NO,da_DK,tr_TR,cs_CZ,sk_SK,hu_HU,pl_PL,el_GR,et_EE,lv_LV,lt_LT,sl_SI,fi_FI,mk_MK,bg_BG,hr_HR,ro_RO,ar_EG,sr_RS,vi_VN,in_ID,bs_BA,uk_UA,fa_IR,th_TH,ms_MY,nl_NL,ko_KR,en_AU"/-->
+    <!--string white_languages="zh_CN,en_US,zh_TW"/-->
+    <!-- DTS2012021100251 fengwei 00209624 20120211 end -->
+    <!-- DTS2012020700535  fengwei 00209624 20120207 end -->
+    <!-- DTS2012020106584 f00189446 20120201 end -->
+    <!-- DTS2011030905517 shifengbin 20110314 begin -->
+    <!-- DTS2012021100251 fengwei 00209624 20120211 begin -->
+    <bool settings.secure.wifi_on="false"/>
+    <!-- DTS2012021100251 fengwei 00209624 20120211 end -->
+    <integer settings.system.screen_brightness="128"/>
+    <!-- DTS2012022404733 jkf59269 20120224 begin -->
+    <integer screen_timeout_delete15s="1"/>
+    <integer settings.system.screen_off_timeout="60000"/>
+    <!-- DTS2012022404733 jkf59269 20120224 end -->
+    <!-- DTS2012083100838 d00218642 20120927 begin -->
+    <integer settings.system.screen_brightness_mode="1"/>
+    <!-- DTS2012083100838 d00218642 20120927 end -->
+    <!-- DTS2012021702730 jkf59269 20120223 begin -->
+    <string settings.secure.location_providers_allowed="gps"/>
+    <!-- DTS2012021702730 jkf59269 20120223 end -->
+    <!-- DTS2011030905517 shifengbin 20110314 end -->
+	<!-- DTS2012072501133 chenjinhai 00195227 20120724 begin -->
+    <!-- DTS2010092701023 mengxiaokun00172620 20100930 begin -->
+    <bool power_saving_on="true"/>
+    <!-- DTS2010092701023 mengxiaokun00172620 20100930 end -->
+	<!-- DTS2012072501133 chenjinhai 00195227 20120724 end -->
+    <!-- DTS2011121605249 niguanhua 20111216 begin --> 
+    <!-- When remote answer ,whether vibrate should turn on  or not ,here we set value is turn on-->
+    <bool hw_vibrate_on="true"/>
+    <!-- DTS2011121605249 niguanhua 20111216 end --> 
+    <!-- DTS2011080903932 yushaochen 20110811 begin -->
+    <integer hwfeature_endtocall_log="1"/>
+    <!-- DTS2011080903932 yushaochen 20110811 end -->
+    <!-- DTS2011072606499 wanggang 20110802 begin -->
+    <integer log_emergency_number="1"/>
+    <!-- DTS2011072606499 wanggang 20110802 end -->
+    <!-- DTS2011112503270 yangchenghai 00184280 20111205 begin --> 
+    <integer ipcall_enabled="1" />
+    <!-- DTS2011112503270 yangchenghai 00184280 20111205 end --> 
+    <!-- DTS2011111100533 wanggang 20110804 begin -->
+    <integer popup_saveoropen="1"/>
+    <!-- DTS2011111100533 wanggang 20110804 end -->
+    <!-- DTS2011092303772 daixueming 20110923 begin -->
+    <integer enable_wps="1"/>
+    <!-- DTS2011092303772 daixueming 20110923 end -->
+    <!-- DTS2012020104077 lijunyi 20120201 begin -->
+    <!-- DTS2012032404077 wuye00193878 20120324 begin -->
+    <integer hw_detectability_on="0"/>
+    <!-- DTS2012032404077 wuye00193878 20120324 end -->
+    <!-- DTS2012020104077 lijunyi 20120201 end -->
+    <!--DTS2012031304163 lizhenlong 20120314 begin-->
+    <!-- DTS2011112100629 chenshaojun 20120216 begin -->
+    <!-- DTS2012052204729 chenzhong 20120605 begin -->
+     <!-- DTS2012033004965 chenzhong 20120330 begin -->
+    <string reg_plmn_custom="46000,46002,46007;24001,24007,24005;24405,24421;24002,24008,24004;46060,46008;23430,23433;21407,21404,21405,21418;21401,21406,21416;21403,21419,21421;20810,20811" />
+    <!-- DTS2012033004965 chenzhong 20120330 end -->
+    <!-- DTS2012052204729 chenzhong 20120605 end -->
+    <!-- DTS2011112100629 chenshaojun 20120216 end -->
+    <!--DTS2012031304163 lizhenlong 20120314 end-->
+    <!-- DTS2012052804752  huwentao 20120529 begin -->
+    <!-- DTS2012052805338  huwentao 20120616 begin -->
+    <string hw_plmn_spn="2:23806,23806,3 DK,3;2:24002,24002,3,3;2:60202,60202,Vodafone EG,Vodafone"/>
+    <!-- DTS2012052805338  huwentao 20120616 end -->
+    <!-- DTS2012052804752  huwentao 20120529 end -->
+    <!-- DTS2011080904921 linqing 20110816 begin -->
+    <integer hw_calllog_type="1"/>
+    <!-- DTS2011080904921 linqing 20110816 end -->
+    <!-- DTS2012020805160 yanzhennan 20120209 begin -->
+    <!-- DTS2012022705011 yanzhennan 20120227 begin -->
+    <string prepay_postpay_mccmncs="23415,23410"/>
+    <!-- DTS2012022705011 yanzhennan 20120227 end -->
+    <!-- DTS2012020805160 yanzhennan 20120209 end -->
+    <!-- DTS2011122801434 guqi 20120215 begin -->
+    <string default_customed_apk="com.huawei.android.launcher/com.huawei.android.launcher.Launcher"/>
+    <!-- DTS2011122801434 guqi 20120215 end -->
+    <!-- DTS2012022202852 jkf59269 20120224 begin -->
+    <!-- DTS2012040505916 jkf59269 20120405 begin -->
+    <string settings.system.show_password="1"/>
+    <!-- DTS2012040505916 jkf59269 20120405 end -->
+    <!-- DTS2012022202852 jkf59269 20120224 end -->
+    <!-- DTS2012022300283  linrongqiu 20120228 begin -->
+    <integer config_camera_stopFM="0"/>
+    <!-- DTS2012022300283  linrongqiu 20120228 end -->
+    <!-- DTS2012022804212 zhangyafeng 20120228 begin -->
+    <integer hw_video_qulity_level="1"/>
+    <!-- DTS2012022804212 zhangyafeng 20120228 end -->
+    <!-- DTS2012022005900  litie 20120302 begin -->
+    <integer hw_front_camera_support_coloreffect="1"/>
+    <!-- DTS2012022005900  litie 20120302 end -->
+    <!-- DTS2012030702080 lkf59275 20120307 begin -->
+    <integer hw_no_sim="1"/>
+    <!-- DTS2012030702080 lkf59275 20120307 end -->
+    <!-- DTS2012022900099 lkf59275 20120321 begin -->
+    <integer hwfeature_sb_translucent="1"/>
+    <!-- DTS2012022900099 lkf59275 20120321 end -->
+    <!-- < DTS2012041804590 guqi00194542 20120417 begin -->
+    <integer automatic_lightsensor_range="45"/>
+    <!-- DTS2012041804590 guqi00194542 20120417 end > -->
+    <!-- <DTS2012051600062 anzhen 20120516 begin -->
+    <integer user_power_tip="1"/>
+    <!-- DTS2012051600062 anzhen 20120516 end> -->
+    <!--DTS2012050306526 gaopeipei/KF49494 20120503 config display BatteryPercent begin-->
+     <integer battery_percent_switch="1"/>
+    <!--DTS2012050306526 gaopeipei/KF49494 20120503 config display BatteryPercent end-->
+    <!-- < DTS2012052204221 zhaifeng 20120522 begin -->
+	<!-- < DTS2012060709236 mengxinxin 20120607 begin -->
+	<!-- < DTS2012080701919 xiongkegang 20120807 begin -->
+	<!-- < DTS2012082404216 dingtongzhu 20120824 begin -->
+    <string hw_def_theme="/system/themes/Default.hwt"/>
+	<!-- < DTS2012082404216 dingtongzhu 20120824 end -->
+	<!-- < DTS2012080701919 xiongkegang 20120807 end -->
+	<!-- < DTS2012072501606 dingtongzhu 20120725 end -->
+	<!-- DTS2012060709236 mengxinxin 20120607 end > -->
+    <!-- DTS2012052204221 zhaifeng 20120522 end > -->
+    <!-- DTS2012092705217 tangguibin 00214430 20121011 begin -->
+    <!-- DTS2012052807366 yanyongming KF67100 20120528 begin -->
+    <!-- delete settings.system.vibrate_on-->
+    <!-- DTS2012052807366 yanyongming KF67100 20120528 end -->
+    <integer vibrate_on_message="1"/>
+    <integer vibrate_when_ringing="1"/>
+    <!-- DTS2012092705217 tangguibin 00214430 20121011 end -->
+	<!-- DTS2012072405032 wangfeilong KF64744 20120724 begin -->
+	<integer settings.system.wifi_sleep_policy="1"/>
+	<!-- DTS2012072405032 wangfeilong KF64744 20120724 end -->
+    <!-- DTS2012011101641 lianmin 20120111 begin -->  
+    <!-- Show mms expired status when "show_mms_expired_status" is true.-->  
+    <bool show_mms_expired_status="true"/>  
+    <!-- DTS2012011101641 lianmin 20120111 end -->
+    <!-- DTS2012061405071  zhangwei 84001621 20120614 begin -->
+    <!-- 
+    this is used for both HwStartupGuide and HwHelpCenter
+    if hard_key_type=1 the beta has hard keys of  "menu","home","back"
+    case 2: the beta has hard keys of "back","home","menu"
+    case default: the has hard keys of "back", "home", "recent"
+    -->
+    <integer hard_key_type="2"/>
+    <!-- DTS2012061405071  yanyongming KF67100 20120528 end -->
+    <!-- DTS2012062101621 wangfeilong 2012-06-21 begin -->
+    <integer wifi_p2p_state="1" />
+    <!-- DTS2012062101621 wangfeilong 2012-06-21 end -->
+    <!-- DTS2012062803400 f00189446 20120628 begin -->
+    <string settings.secure.search_global_search_activity="com.android.easou.search/.SearchActivity" /> 
+    <!-- DTS2012062803400 f00189446 20120628 end -->
+    <!-- DTS2012060703065 y00193929 20120615 begin -->
+    <integer has_encryption="0"/>
+    <!-- DTS2012060703065 y00193929 20120615 end -->
+    <integer hw_zoom_step="1"/>
+    <!-- DTS2012032707365 lKF55014 20120327 begin -->
+    <string disable_apn="op_rule=spnfilter;spnfilter=NRJ Mobile;dis_filter=name;name=SFR webphone,SFR mobile,SFR option modem,MMS,Orange Internet GPRS/3G,Orange World,Orange MMS|op_rule=spnfilter;spnfilter=Virgin Mobile;dis_filter=name;name=Orange Internet GPRS/3G,Orange World,Orange MMS,Proximus|op_rule=spnfilter;spnfilter=Orange F;dis_filter=name;name=NRJWEB,NRJMMS,VM GPRS,VM MMS|op_rule=spnfilter;spnfilter=F SFR;dis_filter=name;name=NRJWEB,NRJMMS|op_rule=spnfilter;spnfilter=Proximus;dis_filter=name;name=VM GPRS,VM MMS|op_rule=imsistart;imsistart=2620739;dis_filter=name;name=o2 Internet Prepaid,LIDL Internet,Tchibo Internet,Fonic Internet|op_rule=imsistart;imsistart=2620749;dis_filter=name;name=o2 Internet,LIDL Internet,Tchibo Internet,Fonic Internet|op_rule=imsistart;imsistart=26207520;dis_filter=name;name=o2 Internet,o2 Internet Prepaid,Tchibo Internet,Fonic Internet|op_rule=imsistart;imsistart=26207500;dis_filter=name;name=o2 Internet,o2 Internet Prepaid,LIDL Internet,Fonic Internet|op_rule=imsistart;imsistart=26207515;dis_filter=name;name=o2 Internet,o2 Internet Prepaid,LIDL Internet,Tchibo Internet" />
+    <!-- DTS2012032707365 lKF55014 20120327 end -->
+    <!-- DTS2012062804800 zhouxiaming/KF70267 20120629 begin -->
+    <integer custom_bookmark_homepage="1" />
+    <!-- DTS2012062804800 zhouxiaming/KF70267 20120629 end -->
+    <!-- DTS2012070200291 liudonghua/l00193243 20120702 begin -->
+    <integer custom_server_bookmark_homepage="1" />
+    <!-- DTS2012070200291 liudonghua/l00193243 20120702 end -->
+    <!--DTS2012080305180  g81003949 20120802 begin-->
+    <integer hwfeature_sb_translucent="1"/>
+    <!--DTS2012080305180  g81003949 20120802 end-->
+    <!-- DTS2012080901669 g81003949 20120809 being-->
+    <integer battery_percent_switch="1"/>
+    <!-- DTS2012080901669 g81003949 20120809 end-->
+    <!-- DTS2011080903932 yushaochen 20110811 begin -->
+    <integer hwfeature_endtocall_log="1"/>
+    <!-- DTS2011080903932 yushaochen 20110811 end -->
+        <!-- DTS2012071002795 c00195768/caozhiqiang 20120711 begin -->
+    <integer hw_camera_mute_able="1"/>
+    <!-- Dts2012071002795 c00195768/caozhiqiang 20120711 end -->
+	<!-- DTS2012071008264 z00213829 20120716 begin -->
+    <integer hwsupport_fastresponsetoincommingcall="1"/>
+    <!-- DTS2012071008264 z00213829 20120716 end -->
+	<!-- DTS2012071202967 l00183889/ligang 20120719 begin -->
+	<bool hw_def_vassistant="true"/>
+	<!-- DTS2012071202967 l00183889/ligang 20120719 end -->
+	<!-- DTS2012071604972 zhangshun 20120725 begin -->
+    <bool is_show_google="true"/>
+    <!-- DTS2012071604972 zhangshun 20120725 end -->
+    <!-- wangxiuwen 20120928 begin -->
+    <bool settings.system.screen_brightness_mode="true"/>
+    <string fast_power_on="0" />
+    <!-- wangxiuwen 20120928 end -->
+    <!-- DTS2012101904819 xiecaibao xkf67066 20121021 begin -->
+    <string hw_theme_sort="Default##Breeze##Halo##Android"/>
+    <!-- DTS2012101904819 xiecaibao xkf67066 20121021 end -->
+    <string settings.system.sound_effects_enabled="1"/>
+</resources>
+

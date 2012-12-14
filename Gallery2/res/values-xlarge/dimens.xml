@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="appwidget_width">240.0dip</dimen>
+    <dimen name="appwidget_height">240.0dip</dimen>
+    <dimen name="stack_photo_width">220.0dip</dimen>
+    <dimen name="stack_photo_height">165.0dip</dimen>
+    <dimen name="albumset_slot_gap">1.0dip</dimen>
+    <dimen name="album_slot_gap">1.0dip</dimen>
+</resources>

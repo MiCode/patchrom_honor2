@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="months_abbreviated">
+        <item>Janv.</item>
+        <item>Févr.</item>
+        <item>Mars</item>
+        <item>Avr.</item>
+        <item>Mai</item>
+        <item>Juin</item>
+        <item>Juil.</item>
+        <item>Août</item>
+        <item>Sept.</item>
+        <item>Oct.</item>
+        <item>Nov.</item>
+        <item>Déc.</item>
+    </string-array>
+    <string-array name="dts_type_choices">
+        <item>Désactivé</item>
+        <item>Musique</item>
+        <item>Film</item>
+    </string-array>
+</resources>

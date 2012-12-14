@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="num_seconds_ago">
+        <item quantity="other">Prieš %d sekundes</item>
+        <item quantity="one">Prieš 1 sekundę</item>
+    </plurals>
+    <plurals name="num_minutes_ago">
+        <item quantity="other">Prieš %d minutes</item>
+        <item quantity="one">Prieš 1 minutę</item>
+    </plurals>
+    <plurals name="num_hours_ago">
+        <item quantity="other">Prieš %d valandas</item>
+        <item quantity="one">Prieš 1 valandą</item>
+    </plurals>
+    <plurals name="last_num_days">
+        <item quantity="other">Per paskutines %d dienas.</item>
+    </plurals>
+    <plurals name="num_days_ago">
+        <item quantity="other">Prieš %d dienas</item>
+        <item quantity="one">vakar</item>
+    </plurals>
+    <plurals name="in_num_seconds">
+        <item quantity="other">per %d sekundes</item>
+        <item quantity="one">per 1 sekundę</item>
+    </plurals>
+    <plurals name="in_num_minutes">
+        <item quantity="other">per %d minutes</item>
+        <item quantity="one">per 1 minutę</item>
+    </plurals>
+    <plurals name="in_num_hours">
+        <item quantity="other">per %d valandas</item>
+        <item quantity="one">per 1 valandą</item>
+    </plurals>
+    <plurals name="in_num_days">
+        <item quantity="other">per %d dienas</item>
+        <item quantity="one">rytoj</item>
+    </plurals>
+    <plurals name="abbrev_num_seconds_ago">
+        <item quantity="other">Prieš %d sek.</item>
+        <item quantity="one">Prieš 1 sek.</item>
+    </plurals>
+    <plurals name="abbrev_num_minutes_ago">
+        <item quantity="other">Prieš %d min.</item>
+        <item quantity="one">Prieš 1 min.</item>
+    </plurals>
+    <plurals name="abbrev_num_hours_ago">
+        <item quantity="other">Prieš %d valandas</item>
+        <item quantity="one">Prieš 1 valandą</item>
+    </plurals>
+    <plurals name="abbrev_num_days_ago">
+        <item quantity="other">Prieš %d dienas</item>
+        <item quantity="one">vakar</item>
+    </plurals>
+    <plurals name="abbrev_in_num_seconds">
+        <item quantity="other">per %d sek.</item>
+        <item quantity="one">per 1 sek.</item>
+    </plurals>
+    <plurals name="abbrev_in_num_minutes">
+        <item quantity="other">per %d min.</item>
+        <item quantity="one">per 1 min.</item>
+    </plurals>
+    <plurals name="abbrev_in_num_hours">
+        <item quantity="other">per %d valandas</item>
+        <item quantity="one">per 1 valandą</item>
+    </plurals>
+    <plurals name="abbrev_in_num_days">
+        <item quantity="other">per %d dienas</item>
+        <item quantity="one">rytoj</item>
+    </plurals>
+    <plurals name="wifi_available">
+        <item quantity="other">galimi „Wi-Fi“ tinklai</item>
+        <item quantity="one">Galimas „Wi-Fi“ tinklas</item>
+    </plurals>
+    <plurals name="wifi_available_detailed">
+        <item quantity="other">Atidaryti galimus „Wi-Fi“ tinklus</item>
+        <item quantity="one">Galimas atviras „Wi-Fi“ tinklas</item>
+    </plurals>
+    <plurals name="matches_found">
+        <item quantity="other">%1$d iš %2$d</item>
+        <item quantity="one">1 atitiktis</item>
+    </plurals>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.hwcamera.hwui.RotateLinearLayout android:id="@id/rotateProgressbar" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:layout_gravity="bottom" android:orientation="horizontal" android:background="@drawable/bg_submenu" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ProgressBar android:id="@id/progress" android:padding="4.0dip" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="4.0dip" android:layout_marginBottom="10.0dip" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:padding="4.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:minHeight="60.0dip">
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="#ffffffff" android:layout_gravity="center_vertical" android:id="@id/loadingView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/stitching" />
+        </LinearLayout>
+    </LinearLayout>
+</com.android.hwcamera.hwui.RotateLinearLayout>

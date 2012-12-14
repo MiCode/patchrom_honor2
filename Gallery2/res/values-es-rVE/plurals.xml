@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="details_title">
+        <item quantity="other">%1$d de %2$d elementos:</item>
+        <item quantity="zero">%1$d de %2$d elementos:</item>
+        <item quantity="one">%1$d de %2$d elemento:</item>
+        <item quantity="two">%1$d de %2$d elementos:</item>
+        <item quantity="few">%1$d de %2$d elementos:</item>
+        <item quantity="many">%1$d de %2$d elementos:</item>
+    </plurals>
+    <plurals name="make_albums_available_offline">
+        <item quantity="other">Álbum disponible en línea.</item>
+        <item quantity="one">Álbum disponible fuera de línea.</item>
+    </plurals>
+    <plurals name="delete_selection">
+        <item quantity="other">¿Eliminar elementos?</item>
+        <item quantity="one">¿Eliminar elemento?</item>
+    </plurals>
+</resources>

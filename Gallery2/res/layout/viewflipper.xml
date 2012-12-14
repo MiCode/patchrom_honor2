@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewFlipper android:orientation="vertical" android:id="@id/viewFlipper" android:background="@drawable/bg_menu_h" android:longClickable="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:keepScreenOn="false" android:isScrollContainer="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/menu4" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:gravity="center_vertical" android:background="@drawable/bg_menu_title_v" android:paddingLeft="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="28.0dip" android:text="@string/settings_title" />
+        <ScrollView android:id="@id/settingScroll" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:id="@id/advice_settings" android:paddingRight="2.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </ScrollView>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/white_balance" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:gravity="center_vertical" android:background="@drawable/bg_menu_title_v" android:paddingLeft="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="28.0dip" android:text="@string/pref_camera_whitebalance_title" />
+        <ListView android:id="@id/whitebalancelist" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/icontext_selector" android:cacheColorHint="#00000000" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/menu2" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:gravity="center_vertical" android:id="@id/textView2" android:background="@drawable/bg_menu_title_v" android:paddingLeft="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="28.0dip" android:text="@string/image_adjustment" />
+        <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include layout="@layout/progressbarstyle" />
+        </ScrollView>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/menu3" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:gravity="center_vertical" android:background="@drawable/bg_menu_title_v" android:paddingLeft="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="28.0dip" android:text="@string/pref_camera_shootmode_title" />
+        <ListView android:id="@id/radiolist" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/icontext_selector" android:cacheColorHint="@android:color/transparent" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/videosize" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:gravity="center_vertical" android:background="@drawable/bg_menu_title_v" android:paddingLeft="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="28.0dip" android:text="@string/pref_camera_videosize_title" />
+        <ListView android:id="@id/videosizelist" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/icontext_selector" android:cacheColorHint="#00000000" />
+    </LinearLayout>
+</ViewFlipper>

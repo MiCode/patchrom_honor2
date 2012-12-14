@@ -1,0 +1,12 @@
+TOOLS=/mnt/sdcard/porting/tools
+if [ -f $TOOLS/adbd ]; then
+    stop adbd
+    mount -o remount,rw / /
+    rm /sbin/adbd
+    cat $TOOLS/adbd > /sbin/adbd
+    chmod 750 /sbin/adbd
+    mount -o remount,ro / /
+    start adbd
+else
+    echo "adbd not found"
+fi

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout android:id="@id/camera_state_timer_smile_stabile" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="26.0dip" android:layout_marginRight="26.0dip" android:layout_alignParentTop="true" android:layout_alignParentRight="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableRow>
+        <com.android.hwcamera.RotateImageView android:id="@id/camera_state_stabilization" android:paddingRight="5.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="48.0dip" android:src="@drawable/ic_stat_stabilization" />
+        <com.android.hwcamera.RotateImageView android:id="@id/camera_state_blink" android:paddingRight="5.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="48.0dip" android:src="@drawable/ic_stat_blink" />
+        <com.android.hwcamera.RotateImageView android:id="@id/camera_state_smile" android:paddingRight="5.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="48.0dip" android:src="@drawable/ic_stat_smile" />
+        <include android:paddingRight="5.0dip" layout="@layout/gps_signal_layout" />
+        <com.android.hwcamera.RotateImageView android:id="@id/camera_state_self_timer" android:paddingRight="5.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="48.0dip" android:src="@drawable/ic_stat_self_timer" />
+        <com.android.hwcamera.hwui.RotateTextView android:textAppearance="?android:textAppearanceLarge" android:textSize="35.0sp" android:gravity="center" android:id="@id/camera_state_remain_text" android:layout_width="48.0dip" android:layout_height="wrap_content" android:shadowColor="@color/text_shadow_black" android:shadowDx="2.0" android:shadowDy="2.0" android:shadowRadius="2.0" />
+    </TableRow>
+</TableLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="details_title">
+        <item quantity="other">第 %1$d 個項目，共 %2$d 個項目：</item>
+        <item quantity="zero">第 %1$d 個項目，共 %2$d 個項目：</item>
+        <item quantity="one">第 %1$d 個項目，共 %2$d 個項目：</item>
+        <item quantity="two">第 %1$d 個項目，共 %2$d 個項目：</item>
+        <item quantity="few">第 %1$d 個項目，共 %2$d 個項目：</item>
+        <item quantity="many">第 %1$d 個項目，共 %2$d 個項目：</item>
+    </plurals>
+    <plurals name="number_of_items_selected">
+        <item quantity="other">已選擇 %1$d個</item>
+        <item quantity="zero">已選擇 %1$d個</item>
+        <item quantity="one">已選擇 %1$d個</item>
+    </plurals>
+    <plurals name="number_of_albums_selected">
+        <item quantity="other">已選擇 %1$d個</item>
+        <item quantity="zero">已選擇 %1$d個</item>
+        <item quantity="one">已選擇 %1$d個</item>
+    </plurals>
+    <plurals name="number_of_groups_selected">
+        <item quantity="other">已選擇 %1$d個</item>
+        <item quantity="zero">已選擇 %1$d個</item>
+        <item quantity="one">已選擇 %1$d個</item>
+    </plurals>
+    <plurals name="make_albums_available_offline">
+        <item quantity="other">相簿可離線使用。</item>
+        <item quantity="one">相簿可離線使用。</item>
+    </plurals>
+    <plurals name="delete_selection">
+        <item quantity="other">刪除已選項目？</item>
+        <item quantity="one">刪除已選項目？</item>
+    </plurals>
+</resources>

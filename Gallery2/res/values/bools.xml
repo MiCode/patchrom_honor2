@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="config_largeHeap">true</bool>
+    <bool name="show_action_bar_title">true</bool>
+    <bool name="picker_is_dialog">false</bool>
+</resources>

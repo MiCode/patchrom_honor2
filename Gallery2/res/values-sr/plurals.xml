@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="details_title">
+        <item quantity="other">%1$d od %2$d stavki:</item>
+        <item quantity="zero">%1$d od %2$d stavki:</item>
+        <item quantity="one">%1$d od %2$d stavke:</item>
+        <item quantity="two">%1$d od %2$d stavke:</item>
+        <item quantity="few">%1$d od %2$d stavke:</item>
+        <item quantity="many">%1$d od %2$d stavki:</item>
+    </plurals>
+    <plurals name="number_of_items_selected">
+        <item quantity="other">Izabrano je %1$d</item>
+        <item quantity="zero">Izabrano je %1$d</item>
+        <item quantity="one">Izabrano je %1$d</item>
+    </plurals>
+    <plurals name="number_of_albums_selected">
+        <item quantity="other">Izabrano je %1$d</item>
+        <item quantity="zero">Izabrano je %1$d</item>
+        <item quantity="one">Izabrano je %1$d</item>
+    </plurals>
+    <plurals name="number_of_groups_selected">
+        <item quantity="other">Izabrano je %1$d</item>
+        <item quantity="zero">Izabrano je %1$d</item>
+        <item quantity="one">Izabrano je %1$d</item>
+    </plurals>
+    <plurals name="make_albums_available_offline">
+        <item quantity="other">Albumi su dostupni van mreže.</item>
+        <item quantity="one">Album je dostupan van mreže.</item>
+    </plurals>
+    <plurals name="delete_selection">
+        <item quantity="other">Brišete izabrane stavke?</item>
+        <item quantity="one">Brišete izabranu stavku?</item>
+    </plurals>
+</resources>
