@@ -1,7 +1,5 @@
 @echo off
 echo.
-echo 关机，按 音量键上 连接到电脑进入fastboot模式（蓝灯亮）
-echo.
 echo  是否刷入data.img
 echo 【注意】
 echo       刷入data.img会造成DATA用户数据丢失，请提前做好备份
@@ -21,11 +19,6 @@ fastboot flash userdata data.img >nul
 echo.
 echo 刷入 system.img ...
 fastboot flash system system.img >nul
-
-:flash_boot
-echo.
-echo 刷入 boot(ics16.ief) ...
-fastboot flash boot ics16.elf >nul
 
 :flash_done
 echo.
