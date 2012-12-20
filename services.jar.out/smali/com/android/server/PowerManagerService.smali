@@ -2475,7 +2475,7 @@
 
     iget-boolean v3, p0, Lcom/android/server/PowerManagerService;->mProximitySensorEnabled:Z
 
-    if-nez v3, :cond_0
+    if-nez v3, :cond_miui_0
 
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
@@ -2529,6 +2529,12 @@
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     throw v3
+    :cond_miui_0
+    iget-boolean v3, p0, Lcom/android/server/PowerManagerService;->mProximitySensorActive:Z
+
+    invoke-direct {p0, v3}, Lcom/android/server/PowerManagerService;->proximityChangedLocked(Z)V
+
+    goto :cond_0
 .end method
 
 .method private enableSmartBackLightSensorLocked(Z)V
@@ -2538,7 +2544,7 @@
     .prologue
     iget-boolean v2, p0, Lcom/android/server/PowerManagerService;->mSmartBackLightEnabled:Z
 
-    if-nez v2, :cond_miui_0
+    if-nez v2, :cond_0
 
     const/4 p1, 0x0
 
@@ -2607,12 +2613,6 @@
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     throw v2
-    :cond_miui_0
-    iget-boolean v2, p0, Lcom/android/server/PowerManagerService;->mProximitySensorActive:Z
-
-    invoke-direct {p0, v2}, Lcom/android/server/PowerManagerService;->proximityChangedLocked(Z)V
-
-    goto :cond_0
 .end method
 
 .method private forceReenableScreen()V
@@ -6511,7 +6511,7 @@
 
     const/4 v3, 0x2
 
-    invoke-virtual {v2, v5, v3, v5}, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;->animateTo(III)V
+    invoke-static {p0, v2, v5, v3, v5}, Lcom/android/server/PowerManagerService$Injector;->animateTo(Lcom/android/server/PowerManagerService;Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;III)V
 
     :cond_1
     invoke-static {p1}, Lcom/android/server/PowerManagerService;->nativeSetScreenState(Z)I
