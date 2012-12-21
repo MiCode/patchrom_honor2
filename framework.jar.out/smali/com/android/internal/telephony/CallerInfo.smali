@@ -878,6 +878,12 @@
 
     iput-boolean v8, v3, Lcom/android/internal/telephony/CallerInfo;->contactExists:Z
 
+    invoke-static {p0, v3, p2}, Lmiui/telephony/ExtraCallerInfo;->getExtraCallerInfo(Landroid/content/Context;Lcom/android/internal/telephony/CallerInfo;Landroid/database/Cursor;)Lmiui/telephony/ExtraCallerInfo;
+
+    move-result-object v8
+
+    iput-object v8, v3, Lcom/android/internal/telephony/CallerInfo;->extra:Lmiui/telephony/ExtraCallerInfo;
+
     .end local v0           #columnIndex:I
     .end local v7           #url:Ljava/lang/String;
     :cond_7
