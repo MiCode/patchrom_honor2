@@ -278,7 +278,8 @@ ro.com.google.clientidbase=android-huawei
 #############################
 ## Add by miui
 #############################
-persist.sys.main_storage=external_sd
+#persist.sys.main_storage=external_sd
+persist.sys.main_storage=internal_sd
 persist.sys.timezone=Asia/Shanghai
 ro.config.notification_sound=FadeIn.ogg
 ro.config.alarm_alert=GoodMorning.ogg

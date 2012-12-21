@@ -104,3 +104,15 @@ root-phone: remount
 	adb shell su -c "chmod 777 /system/xbin/insecure"
 	adb shell su -c "insecure"
 
+
+fullota-to-phone: fullota
+	adb push out/fullota.zip /sdcard/
+
+apply-fullota: 
+	adb push out/fullota.zip /sdcard/
+	adb shell su -c 'cat /dev/null > /cache/recovery/command'
+	adb shell su -c 'echo "--wipe_data" >> /cache/recovery/command'
+	adb shell su -c 'echo "--wipe_cache" >> /cache/recovery/command'
+	adb shell su -c 'echo "--update_package=/sdcard/fullota.zip" >> /cache/recovery/command'
+	adb reboot recovery
+
