@@ -1,0 +1,15 @@
+﻿1、先刷HONOR2 emui B530
+
+2、开机运行 adb reboot bootloader 进入bootloader模式
+
+3、flash.bat 刷机
+
+
+
+
+注意：
+
+1、第一次刷MIUI需要刷新data.img
+
+2、刷机会清空内置SDCARD，刷机前做好数据备份
+
