@@ -14,6 +14,7 @@ private-phone-apps := ApplicationsProvider \
 					  HwBluetoothImport \
 					  HwFMRadio \
 					  HwGlobalDolbyEffect \
+					  HwProfileSwitcher \
 					  HwToolBox \
 					  HwWiFiDirect \
 					  HwWiFiHotspot \

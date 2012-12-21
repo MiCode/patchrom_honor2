@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">原厂设置</string>
+    <string name="stock_settings">原厂设置</string>
+    <string name="power_saving_mode">省电模式</string>
+    <string name="Dolby_mobile_settings">杜比移动技术</string>
+</resources>
+

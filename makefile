@@ -43,7 +43,8 @@ local-pre-zip-misc:
 	cp out/framework2.jar $(ZIP_DIR)/system/framework/framework_ext.jar
 	rm -f $(ZIP_DIR)/system/framework/framework2.jar
 	cp other/build.prop $(ZIP_DIR)/system/build.prop
-	cp other/bootanimation $(ZIP_DIR)/system/bin
+	cp other/bootanimation $(ZIP_DIR)/system/bin/
+	cp other/StockSettings.apk $(ZIP_DIR)/system/app/
 
 #jar
 %.phone : out/%.jar

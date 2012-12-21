@@ -82,6 +82,7 @@ system/app/SoundRecorder.apk 0 0 644
 system/app/Stk.apk 0 0 644
 system/app/Superuser.apk 0 0 644
 system/app/SystemUI.apk 0 0 644
+system/app/StockSettings.apk 0 0 644
 system/app/TelephonyProvider.apk 0 0 644
 system/app/UserDictionaryProvider.apk 0 0 644
 system/app/VisualizationWallpapers.apk 0 0 644
