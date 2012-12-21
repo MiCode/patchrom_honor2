@@ -45,6 +45,7 @@ local-pre-zip-misc:
 	cp other/build.prop $(ZIP_DIR)/system/build.prop
 	cp other/bootanimation $(ZIP_DIR)/system/bin/
 	cp other/StockSettings.apk $(ZIP_DIR)/system/app/
+	cp other/Settings_ex.apk $(ZIP_DIR)/system/app/
 
 #jar
 %.phone : out/%.jar

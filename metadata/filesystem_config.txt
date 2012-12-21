@@ -75,6 +75,7 @@ system/app/ProjectMenuAct.apk 0 0 644
 system/app/Provision.apk 0 0 644
 system/app/RootExplorer.apk 0 0 644
 system/app/Settings.apk 0 0 644
+system/app/Settings_ex.apk 0 0 644
 system/app/SettingsProvider.apk 0 0 644
 system/app/SharedStorageBackup.apk 0 0 644
 system/app/SmartcardService.apk 0 0 644

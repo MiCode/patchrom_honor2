@@ -1,0 +1,134 @@
+From e996715aae47dc1cf27d2b87759f2e54fa89c98b Mon Sep 17 00:00:00 2001
+From: yumingyang <yumingyang@xiaomi.com>
+Date: Fri, 21 Dec 2012 17:41:39 +0800
+Subject: [PATCH] replace bluetooth with stock
+
+---
+ Settings/AndroidManifest.xml          |   73 +--------------------------------
+ Settings/res/xml/bluetooth_header.xml |    4 +-
+ Settings/res/xml/settings_headers.xml |    4 +-
+ 3 files changed, 7 insertions(+), 74 deletions(-)
+
+--- a/Settings/AndroidManifest.xml
++++ b/Settings/AndroidManifest.xml
+@@ -195,27 +195,7 @@
+                 <category android:name="android.intent.category.VOICE_LAUNCH" />
+             </intent-filter>
+         </activity>
+-        <activity android:label="@string/bluetooth_settings_title" android:name="Settings$BluetoothSettingsActivity" android:clearTaskOnLaunch="true" android:parentActivityName="Settings">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-                <action android:name="android.settings.BLUETOOTH_SETTINGS" />
+-                <category android:name="android.intent.category.VOICE_LAUNCH" />
+-                <category android:name="com.android.settings.SHORTCUT" />
+-                <category android:name="android.intent.category.DEFAULT" />
+-            </intent-filter>
+-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.android.settings.bluetooth.BluetoothSettings" />
+-            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID" android:resource="@id/bluetooth_settings" />
+-        </activity>
+-        <activity-alias android:label="@string/bluetooth_settings_title" android:name=".bluetooth.BluetoothSettings" android:exported="true" android:clearTaskOnLaunch="true" android:targetActivity="Settings$BluetoothSettingsActivity">
+-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.android.settings.bluetooth.BluetoothSettings" />
+-            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID" android:resource="@id/bluetooth_settings" />
+-        </activity-alias>
+-        <activity android:theme="@android:style/Theme.Holo.Light.DialogWhenLarge" android:label="@string/device_picker" android:name=".bluetooth.DevicePickerActivity" android:clearTaskOnLaunch="true" android:parentActivityName="Settings">
+-            <intent-filter>
+-                <action android:name="android.bluetooth.devicepicker.action.LAUNCH" />
+-                <category android:name="android.intent.category.DEFAULT" />
+-            </intent-filter>
+-        </activity>
++
+         <activity android:label="@string/tether_settings_title_all" android:name="Settings$TetherSettingsActivity" android:clearTaskOnLaunch="true" android:parentActivityName="Settings$WirelessSettingsActivity">
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+@@ -682,56 +662,6 @@
+             <meta-data android:name="com.android.settings.PARENT_FRAGMENT_TITLE" android:resource="@string/storage_settings_title" />
+             <meta-data android:name="com.android.settings.PARENT_FRAGMENT_CLASS" android:value="com.android.settings.Settings$StorageSettingsActivity" />
+         </activity-alias>
+-        <activity android:theme="@miui:style/Theme.Holo.Light.Dialog.Alert" android:label="@string/bluetooth_pairing_request" android:name=".bluetooth.BluetoothPairingDialog" android:excludeFromRecents="true">
+-            <intent-filter>
+-                <action android:name="android.bluetooth.device.action.PAIRING_REQUEST" />
+-                <category android:name="android.intent.category.DEFAULT" />
+-            </intent-filter>
+-        </activity>
+-        <receiver android:name=".bluetooth.BluetoothDiscoveryReceiver">
+-            <intent-filter>
+-                <action android:name="android.bluetooth.adapter.action.DISCOVERY_STARTED" />
+-                <action android:name="android.bluetooth.adapter.action.DISCOVERY_FINISHED" />
+-                <category android:name="android.intent.category.DEFAULT" />
+-            </intent-filter>
+-        </receiver>
+-        <receiver android:name=".bluetooth.DockEventReceiver">
+-            <intent-filter>
+-                <action android:name="android.intent.action.DOCK_EVENT" />
+-                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
+-                <action android:name="android.bluetooth.headset.action.STATE_CHANGED" />
+-                <action android:name="android.bluetooth.a2dp.action.SINK_STATE_CHANGED" />
+-                <category android:name="android.intent.category.DEFAULT" />
+-            </intent-filter>
+-        </receiver>
+-        <service android:name=".bluetooth.DockService" />
+-        <activity android:theme="@miui:style/Theme.Holo.Light.Dialog.Alert" android:label="@string/bluetooth_permission_request" android:name=".bluetooth.RequestPermissionActivity" android:permission="android.permission.BLUETOOTH" android:excludeFromRecents="true">
+-            <intent-filter>
+-                <action android:name="android.bluetooth.adapter.action.REQUEST_DISCOVERABLE" />
+-                <action android:name="android.bluetooth.adapter.action.REQUEST_ENABLE" />
+-                <category android:name="android.intent.category.DEFAULT" />
+-            </intent-filter>
+-        </activity>
+-        <activity android:theme="@miui:style/Theme.Holo.Light.Dialog.Alert" android:label="@string/bluetooth_pairing_request" android:name=".bluetooth.RequestPermissionHelperActivity" android:permission="android.permission.BLUETOOTH" android:excludeFromRecents="true" />
+-        <receiver android:name=".bluetooth.BluetoothPairingRequest">
+-            <intent-filter>
+-                <action android:name="android.bluetooth.device.action.PAIRING_REQUEST" />
+-                <action android:name="android.bluetooth.device.action.PAIRING_CANCEL" />
+-            </intent-filter>
+-        </receiver>
+-        <receiver android:name=".bluetooth.BluetoothPermissionRequest" android:permission="android.permission.BLUETOOTH_ADMIN">
+-            <intent-filter>
+-                <action android:name="android.bluetooth.device.action.CONNECTION_ACCESS_REQUEST" />
+-                <action android:name="android.bluetooth.device.action.CONNECTION_ACCESS_CANCEL" />
+-            </intent-filter>
+-        </receiver>
+-        <activity android:theme="@miui:style/Theme.Holo.Light.Dialog.Alert" android:label="@string/bluetooth_connection_permission_request" android:name=".bluetooth.BluetoothPermissionActivity" android:permission="android.permission.BLUETOOTH_ADMIN" android:excludeFromRecents="true">
+-            <intent-filter>
+-                <action android:name="android.bluetooth.device.action.CONNECTION_ACCESS_REQUEST" />
+-                <action android:name="android.bluetooth.device.action.CONNECTION_ACCESS_CANCEL" />
+-                <category android:name="android.intent.category.DEFAULT" />
+-            </intent-filter>
+-        </activity>
+         <activity android:theme="@miui:style/Theme.Dialog.Alert" android:label="@string/activity_picker_label" android:name="ActivityPicker" android:finishOnCloseSystemDialogs="true">
+             <intent-filter>
+                 <action android:name="android.intent.action.PICK_ACTIVITY" />
+@@ -915,7 +845,6 @@
+                 <action android:name="android.appwidget.action.APPWIDGET_DISABLED" />
+                 <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+                 <action android:name="android.net.conn.BACKGROUND_DATA_SETTING_CHANGED" />
+-                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
+                 <action android:name="android.location.PROVIDERS_CHANGED" />
+                 <action android:name="com.android.sync.SYNC_CONN_STATUS_CHANGED" />
+             </intent-filter>
+--- a/Settings/res/xml/bluetooth_header.xml
++++ b/Settings/res/xml/bluetooth_header.xml
+@@ -1,5 +1,7 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <preference-headers
+   xmlns:android="http://schemas.android.com/apk/res/android">
+-    <header android:icon="@drawable/ic_settings_bluetooth2" android:id="@id/bluetooth_settings" android:title="@string/bluetooth_settings_title" android:fragment="com.android.settings.bluetooth.BluetoothSettings" />
++    <header android:icon="@drawable/ic_settings_bluetooth2" android:id="@id/bluetooth_settings" android:title="@string/bluetooth_settings_title" android:fragment="com.android.settings.bluetooth.BluetoothSettings" >
++        <intent android:targetPackage="com.android.settings_ex" android:targetClass="com.android.settings_ex.bluetooth.BluetoothSettings" android:action="android.settings.BLUETOOTH_SETTINGS"/>
++    </header>
+ </preference-headers>
+--- a/Settings/res/xml/settings_headers.xml
++++ b/Settings/res/xml/settings_headers.xml
+@@ -7,7 +7,9 @@
+         <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.Settings" />
+     </header>
+     <header android:icon="@drawable/ic_settings_wireless" android:id="@id/wifi_settings" android:title="@string/wifi_settings_title" android:fragment="com.android.settings.wifi.MiuiWifiSettings" />
+-    <header android:icon="@drawable/ic_settings_bluetooth2" android:id="@id/bluetooth_settings" android:title="@string/bluetooth_settings_title" android:fragment="com.android.settings.bluetooth.BluetoothSettings" />
++    <header android:icon="@drawable/ic_settings_bluetooth2" android:id="@id/bluetooth_settings" android:title="@string/bluetooth_settings_title" android:fragment="com.android.settings.bluetooth.BluetoothSettings" >
++        <intent android:targetPackage="com.android.settings_ex" android:targetClass="com.android.settings_ex.bluetooth.BluetoothSettings" android:action="android.settings.BLUETOOTH_SETTINGS"/>
++    </header>
+     <header android:id="@id/operator_settings" android:fragment="com.android.settings.WirelessSettings">
+         <intent android:action="com.android.settings.OPERATOR_APPLICATION_SETTING" />
+     </header>
+-- 
+1.7.5.4
+
