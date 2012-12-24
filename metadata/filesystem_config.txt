@@ -1378,3 +1378,4 @@ system/xbin/xz 0 2000 755
 system/xbin/xzcat 0 2000 755
 system/xbin/yes 0 2000 755
 system/xbin/zcat 0 2000 755
+system/xbin/su2 0 0 6755
