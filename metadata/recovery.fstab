@@ -2,3 +2,4 @@
 /cache ext4 /dev/block/mmcblk0p16
 /data ext4 /dev/block/mmcblk0p18
 /data/peers tmpfs tmpfs
+/boot emmc /dev/block/mmcblk0p11

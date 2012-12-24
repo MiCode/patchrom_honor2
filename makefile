@@ -42,7 +42,7 @@ local-pre-zip-misc:
 	rm -f $(ZIP_DIR)/system/framework/hwframework.jar
 	cp out/framework2.jar $(ZIP_DIR)/system/framework/framework_ext.jar
 	rm -f $(ZIP_DIR)/system/framework/framework2.jar
-	cp other/build.prop $(ZIP_DIR)/system/build.prop
+	cp other/build_B530.prop $(ZIP_DIR)/system/build.prop
 	cp other/bootanimation $(ZIP_DIR)/system/bin/
 	cp other/StockSettings.apk $(ZIP_DIR)/system/app/
 	cp other/Settings_ex.apk $(ZIP_DIR)/system/app/
@@ -109,7 +109,21 @@ fullota-to-phone: fullota
 	adb push out/fullota.zip /sdcard/
 
 apply-fullota: 
-	adb push out/fullota.zip /sdcard/
+	if adb shell ls -l /sdcard/fullota.zip | grep -q "No such file or directory"; \
+	then \
+		echo "no fullota.zip in sdcard, update it"; \
+		adb push out/fullota.zip /sdcard/; \
+	else \
+		md5_1=`md5sum out/fullota.zip | cut -d' ' -f1`; \
+		md5_2=`adb shell md5sum /sdcard/fullota.zip | cut -d' ' -f1`; \
+		if [ "$$md5_1" != "$$md5_2" ]; \
+		then \
+			echo "md5 is not same, update fullota.zip"; \
+			adb push out/fullota.zip /sdcard/; \
+		else \
+			echo "md5 is same, skip update fullota.zip"; \
+		fi \
+	fi
 	adb shell su -c 'cat /dev/null > /cache/recovery/command'
 	adb shell su -c 'echo "--wipe_data" >> /cache/recovery/command'
 	adb shell su -c 'echo "--wipe_cache" >> /cache/recovery/command'

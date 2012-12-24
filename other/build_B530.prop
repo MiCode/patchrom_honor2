@@ -141,7 +141,7 @@ ro.config.hw_useCtrlSocket=true
 persist.sys.quickpoweron=normal
 persist.sys.animationstart=false
 ro.config.hw_poanimation=5000
-ro.config.hw_quickpoweron=true
+ro.config.hw_quickpoweron=false
 # DTS2012080208187 xiazhonglin/x00206005 20120727 end
 # DTS2011112504993 fujinhu 20111124 begin
 ro.config.AM_PM_STYLE=1

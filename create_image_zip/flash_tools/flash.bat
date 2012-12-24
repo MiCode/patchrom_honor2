@@ -12,8 +12,8 @@ if errorlevel 1 goto flash_userdata
 :flash_userdata
 echo.
 echo Ë¢Èë data.img ...
-fastboot erase userdata >nul
-fastboot flash userdata data.img >nul
+fastboot erase data >nul
+fastboot flash data data.img >nul
 
 :flash_system
 echo.
