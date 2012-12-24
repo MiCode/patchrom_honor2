@@ -169,6 +169,12 @@
     move-result-object v14
 
     .local v14, locales:[Ljava/lang/String;
+    move-object/from16 v0, v17
+
+    invoke-static {v0, v14}, Lmiui/util/ExtraLocalePicker;->filterLocale(Landroid/content/res/Resources;[Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v14
+
     const v22, 0x1070007
 
     move-object/from16 v0, v17
