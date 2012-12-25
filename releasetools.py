@@ -14,12 +14,12 @@ def PerpareData(info):
     output_zip = info.output_zip
     for info in input_zip.infolist():
         if info.filename.startswith("DATA/cust"):
-		    basefilename = info.filename[5:]
-		    info2 = copy.copy(info)
-		    info2.filename = "data/" + basefilename
-		    if output_zip is not None:
-		        data = input_zip.read(info.filename)
-		        output_zip.writestr(info2, data)
+            basefilename = info.filename[5:]
+            info2 = copy.copy(info)
+            info2.filename = "data/" + basefilename
+            if output_zip is not None:
+                data = input_zip.read(info.filename)
+                output_zip.writestr(info2, data)
     return
 
 def FullOTA_InstallEnd(info):
@@ -29,5 +29,5 @@ def FullOTA_InstallEnd(info):
 
 def IncrementalOTA_InstallEnd(info):
     AddAssertions(info)
-    PerpareData(info)
+    #PerpareData(info)
     return
