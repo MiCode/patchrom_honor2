@@ -17,7 +17,7 @@ local-modified-apps := SettingsProvider Gallery2
 local-modified-jars :=
 
 # All apks from MIUI
-local-miui-removed-apps := MediaProvider Stk SettingsProvider
+local-miui-removed-apps := MediaProvider SettingsProvider
 
 local-miui-modified-apps := MiuiHome Settings Phone Mms ThemeManager
 
