@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="status_bar_toggle_bluetooth_action">com.android.settings_ex/com.android.settings_ex.bluetooth.BluetoothSettings</string>
+</resources>
