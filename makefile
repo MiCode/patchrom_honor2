@@ -48,6 +48,7 @@ local-pre-zip-misc:
 	cp other/bootanimation $(ZIP_DIR)/system/bin/
 	cp other/StockSettings.apk $(ZIP_DIR)/system/app/
 	cp other/Settings_ex.apk $(ZIP_DIR)/system/app/
+	cp other/boot_B530_no_header.img $(ZIP_DIR)/
 
 #jar
 %.phone : out/%.jar

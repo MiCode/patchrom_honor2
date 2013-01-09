@@ -25,7 +25,6 @@ private-phone-apps := ApplicationsProvider \
 					  MediaCenter \
 					  MediaProvider \
 					  NoiseField \
-					  Novotools \
 					  OMACP \
 					  PhaseBeam \
 					  Pmqos \
