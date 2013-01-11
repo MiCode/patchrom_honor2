@@ -165,7 +165,7 @@ ro.config.doublehome=true
 ro.config.usesEncodingDetector=0
 # DTS2012070600979 hanmincheng 00178881 20120809 end
 #/* < DTS2012091208382 zhaifeng/00107904 20120913 begin*/
-ro.config.hwtheme=1
+ro.config.hwtheme=0
 #/* < DTS2012091208382 zhaifeng/00107904 20120913 end*/
 # DTS2010060300084 yinwenshuai 00211458 20120809 begin
 # DTS2010060300084 yinwenshuai 00211458 20120809 end

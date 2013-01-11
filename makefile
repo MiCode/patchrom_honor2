@@ -45,10 +45,12 @@ local-pre-zip-misc:
 	cp out/framework2.jar $(ZIP_DIR)/system/framework/framework_ext.jar
 	rm -f $(ZIP_DIR)/system/framework/framework2.jar
 	cp other/build_B530.prop $(ZIP_DIR)/system/build.prop
-	cp other/bootanimation $(ZIP_DIR)/system/bin/
+	@echo update bootanimation
+	rm $(ZIP_DIR)/system/bin/bootanimation
+	cp $(OUT_SYS_PATH)/bin/bootanimation $(ZIP_DIR)/system/bin/bootanimation
 	cp other/StockSettings.apk $(ZIP_DIR)/system/app/
 	cp other/Settings_ex.apk $(ZIP_DIR)/system/app/
-	cp other/boot_B530_no_header.img $(ZIP_DIR)/
+	cp other/boot_B530_no_header.img $(ZIP_DIR)/boot.img
 
 #jar
 %.phone : out/%.jar
