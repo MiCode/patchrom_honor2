@@ -27,6 +27,7 @@
     .parameter
 
     .prologue
+    .line 4256
     iput-object p1, p0, Lcom/android/server/PowerManagerService$15;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,6 +43,7 @@
     .parameter "accuracy"
 
     .prologue
+    .line 4283
     return-void
 .end method
 
@@ -52,6 +54,7 @@
     .prologue
     const/4 v3, 0x0
 
+    .line 4260
     const-string v0, "PowerManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -78,6 +81,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 4262
     iget-object v0, p0, Lcom/android/server/PowerManagerService$15;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mLocks:Lcom/android/server/PowerManagerService$LockList;
@@ -87,21 +91,25 @@
 
     monitor-enter v1
 
+    .line 4264
     :try_start_0
     iget-object v0, p0, Lcom/android/server/PowerManagerService$15;->this$0:Lcom/android/server/PowerManagerService;
 
     #calls: Lcom/android/server/PowerManagerService;->isScreenTurningOffLocked()Z
-    invoke-static {v0}, Lcom/android/server/PowerManagerService;->access$9100(Lcom/android/server/PowerManagerService;)Z
+    invoke-static {v0}, Lcom/android/server/PowerManagerService;->access$9500(Lcom/android/server/PowerManagerService;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 4265
     monitor-exit v1
 
+    .line 4278
     :goto_0
     return-void
 
+    .line 4268
     :cond_0
     iget-object v0, p0, Lcom/android/server/PowerManagerService$15;->this$0:Lcom/android/server/PowerManagerService;
 
@@ -114,8 +122,9 @@
     float-to-int v2, v2
 
     #setter for: Lcom/android/server/PowerManagerService;->mSavedLightValue:I
-    invoke-static {v0, v2}, Lcom/android/server/PowerManagerService;->access$1502(Lcom/android/server/PowerManagerService;I)I
+    invoke-static {v0, v2}, Lcom/android/server/PowerManagerService;->access$1902(Lcom/android/server/PowerManagerService;I)I
 
+    .line 4270
     iget-object v0, p0, Lcom/android/server/PowerManagerService$15;->this$0:Lcom/android/server/PowerManagerService;
 
     iget-object v2, p1, Landroid/hardware/SensorEvent;->values:[F
@@ -129,17 +138,18 @@
     iget-object v3, p0, Lcom/android/server/PowerManagerService$15;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mWaitingForFirstLightSensor:Z
-    invoke-static {v3}, Lcom/android/server/PowerManagerService;->access$9900(Lcom/android/server/PowerManagerService;)Z
+    invoke-static {v3}, Lcom/android/server/PowerManagerService;->access$10300(Lcom/android/server/PowerManagerService;)Z
 
     move-result v3
 
     #calls: Lcom/android/server/PowerManagerService;->handleLightSensorValue(IZ)V
-    invoke-static {v0, v2, v3}, Lcom/android/server/PowerManagerService;->access$10000(Lcom/android/server/PowerManagerService;IZ)V
+    invoke-static {v0, v2, v3}, Lcom/android/server/PowerManagerService;->access$10400(Lcom/android/server/PowerManagerService;IZ)V
 
+    .line 4271
     iget-object v0, p0, Lcom/android/server/PowerManagerService$15;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mWaitingForFirstLightSensor:Z
-    invoke-static {v0}, Lcom/android/server/PowerManagerService;->access$9900(Lcom/android/server/PowerManagerService;)Z
+    invoke-static {v0}, Lcom/android/server/PowerManagerService;->access$10300(Lcom/android/server/PowerManagerService;)Z
 
     move-result v0
 
@@ -148,25 +158,28 @@
     iget-object v0, p0, Lcom/android/server/PowerManagerService$15;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mPreparingForScreenOn:Z
-    invoke-static {v0}, Lcom/android/server/PowerManagerService;->access$5300(Lcom/android/server/PowerManagerService;)Z
+    invoke-static {v0}, Lcom/android/server/PowerManagerService;->access$5800(Lcom/android/server/PowerManagerService;)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
+    .line 4273
     const-string v0, "PowerManagerService"
 
     const-string v2, "onSensorChanged: Clearing mWaitingForFirstLightSensor."
 
     invoke-static {v0, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 4275
     iget-object v0, p0, Lcom/android/server/PowerManagerService$15;->this$0:Lcom/android/server/PowerManagerService;
 
     const/4 v2, 0x0
 
     #setter for: Lcom/android/server/PowerManagerService;->mWaitingForFirstLightSensor:Z
-    invoke-static {v0, v2}, Lcom/android/server/PowerManagerService;->access$9902(Lcom/android/server/PowerManagerService;Z)Z
+    invoke-static {v0, v2}, Lcom/android/server/PowerManagerService;->access$10302(Lcom/android/server/PowerManagerService;Z)Z
 
+    .line 4277
     :cond_1
     monitor-exit v1
 

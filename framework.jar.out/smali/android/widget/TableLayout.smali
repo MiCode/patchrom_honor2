@@ -37,10 +37,13 @@
     .parameter "context"
 
     .prologue
+    .line 93
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
+    .line 94
     invoke-direct {p0}, Landroid/widget/TableLayout;->initTableLayout()V
 
+    .line 95
     return-void
 .end method
 
@@ -56,47 +59,58 @@
 
     const/4 v5, 0x0
 
+    .line 105
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
+    .line 107
     sget-object v4, Lcom/android/internal/R$styleable;->TableLayout:[I
 
     invoke-virtual {p1, p2, v4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
+    .line 109
     .local v0, a:Landroid/content/res/TypedArray;
     invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
+    .line 110
     .local v3, stretchedColumns:Ljava/lang/String;
     if-eqz v3, :cond_0
 
+    .line 111
     invoke-virtual {v3, v5}, Ljava/lang/String;->charAt(I)C
 
     move-result v4
 
     if-ne v4, v7, :cond_3
 
+    .line 112
     iput-boolean v6, p0, Landroid/widget/TableLayout;->mStretchAllColumns:Z
 
+    .line 118
     :cond_0
     :goto_0
     invoke-virtual {v0, v6}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 119
     .local v2, shrinkedColumns:Ljava/lang/String;
     if-eqz v2, :cond_1
 
+    .line 120
     invoke-virtual {v2, v5}, Ljava/lang/String;->charAt(I)C
 
     move-result v4
 
     if-ne v4, v7, :cond_4
 
+    .line 121
     iput-boolean v6, p0, Landroid/widget/TableLayout;->mShrinkAllColumns:Z
 
+    .line 127
     :cond_1
     :goto_1
     const/4 v4, 0x2
@@ -105,22 +119,28 @@
 
     move-result-object v1
 
+    .line 128
     .local v1, collapsedColumns:Ljava/lang/String;
     if-eqz v1, :cond_2
 
+    .line 129
     invoke-static {v1}, Landroid/widget/TableLayout;->parseColumns(Ljava/lang/String;)Landroid/util/SparseBooleanArray;
 
     move-result-object v4
 
     iput-object v4, p0, Landroid/widget/TableLayout;->mCollapsedColumns:Landroid/util/SparseBooleanArray;
 
+    .line 132
     :cond_2
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
+    .line 133
     invoke-direct {p0}, Landroid/widget/TableLayout;->initTableLayout()V
 
+    .line 134
     return-void
 
+    .line 114
     .end local v1           #collapsedColumns:Ljava/lang/String;
     .end local v2           #shrinkedColumns:Ljava/lang/String;
     :cond_3
@@ -132,6 +152,7 @@
 
     goto :goto_0
 
+    .line 123
     .restart local v2       #shrinkedColumns:Ljava/lang/String;
     :cond_4
     invoke-static {v2}, Landroid/widget/TableLayout;->parseColumns(Ljava/lang/String;)Landroid/util/SparseBooleanArray;
@@ -149,6 +170,7 @@
     .parameter "x1"
 
     .prologue
+    .line 74
     invoke-direct {p0, p1}, Landroid/widget/TableLayout;->trackCollapsedColumns(Landroid/view/View;)V
 
     return-void
@@ -159,13 +181,16 @@
     .parameter "widthMeasureSpec"
 
     .prologue
+    .line 482
     const/4 v7, 0x1
 
+    .line 491
     .local v7, firstRow:Z
     invoke-virtual/range {p0 .. p0}, Landroid/widget/TableLayout;->getChildCount()I
 
     move-result v5
 
+    .line 492
     .local v5, count:I
     const/4 v8, 0x0
 
@@ -173,12 +198,14 @@
     :goto_0
     if-ge v8, v5, :cond_6
 
+    .line 493
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v8}, Landroid/widget/TableLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
+    .line 494
     .local v4, child:Landroid/view/View;
     invoke-virtual {v4}, Landroid/view/View;->getVisibility()I
 
@@ -192,12 +219,14 @@
 
     if-ne v0, v1, :cond_1
 
+    .line 492
     :cond_0
     :goto_1
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_0
 
+    .line 498
     :cond_1
     instance-of v0, v4, Landroid/widget/TableRow;
 
@@ -207,13 +236,16 @@
 
     move-object v15, v4
 
+    .line 499
     check-cast v15, Landroid/widget/TableRow;
 
+    .line 501
     .local v15, row:Landroid/widget/TableRow;
     invoke-virtual {v15}, Landroid/widget/TableRow;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v10
 
+    .line 502
     .local v10, layoutParams:Landroid/view/ViewGroup$LayoutParams;
     const/16 v17, -0x2
 
@@ -221,20 +253,24 @@
 
     iput v0, v10, Landroid/view/ViewGroup$LayoutParams;->height:I
 
+    .line 504
     move/from16 v0, p1
 
     invoke-virtual {v15, v0}, Landroid/widget/TableRow;->getColumnsWidths(I)[I
 
     move-result-object v16
 
+    .line 505
     .local v16, widths:[I
     move-object/from16 v0, v16
 
     array-length v13, v0
 
+    .line 507
     .local v13, newLength:I
     if-eqz v7, :cond_4
 
+    .line 508
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/TableLayout;->mMaxWidths:[I
@@ -259,6 +295,7 @@
 
     if-eq v0, v13, :cond_3
 
+    .line 509
     :cond_2
     new-array v0, v13, [I
 
@@ -270,6 +307,7 @@
 
     iput-object v0, v1, Landroid/widget/TableLayout;->mMaxWidths:[I
 
+    .line 511
     :cond_3
     const/16 v17, 0x0
 
@@ -291,10 +329,12 @@
 
     invoke-static {v0, v1, v2, v3, v13}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
+    .line 512
     const/4 v7, 0x0
 
     goto :goto_1
 
+    .line 514
     :cond_4
     move-object/from16 v0, p0
 
@@ -306,16 +346,20 @@
 
     array-length v11, v0
 
+    .line 515
     .local v11, length:I
     sub-int v6, v13, v11
 
+    .line 518
     .local v6, difference:I
     if-lez v6, :cond_5
 
+    .line 519
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/widget/TableLayout;->mMaxWidths:[I
 
+    .line 520
     .local v14, oldMaxWidths:[I
     new-array v0, v13, [I
 
@@ -327,6 +371,7 @@
 
     iput-object v0, v1, Landroid/widget/TableLayout;->mMaxWidths:[I
 
+    .line 521
     const/16 v17, 0x0
 
     move-object/from16 v0, p0
@@ -351,6 +396,7 @@
 
     invoke-static {v14, v0, v1, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
+    .line 523
     array-length v0, v14
 
     move/from16 v17, v0
@@ -375,23 +421,27 @@
 
     invoke-static {v0, v1, v2, v3, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
+    .line 531
     .end local v14           #oldMaxWidths:[I
     :cond_5
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/widget/TableLayout;->mMaxWidths:[I
 
+    .line 532
     .local v12, maxWidths:[I
     invoke-static {v11, v13}, Ljava/lang/Math;->min(II)I
 
     move-result v11
 
+    .line 533
     const/4 v9, 0x0
 
     .local v9, j:I
     :goto_2
     if-ge v9, v11, :cond_0
 
+    .line 534
     aget v17, v12, v9
 
     aget v18, v16, v9
@@ -402,10 +452,12 @@
 
     aput v17, v12, v9
 
+    .line 533
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_2
 
+    .line 539
     .end local v4           #child:Landroid/view/View;
     .end local v6           #difference:I
     .end local v9           #j:I
@@ -423,38 +475,45 @@
     .locals 2
 
     .prologue
+    .line 177
     iget-object v0, p0, Landroid/widget/TableLayout;->mCollapsedColumns:Landroid/util/SparseBooleanArray;
 
     if-nez v0, :cond_0
 
+    .line 178
     new-instance v0, Landroid/util/SparseBooleanArray;
 
     invoke-direct {v0}, Landroid/util/SparseBooleanArray;-><init>()V
 
     iput-object v0, p0, Landroid/widget/TableLayout;->mCollapsedColumns:Landroid/util/SparseBooleanArray;
 
+    .line 180
     :cond_0
     iget-object v0, p0, Landroid/widget/TableLayout;->mStretchableColumns:Landroid/util/SparseBooleanArray;
 
     if-nez v0, :cond_1
 
+    .line 181
     new-instance v0, Landroid/util/SparseBooleanArray;
 
     invoke-direct {v0}, Landroid/util/SparseBooleanArray;-><init>()V
 
     iput-object v0, p0, Landroid/widget/TableLayout;->mStretchableColumns:Landroid/util/SparseBooleanArray;
 
+    .line 183
     :cond_1
     iget-object v0, p0, Landroid/widget/TableLayout;->mShrinkableColumns:Landroid/util/SparseBooleanArray;
 
     if-nez v0, :cond_2
 
+    .line 184
     new-instance v0, Landroid/util/SparseBooleanArray;
 
     invoke-direct {v0}, Landroid/util/SparseBooleanArray;-><init>()V
 
     iput-object v0, p0, Landroid/widget/TableLayout;->mShrinkableColumns:Landroid/util/SparseBooleanArray;
 
+    .line 187
     :cond_2
     new-instance v0, Landroid/widget/TableLayout$PassThroughHierarchyChangeListener;
 
@@ -464,14 +523,17 @@
 
     iput-object v0, p0, Landroid/widget/TableLayout;->mPassThroughListener:Landroid/widget/TableLayout$PassThroughHierarchyChangeListener;
 
+    .line 190
     iget-object v0, p0, Landroid/widget/TableLayout;->mPassThroughListener:Landroid/widget/TableLayout$PassThroughHierarchyChangeListener;
 
     invoke-super {p0, v0}, Landroid/widget/LinearLayout;->setOnHierarchyChangeListener(Landroid/view/ViewGroup$OnHierarchyChangeListener;)V
 
+    .line 192
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/TableLayout;->mInitialized:Z
 
+    .line 193
     return-void
 .end method
 
@@ -483,31 +545,39 @@
     .parameter "totalWidth"
 
     .prologue
+    .line 578
     const/4 v8, 0x0
 
+    .line 579
     .local v8, skipped:I
     iget-object v6, p0, Landroid/widget/TableLayout;->mMaxWidths:[I
 
+    .line 580
     .local v6, maxWidths:[I
     array-length v5, v6
 
+    .line 581
     .local v5, length:I
     if-eqz p2, :cond_1
 
     move v2, v5
 
+    .line 582
     .local v2, count:I
     :goto_0
     sub-int v9, p3, p4
 
+    .line 583
     .local v9, totalExtraSpace:I
     div-int v3, v9, v2
 
+    .line 587
     .local v3, extraSpace:I
     invoke-virtual {p0}, Landroid/widget/TableLayout;->getChildCount()I
 
     move-result v7
 
+    .line 588
     .local v7, nbChildren:I
     const/4 v4, 0x0
 
@@ -515,22 +585,27 @@
     :goto_1
     if-ge v4, v7, :cond_2
 
+    .line 589
     invoke-virtual {p0, v4}, Landroid/widget/TableLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
+    .line 590
     .local v0, child:Landroid/view/View;
     instance-of v10, v0, Landroid/widget/TableRow;
 
     if-eqz v10, :cond_0
 
+    .line 591
     invoke-virtual {v0}, Landroid/view/View;->forceLayout()V
 
+    .line 588
     :cond_0
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
+    .line 581
     .end local v0           #child:Landroid/view/View;
     .end local v2           #count:I
     .end local v3           #extraSpace:I
@@ -544,6 +619,7 @@
 
     goto :goto_0
 
+    .line 595
     .restart local v2       #count:I
     .restart local v3       #extraSpace:I
     .restart local v4       #i:I
@@ -552,15 +628,18 @@
     :cond_2
     if-nez p2, :cond_5
 
+    .line 596
     const/4 v4, 0x0
 
     :goto_2
     if-ge v4, v2, :cond_6
 
+    .line 597
     invoke-virtual {p1, v4}, Landroid/util/SparseBooleanArray;->keyAt(I)I
 
     move-result v1
 
+    .line 598
     .local v1, column:I
     invoke-virtual {p1, v4}, Landroid/util/SparseBooleanArray;->valueAt(I)Z
 
@@ -568,25 +647,30 @@
 
     if-eqz v10, :cond_3
 
+    .line 599
     if-ge v1, v5, :cond_4
 
+    .line 600
     aget v10, v6, v1
 
     add-int/2addr v10, v3
 
     aput v10, v6, v1
 
+    .line 596
     :cond_3
     :goto_3
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_2
 
+    .line 602
     :cond_4
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_3
 
+    .line 607
     .end local v1           #column:I
     :cond_5
     const/4 v4, 0x0
@@ -594,36 +678,43 @@
     :goto_4
     if-ge v4, v2, :cond_9
 
+    .line 608
     aget v10, v6, v4
 
     add-int/2addr v10, v3
 
     aput v10, v6, v4
 
+    .line 607
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_4
 
+    .line 615
     :cond_6
     if-lez v8, :cond_9
 
     if-ge v8, v2, :cond_9
 
+    .line 617
     mul-int v10, v8, v3
 
     sub-int v11, v2, v8
 
     div-int v3, v10, v11
 
+    .line 618
     const/4 v4, 0x0
 
     :goto_5
     if-ge v4, v2, :cond_9
 
+    .line 619
     invoke-virtual {p1, v4}, Landroid/util/SparseBooleanArray;->keyAt(I)I
 
     move-result v1
 
+    .line 620
     .restart local v1       #column:I
     invoke-virtual {p1, v4}, Landroid/util/SparseBooleanArray;->valueAt(I)Z
 
@@ -633,20 +724,24 @@
 
     if-ge v1, v5, :cond_7
 
+    .line 621
     aget v10, v6, v1
 
     if-le v3, v10, :cond_8
 
+    .line 622
     const/4 v10, 0x0
 
     aput v10, v6, v1
 
+    .line 618
     :cond_7
     :goto_6
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_5
 
+    .line 624
     :cond_8
     aget v10, v6, v1
 
@@ -656,6 +751,7 @@
 
     goto :goto_6
 
+    .line 629
     .end local v1           #column:I
     :cond_9
     return-void
@@ -666,10 +762,12 @@
     .parameter "sequence"
 
     .prologue
+    .line 151
     new-instance v4, Landroid/util/SparseBooleanArray;
 
     invoke-direct {v4}, Landroid/util/SparseBooleanArray;-><init>()V
 
+    .line 152
     .local v4, columns:Landroid/util/SparseBooleanArray;
     const-string v8, "\\s*,\\s*"
 
@@ -677,11 +775,13 @@
 
     move-result-object v7
 
+    .line 153
     .local v7, pattern:Ljava/util/regex/Pattern;
     invoke-virtual {v7, p0}, Ljava/util/regex/Pattern;->split(Ljava/lang/CharSequence;)[Ljava/lang/String;
 
     move-result-object v1
 
+    .line 155
     .local v1, columnDefs:[Ljava/lang/String;
     move-object v0, v1
 
@@ -697,21 +797,25 @@
 
     aget-object v2, v0, v5
 
+    .line 157
     .local v2, columnIdentifier:Ljava/lang/String;
     :try_start_0
     invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v3
 
+    .line 159
     .local v3, columnIndex:I
     if-ltz v3, :cond_0
 
+    .line 162
     const/4 v8, 0x1
 
     invoke-virtual {v4, v3, v8}, Landroid/util/SparseBooleanArray;->put(IZ)V
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 155
     .end local v3           #columnIndex:I
     :cond_0
     :goto_1
@@ -719,10 +823,12 @@
 
     goto :goto_0
 
+    .line 169
     .end local v2           #columnIdentifier:Ljava/lang/String;
     :cond_1
     return-object v4
 
+    .line 164
     .restart local v2       #columnIdentifier:Ljava/lang/String;
     :catch_0
     move-exception v8
@@ -734,14 +840,17 @@
     .locals 3
 
     .prologue
+    .line 206
     iget-boolean v2, p0, Landroid/widget/TableLayout;->mInitialized:Z
 
     if-eqz v2, :cond_0
 
+    .line 207
     invoke-virtual {p0}, Landroid/widget/TableLayout;->getChildCount()I
 
     move-result v0
 
+    .line 208
     .local v0, count:I
     const/4 v1, 0x0
 
@@ -749,16 +858,19 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
+    .line 209
     invoke-virtual {p0, v1}, Landroid/widget/TableLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
     invoke-virtual {v2}, Landroid/view/View;->requestLayout()V
 
+    .line 208
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 212
     .end local v0           #count:I
     .end local v1           #i:I
     :cond_0
@@ -770,17 +882,21 @@
     .parameter "widthMeasureSpec"
 
     .prologue
+    .line 553
     iget-object v6, p0, Landroid/widget/TableLayout;->mMaxWidths:[I
 
     if-nez v6, :cond_1
 
+    .line 574
     :cond_0
     :goto_0
     return-void
 
+    .line 558
     :cond_1
     const/4 v4, 0x0
 
+    .line 559
     .local v4, totalWidth:I
     iget-object v0, p0, Landroid/widget/TableLayout;->mMaxWidths:[I
 
@@ -796,13 +912,16 @@
 
     aget v5, v0, v1
 
+    .line 560
     .local v5, width:I
     add-int/2addr v4, v5
 
+    .line 559
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
+    .line 563
     .end local v5           #width:I
     :cond_2
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
@@ -817,6 +936,7 @@
 
     sub-int v3, v6, v7
 
+    .line 565
     .local v3, size:I
     if-le v4, v3, :cond_4
 
@@ -832,6 +952,7 @@
 
     if-lez v6, :cond_4
 
+    .line 568
     :cond_3
     iget-object v6, p0, Landroid/widget/TableLayout;->mShrinkableColumns:Landroid/util/SparseBooleanArray;
 
@@ -841,6 +962,7 @@
 
     goto :goto_0
 
+    .line 569
     :cond_4
     if-ge v4, v3, :cond_0
 
@@ -856,6 +978,7 @@
 
     if-lez v6, :cond_0
 
+    .line 572
     :cond_5
     iget-object v6, p0, Landroid/widget/TableLayout;->mStretchableColumns:Landroid/util/SparseBooleanArray;
 
@@ -871,22 +994,27 @@
     .parameter "child"
 
     .prologue
+    .line 376
     instance-of v6, p1, Landroid/widget/TableRow;
 
     if-eqz v6, :cond_1
 
     move-object v5, p1
 
+    .line 377
     check-cast v5, Landroid/widget/TableRow;
 
+    .line 378
     .local v5, row:Landroid/widget/TableRow;
     iget-object v0, p0, Landroid/widget/TableLayout;->mCollapsedColumns:Landroid/util/SparseBooleanArray;
 
+    .line 379
     .local v0, collapsedColumns:Landroid/util/SparseBooleanArray;
     invoke-virtual {v0}, Landroid/util/SparseBooleanArray;->size()I
 
     move-result v2
 
+    .line 380
     .local v2, count:I
     const/4 v3, 0x0
 
@@ -894,25 +1022,31 @@
     :goto_0
     if-ge v3, v2, :cond_1
 
+    .line 381
     invoke-virtual {v0, v3}, Landroid/util/SparseBooleanArray;->keyAt(I)I
 
     move-result v1
 
+    .line 382
     .local v1, columnIndex:I
     invoke-virtual {v0, v3}, Landroid/util/SparseBooleanArray;->valueAt(I)Z
 
     move-result v4
 
+    .line 386
     .local v4, isCollapsed:Z
     if-eqz v4, :cond_0
 
+    .line 387
     invoke-virtual {v5, v1, v4}, Landroid/widget/TableRow;->setColumnCollapsed(IZ)V
 
+    .line 380
     :cond_0
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 391
     .end local v0           #collapsedColumns:Landroid/util/SparseBooleanArray;
     .end local v1           #columnIndex:I
     .end local v2           #count:I
@@ -930,10 +1064,13 @@
     .parameter "child"
 
     .prologue
+    .line 398
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
+    .line 399
     invoke-direct {p0}, Landroid/widget/TableLayout;->requestRowsLayout()V
 
+    .line 400
     return-void
 .end method
 
@@ -943,10 +1080,13 @@
     .parameter "index"
 
     .prologue
+    .line 407
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;I)V
 
+    .line 408
     invoke-direct {p0}, Landroid/widget/TableLayout;->requestRowsLayout()V
 
+    .line 409
     return-void
 .end method
 
@@ -957,10 +1097,13 @@
     .parameter "params"
 
     .prologue
+    .line 425
     invoke-super {p0, p1, p2, p3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
+    .line 426
     invoke-direct {p0}, Landroid/widget/TableLayout;->requestRowsLayout()V
 
+    .line 427
     return-void
 .end method
 
@@ -970,10 +1113,13 @@
     .parameter "params"
 
     .prologue
+    .line 416
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
+    .line 417
     invoke-direct {p0}, Landroid/widget/TableLayout;->requestRowsLayout()V
 
+    .line 418
     return-void
 .end method
 
@@ -982,6 +1128,7 @@
     .parameter "p"
 
     .prologue
+    .line 654
     instance-of v0, p1, Landroid/widget/TableLayout$LayoutParams;
 
     return v0
@@ -991,6 +1138,7 @@
     .locals 1
 
     .prologue
+    .line 74
     invoke-virtual {p0}, Landroid/widget/TableLayout;->generateDefaultLayoutParams()Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
@@ -1002,6 +1150,7 @@
     .locals 1
 
     .prologue
+    .line 646
     new-instance v0, Landroid/widget/TableLayout$LayoutParams;
 
     invoke-direct {v0}, Landroid/widget/TableLayout$LayoutParams;-><init>()V
@@ -1014,6 +1163,7 @@
     .parameter "x0"
 
     .prologue
+    .line 74
     invoke-virtual {p0, p1}, Landroid/widget/TableLayout;->generateLayoutParams(Landroid/util/AttributeSet;)Landroid/widget/TableLayout$LayoutParams;
 
     move-result-object v0
@@ -1026,6 +1176,7 @@
     .parameter "x0"
 
     .prologue
+    .line 74
     invoke-virtual {p0, p1}, Landroid/widget/TableLayout;->generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
@@ -1038,6 +1189,7 @@
     .parameter "x0"
 
     .prologue
+    .line 74
     invoke-virtual {p0, p1}, Landroid/widget/TableLayout;->generateLayoutParams(Landroid/util/AttributeSet;)Landroid/widget/TableLayout$LayoutParams;
 
     move-result-object v0
@@ -1050,6 +1202,7 @@
     .parameter "p"
 
     .prologue
+    .line 662
     new-instance v0, Landroid/widget/TableLayout$LayoutParams;
 
     invoke-direct {v0, p1}, Landroid/widget/TableLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
@@ -1062,6 +1215,7 @@
     .parameter "attrs"
 
     .prologue
+    .line 636
     new-instance v0, Landroid/widget/TableLayout$LayoutParams;
 
     invoke-virtual {p0}, Landroid/widget/TableLayout;->getContext()Landroid/content/Context;
@@ -1078,6 +1232,7 @@
     .parameter "columnIndex"
 
     .prologue
+    .line 308
     iget-object v0, p0, Landroid/widget/TableLayout;->mCollapsedColumns:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseBooleanArray;->get(I)Z
@@ -1092,6 +1247,7 @@
     .parameter "columnIndex"
 
     .prologue
+    .line 362
     iget-boolean v0, p0, Landroid/widget/TableLayout;->mShrinkAllColumns:Z
 
     if-nez v0, :cond_0
@@ -1121,6 +1277,7 @@
     .parameter "columnIndex"
 
     .prologue
+    .line 335
     iget-boolean v0, p0, Landroid/widget/TableLayout;->mStretchAllColumns:Z
 
     if-nez v0, :cond_0
@@ -1149,6 +1306,7 @@
     .locals 1
 
     .prologue
+    .line 237
     iget-boolean v0, p0, Landroid/widget/TableLayout;->mShrinkAllColumns:Z
 
     return v0
@@ -1158,6 +1316,7 @@
     .locals 1
 
     .prologue
+    .line 259
     iget-boolean v0, p0, Landroid/widget/TableLayout;->mStretchAllColumns:Z
 
     return v0
@@ -1173,21 +1332,25 @@
     .parameter "totalHeight"
 
     .prologue
+    .line 456
     instance-of v0, p1, Landroid/widget/TableRow;
 
     if-eqz v0, :cond_0
 
     move-object v0, p1
 
+    .line 457
     check-cast v0, Landroid/widget/TableRow;
 
     iget-object v1, p0, Landroid/widget/TableLayout;->mMaxWidths:[I
 
     invoke-virtual {v0, v1}, Landroid/widget/TableRow;->setColumnsWidthConstraints([I)V
 
+    .line 460
     :cond_0
     invoke-super/range {p0 .. p6}, Landroid/widget/LinearLayout;->measureChildBeforeLayout(Landroid/view/View;IIIII)V
 
+    .line 462
     return-void
 .end method
 
@@ -1197,12 +1360,16 @@
     .parameter "heightMeasureSpec"
 
     .prologue
+    .line 469
     invoke-direct {p0, p1}, Landroid/widget/TableLayout;->findLargestCells(I)V
 
+    .line 470
     invoke-direct {p0, p1}, Landroid/widget/TableLayout;->shrinkAndStretchColumns(I)V
 
+    .line 472
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->measureVertical(II)V
 
+    .line 473
     return-void
 .end method
 
@@ -1211,8 +1378,10 @@
     .parameter "event"
 
     .prologue
+    .line 667
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
+    .line 668
     const-class v0, Landroid/widget/TableLayout;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -1221,6 +1390,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
 
+    .line 669
     return-void
 .end method
 
@@ -1229,8 +1399,10 @@
     .parameter "info"
 
     .prologue
+    .line 673
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
+    .line 674
     const-class v0, Landroid/widget/TableLayout;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -1239,6 +1411,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
+    .line 675
     return-void
 .end method
 
@@ -1251,8 +1424,10 @@
     .parameter "b"
 
     .prologue
+    .line 444
     invoke-virtual {p0}, Landroid/widget/TableLayout;->layoutVertical()V
 
+    .line 445
     return-void
 .end method
 
@@ -1262,8 +1437,10 @@
     .parameter "heightMeasureSpec"
 
     .prologue
+    .line 435
     invoke-virtual {p0, p1, p2}, Landroid/widget/TableLayout;->measureVertical(II)V
 
+    .line 436
     return-void
 .end method
 
@@ -1271,14 +1448,17 @@
     .locals 3
 
     .prologue
+    .line 219
     iget-boolean v2, p0, Landroid/widget/TableLayout;->mInitialized:Z
 
     if-eqz v2, :cond_0
 
+    .line 220
     invoke-virtual {p0}, Landroid/widget/TableLayout;->getChildCount()I
 
     move-result v0
 
+    .line 221
     .local v0, count:I
     const/4 v1, 0x0
 
@@ -1286,21 +1466,25 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
+    .line 222
     invoke-virtual {p0, v1}, Landroid/widget/TableLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
     invoke-virtual {v2}, Landroid/view/View;->forceLayout()V
 
+    .line 221
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 226
     .end local v0           #count:I
     .end local v1           #i:I
     :cond_0
     invoke-super {p0}, Landroid/widget/LinearLayout;->requestLayout()V
 
+    .line 227
     return-void
 .end method
 
@@ -1310,14 +1494,17 @@
     .parameter "isCollapsed"
 
     .prologue
+    .line 288
     iget-object v3, p0, Landroid/widget/TableLayout;->mCollapsedColumns:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v3, p1, p2}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
+    .line 290
     invoke-virtual {p0}, Landroid/widget/TableLayout;->getChildCount()I
 
     move-result v0
 
+    .line 291
     .local v0, count:I
     const/4 v1, 0x0
 
@@ -1325,28 +1512,34 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
+    .line 292
     invoke-virtual {p0, v1}, Landroid/widget/TableLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
+    .line 293
     .local v2, view:Landroid/view/View;
     instance-of v3, v2, Landroid/widget/TableRow;
 
     if-eqz v3, :cond_0
 
+    .line 294
     check-cast v2, Landroid/widget/TableRow;
 
     .end local v2           #view:Landroid/view/View;
     invoke-virtual {v2, p1, p2}, Landroid/widget/TableRow;->setColumnCollapsed(IZ)V
 
+    .line 291
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 298
     :cond_1
     invoke-direct {p0}, Landroid/widget/TableLayout;->requestRowsLayout()V
 
+    .line 299
     return-void
 .end method
 
@@ -1356,12 +1549,15 @@
     .parameter "isShrinkable"
 
     .prologue
+    .line 351
     iget-object v0, p0, Landroid/widget/TableLayout;->mShrinkableColumns:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
+    .line 352
     invoke-direct {p0}, Landroid/widget/TableLayout;->requestRowsLayout()V
 
+    .line 353
     return-void
 .end method
 
@@ -1371,12 +1567,15 @@
     .parameter "isStretchable"
 
     .prologue
+    .line 324
     iget-object v0, p0, Landroid/widget/TableLayout;->mStretchableColumns:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
+    .line 325
     invoke-direct {p0}, Landroid/widget/TableLayout;->requestRowsLayout()V
 
+    .line 326
     return-void
 .end method
 
@@ -1385,11 +1584,13 @@
     .parameter "listener"
 
     .prologue
+    .line 202
     iget-object v0, p0, Landroid/widget/TableLayout;->mPassThroughListener:Landroid/widget/TableLayout$PassThroughHierarchyChangeListener;
 
     #setter for: Landroid/widget/TableLayout$PassThroughHierarchyChangeListener;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
     invoke-static {v0, p1}, Landroid/widget/TableLayout$PassThroughHierarchyChangeListener;->access$102(Landroid/widget/TableLayout$PassThroughHierarchyChangeListener;Landroid/view/ViewGroup$OnHierarchyChangeListener;)Landroid/view/ViewGroup$OnHierarchyChangeListener;
 
+    .line 203
     return-void
 .end method
 
@@ -1398,8 +1599,10 @@
     .parameter "shrinkAllColumns"
 
     .prologue
+    .line 248
     iput-boolean p1, p0, Landroid/widget/TableLayout;->mShrinkAllColumns:Z
 
+    .line 249
     return-void
 .end method
 
@@ -1408,7 +1611,9 @@
     .parameter "stretchAllColumns"
 
     .prologue
+    .line 270
     iput-boolean p1, p0, Landroid/widget/TableLayout;->mStretchAllColumns:Z
 
+    .line 271
     return-void
 .end method

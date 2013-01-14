@@ -61,8 +61,10 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 694
     iput-object p1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->this$0:Landroid/webkit/WebViewClassic;
 
+    .line 695
     #getter for: Landroid/webkit/WebViewClassic;->mContext:Landroid/content/Context;
     invoke-static {p1}, Landroid/webkit/WebViewClassic;->access$600(Landroid/webkit/WebViewClassic;)Landroid/content/Context;
 
@@ -72,12 +74,15 @@
 
     invoke-direct {p0, v1, v2}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
+    .line 690
     const/4 v1, 0x0
 
     iput-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->displayMetrics:Landroid/util/DisplayMetrics;
 
+    .line 692
     iput-boolean v0, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->isCut:Z
 
+    .line 696
     #getter for: Landroid/webkit/WebViewClassic;->mContext:Landroid/content/Context;
     invoke-static {p1}, Landroid/webkit/WebViewClassic;->access$600(Landroid/webkit/WebViewClassic;)Landroid/content/Context;
 
@@ -93,12 +98,14 @@
 
     iput-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->displayMetrics:Landroid/util/DisplayMetrics;
 
+    .line 697
     invoke-virtual {p0}, Landroid/webkit/WebViewClassic$TextSelectWindow;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->window:Landroid/view/Window;
 
+    .line 698
     invoke-virtual {p1}, Landroid/webkit/WebViewClassic;->focusCandidateIsEditableText()Z
 
     move-result v1
@@ -117,12 +124,16 @@
     :cond_0
     iput-boolean v0, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->isCut:Z
 
+    .line 699
     invoke-virtual {p0}, Landroid/webkit/WebViewClassic$TextSelectWindow;->initContentView()V
 
+    .line 700
     invoke-virtual {p0}, Landroid/webkit/WebViewClassic$TextSelectWindow;->createPopupDialog()V
 
+    .line 701
     invoke-virtual {p0}, Landroid/webkit/WebViewClassic$TextSelectWindow;->setListener()V
 
+    .line 702
     return-void
 .end method
 
@@ -133,10 +144,12 @@
     .prologue
     const/4 v5, 0x1
 
+    .line 909
     const/4 v6, 0x2
 
     new-array v3, v6, [I
 
+    .line 910
     .local v3, location:[I
     iget-object v6, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->this$0:Landroid/webkit/WebViewClassic;
 
@@ -147,10 +160,12 @@
 
     invoke-virtual {v6, v3}, Landroid/webkit/WebView;->getLocationOnScreen([I)V
 
+    .line 911
     new-instance v4, Landroid/graphics/Rect;
 
     invoke-direct {v4}, Landroid/graphics/Rect;-><init>()V
 
+    .line 912
     .local v4, r:Landroid/graphics/Rect;
     iget-object v6, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->this$0:Landroid/webkit/WebViewClassic;
 
@@ -161,6 +176,7 @@
 
     invoke-virtual {v6, v4}, Landroid/webkit/WebView;->getWindowVisibleDisplayFrame(Landroid/graphics/Rect;)V
 
+    .line 914
     aget v6, v3, v5
 
     iget-object v7, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->displayMetrics:Landroid/util/DisplayMetrics;
@@ -175,6 +191,7 @@
 
     sub-int v0, v6, v7
 
+    .line 915
     .local v0, dif:I
     iget-object v6, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->window:Landroid/view/Window;
 
@@ -194,6 +211,7 @@
 
     float-to-int v1, v6
 
+    .line 917
     .local v1, eventX:I
     iget-object v6, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->window:Landroid/view/Window;
 
@@ -217,6 +235,7 @@
 
     float-to-int v2, v6
 
+    .line 919
     .local v2, eventY:I
     iget-object v6, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->this$0:Landroid/webkit/WebViewClassic;
 
@@ -293,17 +312,20 @@
     .parameter "spec"
 
     .prologue
+    .line 891
     const-string v2, "\\s*|\t|\r|\n"
 
     invoke-static {v2}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v1
 
+    .line 892
     .local v1, p:Ljava/util/regex/Pattern;
     invoke-virtual {v1, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v0
 
+    .line 893
     .local v0, m:Ljava/util/regex/Matcher;
     const-string v2, ""
 
@@ -311,6 +333,7 @@
 
     move-result-object p1
 
+    .line 894
     return-object p1
 .end method
 
@@ -321,27 +344,34 @@
     .parameter "parentPositionY"
 
     .prologue
+    .line 868
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->window:Landroid/view/Window;
 
     invoke-virtual {v1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v0
 
+    .line 869
     .local v0, layoutParams:Landroid/view/WindowManager$LayoutParams;
     iput p2, v0, Landroid/view/WindowManager$LayoutParams;->x:I
 
+    .line 870
     iput p3, v0, Landroid/view/WindowManager$LayoutParams;->y:I
 
+    .line 871
     const/4 v1, 0x0
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->dimAmount:F
 
+    .line 872
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->window:Landroid/view/Window;
 
     invoke-virtual {v1, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
+    .line 873
     invoke-virtual {p0}, Landroid/webkit/WebViewClassic$TextSelectWindow;->show()V
 
+    .line 874
     return-void
 .end method
 
@@ -351,63 +381,75 @@
     .locals 3
 
     .prologue
+    .line 739
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mContentView:Landroid/widget/RelativeLayout;
 
     invoke-virtual {p0, v1}, Landroid/webkit/WebViewClassic$TextSelectWindow;->setContentView(Landroid/view/View;)V
 
+    .line 740
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->window:Landroid/view/Window;
 
     const/16 v2, 0x20
 
     invoke-virtual {v1, v2}, Landroid/view/Window;->addFlags(I)V
 
+    .line 741
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->window:Landroid/view/Window;
 
     const/high16 v2, 0x4
 
     invoke-virtual {v1, v2}, Landroid/view/Window;->addFlags(I)V
 
+    .line 742
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->window:Landroid/view/Window;
 
     const/4 v2, 0x2
 
     invoke-virtual {v1, v2}, Landroid/view/Window;->addFlags(I)V
 
+    .line 743
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->window:Landroid/view/Window;
 
     const/16 v2, 0x33
 
     invoke-virtual {v1, v2}, Landroid/view/Window;->setGravity(I)V
 
+    .line 744
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->window:Landroid/view/Window;
 
     invoke-virtual {v1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v0
 
+    .line 745
     .local v0, layoutParams:Landroid/view/WindowManager$LayoutParams;
     const/16 v1, 0x64
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->x:I
 
+    .line 746
     const/16 v1, 0xc8
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->y:I
 
+    .line 747
     const/4 v1, 0x0
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->dimAmount:F
 
+    .line 748
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->window:Landroid/view/Window;
 
     invoke-virtual {v1, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
+    .line 749
     new-instance v1, Landroid/webkit/WebViewClassic$TextSelectWindow$1;
 
     invoke-direct {v1, p0}, Landroid/webkit/WebViewClassic$TextSelectWindow$1;-><init>(Landroid/webkit/WebViewClassic$TextSelectWindow;)V
 
     invoke-virtual {p0, v1}, Landroid/webkit/WebViewClassic$TextSelectWindow;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
 
+    .line 764
     return-void
 .end method
 
@@ -415,14 +457,17 @@
     .locals 1
 
     .prologue
+    .line 877
     invoke-virtual {p0}, Landroid/webkit/WebViewClassic$TextSelectWindow;->isShowing()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 878
     invoke-virtual {p0}, Landroid/webkit/WebViewClassic$TextSelectWindow;->dismiss()V
 
+    .line 880
     :cond_0
     return-void
 .end method
@@ -437,8 +482,9 @@
 
     const/4 v5, -0x2
 
-    const v4, 0x20300e3
+    const v4, 0x20300ee
 
+    .line 705
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->this$0:Landroid/webkit/WebViewClassic;
 
     #getter for: Landroid/webkit/WebViewClassic;->mContext:Landroid/content/Context;
@@ -454,6 +500,7 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
+    .line 706
     .local v0, inflater:Landroid/view/LayoutInflater;
     const v2, 0x2070019
 
@@ -467,6 +514,7 @@
 
     iput-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mContentView:Landroid/widget/RelativeLayout;
 
+    .line 707
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mContentView:Landroid/widget/RelativeLayout;
 
     const v3, 0x20a0011
@@ -479,6 +527,7 @@
 
     iput-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPopWinLin:Landroid/widget/LinearLayout;
 
+    .line 708
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPopWinLin:Landroid/widget/LinearLayout;
 
     const v3, 0x20a0012
@@ -491,10 +540,12 @@
 
     iput-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mCutTextView:Landroid/widget/TextView;
 
+    .line 709
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mCutTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
+    .line 710
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPopWinLin:Landroid/widget/LinearLayout;
 
     const v3, 0x20a0013
@@ -507,22 +558,27 @@
 
     iput-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mSplitText0:Landroid/widget/TextView;
 
+    .line 711
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mSplitText0:Landroid/widget/TextView;
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
+    .line 712
     iget-boolean v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->isCut:Z
 
     if-eqz v2, :cond_0
 
+    .line 713
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mCutTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setVisibility(I)V
 
+    .line 714
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mSplitText0:Landroid/widget/TextView;
 
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setVisibility(I)V
 
+    .line 716
     :cond_0
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPopWinLin:Landroid/widget/LinearLayout;
 
@@ -536,10 +592,12 @@
 
     iput-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mCopyTextView:Landroid/widget/TextView;
 
+    .line 717
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mCopyTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
+    .line 718
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPopWinLin:Landroid/widget/LinearLayout;
 
     const v3, 0x20a0015
@@ -552,10 +610,12 @@
 
     iput-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mSplitText1:Landroid/widget/TextView;
 
+    .line 719
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mSplitText1:Landroid/widget/TextView;
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
+    .line 720
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPopWinLin:Landroid/widget/LinearLayout;
 
     const v3, 0x20a0016
@@ -568,10 +628,12 @@
 
     iput-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mShareTextView:Landroid/widget/TextView;
 
+    .line 721
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mShareTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
+    .line 722
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPopWinLin:Landroid/widget/LinearLayout;
 
     const v3, 0x20a0017
@@ -584,10 +646,12 @@
 
     iput-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mSplitText2:Landroid/widget/TextView;
 
+    .line 723
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mSplitText2:Landroid/widget/TextView;
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
+    .line 724
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPopWinLin:Landroid/widget/LinearLayout;
 
     const v3, 0x20a0018
@@ -600,10 +664,12 @@
 
     iput-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mSearchTextView:Landroid/widget/TextView;
 
+    .line 725
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mSearchTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
+    .line 726
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPopWinLin:Landroid/widget/LinearLayout;
 
     const v3, 0x20a0019
@@ -616,10 +682,12 @@
 
     iput-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mSplitText3:Landroid/widget/TextView;
 
+    .line 727
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mSplitText3:Landroid/widget/TextView;
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
+    .line 728
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPopWinLin:Landroid/widget/LinearLayout;
 
     const v3, 0x20a001a
@@ -632,10 +700,12 @@
 
     iput-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mTransTextView:Landroid/widget/TextView;
 
+    .line 729
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mTransTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
+    .line 730
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mContentView:Landroid/widget/RelativeLayout;
 
     const v3, 0x20a0010
@@ -648,10 +718,12 @@
 
     iput-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPointUp:Landroid/widget/ImageView;
 
+    .line 731
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPointUp:Landroid/widget/ImageView;
 
     invoke-virtual {v2, v7}, Landroid/widget/ImageView;->setVisibility(I)V
 
+    .line 732
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mContentView:Landroid/widget/RelativeLayout;
 
     const v3, 0x20a001b
@@ -664,19 +736,23 @@
 
     iput-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPointDown:Landroid/widget/ImageView;
 
+    .line 733
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPointDown:Landroid/widget/ImageView;
 
     invoke-virtual {v2, v7}, Landroid/widget/ImageView;->setVisibility(I)V
 
+    .line 734
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
     invoke-direct {v1, v5, v5}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
+    .line 735
     .local v1, wrapContent:Landroid/view/ViewGroup$LayoutParams;
     iget-object v2, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mContentView:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v2, v1}, Landroid/widget/RelativeLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
+    .line 736
     return-void
 .end method
 
@@ -686,6 +762,7 @@
     .prologue
     const/high16 v3, -0x8000
 
+    .line 859
     iget-object v0, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mContentView:Landroid/widget/RelativeLayout;
 
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->displayMetrics:Landroid/util/DisplayMetrics;
@@ -706,6 +783,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/RelativeLayout;->measure(II)V
 
+    .line 864
     return-void
 .end method
 
@@ -713,6 +791,7 @@
     .locals 1
 
     .prologue
+    .line 887
     iget-object v0, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mContentView:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0}, Landroid/widget/RelativeLayout;->getMeasuredHeight()I
@@ -726,6 +805,7 @@
     .locals 1
 
     .prologue
+    .line 883
     iget-object v0, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPopWinLin:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->getMeasuredWidth()I
@@ -740,38 +820,46 @@
     .parameter "view"
 
     .prologue
+    .line 832
     iget-object v4, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mCutTextView:Landroid/widget/TextView;
 
     if-ne p1, v4, :cond_1
 
+    .line 833
     iget-object v4, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->this$0:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v4}, Landroid/webkit/WebViewClassic;->cutSelection()V
 
+    .line 855
     :cond_0
     :goto_0
     iget-object v4, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->this$0:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v4}, Landroid/webkit/WebViewClassic;->selectionDone()V
 
+    .line 856
     return-void
 
+    .line 834
     :cond_1
     iget-object v4, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mCopyTextView:Landroid/widget/TextView;
 
     if-ne p1, v4, :cond_2
 
+    .line 835
     iget-object v4, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->this$0:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v4}, Landroid/webkit/WebViewClassic;->copySelection()Z
 
     goto :goto_0
 
+    .line 836
     :cond_2
     iget-object v4, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mShareTextView:Landroid/widget/TextView;
 
     if-ne p1, v4, :cond_3
 
+    .line 837
     iget-object v4, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->this$0:Landroid/webkit/WebViewClassic;
 
     #getter for: Landroid/webkit/WebViewClassic;->mContext:Landroid/content/Context;
@@ -789,25 +877,29 @@
 
     goto :goto_0
 
+    .line 838
     :cond_3
     iget-object v4, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mSearchTextView:Landroid/widget/TextView;
 
     if-ne p1, v4, :cond_4
 
+    .line 839
     new-instance v2, Landroid/content/Intent;
 
     const-string v4, "android.intent.action.WEB_SEARCH"
 
     invoke-direct {v2, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
+    .line 840
     .local v2, i:Landroid/content/Intent;
-    const-string v4, "new_search"
+    const-string/jumbo v4, "new_search"
 
     const/4 v5, 0x1
 
     invoke-virtual {v2, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    const-string v4, "query"
+    .line 841
+    const-string/jumbo v4, "query"
 
     iget-object v5, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->this$0:Landroid/webkit/WebViewClassic;
 
@@ -817,10 +909,12 @@
 
     invoke-virtual {v2, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 842
     const/high16 v4, 0x1000
 
     invoke-virtual {v2, v4}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
+    .line 843
     iget-object v4, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->this$0:Landroid/webkit/WebViewClassic;
 
     #getter for: Landroid/webkit/WebViewClassic;->mContext:Landroid/content/Context;
@@ -832,12 +926,14 @@
 
     goto :goto_0
 
+    .line 844
     .end local v2           #i:Landroid/content/Intent;
     :cond_4
     iget-object v4, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mTransTextView:Landroid/widget/TextView;
 
     if-ne p1, v4, :cond_0
 
+    .line 846
     :try_start_0
     iget-object v4, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->this$0:Landroid/webkit/WebViewClassic;
 
@@ -851,6 +947,7 @@
 
     move-result-object v0
 
+    .line 847
     .local v0, content:Ljava/lang/String;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -876,6 +973,7 @@
 
     move-result-object v3
 
+    .line 849
     .local v3, url:Ljava/lang/String;
     new-instance v2, Landroid/content/Intent;
 
@@ -887,6 +985,7 @@
 
     invoke-direct {v2, v4, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
+    .line 850
     .restart local v2       #i:Landroid/content/Intent;
     iget-object v4, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->this$0:Landroid/webkit/WebViewClassic;
 
@@ -901,12 +1000,14 @@
 
     goto/16 :goto_0
 
+    .line 851
     .end local v0           #content:Ljava/lang/String;
     .end local v2           #i:Landroid/content/Intent;
     .end local v3           #url:Ljava/lang/String;
     :catch_0
     move-exception v1
 
+    .line 852
     .local v1, e:Ljava/lang/Exception;
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
@@ -918,6 +1019,7 @@
     .parameter "event"
 
     .prologue
+    .line 899
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -926,18 +1028,22 @@
 
     if-ne v0, v1, :cond_0
 
+    .line 900
     invoke-direct {p0, p1}, Landroid/webkit/WebViewClassic$TextSelectWindow;->isInWebViewRegion(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
+    .line 901
     iget-object v0, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->this$0:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->selectionDone()V
 
+    .line 902
     const/4 v0, 0x1
 
+    .line 905
     :goto_0
     return v0
 
@@ -955,14 +1061,17 @@
     .prologue
     const/4 v1, 0x1
 
+    .line 767
     iget-object v0, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mContentView:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setFocusable(Z)V
 
+    .line 768
     iget-object v0, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mContentView:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setFocusableInTouchMode(Z)V
 
+    .line 769
     iget-object v0, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mContentView:Landroid/widget/RelativeLayout;
 
     new-instance v1, Landroid/webkit/WebViewClassic$TextSelectWindow$2;
@@ -971,6 +1080,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
 
+    .line 783
     return-void
 .end method
 
@@ -986,8 +1096,10 @@
 
     const/4 v3, 0x0
 
+    .line 786
     invoke-virtual {p0}, Landroid/webkit/WebViewClassic$TextSelectWindow;->measureContent()V
 
+    .line 787
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->displayMetrics:Landroid/util/DisplayMetrics;
 
     iget v1, v1, Landroid/util/DisplayMetrics;->widthPixels:I
@@ -1002,10 +1114,12 @@
 
     move-result p2
 
+    .line 788
     invoke-static {v3, p2}, Ljava/lang/Math;->max(II)I
 
     move-result p2
 
+    .line 789
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->displayMetrics:Landroid/util/DisplayMetrics;
 
     iget v1, v1, Landroid/util/DisplayMetrics;->heightPixels:I
@@ -1020,10 +1134,12 @@
 
     move-result p3
 
+    .line 790
     invoke-static {v3, p3}, Ljava/lang/Math;->max(II)I
 
     move-result p3
 
+    .line 792
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->this$0:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v1}, Landroid/webkit/WebViewClassic;->getScale()F
@@ -1040,6 +1156,7 @@
 
     if-eqz v1, :cond_3
 
+    .line 793
     invoke-virtual {p0}, Landroid/webkit/WebViewClassic$TextSelectWindow;->measurePopWidth()I
 
     move-result v1
@@ -1050,48 +1167,59 @@
 
     if-le p4, v1, :cond_2
 
+    .line 794
     invoke-virtual {p0}, Landroid/webkit/WebViewClassic$TextSelectWindow;->measurePopWidth()I
 
     move-result v1
 
     add-int/lit8 p4, v1, -0x3c
 
+    .line 804
     :cond_0
     :goto_0
     const/16 v1, 0x14
 
     if-gt p4, v1, :cond_1
 
+    .line 805
     const/16 p4, 0x14
 
+    .line 807
     :cond_1
     const/4 v0, 0x0
 
+    .line 808
     .local v0, parms:Landroid/widget/RelativeLayout$LayoutParams;
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mContentView:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
+    .line 809
     if-eqz p1, :cond_4
 
+    .line 810
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPopWinLin:Landroid/widget/LinearLayout;
 
-    const v2, 0x20300e2
+    const v2, 0x20300ed
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
 
+    .line 811
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPointDown:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
+    .line 812
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPointUp:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
+    .line 813
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPointUp:Landroid/widget/ImageView;
 
     invoke-virtual {v1}, Landroid/widget/ImageView;->bringToFront()V
 
+    .line 814
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPointUp:Landroid/widget/ImageView;
 
     invoke-virtual {v1}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -1101,22 +1229,28 @@
     .end local v0           #parms:Landroid/widget/RelativeLayout$LayoutParams;
     check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
 
+    .line 815
     .restart local v0       #parms:Landroid/widget/RelativeLayout$LayoutParams;
     iput p4, v0, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
 
+    .line 816
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPointUp:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
+    .line 817
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPointUp:Landroid/widget/ImageView;
 
     invoke-virtual {v1}, Landroid/widget/ImageView;->invalidate()V
 
+    .line 828
     :goto_1
     invoke-direct {p0, p1, p2, p3}, Landroid/webkit/WebViewClassic$TextSelectWindow;->updatePosition(ZII)V
 
+    .line 829
     return-void
 
+    .line 796
     .end local v0           #parms:Landroid/widget/RelativeLayout$LayoutParams;
     :cond_2
     sub-int v1, p4, p2
@@ -1125,11 +1259,13 @@
 
     goto :goto_0
 
+    .line 799
     :cond_3
     sub-int v1, p4, p2
 
     add-int/lit8 p4, v1, -0x14
 
+    .line 800
     invoke-virtual {p0}, Landroid/webkit/WebViewClassic$TextSelectWindow;->measurePopWidth()I
 
     move-result v1
@@ -1140,6 +1276,7 @@
 
     if-le p4, v1, :cond_0
 
+    .line 801
     invoke-virtual {p0}, Landroid/webkit/WebViewClassic$TextSelectWindow;->measurePopWidth()I
 
     move-result v1
@@ -1148,22 +1285,26 @@
 
     goto :goto_0
 
+    .line 819
     .restart local v0       #parms:Landroid/widget/RelativeLayout$LayoutParams;
     :cond_4
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPopWinLin:Landroid/widget/LinearLayout;
 
-    const v2, 0x20300e1
+    const v2, 0x20300ec
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
 
+    .line 820
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPointUp:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
+    .line 821
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPointDown:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
+    .line 822
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPointDown:Landroid/widget/ImageView;
 
     invoke-virtual {v1}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -1173,13 +1314,16 @@
     .end local v0           #parms:Landroid/widget/RelativeLayout$LayoutParams;
     check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
 
+    .line 823
     .restart local v0       #parms:Landroid/widget/RelativeLayout$LayoutParams;
     iput p4, v0, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
 
+    .line 824
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPointDown:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
+    .line 825
     iget-object v1, p0, Landroid/webkit/WebViewClassic$TextSelectWindow;->mPointDown:Landroid/widget/ImageView;
 
     invoke-virtual {v1}, Landroid/widget/ImageView;->invalidate()V

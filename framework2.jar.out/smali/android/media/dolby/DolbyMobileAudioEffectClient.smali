@@ -35,21 +35,21 @@
     .line 44
     iput-object v0, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mActivityCallback:Landroid/media/dolby/DolbyMobileClientCallbacks;
 
-    .line 157
+    .line 179
     new-instance v0, Landroid/media/dolby/DolbyMobileAudioEffectClient$1;
 
     invoke-direct {v0, p0}, Landroid/media/dolby/DolbyMobileAudioEffectClient$1;-><init>(Landroid/media/dolby/DolbyMobileAudioEffectClient;)V
 
     iput-object v0, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mConnection:Landroid/content/ServiceConnection;
 
-    .line 202
+    .line 225
     new-instance v0, Landroid/media/dolby/DolbyMobileAudioEffectClient$2;
 
     invoke-direct {v0, p0}, Landroid/media/dolby/DolbyMobileAudioEffectClient$2;-><init>(Landroid/media/dolby/DolbyMobileAudioEffectClient;)V
 
     iput-object v0, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mCallback:Landroid/media/dolby/IDolbyMobileServiceCallbacks;
 
-    .line 229
+    .line 252
     new-instance v0, Landroid/media/dolby/DolbyMobileAudioEffectClient$3;
 
     invoke-direct {v0, p0}, Landroid/media/dolby/DolbyMobileAudioEffectClient$3;-><init>(Landroid/media/dolby/DolbyMobileAudioEffectClient;)V
@@ -122,17 +122,17 @@
     .parameter "activity"
 
     .prologue
-    .line 70
+    .line 77
     const-string v7, "DolbyMobileAudioEffectClient"
 
     const-string v8, "activity bindToRemoteRunningService()"
 
     invoke-static {v7, v8}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 72
+    .line 79
     const/4 v0, 0x0
 
-    .line 74
+    .line 81
     .local v0, audioSessionId:I
     new-instance v2, Landroid/content/Intent;
 
@@ -144,31 +144,31 @@
 
     invoke-direct {v2, v7}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 76
+    .line 83
     .local v2, bindIntent:Landroid/content/Intent;
     invoke-virtual {p1}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
     move-result-object v3
 
-    .line 77
+    .line 84
     .local v3, callerIntent:Landroid/content/Intent;
     if-eqz v3, :cond_2
 
-    .line 79
+    .line 86
     invoke-virtual {v3}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v5
 
-    .line 80
+    .line 87
     .local v5, intentExtras:Landroid/os/Bundle;
     if-eqz v5, :cond_2
 
-    .line 82
+    .line 89
     invoke-virtual {v5}, Landroid/os/Bundle;->size()I
 
     move-result v6
 
-    .line 83
+    .line 90
     .local v6, numExtras:I
     const-string v7, "DolbyMobileAudioEffectClient"
 
@@ -192,7 +192,7 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 85
+    .line 92
     const-string v7, "android.media.extra.AUDIO_SESSION"
 
     invoke-virtual {v5, v7}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
@@ -201,14 +201,14 @@
 
     if-eqz v7, :cond_0
 
-    .line 87
+    .line 94
     const-string v7, "android.media.extra.AUDIO_SESSION"
 
     invoke-virtual {v5, v7}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 88
+    .line 95
     const-string v7, "DolbyMobileAudioEffectClient"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -231,13 +231,13 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 91
+    .line 98
     :cond_0
     const-string v7, "android.media.extra.AUDIO_SESSION"
 
     invoke-virtual {v2, v7, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 93
+    .line 100
     const-string v7, "android.media.extra.PACKAGE_NAME"
 
     invoke-virtual {v5, v7}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
@@ -246,14 +246,14 @@
 
     if-eqz v7, :cond_1
 
-    .line 95
+    .line 102
     const-string v7, "android.media.extra.PACKAGE_NAME"
 
     invoke-virtual {v5, v7}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 96
+    .line 103
     .local v1, audioSessionPkgName:Ljava/lang/String;
     const-string v7, "DolbyMobileAudioEffectClient"
 
@@ -277,12 +277,12 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 99
+    .line 106
     const-string v7, "android.media.extra.PACKAGE_NAME"
 
     invoke-virtual {v2, v7, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 101
+    .line 108
     .end local v1           #audioSessionPkgName:Ljava/lang/String;
     :cond_1
     const-string v7, "android.media.extra.CONTENT_TYPE"
@@ -293,14 +293,14 @@
 
     if-eqz v7, :cond_2
 
-    .line 103
+    .line 110
     const-string v7, "android.media.extra.CONTENT_TYPE"
 
     invoke-virtual {v5, v7}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result v4
 
-    .line 104
+    .line 111
     .local v4, catInt:I
     const-string v7, "DMService"
 
@@ -324,12 +324,12 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 107
+    .line 114
     const-string v7, "android.media.extra.CONTENT_TYPE"
 
     invoke-virtual {v2, v7, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 114
+    .line 121
     .end local v4           #catInt:I
     .end local v5           #intentExtras:Landroid/os/Bundle;
     .end local v6           #numExtras:I
@@ -340,7 +340,7 @@
 
     invoke-virtual {p1, v2, v7, v8}, Landroid/app/Activity;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
 
-    .line 115
+    .line 122
     return-void
 .end method
 
@@ -349,14 +349,14 @@
     .parameter "service"
 
     .prologue
-    .line 135
+    .line 150
     const-string v1, "DolbyMobileAudioEffectClient"
 
     const-string v2, "service bindToRemoteRunningService()"
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 137
+    .line 152
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Landroid/media/dolby/IDolbyMobileSystemInterface;
@@ -367,7 +367,7 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 141
+    .line 156
     .local v0, bindIntent:Landroid/content/Intent;
     iget-object v1, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mConnection:Landroid/content/ServiceConnection;
 
@@ -375,7 +375,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Landroid/app/Service;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
 
-    .line 142
+    .line 157
     return-void
 .end method
 
@@ -383,16 +383,16 @@
     .locals 5
 
     .prologue
-    .line 327
+    .line 350
     const/4 v0, 0x0
 
-    .line 328
+    .line 351
     .local v0, currentPreset:I
     iget-object v3, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-nez v3, :cond_0
 
-    .line 329
+    .line 352
     const-string v3, "DolbyMobileAudioEffectClient"
 
     const-string v4, "getCurrentPreset() FAILED: mDolbyMobileSystem = null"
@@ -401,13 +401,13 @@
 
     move v1, v0
 
-    .line 337
+    .line 360
     .end local v0           #currentPreset:I
     .local v1, currentPreset:I
     :goto_0
     return v1
 
-    .line 333
+    .line 356
     .end local v1           #currentPreset:I
     .restart local v0       #currentPreset:I
     :cond_0
@@ -423,18 +423,18 @@
     :goto_1
     move v1, v0
 
-    .line 337
+    .line 360
     .end local v0           #currentPreset:I
     .restart local v1       #currentPreset:I
     goto :goto_0
 
-    .line 334
+    .line 357
     .end local v1           #currentPreset:I
     .restart local v0       #currentPreset:I
     :catch_0
     move-exception v2
 
-    .line 335
+    .line 358
     .local v2, e:Ljava/lang/Exception;
     const-string v3, "DolbyMobileAudioEffectClient"
 
@@ -449,7 +449,7 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 69
     iget-object v0, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     return-object v0
@@ -459,16 +459,16 @@
     .locals 5
 
     .prologue
-    .line 266
+    .line 289
     const/4 v0, 0x0
 
-    .line 267
+    .line 290
     .local v0, currentEffectOn:Z
     iget-object v3, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-nez v3, :cond_0
 
-    .line 268
+    .line 291
     const-string v3, "DolbyMobileAudioEffectClient"
 
     const-string v4, "getDolbyEffectOn() FAILED: mDolbyMobileSystem = null"
@@ -477,13 +477,13 @@
 
     move v1, v0
 
-    .line 276
+    .line 299
     .end local v0           #currentEffectOn:Z
     .local v1, currentEffectOn:I
     :goto_0
     return v1
 
-    .line 272
+    .line 295
     .end local v1           #currentEffectOn:I
     .restart local v0       #currentEffectOn:Z
     :cond_0
@@ -499,16 +499,16 @@
     :goto_1
     move v1, v0
 
-    .line 276
+    .line 299
     .restart local v1       #currentEffectOn:I
     goto :goto_0
 
-    .line 273
+    .line 296
     .end local v1           #currentEffectOn:I
     :catch_0
     move-exception v2
 
-    .line 274
+    .line 297
     .local v2, e:Ljava/lang/Exception;
     const-string v3, "DolbyMobileAudioEffectClient"
 
@@ -523,16 +523,16 @@
     .locals 5
 
     .prologue
-    .line 447
+    .line 470
     const/4 v1, 0x0
 
-    .line 448
+    .line 471
     .local v1, globalAudioHeadsetByPass:Z
     iget-object v3, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-nez v3, :cond_0
 
-    .line 449
+    .line 472
     const-string v3, "DolbyMobileAudioEffectClient"
 
     const-string v4, "getGlobalAudioHeadsetByPass() FAILED: mDolbyMobileSystem == null"
@@ -541,13 +541,13 @@
 
     move v2, v1
 
-    .line 457
+    .line 480
     .end local v1           #globalAudioHeadsetByPass:Z
     .local v2, globalAudioHeadsetByPass:I
     :goto_0
     return v2
 
-    .line 453
+    .line 476
     .end local v2           #globalAudioHeadsetByPass:I
     .restart local v1       #globalAudioHeadsetByPass:Z
     :cond_0
@@ -563,16 +563,16 @@
     :goto_1
     move v2, v1
 
-    .line 457
+    .line 480
     .restart local v2       #globalAudioHeadsetByPass:I
     goto :goto_0
 
-    .line 454
+    .line 477
     .end local v2           #globalAudioHeadsetByPass:I
     :catch_0
     move-exception v0
 
-    .line 455
+    .line 478
     .local v0, e:Ljava/lang/Exception;
     const-string v3, "DolbyMobileAudioEffectClient"
 
@@ -587,16 +587,16 @@
     .locals 5
 
     .prologue
-    .line 417
+    .line 440
     const/4 v1, 0x0
 
-    .line 418
+    .line 441
     .local v1, globalAudioPreset:I
     iget-object v3, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-nez v3, :cond_0
 
-    .line 419
+    .line 442
     const-string v3, "DolbyMobileAudioEffectClient"
 
     const-string v4, "getGlobalAudioPreset() FAILED: mDolbyMobileSystem == null"
@@ -605,13 +605,13 @@
 
     move v2, v1
 
-    .line 427
+    .line 450
     .end local v1           #globalAudioPreset:I
     .local v2, globalAudioPreset:I
     :goto_0
     return v2
 
-    .line 423
+    .line 446
     .end local v2           #globalAudioPreset:I
     .restart local v1       #globalAudioPreset:I
     :cond_0
@@ -627,18 +627,18 @@
     :goto_1
     move v2, v1
 
-    .line 427
+    .line 450
     .end local v1           #globalAudioPreset:I
     .restart local v2       #globalAudioPreset:I
     goto :goto_0
 
-    .line 424
+    .line 447
     .end local v2           #globalAudioPreset:I
     .restart local v1       #globalAudioPreset:I
     :catch_0
     move-exception v0
 
-    .line 425
+    .line 448
     .local v0, e:Ljava/lang/Exception;
     const-string v3, "DolbyMobileAudioEffectClient"
 
@@ -653,16 +653,16 @@
     .locals 5
 
     .prologue
-    .line 477
+    .line 500
     const/4 v1, 0x0
 
-    .line 478
+    .line 501
     .local v1, globalAudioSpeakerByPass:Z
     iget-object v3, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-nez v3, :cond_0
 
-    .line 479
+    .line 502
     const-string v3, "DolbyMobileAudioEffectClient"
 
     const-string v4, "getGlobalAudioSpeakerByPass() FAILED: mDolbyMobileSystem == null"
@@ -671,13 +671,13 @@
 
     move v2, v1
 
-    .line 488
+    .line 511
     .end local v1           #globalAudioSpeakerByPass:Z
     .local v2, globalAudioSpeakerByPass:I
     :goto_0
     return v2
 
-    .line 484
+    .line 507
     .end local v2           #globalAudioSpeakerByPass:I
     .restart local v1       #globalAudioSpeakerByPass:Z
     :cond_0
@@ -693,16 +693,16 @@
     :goto_1
     move v2, v1
 
-    .line 488
+    .line 511
     .restart local v2       #globalAudioSpeakerByPass:I
     goto :goto_0
 
-    .line 485
+    .line 508
     .end local v2           #globalAudioSpeakerByPass:I
     :catch_0
     move-exception v0
 
-    .line 486
+    .line 509
     .local v0, e:Ljava/lang/Exception;
     const-string v3, "DolbyMobileAudioEffectClient"
 
@@ -717,16 +717,16 @@
     .locals 5
 
     .prologue
-    .line 387
+    .line 410
     const/4 v1, 0x1
 
-    .line 388
+    .line 411
     .local v1, globalEffectOn:Z
     iget-object v3, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-nez v3, :cond_0
 
-    .line 389
+    .line 412
     const-string v3, "DolbyMobileAudioEffectClient"
 
     const-string v4, "getGlobalEffectOn() FAILED: mDolbyMobileSystem == null"
@@ -735,13 +735,13 @@
 
     move v2, v1
 
-    .line 397
+    .line 420
     .end local v1           #globalEffectOn:Z
     .local v2, globalEffectOn:I
     :goto_0
     return v2
 
-    .line 393
+    .line 416
     .end local v2           #globalEffectOn:I
     .restart local v1       #globalEffectOn:Z
     :cond_0
@@ -757,16 +757,16 @@
     :goto_1
     move v2, v1
 
-    .line 397
+    .line 420
     .restart local v2       #globalEffectOn:I
     goto :goto_0
 
-    .line 394
+    .line 417
     .end local v2           #globalEffectOn:I
     :catch_0
     move-exception v0
 
-    .line 395
+    .line 418
     .local v0, e:Ljava/lang/Exception;
     const-string v3, "DolbyMobileAudioEffectClient"
 
@@ -781,16 +781,16 @@
     .locals 5
 
     .prologue
-    .line 539
+    .line 562
     const/4 v1, 0x0
 
-    .line 540
+    .line 563
     .local v1, globalVideoHeadsetByPass:Z
     iget-object v3, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-nez v3, :cond_0
 
-    .line 541
+    .line 564
     const-string v3, "DolbyMobileAudioEffectClient"
 
     const-string v4, "getGlobalVideoHeadsetByPass() FAILED: mDolbyMobileSystem == null"
@@ -799,13 +799,13 @@
 
     move v2, v1
 
-    .line 549
+    .line 572
     .end local v1           #globalVideoHeadsetByPass:Z
     .local v2, globalVideoHeadsetByPass:I
     :goto_0
     return v2
 
-    .line 545
+    .line 568
     .end local v2           #globalVideoHeadsetByPass:I
     .restart local v1       #globalVideoHeadsetByPass:Z
     :cond_0
@@ -821,16 +821,16 @@
     :goto_1
     move v2, v1
 
-    .line 549
+    .line 572
     .restart local v2       #globalVideoHeadsetByPass:I
     goto :goto_0
 
-    .line 546
+    .line 569
     .end local v2           #globalVideoHeadsetByPass:I
     :catch_0
     move-exception v0
 
-    .line 547
+    .line 570
     .local v0, e:Ljava/lang/Exception;
     const-string v3, "DolbyMobileAudioEffectClient"
 
@@ -845,16 +845,16 @@
     .locals 5
 
     .prologue
-    .line 508
+    .line 531
     const/4 v1, 0x0
 
-    .line 509
+    .line 532
     .local v1, globalVideoPreset:I
     iget-object v3, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-nez v3, :cond_0
 
-    .line 510
+    .line 533
     const-string v3, "DolbyMobileAudioEffectClient"
 
     const-string v4, "getGlobalVideoPreset() FAILED: mDolbyMobileSystem == null"
@@ -863,13 +863,13 @@
 
     move v2, v1
 
-    .line 519
+    .line 542
     .end local v1           #globalVideoPreset:I
     .local v2, globalVideoPreset:I
     :goto_0
     return v2
 
-    .line 515
+    .line 538
     .end local v2           #globalVideoPreset:I
     .restart local v1       #globalVideoPreset:I
     :cond_0
@@ -885,18 +885,18 @@
     :goto_1
     move v2, v1
 
-    .line 519
+    .line 542
     .end local v1           #globalVideoPreset:I
     .restart local v2       #globalVideoPreset:I
     goto :goto_0
 
-    .line 516
+    .line 539
     .end local v2           #globalVideoPreset:I
     .restart local v1       #globalVideoPreset:I
     :catch_0
     move-exception v0
 
-    .line 517
+    .line 540
     .local v0, e:Ljava/lang/Exception;
     const-string v3, "DolbyMobileAudioEffectClient"
 
@@ -911,16 +911,16 @@
     .locals 5
 
     .prologue
-    .line 569
+    .line 592
     const/4 v1, 0x0
 
-    .line 570
+    .line 593
     .local v1, globalVideoSpeakerByPass:Z
     iget-object v3, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-nez v3, :cond_0
 
-    .line 571
+    .line 594
     const-string v3, "DolbyMobileAudioEffectClient"
 
     const-string v4, "getGlobalVideoSpeakerByPass() FAILED: mDolbyMobileSystem == null"
@@ -929,13 +929,13 @@
 
     move v2, v1
 
-    .line 580
+    .line 603
     .end local v1           #globalVideoSpeakerByPass:Z
     .local v2, globalVideoSpeakerByPass:I
     :goto_0
     return v2
 
-    .line 576
+    .line 599
     .end local v2           #globalVideoSpeakerByPass:I
     .restart local v1       #globalVideoSpeakerByPass:Z
     :cond_0
@@ -951,16 +951,16 @@
     :goto_1
     move v2, v1
 
-    .line 580
+    .line 603
     .restart local v2       #globalVideoSpeakerByPass:I
     goto :goto_0
 
-    .line 577
+    .line 600
     .end local v2           #globalVideoSpeakerByPass:I
     :catch_0
     move-exception v0
 
-    .line 578
+    .line 601
     .local v0, e:Ljava/lang/Exception;
     const-string v3, "DolbyMobileAudioEffectClient"
 
@@ -975,16 +975,16 @@
     .locals 5
 
     .prologue
-    .line 297
+    .line 320
     const/4 v0, 0x0
 
-    .line 298
+    .line 321
     .local v0, currentCategory:I
     iget-object v3, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-nez v3, :cond_0
 
-    .line 299
+    .line 322
     const-string v3, "DolbyMobileAudioEffectClient"
 
     const-string v4, "getPresetCategory() FAILED: mDolbyMobileSystem = null"
@@ -993,13 +993,13 @@
 
     move v1, v0
 
-    .line 307
+    .line 330
     .end local v0           #currentCategory:I
     .local v1, currentCategory:I
     :goto_0
     return v1
 
-    .line 303
+    .line 326
     .end local v1           #currentCategory:I
     .restart local v0       #currentCategory:I
     :cond_0
@@ -1015,18 +1015,18 @@
     :goto_1
     move v1, v0
 
-    .line 307
+    .line 330
     .end local v0           #currentCategory:I
     .restart local v1       #currentCategory:I
     goto :goto_0
 
-    .line 304
+    .line 327
     .end local v1           #currentCategory:I
     .restart local v0       #currentCategory:I
     :catch_0
     move-exception v2
 
-    .line 305
+    .line 328
     .local v2, e:Ljava/lang/Exception;
     const-string v3, "DolbyMobileAudioEffectClient"
 
@@ -1058,28 +1058,28 @@
     .parameter "presetIndex"
 
     .prologue
-    .line 341
+    .line 364
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-nez v2, :cond_1
 
-    .line 342
+    .line 365
     const-string v2, "DolbyMobileAudioEffectClient"
 
     const-string v3, "selectPreset() FAILED: mDolbyMobileSystem = null"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 354
+    .line 377
     :cond_0
     :goto_0
     return-void
 
-    .line 345
+    .line 368
     :cond_1
     const/4 v0, 0x0
 
-    .line 347
+    .line 370
     .local v0, currentPreset:I
     :try_start_0
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
@@ -1088,10 +1088,10 @@
 
     move-result v0
 
-    .line 348
+    .line 371
     if-eq p1, v0, :cond_0
 
-    .line 349
+    .line 372
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     invoke-interface {v2, p1}, Landroid/media/dolby/IDolbyMobileSystemInterface;->selectPreset(I)V
@@ -1100,11 +1100,11 @@
 
     goto :goto_0
 
-    .line 351
+    .line 374
     :catch_0
     move-exception v1
 
-    .line 352
+    .line 375
     .local v1, e:Ljava/lang/Exception;
     const-string v2, "DolbyMobileAudioEffectClient"
 
@@ -1121,39 +1121,39 @@
     .parameter "preset"
 
     .prologue
-    .line 357
+    .line 380
     iget-object v1, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-nez v1, :cond_0
 
-    .line 358
+    .line 381
     const-string v1, "DolbyMobileAudioEffectClient"
 
     const-string v2, "setDolbyEffect() FAILED: mDolbyMobileSystem = null"
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 372
+    .line 395
     :goto_0
     return-void
 
-    .line 366
+    .line 389
     :cond_0
     :try_start_0
     invoke-virtual {p0, p1}, Landroid/media/dolby/DolbyMobileAudioEffectClient;->setPresetCategory(I)V
 
-    .line 367
+    .line 390
     invoke-virtual {p0, p2}, Landroid/media/dolby/DolbyMobileAudioEffectClient;->selectPreset(I)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 369
+    .line 392
     :catch_0
     move-exception v0
 
-    .line 370
+    .line 393
     .local v0, e:Ljava/lang/Exception;
     const-string v1, "DolbyMobileAudioEffectClient"
 
@@ -1169,23 +1169,23 @@
     .parameter "byPass"
 
     .prologue
-    .line 375
+    .line 398
     iget-object v1, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-nez v1, :cond_0
 
-    .line 376
+    .line 399
     const-string v1, "DolbyMobileAudioEffectClient"
 
     const-string v2, "setDolbyEffectByPass() FAILED: mDolbyMobileSystem = null"
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 384
+    .line 407
     :goto_0
     return-void
 
-    .line 380
+    .line 403
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
@@ -1196,11 +1196,11 @@
 
     goto :goto_0
 
-    .line 381
+    .line 404
     :catch_0
     move-exception v0
 
-    .line 382
+    .line 405
     .local v0, e:Ljava/lang/Exception;
     const-string v1, "DolbyMobileAudioEffectClient"
 
@@ -1216,28 +1216,28 @@
     .parameter "effectOn"
 
     .prologue
-    .line 280
+    .line 303
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-nez v2, :cond_1
 
-    .line 281
+    .line 304
     const-string v2, "DolbyMobileAudioEffectClient"
 
     const-string v3, "setDolbyEffectOn() FAILED: mDolbyMobileSystem = null."
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 294
+    .line 317
     :cond_0
     :goto_0
     return-void
 
-    .line 285
+    .line 308
     :cond_1
     const/4 v0, 0x0
 
-    .line 287
+    .line 310
     .local v0, currentEffectOn:Z
     :try_start_0
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
@@ -1246,10 +1246,10 @@
 
     move-result v0
 
-    .line 288
+    .line 311
     if-eq p1, v0, :cond_0
 
-    .line 289
+    .line 312
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     invoke-interface {v2, p1}, Landroid/media/dolby/IDolbyMobileSystemInterface;->setEffectOn(Z)V
@@ -1258,11 +1258,11 @@
 
     goto :goto_0
 
-    .line 291
+    .line 314
     :catch_0
     move-exception v1
 
-    .line 292
+    .line 315
     .local v1, e:Ljava/lang/Exception;
     const-string v2, "DolbyMobileAudioEffectClient"
 
@@ -1278,28 +1278,28 @@
     .parameter "byPass"
 
     .prologue
-    .line 461
+    .line 484
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-nez v2, :cond_1
 
-    .line 462
+    .line 485
     const-string v2, "DolbyMobileAudioEffectClient"
 
     const-string v3, "setGlobalAudioHeadsetByPass() FAILED: mDolbyMobileSystem == null"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 474
+    .line 497
     :cond_0
     :goto_0
     return-void
 
-    .line 465
+    .line 488
     :cond_1
     const/4 v1, 0x0
 
-    .line 467
+    .line 490
     .local v1, globalAudioHeadsetByPass:Z
     :try_start_0
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
@@ -1308,10 +1308,10 @@
 
     move-result v1
 
-    .line 468
+    .line 491
     if-eq p1, v1, :cond_0
 
-    .line 469
+    .line 492
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     invoke-interface {v2, p1}, Landroid/media/dolby/IDolbyMobileSystemInterface;->setGlobalAudioHeadsetByPass(Z)V
@@ -1320,11 +1320,11 @@
 
     goto :goto_0
 
-    .line 471
+    .line 494
     :catch_0
     move-exception v0
 
-    .line 472
+    .line 495
     .local v0, e:Ljava/lang/Exception;
     const-string v2, "DolbyMobileAudioEffectClient"
 
@@ -1340,28 +1340,28 @@
     .parameter "preset"
 
     .prologue
-    .line 431
+    .line 454
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-nez v2, :cond_1
 
-    .line 432
+    .line 455
     const-string v2, "DolbyMobileAudioEffectClient"
 
     const-string v3, "setGlobalAudioPreset() FAILED: mDolbyMobileSystem == null"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 444
+    .line 467
     :cond_0
     :goto_0
     return-void
 
-    .line 435
+    .line 458
     :cond_1
     const/4 v1, 0x0
 
-    .line 437
+    .line 460
     .local v1, globalAudioPreset:I
     :try_start_0
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
@@ -1370,10 +1370,10 @@
 
     move-result v1
 
-    .line 438
+    .line 461
     if-eq p1, v1, :cond_0
 
-    .line 439
+    .line 462
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     invoke-interface {v2, p1}, Landroid/media/dolby/IDolbyMobileSystemInterface;->setGlobalAudioPreset(I)V
@@ -1382,11 +1382,11 @@
 
     goto :goto_0
 
-    .line 441
+    .line 464
     :catch_0
     move-exception v0
 
-    .line 442
+    .line 465
     .local v0, e:Ljava/lang/Exception;
     const-string v2, "DolbyMobileAudioEffectClient"
 
@@ -1402,28 +1402,28 @@
     .parameter "byPass"
 
     .prologue
-    .line 492
+    .line 515
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-nez v2, :cond_1
 
-    .line 493
+    .line 516
     const-string v2, "DolbyMobileAudioEffectClient"
 
     const-string v3, "setGlobalAudioSpeakerByPass() FAILED: mDolbyMobileSystem == null"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 505
+    .line 528
     :cond_0
     :goto_0
     return-void
 
-    .line 496
+    .line 519
     :cond_1
     const/4 v1, 0x0
 
-    .line 498
+    .line 521
     .local v1, globalAudioSpeakerByPass:Z
     :try_start_0
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
@@ -1432,10 +1432,10 @@
 
     move-result v1
 
-    .line 499
+    .line 522
     if-eq p1, v1, :cond_0
 
-    .line 500
+    .line 523
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     invoke-interface {v2, p1}, Landroid/media/dolby/IDolbyMobileSystemInterface;->setGlobalAudioSpeakerByPass(Z)V
@@ -1444,11 +1444,11 @@
 
     goto :goto_0
 
-    .line 502
+    .line 525
     :catch_0
     move-exception v0
 
-    .line 503
+    .line 526
     .local v0, e:Ljava/lang/Exception;
     const-string v2, "DolbyMobileAudioEffectClient"
 
@@ -1464,28 +1464,28 @@
     .parameter "on"
 
     .prologue
-    .line 401
+    .line 424
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-nez v2, :cond_1
 
-    .line 402
+    .line 425
     const-string v2, "DolbyMobileAudioEffectClient"
 
     const-string v3, "setGlobalEffectOn() FAILED: mDolbyMobileSystem == null"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 414
+    .line 437
     :cond_0
     :goto_0
     return-void
 
-    .line 405
+    .line 428
     :cond_1
     const/4 v1, 0x1
 
-    .line 407
+    .line 430
     .local v1, globalEffectOn:Z
     :try_start_0
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
@@ -1494,10 +1494,10 @@
 
     move-result v1
 
-    .line 408
+    .line 431
     if-eq p1, v1, :cond_0
 
-    .line 409
+    .line 432
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     invoke-interface {v2, p1}, Landroid/media/dolby/IDolbyMobileSystemInterface;->setGlobalEffectOn(Z)V
@@ -1506,11 +1506,11 @@
 
     goto :goto_0
 
-    .line 411
+    .line 434
     :catch_0
     move-exception v0
 
-    .line 412
+    .line 435
     .local v0, e:Ljava/lang/Exception;
     const-string v2, "DolbyMobileAudioEffectClient"
 
@@ -1526,28 +1526,28 @@
     .parameter "byPass"
 
     .prologue
-    .line 553
+    .line 576
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-nez v2, :cond_1
 
-    .line 554
+    .line 577
     const-string v2, "DolbyMobileAudioEffectClient"
 
     const-string v3, "setGlobalVideoHeadsetByPass() FAILED: mDolbyMobileSystem == null"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 566
+    .line 589
     :cond_0
     :goto_0
     return-void
 
-    .line 557
+    .line 580
     :cond_1
     const/4 v1, 0x0
 
-    .line 559
+    .line 582
     .local v1, globalVideoHeadsetByPass:Z
     :try_start_0
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
@@ -1556,10 +1556,10 @@
 
     move-result v1
 
-    .line 560
+    .line 583
     if-eq p1, v1, :cond_0
 
-    .line 561
+    .line 584
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     invoke-interface {v2, p1}, Landroid/media/dolby/IDolbyMobileSystemInterface;->setGlobalVideoHeadsetByPass(Z)V
@@ -1568,11 +1568,11 @@
 
     goto :goto_0
 
-    .line 563
+    .line 586
     :catch_0
     move-exception v0
 
-    .line 564
+    .line 587
     .local v0, e:Ljava/lang/Exception;
     const-string v2, "DolbyMobileAudioEffectClient"
 
@@ -1588,28 +1588,28 @@
     .parameter "preset"
 
     .prologue
-    .line 523
+    .line 546
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-nez v2, :cond_1
 
-    .line 524
+    .line 547
     const-string v2, "DolbyMobileAudioEffectClient"
 
     const-string v3, "setGlobalVideoPreset() FAILED: mDolbyMobileSystem == null"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 536
+    .line 559
     :cond_0
     :goto_0
     return-void
 
-    .line 527
+    .line 550
     :cond_1
     const/4 v1, 0x0
 
-    .line 529
+    .line 552
     .local v1, globalVideoPreset:I
     :try_start_0
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
@@ -1618,10 +1618,10 @@
 
     move-result v1
 
-    .line 530
+    .line 553
     if-eq p1, v1, :cond_0
 
-    .line 531
+    .line 554
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     invoke-interface {v2, p1}, Landroid/media/dolby/IDolbyMobileSystemInterface;->setGlobalVideoPreset(I)V
@@ -1630,11 +1630,11 @@
 
     goto :goto_0
 
-    .line 533
+    .line 556
     :catch_0
     move-exception v0
 
-    .line 534
+    .line 557
     .local v0, e:Ljava/lang/Exception;
     const-string v2, "DolbyMobileAudioEffectClient"
 
@@ -1650,28 +1650,28 @@
     .parameter "byPass"
 
     .prologue
-    .line 584
+    .line 607
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-nez v2, :cond_1
 
-    .line 585
+    .line 608
     const-string v2, "DolbyMobileAudioEffectClient"
 
     const-string v3, "setGlobalVideoSpeakerByPass() FAILED: mDolbyMobileSystem == null"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 597
+    .line 620
     :cond_0
     :goto_0
     return-void
 
-    .line 588
+    .line 611
     :cond_1
     const/4 v1, 0x0
 
-    .line 590
+    .line 613
     .local v1, globalVideoSpeakerByPass:Z
     :try_start_0
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
@@ -1680,10 +1680,10 @@
 
     move-result v1
 
-    .line 591
+    .line 614
     if-eq p1, v1, :cond_0
 
-    .line 592
+    .line 615
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     invoke-interface {v2, p1}, Landroid/media/dolby/IDolbyMobileSystemInterface;->setGlobalVideoSpeakerByPass(Z)V
@@ -1692,11 +1692,11 @@
 
     goto :goto_0
 
-    .line 594
+    .line 617
     :catch_0
     move-exception v0
 
-    .line 595
+    .line 618
     .local v0, e:Ljava/lang/Exception;
     const-string v2, "DolbyMobileAudioEffectClient"
 
@@ -1712,28 +1712,28 @@
     .parameter "category"
 
     .prologue
-    .line 311
+    .line 334
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-nez v2, :cond_1
 
-    .line 312
+    .line 335
     const-string v2, "DolbyMobileAudioEffectClient"
 
     const-string v3, "setPresetCategory() FAILED: mDolbyMobileSystem = null"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 324
+    .line 347
     :cond_0
     :goto_0
     return-void
 
-    .line 315
+    .line 338
     :cond_1
     const/4 v0, 0x0
 
-    .line 317
+    .line 340
     .local v0, currentCategory:I
     :try_start_0
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
@@ -1742,10 +1742,10 @@
 
     move-result v0
 
-    .line 318
+    .line 341
     if-eq p1, v0, :cond_0
 
-    .line 319
+    .line 342
     iget-object v2, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     invoke-interface {v2, p1}, Landroid/media/dolby/IDolbyMobileSystemInterface;->setPresetCategory(I)V
@@ -1754,11 +1754,11 @@
 
     goto :goto_0
 
-    .line 321
+    .line 344
     :catch_0
     move-exception v1
 
-    .line 322
+    .line 345
     .local v1, e:Ljava/lang/Exception;
     const-string v2, "DolbyMobileAudioEffectClient"
 
@@ -1774,26 +1774,43 @@
     .parameter "activity"
 
     .prologue
-    .line 122
+    .line 129
     const-string v0, "DolbyMobileAudioEffectClient"
 
     const-string v1, "activity DMGlobalAudioEffectControlPanel.unBindFromRemoteRunningService()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 124
+    .line 132
+    :try_start_0
+    iget-object v0, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
+
+    iget-object v1, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mCallback:Landroid/media/dolby/IDolbyMobileServiceCallbacks;
+
+    invoke-interface {v0, v1}, Landroid/media/dolby/IDolbyMobileSystemInterface;->unregisterCallback(Landroid/media/dolby/IDolbyMobileServiceCallbacks;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 139
+    :goto_0
     iget-object v0, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-eqz v0, :cond_0
 
-    .line 127
+    .line 142
     iget-object v0, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mConnection:Landroid/content/ServiceConnection;
 
     invoke-virtual {p1, v0}, Landroid/app/Activity;->unbindService(Landroid/content/ServiceConnection;)V
 
-    .line 129
+    .line 144
     :cond_0
     return-void
+
+    .line 134
+    :catch_0
+    move-exception v0
+
+    goto :goto_0
 .end method
 
 .method public unBindFromRemoteRunningService(Landroid/app/Service;)V
@@ -1801,24 +1818,61 @@
     .parameter "service"
 
     .prologue
-    .line 149
+    .line 164
     const-string v0, "DolbyMobileAudioEffectClient"
 
     const-string v1, "service DMGlobalAudioEffectControlPanel.unBindFromRemoteRunningService()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 151
+    .line 167
+    :try_start_0
+    iget-object v0, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
+
+    iget-object v1, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mCallback:Landroid/media/dolby/IDolbyMobileServiceCallbacks;
+
+    invoke-interface {v0, v1}, Landroid/media/dolby/IDolbyMobileSystemInterface;->unregisterCallback(Landroid/media/dolby/IDolbyMobileServiceCallbacks;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 173
+    :goto_0
     iget-object v0, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
 
     if-eqz v0, :cond_0
 
-    .line 154
+    .line 176
     iget-object v0, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mConnection:Landroid/content/ServiceConnection;
 
     invoke-virtual {p1, v0}, Landroid/app/Service;->unbindService(Landroid/content/ServiceConnection;)V
 
-    .line 156
+    .line 178
+    :cond_0
+    return-void
+
+    .line 169
+    :catch_0
+    move-exception v0
+
+    goto :goto_0
+.end method
+
+.method public unregisterCallback(Landroid/media/dolby/DolbyMobileClientCallbacks;)V
+    .locals 1
+    .parameter "cb"
+
+    .prologue
+    .line 58
+    iget-object v0, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mActivityCallback:Landroid/media/dolby/DolbyMobileClientCallbacks;
+
+    if-ne v0, p1, :cond_0
+
+    .line 60
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient;->mActivityCallback:Landroid/media/dolby/DolbyMobileClientCallbacks;
+
+    .line 62
     :cond_0
     return-void
 .end method

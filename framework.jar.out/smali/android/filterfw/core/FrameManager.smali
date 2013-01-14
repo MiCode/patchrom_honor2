@@ -12,6 +12,7 @@
     .locals 0
 
     .prologue
+    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -24,6 +25,7 @@
     .parameter "frame"
 
     .prologue
+    .line 36
     invoke-virtual {p1}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v1
@@ -32,9 +34,11 @@
 
     move-result-object v0
 
+    .line 37
     .local v0, result:Landroid/filterfw/core/Frame;
     invoke-virtual {v0, p1}, Landroid/filterfw/core/Frame;->setDataFromFrame(Landroid/filterfw/core/Frame;)V
 
+    .line 38
     return-object v0
 .end method
 
@@ -44,6 +48,7 @@
     .parameter "newTarget"
 
     .prologue
+    .line 42
     invoke-virtual {p1}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v2
@@ -52,16 +57,20 @@
 
     move-result-object v0
 
+    .line 43
     .local v0, newFormat:Landroid/filterfw/core/MutableFrameFormat;
     invoke-virtual {v0, p2}, Landroid/filterfw/core/MutableFrameFormat;->setTarget(I)V
 
+    .line 44
     invoke-virtual {p0, v0}, Landroid/filterfw/core/FrameManager;->newFrame(Landroid/filterfw/core/FrameFormat;)Landroid/filterfw/core/Frame;
 
     move-result-object v1
 
+    .line 45
     .local v1, result:Landroid/filterfw/core/Frame;
     invoke-virtual {v1, p1}, Landroid/filterfw/core/Frame;->setDataFromFrame(Landroid/filterfw/core/Frame;)V
 
+    .line 46
     return-object v1
 .end method
 
@@ -69,6 +78,7 @@
     .locals 1
 
     .prologue
+    .line 54
     iget-object v0, p0, Landroid/filterfw/core/FrameManager;->mContext:Landroid/filterfw/core/FilterContext;
 
     return-object v0
@@ -78,6 +88,7 @@
     .locals 1
 
     .prologue
+    .line 58
     iget-object v0, p0, Landroid/filterfw/core/FrameManager;->mContext:Landroid/filterfw/core/FilterContext;
 
     if-eqz v0, :cond_0
@@ -114,8 +125,10 @@
     .parameter "context"
 
     .prologue
+    .line 65
     iput-object p1, p0, Landroid/filterfw/core/FrameManager;->mContext:Landroid/filterfw/core/FilterContext;
 
+    .line 66
     return-void
 .end method
 
@@ -123,5 +136,6 @@
     .locals 0
 
     .prologue
+    .line 62
     return-void
 .end method

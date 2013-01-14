@@ -26,12 +26,15 @@
     .prologue
     const/4 v2, 0x0
 
+    .line 516
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 517
     invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v6
 
+    .line 518
     .local v6, pkgName:Ljava/lang/String;
     new-instance v0, Landroid/speech/tts/TextToSpeech;
 
@@ -63,6 +66,7 @@
 
     iput-object v0, p0, Landroid/webkit/AccessibilityInjector$TextToSpeechWrapper;->mTextToSpeech:Landroid/speech/tts/TextToSpeech;
 
+    .line 519
     return-void
 .end method
 
@@ -74,6 +78,7 @@
     .end annotation
 
     .prologue
+    .line 524
     iget-object v0, p0, Landroid/webkit/AccessibilityInjector$TextToSpeechWrapper;->mTextToSpeech:Landroid/speech/tts/TextToSpeech;
 
     invoke-virtual {v0}, Landroid/speech/tts/TextToSpeech;->isSpeaking()Z
@@ -87,10 +92,12 @@
     .locals 1
 
     .prologue
+    .line 541
     iget-object v0, p0, Landroid/webkit/AccessibilityInjector$TextToSpeechWrapper;->mTextToSpeech:Landroid/speech/tts/TextToSpeech;
 
     invoke-virtual {v0}, Landroid/speech/tts/TextToSpeech;->shutdown()V
 
+    .line 542
     return-void
 .end method
 
@@ -116,6 +123,7 @@
     .end annotation
 
     .prologue
+    .line 530
     .local p3, params:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
     iget-object v0, p0, Landroid/webkit/AccessibilityInjector$TextToSpeechWrapper;->mTextToSpeech:Landroid/speech/tts/TextToSpeech;
 
@@ -132,6 +140,7 @@
     .end annotation
 
     .prologue
+    .line 536
     iget-object v0, p0, Landroid/webkit/AccessibilityInjector$TextToSpeechWrapper;->mTextToSpeech:Landroid/speech/tts/TextToSpeech;
 
     invoke-virtual {v0}, Landroid/speech/tts/TextToSpeech;->stop()I

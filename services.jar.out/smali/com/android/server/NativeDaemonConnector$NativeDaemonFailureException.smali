@@ -21,7 +21,9 @@
     .parameter "event"
 
     .prologue
+    .line 450
     invoke-direct {p0, p1, p2}, Lcom/android/server/NativeDaemonConnectorException;-><init>(Ljava/lang/String;Lcom/android/server/NativeDaemonEvent;)V
 
+    .line 451
     return-void
 .end method

@@ -32,6 +32,7 @@
     .locals 0
 
     .prologue
+    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,6 +44,7 @@
     .locals 1
 
     .prologue
+    .line 44
     invoke-virtual {p0}, Landroid/view/GLES20RecordingCanvas$1;->newInstance()Landroid/view/GLES20RecordingCanvas;
 
     move-result-object v0
@@ -54,6 +56,7 @@
     .locals 2
 
     .prologue
+    .line 46
     new-instance v0, Landroid/view/GLES20RecordingCanvas;
 
     const/4 v1, 0x0
@@ -68,6 +71,7 @@
     .parameter "x0"
 
     .prologue
+    .line 44
     check-cast p1, Landroid/view/GLES20RecordingCanvas;
 
     .end local p1
@@ -81,6 +85,7 @@
     .parameter "element"
 
     .prologue
+    .line 50
     return-void
 .end method
 
@@ -89,6 +94,7 @@
     .parameter "x0"
 
     .prologue
+    .line 44
     check-cast p1, Landroid/view/GLES20RecordingCanvas;
 
     .end local p1
@@ -102,5 +108,6 @@
     .parameter "element"
 
     .prologue
+    .line 53
     return-void
 .end method

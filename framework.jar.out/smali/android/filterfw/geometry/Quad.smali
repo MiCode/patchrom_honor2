@@ -18,8 +18,10 @@
     .locals 0
 
     .prologue
+    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 38
     return-void
 .end method
 
@@ -31,16 +33,22 @@
     .parameter "p3"
 
     .prologue
+    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 41
     iput-object p1, p0, Landroid/filterfw/geometry/Quad;->p0:Landroid/filterfw/geometry/Point;
 
+    .line 42
     iput-object p2, p0, Landroid/filterfw/geometry/Quad;->p1:Landroid/filterfw/geometry/Point;
 
+    .line 43
     iput-object p3, p0, Landroid/filterfw/geometry/Quad;->p2:Landroid/filterfw/geometry/Point;
 
+    .line 44
     iput-object p4, p0, Landroid/filterfw/geometry/Quad;->p3:Landroid/filterfw/geometry/Point;
 
+    .line 45
     return-void
 .end method
 
@@ -50,6 +58,7 @@
     .locals 1
 
     .prologue
+    .line 48
     iget-object v0, p0, Landroid/filterfw/geometry/Quad;->p0:Landroid/filterfw/geometry/Point;
 
     invoke-virtual {v0}, Landroid/filterfw/geometry/Point;->IsInUnitRange()Z
@@ -107,6 +116,7 @@
 
     const/4 v8, 0x0
 
+    .line 71
     new-array v6, v12, [Ljava/lang/Float;
 
     iget-object v7, p0, Landroid/filterfw/geometry/Quad;->p0:Landroid/filterfw/geometry/Point;
@@ -153,6 +163,7 @@
 
     move-result-object v2
 
+    .line 72
     .local v2, xs:Ljava/util/List;,"Ljava/util/List<Ljava/lang/Float;>;"
     new-array v6, v12, [Ljava/lang/Float;
 
@@ -200,6 +211,7 @@
 
     move-result-object v5
 
+    .line 73
     .local v5, ys:Ljava/util/List;,"Ljava/util/List<Ljava/lang/Float;>;"
     invoke-static {v2}, Ljava/util/Collections;->min(Ljava/util/Collection;)Ljava/lang/Object;
 
@@ -211,6 +223,7 @@
 
     move-result v0
 
+    .line 74
     .local v0, x0:F
     invoke-static {v5}, Ljava/util/Collections;->min(Ljava/util/Collection;)Ljava/lang/Object;
 
@@ -222,6 +235,7 @@
 
     move-result v3
 
+    .line 75
     .local v3, y0:F
     invoke-static {v2}, Ljava/util/Collections;->max(Ljava/util/Collection;)Ljava/lang/Object;
 
@@ -233,6 +247,7 @@
 
     move-result v1
 
+    .line 76
     .local v1, x1:F
     invoke-static {v5}, Ljava/util/Collections;->max(Ljava/util/Collection;)Ljava/lang/Object;
 
@@ -244,6 +259,7 @@
 
     move-result v4
 
+    .line 77
     .local v4, y1:F
     new-instance v6, Landroid/filterfw/geometry/Rectangle;
 
@@ -260,6 +276,7 @@
     .locals 4
 
     .prologue
+    .line 86
     const/4 v1, 0x4
 
     new-array v1, v1, [Ljava/lang/Float;
@@ -316,6 +333,7 @@
 
     move-result-object v0
 
+    .line 87
     .local v0, ys:Ljava/util/List;,"Ljava/util/List<Ljava/lang/Float;>;"
     invoke-static {v0}, Ljava/util/Collections;->max(Ljava/util/Collection;)Ljava/lang/Object;
 
@@ -346,6 +364,7 @@
     .locals 4
 
     .prologue
+    .line 81
     const/4 v1, 0x4
 
     new-array v1, v1, [Ljava/lang/Float;
@@ -402,6 +421,7 @@
 
     move-result-object v0
 
+    .line 82
     .local v0, xs:Ljava/util/List;,"Ljava/util/List<Ljava/lang/Float;>;"
     invoke-static {v0}, Ljava/util/Collections;->max(Ljava/util/Collection;)Ljava/lang/Object;
 
@@ -433,6 +453,7 @@
     .parameter "s"
 
     .prologue
+    .line 63
     new-instance v0, Landroid/filterfw/geometry/Quad;
 
     iget-object v1, p0, Landroid/filterfw/geometry/Quad;->p0:Landroid/filterfw/geometry/Point;
@@ -470,6 +491,7 @@
     .parameter "y"
 
     .prologue
+    .line 67
     new-instance v0, Landroid/filterfw/geometry/Quad;
 
     iget-object v1, p0, Landroid/filterfw/geometry/Quad;->p0:Landroid/filterfw/geometry/Point;
@@ -505,11 +527,12 @@
     .locals 2
 
     .prologue
+    .line 92
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "{"
+    const-string/jumbo v1, "{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -557,7 +580,7 @@
 
     move-result-object v0
 
-    const-string v1, "}"
+    const-string/jumbo v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -576,6 +599,7 @@
     .parameter "y"
 
     .prologue
+    .line 59
     new-instance v0, Landroid/filterfw/geometry/Quad;
 
     iget-object v1, p0, Landroid/filterfw/geometry/Quad;->p0:Landroid/filterfw/geometry/Point;
@@ -612,6 +636,7 @@
     .parameter "t"
 
     .prologue
+    .line 55
     new-instance v0, Landroid/filterfw/geometry/Quad;
 
     iget-object v1, p0, Landroid/filterfw/geometry/Quad;->p0:Landroid/filterfw/geometry/Point;

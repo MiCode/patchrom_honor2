@@ -71,18 +71,25 @@
 
     const/4 v0, 0x0
 
+    .line 101
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 79
     iput-boolean v0, p0, Landroid/net/MobileDataStateTracker;->mTeardownRequested:Z
 
+    .line 84
     iput-boolean v0, p0, Landroid/net/MobileDataStateTracker;->mPrivateDnsRouteSet:Z
 
+    .line 85
     iput-boolean v0, p0, Landroid/net/MobileDataStateTracker;->mDefaultRouteSet:Z
 
+    .line 89
     iput-boolean v1, p0, Landroid/net/MobileDataStateTracker;->mUserDataEnabled:Z
 
+    .line 90
     iput-boolean v1, p0, Landroid/net/MobileDataStateTracker;->mPolicyDataEnabled:Z
 
+    .line 102
     new-instance v0, Landroid/net/NetworkInfo;
 
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
@@ -105,12 +112,14 @@
 
     iput-object v0, p0, Landroid/net/MobileDataStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
 
+    .line 105
     invoke-static {p1}, Landroid/net/MobileDataStateTracker;->networkTypeToApnType(I)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/net/MobileDataStateTracker;->mApnType:Ljava/lang/String;
 
+    .line 106
     return-void
 .end method
 
@@ -119,6 +128,7 @@
     .parameter "x0"
 
     .prologue
+    .line 65
     iget-object v0, p0, Landroid/net/MobileDataStateTracker;->mMessenger:Landroid/os/Messenger;
 
     return-object v0
@@ -130,6 +140,7 @@
     .parameter "x1"
 
     .prologue
+    .line 65
     iput-object p1, p0, Landroid/net/MobileDataStateTracker;->mMessenger:Landroid/os/Messenger;
 
     return-object p1
@@ -141,6 +152,7 @@
     .parameter "x1"
 
     .prologue
+    .line 65
     iput-object p1, p0, Landroid/net/MobileDataStateTracker;->mDataConnectionTrackerAc:Lcom/android/internal/util/AsyncChannel;
 
     return-object p1
@@ -151,6 +163,7 @@
     .parameter "x0"
 
     .prologue
+    .line 65
     iget-object v0, p0, Landroid/net/MobileDataStateTracker;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -161,6 +174,7 @@
     .parameter "x0"
 
     .prologue
+    .line 65
     iget-object v0, p0, Landroid/net/MobileDataStateTracker;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -171,6 +185,7 @@
     .parameter "x0"
 
     .prologue
+    .line 65
     iget-object v0, p0, Landroid/net/MobileDataStateTracker;->mApnType:Ljava/lang/String;
 
     return-object v0
@@ -181,6 +196,7 @@
     .parameter "x0"
 
     .prologue
+    .line 65
     iget-object v0, p0, Landroid/net/MobileDataStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     return-object v0
@@ -191,6 +207,7 @@
     .parameter "x0"
 
     .prologue
+    .line 65
     iget-object v0, p0, Landroid/net/MobileDataStateTracker;->mMobileDataState:Lcom/android/internal/telephony/Phone$DataState;
 
     return-object v0
@@ -202,6 +219,7 @@
     .parameter "x1"
 
     .prologue
+    .line 65
     iput-object p1, p0, Landroid/net/MobileDataStateTracker;->mMobileDataState:Lcom/android/internal/telephony/Phone$DataState;
 
     return-object p1
@@ -215,6 +233,7 @@
     .parameter "x3"
 
     .prologue
+    .line 65
     invoke-direct {p0, p1, p2, p3}, Landroid/net/MobileDataStateTracker;->setDetailedState(Landroid/net/NetworkInfo$DetailedState;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
@@ -225,6 +244,7 @@
     .parameter "x0"
 
     .prologue
+    .line 65
     iget-object v0, p0, Landroid/net/MobileDataStateTracker;->mLinkProperties:Landroid/net/LinkProperties;
 
     return-object v0
@@ -236,6 +256,7 @@
     .parameter "x1"
 
     .prologue
+    .line 65
     iput-object p1, p0, Landroid/net/MobileDataStateTracker;->mLinkProperties:Landroid/net/LinkProperties;
 
     return-object p1
@@ -247,6 +268,7 @@
     .parameter "x1"
 
     .prologue
+    .line 65
     invoke-direct {p0, p1}, Landroid/net/MobileDataStateTracker;->loge(Ljava/lang/String;)V
 
     return-void
@@ -257,6 +279,7 @@
     .parameter "x0"
 
     .prologue
+    .line 65
     iget-object v0, p0, Landroid/net/MobileDataStateTracker;->mLinkCapabilities:Landroid/net/LinkCapabilities;
 
     return-object v0
@@ -268,6 +291,7 @@
     .parameter "x1"
 
     .prologue
+    .line 65
     iput-object p1, p0, Landroid/net/MobileDataStateTracker;->mLinkCapabilities:Landroid/net/LinkCapabilities;
 
     return-object p1
@@ -278,6 +302,7 @@
     .parameter "x0"
 
     .prologue
+    .line 65
     iget-object v0, p0, Landroid/net/MobileDataStateTracker;->mTarget:Landroid/os/Handler;
 
     return-object v0
@@ -288,6 +313,7 @@
     .parameter "forceRefresh"
 
     .prologue
+    .line 309
     invoke-static {}, Landroid/telephony/MSimTelephonyManager;->getDefault()Landroid/telephony/MSimTelephonyManager;
 
     move-result-object v0
@@ -298,14 +324,16 @@
 
     if-eqz v0, :cond_2
 
+    .line 310
     iget-object v0, p0, Landroid/net/MobileDataStateTracker;->mMSimPhoneService:Lcom/android/internal/telephony/msim/ITelephonyMSim;
 
     if-eqz v0, :cond_0
 
     if-eqz p1, :cond_1
 
+    .line 311
     :cond_0
-    const-string v0, "phone_msim"
+    const-string/jumbo v0, "phone_msim"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
@@ -317,10 +345,12 @@
 
     iput-object v0, p0, Landroid/net/MobileDataStateTracker;->mMSimPhoneService:Lcom/android/internal/telephony/msim/ITelephonyMSim;
 
+    .line 320
     :cond_1
     :goto_0
     return-void
 
+    .line 317
     :cond_2
     iget-object v0, p0, Landroid/net/MobileDataStateTracker;->mPhoneService:Lcom/android/internal/telephony/ITelephony;
 
@@ -328,8 +358,9 @@
 
     if-eqz p1, :cond_1
 
+    .line 318
     :cond_3
-    const-string v0, "phone"
+    const-string/jumbo v0, "phone"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
@@ -349,6 +380,7 @@
     .parameter "s"
 
     .prologue
+    .line 651
     const-string v0, "MobileDataStateTracker"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -377,6 +409,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 652
     return-void
 .end method
 
@@ -385,6 +418,7 @@
     .parameter "s"
 
     .prologue
+    .line 655
     const-string v0, "MobileDataStateTracker"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -413,6 +447,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 656
     return-void
 .end method
 
@@ -421,8 +456,10 @@
     .parameter "netType"
 
     .prologue
+    .line 613
     packed-switch p0, :pswitch_data_0
 
+    .line 631
     :pswitch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -450,51 +487,61 @@
 
     invoke-static {v0}, Landroid/net/MobileDataStateTracker;->sloge(Ljava/lang/String;)V
 
+    .line 632
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
+    .line 615
     :pswitch_1
     const-string v0, "default"
 
     goto :goto_0
 
+    .line 617
     :pswitch_2
-    const-string v0, "mms"
+    const-string/jumbo v0, "mms"
 
     goto :goto_0
 
+    .line 619
     :pswitch_3
-    const-string v0, "supl"
+    const-string/jumbo v0, "supl"
 
     goto :goto_0
 
+    .line 621
     :pswitch_4
     const-string v0, "dun"
 
     goto :goto_0
 
+    .line 623
     :pswitch_5
     const-string v0, "hipri"
 
     goto :goto_0
 
+    .line 625
     :pswitch_6
     const-string v0, "fota"
 
     goto :goto_0
 
+    .line 627
     :pswitch_7
     const-string v0, "ims"
 
     goto :goto_0
 
+    .line 629
     :pswitch_8
     const-string v0, "cbs"
 
     goto :goto_0
 
+    .line 613
     nop
 
     :pswitch_data_0
@@ -524,6 +571,7 @@
     .prologue
     const/4 v3, 0x1
 
+    .line 409
     iget-object v4, p0, Landroid/net/MobileDataStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     invoke-virtual {v4}, Landroid/net/NetworkInfo;->getDetailedState()Landroid/net/NetworkInfo$DetailedState;
@@ -532,6 +580,7 @@
 
     if-eq p1, v4, :cond_1
 
+    .line 410
     iget-object v4, p0, Landroid/net/MobileDataStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     invoke-virtual {v4}, Landroid/net/NetworkInfo;->getState()Landroid/net/NetworkInfo$State;
@@ -544,6 +593,7 @@
 
     move v2, v3
 
+    .line 411
     .local v2, wasConnecting:Z
     :goto_0
     iget-object v4, p0, Landroid/net/MobileDataStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
@@ -552,6 +602,7 @@
 
     move-result-object v0
 
+    .line 417
     .local v0, lastReason:Ljava/lang/String;
     if-eqz v2, :cond_0
 
@@ -563,13 +614,16 @@
 
     if-eqz v0, :cond_0
 
+    .line 419
     move-object p2, v0
 
+    .line 420
     :cond_0
     iget-object v4, p0, Landroid/net/MobileDataStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     invoke-virtual {v4, p1, p2, p3}, Landroid/net/NetworkInfo;->setDetailedState(Landroid/net/NetworkInfo$DetailedState;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 421
     iget-object v4, p0, Landroid/net/MobileDataStateTracker;->mTarget:Landroid/os/Handler;
 
     new-instance v5, Landroid/net/NetworkInfo;
@@ -582,15 +636,18 @@
 
     move-result-object v1
 
+    .line 422
     .local v1, msg:Landroid/os/Message;
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
+    .line 424
     .end local v0           #lastReason:Ljava/lang/String;
     .end local v1           #msg:Landroid/os/Message;
     .end local v2           #wasConnecting:Z
     :cond_1
     return-void
 
+    .line 410
     :cond_2
     const/4 v2, 0x0
 
@@ -605,10 +662,12 @@
     .prologue
     const/4 v3, 0x1
 
+    .line 567
     const/4 v2, 0x0
 
     invoke-direct {p0, v2}, Landroid/net/MobileDataStateTracker;->getPhoneService(Z)V
 
+    .line 573
     const/4 v1, 0x0
 
     .local v1, retry:I
@@ -617,6 +676,7 @@
 
     if-ge v1, v2, :cond_0
 
+    .line 574
     invoke-static {}, Landroid/telephony/MSimTelephonyManager;->getDefault()Landroid/telephony/MSimTelephonyManager;
 
     move-result-object v2
@@ -627,14 +687,17 @@
 
     if-eqz v2, :cond_4
 
+    .line 575
     iget-object v2, p0, Landroid/net/MobileDataStateTracker;->mMSimPhoneService:Lcom/android/internal/telephony/msim/ITelephonyMSim;
 
     if-nez v2, :cond_1
 
+    .line 576
     const-string v2, "Ignoring feature request because could not acquire MSim Phone Service"
 
     invoke-direct {p0, v2}, Landroid/net/MobileDataStateTracker;->loge(Ljava/lang/String;)V
 
+    .line 608
     :cond_0
     :goto_1
     new-instance v2, Ljava/lang/StringBuilder;
@@ -678,14 +741,17 @@
 
     invoke-direct {p0, v2}, Landroid/net/MobileDataStateTracker;->loge(Ljava/lang/String;)V
 
+    .line 609
     const/4 v2, 0x3
 
     :goto_3
     return v2
 
+    .line 581
     :cond_1
     if-eqz p2, :cond_2
 
+    .line 582
     :try_start_0
     iget-object v2, p0, Landroid/net/MobileDataStateTracker;->mMSimPhoneService:Lcom/android/internal/telephony/msim/ITelephonyMSim;
 
@@ -695,6 +761,7 @@
 
     goto :goto_3
 
+    .line 584
     :cond_2
     iget-object v2, p0, Landroid/net/MobileDataStateTracker;->mMSimPhoneService:Lcom/android/internal/telephony/msim/ITelephonyMSim;
 
@@ -706,35 +773,42 @@
 
     goto :goto_3
 
+    .line 586
     :catch_0
     move-exception v0
 
+    .line 587
     .local v0, e:Landroid/os/RemoteException;
     if-nez v1, :cond_3
 
     invoke-direct {p0, v3}, Landroid/net/MobileDataStateTracker;->getPhoneService(Z)V
 
+    .line 573
     :cond_3
     :goto_4
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 590
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_4
     iget-object v2, p0, Landroid/net/MobileDataStateTracker;->mPhoneService:Lcom/android/internal/telephony/ITelephony;
 
     if-nez v2, :cond_5
 
+    .line 591
     const-string v2, "Ignoring feature request because could not acquire PhoneService"
 
     invoke-direct {p0, v2}, Landroid/net/MobileDataStateTracker;->loge(Ljava/lang/String;)V
 
     goto :goto_1
 
+    .line 596
     :cond_5
     if-eqz p2, :cond_6
 
+    .line 597
     :try_start_1
     iget-object v2, p0, Landroid/net/MobileDataStateTracker;->mPhoneService:Lcom/android/internal/telephony/ITelephony;
 
@@ -744,6 +818,7 @@
 
     goto :goto_3
 
+    .line 599
     :cond_6
     iget-object v2, p0, Landroid/net/MobileDataStateTracker;->mPhoneService:Lcom/android/internal/telephony/ITelephony;
 
@@ -755,9 +830,11 @@
 
     goto :goto_3
 
+    .line 601
     :catch_1
     move-exception v0
 
+    .line 602
     .restart local v0       #e:Landroid/os/RemoteException;
     if-nez v1, :cond_3
 
@@ -765,6 +842,7 @@
 
     goto :goto_4
 
+    .line 608
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_7
     const-string v2, "disable"
@@ -777,10 +855,12 @@
     .parameter "s"
 
     .prologue
+    .line 659
     const-string v0, "MobileDataStateTracker"
 
     invoke-static {v0, p0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 660
     return-void
 .end method
 
@@ -791,8 +871,10 @@
     .parameter "enabled"
 
     .prologue
+    .line 181
     iput-boolean p1, p0, Landroid/net/MobileDataStateTracker;->mDefaultRouteSet:Z
 
+    .line 182
     return-void
 .end method
 
@@ -800,6 +882,7 @@
     .locals 2
 
     .prologue
+    .line 647
     new-instance v0, Landroid/net/LinkCapabilities;
 
     iget-object v1, p0, Landroid/net/MobileDataStateTracker;->mLinkCapabilities:Landroid/net/LinkCapabilities;
@@ -813,6 +896,7 @@
     .locals 2
 
     .prologue
+    .line 640
     new-instance v0, Landroid/net/LinkProperties;
 
     iget-object v1, p0, Landroid/net/MobileDataStateTracker;->mLinkProperties:Landroid/net/LinkProperties;
@@ -826,6 +910,7 @@
     .locals 1
 
     .prologue
+    .line 173
     iget-object v0, p0, Landroid/net/MobileDataStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     return-object v0
@@ -835,8 +920,10 @@
     .locals 4
 
     .prologue
-    const-string v0, "unknown"
+    .line 334
+    const-string/jumbo v0, "unknown"
 
+    .line 335
     .local v0, networkTypeStr:Ljava/lang/String;
     new-instance v1, Landroid/telephony/TelephonyManager;
 
@@ -844,6 +931,7 @@
 
     invoke-direct {v1, v2}, Landroid/telephony/TelephonyManager;-><init>(Landroid/content/Context;)V
 
+    .line 337
     .local v1, tm:Landroid/telephony/TelephonyManager;
     invoke-virtual {v1}, Landroid/telephony/TelephonyManager;->getNetworkType()I
 
@@ -851,11 +939,12 @@
 
     packed-switch v2, :pswitch_data_0
 
+    .line 381
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "unknown network type: "
+    const-string/jumbo v3, "unknown network type: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -875,12 +964,13 @@
 
     invoke-direct {p0, v2}, Landroid/net/MobileDataStateTracker;->loge(Ljava/lang/String;)V
 
+    .line 383
     :goto_0
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "net.tcp.buffersize."
+    const-string/jumbo v3, "net.tcp.buffersize."
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -896,76 +986,105 @@
 
     return-object v2
 
+    .line 339
     :pswitch_0
     const-string v0, "gprs"
 
+    .line 340
     goto :goto_0
 
+    .line 342
     :pswitch_1
     const-string v0, "edge"
 
+    .line 343
     goto :goto_0
 
+    .line 345
     :pswitch_2
-    const-string v0, "umts"
+    const-string/jumbo v0, "umts"
 
+    .line 346
     goto :goto_0
 
+    .line 348
     :pswitch_3
     const-string v0, "hsdpa"
 
+    .line 349
     goto :goto_0
 
+    .line 351
     :pswitch_4
     const-string v0, "hsupa"
 
+    .line 352
     goto :goto_0
 
+    .line 354
     :pswitch_5
     const-string v0, "hspa"
 
+    .line 355
     goto :goto_0
 
+    .line 357
     :pswitch_6
     const-string v0, "cdma"
 
+    .line 358
     goto :goto_0
 
+    .line 360
     :pswitch_7
     const-string v0, "1xrtt"
 
+    .line 361
     goto :goto_0
 
+    .line 363
     :pswitch_8
     const-string v0, "evdo"
 
+    .line 364
     goto :goto_0
 
+    .line 366
     :pswitch_9
     const-string v0, "evdo"
 
+    .line 367
     goto :goto_0
 
+    .line 369
     :pswitch_a
     const-string v0, "evdo"
 
+    .line 370
     goto :goto_0
 
+    .line 372
     :pswitch_b
     const-string v0, "iden"
 
+    .line 373
     goto :goto_0
 
+    .line 375
     :pswitch_c
     const-string v0, "lte"
 
+    .line 376
     goto :goto_0
 
+    .line 378
     :pswitch_d
     const-string v0, "ehrpd"
 
+    .line 379
     goto :goto_0
 
+    .line 337
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -989,6 +1108,7 @@
     .locals 1
 
     .prologue
+    .line 326
     iget-object v0, p0, Landroid/net/MobileDataStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     invoke-virtual {v0}, Landroid/net/NetworkInfo;->isAvailable()Z
@@ -1002,6 +1122,7 @@
     .locals 1
 
     .prologue
+    .line 177
     iget-boolean v0, p0, Landroid/net/MobileDataStateTracker;->mDefaultRouteSet:Z
 
     return v0
@@ -1011,6 +1132,7 @@
     .locals 1
 
     .prologue
+    .line 165
     iget-boolean v0, p0, Landroid/net/MobileDataStateTracker;->mPrivateDnsRouteSet:Z
 
     return v0
@@ -1020,6 +1142,7 @@
     .locals 1
 
     .prologue
+    .line 431
     iget-boolean v0, p0, Landroid/net/MobileDataStateTracker;->mTeardownRequested:Z
 
     return v0
@@ -1030,8 +1153,10 @@
     .parameter "enabled"
 
     .prologue
+    .line 169
     iput-boolean p1, p0, Landroid/net/MobileDataStateTracker;->mPrivateDnsRouteSet:Z
 
+    .line 170
     return-void
 .end method
 
@@ -1041,13 +1166,16 @@
     .prologue
     const/4 v3, 0x0
 
+    .line 439
     const/4 v0, 0x0
 
+    .line 440
     .local v0, retValue:Z
     const/4 v1, 0x0
 
     invoke-virtual {p0, v1}, Landroid/net/MobileDataStateTracker;->setTeardownRequested(Z)V
 
+    .line 441
     iget-object v1, p0, Landroid/net/MobileDataStateTracker;->mApnType:Ljava/lang/String;
 
     const/4 v2, 0x1
@@ -1058,19 +1186,24 @@
 
     packed-switch v1, :pswitch_data_0
 
+    .line 455
     const-string v1, "Error in reconnect - unexpected response."
 
     invoke-direct {p0, v1}, Landroid/net/MobileDataStateTracker;->loge(Ljava/lang/String;)V
 
+    .line 458
     :goto_0
     :pswitch_0
     return v0
 
+    .line 444
     :pswitch_1
     const/4 v0, 0x1
 
+    .line 445
     goto :goto_0
 
+    .line 448
     :pswitch_2
     iget-object v1, p0, Landroid/net/MobileDataStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
 
@@ -1078,10 +1211,13 @@
 
     invoke-virtual {v1, v2, v3, v3}, Landroid/net/NetworkInfo;->setDetailedState(Landroid/net/NetworkInfo$DetailedState;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 449
     const/4 v0, 0x1
 
+    .line 450
     goto :goto_0
 
+    .line 441
     nop
 
     :pswitch_data_0
@@ -1097,6 +1233,7 @@
     .locals 0
 
     .prologue
+    .line 188
     return-void
 .end method
 
@@ -1104,15 +1241,19 @@
     .locals 2
 
     .prologue
+    .line 664
     iget-object v0, p0, Landroid/net/MobileDataStateTracker;->mDataConnectionTrackerAc:Lcom/android/internal/util/AsyncChannel;
 
+    .line 665
     .local v0, channel:Lcom/android/internal/util/AsyncChannel;
     if-eqz v0, :cond_0
 
+    .line 666
     const v1, 0x42064
 
     invoke-virtual {v0, v1}, Lcom/android/internal/util/AsyncChannel;->sendMessage(I)V
 
+    .line 668
     :cond_0
     return-void
 .end method
@@ -1122,6 +1263,7 @@
     .parameter "met"
 
     .prologue
+    .line 535
     const-string v3, "apnType"
 
     iget-object v4, p0, Landroid/net/MobileDataStateTracker;->mApnType:Ljava/lang/String;
@@ -1130,17 +1272,20 @@
 
     move-result-object v0
 
+    .line 538
     .local v0, bundle:Landroid/os/Bundle;
     :try_start_0
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v2
 
+    .line 539
     .local v2, msg:Landroid/os/Message;
     const v3, 0x4201f
 
     iput v3, v2, Landroid/os/Message;->what:I
 
+    .line 540
     if-eqz p1, :cond_0
 
     const/4 v3, 0x1
@@ -1148,34 +1293,40 @@
     :goto_0
     iput v3, v2, Landroid/os/Message;->arg1:I
 
+    .line 541
     invoke-virtual {v2, v0}, Landroid/os/Message;->setData(Landroid/os/Bundle;)V
 
+    .line 542
     iget-object v3, p0, Landroid/net/MobileDataStateTracker;->mDataConnectionTrackerAc:Lcom/android/internal/util/AsyncChannel;
 
     invoke-virtual {v3, v2}, Lcom/android/internal/util/AsyncChannel;->sendMessage(Landroid/os/Message;)V
     :try_end_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 547
     .end local v2           #msg:Landroid/os/Message;
     :goto_1
     return-void
 
+    .line 540
     .restart local v2       #msg:Landroid/os/Message;
     :cond_0
     const/4 v3, 0x0
 
     goto :goto_0
 
+    .line 544
     .end local v2           #msg:Landroid/os/Message;
     :catch_0
     move-exception v1
 
+    .line 545
     .local v1, e:Ljava/lang/NullPointerException;
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "setDependencyMet: X mAc was null"
+    const-string/jumbo v4, "setDependencyMet: X mAc was null"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1199,11 +1350,14 @@
     .parameter "enabled"
 
     .prologue
+    .line 523
     iget-object v0, p0, Landroid/net/MobileDataStateTracker;->mDataConnectionTrackerAc:Lcom/android/internal/util/AsyncChannel;
 
+    .line 524
     .local v0, channel:Lcom/android/internal/util/AsyncChannel;
     if-eqz v0, :cond_0
 
+    .line 525
     const v2, 0x42020
 
     if-eqz p1, :cond_1
@@ -1213,11 +1367,14 @@
     :goto_0
     invoke-virtual {v0, v2, v1}, Lcom/android/internal/util/AsyncChannel;->sendMessage(II)V
 
+    .line 526
     iput-boolean p1, p0, Landroid/net/MobileDataStateTracker;->mPolicyDataEnabled:Z
 
+    .line 528
     :cond_0
     return-void
 
+    .line 525
     :cond_1
     const/4 v1, 0x0
 
@@ -1233,8 +1390,10 @@
 
     const/4 v5, 0x0
 
+    .line 467
     invoke-direct {p0, v5}, Landroid/net/MobileDataStateTracker;->getPhoneService(Z)V
 
+    .line 473
     const/4 v3, 0x0
 
     .local v3, retry:I
@@ -1243,6 +1402,7 @@
 
     if-ge v3, v6, :cond_0
 
+    .line 474
     invoke-static {}, Landroid/telephony/MSimTelephonyManager;->getDefault()Landroid/telephony/MSimTelephonyManager;
 
     move-result-object v6
@@ -1253,14 +1413,17 @@
 
     if-eqz v6, :cond_5
 
+    .line 475
     iget-object v6, p0, Landroid/net/MobileDataStateTracker;->mMSimPhoneService:Lcom/android/internal/telephony/msim/ITelephonyMSim;
 
     if-nez v6, :cond_2
 
+    .line 476
     const-string v4, "Ignoring mobile radio request because could not acquire MSim Phone Service"
 
     invoke-direct {p0, v4}, Landroid/net/MobileDataStateTracker;->loge(Ljava/lang/String;)V
 
+    .line 505
     :cond_0
     :goto_1
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1275,7 +1438,7 @@
 
     if-eqz p1, :cond_7
 
-    const-string v4, "on"
+    const-string/jumbo v4, "on"
 
     :goto_2
     invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1290,13 +1453,16 @@
 
     move v2, v5
 
+    .line 506
     :cond_1
     :goto_3
     return v2
 
+    .line 482
     :cond_2
     const/4 v2, 0x1
 
+    .line 483
     .local v2, result:Z
     const/4 v1, 0x0
 
@@ -1313,6 +1479,7 @@
 
     if-ge v1, v6, :cond_1
 
+    .line 484
     if-eqz v2, :cond_3
 
     iget-object v6, p0, Landroid/net/MobileDataStateTracker;->mMSimPhoneService:Lcom/android/internal/telephony/msim/ITelephonyMSim;
@@ -1327,6 +1494,7 @@
 
     move v2, v4
 
+    .line 483
     :goto_5
     add-int/lit8 v1, v1, 0x1
 
@@ -1335,16 +1503,20 @@
     :cond_3
     move v2, v5
 
+    .line 484
     goto :goto_5
 
+    .line 487
     :catch_0
     move-exception v0
 
+    .line 488
     .local v0, e:Landroid/os/RemoteException;
     if-nez v3, :cond_4
 
     invoke-direct {p0, v4}, Landroid/net/MobileDataStateTracker;->getPhoneService(Z)V
 
+    .line 473
     .end local v1           #i:I
     .end local v2           #result:Z
     :cond_4
@@ -1353,18 +1525,21 @@
 
     goto :goto_0
 
+    .line 491
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_5
     iget-object v6, p0, Landroid/net/MobileDataStateTracker;->mPhoneService:Lcom/android/internal/telephony/ITelephony;
 
     if-nez v6, :cond_6
 
+    .line 492
     const-string v4, "Ignoring mobile radio request because could not acquire PhoneService"
 
     invoke-direct {p0, v4}, Landroid/net/MobileDataStateTracker;->loge(Ljava/lang/String;)V
 
     goto :goto_1
 
+    .line 497
     :cond_6
     :try_start_1
     iget-object v6, p0, Landroid/net/MobileDataStateTracker;->mPhoneService:Lcom/android/internal/telephony/ITelephony;
@@ -1377,9 +1552,11 @@
 
     goto :goto_3
 
+    .line 498
     :catch_1
     move-exception v0
 
+    .line 499
     .restart local v0       #e:Landroid/os/RemoteException;
     if-nez v3, :cond_4
 
@@ -1387,9 +1564,10 @@
 
     goto :goto_6
 
+    .line 505
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_7
-    const-string v4, "off"
+    const-string/jumbo v4, "off"
 
     goto :goto_2
 .end method
@@ -1399,8 +1577,10 @@
     .parameter "isRequested"
 
     .prologue
+    .line 427
     iput-boolean p1, p0, Landroid/net/MobileDataStateTracker;->mTeardownRequested:Z
 
+    .line 428
     return-void
 .end method
 
@@ -1409,11 +1589,14 @@
     .parameter "enabled"
 
     .prologue
+    .line 512
     iget-object v0, p0, Landroid/net/MobileDataStateTracker;->mDataConnectionTrackerAc:Lcom/android/internal/util/AsyncChannel;
 
+    .line 513
     .local v0, channel:Lcom/android/internal/util/AsyncChannel;
     if-eqz v0, :cond_0
 
+    .line 514
     const v2, 0x4201d
 
     if-eqz p1, :cond_1
@@ -1423,11 +1606,14 @@
     :goto_0
     invoke-virtual {v0, v2, v1}, Lcom/android/internal/util/AsyncChannel;->sendMessage(II)V
 
+    .line 515
     iput-boolean p1, p0, Landroid/net/MobileDataStateTracker;->mUserDataEnabled:Z
 
+    .line 518
     :cond_0
     return-void
 
+    .line 514
     :cond_1
     const/4 v1, 0x0
 
@@ -1440,10 +1626,13 @@
     .parameter "target"
 
     .prologue
+    .line 115
     iput-object p2, p0, Landroid/net/MobileDataStateTracker;->mTarget:Landroid/os/Handler;
 
+    .line 116
     iput-object p1, p0, Landroid/net/MobileDataStateTracker;->mContext:Landroid/content/Context;
 
+    .line 118
     new-instance v1, Landroid/net/MobileDataStateTracker$MdstHandler;
 
     invoke-virtual {p2}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
@@ -1454,23 +1643,28 @@
 
     iput-object v1, p0, Landroid/net/MobileDataStateTracker;->mHandler:Landroid/os/Handler;
 
+    .line 120
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
+    .line 121
     .local v0, filter:Landroid/content/IntentFilter;
     const-string v1, "android.intent.action.ANY_DATA_STATE"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+    .line 122
     const-string v1, "android.intent.action.DATA_CONNECTION_FAILED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+    .line 123
     sget-object v1, Lcom/android/internal/telephony/DataConnectionTracker;->ACTION_DATA_CONNECTION_TRACKER_MESSENGER:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+    .line 125
     iget-object v1, p0, Landroid/net/MobileDataStateTracker;->mContext:Landroid/content/Context;
 
     new-instance v2, Landroid/net/MobileDataStateTracker$MobileDataStateReceiver;
@@ -1481,10 +1675,12 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
+    .line 126
     sget-object v1, Lcom/android/internal/telephony/Phone$DataState;->DISCONNECTED:Lcom/android/internal/telephony/Phone$DataState;
 
     iput-object v1, p0, Landroid/net/MobileDataStateTracker;->mMobileDataState:Lcom/android/internal/telephony/Phone$DataState;
 
+    .line 127
     return-void
 .end method
 
@@ -1496,8 +1692,10 @@
 
     const/4 v1, 0x0
 
+    .line 392
     invoke-virtual {p0, v0}, Landroid/net/MobileDataStateTracker;->setTeardownRequested(Z)V
 
+    .line 393
     iget-object v2, p0, Landroid/net/MobileDataStateTracker;->mApnType:Ljava/lang/String;
 
     invoke-direct {p0, v2, v1}, Landroid/net/MobileDataStateTracker;->setEnableApn(Ljava/lang/String;Z)I
@@ -1521,15 +1719,18 @@
     .locals 3
 
     .prologue
+    .line 551
     new-instance v1, Ljava/io/CharArrayWriter;
 
     invoke-direct {v1}, Ljava/io/CharArrayWriter;-><init>()V
 
+    .line 552
     .local v1, writer:Ljava/io/CharArrayWriter;
     new-instance v0, Ljava/io/PrintWriter;
 
     invoke-direct {v0, v1}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
 
+    .line 553
     .local v0, pw:Ljava/io/PrintWriter;
     const-string v2, "Mobile data state: "
 
@@ -1539,6 +1740,7 @@
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
+    .line 554
     const-string v2, "Data enabled: user="
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1547,6 +1749,7 @@
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Z)V
 
+    .line 555
     const-string v2, ", policy="
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1555,6 +1758,7 @@
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Z)V
 
+    .line 556
     invoke-virtual {v1}, Ljava/io/CharArrayWriter;->toString()Ljava/lang/String;
 
     move-result-object v2

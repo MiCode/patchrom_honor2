@@ -38,10 +38,12 @@
     .parameter
 
     .prologue
+    .line 664
     iput-object p1, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->this$0:Lcom/android/internal/telephony/IccFileHandler;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
+    .line 667
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->response:Landroid/os/Message;
@@ -55,6 +57,7 @@
     .parameter "x1"
 
     .prologue
+    .line 664
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;-><init>(Lcom/android/internal/telephony/IccFileHandler;)V
 
     return-void
@@ -67,14 +70,17 @@
     .parameter "msg"
 
     .prologue
+    .line 675
     :try_start_0
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
+    .line 741
     :goto_0
     return-void
 
+    .line 677
     :pswitch_0
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -82,6 +88,7 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->ar:Landroid/os/AsyncResult;
 
+    .line 678
     iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->ar:Landroid/os/AsyncResult;
 
     iget-object v0, v0, Landroid/os/AsyncResult;->userObj:Ljava/lang/Object;
@@ -90,6 +97,7 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->response:Landroid/os/Message;
 
+    .line 679
     iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->ar:Landroid/os/AsyncResult;
 
     iget-object v0, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
@@ -98,12 +106,14 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->result:Lcom/android/internal/telephony/IccIoResult;
 
+    .line 681
     iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->ar:Landroid/os/AsyncResult;
 
     iget-object v0, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-eqz v0, :cond_0
 
+    .line 682
     iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->this$0:Lcom/android/internal/telephony/IccFileHandler;
 
     iget-object v1, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->response:Landroid/os/Message;
@@ -121,14 +131,17 @@
 
     goto :goto_0
 
+    .line 734
     :catch_0
     move-exception v10
 
+    .line 735
     .local v10, exc:Ljava/lang/Exception;
     iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->response:Landroid/os/Message;
 
     if-eqz v0, :cond_6
 
+    .line 736
     iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->this$0:Lcom/android/internal/telephony/IccFileHandler;
 
     iget-object v1, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->response:Landroid/os/Message;
@@ -140,6 +153,7 @@
 
     goto :goto_0
 
+    .line 686
     .end local v10           #exc:Ljava/lang/Exception;
     :cond_0
     :try_start_1
@@ -151,10 +165,12 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->iccException:Lcom/android/internal/telephony/IccException;
 
+    .line 688
     iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->iccException:Lcom/android/internal/telephony/IccException;
 
     if-eqz v0, :cond_1
 
+    .line 689
     iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->this$0:Lcom/android/internal/telephony/IccFileHandler;
 
     iget-object v1, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->response:Landroid/os/Message;
@@ -168,6 +184,7 @@
 
     goto :goto_0
 
+    .line 693
     :cond_1
     iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->result:Lcom/android/internal/telephony/IccIoResult;
 
@@ -175,10 +192,12 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->data:[B
 
+    .line 695
     iget v0, p1, Landroid/os/Message;->arg1:I
 
     iput v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->fileid:I
 
+    .line 696
     invoke-virtual {p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
     move-result-object v0
@@ -189,6 +208,7 @@
 
     move-result-object v3
 
+    .line 698
     .local v3, filePath:Ljava/lang/String;
     const/4 v0, 0x4
 
@@ -200,12 +220,14 @@
 
     if-eq v0, v1, :cond_2
 
+    .line 699
     new-instance v0, Lcom/android/internal/telephony/IccFileTypeMismatch;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/IccFileTypeMismatch;-><init>()V
 
     throw v0
 
+    .line 702
     :cond_2
     iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->data:[B
 
@@ -215,12 +237,14 @@
 
     if-eqz v0, :cond_3
 
+    .line 703
     new-instance v0, Lcom/android/internal/telephony/IccFileTypeMismatch;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/IccFileTypeMismatch;-><init>()V
 
     throw v0
 
+    .line 706
     :cond_3
     iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->data:[B
 
@@ -244,6 +268,7 @@
 
     iput v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->size:I
 
+    .line 709
     iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->this$0:Lcom/android/internal/telephony/IccFileHandler;
 
     iget-object v0, v0, Lcom/android/internal/telephony/IccFileHandler;->mCi:Lcom/android/internal/telephony/CommandsInterface;
@@ -278,6 +303,7 @@
 
     goto/16 :goto_0
 
+    .line 715
     .end local v3           #filePath:Ljava/lang/String;
     :pswitch_1
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -286,6 +312,7 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->ar:Landroid/os/AsyncResult;
 
+    .line 716
     iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->ar:Landroid/os/AsyncResult;
 
     iget-object v0, v0, Landroid/os/AsyncResult;->userObj:Ljava/lang/Object;
@@ -294,6 +321,7 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->response:Landroid/os/Message;
 
+    .line 717
     iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->ar:Landroid/os/AsyncResult;
 
     iget-object v0, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
@@ -302,12 +330,14 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->result:Lcom/android/internal/telephony/IccIoResult;
 
+    .line 719
     iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->ar:Landroid/os/AsyncResult;
 
     iget-object v0, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-eqz v0, :cond_4
 
+    .line 720
     iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->this$0:Lcom/android/internal/telephony/IccFileHandler;
 
     iget-object v1, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->response:Landroid/os/Message;
@@ -323,6 +353,7 @@
 
     goto/16 :goto_0
 
+    .line 724
     :cond_4
     iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->result:Lcom/android/internal/telephony/IccIoResult;
 
@@ -332,10 +363,12 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->iccException:Lcom/android/internal/telephony/IccException;
 
+    .line 726
     iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->iccException:Lcom/android/internal/telephony/IccException;
 
     if-eqz v0, :cond_5
 
+    .line 727
     iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->this$0:Lcom/android/internal/telephony/IccFileHandler;
 
     iget-object v1, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->response:Landroid/os/Message;
@@ -349,6 +382,7 @@
 
     goto/16 :goto_0
 
+    .line 731
     :cond_5
     iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->this$0:Lcom/android/internal/telephony/IccFileHandler;
 
@@ -367,6 +401,7 @@
 
     goto/16 :goto_0
 
+    .line 738
     .restart local v10       #exc:Ljava/lang/Exception;
     :cond_6
     iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler$VnReaderHandler;->this$0:Lcom/android/internal/telephony/IccFileHandler;
@@ -375,7 +410,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "uncaught exception"
+    const-string/jumbo v2, "uncaught exception"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -393,6 +428,7 @@
 
     goto/16 :goto_0
 
+    .line 675
     :pswitch_data_0
     .packed-switch 0x4b0
         :pswitch_0

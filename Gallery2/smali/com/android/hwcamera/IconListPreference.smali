@@ -174,15 +174,15 @@
 
     .line 82
     aget-object v6, v0, v1
-	.line 1000001
+
     invoke-virtual {v6}, Ljava/lang/Object;->toString()Ljava/lang/String;
-	.line 1000002
+
     move-result-object v6
-	.line 1000003
+
     invoke-interface {p1, v6}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
-	.line 1000004
+
     move-result v6
-	.line 1000005
+
     if-ltz v6, :cond_0
 
     .line 83

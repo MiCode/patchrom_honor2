@@ -27,6 +27,7 @@
     .parameter
 
     .prologue
+    .line 850
     .local p0, this:Landroid/widget/AdapterView$SelectionNotifier;,"Landroid/widget/AdapterView<TT;>.SelectionNotifier;"
     iput-object p1, p0, Landroid/widget/AdapterView$SelectionNotifier;->this$0:Landroid/widget/AdapterView;
 
@@ -41,6 +42,7 @@
     .parameter "x1"
 
     .prologue
+    .line 850
     .local p0, this:Landroid/widget/AdapterView$SelectionNotifier;,"Landroid/widget/AdapterView<TT;>.SelectionNotifier;"
     invoke-direct {p0, p1}, Landroid/widget/AdapterView$SelectionNotifier;-><init>(Landroid/widget/AdapterView;)V
 
@@ -53,6 +55,7 @@
     .locals 1
 
     .prologue
+    .line 852
     .local p0, this:Landroid/widget/AdapterView$SelectionNotifier;,"Landroid/widget/AdapterView<TT;>.SelectionNotifier;"
     iget-object v0, p0, Landroid/widget/AdapterView$SelectionNotifier;->this$0:Landroid/widget/AdapterView;
 
@@ -60,6 +63,7 @@
 
     if-eqz v0, :cond_1
 
+    .line 856
     iget-object v0, p0, Landroid/widget/AdapterView$SelectionNotifier;->this$0:Landroid/widget/AdapterView;
 
     invoke-virtual {v0}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
@@ -68,20 +72,24 @@
 
     if-eqz v0, :cond_0
 
+    .line 857
     iget-object v0, p0, Landroid/widget/AdapterView$SelectionNotifier;->this$0:Landroid/widget/AdapterView;
 
     invoke-virtual {v0, p0}, Landroid/widget/AdapterView;->post(Ljava/lang/Runnable;)Z
 
+    .line 863
     :cond_0
     :goto_0
     return-void
 
+    .line 860
     :cond_1
     iget-object v0, p0, Landroid/widget/AdapterView$SelectionNotifier;->this$0:Landroid/widget/AdapterView;
 
     #calls: Landroid/widget/AdapterView;->fireOnSelected()V
     invoke-static {v0}, Landroid/widget/AdapterView;->access$200(Landroid/widget/AdapterView;)V
 
+    .line 861
     iget-object v0, p0, Landroid/widget/AdapterView$SelectionNotifier;->this$0:Landroid/widget/AdapterView;
 
     #calls: Landroid/widget/AdapterView;->performAccessibilityActionsOnSelected()V

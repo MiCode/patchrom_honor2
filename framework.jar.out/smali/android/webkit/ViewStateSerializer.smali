@@ -14,6 +14,7 @@
     .locals 0
 
     .prologue
+    .line 78
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,20 +30,24 @@
     .end annotation
 
     .prologue
+    .line 53
     new-instance v3, Ljava/io/DataInputStream;
 
     invoke-direct {v3, p0}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
 
+    .line 54
     .local v3, dis:Ljava/io/DataInputStream;
     invoke-virtual {v3}, Ljava/io/DataInputStream;->readInt()I
 
     move-result v5
 
+    .line 55
     .local v5, version:I
     const/4 v6, 0x1
 
     if-le v5, v6, :cond_0
 
+    .line 56
     new-instance v6, Ljava/io/IOException;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -67,16 +72,19 @@
 
     throw v6
 
+    .line 58
     :cond_0
     invoke-virtual {v3}, Ljava/io/DataInputStream;->readInt()I
 
     move-result v2
 
+    .line 59
     .local v2, contentWidth:I
     invoke-virtual {v3}, Ljava/io/DataInputStream;->readInt()I
 
     move-result v1
 
+    .line 60
     .local v1, contentHeight:I
     const/16 v6, 0x4000
 
@@ -86,11 +94,13 @@
 
     move-result v0
 
+    .line 63
     .local v0, baseLayer:I
     new-instance v4, Landroid/webkit/WebViewCore$DrawData;
 
     invoke-direct {v4}, Landroid/webkit/WebViewCore$DrawData;-><init>()V
 
+    .line 64
     .local v4, draw:Landroid/webkit/WebViewCore$DrawData;
     new-instance v6, Landroid/webkit/WebViewCore$ViewState;
 
@@ -98,16 +108,20 @@
 
     iput-object v6, v4, Landroid/webkit/WebViewCore$DrawData;->mViewState:Landroid/webkit/WebViewCore$ViewState;
 
+    .line 65
     new-instance v6, Landroid/graphics/Point;
 
     invoke-direct {v6, v2, v1}, Landroid/graphics/Point;-><init>(II)V
 
     iput-object v6, v4, Landroid/webkit/WebViewCore$DrawData;->mContentSize:Landroid/graphics/Point;
 
+    .line 66
     iput v0, v4, Landroid/webkit/WebViewCore$DrawData;->mBaseLayer:I
 
+    .line 67
     invoke-virtual {p0}, Ljava/io/InputStream;->close()V
 
+    .line 68
     return-object v4
 .end method
 
@@ -128,38 +142,47 @@
     .end annotation
 
     .prologue
+    .line 39
     iget v0, p1, Landroid/webkit/WebViewCore$DrawData;->mBaseLayer:I
 
+    .line 40
     .local v0, baseLayer:I
     if-nez v0, :cond_0
 
+    .line 41
     const/4 v2, 0x0
 
+    .line 47
     :goto_0
     return v2
 
+    .line 43
     :cond_0
     new-instance v1, Ljava/io/DataOutputStream;
 
     invoke-direct {v1, p0}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
 
+    .line 44
     .local v1, dos:Ljava/io/DataOutputStream;
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Ljava/io/DataOutputStream;->writeInt(I)V
 
+    .line 45
     iget-object v2, p1, Landroid/webkit/WebViewCore$DrawData;->mContentSize:Landroid/graphics/Point;
 
     iget v2, v2, Landroid/graphics/Point;->x:I
 
     invoke-virtual {v1, v2}, Ljava/io/DataOutputStream;->writeInt(I)V
 
+    .line 46
     iget-object v2, p1, Landroid/webkit/WebViewCore$DrawData;->mContentSize:Landroid/graphics/Point;
 
     iget v2, v2, Landroid/graphics/Point;->y:I
 
     invoke-virtual {v1, v2}, Ljava/io/DataOutputStream;->writeInt(I)V
 
+    .line 47
     const/16 v2, 0x4000
 
     new-array v2, v2, [B

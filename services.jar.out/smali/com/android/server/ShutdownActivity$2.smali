@@ -27,6 +27,7 @@
     .parameter
 
     .prologue
+    .line 71
     iput-object p1, p0, Lcom/android/server/ShutdownActivity$2;->this$0:Lcom/android/server/ShutdownActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,9 +41,11 @@
     .locals 1
 
     .prologue
+    .line 73
     iget-object v0, p0, Lcom/android/server/ShutdownActivity$2;->this$0:Lcom/android/server/ShutdownActivity;
 
     invoke-virtual {v0}, Lcom/android/server/ShutdownActivity;->finish()V
 
+    .line 74
     return-void
 .end method

@@ -31,6 +31,7 @@
     .parameter
 
     .prologue
+    .line 2029
     iput-object p1, p0, Landroid/widget/NumberPicker$SetSelectionCommand;->this$0:Landroid/widget/NumberPicker;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,6 +45,7 @@
     .parameter "x1"
 
     .prologue
+    .line 2029
     iput p1, p0, Landroid/widget/NumberPicker$SetSelectionCommand;->mSelectionStart:I
 
     return p1
@@ -55,6 +57,7 @@
     .parameter "x1"
 
     .prologue
+    .line 2029
     iput p1, p0, Landroid/widget/NumberPicker$SetSelectionCommand;->mSelectionEnd:I
 
     return p1
@@ -66,6 +69,7 @@
     .locals 3
 
     .prologue
+    .line 2035
     iget-object v0, p0, Landroid/widget/NumberPicker$SetSelectionCommand;->this$0:Landroid/widget/NumberPicker;
 
     #getter for: Landroid/widget/NumberPicker;->mInputText:Landroid/widget/EditText;
@@ -79,5 +83,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/EditText;->setSelection(II)V
 
+    .line 2036
     return-void
 .end method

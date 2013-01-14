@@ -68,12 +68,15 @@
     .locals 1
 
     .prologue
+    .line 5456
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 5395
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->contentViewType:I
 
+    .line 5457
     return-void
 .end method
 
@@ -83,16 +86,21 @@
     .parameter "height"
 
     .prologue
+    .line 5437
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 5395
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->contentViewType:I
 
+    .line 5438
     iput p1, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
+    .line 5439
     iput p2, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
+    .line 5440
     return-void
 .end method
 
@@ -104,23 +112,29 @@
     .prologue
     const/4 v2, 0x0
 
+    .line 5418
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 5395
     iput v2, p0, Landroid/view/ViewGroup$LayoutParams;->contentViewType:I
 
+    .line 5419
     sget-object v1, Lcom/android/internal/R$styleable;->ViewGroup_Layout:[I
 
     invoke-virtual {p1, p2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
+    .line 5420
     .local v0, a:Landroid/content/res/TypedArray;
     const/4 v1, 0x1
 
     invoke-virtual {p0, v0, v2, v1}, Landroid/view/ViewGroup$LayoutParams;->setBaseAttributes(Landroid/content/res/TypedArray;II)V
 
+    .line 5423
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
+    .line 5424
     return-void
 .end method
 
@@ -129,20 +143,25 @@
     .parameter "source"
 
     .prologue
+    .line 5447
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 5395
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->contentViewType:I
 
+    .line 5448
     iget v0, p1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
+    .line 5449
     iget v0, p1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
+    .line 5450
     return-void
 .end method
 
@@ -151,24 +170,30 @@
     .parameter "size"
 
     .prologue
+    .line 5519
     const/4 v0, -0x2
 
     if-ne p0, v0, :cond_0
 
-    const-string v0, "wrap-content"
+    .line 5520
+    const-string/jumbo v0, "wrap-content"
 
+    .line 5525
     :goto_0
     return-object v0
 
+    .line 5522
     :cond_0
     const/4 v0, -0x1
 
     if-ne p0, v0, :cond_1
 
-    const-string v0, "match-parent"
+    .line 5523
+    const-string/jumbo v0, "match-parent"
 
     goto :goto_0
 
+    .line 5525
     :cond_1
     invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
@@ -184,6 +209,7 @@
     .parameter "output"
 
     .prologue
+    .line 5495
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -243,6 +269,7 @@
     .parameter "canvas"
 
     .prologue
+    .line 5508
     return-void
 .end method
 
@@ -251,6 +278,7 @@
     .parameter "layoutDirection"
 
     .prologue
+    .line 5483
     return-void
 .end method
 
@@ -261,6 +289,7 @@
     .parameter "heightAttr"
 
     .prologue
+    .line 5467
     const-string v0, "layout_width"
 
     invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getLayoutDimension(ILjava/lang/String;)I
@@ -269,6 +298,7 @@
 
     iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
+    .line 5468
     const-string v0, "layout_height"
 
     invoke-virtual {p1, p3, v0}, Landroid/content/res/TypedArray;->getLayoutDimension(ILjava/lang/String;)I
@@ -277,5 +307,6 @@
 
     iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
+    .line 5469
     return-void
 .end method

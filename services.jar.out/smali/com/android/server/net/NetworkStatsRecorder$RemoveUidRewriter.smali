@@ -30,16 +30,20 @@
     .parameter "uid"
 
     .prologue
+    .line 298
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 299
     new-instance v0, Lcom/android/server/net/NetworkStatsCollection;
 
     invoke-direct {v0, p1, p2}, Lcom/android/server/net/NetworkStatsCollection;-><init>(J)V
 
     iput-object v0, p0, Lcom/android/server/net/NetworkStatsRecorder$RemoveUidRewriter;->mTemp:Lcom/android/server/net/NetworkStatsCollection;
 
+    .line 300
     iput p3, p0, Lcom/android/server/net/NetworkStatsRecorder$RemoveUidRewriter;->mUid:I
 
+    .line 301
     return-void
 .end method
 
@@ -55,20 +59,24 @@
     .end annotation
 
     .prologue
+    .line 310
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsRecorder$RemoveUidRewriter;->mTemp:Lcom/android/server/net/NetworkStatsCollection;
 
     invoke-virtual {v0, p1}, Lcom/android/server/net/NetworkStatsCollection;->read(Ljava/io/InputStream;)V
 
+    .line 311
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsRecorder$RemoveUidRewriter;->mTemp:Lcom/android/server/net/NetworkStatsCollection;
 
     invoke-virtual {v0}, Lcom/android/server/net/NetworkStatsCollection;->clearDirty()V
 
+    .line 312
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsRecorder$RemoveUidRewriter;->mTemp:Lcom/android/server/net/NetworkStatsCollection;
 
     iget v1, p0, Lcom/android/server/net/NetworkStatsRecorder$RemoveUidRewriter;->mUid:I
 
     invoke-virtual {v0, v1}, Lcom/android/server/net/NetworkStatsCollection;->removeUid(I)V
 
+    .line 313
     return-void
 .end method
 
@@ -76,10 +84,12 @@
     .locals 1
 
     .prologue
+    .line 305
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsRecorder$RemoveUidRewriter;->mTemp:Lcom/android/server/net/NetworkStatsCollection;
 
     invoke-virtual {v0}, Lcom/android/server/net/NetworkStatsCollection;->reset()V
 
+    .line 306
     return-void
 .end method
 
@@ -87,6 +97,7 @@
     .locals 1
 
     .prologue
+    .line 317
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsRecorder$RemoveUidRewriter;->mTemp:Lcom/android/server/net/NetworkStatsCollection;
 
     invoke-virtual {v0}, Lcom/android/server/net/NetworkStatsCollection;->isDirty()Z
@@ -106,6 +117,7 @@
     .end annotation
 
     .prologue
+    .line 322
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsRecorder$RemoveUidRewriter;->mTemp:Lcom/android/server/net/NetworkStatsCollection;
 
     new-instance v1, Ljava/io/DataOutputStream;
@@ -114,5 +126,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/net/NetworkStatsCollection;->write(Ljava/io/DataOutputStream;)V
 
+    .line 323
     return-void
 .end method

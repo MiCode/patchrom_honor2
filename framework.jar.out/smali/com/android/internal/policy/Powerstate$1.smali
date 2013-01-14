@@ -27,6 +27,7 @@
     .parameter
 
     .prologue
+    .line 317
     iput-object p1, p0, Lcom/android/internal/policy/Powerstate$1;->val$modeContext:Landroid/content/Context;
 
     iput p2, p0, Lcom/android/internal/policy/Powerstate$1;->val$stateIson:I
@@ -44,7 +45,8 @@
     .prologue
     const-wide/16 v4, 0x1f4
 
-    const-string v2, "phone"
+    .line 320
+    const-string/jumbo v2, "phone"
 
     invoke-static {v2}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
 
@@ -54,12 +56,15 @@
 
     move-result-object v1
 
+    .line 321
     .local v1, modePhone:Lcom/android/internal/telephony/ITelephony;
     :goto_0
     if-nez v1, :cond_1
 
+    .line 322
     invoke-static {v4, v5}, Landroid/os/SystemClock;->sleep(J)V
 
+    .line 323
     invoke-static {}, Lcom/android/internal/policy/Powerstate;->access$000()Z
 
     move-result v2
@@ -68,12 +73,13 @@
 
     const-string v2, "Powerstate"
 
-    const-string v3, "toggleAirPlane wait phone ready"
+    const-string/jumbo v3, "toggleAirPlane wait phone ready"
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 324
     :cond_0
-    const-string v2, "phone"
+    const-string/jumbo v2, "phone"
 
     invoke-static {v2}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
 
@@ -85,9 +91,11 @@
 
     goto :goto_0
 
+    .line 326
     :cond_1
     invoke-static {v4, v5}, Landroid/os/SystemClock;->sleep(J)V
 
+    .line 327
     iget-object v2, p0, Lcom/android/internal/policy/Powerstate$1;->val$modeContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -100,19 +108,22 @@
 
     invoke-static {v2, v3, v4}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
+    .line 328
     new-instance v0, Landroid/content/Intent;
 
     const-string v2, "android.intent.action.AIRPLANE_MODE"
 
     invoke-direct {v0, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
+    .line 329
     .local v0, aIntent:Landroid/content/Intent;
-    const-string v2, "state"
+    const-string/jumbo v2, "state"
 
     const/4 v3, 0x0
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
+    .line 330
     invoke-static {}, Lcom/android/internal/policy/Powerstate;->access$000()Z
 
     move-result v2
@@ -121,22 +132,26 @@
 
     const-string v2, "Powerstate"
 
-    const-string v3, "toggleAirPlane send ACTION_AIRPLANE_MODE_CHANGED"
+    const-string/jumbo v3, "toggleAirPlane send ACTION_AIRPLANE_MODE_CHANGED"
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 331
     :cond_2
     iget-object v2, p0, Lcom/android/internal/policy/Powerstate$1;->val$modeContext:Landroid/content/Context;
 
     invoke-virtual {v2, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
+    .line 332
     const-wide/16 v2, 0x9c4
 
     invoke-static {v2, v3}, Landroid/os/SystemClock;->sleep(J)V
 
+    .line 333
     iget-object v2, p0, Lcom/android/internal/policy/Powerstate$1;->val$modeContext:Landroid/content/Context;
 
     invoke-virtual {v2, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
+    .line 334
     return-void
 .end method

@@ -82,8 +82,10 @@
     .locals 0
 
     .prologue
+    .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1773
     return-void
 .end method
 
@@ -92,6 +94,7 @@
     .parameter "name"
 
     .prologue
+    .line 2110
     invoke-static {}, Landroid/provider/HanziToPinyin;->getInstance()Landroid/provider/HanziToPinyin;
 
     move-result-object v3
@@ -100,11 +103,13 @@
 
     move-result-object v2
 
+    .line 2111
     .local v2, tokens:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/provider/HanziToPinyin$Token;>;"
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
+    .line 2112
     .local v1, pinyin:Ljava/lang/StringBuilder;
     const/4 v0, 0x0
 
@@ -116,6 +121,7 @@
 
     if-ge v0, v3, :cond_1
 
+    .line 2113
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -126,6 +132,7 @@
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 2114
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -138,15 +145,18 @@
 
     if-ne v3, v4, :cond_0
 
+    .line 2115
     const/16 v3, 0x2e
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
+    .line 2112
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    .line 2118
     :cond_1
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -160,6 +170,7 @@
     .parameter "x0"
 
     .prologue
+    .line 52
     invoke-static {p0}, Landroid/provider/MediaStore;->GetPinyinForSort(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -171,6 +182,7 @@
     .locals 1
 
     .prologue
+    .line 2065
     const-string v0, "content://media/none/media_scanner"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -187,6 +199,7 @@
     .prologue
     const/4 v2, 0x0
 
+    .line 2090
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -207,9 +220,11 @@
 
     move-result-object v6
 
+    .line 2093
     .local v6, c:Landroid/database/Cursor;
     if-eqz v6, :cond_0
 
+    .line 2095
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -217,6 +232,7 @@
 
     if-eqz v0, :cond_1
 
+    .line 2096
     const/4 v0, 0x0
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -225,12 +241,15 @@
 
     move-result-object v2
 
+    .line 2099
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
+    .line 2102
     :cond_0
     :goto_0
     return-object v2
 
+    .line 2099
     :cond_1
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 

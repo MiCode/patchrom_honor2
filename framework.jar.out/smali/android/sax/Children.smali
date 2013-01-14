@@ -20,14 +20,17 @@
     .locals 1
 
     .prologue
+    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 25
     const/16 v0, 0x10
 
     new-array v0, v0, [Landroid/sax/Children$Child;
 
     iput-object v0, p0, Landroid/sax/Children;->children:[Landroid/sax/Children$Child;
 
+    .line 86
     return-void
 .end method
 
@@ -41,6 +44,7 @@
     .prologue
     const/4 v3, 0x0
 
+    .line 66
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
     move-result v4
@@ -53,20 +57,25 @@
 
     add-int v1, v4, v5
 
+    .line 67
     .local v1, hash:I
     and-int/lit8 v2, v1, 0xf
 
+    .line 69
     .local v2, index:I
     iget-object v4, p0, Landroid/sax/Children;->children:[Landroid/sax/Children$Child;
 
     aget-object v0, v4, v2
 
+    .line 70
     .local v0, current:Landroid/sax/Children$Child;
     if-nez v0, :cond_0
 
+    .line 82
     :goto_0
     return-object v3
 
+    .line 74
     :cond_0
     iget v4, v0, Landroid/sax/Children$Child;->hash:I
 
@@ -90,11 +99,14 @@
 
     move-object v3, v0
 
+    .line 77
     goto :goto_0
 
+    .line 79
     :cond_1
     iget-object v0, v0, Landroid/sax/Children$Child;->next:Landroid/sax/Children$Child;
 
+    .line 80
     if-nez v0, :cond_0
 
     goto :goto_0
@@ -107,6 +119,7 @@
     .parameter "localName"
 
     .prologue
+    .line 31
     invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
 
     move-result v1
@@ -119,17 +132,21 @@
 
     add-int v5, v1, v2
 
+    .line 32
     .local v5, hash:I
     and-int/lit8 v7, v5, 0xf
 
+    .line 34
     .local v7, index:I
     iget-object v1, p0, Landroid/sax/Children;->children:[Landroid/sax/Children$Child;
 
     aget-object v0, v1, v7
 
+    .line 35
     .local v0, current:Landroid/sax/Children$Child;
     if-nez v0, :cond_0
 
+    .line 37
     new-instance v0, Landroid/sax/Children$Child;
 
     .end local v0           #current:Landroid/sax/Children$Child;
@@ -145,6 +162,7 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/sax/Children$Child;-><init>(Landroid/sax/Element;Ljava/lang/String;Ljava/lang/String;II)V
 
+    .line 38
     .restart local v0       #current:Landroid/sax/Children$Child;
     iget-object v1, p0, Landroid/sax/Children;->children:[Landroid/sax/Children$Child;
 
@@ -152,11 +170,13 @@
 
     move-object v6, v0
 
+    .line 58
     .end local v0           #current:Landroid/sax/Children$Child;
     .local v6, current:Ljava/lang/Object;
     :goto_0
     return-object v6
 
+    .line 44
     .end local v6           #current:Ljava/lang/Object;
     .restart local v0       #current:Landroid/sax/Children$Child;
     :cond_0
@@ -182,18 +202,23 @@
 
     move-object v6, v0
 
+    .line 48
     .restart local v6       #current:Ljava/lang/Object;
     goto :goto_0
 
+    .line 51
     .end local v6           #current:Ljava/lang/Object;
     :cond_1
     move-object v8, v0
 
+    .line 52
     .local v8, previous:Landroid/sax/Children$Child;
     iget-object v0, v0, Landroid/sax/Children$Child;->next:Landroid/sax/Children$Child;
 
+    .line 53
     if-nez v0, :cond_0
 
+    .line 56
     new-instance v0, Landroid/sax/Children$Child;
 
     .end local v0           #current:Landroid/sax/Children$Child;
@@ -209,11 +234,13 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/sax/Children$Child;-><init>(Landroid/sax/Element;Ljava/lang/String;Ljava/lang/String;II)V
 
+    .line 57
     .restart local v0       #current:Landroid/sax/Children$Child;
     iput-object v0, v8, Landroid/sax/Children$Child;->next:Landroid/sax/Children$Child;
 
     move-object v6, v0
 
+    .line 58
     .restart local v6       #current:Ljava/lang/Object;
     goto :goto_0
 .end method

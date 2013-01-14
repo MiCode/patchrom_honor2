@@ -14,6 +14,7 @@
     .locals 1
 
     .prologue
+    .line 30
     const/16 v0, 0xf
 
     new-array v0, v0, [I
@@ -48,6 +49,7 @@
     .locals 0
 
     .prologue
+    .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -58,8 +60,10 @@
     .parameter "input"
 
     .prologue
+    .line 53
     const/4 v1, 0x0
 
+    .line 54
     .local v1, output:I
     const/4 v0, 0x0
 
@@ -71,6 +75,7 @@
 
     if-ge v0, v2, :cond_1
 
+    .line 55
     const/4 v2, 0x1
 
     shl-int/2addr v2, v0
@@ -79,17 +84,20 @@
 
     if-eqz v2, :cond_0
 
+    .line 56
     sget-object v2, Landroid/content/pm/ActivityInfoEx;->CONFIG_NATIVE_BITS:[I
 
     aget v2, v2, v0
 
     or-int/2addr v1, v2
 
+    .line 54
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    .line 59
     :cond_1
     return v1
 .end method

@@ -37,16 +37,19 @@
     .parameter
 
     .prologue
+    .line 4050
     iput-object p1, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 4024
     new-instance v0, Landroid/widget/AbsListView$FlingRunnable$1;
 
     invoke-direct {v0, p0}, Landroid/widget/AbsListView$FlingRunnable$1;-><init>(Landroid/widget/AbsListView$FlingRunnable;)V
 
     iput-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->mCheckFlywheel:Ljava/lang/Runnable;
 
+    .line 4051
     new-instance v0, Landroid/widget/OverScroller;
 
     invoke-virtual {p1}, Landroid/widget/AbsListView;->getContext()Landroid/content/Context;
@@ -57,6 +60,7 @@
 
     iput-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->mScroller:Landroid/widget/OverScroller;
 
+    .line 4052
     return-void
 .end method
 
@@ -65,6 +69,7 @@
     .parameter "x0"
 
     .prologue
+    .line 4013
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->mScroller:Landroid/widget/OverScroller;
 
     return-object v0
@@ -77,6 +82,7 @@
     .parameter "delta"
 
     .prologue
+    .line 4096
     iget-object v2, p0, Landroid/widget/AbsListView$FlingRunnable;->mScroller:Landroid/widget/OverScroller;
 
     iget-object v3, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
@@ -94,12 +100,14 @@
 
     invoke-virtual {v2, v3, v4, v5}, Landroid/widget/OverScroller;->notifyVerticalEdgeReached(III)V
 
+    .line 4097
     iget-object v2, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v2}, Landroid/widget/AbsListView;->getOverScrollMode()I
 
     move-result v0
 
+    .line 4098
     .local v0, overscrollMode:I
     if-eqz v0, :cond_0
 
@@ -116,6 +124,7 @@
 
     if-nez v2, :cond_3
 
+    .line 4100
     :cond_0
     iget-object v2, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
@@ -123,6 +132,7 @@
 
     iput v3, v2, Landroid/widget/AbsListView;->mTouchMode:I
 
+    .line 4101
     iget-object v2, p0, Landroid/widget/AbsListView$FlingRunnable;->mScroller:Landroid/widget/OverScroller;
 
     invoke-virtual {v2}, Landroid/widget/OverScroller;->getCurrVelocity()F
@@ -131,9 +141,11 @@
 
     float-to-int v1, v2
 
+    .line 4102
     .local v1, vel:I
     if-lez p1, :cond_2
 
+    .line 4103
     iget-object v2, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     #getter for: Landroid/widget/AbsListView;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
@@ -143,6 +155,7 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/EdgeEffect;->onAbsorb(I)V
 
+    .line 4113
     .end local v1           #vel:I
     :cond_1
     :goto_0
@@ -150,12 +163,15 @@
 
     invoke-virtual {v2}, Landroid/widget/AbsListView;->invalidate()V
 
+    .line 4114
     iget-object v2, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v2, p0}, Landroid/widget/AbsListView;->postOnAnimation(Ljava/lang/Runnable;)V
 
+    .line 4115
     return-void
 
+    .line 4105
     .restart local v1       #vel:I
     :cond_2
     iget-object v2, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
@@ -169,6 +185,7 @@
 
     goto :goto_0
 
+    .line 4108
     .end local v1           #vel:I
     :cond_3
     iget-object v2, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
@@ -177,12 +194,14 @@
 
     iput v3, v2, Landroid/widget/AbsListView;->mTouchMode:I
 
+    .line 4109
     iget-object v2, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     iget-object v2, v2, Landroid/widget/AbsListView;->mPositionScroller:Landroid/widget/AbsListView$PositionScroller;
 
     if-eqz v2, :cond_1
 
+    .line 4110
     iget-object v2, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     iget-object v2, v2, Landroid/widget/AbsListView;->mPositionScroller:Landroid/widget/AbsListView$PositionScroller;
@@ -196,37 +215,44 @@
     .locals 2
 
     .prologue
+    .line 4127
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     const/4 v1, -0x1
 
     iput v1, v0, Landroid/widget/AbsListView;->mTouchMode:I
 
+    .line 4129
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v0, p0}, Landroid/widget/AbsListView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
+    .line 4130
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     iget-object v1, p0, Landroid/widget/AbsListView$FlingRunnable;->mCheckFlywheel:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/widget/AbsListView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
+    .line 4132
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/AbsListView;->reportScrollStateChange(I)V
 
+    .line 4133
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     #calls: Landroid/widget/AbsListView;->clearScrollingCache()V
     invoke-static {v0}, Landroid/widget/AbsListView;->access$2000(Landroid/widget/AbsListView;)V
 
+    .line 4134
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->mScroller:Landroid/widget/OverScroller;
 
     invoke-virtual {v0}, Landroid/widget/OverScroller;->abortAnimation()V
 
+    .line 4136
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     #getter for: Landroid/widget/AbsListView;->mFlingStrictSpan:Landroid/os/StrictMode$Span;
@@ -236,6 +262,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 4137
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     #getter for: Landroid/widget/AbsListView;->mFlingStrictSpan:Landroid/os/StrictMode$Span;
@@ -245,6 +272,7 @@
 
     invoke-virtual {v0}, Landroid/os/StrictMode$Span;->finish()V
 
+    .line 4138
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     const/4 v1, 0x0
@@ -252,6 +280,7 @@
     #setter for: Landroid/widget/AbsListView;->mFlingStrictSpan:Landroid/os/StrictMode$Span;
     invoke-static {v0, v1}, Landroid/widget/AbsListView;->access$1302(Landroid/widget/AbsListView;Landroid/os/StrictMode$Span;)Landroid/os/StrictMode$Span;
 
+    .line 4140
     :cond_0
     return-void
 .end method
@@ -260,6 +289,7 @@
     .locals 4
 
     .prologue
+    .line 4143
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     iget-object v1, p0, Landroid/widget/AbsListView$FlingRunnable;->mCheckFlywheel:Ljava/lang/Runnable;
@@ -268,6 +298,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/widget/AbsListView;->postDelayed(Ljava/lang/Runnable;J)Z
 
+    .line 4144
     return-void
 .end method
 
@@ -275,6 +306,7 @@
     .locals 30
 
     .prologue
+    .line 4147
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
@@ -283,13 +315,16 @@
 
     packed-switch v2, :pswitch_data_0
 
+    .line 4149
     :pswitch_0
     invoke-virtual/range {p0 .. p0}, Landroid/widget/AbsListView$FlingRunnable;->endFling()V
 
+    .line 4271
     :cond_0
     :goto_0
     return-void
 
+    .line 4153
     :pswitch_1
     move-object/from16 v0, p0
 
@@ -301,6 +336,7 @@
 
     if-nez v2, :cond_0
 
+    .line 4158
     :pswitch_2
     move-object/from16 v0, p0
 
@@ -310,12 +346,14 @@
 
     if-eqz v2, :cond_1
 
+    .line 4159
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v2}, Landroid/widget/AbsListView;->layoutChildren()V
 
+    .line 4162
     :cond_1
     move-object/from16 v0, p0
 
@@ -335,11 +373,13 @@
 
     if-nez v2, :cond_3
 
+    .line 4163
     :cond_2
     invoke-virtual/range {p0 .. p0}, Landroid/widget/AbsListView$FlingRunnable;->endFling()V
 
     goto :goto_0
 
+    .line 4167
     :cond_3
     move-object/from16 v0, p0
 
@@ -347,16 +387,19 @@
 
     move-object/from16 v27, v0
 
+    .line 4168
     .local v27, scroller:Landroid/widget/OverScroller;
     invoke-virtual/range {v27 .. v27}, Landroid/widget/OverScroller;->computeScrollOffset()Z
 
     move-result v23
 
+    .line 4169
     .local v23, more:Z
     invoke-virtual/range {v27 .. v27}, Landroid/widget/OverScroller;->getCurrY()I
 
     move-result v29
 
+    .line 4173
     .local v29, y:I
     move-object/from16 v0, p0
 
@@ -364,9 +407,11 @@
 
     sub-int v20, v2, v29
 
+    .line 4176
     .local v20, delta:I
     if-lez v20, :cond_6
 
+    .line 4178
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
@@ -379,6 +424,7 @@
 
     iput v3, v2, Landroid/widget/AbsListView;->mMotionPosition:I
 
+    .line 4179
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
@@ -389,6 +435,7 @@
 
     move-result-object v21
 
+    .line 4180
     .local v21, firstView:Landroid/view/View;
     move-object/from16 v0, p0
 
@@ -400,6 +447,7 @@
 
     iput v3, v2, Landroid/widget/AbsListView;->mMotionViewOriginalTop:I
 
+    .line 4183
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
@@ -438,6 +486,7 @@
 
     move-result v20
 
+    .line 4197
     .end local v21           #firstView:Landroid/view/View;
     :goto_1
     move-object/from16 v0, p0
@@ -462,16 +511,20 @@
 
     move-result-object v24
 
+    .line 4198
     .local v24, motionView:Landroid/view/View;
     const/16 v26, 0x0
 
+    .line 4199
     .local v26, oldTop:I
     if-eqz v24, :cond_4
 
+    .line 4200
     invoke-virtual/range {v24 .. v24}, Landroid/view/View;->getTop()I
 
     move-result v26
 
+    .line 4204
     :cond_4
     move-object/from16 v0, p0
 
@@ -485,6 +538,7 @@
 
     move-result v15
 
+    .line 4205
     .local v15, atEdge:Z
     if-eqz v15, :cond_7
 
@@ -492,12 +546,15 @@
 
     const/16 v16, 0x1
 
+    .line 4206
     .local v16, atEnd:Z
     :goto_2
     if-eqz v16, :cond_8
 
+    .line 4207
     if-eqz v24, :cond_5
 
+    .line 4209
     invoke-virtual/range {v24 .. v24}, Landroid/view/View;->getTop()I
 
     move-result v2
@@ -508,6 +565,7 @@
 
     neg-int v4, v2
 
+    .line 4210
     .local v4, overshoot:I
     move-object/from16 v0, p0
 
@@ -543,10 +601,12 @@
     #calls: Landroid/widget/AbsListView;->overScrollBy(IIIIIIIIZ)Z
     invoke-static/range {v2 .. v11}, Landroid/widget/AbsListView;->access$2600(Landroid/widget/AbsListView;IIIIIIIIZ)Z
 
+    .line 4213
     .end local v4           #overshoot:I
     :cond_5
     if-eqz v23, :cond_0
 
+    .line 4214
     move-object/from16 v0, p0
 
     move/from16 v1, v20
@@ -555,6 +615,7 @@
 
     goto/16 :goto_0
 
+    .line 4186
     .end local v15           #atEdge:Z
     .end local v16           #atEnd:Z
     .end local v24           #motionView:Landroid/view/View;
@@ -570,6 +631,7 @@
 
     add-int/lit8 v25, v2, -0x1
 
+    .line 4187
     .local v25, offsetToLast:I
     move-object/from16 v0, p0
 
@@ -585,6 +647,7 @@
 
     iput v3, v2, Landroid/widget/AbsListView;->mMotionPosition:I
 
+    .line 4189
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
@@ -595,6 +658,7 @@
 
     move-result-object v22
 
+    .line 4190
     .local v22, lastView:Landroid/view/View;
     move-object/from16 v0, p0
 
@@ -606,6 +670,7 @@
 
     iput v3, v2, Landroid/widget/AbsListView;->mMotionViewOriginalTop:I
 
+    .line 4193
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
@@ -648,6 +713,7 @@
 
     goto/16 :goto_1
 
+    .line 4205
     .end local v22           #lastView:Landroid/view/View;
     .end local v25           #offsetToLast:I
     .restart local v15       #atEdge:Z
@@ -658,12 +724,14 @@
 
     goto/16 :goto_2
 
+    .line 4219
     .restart local v16       #atEnd:Z
     :cond_8
     if-eqz v23, :cond_a
 
     if-nez v16, :cond_a
 
+    .line 4220
     if-eqz v15, :cond_9
 
     move-object/from16 v0, p0
@@ -672,6 +740,7 @@
 
     invoke-virtual {v2}, Landroid/widget/AbsListView;->invalidate()V
 
+    .line 4221
     :cond_9
     move/from16 v0, v29
 
@@ -679,6 +748,7 @@
 
     iput v0, v1, Landroid/widget/AbsListView$FlingRunnable;->mLastFlingY:I
 
+    .line 4222
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
@@ -689,11 +759,13 @@
 
     goto/16 :goto_0
 
+    .line 4224
     :cond_a
     invoke-virtual/range {p0 .. p0}, Landroid/widget/AbsListView$FlingRunnable;->endFling()V
 
     goto/16 :goto_0
 
+    .line 4242
     .end local v15           #atEdge:Z
     .end local v16           #atEnd:Z
     .end local v20           #delta:I
@@ -709,6 +781,7 @@
 
     move-object/from16 v27, v0
 
+    .line 4243
     .restart local v27       #scroller:Landroid/widget/OverScroller;
     invoke-virtual/range {v27 .. v27}, Landroid/widget/OverScroller;->computeScrollOffset()Z
 
@@ -716,6 +789,7 @@
 
     if-eqz v2, :cond_11
 
+    .line 4244
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
@@ -725,14 +799,17 @@
 
     move-result v9
 
+    .line 4245
     .local v9, scrollY:I
     invoke-virtual/range {v27 .. v27}, Landroid/widget/OverScroller;->getCurrY()I
 
     move-result v19
 
+    .line 4246
     .local v19, currY:I
     sub-int v7, v19, v9
 
+    .line 4247
     .local v7, deltaY:I
     move-object/from16 v0, p0
 
@@ -763,12 +840,14 @@
 
     if-eqz v2, :cond_10
 
+    .line 4249
     if-gtz v9, :cond_d
 
     if-lez v19, :cond_d
 
     const/16 v17, 0x1
 
+    .line 4250
     .local v17, crossDown:Z
     :goto_3
     if-ltz v9, :cond_e
@@ -777,12 +856,14 @@
 
     const/16 v18, 0x1
 
+    .line 4251
     .local v18, crossUp:Z
     :goto_4
     if-nez v17, :cond_b
 
     if-eqz v18, :cond_f
 
+    .line 4252
     :cond_b
     invoke-virtual/range {v27 .. v27}, Landroid/widget/OverScroller;->getCurrVelocity()F
 
@@ -792,6 +873,7 @@
 
     move/from16 v28, v0
 
+    .line 4253
     .local v28, velocity:I
     if-eqz v18, :cond_c
 
@@ -801,9 +883,11 @@
 
     move/from16 v28, v0
 
+    .line 4256
     :cond_c
     invoke-virtual/range {v27 .. v27}, Landroid/widget/OverScroller;->abortAnimation()V
 
+    .line 4257
     move-object/from16 v0, p0
 
     move/from16 v1, v28
@@ -812,6 +896,7 @@
 
     goto/16 :goto_0
 
+    .line 4249
     .end local v17           #crossDown:Z
     .end local v18           #crossUp:Z
     .end local v28           #velocity:I
@@ -820,18 +905,21 @@
 
     goto :goto_3
 
+    .line 4250
     .restart local v17       #crossDown:Z
     :cond_e
     const/16 v18, 0x0
 
     goto :goto_4
 
+    .line 4259
     .restart local v18       #crossUp:Z
     :cond_f
     invoke-virtual/range {p0 .. p0}, Landroid/widget/AbsListView$FlingRunnable;->startSpringback()V
 
     goto/16 :goto_0
 
+    .line 4262
     .end local v17           #crossDown:Z
     .end local v18           #crossUp:Z
     :cond_10
@@ -841,6 +929,7 @@
 
     invoke-virtual {v2}, Landroid/widget/AbsListView;->invalidate()V
 
+    .line 4263
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
@@ -851,6 +940,7 @@
 
     goto/16 :goto_0
 
+    .line 4266
     .end local v7           #deltaY:I
     .end local v9           #scrollY:I
     .end local v19           #currY:I
@@ -859,6 +949,7 @@
 
     goto/16 :goto_0
 
+    .line 4147
     nop
 
     :pswitch_data_0
@@ -879,20 +970,24 @@
 
     const/4 v1, 0x0
 
+    .line 4055
     if-gez p1, :cond_1
 
     move v2, v6
 
+    .line 4056
     .local v2, initialY:I
     :goto_0
     iput v2, p0, Landroid/widget/AbsListView$FlingRunnable;->mLastFlingY:I
 
+    .line 4057
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->mScroller:Landroid/widget/OverScroller;
 
     const/4 v3, 0x0
 
     invoke-virtual {v0, v3}, Landroid/widget/OverScroller;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
+    .line 4058
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->mScroller:Landroid/widget/OverScroller;
 
     move v3, v1
@@ -907,16 +1002,19 @@
 
     invoke-virtual/range {v0 .. v8}, Landroid/widget/OverScroller;->fling(IIIIIIII)V
 
+    .line 4060
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     const/4 v1, 0x4
 
     iput v1, v0, Landroid/widget/AbsListView;->mTouchMode:I
 
+    .line 4061
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v0, p0}, Landroid/widget/AbsListView;->postOnAnimation(Ljava/lang/Runnable;)V
 
+    .line 4070
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     #getter for: Landroid/widget/AbsListView;->mFlingStrictSpan:Landroid/os/StrictMode$Span;
@@ -926,6 +1024,7 @@
 
     if-nez v0, :cond_0
 
+    .line 4071
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     const-string v1, "AbsListView-fling"
@@ -937,6 +1036,7 @@
     #setter for: Landroid/widget/AbsListView;->mFlingStrictSpan:Landroid/os/StrictMode$Span;
     invoke-static {v0, v1}, Landroid/widget/AbsListView;->access$1302(Landroid/widget/AbsListView;Landroid/os/StrictMode$Span;)Landroid/os/StrictMode$Span;
 
+    .line 4073
     :cond_0
     return-void
 
@@ -944,6 +1044,7 @@
     :cond_1
     move v2, v1
 
+    .line 4055
     goto :goto_0
 .end method
 
@@ -954,12 +1055,14 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 4087
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->mScroller:Landroid/widget/OverScroller;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Landroid/widget/OverScroller;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
+    .line 4088
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->mScroller:Landroid/widget/OverScroller;
 
     iget-object v2, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
@@ -991,20 +1094,24 @@
 
     invoke-virtual/range {v0 .. v10}, Landroid/widget/OverScroller;->fling(IIIIIIIIII)V
 
+    .line 4090
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     const/4 v1, 0x6
 
     iput v1, v0, Landroid/widget/AbsListView;->mTouchMode:I
 
+    .line 4091
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v0}, Landroid/widget/AbsListView;->invalidate()V
 
+    .line 4092
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v0, p0}, Landroid/widget/AbsListView;->postOnAnimation(Ljava/lang/Runnable;)V
 
+    .line 4093
     return-void
 .end method
 
@@ -1017,14 +1124,17 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 4118
     if-gez p1, :cond_0
 
     const v2, 0x7fffffff
 
+    .line 4119
     .local v2, initialY:I
     :goto_0
     iput v2, p0, Landroid/widget/AbsListView$FlingRunnable;->mLastFlingY:I
 
+    .line 4120
     iget-object v3, p0, Landroid/widget/AbsListView$FlingRunnable;->mScroller:Landroid/widget/OverScroller;
 
     if-eqz p3, :cond_1
@@ -1034,6 +1144,7 @@
     :goto_1
     invoke-virtual {v3, v0}, Landroid/widget/OverScroller;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
+    .line 4121
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->mScroller:Landroid/widget/OverScroller;
 
     move v3, v1
@@ -1044,24 +1155,29 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/widget/OverScroller;->startScroll(IIIII)V
 
+    .line 4122
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     const/4 v1, 0x4
 
     iput v1, v0, Landroid/widget/AbsListView;->mTouchMode:I
 
+    .line 4123
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v0, p0}, Landroid/widget/AbsListView;->postOnAnimation(Ljava/lang/Runnable;)V
 
+    .line 4124
     return-void
 
     .end local v2           #initialY:I
     :cond_0
     move v2, v1
 
+    .line 4118
     goto :goto_0
 
+    .line 4120
     .restart local v2       #initialY:I
     :cond_1
     const/4 v0, 0x0
@@ -1075,6 +1191,7 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 4076
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->mScroller:Landroid/widget/OverScroller;
 
     iget-object v2, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
@@ -1098,23 +1215,28 @@
 
     if-eqz v0, :cond_0
 
+    .line 4077
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     const/4 v1, 0x6
 
     iput v1, v0, Landroid/widget/AbsListView;->mTouchMode:I
 
+    .line 4078
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v0}, Landroid/widget/AbsListView;->invalidate()V
 
+    .line 4079
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v0, p0}, Landroid/widget/AbsListView;->postOnAnimation(Ljava/lang/Runnable;)V
 
+    .line 4084
     :goto_0
     return-void
 
+    .line 4081
     :cond_0
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
@@ -1122,6 +1244,7 @@
 
     iput v2, v0, Landroid/widget/AbsListView;->mTouchMode:I
 
+    .line 4082
     iget-object v0, p0, Landroid/widget/AbsListView$FlingRunnable;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v0, v1}, Landroid/widget/AbsListView;->reportScrollStateChange(I)V

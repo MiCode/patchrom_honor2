@@ -16,6 +16,7 @@
     .locals 1
 
     .prologue
+    .line 27
     new-instance v0, Ljava/util/Random;
 
     invoke-direct {v0}, Ljava/util/Random;-><init>()V
@@ -29,8 +30,10 @@
     .locals 0
 
     .prologue
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 32
     return-void
 .end method
 
@@ -39,6 +42,7 @@
     .parameter "v"
 
     .prologue
+    .line 35
     const/4 v0, 0x0
 
     cmpl-float v0, p0, v0
@@ -61,6 +65,7 @@
     .parameter "value"
 
     .prologue
+    .line 128
     float-to-double v0, p0
 
     invoke-static {v0, v1}, Ljava/lang/Math;->acos(D)D
@@ -77,6 +82,7 @@
     .parameter "value"
 
     .prologue
+    .line 132
     float-to-double v0, p0
 
     invoke-static {v0, v1}, Ljava/lang/Math;->asin(D)D
@@ -93,6 +99,7 @@
     .parameter "value"
 
     .prologue
+    .line 136
     float-to-double v0, p0
 
     invoke-static {v0, v1}, Ljava/lang/Math;->atan(D)D
@@ -110,6 +117,7 @@
     .parameter "b"
 
     .prologue
+    .line 140
     float-to-double v0, p0
 
     float-to-double v2, p1
@@ -130,6 +138,7 @@
     .parameter "high"
 
     .prologue
+    .line 47
     cmpg-float v0, p0, p1
 
     if-gez v0, :cond_0
@@ -161,6 +170,7 @@
     .parameter "high"
 
     .prologue
+    .line 39
     if-ge p0, p1, :cond_0
 
     .end local p1
@@ -188,6 +198,7 @@
     .parameter "high"
 
     .prologue
+    .line 43
     cmp-long v0, p0, p2
 
     if-gez v0, :cond_0
@@ -217,6 +228,7 @@
     .parameter "radians"
 
     .prologue
+    .line 124
     const v0, 0x42652ee2
 
     mul-float/2addr v0, p0
@@ -232,11 +244,14 @@
     .parameter "y2"
 
     .prologue
+    .line 95
     sub-float v0, p2, p0
 
+    .line 96
     .local v0, x:F
     sub-float v1, p3, p1
 
+    .line 97
     .local v1, y:F
     mul-float v2, v0, v0
 
@@ -265,14 +280,18 @@
     .parameter "z2"
 
     .prologue
+    .line 101
     sub-float v0, p3, p0
 
+    .line 102
     .local v0, x:F
     sub-float v1, p4, p1
 
+    .line 103
     .local v1, y:F
     sub-float v2, p5, p2
 
+    .line 104
     .local v2, z:F
     mul-float v3, v0, v0
 
@@ -300,6 +319,7 @@
     .parameter "a"
 
     .prologue
+    .line 55
     float-to-double v0, p0
 
     invoke-static {v0, v1}, Ljava/lang/Math;->exp(D)D
@@ -318,6 +338,7 @@
     .parameter "amount"
 
     .prologue
+    .line 148
     sub-float v0, p1, p0
 
     mul-float/2addr v0, p2
@@ -332,6 +353,7 @@
     .parameter "a"
 
     .prologue
+    .line 51
     float-to-double v0, p0
 
     invoke-static {v0, v1}, Ljava/lang/Math;->log(D)D
@@ -349,6 +371,7 @@
     .parameter "b"
 
     .prologue
+    .line 108
     mul-float v0, p0, p0
 
     mul-float v1, p1, p1
@@ -373,6 +396,7 @@
     .parameter "c"
 
     .prologue
+    .line 112
     mul-float v0, p0, p0
 
     mul-float v1, p1, p1
@@ -403,6 +427,7 @@
     .parameter "value"
 
     .prologue
+    .line 156
     sub-float v0, p2, p3
 
     sub-float v1, p4, p0
@@ -424,6 +449,7 @@
     .parameter "b"
 
     .prologue
+    .line 63
     cmpl-float v0, p0, p1
 
     if-lez v0, :cond_0
@@ -446,6 +472,7 @@
     .parameter "c"
 
     .prologue
+    .line 71
     cmpl-float v0, p0, p1
 
     if-lez v0, :cond_1
@@ -478,6 +505,7 @@
     .parameter "b"
 
     .prologue
+    .line 67
     if-le p0, p1, :cond_0
 
     int-to-float v0, p0
@@ -498,6 +526,7 @@
     .parameter "c"
 
     .prologue
+    .line 75
     if-le p0, p1, :cond_1
 
     if-le p0, p2, :cond_0
@@ -539,6 +568,7 @@
     .parameter "b"
 
     .prologue
+    .line 79
     cmpg-float v0, p0, p1
 
     if-gez v0, :cond_0
@@ -561,6 +591,7 @@
     .parameter "c"
 
     .prologue
+    .line 87
     cmpg-float v0, p0, p1
 
     if-gez v0, :cond_1
@@ -593,6 +624,7 @@
     .parameter "b"
 
     .prologue
+    .line 83
     if-ge p0, p1, :cond_0
 
     int-to-float v0, p0
@@ -613,6 +645,7 @@
     .parameter "c"
 
     .prologue
+    .line 91
     if-ge p0, p1, :cond_1
 
     if-ge p0, p2, :cond_0
@@ -655,6 +688,7 @@
     .parameter "value"
 
     .prologue
+    .line 152
     sub-float v0, p2, p0
 
     sub-float v1, p1, p0
@@ -670,6 +704,7 @@
     .parameter "b"
 
     .prologue
+    .line 59
     float-to-double v0, p0
 
     float-to-double v2, p1
@@ -688,6 +723,7 @@
     .parameter "degrees"
 
     .prologue
+    .line 120
     const v0, 0x3c8efa35
 
     mul-float/2addr v0, p0
@@ -700,6 +736,7 @@
     .parameter "howbig"
 
     .prologue
+    .line 169
     sget-object v0, Landroid/util/MathUtils;->sRandom:Ljava/util/Random;
 
     invoke-virtual {v0}, Ljava/util/Random;->nextFloat()F
@@ -717,10 +754,12 @@
     .parameter "howbig"
 
     .prologue
+    .line 173
     cmpl-float v0, p0, p1
 
     if-ltz v0, :cond_0
 
+    .line 174
     .end local p0
     :goto_0
     return p0
@@ -747,6 +786,7 @@
     .parameter "howbig"
 
     .prologue
+    .line 160
     sget-object v0, Landroid/util/MathUtils;->sRandom:Ljava/util/Random;
 
     invoke-virtual {v0}, Ljava/util/Random;->nextFloat()F
@@ -768,8 +808,10 @@
     .parameter "howbig"
 
     .prologue
+    .line 164
     if-lt p0, p1, :cond_0
 
+    .line 165
     .end local p0
     :goto_0
     return p0
@@ -802,10 +844,12 @@
     .parameter "seed"
 
     .prologue
+    .line 178
     sget-object v0, Landroid/util/MathUtils;->sRandom:Ljava/util/Random;
 
     invoke-virtual {v0, p0, p1}, Ljava/util/Random;->setSeed(J)V
 
+    .line 179
     return-void
 .end method
 
@@ -814,6 +858,7 @@
     .parameter "v"
 
     .prologue
+    .line 116
     mul-float v0, p0, p0
 
     return v0
@@ -824,6 +869,7 @@
     .parameter "angle"
 
     .prologue
+    .line 144
     float-to-double v0, p0
 
     invoke-static {v0, v1}, Ljava/lang/Math;->tan(D)D

@@ -24,6 +24,7 @@
     .parameter
 
     .prologue
+    .line 177
     iput-object p1, p0, Lcom/android/server/AppWidgetService$1;->this$0:Lcom/android/server/AppWidgetService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,6 +40,7 @@
     .parameter "intent"
 
     .prologue
+    .line 180
     iget-object v0, p0, Lcom/android/server/AppWidgetService$1;->this$0:Lcom/android/server/AppWidgetService;
 
     const-string v1, "android.intent.extra.user_id"
@@ -51,5 +53,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/AppWidgetService;->onUserRemoved(I)V
 
+    .line 181
     return-void
 .end method

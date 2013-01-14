@@ -14,8 +14,10 @@
     .locals 0
 
     .prologue
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 29
     return-void
 .end method
 
@@ -25,11 +27,15 @@
     .parameter "initY"
 
     .prologue
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 32
     iput p1, p0, Landroid/renderscript/Float2;->x:F
 
+    .line 33
     iput p2, p0, Landroid/renderscript/Float2;->y:F
 
+    .line 34
     return-void
 .end method

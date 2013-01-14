@@ -38,16 +38,22 @@
     .parameter "t"
 
     .prologue
+    .line 1419
     iput-object p1, p0, Lcom/android/server/PowerManagerService$PokeLock;->this$0:Lcom/android/server/PowerManagerService;
 
+    .line 1420
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1421
     iput p2, p0, Lcom/android/server/PowerManagerService$PokeLock;->pokey:I
 
+    .line 1422
     iput-object p3, p0, Lcom/android/server/PowerManagerService$PokeLock;->binder:Landroid/os/IBinder;
 
+    .line 1423
     iput-object p4, p0, Lcom/android/server/PowerManagerService$PokeLock;->tag:Ljava/lang/String;
 
+    .line 1425
     const/4 v1, 0x0
 
     :try_start_0
@@ -55,12 +61,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 1429
     :goto_0
     return-void
 
+    .line 1426
     :catch_0
     move-exception v0
 
+    .line 1427
     .local v0, e:Landroid/os/RemoteException;
     invoke-virtual {p0}, Lcom/android/server/PowerManagerService$PokeLock;->binderDied()V
 
@@ -73,6 +82,7 @@
     .locals 4
 
     .prologue
+    .line 1431
     iget-object v0, p0, Lcom/android/server/PowerManagerService$PokeLock;->this$0:Lcom/android/server/PowerManagerService;
 
     const/4 v1, 0x0
@@ -83,5 +93,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/PowerManagerService;->setPokeLock(ILandroid/os/IBinder;Ljava/lang/String;)V
 
+    .line 1432
     return-void
 .end method

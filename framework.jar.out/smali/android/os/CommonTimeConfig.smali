@@ -85,28 +85,35 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 415
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/os/CommonTimeConfig;->mListenerLock:Ljava/lang/Object;
 
+    .line 416
     iput-object v1, p0, Landroid/os/CommonTimeConfig;->mServerDiedListener:Landroid/os/CommonTimeConfig$OnServerDiedListener;
 
+    .line 418
     iput-object v1, p0, Landroid/os/CommonTimeConfig;->mRemote:Landroid/os/IBinder;
 
+    .line 419
     const-string v0, ""
 
     iput-object v0, p0, Landroid/os/CommonTimeConfig;->mInterfaceDesc:Ljava/lang/String;
 
+    .line 422
     new-instance v0, Landroid/os/CommonTimeConfig$1;
 
     invoke-direct {v0, p0}, Landroid/os/CommonTimeConfig$1;-><init>(Landroid/os/CommonTimeConfig;)V
 
     iput-object v0, p0, Landroid/os/CommonTimeConfig;->mDeathHandler:Landroid/os/IBinder$DeathRecipient;
 
+    .line 66
     const-string v0, "common_time.config"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -115,16 +122,19 @@
 
     iput-object v0, p0, Landroid/os/CommonTimeConfig;->mRemote:Landroid/os/IBinder;
 
+    .line 67
     iget-object v0, p0, Landroid/os/CommonTimeConfig;->mRemote:Landroid/os/IBinder;
 
     if-nez v0, :cond_0
 
+    .line 68
     new-instance v0, Landroid/os/RemoteException;
 
     invoke-direct {v0}, Landroid/os/RemoteException;-><init>()V
 
     throw v0
 
+    .line 70
     :cond_0
     iget-object v0, p0, Landroid/os/CommonTimeConfig;->mRemote:Landroid/os/IBinder;
 
@@ -134,6 +144,7 @@
 
     iput-object v0, p0, Landroid/os/CommonTimeConfig;->mInterfaceDesc:Ljava/lang/String;
 
+    .line 71
     new-instance v0, Landroid/os/CommonTimeUtils;
 
     iget-object v1, p0, Landroid/os/CommonTimeConfig;->mRemote:Landroid/os/IBinder;
@@ -144,6 +155,7 @@
 
     iput-object v0, p0, Landroid/os/CommonTimeConfig;->mUtils:Landroid/os/CommonTimeUtils;
 
+    .line 72
     iget-object v0, p0, Landroid/os/CommonTimeConfig;->mRemote:Landroid/os/IBinder;
 
     iget-object v1, p0, Landroid/os/CommonTimeConfig;->mDeathHandler:Landroid/os/IBinder$DeathRecipient;
@@ -152,6 +164,7 @@
 
     invoke-interface {v0, v1, v2}, Landroid/os/IBinder;->linkToDeath(Landroid/os/IBinder$DeathRecipient;I)V
 
+    .line 73
     return-void
 .end method
 
@@ -160,6 +173,7 @@
     .parameter "x0"
 
     .prologue
+    .line 31
     iget-object v0, p0, Landroid/os/CommonTimeConfig;->mListenerLock:Ljava/lang/Object;
 
     return-object v0
@@ -170,6 +184,7 @@
     .parameter "x0"
 
     .prologue
+    .line 31
     iget-object v0, p0, Landroid/os/CommonTimeConfig;->mServerDiedListener:Landroid/os/CommonTimeConfig$OnServerDiedListener;
 
     return-object v0
@@ -179,6 +194,7 @@
     .locals 1
 
     .prologue
+    .line 407
     iget-object v0, p0, Landroid/os/CommonTimeConfig;->mRemote:Landroid/os/IBinder;
 
     if-eqz v0, :cond_0
@@ -203,6 +219,7 @@
     .locals 2
 
     .prologue
+    .line 82
     :try_start_0
     new-instance v1, Landroid/os/CommonTimeConfig;
 
@@ -210,14 +227,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 88
     .local v1, retVal:Landroid/os/CommonTimeConfig;
     :goto_0
     return-object v1
 
+    .line 84
     .end local v1           #retVal:Landroid/os/CommonTimeConfig;
     :catch_0
     move-exception v0
 
+    .line 85
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -234,18 +254,21 @@
     .end annotation
 
     .prologue
+    .line 411
     invoke-direct {p0}, Landroid/os/CommonTimeConfig;->checkDeadServer()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 412
     new-instance v0, Landroid/os/RemoteException;
 
     invoke-direct {v0}, Landroid/os/RemoteException;-><init>()V
 
     throw v0
 
+    .line 413
     :cond_0
     return-void
 .end method
@@ -261,6 +284,7 @@
     .end annotation
 
     .prologue
+    .line 404
     invoke-virtual {p0}, Landroid/os/CommonTimeConfig;->release()V
 
     return-void
@@ -270,21 +294,25 @@
     .locals 6
 
     .prologue
+    .line 360
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
+    .line 361
     .local v0, data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v2
 
+    .line 364
     .local v2, reply:Landroid/os/Parcel;
     :try_start_0
     iget-object v3, p0, Landroid/os/CommonTimeConfig;->mInterfaceDesc:Ljava/lang/String;
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
+    .line 365
     iget-object v3, p0, Landroid/os/CommonTimeConfig;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x11
@@ -293,6 +321,7 @@
 
     invoke-interface {v3, v4, v0, v2, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
+    .line 367
     invoke-virtual {v2}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -300,31 +329,39 @@
 
     move-result v3
 
+    .line 373
     invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
 
+    .line 374
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     :goto_0
     return v3
 
+    .line 369
     :catch_0
     move-exception v1
 
+    .line 370
     .local v1, e:Landroid/os/RemoteException;
     const/4 v3, -0x7
 
+    .line 373
     invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
 
+    .line 374
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     goto :goto_0
 
+    .line 373
     .end local v1           #e:Landroid/os/RemoteException;
     :catchall_0
     move-exception v3
 
     invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
 
+    .line 374
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -341,8 +378,10 @@
     .prologue
     const/4 v0, 0x1
 
+    .line 322
     invoke-direct {p0}, Landroid/os/CommonTimeConfig;->throwOnDeadServer()V
 
+    .line 323
     iget-object v1, p0, Landroid/os/CommonTimeConfig;->mUtils:Landroid/os/CommonTimeUtils;
 
     const/16 v2, 0xf
@@ -371,8 +410,10 @@
     .end annotation
 
     .prologue
+    .line 266
     invoke-direct {p0}, Landroid/os/CommonTimeConfig;->throwOnDeadServer()V
 
+    .line 267
     iget-object v0, p0, Landroid/os/CommonTimeConfig;->mUtils:Landroid/os/CommonTimeUtils;
 
     const/16 v1, 0xb
@@ -397,8 +438,10 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 202
     invoke-direct {p0}, Landroid/os/CommonTimeConfig;->throwOnDeadServer()V
 
+    .line 204
     iget-object v2, p0, Landroid/os/CommonTimeConfig;->mUtils:Landroid/os/CommonTimeUtils;
 
     const/4 v3, 0x7
@@ -407,6 +450,7 @@
 
     move-result-object v0
 
+    .line 206
     .local v0, ifaceName:Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -418,6 +462,7 @@
 
     move-object v0, v1
 
+    .line 209
     .end local v0           #ifaceName:Ljava/lang/String;
     :cond_0
     return-object v0
@@ -432,8 +477,10 @@
     .end annotation
 
     .prologue
+    .line 239
     invoke-direct {p0}, Landroid/os/CommonTimeConfig;->throwOnDeadServer()V
 
+    .line 240
     iget-object v0, p0, Landroid/os/CommonTimeConfig;->mUtils:Landroid/os/CommonTimeUtils;
 
     const/16 v1, 0x9
@@ -456,8 +503,10 @@
     .end annotation
 
     .prologue
+    .line 147
     invoke-direct {p0}, Landroid/os/CommonTimeConfig;->throwOnDeadServer()V
 
+    .line 148
     iget-object v0, p0, Landroid/os/CommonTimeConfig;->mUtils:Landroid/os/CommonTimeUtils;
 
     const/4 v1, 0x3
@@ -478,8 +527,10 @@
     .end annotation
 
     .prologue
+    .line 175
     invoke-direct {p0}, Landroid/os/CommonTimeConfig;->throwOnDeadServer()V
 
+    .line 176
     iget-object v0, p0, Landroid/os/CommonTimeConfig;->mUtils:Landroid/os/CommonTimeUtils;
 
     const/4 v1, 0x5
@@ -502,8 +553,10 @@
     .end annotation
 
     .prologue
+    .line 120
     invoke-direct {p0}, Landroid/os/CommonTimeConfig;->throwOnDeadServer()V
 
+    .line 121
     iget-object v0, p0, Landroid/os/CommonTimeConfig;->mUtils:Landroid/os/CommonTimeUtils;
 
     const/4 v1, 0x1
@@ -528,8 +581,10 @@
     .end annotation
 
     .prologue
+    .line 294
     invoke-direct {p0}, Landroid/os/CommonTimeConfig;->throwOnDeadServer()V
 
+    .line 295
     iget-object v0, p0, Landroid/os/CommonTimeConfig;->mUtils:Landroid/os/CommonTimeUtils;
 
     const/16 v1, 0xd
@@ -549,10 +604,12 @@
     .prologue
     const/4 v3, 0x0
 
+    .line 101
     iget-object v0, p0, Landroid/os/CommonTimeConfig;->mRemote:Landroid/os/IBinder;
 
     if-eqz v0, :cond_0
 
+    .line 103
     :try_start_0
     iget-object v0, p0, Landroid/os/CommonTimeConfig;->mRemote:Landroid/os/IBinder;
 
@@ -564,14 +621,18 @@
     :try_end_0
     .catch Ljava/util/NoSuchElementException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 106
     :goto_0
     iput-object v3, p0, Landroid/os/CommonTimeConfig;->mRemote:Landroid/os/IBinder;
 
+    .line 108
     :cond_0
     iput-object v3, p0, Landroid/os/CommonTimeConfig;->mUtils:Landroid/os/CommonTimeUtils;
 
+    .line 109
     return-void
 
+    .line 105
     :catch_0
     move-exception v0
 
@@ -583,14 +644,17 @@
     .parameter "autoDisable"
 
     .prologue
+    .line 338
     invoke-direct {p0}, Landroid/os/CommonTimeConfig;->checkDeadServer()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 339
     const/4 v0, -0x7
 
+    .line 341
     :goto_0
     return v0
 
@@ -621,14 +685,17 @@
     .parameter "interval"
 
     .prologue
+    .line 279
     invoke-direct {p0}, Landroid/os/CommonTimeConfig;->checkDeadServer()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 280
     const/4 v0, -0x7
 
+    .line 281
     :goto_0
     return v0
 
@@ -649,14 +716,17 @@
     .parameter "interval"
 
     .prologue
+    .line 252
     invoke-direct {p0}, Landroid/os/CommonTimeConfig;->checkDeadServer()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 253
     const/4 v0, -0x7
 
+    .line 254
     :goto_0
     return v0
 
@@ -677,14 +747,17 @@
     .parameter "ep"
 
     .prologue
+    .line 162
     invoke-direct {p0}, Landroid/os/CommonTimeConfig;->checkDeadServer()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 163
     const/4 v0, -0x7
 
+    .line 164
     :goto_0
     return v0
 
@@ -705,14 +778,17 @@
     .parameter "id"
 
     .prologue
+    .line 187
     invoke-direct {p0}, Landroid/os/CommonTimeConfig;->checkDeadServer()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 188
     const/4 v0, -0x7
 
+    .line 189
     :goto_0
     return v0
 
@@ -733,14 +809,17 @@
     .parameter "priority"
 
     .prologue
+    .line 133
     invoke-direct {p0}, Landroid/os/CommonTimeConfig;->checkDeadServer()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 134
     const/4 v0, -0x7
 
+    .line 135
     :goto_0
     return v0
 
@@ -761,14 +840,17 @@
     .parameter "ifaceName"
 
     .prologue
+    .line 223
     invoke-direct {p0}, Landroid/os/CommonTimeConfig;->checkDeadServer()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 224
     const/4 v0, -0x7
 
+    .line 226
     .end local p1
     :goto_0
     return v0
@@ -797,14 +879,17 @@
     .parameter "threshold"
 
     .prologue
+    .line 309
     invoke-direct {p0}, Landroid/os/CommonTimeConfig;->checkDeadServer()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 310
     const/4 v0, -0x7
 
+    .line 311
     :goto_0
     return v0
 
@@ -825,17 +910,22 @@
     .parameter "listener"
 
     .prologue
+    .line 399
     iget-object v1, p0, Landroid/os/CommonTimeConfig;->mListenerLock:Ljava/lang/Object;
 
     monitor-enter v1
 
+    .line 400
     :try_start_0
     iput-object p1, p0, Landroid/os/CommonTimeConfig;->mServerDiedListener:Landroid/os/CommonTimeConfig$OnServerDiedListener;
 
+    .line 401
     monitor-exit v1
 
+    .line 402
     return-void
 
+    .line 401
     :catchall_0
     move-exception v0
 

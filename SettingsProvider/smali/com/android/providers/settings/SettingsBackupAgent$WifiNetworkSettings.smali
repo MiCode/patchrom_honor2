@@ -46,16 +46,19 @@
     .parameter
 
     .prologue
+    .line 197
     iput-object p1, p0, Lcom/android/providers/settings/SettingsBackupAgent$WifiNetworkSettings;->this$0:Lcom/android/providers/settings/SettingsBackupAgent;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 199
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/android/providers/settings/SettingsBackupAgent$WifiNetworkSettings;->mKnownNetworks:Ljava/util/HashSet;
 
+    .line 200
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0x8
@@ -74,6 +77,7 @@
     .parameter "in"
 
     .prologue
+    .line 205
     :cond_0
     :goto_0
     :try_start_0
@@ -83,13 +87,16 @@
 
     if-eqz v2, :cond_1
 
+    .line 206
     invoke-virtual {p1}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 207
     .local v0, line:Ljava/lang/String;
     if-eqz v0, :cond_0
 
+    .line 209
     const-string v2, "network"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -98,10 +105,12 @@
 
     if-eqz v2, :cond_0
 
+    .line 210
     invoke-static {p1}, Lcom/android/providers/settings/SettingsBackupAgent$Network;->readFromStream(Ljava/io/BufferedReader;)Lcom/android/providers/settings/SettingsBackupAgent$Network;
 
     move-result-object v1
 
+    .line 211
     .local v1, net:Lcom/android/providers/settings/SettingsBackupAgent$Network;
     iget-object v2, p0, Lcom/android/providers/settings/SettingsBackupAgent$WifiNetworkSettings;->mKnownNetworks:Ljava/util/HashSet;
 
@@ -111,10 +120,12 @@
 
     if-nez v2, :cond_0
 
+    .line 215
     iget-object v2, p0, Lcom/android/providers/settings/SettingsBackupAgent$WifiNetworkSettings;->mKnownNetworks:Ljava/util/HashSet;
 
     invoke-virtual {v2, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 216
     iget-object v2, p0, Lcom/android/providers/settings/SettingsBackupAgent$WifiNetworkSettings;->mNetworks:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -123,11 +134,13 @@
 
     goto :goto_0
 
+    .line 225
     .end local v0           #line:Ljava/lang/String;
     .end local v1           #net:Lcom/android/providers/settings/SettingsBackupAgent$Network;
     :catch_0
     move-exception v2
 
+    .line 228
     :cond_1
     return-void
 .end method
@@ -142,6 +155,7 @@
     .end annotation
 
     .prologue
+    .line 231
     iget-object v2, p0, Lcom/android/providers/settings/SettingsBackupAgent$WifiNetworkSettings;->mNetworks:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -162,11 +176,13 @@
 
     check-cast v1, Lcom/android/providers/settings/SettingsBackupAgent$Network;
 
+    .line 232
     .local v1, net:Lcom/android/providers/settings/SettingsBackupAgent$Network;
     invoke-virtual {v1, p1}, Lcom/android/providers/settings/SettingsBackupAgent$Network;->write(Ljava/io/Writer;)V
 
     goto :goto_0
 
+    .line 234
     .end local v1           #net:Lcom/android/providers/settings/SettingsBackupAgent$Network;
     :cond_0
     return-void

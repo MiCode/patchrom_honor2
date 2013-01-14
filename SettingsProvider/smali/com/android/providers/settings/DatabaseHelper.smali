@@ -27,6 +27,7 @@
     .locals 2
 
     .prologue
+    .line 86
     const-string v0, "ro.config.hw_addsettingsdbex"
 
     const-string v1, "0"
@@ -43,66 +44,77 @@
 
     sput-boolean v0, Lcom/android/providers/settings/DatabaseHelper;->isNeedSystemex:Z
 
+    .line 102
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     sput-object v0, Lcom/android/providers/settings/DatabaseHelper;->mValidTables:Ljava/util/HashSet;
 
+    .line 105
     sget-object v0, Lcom/android/providers/settings/DatabaseHelper;->mValidTables:Ljava/util/HashSet;
 
     const-string v1, "system"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 106
     sget-object v0, Lcom/android/providers/settings/DatabaseHelper;->mValidTables:Ljava/util/HashSet;
 
     const-string v1, "secure"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 107
     sget-object v0, Lcom/android/providers/settings/DatabaseHelper;->mValidTables:Ljava/util/HashSet;
 
     const-string v1, "bluetooth_devices"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 108
     sget-object v0, Lcom/android/providers/settings/DatabaseHelper;->mValidTables:Ljava/util/HashSet;
 
     const-string v1, "bookmarks"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 110
     sget-object v0, Lcom/android/providers/settings/DatabaseHelper;->mValidTables:Ljava/util/HashSet;
 
     const-string v1, "systemex"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 114
     sget-object v0, Lcom/android/providers/settings/DatabaseHelper;->mValidTables:Ljava/util/HashSet;
 
     const-string v1, "alarm"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 117
     sget-object v0, Lcom/android/providers/settings/DatabaseHelper;->mValidTables:Ljava/util/HashSet;
 
     const-string v1, "favorites"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 118
     sget-object v0, Lcom/android/providers/settings/DatabaseHelper;->mValidTables:Ljava/util/HashSet;
 
     const-string v1, "gservices"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 119
     sget-object v0, Lcom/android/providers/settings/DatabaseHelper;->mValidTables:Ljava/util/HashSet;
 
     const-string v1, "old_favorites"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 120
     return-void
 .end method
 
@@ -111,6 +123,7 @@
     .parameter
 
     .prologue
+    .line 123
     const-string v0, "settings.db"
 
     const/4 v1, 0x0
@@ -119,12 +132,15 @@
 
     invoke-direct {p0, p1, v0, v1, v2}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
 
+    .line 124
     iput-object p1, p0, Lcom/android/providers/settings/DatabaseHelper;->mContext:Landroid/content/Context;
 
+    .line 125
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/providers/settings/DatabaseHelper;->setWriteAheadLoggingEnabled(Z)V
 
+    .line 129
     return-void
 .end method
 
@@ -133,14 +149,17 @@
     .parameter "db"
 
     .prologue
+    .line 136
     const-string v0, "CREATE TABLE secure (_id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT UNIQUE ON CONFLICT REPLACE,value TEXT);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 141
     const-string v0, "CREATE INDEX secureIndex1 ON secure (name);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 142
     return-void
 .end method
 
@@ -151,6 +170,7 @@
     .parameter
 
     .prologue
+    .line 1945
     const-string v0, "system"
 
     invoke-direct {p0, p1, v0, p2, p3}, Lcom/android/providers/settings/DatabaseHelper;->getIntValueFromTable(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;I)I
@@ -168,12 +188,14 @@
     .parameter "defaultValue"
 
     .prologue
+    .line 1950
     const/4 v1, 0x0
 
     invoke-direct {p0, p1, p2, p3, v1}, Lcom/android/providers/settings/DatabaseHelper;->getStringValueFromTable(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 1951
     .local v0, value:Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -196,6 +218,8 @@
     .prologue
     const/4 v8, 0x0
 
+    .line 1956
+    .line 1958
     const/4 v0, 0x1
 
     :try_start_0
@@ -249,6 +273,7 @@
 
     move-result-object v1
 
+    .line 1960
     if-eqz v1, :cond_2
 
     :try_start_1
@@ -258,6 +283,7 @@
 
     if-eqz v0, :cond_2
 
+    .line 1961
     const/4 v0, 0x0
 
     invoke-interface {v1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -266,13 +292,16 @@
 
     move-result-object v0
 
+    .line 1962
     if-nez v0, :cond_1
 
+    .line 1965
     :goto_0
     if-eqz v1, :cond_0
 
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
+    .line 1967
     :cond_0
     :goto_1
     return-object p4
@@ -280,8 +309,10 @@
     :cond_1
     move-object p4, v0
 
+    .line 1962
     goto :goto_0
 
+    .line 1965
     :cond_2
     if-eqz v1, :cond_0
 
@@ -313,6 +344,7 @@
     .parameter "name"
 
     .prologue
+    .line 132
     sget-object v0, Lcom/android/providers/settings/DatabaseHelper;->mValidTables:Ljava/util/HashSet;
 
     invoke-virtual {v0, p0}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
@@ -329,16 +361,19 @@
     .prologue
     const/4 v11, 0x1
 
+    .line 1368
     new-instance v3, Landroid/content/ContentValues;
 
     invoke-direct {v3}, Landroid/content/ContentValues;-><init>()V
 
+    .line 1370
     iget-object v0, p0, Lcom/android/providers/settings/DatabaseHelper;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v4
 
+    .line 1372
     :try_start_0
     iget-object v0, p0, Lcom/android/providers/settings/DatabaseHelper;->mContext:Landroid/content/Context;
 
@@ -352,14 +387,17 @@
 
     move-result-object v5
 
+    .line 1373
     const-string v0, "bookmarks"
 
     invoke-static {v5, v0}, Lcom/android/internal/util/XmlUtils;->beginDocument(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)V
 
+    .line 1375
     invoke-interface {v5}, Landroid/content/res/XmlResourceParser;->getDepth()I
 
     move-result v6
 
+    .line 1379
     :cond_0
     :goto_0
     invoke-interface {v5}, Landroid/content/res/XmlResourceParser;->next()I
@@ -379,14 +417,17 @@
     :cond_1
     if-eq v0, v11, :cond_2
 
+    .line 1381
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
 
+    .line 1385
     invoke-interface {v5}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 1386
     const-string v1, "bookmark"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -395,10 +436,12 @@
 
     if-nez v0, :cond_3
 
+    .line 1446
     :cond_2
     :goto_1
     return-void
 
+    .line 1390
     :cond_3
     const/4 v0, 0x0
 
@@ -408,6 +451,7 @@
 
     move-result-object v1
 
+    .line 1391
     const/4 v0, 0x0
 
     const-string v2, "class"
@@ -416,6 +460,7 @@
 
     move-result-object v2
 
+    .line 1392
     const/4 v0, 0x0
 
     const-string v7, "shortcut"
@@ -424,6 +469,7 @@
 
     move-result-object v0
 
+    .line 1393
     const/4 v7, 0x0
 
     const-string v8, "category"
@@ -432,18 +478,21 @@
 
     move-result-object v7
 
+    .line 1395
     const/4 v8, 0x0
 
     invoke-virtual {v0, v8}, Ljava/lang/String;->charAt(I)C
 
     move-result v8
 
+    .line 1396
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v9
 
     if-eqz v9, :cond_4
 
+    .line 1397
     const-string v0, "SettingsProvider"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -481,9 +530,11 @@
 
     goto :goto_0
 
+    .line 1441
     :catch_0
     move-exception v0
 
+    .line 1442
     const-string v1, "SettingsProvider"
 
     const-string v2, "Got execption parsing bookmarks."
@@ -492,11 +543,13 @@
 
     goto :goto_1
 
+    .line 1403
     :cond_4
     if-eqz v1, :cond_5
 
     if-eqz v2, :cond_5
 
+    .line 1405
     :try_start_1
     new-instance v0, Landroid/content/ComponentName;
 
@@ -505,6 +558,7 @@
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
+    .line 1407
     const/4 v7, 0x0
 
     :try_start_2
@@ -518,6 +572,7 @@
 
     move-object v2, v1
 
+    .line 1420
     :goto_2
     :try_start_3
     new-instance v1, Landroid/content/Intent;
@@ -528,12 +583,15 @@
 
     invoke-direct {v1, v7, v9}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
+    .line 1421
     const-string v7, "android.intent.category.LAUNCHER"
 
     invoke-virtual {v1, v7}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 1422
     invoke-virtual {v1, v0}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
+    .line 1423
     invoke-virtual {v2, v4}, Landroid/content/pm/ActivityInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -542,11 +600,13 @@
 
     move-result-object v0
 
+    .line 1433
     :goto_3
     const/high16 v2, 0x1000
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
+    .line 1434
     const-string v2, "intent"
 
     const/4 v7, 0x0
@@ -557,10 +617,12 @@
 
     invoke-virtual {v3, v2, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 1435
     const-string v1, "title"
 
     invoke-virtual {v3, v1, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 1436
     const-string v0, "shortcut"
 
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -569,6 +631,7 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
+    .line 1437
     const-string v0, "bookmarks"
 
     const-string v1, "shortcut = ?"
@@ -587,6 +650,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
+    .line 1439
     const-string v0, "bookmarks"
 
     const/4 v1, 0x0
@@ -598,9 +662,11 @@
 
     goto/16 :goto_0
 
+    .line 1443
     :catch_1
     move-exception v0
 
+    .line 1444
     const-string v1, "SettingsProvider"
 
     const-string v2, "Got execption parsing bookmarks."
@@ -609,9 +675,11 @@
 
     goto/16 :goto_1
 
+    .line 1408
     :catch_2
     move-exception v7
 
+    .line 1409
     const/4 v0, 0x1
 
     :try_start_4
@@ -625,6 +693,7 @@
 
     move-result-object v9
 
+    .line 1411
     new-instance v0, Landroid/content/ComponentName;
 
     const/4 v10, 0x0
@@ -636,6 +705,7 @@
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_4 .. :try_end_4} :catch_0
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
 
+    .line 1413
     const/4 v9, 0x0
 
     :try_start_5
@@ -649,11 +719,14 @@
 
     move-object v2, v1
 
+    .line 1417
     goto :goto_2
 
+    .line 1414
     :catch_3
     move-exception v0
 
+    .line 1415
     :try_start_6
     const-string v0, "SettingsProvider"
 
@@ -689,19 +762,23 @@
 
     goto/16 :goto_0
 
+    .line 1424
     :cond_5
     if-eqz v7, :cond_6
 
+    .line 1425
     const-string v0, "android.intent.action.MAIN"
 
     invoke-static {v0, v7}, Landroid/content/Intent;->makeMainSelectorActivity(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v1
 
+    .line 1426
     const-string v0, ""
 
     goto/16 :goto_3
 
+    .line 1428
     :cond_6
     const-string v1, "SettingsProvider"
 
@@ -744,6 +821,7 @@
     .parameter "resid"
 
     .prologue
+    .line 1930
     iget-object v0, p0, Lcom/android/providers/settings/DatabaseHelper;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -761,8 +839,10 @@
     :goto_0
     invoke-direct {p0, p1, p2, v0}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1932
     return-void
 
+    .line 1930
     :cond_0
     const-string v0, "0"
 
@@ -776,18 +856,28 @@
     .prologue
     const/4 v2, 0x1
 
+    .line 1746
     const-string v0, "window_animation_scale"
 
     const/high16 v1, 0x7f07
 
     invoke-direct {p0, p1, v0, v1, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadFractionSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;II)V
 
+    .line 1748
     const-string v0, "transition_animation_scale"
 
     const v1, 0x7f070001
 
     invoke-direct {p0, p1, v0, v1, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadFractionSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;II)V
 
+    .line 1750
+    const-string v0, "animator_duration_scale"
+
+    const v1, 0x7f070002
+
+    invoke-direct {p0, p1, v0, v1, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadFractionSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;II)V
+
+    .line 1752
     return-void
 .end method
 
@@ -796,12 +886,14 @@
     .parameter
 
     .prologue
+    .line 1755
     const-string v0, "haptic_feedback_enabled"
 
     const v1, 0x7f040006
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1757
     return-void
 .end method
 
@@ -813,6 +905,7 @@
     .parameter "base"
 
     .prologue
+    .line 1940
     iget-object v0, p0, Lcom/android/providers/settings/DatabaseHelper;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -829,6 +922,7 @@
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1942
     return-void
 .end method
 
@@ -841,6 +935,8 @@
 
     const/4 v1, 0x0
 
+    .line 2009
+    .line 2012
     new-instance v2, Ljava/io/File;
 
     const-string v3, "/data/cust/"
@@ -849,6 +945,7 @@
 
     invoke-direct {v2, v3, v4}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 2014
     :try_start_0
     new-instance v3, Ljava/io/FileReader;
 
@@ -856,21 +953,26 @@
     :try_end_0
     .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
 
+    .line 2019
     :try_start_1
     invoke-static {}, Landroid/util/Xml;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
 
     move-result-object v4
 
+    .line 2020
     invoke-interface {v4, v3}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/Reader;)V
 
+    .line 2021
     const-string v2, "resources"
 
     invoke-static {v4, v2}, Lcom/android/internal/util/XmlUtils;->beginDocument(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)V
 
+    .line 2023
     :cond_0
     :goto_0
     invoke-static {v4}, Lcom/android/internal/util/XmlUtils;->nextElement(Lorg/xmlpull/v1/XmlPullParser;)V
 
+    .line 2025
     const-string v2, "string"
 
     invoke-interface {v4}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
@@ -883,12 +985,14 @@
 
     if-eqz v2, :cond_4
 
+    .line 2026
     const/4 v2, 0x0
 
     invoke-interface {v4, v2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(I)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 2027
     if-eqz v2, :cond_1
 
     const-string v3, "default_input_method"
@@ -905,6 +1009,7 @@
 
     if-eqz v3, :cond_1
 
+    .line 2029
     const-string v3, "secure"
 
     const-string v5, "default_input_method"
@@ -915,16 +1020,19 @@
 
     invoke-virtual {p0, p1, v3, v5, v6}, Lcom/android/providers/settings/DatabaseHelper;->updateOrInsert(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 2048
     :cond_1
     :goto_1
     if-eqz v2, :cond_0
 
+    .line 2049
     const/4 v3, 0x0
 
     invoke-interface {v4, v3}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeName(I)Ljava/lang/String;
 
     move-result-object v3
 
+    .line 2051
     const/4 v5, -0x1
 
     const-string v6, "."
@@ -935,12 +1043,14 @@
 
     if-eq v5, v6, :cond_0
 
+    .line 2053
     const-string v5, "\\."
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v3
 
+    .line 2055
     const/4 v5, 0x3
 
     array-length v6, v3
@@ -959,6 +1069,7 @@
 
     if-eqz v5, :cond_0
 
+    .line 2056
     const-string v5, "system"
 
     const/4 v6, 0x1
@@ -983,6 +1094,7 @@
 
     if-eqz v5, :cond_0
 
+    .line 2058
     :cond_2
     const/4 v5, 0x1
 
@@ -1003,26 +1115,32 @@
 
     goto :goto_0
 
+    .line 2065
     :catch_0
     move-exception v1
 
+    .line 2066
     const-string v2, "SettingsProvider"
 
     const-string v3, "Got execption parsing defaults."
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 2070
     :cond_3
     :goto_2
     return v0
 
+    .line 2015
     :catch_1
     move-exception v0
 
     move v0, v1
 
+    .line 2016
     goto :goto_2
 
+    .line 2033
     :cond_4
     :try_start_2
     const-string v2, "bool"
@@ -1037,6 +1155,7 @@
 
     if-eqz v2, :cond_6
 
+    .line 2034
     const/4 v2, 0x0
 
     invoke-interface {v4, v2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(I)Ljava/lang/String;
@@ -1065,6 +1184,7 @@
 
     goto :goto_3
 
+    .line 2035
     :cond_6
     const-string v2, "integer"
 
@@ -1078,6 +1198,7 @@
 
     if-eqz v2, :cond_7
 
+    .line 2036
     const/4 v2, 0x0
 
     invoke-interface {v4, v2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(I)Ljava/lang/String;
@@ -1086,6 +1207,7 @@
 
     goto/16 :goto_1
 
+    .line 2037
     :cond_7
     const-string v2, "fraction"
 
@@ -1099,6 +1221,7 @@
 
     if-eqz v2, :cond_3
 
+    .line 2038
     const/4 v2, 0x0
 
     invoke-interface {v4, v2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(I)Ljava/lang/String;
@@ -1123,6 +1246,7 @@
 
     move-result-object v2
 
+    .line 2039
     invoke-static {v2}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result v2
@@ -1140,9 +1264,11 @@
 
     goto/16 :goto_1
 
+    .line 2067
     :catch_2
     move-exception v1
 
+    .line 2068
     const-string v2, "SettingsProvider"
 
     const-string v3, "Got execption parsing defaults."
@@ -1159,6 +1285,7 @@
     .parameter "resid"
 
     .prologue
+    .line 1935
     iget-object v0, p0, Lcom/android/providers/settings/DatabaseHelper;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1175,6 +1302,7 @@
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1937
     return-void
 .end method
 
@@ -1183,18 +1311,21 @@
     .parameter
 
     .prologue
+    .line 1912
     const-string v0, "backup_enabled"
 
     const v1, 0x7f04000f
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1915
     const-string v0, "backup_transport"
 
     const v1, 0x7f060003
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadStringSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1917
     return-void
 .end method
 
@@ -1207,8 +1338,10 @@
 
     const/4 v0, 0x1
 
+    .line 1760
     const/4 v1, 0x0
 
+    .line 1762
     :try_start_0
     const-string v3, "INSERT OR IGNORE INTO secure(name,value) VALUES(?,?);"
 
@@ -1216,12 +1349,14 @@
 
     move-result-object v1
 
+    .line 1765
     const-string v3, "bluetooth_on"
 
     const v4, 0x7f040007
 
     invoke-direct {p0, v1, v3, v4}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1769
     const-string v4, "data_roaming"
 
     const-string v3, "true"
@@ -1249,70 +1384,82 @@
 
     invoke-direct {p0, v1, v4, v3}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1774
     const-string v3, "install_non_market_apps"
 
     const v4, 0x7f040008
 
     invoke-direct {p0, v1, v3, v4}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1777
     const-string v3, "location_providers_allowed"
 
     const v4, 0x7f060002
 
     invoke-direct {p0, v1, v3, v4}, Lcom/android/providers/settings/DatabaseHelper;->loadStringSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1780
     const-string v3, "assisted_gps_enabled"
 
     const v4, 0x7f040009
 
     invoke-direct {p0, v1, v3, v4}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1783
     const-string v3, "network_preference"
 
     const v4, 0x7f050002
 
     invoke-direct {p0, v1, v3, v4}, Lcom/android/providers/settings/DatabaseHelper;->loadIntegerSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1786
     const-string v3, "usb_mass_storage_enabled"
 
     const v4, 0x7f04000b
 
     invoke-direct {p0, v1, v3, v4}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1789
     const-string v3, "wifi_on"
 
     const v4, 0x7f04000c
 
     invoke-direct {p0, v1, v3, v4}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1793
     const-string v3, "wifi_p2p_on"
 
     const v4, 0x7f04000d
 
     invoke-direct {p0, v1, v3, v4}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1798
     const-string v3, "wifi_networks_available_notification_on"
 
     const v4, 0x7f04000e
 
     invoke-direct {p0, v1, v3, v4}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1801
     const-string v3, "ro.com.android.wifi-watchlist"
 
     invoke-static {v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
+    .line 1802
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v4
 
     if-nez v4, :cond_0
 
+    .line 1803
     const-string v4, "wifi_watchdog_watch_list"
 
     invoke-direct {p0, v1, v4, v3}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1808
     :cond_0
     invoke-static {}, Lcom/android/internal/telephony/BaseCommands;->getLteOnCdmaModeStatic()I
 
@@ -1320,15 +1467,18 @@
 
     if-ne v3, v0, :cond_6
 
+    .line 1809
     const/4 v3, 0x7
 
     move v4, v3
 
+    .line 1815
     :goto_1
     invoke-static {v4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v3
 
+    .line 1816
     invoke-static {}, Landroid/telephony/MSimTelephonyManager;->getDefault()Landroid/telephony/MSimTelephonyManager;
 
     move-result-object v5
@@ -1339,6 +1489,7 @@
 
     if-eqz v5, :cond_1
 
+    .line 1818
     const-string v3, "ro.config.dsds_mode"
 
     const-string v5, ""
@@ -1347,6 +1498,7 @@
 
     move-result-object v3
 
+    .line 1819
     const-string v5, "cdma_gsm"
 
     invoke-virtual {v5, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1355,6 +1507,7 @@
 
     if-eqz v3, :cond_7
 
+    .line 1820
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1379,12 +1532,14 @@
 
     move-result-object v3
 
+    .line 1826
     :cond_1
     :goto_2
     const-string v4, "preferred_network_mode"
 
     invoke-direct {p0, v1, v4, v3}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1829
     const-string v3, "cdma_cell_broadcast_sms"
 
     const/4 v4, 0x1
@@ -1395,6 +1550,7 @@
 
     invoke-direct {p0, v1, v3, v4}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1833
     const-string v3, "ro.config.cdma_subscription"
 
     const-string v4, "0"
@@ -1407,6 +1563,7 @@
 
     move-result v3
 
+    .line 1834
     const-string v4, "preferred_cdma_subscription"
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1415,6 +1572,7 @@
 
     invoke-direct {p0, v1, v4, v3}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1842
     const-string v3, "mock_location"
 
     const-string v4, "1"
@@ -1438,44 +1596,52 @@
 
     invoke-direct {p0, v1, v3, v0}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1845
     invoke-direct {p0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadSecure35Settings(Landroid/database/sqlite/SQLiteStatement;)V
 
+    .line 1847
     const-string v0, "mount_play_not_snd"
 
     const v2, 0x7f040011
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1850
     const-string v0, "mount_ums_autostart"
 
     const v2, 0x7f040012
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1853
     const-string v0, "mount_ums_prompt"
 
     const v2, 0x7f040013
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1856
     const-string v0, "mount_ums_notify_enabled"
 
     const v2, 0x7f040014
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1859
     const-string v0, "accessibility_script_injection"
 
     const v2, 0x7f04001a
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1862
     const-string v0, "accessibility_web_content_key_bindings"
 
     const v2, 0x7f06000b
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadStringSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1865
     iget-object v0, p0, Lcom/android/providers/settings/DatabaseHelper;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1488,8 +1654,10 @@
 
     move-result v0
 
+    .line 1867
     if-lez v0, :cond_2
 
+    .line 1868
     const-string v2, "download_manager_max_bytes_over_mobile"
 
     invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -1498,6 +1666,7 @@
 
     invoke-direct {p0, v1, v2, v0}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1872
     :cond_2
     iget-object v0, p0, Lcom/android/providers/settings/DatabaseHelper;->mContext:Landroid/content/Context;
 
@@ -1511,8 +1680,10 @@
 
     move-result v0
 
+    .line 1874
     if-lez v0, :cond_3
 
+    .line 1875
     const-string v2, "download_manager_recommended_max_bytes_over_mobile"
 
     invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -1521,6 +1692,7 @@
 
     invoke-direct {p0, v1, v2, v0}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1879
     :cond_3
     const-string v0, "long_press_timeout"
 
@@ -1528,48 +1700,56 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadIntegerSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1882
     const-string v0, "touch_exploration_enabled"
 
     const v2, 0x7f04001c
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1885
     const-string v0, "speak_password"
 
     const v2, 0x7f04001b
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1888
     const-string v0, "accessibility_script_injection_url"
 
     const v2, 0x7f06000c
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadStringSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1891
     const-string v0, "lockscreen.disabled"
 
     const v2, 0x7f040015
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1894
     const-string v0, "device_provisioned"
 
     const v2, 0x7f040016
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1897
     const-string v0, "netstats_enabled"
 
     const v2, 0x7f04000a
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1900
     const-string v0, "wifi_max_dhcp_retry_count"
 
     const v2, 0x7f05000b
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadIntegerSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1903
     const-string v0, "wifi_ap_maxscb"
 
     const v2, 0x7f05000c
@@ -1578,18 +1758,22 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 1907
     if-eqz v1, :cond_4
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 1909
     :cond_4
     return-void
 
     :cond_5
     move v3, v2
 
+    .line 1769
     goto/16 :goto_0
 
+    .line 1811
     :cond_6
     :try_start_1
     const-string v3, "ro.telephony.default_network"
@@ -1604,6 +1788,7 @@
 
     goto/16 :goto_1
 
+    .line 1822
     :cond_7
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -1634,8 +1819,10 @@
     :cond_8
     move v0, v2
 
+    .line 1842
     goto/16 :goto_3
 
+    .line 1907
     :catchall_0
     move-exception v0
 
@@ -1654,10 +1841,12 @@
     .parameter "value"
 
     .prologue
+    .line 1920
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0, p2}, Landroid/database/sqlite/SQLiteStatement;->bindString(ILjava/lang/String;)V
 
+    .line 1921
     const/4 v0, 0x2
 
     invoke-virtual {p3}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -1666,8 +1855,10 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/database/sqlite/SQLiteStatement;->bindString(ILjava/lang/String;)V
 
+    .line 1922
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteStatement;->execute()V
 
+    .line 1923
     return-void
 .end method
 
@@ -1676,10 +1867,13 @@
     .parameter "db"
 
     .prologue
+    .line 1560
     invoke-direct {p0, p1}, Lcom/android/providers/settings/DatabaseHelper;->loadSystemSettings(Landroid/database/sqlite/SQLiteDatabase;)V
 
+    .line 1561
     invoke-direct {p0, p1}, Lcom/android/providers/settings/DatabaseHelper;->loadSecureSettings(Landroid/database/sqlite/SQLiteDatabase;)V
 
+    .line 1562
     return-void
 .end method
 
@@ -1690,8 +1884,10 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 1569
     const-string v3, "test default"
 
+    .line 1572
     new-instance v0, Ljava/io/File;
 
     const-string v2, "/data/cust/"
@@ -1700,6 +1896,7 @@
 
     invoke-direct {v0, v2, v4}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 1574
     :try_start_0
     new-instance v2, Ljava/io/FileReader;
 
@@ -1707,17 +1904,21 @@
     :try_end_0
     .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 1578
     new-instance v4, Landroid/content/ContentValues;
 
     invoke-direct {v4}, Landroid/content/ContentValues;-><init>()V
 
+    .line 1581
     :try_start_1
     invoke-static {}, Landroid/util/Xml;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
 
     move-result-object v5
 
+    .line 1582
     invoke-interface {v5, v2}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/Reader;)V
 
+    .line 1583
     const-string v0, "resources"
 
     invoke-static {v5, v0}, Lcom/android/internal/util/XmlUtils;->beginDocument(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)V
@@ -1727,11 +1928,13 @@
 
     move v0, v1
 
+    .line 1585
     :cond_0
     :goto_0
     :try_start_2
     invoke-static {v5}, Lcom/android/internal/util/XmlUtils;->nextElement(Lorg/xmlpull/v1/XmlPullParser;)V
 
+    .line 1587
     const-string v2, "string"
 
     invoke-interface {v5}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
@@ -1744,15 +1947,18 @@
 
     if-eqz v2, :cond_2
 
+    .line 1588
     const/4 v2, 0x0
 
     invoke-interface {v5, v2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(I)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 1598
     :goto_1
     if-eqz v2, :cond_0
 
+    .line 1599
     const-string v6, "name"
 
     const/4 v7, 0x0
@@ -1763,6 +1969,7 @@
 
     invoke-virtual {v4, v6, v7}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 1600
     const-string v6, "value"
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -1771,12 +1978,14 @@
 
     invoke-virtual {v4, v6, v7}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 1601
     const-string v6, "systemex"
 
     const/4 v7, 0x0
 
     invoke-virtual {p1, v6, v7, v4}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
 
+    .line 1602
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -1817,19 +2026,23 @@
 
     invoke-static {v3, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1603
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    .line 1575
     :catch_0
     move-exception v0
 
     move v0, v1
 
+    .line 1611
     :cond_1
     :goto_2
     return v0
 
+    .line 1589
     :cond_2
     const-string v2, "bool"
 
@@ -1843,6 +2056,7 @@
 
     if-eqz v2, :cond_4
 
+    .line 1590
     const/4 v2, 0x0
 
     invoke-interface {v5, v2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(I)Ljava/lang/String;
@@ -1871,6 +2085,7 @@
 
     goto :goto_3
 
+    .line 1591
     :cond_4
     const-string v2, "integer"
 
@@ -1884,6 +2099,7 @@
 
     if-eqz v2, :cond_5
 
+    .line 1592
     const/4 v2, 0x0
 
     invoke-interface {v5, v2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(I)Ljava/lang/String;
@@ -1892,6 +2108,7 @@
 
     goto :goto_1
 
+    .line 1593
     :cond_5
     const-string v2, "fraction"
 
@@ -1905,6 +2122,7 @@
 
     if-eqz v2, :cond_1
 
+    .line 1594
     const/4 v2, 0x0
 
     invoke-interface {v5, v2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(I)Ljava/lang/String;
@@ -1929,6 +2147,7 @@
 
     move-result-object v2
 
+    .line 1595
     invoke-static {v2}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result v2
@@ -1946,6 +2165,7 @@
 
     goto/16 :goto_1
 
+    .line 1606
     :catch_1
     move-exception v0
 
@@ -1955,6 +2175,7 @@
 
     move-object v1, v8
 
+    .line 1607
     :goto_4
     const-string v2, "SettingsProvider"
 
@@ -1964,6 +2185,7 @@
 
     goto :goto_2
 
+    .line 1608
     :catch_2
     move-exception v0
 
@@ -1973,6 +2195,7 @@
 
     move-object v1, v8
 
+    .line 1609
     :goto_5
     const-string v2, "SettingsProvider"
 
@@ -1982,11 +2205,13 @@
 
     goto :goto_2
 
+    .line 1608
     :catch_3
     move-exception v1
 
     goto :goto_5
 
+    .line 1606
     :catch_4
     move-exception v1
 
@@ -2000,6 +2225,7 @@
     .parameter "resid"
 
     .prologue
+    .line 1926
     iget-object v0, p0, Lcom/android/providers/settings/DatabaseHelper;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2012,6 +2238,7 @@
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1927
     return-void
 .end method
 
@@ -2022,8 +2249,10 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 1615
     const/4 v1, 0x0
 
+    .line 1617
     :try_start_0
     const-string v2, "INSERT OR IGNORE INTO system(name,value) VALUES(?,?);"
 
@@ -2031,12 +2260,14 @@
 
     move-result-object v1
 
+    .line 1620
     const-string v2, "dim_screen"
 
     const/high16 v3, 0x7f04
 
     invoke-direct {p0, v1, v2, v3}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1623
     const-string v2, "auto_answer"
 
     const/4 v3, -0x1
@@ -2047,6 +2278,7 @@
 
     invoke-direct {p0, v1, v2, v3}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1625
     const-string v2, "stay_on_while_plugged_in"
 
     const-string v3, "1"
@@ -2087,6 +2319,7 @@
 
     invoke-direct {p0, v1, v2, v0}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1630
     const-string v0, "ro.backlight.space"
 
     const/4 v2, -0x1
@@ -2095,8 +2328,10 @@
 
     move-result v0
 
+    .line 1631
     if-lez v0, :cond_3
 
+    .line 1632
     const-string v2, "screen_off_timeout"
 
     invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -2105,6 +2340,7 @@
 
     invoke-direct {p0, v1, v2, v0}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1640
     :goto_0
     const-string v0, "emergency_tone"
 
@@ -2116,6 +2352,7 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1643
     const-string v0, "call_auto_retry"
 
     const/4 v2, 0x0
@@ -2126,6 +2363,7 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1646
     const-string v0, "dtmf_tone_type"
 
     const/4 v2, 0x0
@@ -2136,6 +2374,7 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1649
     const-string v0, "hearing_aid"
 
     const/4 v2, 0x0
@@ -2146,6 +2385,7 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1652
     const-string v0, "tty_mode"
 
     const/4 v2, 0x0
@@ -2156,64 +2396,76 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1654
     const-string v0, "airplane_mode_on"
 
     const v2, 0x7f040001
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1657
     const-string v0, "airplane_mode_radios"
 
     const/high16 v2, 0x7f06
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadStringSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1660
     const-string v0, "airplane_mode_toggleable_radios"
 
     const v2, 0x7f060001
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadStringSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1663
     const-string v0, "auto_time"
 
     const v2, 0x7f040002
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1666
     const-string v0, "auto_time_zone"
 
     const v2, 0x7f040003
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1669
     const-string v0, "screen_brightness"
 
     const v2, 0x7f050001
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadIntegerSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1672
     const-string v0, "screen_brightness_mode"
 
     const v2, 0x7f040005
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1675
     invoke-direct {p0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadDefaultAnimationSettings(Landroid/database/sqlite/SQLiteStatement;)V
 
+    .line 1677
     const-string v0, "accelerometer_rotation"
 
     const v2, 0x7f040004
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1680
     invoke-direct {p0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadDefaultHapticSettings(Landroid/database/sqlite/SQLiteStatement;)V
 
+    .line 1682
     const-string v0, "notification_light_pulse"
 
     const v2, 0x7f040010
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1684
     const-string v0, "set_install_location"
 
     const/4 v2, 0x0
@@ -2224,6 +2476,7 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1685
     const-string v0, "default_install_location"
 
     const/4 v2, 0x0
@@ -2234,32 +2487,38 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1688
     invoke-direct {p0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadUISoundEffectsSettings(Landroid/database/sqlite/SQLiteStatement;)V
 
+    .line 1690
     const-string v0, "pointer_speed"
 
     const v2, 0x7f05000a
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadIntegerSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1693
     const-string v0, "allow_all_devices_connection"
 
     const v2, 0x7f040020
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1697
     const-string v0, "wifi_sleep_policy"
 
     const v2, 0x7f05000d
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadIntegerSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1702
     const-string v0, "smart_backlight_enable"
 
     const v2, 0x7f040019
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1706
     const-string v0, "td_alarm_mode"
 
     const/4 v2, 0x0
@@ -2272,13 +2531,16 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 1710
     if-eqz v1, :cond_2
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 1712
     :cond_2
     return-void
 
+    .line 1634
     :cond_3
     :try_start_1
     const-string v0, "screen_off_timeout"
@@ -2291,6 +2553,7 @@
 
     goto/16 :goto_0
 
+    .line 1710
     :catchall_0
     move-exception v0
 
@@ -2307,84 +2570,98 @@
     .parameter
 
     .prologue
+    .line 1715
     const-string v0, "power_sounds_enabled"
 
     const v1, 0x7f050003
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadIntegerSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1717
     const-string v0, "low_battery_sound"
 
     const v1, 0x7f060004
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadStringSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1719
     const-string v0, "dtmf_tone"
 
     const v1, 0x7f04001d
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1721
     const-string v0, "sound_effects_enabled"
 
     const v1, 0x7f04001e
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1723
     const-string v0, "haptic_feedback_enabled"
 
     const v1, 0x7f040006
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1726
     const-string v0, "dock_sounds_enabled"
 
     const v1, 0x7f050004
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadIntegerSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1728
     const-string v0, "desk_dock_sound"
 
     const v1, 0x7f060005
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadStringSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1730
     const-string v0, "desk_undock_sound"
 
     const v1, 0x7f060006
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadStringSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1732
     const-string v0, "car_dock_sound"
 
     const v1, 0x7f060007
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadStringSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1734
     const-string v0, "car_undock_sound"
 
     const v1, 0x7f060008
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadStringSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1737
     const-string v0, "lockscreen_sounds_enabled"
 
     const v1, 0x7f050005
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadIntegerSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1739
     const-string v0, "lock_sound"
 
     const v1, 0x7f060009
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadStringSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1741
     const-string v0, "unlock_sound"
 
     const v1, 0x7f06000a
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadStringSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1743
     return-void
 .end method
 
@@ -2394,15 +2671,19 @@
     .parameter
 
     .prologue
+    .line 1519
     if-eqz p2, :cond_0
 
+    .line 1520
     const-string v0, "DELETE FROM system WHERE name=\'vibrate_on\'"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 1523
     :cond_0
     const/4 v1, 0x0
 
+    .line 1525
     :try_start_0
     const-string v0, "INSERT OR IGNORE INTO system(name,value) VALUES(?,?);"
 
@@ -2410,8 +2691,10 @@
 
     move-result-object v1
 
+    .line 1529
     const/4 v0, 0x0
 
+    .line 1530
     const/4 v2, 0x1
 
     const/4 v3, 0x2
@@ -2420,6 +2703,7 @@
 
     move-result v0
 
+    .line 1533
     const/4 v2, 0x0
 
     const/4 v3, 0x2
@@ -2430,6 +2714,7 @@
 
     or-int/2addr v0, v2
 
+    .line 1535
     const-string v2, "vibrate_on"
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2440,13 +2725,16 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 1537
     if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 1539
     :cond_1
     return-void
 
+    .line 1537
     :catchall_0
     move-exception v0
 
@@ -2467,21 +2755,25 @@
 
     const/4 v2, 0x0
 
+    .line 1545
     const-string v0, "vibrate_on"
 
     invoke-direct {p0, p1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->getIntValueFromSystem(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;I)I
 
     move-result v0
 
+    .line 1547
     and-int/lit8 v0, v0, 0x3
 
     if-ne v0, v1, :cond_1
 
     move v0, v1
 
+    .line 1549
     :goto_0
     const/4 v3, 0x0
 
+    .line 1551
     :try_start_0
     const-string v4, "INSERT OR IGNORE INTO system(name,value) VALUES(?,?);"
 
@@ -2491,6 +2783,7 @@
 
     move-result-object v3
 
+    .line 1553
     :try_start_1
     const-string v4, "vibrate_when_ringing"
 
@@ -2505,23 +2798,28 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
+    .line 1555
     if-eqz v3, :cond_0
 
     invoke-virtual {v3}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 1557
     :cond_0
     return-void
 
     :cond_1
     move v0, v2
 
+    .line 1547
     goto :goto_0
 
     :cond_2
     move v1, v2
 
+    .line 1553
     goto :goto_1
 
+    .line 1555
     :catchall_0
     move-exception v0
 
@@ -2548,8 +2846,10 @@
     .parameter
 
     .prologue
+    .line 1455
     const/4 v1, 0x0
 
+    .line 1457
     :try_start_0
     const-string v0, "INSERT OR IGNORE INTO system(name,value) VALUES(?,?);"
 
@@ -2557,6 +2857,7 @@
 
     move-result-object v1
 
+    .line 1460
     const-string v0, "volume_music"
 
     sget-object v2, Landroid/media/AudioManager;->DEFAULT_STREAM_VOLUME:[I
@@ -2571,6 +2872,7 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1463
     const-string v0, "volume_fm"
 
     sget-object v2, Landroid/media/AudioManager;->DEFAULT_STREAM_VOLUME:[I
@@ -2585,6 +2887,7 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1466
     const-string v0, "volume_ring"
 
     sget-object v2, Landroid/media/AudioManager;->DEFAULT_STREAM_VOLUME:[I
@@ -2599,6 +2902,7 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1468
     const-string v0, "volume_system"
 
     sget-object v2, Landroid/media/AudioManager;->DEFAULT_STREAM_VOLUME:[I
@@ -2613,6 +2917,7 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1470
     const-string v0, "volume_voice"
 
     sget-object v2, Landroid/media/AudioManager;->DEFAULT_STREAM_VOLUME:[I
@@ -2627,6 +2932,7 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1474
     const-string v0, "volume_alarm"
 
     sget-object v2, Landroid/media/AudioManager;->DEFAULT_STREAM_VOLUME:[I
@@ -2641,6 +2947,7 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1476
     const-string v0, "volume_notification"
 
     sget-object v2, Landroid/media/AudioManager;->DEFAULT_STREAM_VOLUME:[I
@@ -2655,6 +2962,7 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1480
     const-string v0, "volume_bluetooth_sco"
 
     sget-object v2, Landroid/media/AudioManager;->DEFAULT_STREAM_VOLUME:[I
@@ -2669,6 +2977,7 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1485
     const-string v0, "mode_ringer"
 
     const/4 v2, 0x2
@@ -2679,8 +2988,10 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1493
     const/16 v0, 0xa6
 
+    .line 1497
     iget-object v2, p0, Lcom/android/providers/settings/DatabaseHelper;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2695,8 +3006,10 @@
 
     if-nez v2, :cond_0
 
+    .line 1499
     const/16 v0, 0xae
 
+    .line 1501
     :cond_0
     const-string v2, "mode_ringer_streams_affected"
 
@@ -2706,6 +3019,7 @@
 
     invoke-direct {p0, v1, v2, v0}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1504
     const-string v0, "mute_streams_affected"
 
     const/16 v2, 0x2e
@@ -2718,13 +3032,16 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 1510
     if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 1516
     :cond_1
     return-void
 
+    .line 1510
     :catchall_0
     move-exception v0
 
@@ -2742,14 +3059,18 @@
     .parameter "settingsToMove"
 
     .prologue
+    .line 1231
     const/4 v3, 0x0
 
+    .line 1232
     .local v3, insertStmt:Landroid/database/sqlite/SQLiteStatement;
     const/4 v1, 0x0
 
+    .line 1234
     .local v1, deleteStmt:Landroid/database/sqlite/SQLiteStatement;
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 1236
     :try_start_0
     const-string v6, "INSERT INTO secure (name,value) SELECT name,value FROM system WHERE name=?"
 
@@ -2757,12 +3078,14 @@
 
     move-result-object v3
 
+    .line 1239
     const-string v6, "DELETE FROM system WHERE name=?"
 
     invoke-virtual {p1, v6}, Landroid/database/sqlite/SQLiteDatabase;->compileStatement(Ljava/lang/String;)Landroid/database/sqlite/SQLiteStatement;
 
     move-result-object v1
 
+    .line 1242
     move-object v0, p2
 
     .local v0, arr$:[Ljava/lang/String;
@@ -2777,43 +3100,56 @@
 
     aget-object v5, v0, v2
 
+    .line 1243
     .local v5, setting:Ljava/lang/String;
     const/4 v6, 0x1
 
     invoke-virtual {v3, v6, v5}, Landroid/database/sqlite/SQLiteStatement;->bindString(ILjava/lang/String;)V
 
+    .line 1244
     invoke-virtual {v3}, Landroid/database/sqlite/SQLiteStatement;->execute()V
 
+    .line 1246
     const/4 v6, 0x1
 
     invoke-virtual {v1, v6, v5}, Landroid/database/sqlite/SQLiteStatement;->bindString(ILjava/lang/String;)V
 
+    .line 1247
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->execute()V
 
+    .line 1242
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 1249
     .end local v5           #setting:Ljava/lang/String;
     :cond_0
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 1251
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 1252
     if-eqz v3, :cond_1
 
+    .line 1253
     invoke-virtual {v3}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 1255
     :cond_1
     if-eqz v1, :cond_2
 
+    .line 1256
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 1259
     :cond_2
     return-void
 
+    .line 1251
     .end local v0           #arr$:[Ljava/lang/String;
     .end local v2           #i$:I
     .end local v4           #len$:I
@@ -2822,13 +3158,17 @@
 
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 1252
     if-eqz v3, :cond_3
 
+    .line 1253
     invoke-virtual {v3}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 1255
     :cond_3
     if-eqz v1, :cond_4
 
+    .line 1256
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
     :cond_4
@@ -2840,8 +3180,10 @@
     .parameter "db"
 
     .prologue
+    .line 1349
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 1351
     :try_start_0
     iget-object v1, p0, Lcom/android/providers/settings/DatabaseHelper;->mContext:Landroid/content/Context;
 
@@ -2859,6 +3201,7 @@
 
     const-string v0, "1"
 
+    .line 1354
     .local v0, value:Ljava/lang/String;
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2887,14 +3230,18 @@
 
     invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 1356
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 1358
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 1360
     return-void
 
+    .line 1351
     .end local v0           #value:Ljava/lang/String;
     :cond_0
     :try_start_1
@@ -2904,6 +3251,7 @@
 
     goto :goto_0
 
+    .line 1358
     :catchall_0
     move-exception v1
 
@@ -2921,6 +3269,7 @@
 
     const/4 v4, 0x0
 
+    .line 1262
     const-string v1, "system"
 
     const/4 v0, 0x2
@@ -2951,24 +3300,29 @@
 
     move-result-object v0
 
+    .line 1264
     invoke-interface {v0}, Landroid/database/Cursor;->getCount()I
 
     move-result v1
 
     if-lez v1, :cond_1
 
+    .line 1265
     invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
 
+    .line 1266
     invoke-interface {v0, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 1267
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
+    .line 1270
     :try_start_0
     new-instance v2, Lcom/android/internal/widget/LockPatternUtils;
 
@@ -2976,32 +3330,39 @@
 
     invoke-direct {v2, v3}, Lcom/android/internal/widget/LockPatternUtils;-><init>(Landroid/content/Context;)V
 
+    .line 1271
     invoke-static {v1}, Lcom/android/internal/widget/LockPatternUtils;->stringToPattern(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v1
 
+    .line 1273
     invoke-virtual {v2, v1}, Lcom/android/internal/widget/LockPatternUtils;->saveLockPattern(Ljava/util/List;)V
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 1278
     :cond_0
     :goto_0
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
+    .line 1279
     const-string v0, "system"
 
     const-string v1, "name=\'lock_pattern\'"
 
     invoke-virtual {p1, v0, v1, v4}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
+    .line 1283
     :goto_1
     return-void
 
+    .line 1281
     :cond_1
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
     goto :goto_1
 
+    .line 1274
     :catch_0
     move-exception v1
 
@@ -3021,6 +3382,7 @@
 
     const/4 v5, 0x0
 
+    .line 1287
     const-string v1, "system"
 
     new-array v2, v4, [Ljava/lang/String;
@@ -3055,14 +3417,17 @@
 
     move-result-object v0
 
+    .line 1292
     invoke-interface {v0}, Landroid/database/Cursor;->getCount()I
 
     move-result v1
 
     if-lez v1, :cond_2
 
+    .line 1293
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
+    .line 1295
     :try_start_0
     const-string v0, "INSERT OR REPLACE INTO system(name,value) VALUES(?,?);"
 
@@ -3070,6 +3435,7 @@
 
     move-result-object v5
 
+    .line 1299
     const-string v0, "screen_off_timeout"
 
     const v1, 0x1b7740
@@ -3082,14 +3448,17 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 1302
     if-eqz v5, :cond_0
 
     invoke-virtual {v5}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 1307
     :cond_0
     :goto_0
     return-void
 
+    .line 1302
     :catchall_0
     move-exception v0
 
@@ -3100,6 +3469,7 @@
     :cond_1
     throw v0
 
+    .line 1305
     :cond_2
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
@@ -3113,22 +3483,26 @@
     .prologue
     const/4 v2, 0x0
 
+    .line 1310
     const-string v0, "vibrate_on"
 
     invoke-direct {p0, p1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->getIntValueFromSystem(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;I)I
 
     move-result v0
 
+    .line 1312
     and-int/lit8 v1, v0, 0x3
 
     if-nez v1, :cond_0
 
+    .line 1313
     const/4 v0, 0x2
 
     invoke-static {v2, v2, v0}, Landroid/media/AudioService;->getValueForVibrateSetting(III)I
 
     move-result v0
 
+    .line 1317
     :cond_0
     const/4 v1, 0x1
 
@@ -3136,8 +3510,10 @@
 
     move-result v0
 
+    .line 1320
     const/4 v1, 0x0
 
+    .line 1322
     :try_start_0
     const-string v2, "INSERT OR REPLACE INTO system(name,value) VALUES(?,?);"
 
@@ -3145,6 +3521,7 @@
 
     move-result-object v1
 
+    .line 1324
     const-string v2, "vibrate_on"
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3155,18 +3532,23 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 1326
     if-eqz v1, :cond_1
 
+    .line 1327
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 1329
     :cond_1
     return-void
 
+    .line 1326
     :catchall_0
     move-exception v0
 
     if-eqz v1, :cond_2
 
+    .line 1327
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
     :cond_2
@@ -3180,44 +3562,55 @@
     .parameter "db"
 
     .prologue
+    .line 146
     const-string v0, "CREATE TABLE system (_id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT UNIQUE ON CONFLICT REPLACE,value TEXT);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 151
     const-string v0, "CREATE INDEX systemIndex1 ON system (name);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 153
     invoke-direct {p0, p1}, Lcom/android/providers/settings/DatabaseHelper;->createSecureTable(Landroid/database/sqlite/SQLiteDatabase;)V
 
+    .line 155
     const-string v0, "CREATE TABLE bluetooth_devices (_id INTEGER PRIMARY KEY,name TEXT,addr TEXT,channel INTEGER,type INTEGER);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 163
     const-string v0, "CREATE TABLE bookmarks (_id INTEGER PRIMARY KEY,title TEXT,folder TEXT,intent TEXT,shortcut INTEGER,ordering INTEGER);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 172
     const-string v0, "CREATE INDEX bookmarksIndex1 ON bookmarks (folder);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 173
     const-string v0, "CREATE INDEX bookmarksIndex2 ON bookmarks (shortcut);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 175
     sget-boolean v0, Lcom/android/providers/settings/DatabaseHelper;->isNeedSystemex:Z
 
     if-eqz v0, :cond_0
 
+    .line 176
     const-string v0, "CREATE TABLE systemex (_id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT UNIQUE ON CONFLICT REPLACE,value TEXT);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 181
     const-string v0, "CREATE INDEX systemexIndex1 ON systemex (name);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 186
     :cond_0
     const-string v0, "SettingsProvider"
 
@@ -3225,29 +3618,38 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 187
     const-string v0, "CREATE TABLE alarm (_id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT UNIQUE ON CONFLICT REPLACE,value TEXT);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 192
     const-string v0, "CREATE INDEX alarmIndex1 ON alarm (name);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 196
     invoke-direct {p0, p1}, Lcom/android/providers/settings/DatabaseHelper;->loadBookmarks(Landroid/database/sqlite/SQLiteDatabase;)V
 
+    .line 199
     invoke-direct {p0, p1}, Lcom/android/providers/settings/DatabaseHelper;->loadVolumeLevels(Landroid/database/sqlite/SQLiteDatabase;)V
 
+    .line 202
     invoke-direct {p0, p1}, Lcom/android/providers/settings/DatabaseHelper;->loadSettings(Landroid/database/sqlite/SQLiteDatabase;)V
 
+    .line 205
     sget-boolean v0, Lcom/android/providers/settings/DatabaseHelper;->isNeedSystemex:Z
 
     if-eqz v0, :cond_1
 
+    .line 206
     invoke-direct {p0, p1}, Lcom/android/providers/settings/DatabaseHelper;->loadSettingsEx(Landroid/database/sqlite/SQLiteDatabase;)I
 
+    .line 210
     :cond_1
     invoke-direct {p0, p1}, Lcom/android/providers/settings/DatabaseHelper;->loadFromHWdefaultsToSettings(Landroid/database/sqlite/SQLiteDatabase;)I
 
+    .line 212
     return-void
 .end method
 
@@ -3268,6 +3670,7 @@
 
     const/4 v10, 0x0
 
+    .line 216
     const-string v0, "SettingsProvider"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3300,137 +3703,177 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 228
     const/16 v0, 0x14
 
     if-ne p2, v0, :cond_74
 
+    .line 235
     invoke-direct {p0, p1, v8}, Lcom/android/providers/settings/DatabaseHelper;->loadVibrateSetting(Landroid/database/sqlite/SQLiteDatabase;Z)V
 
+    .line 237
     const/16 v0, 0x15
 
+    .line 240
     :goto_0
     const/16 v2, 0x16
 
     if-ge v0, v2, :cond_0
 
+    .line 241
     const/16 v0, 0x16
 
+    .line 243
     invoke-direct {p0, p1}, Lcom/android/providers/settings/DatabaseHelper;->upgradeLockPatternLocation(Landroid/database/sqlite/SQLiteDatabase;)V
 
+    .line 246
     :cond_0
     if-ge v0, v1, :cond_1
 
+    .line 247
     const-string v0, "UPDATE favorites SET iconResource=0 WHERE iconType=0"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     move v0, v1
 
+    .line 251
     :cond_1
     if-ne v0, v1, :cond_2
 
+    .line 252
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 254
     :try_start_0
     const-string v0, "ALTER TABLE favorites ADD spanX INTEGER"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 255
     const-string v0, "ALTER TABLE favorites ADD spanY INTEGER"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 257
     const-string v0, "UPDATE favorites SET spanX=1, spanY=1 WHERE itemType<=0"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 259
     const-string v0, "UPDATE favorites SET spanX=2, spanY=2 WHERE itemType=1000 or itemType=1002"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 262
     const-string v0, "UPDATE favorites SET spanX=4, spanY=1 WHERE itemType=1001"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 263
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 265
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 267
     const/16 v0, 0x18
 
+    .line 270
     :cond_2
     const/16 v2, 0x18
 
     if-ne v0, v2, :cond_3
 
+    .line 271
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 275
     :try_start_1
     const-string v0, "DELETE FROM system WHERE name=\'network_preference\'"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 276
     const-string v0, "INSERT INTO system (\'name\', \'value\') values (\'network_preference\', \'1\')"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 278
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
+    .line 280
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 282
     const/16 v0, 0x19
 
+    .line 285
     :cond_3
     const/16 v2, 0x19
 
     if-ne v0, v2, :cond_4
 
+    .line 286
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 288
     :try_start_2
     const-string v0, "ALTER TABLE favorites ADD uri TEXT"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 289
     const-string v0, "ALTER TABLE favorites ADD displayMode INTEGER"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 290
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
+    .line 292
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 294
     const/16 v0, 0x1a
 
+    .line 297
     :cond_4
     const/16 v2, 0x1a
 
     if-ne v0, v2, :cond_5
 
+    .line 299
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 301
     :try_start_3
     invoke-direct {p0, p1}, Lcom/android/providers/settings/DatabaseHelper;->createSecureTable(Landroid/database/sqlite/SQLiteDatabase;)V
 
+    .line 302
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
+    .line 304
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 306
     const/16 v0, 0x1b
 
+    .line 309
     :cond_5
     const/16 v2, 0x1b
 
     if-ne v0, v2, :cond_6
 
+    .line 310
     const/16 v0, 0x20
 
     new-array v0, v0, [Ljava/lang/String;
@@ -3619,10 +4062,13 @@
 
     aput-object v2, v0, v1
 
+    .line 348
     invoke-direct {p0, p1, v0}, Lcom/android/providers/settings/DatabaseHelper;->moveFromSystemToSecure(Landroid/database/sqlite/SQLiteDatabase;[Ljava/lang/String;)V
 
+    .line 349
     const/16 v0, 0x1c
 
+    .line 352
     :cond_6
     const/16 v1, 0x1c
 
@@ -3632,16 +4078,20 @@
 
     if-ne v0, v1, :cond_8
 
+    .line 359
     :cond_7
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 361
     :try_start_4
     const-string v0, "DELETE FROM system WHERE name=\'mode_ringer_streams_affected\'"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 363
     const/16 v0, 0x26
 
+    .line 366
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3672,54 +4122,69 @@
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 369
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_4
 
+    .line 371
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 374
     const/16 v0, 0x1e
 
+    .line 377
     :cond_8
     const/16 v1, 0x1e
 
     if-ne v0, v1, :cond_9
 
+    .line 383
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 385
     :try_start_5
     const-string v0, "UPDATE bookmarks SET folder = \'@quicklaunch\'"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 386
     const-string v0, "UPDATE bookmarks SET title = \'\'"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 387
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_5
 
+    .line 389
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 391
     const/16 v0, 0x1f
 
+    .line 394
     :cond_9
     const/16 v1, 0x1f
 
     if-ne v0, v1, :cond_b
 
+    .line 399
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 402
     :try_start_6
     const-string v0, "DELETE FROM system WHERE name=\'window_animation_scale\'"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 404
     const-string v0, "DELETE FROM system WHERE name=\'transition_animation_scale\'"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 406
     const-string v0, "INSERT INTO system(name,value) VALUES(?,?);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->compileStatement(Ljava/lang/String;)Landroid/database/sqlite/SQLiteStatement;
@@ -3728,41 +4193,51 @@
 
     move-result-object v1
 
+    .line 408
     :try_start_7
     invoke-direct {p0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadDefaultAnimationSettings(Landroid/database/sqlite/SQLiteStatement;)V
 
+    .line 409
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_40
 
+    .line 411
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 412
     if-eqz v1, :cond_a
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 414
     :cond_a
     const/16 v0, 0x20
 
+    .line 417
     :cond_b
     const/16 v1, 0x20
 
     if-ne v0, v1, :cond_d
 
+    .line 420
     const-string v0, "ro.com.android.wifi-watchlist"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 421
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_c
 
+    .line 422
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 424
     :try_start_8
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -3790,42 +4265,54 @@
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 427
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_7
 
+    .line 429
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 432
     :cond_c
     const/16 v0, 0x21
 
+    .line 435
     :cond_d
     const/16 v1, 0x21
 
     if-ne v0, v1, :cond_e
 
+    .line 437
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 439
     :try_start_9
     const-string v0, "INSERT INTO system(name,value) values(\'zoom\',\'2\');"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 440
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_8
 
+    .line 442
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 444
     const/16 v0, 0x22
 
+    .line 447
     :cond_e
     const/16 v1, 0x22
 
     if-ne v0, v1, :cond_10
 
+    .line 448
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 451
     :try_start_a
     const-string v0, "INSERT OR IGNORE INTO secure(name,value) VALUES(?,?);"
 
@@ -3835,43 +4322,55 @@
 
     move-result-object v1
 
+    .line 453
     :try_start_b
     invoke-direct {p0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadSecure35Settings(Landroid/database/sqlite/SQLiteStatement;)V
 
+    .line 454
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_b
     .catchall {:try_start_b .. :try_end_b} :catchall_3f
 
+    .line 456
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 457
     if-eqz v1, :cond_f
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 459
     :cond_f
     const/16 v0, 0x23
 
+    .line 465
     :cond_10
     const/16 v1, 0x23
 
     if-ne v0, v1, :cond_11
 
+    .line 466
     const/16 v0, 0x24
 
+    .line 469
     :cond_11
     const/16 v1, 0x24
 
     if-ne v0, v1, :cond_12
 
+    .line 472
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 474
     :try_start_c
     const-string v0, "DELETE FROM system WHERE name=\'mode_ringer_streams_affected\'"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 476
     const/16 v0, 0xa6
 
+    .line 480
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3902,21 +4401,27 @@
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 483
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_c
     .catchall {:try_start_c .. :try_end_c} :catchall_a
 
+    .line 485
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 487
     const/16 v0, 0x25
 
+    .line 490
     :cond_12
     const/16 v1, 0x25
 
     if-ne v0, v1, :cond_14
 
+    .line 491
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 494
     :try_start_d
     const-string v0, "INSERT OR IGNORE INTO system(name,value) VALUES(?,?);"
 
@@ -3926,6 +4431,7 @@
 
     move-result-object v1
 
+    .line 496
     :try_start_e
     const-string v0, "airplane_mode_toggleable_radios"
 
@@ -3933,26 +4439,33 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadStringSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 498
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_e
     .catchall {:try_start_e .. :try_end_e} :catchall_3e
 
+    .line 500
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 501
     if-eqz v1, :cond_13
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 503
     :cond_13
     const/16 v0, 0x26
 
+    .line 506
     :cond_14
     const/16 v1, 0x26
 
     if-ne v0, v1, :cond_15
 
+    .line 507
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 509
     :try_start_f
     iget-object v0, p0, Lcom/android/providers/settings/DatabaseHelper;->mContext:Landroid/content/Context;
 
@@ -3970,6 +4483,7 @@
 
     const-string v0, "1"
 
+    .line 511
     :goto_1
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -3997,39 +4511,50 @@
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 513
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_f
     .catchall {:try_start_f .. :try_end_f} :catchall_c
 
+    .line 515
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 518
     const/16 v0, 0x27
 
+    .line 521
     :cond_15
     const/16 v1, 0x27
 
     if-ne v0, v1, :cond_16
 
+    .line 522
     invoke-direct {p0, p1}, Lcom/android/providers/settings/DatabaseHelper;->upgradeAutoBrightness(Landroid/database/sqlite/SQLiteDatabase;)V
 
+    .line 523
     const/16 v0, 0x28
 
+    .line 526
     :cond_16
     const/16 v1, 0x28
 
     if-ne v0, v1, :cond_18
 
+    .line 530
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 533
     :try_start_10
     const-string v0, "DELETE FROM system WHERE name=\'window_animation_scale\'"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 535
     const-string v0, "DELETE FROM system WHERE name=\'transition_animation_scale\'"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 537
     const-string v0, "INSERT INTO system(name,value) VALUES(?,?);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->compileStatement(Ljava/lang/String;)Landroid/database/sqlite/SQLiteStatement;
@@ -4038,34 +4563,43 @@
 
     move-result-object v1
 
+    .line 539
     :try_start_11
     invoke-direct {p0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadDefaultAnimationSettings(Landroid/database/sqlite/SQLiteStatement;)V
 
+    .line 540
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_11
     .catchall {:try_start_11 .. :try_end_11} :catchall_3d
 
+    .line 542
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 543
     if-eqz v1, :cond_17
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 545
     :cond_17
     const/16 v0, 0x29
 
+    .line 548
     :cond_18
     const/16 v1, 0x29
 
     if-ne v0, v1, :cond_1a
 
+    .line 552
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 555
     :try_start_12
     const-string v0, "DELETE FROM system WHERE name=\'haptic_feedback_enabled\'"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 557
     const-string v0, "INSERT INTO system(name,value) VALUES(?,?);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->compileStatement(Ljava/lang/String;)Landroid/database/sqlite/SQLiteStatement;
@@ -4074,29 +4608,37 @@
 
     move-result-object v1
 
+    .line 559
     :try_start_13
     invoke-direct {p0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadDefaultHapticSettings(Landroid/database/sqlite/SQLiteStatement;)V
 
+    .line 560
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_13
     .catchall {:try_start_13 .. :try_end_13} :catchall_3c
 
+    .line 562
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 563
     if-eqz v1, :cond_19
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 565
     :cond_19
     const/16 v0, 0x2a
 
+    .line 568
     :cond_1a
     const/16 v1, 0x2a
 
     if-ne v0, v1, :cond_1c
 
+    .line 572
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 575
     :try_start_14
     const-string v0, "INSERT INTO system(name,value) VALUES(?,?);"
 
@@ -4106,6 +4648,7 @@
 
     move-result-object v1
 
+    .line 577
     :try_start_15
     const-string v0, "notification_light_pulse"
 
@@ -4113,26 +4656,33 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 579
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_15
     .catchall {:try_start_15 .. :try_end_15} :catchall_3b
 
+    .line 581
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 582
     if-eqz v1, :cond_1b
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 584
     :cond_1b
     const/16 v0, 0x2b
 
+    .line 587
     :cond_1c
     const/16 v1, 0x2b
 
     if-ne v0, v1, :cond_1e
 
+    .line 591
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 594
     :try_start_16
     const-string v0, "INSERT OR IGNORE INTO system(name,value) VALUES(?,?);"
 
@@ -4142,6 +4692,7 @@
 
     move-result-object v1
 
+    .line 596
     :try_start_17
     const-string v0, "volume_bluetooth_sco"
 
@@ -4157,120 +4708,154 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 598
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_17
     .catchall {:try_start_17 .. :try_end_17} :catchall_3a
 
+    .line 600
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 601
     if-eqz v1, :cond_1d
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 603
     :cond_1d
     const/16 v0, 0x2c
 
+    .line 606
     :cond_1e
     const/16 v1, 0x2c
 
     if-ne v0, v1, :cond_1f
 
+    .line 610
     const-string v0, "DROP TABLE IF EXISTS gservices"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 611
     const-string v0, "DROP INDEX IF EXISTS gservicesIndex1"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 612
     const/16 v0, 0x2d
 
+    .line 615
     :cond_1f
     const/16 v1, 0x2d
 
     if-ne v0, v1, :cond_20
 
+    .line 619
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 621
     :try_start_18
     const-string v0, "INSERT INTO secure(name,value) values(\'mount_play_not_snd\',\'1\');"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 623
     const-string v0, "INSERT INTO secure(name,value) values(\'mount_ums_autostart\',\'0\');"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 625
     const-string v0, "INSERT INTO secure(name,value) values(\'mount_ums_prompt\',\'1\');"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 627
     const-string v0, "INSERT INTO secure(name,value) values(\'mount_ums_notify_enabled\',\'1\');"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 629
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_18
     .catchall {:try_start_18 .. :try_end_18} :catchall_11
 
+    .line 631
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 633
     const/16 v0, 0x2e
 
+    .line 636
     :cond_20
     const/16 v1, 0x2e
 
     if-ne v0, v1, :cond_21
 
+    .line 641
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 643
     :try_start_19
     const-string v0, "DELETE FROM system WHERE name=\'lockscreen.password_type\';"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 644
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_19
     .catchall {:try_start_19 .. :try_end_19} :catchall_12
 
+    .line 646
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 648
     const/16 v0, 0x2f
 
+    .line 652
     :cond_21
     const/16 v1, 0x2f
 
     if-ne v0, v1, :cond_22
 
+    .line 657
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 659
     :try_start_1a
     const-string v0, "DELETE FROM system WHERE name=\'lockscreen.password_type\';"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 660
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_1a
     .catchall {:try_start_1a .. :try_end_1a} :catchall_13
 
+    .line 662
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 664
     const/16 v0, 0x30
 
+    .line 667
     :cond_22
     const/16 v1, 0x30
 
     if-ne v0, v1, :cond_23
 
+    .line 672
     const/16 v0, 0x31
 
+    .line 675
     :cond_23
     const/16 v1, 0x31
 
     if-ne v0, v1, :cond_25
 
+    .line 679
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 682
     :try_start_1b
     const-string v0, "INSERT INTO system(name,value) VALUES(?,?);"
 
@@ -4280,34 +4865,43 @@
 
     move-result-object v1
 
+    .line 684
     :try_start_1c
     invoke-direct {p0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadUISoundEffectsSettings(Landroid/database/sqlite/SQLiteStatement;)V
 
+    .line 685
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_1c
     .catchall {:try_start_1c .. :try_end_1c} :catchall_39
 
+    .line 687
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 688
     if-eqz v1, :cond_24
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 691
     :cond_24
     const/16 v0, 0x32
 
+    .line 694
     :cond_25
     const/16 v1, 0x32
 
     if-ne v0, v1, :cond_26
 
+    .line 698
     const/16 v0, 0x33
 
+    .line 701
     :cond_26
     const/16 v1, 0x33
 
     if-ne v0, v1, :cond_27
 
+    .line 703
     const/16 v0, 0x9
 
     new-array v0, v0, [Ljava/lang/String;
@@ -4360,17 +4954,22 @@
 
     aput-object v2, v0, v1
 
+    .line 714
     invoke-direct {p0, p1, v0}, Lcom/android/providers/settings/DatabaseHelper;->moveFromSystemToSecure(Landroid/database/sqlite/SQLiteDatabase;[Ljava/lang/String;)V
 
+    .line 715
     const/16 v0, 0x34
 
+    .line 718
     :cond_27
     const/16 v1, 0x34
 
     if-ne v0, v1, :cond_29
 
+    .line 720
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 723
     :try_start_1d
     const-string v0, "INSERT INTO system(name,value) VALUES(?,?);"
 
@@ -4380,6 +4979,7 @@
 
     move-result-object v1
 
+    .line 725
     :try_start_1e
     const-string v0, "vibrate_in_silent"
 
@@ -4387,49 +4987,63 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 727
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_1e
     .catchall {:try_start_1e .. :try_end_1e} :catchall_38
 
+    .line 729
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 730
     if-eqz v1, :cond_28
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 733
     :cond_28
     const/16 v0, 0x35
 
+    .line 736
     :cond_29
     const/16 v1, 0x35
 
     if-ne v0, v1, :cond_2a
 
+    .line 740
     const/16 v0, 0x36
 
+    .line 743
     :cond_2a
     const/16 v1, 0x36
 
     if-ne v0, v1, :cond_2b
 
+    .line 747
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 749
     :try_start_1f
     invoke-direct {p0, p1}, Lcom/android/providers/settings/DatabaseHelper;->upgradeScreenTimeoutFromNever(Landroid/database/sqlite/SQLiteDatabase;)V
 
+    .line 750
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_1f
     .catchall {:try_start_1f .. :try_end_1f} :catchall_16
 
+    .line 752
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 755
     const/16 v0, 0x37
 
+    .line 758
     :cond_2b
     const/16 v1, 0x37
 
     if-ne v0, v1, :cond_2d
 
+    .line 760
     new-array v0, v4, [Ljava/lang/String;
 
     const-string v1, "set_install_location"
@@ -4440,10 +5054,13 @@
 
     aput-object v1, v0, v8
 
+    .line 764
     invoke-direct {p0, p1, v0}, Lcom/android/providers/settings/DatabaseHelper;->moveFromSystemToSecure(Landroid/database/sqlite/SQLiteDatabase;[Ljava/lang/String;)V
 
+    .line 765
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 768
     :try_start_20
     const-string v0, "INSERT INTO system(name,value) VALUES(?,?);"
 
@@ -4453,6 +5070,7 @@
 
     move-result-object v1
 
+    .line 770
     :try_start_21
     const-string v0, "set_install_location"
 
@@ -4464,6 +5082,7 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 771
     const-string v0, "default_install_location"
 
     const/4 v2, 0x0
@@ -4474,31 +5093,39 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 773
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_21
     .catchall {:try_start_21 .. :try_end_21} :catchall_37
 
+    .line 775
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 776
     if-eqz v1, :cond_2c
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 778
     :cond_2c
     const/16 v0, 0x38
 
+    .line 781
     :cond_2d
     const/16 v1, 0x38
 
     if-ne v0, v1, :cond_2f
 
+    .line 785
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 788
     :try_start_22
     const-string v0, "DELETE FROM system WHERE name=\'airplane_mode_toggleable_radios\'"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 790
     const-string v0, "INSERT OR IGNORE INTO system(name,value) VALUES(?,?);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->compileStatement(Ljava/lang/String;)Landroid/database/sqlite/SQLiteStatement;
@@ -4507,6 +5134,7 @@
 
     move-result-object v1
 
+    .line 792
     :try_start_23
     const-string v0, "airplane_mode_toggleable_radios"
 
@@ -4514,26 +5142,33 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadStringSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 794
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_23
     .catchall {:try_start_23 .. :try_end_23} :catchall_36
 
+    .line 796
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 797
     if-eqz v1, :cond_2e
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 799
     :cond_2e
     const/16 v0, 0x39
 
+    .line 804
     :cond_2f
     const/16 v1, 0x39
 
     if-ne v0, v1, :cond_31
 
+    .line 810
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 813
     :try_start_24
     const-string v0, "INSERT INTO secure(name,value) VALUES(?,?);"
 
@@ -4543,6 +5178,7 @@
 
     move-result-object v1
 
+    .line 815
     :try_start_25
     const-string v0, "accessibility_script_injection"
 
@@ -4550,46 +5186,57 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 817
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 818
     const-string v0, "INSERT INTO secure(name,value) VALUES(?,?);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->compileStatement(Ljava/lang/String;)Landroid/database/sqlite/SQLiteStatement;
 
     move-result-object v1
 
+    .line 820
     const-string v0, "accessibility_web_content_key_bindings"
 
     const v2, 0x7f06000b
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadStringSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 822
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_25
     .catchall {:try_start_25 .. :try_end_25} :catchall_35
 
+    .line 824
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 825
     if-eqz v1, :cond_30
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 827
     :cond_30
     const/16 v0, 0x3a
 
+    .line 830
     :cond_31
     const/16 v1, 0x3a
 
     if-ne v0, v1, :cond_33
 
+    .line 832
     const-string v0, "auto_time"
 
     invoke-direct {p0, p1, v0, v9}, Lcom/android/providers/settings/DatabaseHelper;->getIntValueFromSystem(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;I)I
 
     move-result v0
 
+    .line 833
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 836
     :try_start_26
     const-string v1, "INSERT INTO system(name,value) VALUES(?,?);"
 
@@ -4599,6 +5246,7 @@
 
     move-result-object v1
 
+    .line 837
     :try_start_27
     const-string v2, "auto_time_zone"
 
@@ -4608,26 +5256,33 @@
 
     invoke-direct {p0, v1, v2, v0}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 839
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_27
     .catchall {:try_start_27 .. :try_end_27} :catchall_34
 
+    .line 841
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 842
     if-eqz v1, :cond_32
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 844
     :cond_32
     const/16 v0, 0x3b
 
+    .line 847
     :cond_33
     const/16 v1, 0x3b
 
     if-ne v0, v1, :cond_35
 
+    .line 849
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 852
     :try_start_28
     const-string v0, "INSERT INTO system(name,value) VALUES(?,?);"
 
@@ -4637,6 +5292,7 @@
 
     move-result-object v1
 
+    .line 854
     :try_start_29
     const-string v0, "user_rotation"
 
@@ -4644,54 +5300,69 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 856
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_29
     .catchall {:try_start_29 .. :try_end_29} :catchall_33
 
+    .line 858
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 859
     if-eqz v1, :cond_34
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 861
     :cond_34
     const/16 v0, 0x3c
 
+    .line 864
     :cond_35
     const/16 v1, 0x3c
 
     if-ne v0, v1, :cond_36
 
+    .line 868
     const/16 v0, 0x3d
 
+    .line 871
     :cond_36
     const/16 v1, 0x3d
 
     if-ne v0, v1, :cond_37
 
+    .line 875
     const/16 v0, 0x3e
 
+    .line 879
     :cond_37
     const/16 v1, 0x3e
 
     if-ne v0, v1, :cond_38
 
+    .line 883
     const/16 v0, 0x3f
 
+    .line 886
     :cond_38
     const/16 v1, 0x3f
 
     if-ne v0, v1, :cond_39
 
+    .line 889
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 891
     :try_start_2a
     const-string v0, "DELETE FROM system WHERE name=\'mode_ringer_streams_affected\'"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 893
     const/16 v0, 0xae
 
+    .line 898
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -4722,21 +5393,27 @@
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 901
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_2a
     .catchall {:try_start_2a .. :try_end_2a} :catchall_1c
 
+    .line 903
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 905
     const/16 v0, 0x40
 
+    .line 908
     :cond_39
     const/16 v1, 0x40
 
     if-ne v0, v1, :cond_3b
 
+    .line 910
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 913
     :try_start_2b
     const-string v0, "INSERT INTO secure(name,value) VALUES(?,?);"
 
@@ -4746,6 +5423,7 @@
 
     move-result-object v1
 
+    .line 915
     :try_start_2c
     const-string v0, "long_press_timeout"
 
@@ -4753,37 +5431,47 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadIntegerSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 917
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 918
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_2c
     .catchall {:try_start_2c .. :try_end_2c} :catchall_32
 
+    .line 920
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 921
     if-eqz v1, :cond_3a
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 923
     :cond_3a
     const/16 v0, 0x41
 
+    .line 928
     :cond_3b
     const/16 v1, 0x41
 
     if-ne v0, v1, :cond_3d
 
+    .line 932
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 935
     :try_start_2d
     const-string v0, "DELETE FROM system WHERE name=\'window_animation_scale\'"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 937
     const-string v0, "DELETE FROM system WHERE name=\'transition_animation_scale\'"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 939
     const-string v0, "INSERT INTO system(name,value) VALUES(?,?);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->compileStatement(Ljava/lang/String;)Landroid/database/sqlite/SQLiteStatement;
@@ -4792,31 +5480,40 @@
 
     move-result-object v1
 
+    .line 941
     :try_start_2e
     invoke-direct {p0, v1}, Lcom/android/providers/settings/DatabaseHelper;->loadDefaultAnimationSettings(Landroid/database/sqlite/SQLiteStatement;)V
 
+    .line 942
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_2e
     .catchall {:try_start_2e .. :try_end_2e} :catchall_31
 
+    .line 944
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 945
     if-eqz v1, :cond_3c
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 947
     :cond_3c
     const/16 v0, 0x42
 
+    .line 950
     :cond_3d
     const/16 v1, 0x42
 
     if-ne v0, v1, :cond_3f
 
+    .line 953
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 955
     const/16 v0, 0xa6
 
+    .line 959
     :try_start_2f
     iget-object v1, p0, Lcom/android/providers/settings/DatabaseHelper;->mContext:Landroid/content/Context;
 
@@ -4832,13 +5529,16 @@
 
     if-nez v1, :cond_3e
 
+    .line 961
     const/16 v0, 0xae
 
+    .line 963
     :cond_3e
     const-string v1, "DELETE FROM system WHERE name=\'mode_ringer_streams_affected\'"
 
     invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 965
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -4869,21 +5569,27 @@
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 968
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_2f
     .catchall {:try_start_2f .. :try_end_2f} :catchall_1f
 
+    .line 970
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 972
     const/16 v0, 0x43
 
+    .line 975
     :cond_3f
     const/16 v1, 0x43
 
     if-ne v0, v1, :cond_41
 
+    .line 977
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 980
     :try_start_30
     const-string v0, "INSERT INTO secure(name,value) VALUES(?,?);"
 
@@ -4893,6 +5599,7 @@
 
     move-result-object v1
 
+    .line 982
     :try_start_31
     const-string v0, "touch_exploration_enabled"
 
@@ -4900,46 +5607,59 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 984
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 985
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_31
     .catchall {:try_start_31 .. :try_end_31} :catchall_30
 
+    .line 987
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 988
     if-eqz v1, :cond_40
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 990
     :cond_40
     const/16 v0, 0x44
 
+    .line 993
     :cond_41
     const/16 v1, 0x44
 
     if-ne v0, v1, :cond_42
 
+    .line 995
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 997
     :try_start_32
     const-string v0, "DELETE FROM system WHERE name=\'notifications_use_ring_volume\'"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 999
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_32
     .catchall {:try_start_32 .. :try_end_32} :catchall_21
 
+    .line 1001
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 1003
     const/16 v0, 0x45
 
+    .line 1006
     :cond_42
     const/16 v1, 0x45
 
     if-ne v0, v1, :cond_43
 
+    .line 1008
     iget-object v0, p0, Lcom/android/providers/settings/DatabaseHelper;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -4952,6 +5672,7 @@
 
     move-result-object v0
 
+    .line 1010
     iget-object v1, p0, Lcom/android/providers/settings/DatabaseHelper;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -4964,8 +5685,10 @@
 
     move-result-object v1
 
+    .line 1012
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 1014
     :try_start_33
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -5011,6 +5734,7 @@
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 1016
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -5055,30 +5779,39 @@
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 1018
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_33
     .catchall {:try_start_33 .. :try_end_33} :catchall_22
 
+    .line 1020
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 1022
     const/16 v0, 0x46
 
+    .line 1025
     :cond_43
     const/16 v1, 0x46
 
     if-ne v0, v1, :cond_44
 
+    .line 1027
     invoke-direct {p0, p1}, Lcom/android/providers/settings/DatabaseHelper;->loadBookmarks(Landroid/database/sqlite/SQLiteDatabase;)V
 
+    .line 1028
     const/16 v0, 0x47
 
+    .line 1031
     :cond_44
     const/16 v1, 0x47
 
     if-ne v0, v1, :cond_46
 
+    .line 1033
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 1036
     :try_start_34
     const-string v0, "INSERT INTO secure(name,value) VALUES(?,?);"
 
@@ -5088,6 +5821,7 @@
 
     move-result-object v1
 
+    .line 1038
     :try_start_35
     const-string v0, "speak_password"
 
@@ -5095,26 +5829,33 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1040
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_35
     .catchall {:try_start_35 .. :try_end_35} :catchall_2f
 
+    .line 1042
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 1043
     if-eqz v1, :cond_45
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 1045
     :cond_45
     const/16 v0, 0x48
 
+    .line 1048
     :cond_46
     const/16 v1, 0x48
 
     if-ne v0, v1, :cond_48
 
+    .line 1050
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 1053
     :try_start_36
     const-string v0, "INSERT OR REPLACE INTO system(name,value) VALUES(?,?);"
 
@@ -5124,6 +5865,7 @@
 
     move-result-object v1
 
+    .line 1055
     :try_start_37
     const-string v0, "vibrate_in_silent"
 
@@ -5131,35 +5873,45 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1057
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_37
     .catchall {:try_start_37 .. :try_end_37} :catchall_2e
 
+    .line 1059
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 1060
     if-eqz v1, :cond_47
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 1062
     :cond_47
     const/16 v0, 0x49
 
+    .line 1065
     :cond_48
     const/16 v1, 0x49
 
     if-ne v0, v1, :cond_49
 
+    .line 1066
     invoke-direct {p0, p1}, Lcom/android/providers/settings/DatabaseHelper;->upgradeVibrateSettingFromNone(Landroid/database/sqlite/SQLiteDatabase;)V
 
+    .line 1067
     const/16 v0, 0x4a
 
+    .line 1070
     :cond_49
     const/16 v1, 0x4a
 
     if-ne v0, v1, :cond_4b
 
+    .line 1072
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 1075
     :try_start_38
     const-string v0, "INSERT INTO secure(name,value) VALUES(?,?);"
 
@@ -5169,6 +5921,7 @@
 
     move-result-object v1
 
+    .line 1076
     :try_start_39
     const-string v0, "accessibility_script_injection_url"
 
@@ -5176,26 +5929,33 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadStringSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1078
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_39
     .catchall {:try_start_39 .. :try_end_39} :catchall_2d
 
+    .line 1080
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 1081
     if-eqz v1, :cond_4a
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 1083
     :cond_4a
     const/16 v0, 0x4b
 
+    .line 1085
     :cond_4b
     const/16 v1, 0x4b
 
     if-ne v0, v1, :cond_4f
 
+    .line 1086
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 1090
     :try_start_3a
     const-string v1, "secure"
 
@@ -5233,6 +5993,7 @@
 
     move-result-object v1
 
+    .line 1094
     if-eqz v1, :cond_4c
 
     :try_start_3b
@@ -5242,6 +6003,7 @@
 
     if-nez v0, :cond_73
 
+    .line 1095
     :cond_4c
     const-string v0, "INSERT INTO system(name,value) VALUES(?,?);"
 
@@ -5251,6 +6013,7 @@
 
     move-result-object v2
 
+    .line 1097
     :try_start_3c
     const-string v0, "lockscreen.disabled"
 
@@ -5258,61 +6021,78 @@
 
     invoke-direct {p0, v2, v0, v3}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1100
     :goto_2
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_3c
     .catchall {:try_start_3c .. :try_end_3c} :catchall_2c
 
+    .line 1102
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 1103
     if-eqz v1, :cond_4d
 
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
+    .line 1104
     :cond_4d
     if-eqz v2, :cond_4e
 
     invoke-virtual {v2}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 1106
     :cond_4e
     const/16 v0, 0x4c
 
+    .line 1111
     :cond_4f
     const/16 v1, 0x4c
 
     if-ne v0, v1, :cond_50
 
+    .line 1113
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 1115
     :try_start_3d
     const-string v0, "DELETE FROM system WHERE name=\'vibrate_in_silent\'"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 1117
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_3d
     .catchall {:try_start_3d .. :try_end_3d} :catchall_27
 
+    .line 1119
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 1122
     const/16 v0, 0x4d
 
+    .line 1125
     :cond_50
     const/16 v1, 0x4d
 
     if-ne v0, v1, :cond_51
 
+    .line 1127
     invoke-direct {p0, p1}, Lcom/android/providers/settings/DatabaseHelper;->loadVibrateWhenRingingSetting(Landroid/database/sqlite/SQLiteDatabase;)V
 
+    .line 1129
     const/16 v0, 0x4e
 
+    .line 1132
     :cond_51
     const/16 v1, 0x4e
 
     if-ne v0, v1, :cond_53
 
+    .line 1134
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 1137
     :try_start_3e
     const-string v0, "INSERT OR REPLACE INTO secure(name,value) VALUES(?,?);"
 
@@ -5322,6 +6102,7 @@
 
     move-result-object v1
 
+    .line 1139
     :try_start_3f
     const-string v0, "accessibility_script_injection_url"
 
@@ -5329,24 +6110,30 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/providers/settings/DatabaseHelper;->loadStringSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
 
+    .line 1141
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_3f
     .catchall {:try_start_3f .. :try_end_3f} :catchall_2a
 
+    .line 1143
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 1144
     if-eqz v1, :cond_52
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 1146
     :cond_52
     const/16 v0, 0x4f
 
+    .line 1149
     :cond_53
     const/16 v1, 0x4f
 
     if-ne v0, v1, :cond_55
 
+    .line 1166
     const-string v0, "secure"
 
     const-string v1, "accessibility_enabled"
@@ -5359,6 +6146,7 @@
 
     move v0, v8
 
+    .line 1168
     :goto_3
     const-string v1, "secure"
 
@@ -5370,11 +6158,13 @@
 
     if-ne v1, v8, :cond_71
 
+    .line 1170
     :goto_4
     if-eqz v0, :cond_54
 
     if-eqz v8, :cond_54
 
+    .line 1171
     const-string v0, "secure"
 
     const-string v1, "enabled_accessibility_services"
@@ -5385,6 +6175,7 @@
 
     move-result-object v0
 
+    .line 1173
     const-string v1, "secure"
 
     const-string v2, "touch_exploration_granted_accessibility_services"
@@ -5395,6 +6186,7 @@
 
     move-result-object v1
 
+    .line 1175
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -5407,35 +6199,44 @@
 
     if-nez v1, :cond_54
 
+    .line 1179
     :try_start_40
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
+    .line 1180
     const-string v1, "INSERT OR REPLACE INTO secure(name,value) VALUES(?,?);"
 
     invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteDatabase;->compileStatement(Ljava/lang/String;)Landroid/database/sqlite/SQLiteStatement;
 
     move-result-object v10
 
+    .line 1182
     const-string v1, "touch_exploration_granted_accessibility_services"
 
     invoke-direct {p0, v10, v1, v0}, Lcom/android/providers/settings/DatabaseHelper;->loadSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1185
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_40
     .catchall {:try_start_40 .. :try_end_40} :catchall_29
 
+    .line 1187
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 1188
     if-eqz v10, :cond_54
 
     invoke-virtual {v10}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
+    .line 1192
     :cond_54
     const/16 v0, 0x50
 
+    .line 1197
     :cond_55
     if-eq v0, p3, :cond_57
 
+    .line 1198
     const-string v1, "SettingsProvider"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -5464,69 +6265,86 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1200
     const-string v1, "DROP TABLE IF EXISTS system"
 
     invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 1201
     const-string v1, "DROP INDEX IF EXISTS systemIndex1"
 
     invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 1202
     const-string v1, "DROP TABLE IF EXISTS secure"
 
     invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 1203
     const-string v1, "DROP INDEX IF EXISTS secureIndex1"
 
     invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 1204
     const-string v1, "DROP TABLE IF EXISTS gservices"
 
     invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 1205
     const-string v1, "DROP INDEX IF EXISTS gservicesIndex1"
 
     invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 1206
     const-string v1, "DROP TABLE IF EXISTS bluetooth_devices"
 
     invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 1207
     const-string v1, "DROP TABLE IF EXISTS bookmarks"
 
     invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 1208
     const-string v1, "DROP INDEX IF EXISTS bookmarksIndex1"
 
     invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 1209
     const-string v1, "DROP INDEX IF EXISTS bookmarksIndex2"
 
     invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 1210
     const-string v1, "DROP TABLE IF EXISTS favorites"
 
     invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 1212
     sget-boolean v1, Lcom/android/providers/settings/DatabaseHelper;->isNeedSystemex:Z
 
     if-eqz v1, :cond_56
 
+    .line 1213
     const-string v1, "DROP TABLE IF EXISTS systemex"
 
     invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 1214
     const-string v1, "DROP INDEX IF EXISTS systemexIndex1"
 
     invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 1218
     :cond_56
     const-string v1, "DROP TABLE IF EXISTS alarm"
 
     invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 1220
     invoke-virtual {p0, p1}, Lcom/android/providers/settings/DatabaseHelper;->onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
 
+    .line 1223
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -5559,6 +6377,7 @@
 
     move-result-object v0
 
+    .line 1224
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -5585,9 +6404,11 @@
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 1227
     :cond_57
     return-void
 
+    .line 265
     :catchall_0
     move-exception v0
 
@@ -5595,6 +6416,7 @@
 
     throw v0
 
+    .line 280
     :catchall_1
     move-exception v0
 
@@ -5602,6 +6424,7 @@
 
     throw v0
 
+    .line 292
     :catchall_2
     move-exception v0
 
@@ -5609,6 +6432,7 @@
 
     throw v0
 
+    .line 304
     :catchall_3
     move-exception v0
 
@@ -5616,6 +6440,7 @@
 
     throw v0
 
+    .line 371
     :catchall_4
     move-exception v0
 
@@ -5623,6 +6448,7 @@
 
     throw v0
 
+    .line 389
     :catchall_5
     move-exception v0
 
@@ -5630,6 +6456,7 @@
 
     throw v0
 
+    .line 411
     :catchall_6
     move-exception v0
 
@@ -5638,6 +6465,7 @@
     :goto_5
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 412
     if-eqz v1, :cond_58
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteStatement;->close()V
@@ -5645,6 +6473,7 @@
     :cond_58
     throw v0
 
+    .line 429
     :catchall_7
     move-exception v0
 
@@ -5652,6 +6481,7 @@
 
     throw v0
 
+    .line 442
     :catchall_8
     move-exception v0
 
@@ -5659,12 +6489,14 @@
 
     throw v0
 
+    .line 456
     :catchall_9
     move-exception v0
 
     :goto_6
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 457
     if-eqz v10, :cond_59
 
     invoke-virtual {v10}, Landroid/database/sqlite/SQLiteStatement;->close()V
@@ -5672,6 +6504,7 @@
     :cond_59
     throw v0
 
+    .line 485
     :catchall_a
     move-exception v0
 
@@ -5679,12 +6512,14 @@
 
     throw v0
 
+    .line 500
     :catchall_b
     move-exception v0
 
     :goto_7
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 501
     if-eqz v10, :cond_5a
 
     invoke-virtual {v10}, Landroid/database/sqlite/SQLiteStatement;->close()V
@@ -5692,6 +6527,7 @@
     :cond_5a
     throw v0
 
+    .line 509
     :cond_5b
     :try_start_41
     const-string v0, "0"
@@ -5700,6 +6536,7 @@
 
     goto/16 :goto_1
 
+    .line 515
     :catchall_c
     move-exception v0
 
@@ -5707,12 +6544,14 @@
 
     throw v0
 
+    .line 542
     :catchall_d
     move-exception v0
 
     :goto_8
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 543
     if-eqz v10, :cond_5c
 
     invoke-virtual {v10}, Landroid/database/sqlite/SQLiteStatement;->close()V
@@ -5720,12 +6559,14 @@
     :cond_5c
     throw v0
 
+    .line 562
     :catchall_e
     move-exception v0
 
     :goto_9
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 563
     if-eqz v10, :cond_5d
 
     invoke-virtual {v10}, Landroid/database/sqlite/SQLiteStatement;->close()V
@@ -5733,12 +6574,14 @@
     :cond_5d
     throw v0
 
+    .line 581
     :catchall_f
     move-exception v0
 
     :goto_a
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 582
     if-eqz v10, :cond_5e
 
     invoke-virtual {v10}, Landroid/database/sqlite/SQLiteStatement;->close()V
@@ -5746,12 +6589,14 @@
     :cond_5e
     throw v0
 
+    .line 600
     :catchall_10
     move-exception v0
 
     :goto_b
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 601
     if-eqz v10, :cond_5f
 
     invoke-virtual {v10}, Landroid/database/sqlite/SQLiteStatement;->close()V
@@ -5759,6 +6604,7 @@
     :cond_5f
     throw v0
 
+    .line 631
     :catchall_11
     move-exception v0
 
@@ -5766,6 +6612,7 @@
 
     throw v0
 
+    .line 646
     :catchall_12
     move-exception v0
 
@@ -5773,6 +6620,7 @@
 
     throw v0
 
+    .line 662
     :catchall_13
     move-exception v0
 
@@ -5780,12 +6628,14 @@
 
     throw v0
 
+    .line 687
     :catchall_14
     move-exception v0
 
     :goto_c
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 688
     if-eqz v10, :cond_60
 
     invoke-virtual {v10}, Landroid/database/sqlite/SQLiteStatement;->close()V
@@ -5793,12 +6643,14 @@
     :cond_60
     throw v0
 
+    .line 729
     :catchall_15
     move-exception v0
 
     :goto_d
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 730
     if-eqz v10, :cond_61
 
     invoke-virtual {v10}, Landroid/database/sqlite/SQLiteStatement;->close()V
@@ -5806,6 +6658,7 @@
     :cond_61
     throw v0
 
+    .line 752
     :catchall_16
     move-exception v0
 
@@ -5813,12 +6666,14 @@
 
     throw v0
 
+    .line 775
     :catchall_17
     move-exception v0
 
     :goto_e
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 776
     if-eqz v10, :cond_62
 
     invoke-virtual {v10}, Landroid/database/sqlite/SQLiteStatement;->close()V
@@ -5826,12 +6681,14 @@
     :cond_62
     throw v0
 
+    .line 796
     :catchall_18
     move-exception v0
 
     :goto_f
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 797
     if-eqz v10, :cond_63
 
     invoke-virtual {v10}, Landroid/database/sqlite/SQLiteStatement;->close()V
@@ -5839,12 +6696,14 @@
     :cond_63
     throw v0
 
+    .line 824
     :catchall_19
     move-exception v0
 
     :goto_10
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 825
     if-eqz v10, :cond_64
 
     invoke-virtual {v10}, Landroid/database/sqlite/SQLiteStatement;->close()V
@@ -5852,12 +6711,14 @@
     :cond_64
     throw v0
 
+    .line 841
     :catchall_1a
     move-exception v0
 
     :goto_11
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 842
     if-eqz v10, :cond_65
 
     invoke-virtual {v10}, Landroid/database/sqlite/SQLiteStatement;->close()V
@@ -5865,12 +6726,14 @@
     :cond_65
     throw v0
 
+    .line 858
     :catchall_1b
     move-exception v0
 
     :goto_12
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 859
     if-eqz v10, :cond_66
 
     invoke-virtual {v10}, Landroid/database/sqlite/SQLiteStatement;->close()V
@@ -5878,6 +6741,7 @@
     :cond_66
     throw v0
 
+    .line 903
     :catchall_1c
     move-exception v0
 
@@ -5885,12 +6749,14 @@
 
     throw v0
 
+    .line 920
     :catchall_1d
     move-exception v0
 
     :goto_13
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 921
     if-eqz v10, :cond_67
 
     invoke-virtual {v10}, Landroid/database/sqlite/SQLiteStatement;->close()V
@@ -5898,12 +6764,14 @@
     :cond_67
     throw v0
 
+    .line 944
     :catchall_1e
     move-exception v0
 
     :goto_14
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 945
     if-eqz v10, :cond_68
 
     invoke-virtual {v10}, Landroid/database/sqlite/SQLiteStatement;->close()V
@@ -5911,6 +6779,7 @@
     :cond_68
     throw v0
 
+    .line 970
     :catchall_1f
     move-exception v0
 
@@ -5918,12 +6787,14 @@
 
     throw v0
 
+    .line 987
     :catchall_20
     move-exception v0
 
     :goto_15
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 988
     if-eqz v10, :cond_69
 
     invoke-virtual {v10}, Landroid/database/sqlite/SQLiteStatement;->close()V
@@ -5931,6 +6802,7 @@
     :cond_69
     throw v0
 
+    .line 1001
     :catchall_21
     move-exception v0
 
@@ -5938,6 +6810,7 @@
 
     throw v0
 
+    .line 1020
     :catchall_22
     move-exception v0
 
@@ -5945,12 +6818,14 @@
 
     throw v0
 
+    .line 1042
     :catchall_23
     move-exception v0
 
     :goto_16
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 1043
     if-eqz v10, :cond_6a
 
     invoke-virtual {v10}, Landroid/database/sqlite/SQLiteStatement;->close()V
@@ -5958,12 +6833,14 @@
     :cond_6a
     throw v0
 
+    .line 1059
     :catchall_24
     move-exception v0
 
     :goto_17
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 1060
     if-eqz v10, :cond_6b
 
     invoke-virtual {v10}, Landroid/database/sqlite/SQLiteStatement;->close()V
@@ -5971,12 +6848,14 @@
     :cond_6b
     throw v0
 
+    .line 1080
     :catchall_25
     move-exception v0
 
     :goto_18
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 1081
     if-eqz v10, :cond_6c
 
     invoke-virtual {v10}, Landroid/database/sqlite/SQLiteStatement;->close()V
@@ -5984,6 +6863,7 @@
     :cond_6c
     throw v0
 
+    .line 1102
     :catchall_26
     move-exception v0
 
@@ -5992,10 +6872,12 @@
     :goto_19
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 1103
     if-eqz v10, :cond_6d
 
     invoke-interface {v10}, Landroid/database/Cursor;->close()V
 
+    .line 1104
     :cond_6d
     if-eqz v1, :cond_6e
 
@@ -6004,6 +6886,7 @@
     :cond_6e
     throw v0
 
+    .line 1119
     :catchall_27
     move-exception v0
 
@@ -6011,12 +6894,14 @@
 
     throw v0
 
+    .line 1143
     :catchall_28
     move-exception v0
 
     :goto_1a
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 1144
     if-eqz v10, :cond_6f
 
     invoke-virtual {v10}, Landroid/database/sqlite/SQLiteStatement;->close()V
@@ -6027,18 +6912,22 @@
     :cond_70
     move v0, v9
 
+    .line 1166
     goto/16 :goto_3
 
     :cond_71
     move v8, v9
 
+    .line 1168
     goto/16 :goto_4
 
+    .line 1187
     :catchall_29
     move-exception v0
 
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
+    .line 1188
     if-eqz v10, :cond_72
 
     invoke-virtual {v10}, Landroid/database/sqlite/SQLiteStatement;->close()V
@@ -6046,6 +6935,7 @@
     :cond_72
     throw v0
 
+    .line 1143
     :catchall_2a
     move-exception v0
 
@@ -6053,6 +6943,7 @@
 
     goto :goto_1a
 
+    .line 1102
     :catchall_2b
     move-exception v0
 
@@ -6073,6 +6964,7 @@
 
     goto :goto_19
 
+    .line 1080
     :catchall_2d
     move-exception v0
 
@@ -6080,6 +6972,7 @@
 
     goto :goto_18
 
+    .line 1059
     :catchall_2e
     move-exception v0
 
@@ -6087,6 +6980,7 @@
 
     goto :goto_17
 
+    .line 1042
     :catchall_2f
     move-exception v0
 
@@ -6094,6 +6988,7 @@
 
     goto :goto_16
 
+    .line 987
     :catchall_30
     move-exception v0
 
@@ -6101,6 +6996,7 @@
 
     goto :goto_15
 
+    .line 944
     :catchall_31
     move-exception v0
 
@@ -6108,6 +7004,7 @@
 
     goto/16 :goto_14
 
+    .line 920
     :catchall_32
     move-exception v0
 
@@ -6115,6 +7012,7 @@
 
     goto/16 :goto_13
 
+    .line 858
     :catchall_33
     move-exception v0
 
@@ -6122,6 +7020,7 @@
 
     goto/16 :goto_12
 
+    .line 841
     :catchall_34
     move-exception v0
 
@@ -6129,6 +7028,7 @@
 
     goto/16 :goto_11
 
+    .line 824
     :catchall_35
     move-exception v0
 
@@ -6136,6 +7036,7 @@
 
     goto/16 :goto_10
 
+    .line 796
     :catchall_36
     move-exception v0
 
@@ -6143,6 +7044,7 @@
 
     goto/16 :goto_f
 
+    .line 775
     :catchall_37
     move-exception v0
 
@@ -6150,6 +7052,7 @@
 
     goto/16 :goto_e
 
+    .line 729
     :catchall_38
     move-exception v0
 
@@ -6157,6 +7060,7 @@
 
     goto/16 :goto_d
 
+    .line 687
     :catchall_39
     move-exception v0
 
@@ -6164,6 +7068,7 @@
 
     goto/16 :goto_c
 
+    .line 600
     :catchall_3a
     move-exception v0
 
@@ -6171,6 +7076,7 @@
 
     goto/16 :goto_b
 
+    .line 581
     :catchall_3b
     move-exception v0
 
@@ -6178,6 +7084,7 @@
 
     goto/16 :goto_a
 
+    .line 562
     :catchall_3c
     move-exception v0
 
@@ -6185,6 +7092,7 @@
 
     goto/16 :goto_9
 
+    .line 542
     :catchall_3d
     move-exception v0
 
@@ -6192,6 +7100,7 @@
 
     goto/16 :goto_8
 
+    .line 500
     :catchall_3e
     move-exception v0
 
@@ -6199,6 +7108,7 @@
 
     goto/16 :goto_7
 
+    .line 456
     :catchall_3f
     move-exception v0
 
@@ -6206,6 +7116,7 @@
 
     goto/16 :goto_6
 
+    .line 411
     :catchall_40
     move-exception v0
 
@@ -6236,14 +7147,17 @@
 
     const/4 v9, 0x0
 
+    .line 1980
     new-array v2, v8, [Ljava/lang/String;
 
     const-string v0, "name"
 
     aput-object v0, v2, v9
 
+    .line 1981
     const-string v3, "name=?"
 
+    .line 1982
     new-array v4, v8, [Ljava/lang/String;
 
     aput-object p3, v4, v9
@@ -6256,10 +7170,12 @@
 
     move-object v7, v5
 
+    .line 1985
     invoke-virtual/range {v0 .. v7}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v0
 
+    .line 1986
     if-eqz v0, :cond_0
 
     invoke-interface {v0}, Landroid/database/Cursor;->getCount()I
@@ -6270,6 +7186,7 @@
 
     move v0, v8
 
+    .line 1995
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -6321,6 +7238,7 @@
 
     move-result-object v1
 
+    .line 1996
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -6365,10 +7283,12 @@
 
     move-result-object v2
 
+    .line 1998
     if-eqz v0, :cond_1
 
     move-object v0, v1
 
+    .line 1999
     :goto_1
     const-string v1, "SettingsProvider"
 
@@ -6392,17 +7312,21 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2001
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    .line 2002
     return-void
 
     :cond_0
     move v0, v9
 
+    .line 1986
     goto :goto_0
 
     :cond_1
     move-object v0, v2
 
+    .line 1998
     goto :goto_1
 .end method

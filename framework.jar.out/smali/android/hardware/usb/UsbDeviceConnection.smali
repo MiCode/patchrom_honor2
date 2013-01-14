@@ -19,10 +19,13 @@
     .parameter "device"
 
     .prologue
+    .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 43
     iput-object p1, p0, Landroid/hardware/usb/UsbDeviceConnection;->mDevice:Landroid/hardware/usb/UsbDevice;
 
+    .line 44
     return-void
 .end method
 
@@ -66,6 +69,7 @@
     .parameter "timeout"
 
     .prologue
+    .line 140
     invoke-virtual {p1}, Landroid/hardware/usb/UsbEndpoint;->getAddress()I
 
     move-result v0
@@ -83,6 +87,7 @@
     .parameter "force"
 
     .prologue
+    .line 92
     invoke-virtual {p1}, Landroid/hardware/usb/UsbInterface;->getId()I
 
     move-result v0
@@ -98,8 +103,10 @@
     .locals 0
 
     .prologue
+    .line 57
     invoke-direct {p0}, Landroid/hardware/usb/UsbDeviceConnection;->native_close()V
 
+    .line 58
     return-void
 .end method
 
@@ -114,6 +121,7 @@
     .parameter "timeout"
 
     .prologue
+    .line 125
     invoke-direct/range {p0 .. p7}, Landroid/hardware/usb/UsbDeviceConnection;->native_control_request(IIII[BII)I
 
     move-result v0
@@ -125,6 +133,7 @@
     .locals 1
 
     .prologue
+    .line 68
     invoke-direct {p0}, Landroid/hardware/usb/UsbDeviceConnection;->native_get_fd()I
 
     move-result v0
@@ -136,6 +145,7 @@
     .locals 1
 
     .prologue
+    .line 79
     invoke-direct {p0}, Landroid/hardware/usb/UsbDeviceConnection;->native_get_desc()[B
 
     move-result-object v0
@@ -147,6 +157,7 @@
     .locals 1
 
     .prologue
+    .line 168
     invoke-direct {p0}, Landroid/hardware/usb/UsbDeviceConnection;->native_get_serial()Ljava/lang/String;
 
     move-result-object v0
@@ -160,6 +171,7 @@
     .parameter "pfd"
 
     .prologue
+    .line 47
     invoke-virtual {p2}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
     move-result-object v0
@@ -176,6 +188,7 @@
     .parameter "intf"
 
     .prologue
+    .line 101
     invoke-virtual {p1}, Landroid/hardware/usb/UsbInterface;->getId()I
 
     move-result v0
@@ -191,15 +204,19 @@
     .locals 1
 
     .prologue
+    .line 154
     invoke-direct {p0}, Landroid/hardware/usb/UsbDeviceConnection;->native_request_wait()Landroid/hardware/usb/UsbRequest;
 
     move-result-object v0
 
+    .line 155
     .local v0, request:Landroid/hardware/usb/UsbRequest;
     if-eqz v0, :cond_0
 
+    .line 156
     invoke-virtual {v0}, Landroid/hardware/usb/UsbRequest;->dequeue()V
 
+    .line 158
     :cond_0
     return-object v0
 .end method

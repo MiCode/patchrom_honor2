@@ -36,6 +36,7 @@
     .locals 1
 
     .prologue
+    .line 131
     new-instance v0, Landroid/net/nsd/NsdServiceInfo$1;
 
     invoke-direct {v0}, Landroid/net/nsd/NsdServiceInfo$1;-><init>()V
@@ -49,8 +50,10 @@
     .locals 0
 
     .prologue
+    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 41
     return-void
 .end method
 
@@ -61,14 +64,19 @@
     .parameter "tr"
 
     .prologue
+    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 45
     iput-object p1, p0, Landroid/net/nsd/NsdServiceInfo;->mServiceName:Ljava/lang/String;
 
+    .line 46
     iput-object p2, p0, Landroid/net/nsd/NsdServiceInfo;->mServiceType:Ljava/lang/String;
 
+    .line 47
     iput-object p3, p0, Landroid/net/nsd/NsdServiceInfo;->mTxtRecord:Landroid/net/nsd/DnsSdTxtRecord;
 
+    .line 48
     return-void
 .end method
 
@@ -78,6 +86,7 @@
     .parameter "x1"
 
     .prologue
+    .line 28
     iput-object p1, p0, Landroid/net/nsd/NsdServiceInfo;->mServiceName:Ljava/lang/String;
 
     return-object p1
@@ -89,6 +98,7 @@
     .parameter "x1"
 
     .prologue
+    .line 28
     iput-object p1, p0, Landroid/net/nsd/NsdServiceInfo;->mServiceType:Ljava/lang/String;
 
     return-object p1
@@ -100,6 +110,7 @@
     .parameter "x1"
 
     .prologue
+    .line 28
     iput-object p1, p0, Landroid/net/nsd/NsdServiceInfo;->mTxtRecord:Landroid/net/nsd/DnsSdTxtRecord;
 
     return-object p1
@@ -111,6 +122,7 @@
     .parameter "x1"
 
     .prologue
+    .line 28
     iput-object p1, p0, Landroid/net/nsd/NsdServiceInfo;->mHost:Ljava/net/InetAddress;
 
     return-object p1
@@ -122,6 +134,7 @@
     .parameter "x1"
 
     .prologue
+    .line 28
     iput p1, p0, Landroid/net/nsd/NsdServiceInfo;->mPort:I
 
     return p1
@@ -133,6 +146,7 @@
     .locals 1
 
     .prologue
+    .line 113
     const/4 v0, 0x0
 
     return v0
@@ -142,6 +156,7 @@
     .locals 1
 
     .prologue
+    .line 82
     iget-object v0, p0, Landroid/net/nsd/NsdServiceInfo;->mHost:Ljava/net/InetAddress;
 
     return-object v0
@@ -151,6 +166,7 @@
     .locals 1
 
     .prologue
+    .line 92
     iget v0, p0, Landroid/net/nsd/NsdServiceInfo;->mPort:I
 
     return v0
@@ -160,6 +176,7 @@
     .locals 1
 
     .prologue
+    .line 52
     iget-object v0, p0, Landroid/net/nsd/NsdServiceInfo;->mServiceName:Ljava/lang/String;
 
     return-object v0
@@ -169,6 +186,7 @@
     .locals 1
 
     .prologue
+    .line 62
     iget-object v0, p0, Landroid/net/nsd/NsdServiceInfo;->mServiceType:Ljava/lang/String;
 
     return-object v0
@@ -178,6 +196,7 @@
     .locals 1
 
     .prologue
+    .line 72
     iget-object v0, p0, Landroid/net/nsd/NsdServiceInfo;->mTxtRecord:Landroid/net/nsd/DnsSdTxtRecord;
 
     return-object v0
@@ -188,8 +207,10 @@
     .parameter "s"
 
     .prologue
+    .line 87
     iput-object p1, p0, Landroid/net/nsd/NsdServiceInfo;->mHost:Ljava/net/InetAddress;
 
+    .line 88
     return-void
 .end method
 
@@ -198,8 +219,10 @@
     .parameter "p"
 
     .prologue
+    .line 97
     iput p1, p0, Landroid/net/nsd/NsdServiceInfo;->mPort:I
 
+    .line 98
     return-void
 .end method
 
@@ -208,8 +231,10 @@
     .parameter "s"
 
     .prologue
+    .line 57
     iput-object p1, p0, Landroid/net/nsd/NsdServiceInfo;->mServiceName:Ljava/lang/String;
 
+    .line 58
     return-void
 .end method
 
@@ -218,8 +243,10 @@
     .parameter "s"
 
     .prologue
+    .line 67
     iput-object p1, p0, Landroid/net/nsd/NsdServiceInfo;->mServiceType:Ljava/lang/String;
 
+    .line 68
     return-void
 .end method
 
@@ -228,12 +255,14 @@
     .parameter "t"
 
     .prologue
+    .line 77
     new-instance v0, Landroid/net/nsd/DnsSdTxtRecord;
 
     invoke-direct {v0, p1}, Landroid/net/nsd/DnsSdTxtRecord;-><init>(Landroid/net/nsd/DnsSdTxtRecord;)V
 
     iput-object v0, p0, Landroid/net/nsd/NsdServiceInfo;->mTxtRecord:Landroid/net/nsd/DnsSdTxtRecord;
 
+    .line 78
     return-void
 .end method
 
@@ -241,12 +270,14 @@
     .locals 3
 
     .prologue
+    .line 101
     new-instance v0, Ljava/lang/StringBuffer;
 
     invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
 
+    .line 103
     .local v0, sb:Ljava/lang/StringBuffer;
-    const-string v1, "name: "
+    const-string/jumbo v1, "name: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -258,7 +289,7 @@
 
     move-result-object v1
 
-    const-string v2, "type: "
+    const-string/jumbo v2, "type: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -282,7 +313,7 @@
 
     move-result-object v1
 
-    const-string v2, "port: "
+    const-string/jumbo v2, "port: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -294,7 +325,7 @@
 
     move-result-object v1
 
-    const-string v2, "txtRecord: "
+    const-string/jumbo v2, "txtRecord: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -304,6 +335,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/Object;)Ljava/lang/StringBuffer;
 
+    .line 108
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -317,26 +349,32 @@
     .parameter "flags"
 
     .prologue
+    .line 118
     iget-object v0, p0, Landroid/net/nsd/NsdServiceInfo;->mServiceName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 119
     iget-object v0, p0, Landroid/net/nsd/NsdServiceInfo;->mServiceType:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 120
     iget-object v0, p0, Landroid/net/nsd/NsdServiceInfo;->mTxtRecord:Landroid/net/nsd/DnsSdTxtRecord;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
+    .line 121
     iget-object v0, p0, Landroid/net/nsd/NsdServiceInfo;->mHost:Ljava/net/InetAddress;
 
     if-eqz v0, :cond_0
 
+    .line 122
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
+    .line 123
     iget-object v0, p0, Landroid/net/nsd/NsdServiceInfo;->mHost:Ljava/net/InetAddress;
 
     invoke-virtual {v0}, Ljava/net/InetAddress;->getAddress()[B
@@ -345,13 +383,16 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByteArray([B)V
 
+    .line 127
     :goto_0
     iget v0, p0, Landroid/net/nsd/NsdServiceInfo;->mPort:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 128
     return-void
 
+    .line 125
     :cond_0
     const/4 v0, 0x0
 

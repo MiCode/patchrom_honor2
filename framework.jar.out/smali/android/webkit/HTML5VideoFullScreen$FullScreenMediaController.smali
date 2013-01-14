@@ -25,10 +25,13 @@
     .parameter "video"
 
     .prologue
+    .line 368
     invoke-direct {p0, p1}, Landroid/widget/MediaController;-><init>(Landroid/content/Context;)V
 
+    .line 369
     iput-object p2, p0, Landroid/webkit/HTML5VideoFullScreen$FullScreenMediaController;->mVideoView:Landroid/view/View;
 
+    .line 370
     return-void
 .end method
 
@@ -38,19 +41,23 @@
     .locals 2
 
     .prologue
+    .line 382
     iget-object v0, p0, Landroid/webkit/HTML5VideoFullScreen$FullScreenMediaController;->mVideoView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
+    .line 383
     iget-object v0, p0, Landroid/webkit/HTML5VideoFullScreen$FullScreenMediaController;->mVideoView:Landroid/view/View;
 
     const/4 v1, 0x3
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setSystemUiVisibility(I)V
 
+    .line 386
     :cond_0
     invoke-super {p0}, Landroid/widget/MediaController;->hide()V
 
+    .line 387
     return-void
 .end method
 
@@ -58,18 +65,22 @@
     .locals 2
 
     .prologue
+    .line 374
     invoke-super {p0}, Landroid/widget/MediaController;->show()V
 
+    .line 375
     iget-object v0, p0, Landroid/webkit/HTML5VideoFullScreen$FullScreenMediaController;->mVideoView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
+    .line 376
     iget-object v0, p0, Landroid/webkit/HTML5VideoFullScreen$FullScreenMediaController;->mVideoView:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setSystemUiVisibility(I)V
 
+    .line 378
     :cond_0
     return-void
 .end method

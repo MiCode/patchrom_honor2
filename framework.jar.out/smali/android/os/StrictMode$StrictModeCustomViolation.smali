@@ -21,9 +21,11 @@
     .parameter "name"
 
     .prologue
+    .line 827
     const/16 v0, 0x8
 
     invoke-direct {p0, p1, v0, p2}, Landroid/os/StrictMode$StrictModeViolation;-><init>(IILjava/lang/String;)V
 
+    .line 828
     return-void
 .end method

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 3785
+    .line 3784
     iput-object p1, p0, Lcom/android/hwcamera/Camera$7;->this$0:Lcom/android/hwcamera/Camera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "v"
 
     .prologue
-    .line 3788
+    .line 3787
     iget-object v0, p0, Lcom/android/hwcamera/Camera$7;->this$0:Lcom/android/hwcamera/Camera;
 
     #getter for: Lcom/android/hwcamera/Camera;->mCameraState:I
@@ -54,7 +54,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 3789
+    .line 3788
     iget-object v0, p0, Lcom/android/hwcamera/Camera$7;->this$0:Lcom/android/hwcamera/Camera;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera$7;->this$0:Lcom/android/hwcamera/Camera;
@@ -78,7 +78,7 @@
     #calls: Lcom/android/hwcamera/Camera;->switchCameraId(I)V
     invoke-static {v0, v1}, Lcom/android/hwcamera/Camera;->access$12100(Lcom/android/hwcamera/Camera;I)V
 
-    .line 3791
+    .line 3790
     :cond_0
     return-void
 .end method

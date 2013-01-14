@@ -27,6 +27,7 @@
     .parameter
 
     .prologue
+    .line 4473
     iput-object p1, p0, Lcom/android/server/am/ActivityStack$2;->this$0:Lcom/android/server/am/ActivityStack;
 
     iput-object p2, p0, Lcom/android/server/am/ActivityStack$2;->val$thumbs:Lcom/android/server/am/TaskAccessInfo;
@@ -43,6 +44,7 @@
     .parameter "index"
 
     .prologue
+    .line 4475
     if-ltz p1, :cond_0
 
     iget-object v0, p0, Lcom/android/server/am/ActivityStack$2;->val$thumbs:Lcom/android/server/am/TaskAccessInfo;
@@ -55,9 +57,11 @@
 
     if-lt p1, v0, :cond_1
 
+    .line 4476
     :cond_0
     const/4 v0, 0x0
 
+    .line 4478
     :goto_0
     return-object v0
 

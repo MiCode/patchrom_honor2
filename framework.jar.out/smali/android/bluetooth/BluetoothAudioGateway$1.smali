@@ -25,6 +25,7 @@
     .parameter "x0"
 
     .prologue
+    .line 96
     iput-object p1, p0, Landroid/bluetooth/BluetoothAudioGateway$1;->this$0:Landroid/bluetooth/BluetoothAudioGateway;
 
     invoke-direct {p0, p2}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
@@ -40,6 +41,7 @@
     .prologue
     const/4 v8, -0x1
 
+    .line 99
     :cond_0
     :goto_0
     iget-object v0, p0, Landroid/bluetooth/BluetoothAudioGateway$1;->this$0:Landroid/bluetooth/BluetoothAudioGateway;
@@ -51,16 +53,19 @@
 
     if-nez v0, :cond_3
 
+    .line 101
     iget-object v0, p0, Landroid/bluetooth/BluetoothAudioGateway$1;->this$0:Landroid/bluetooth/BluetoothAudioGateway;
 
     #setter for: Landroid/bluetooth/BluetoothAudioGateway;->mConnectingHeadsetRfcommChannel:I
     invoke-static {v0, v8}, Landroid/bluetooth/BluetoothAudioGateway;->access$102(Landroid/bluetooth/BluetoothAudioGateway;I)I
 
+    .line 102
     iget-object v0, p0, Landroid/bluetooth/BluetoothAudioGateway$1;->this$0:Landroid/bluetooth/BluetoothAudioGateway;
 
     #setter for: Landroid/bluetooth/BluetoothAudioGateway;->mConnectingHandsfreeRfcommChannel:I
     invoke-static {v0, v8}, Landroid/bluetooth/BluetoothAudioGateway;->access$202(Landroid/bluetooth/BluetoothAudioGateway;I)I
 
+    .line 103
     iget-object v0, p0, Landroid/bluetooth/BluetoothAudioGateway$1;->this$0:Landroid/bluetooth/BluetoothAudioGateway;
 
     const/16 v1, 0x3e8
@@ -72,6 +77,7 @@
 
     if-nez v0, :cond_1
 
+    .line 104
     iget-object v0, p0, Landroid/bluetooth/BluetoothAudioGateway$1;->this$0:Landroid/bluetooth/BluetoothAudioGateway;
 
     #getter for: Landroid/bluetooth/BluetoothAudioGateway;->mTimeoutRemainingMs:I
@@ -81,6 +87,7 @@
 
     if-lez v0, :cond_0
 
+    .line 106
     :try_start_0
     const-string v0, "BT Audio Gateway"
 
@@ -88,7 +95,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "select thread timed out, but "
+    const-string/jumbo v2, "select thread timed out, but "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -105,7 +112,7 @@
 
     move-result-object v1
 
-    const-string v2, "ms of waiting remain."
+    const-string/jumbo v2, "ms of waiting remain."
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -117,6 +124,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 108
     iget-object v0, p0, Landroid/bluetooth/BluetoothAudioGateway$1;->this$0:Landroid/bluetooth/BluetoothAudioGateway;
 
     #getter for: Landroid/bluetooth/BluetoothAudioGateway;->mTimeoutRemainingMs:I
@@ -132,16 +140,19 @@
 
     goto :goto_0
 
+    .line 109
     :catch_0
     move-exception v6
 
+    .line 110
     .local v6, e:Ljava/lang/InterruptedException;
     const-string v0, "BT Audio Gateway"
 
-    const-string v1, "select thread was interrupted (2), exiting"
+    const-string/jumbo v1, "select thread was interrupted (2), exiting"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 111
     iget-object v0, p0, Landroid/bluetooth/BluetoothAudioGateway$1;->this$0:Landroid/bluetooth/BluetoothAudioGateway;
 
     const/4 v1, 0x1
@@ -151,6 +162,7 @@
 
     goto :goto_0
 
+    .line 116
     .end local v6           #e:Ljava/lang/InterruptedException;
     :cond_1
     const-string v0, "BT Audio Gateway"
@@ -159,6 +171,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 122
     iget-object v0, p0, Landroid/bluetooth/BluetoothAudioGateway$1;->this$0:Landroid/bluetooth/BluetoothAudioGateway;
 
     #getter for: Landroid/bluetooth/BluetoothAudioGateway;->mConnectingHeadsetRfcommChannel:I
@@ -168,6 +181,7 @@
 
     if-ltz v0, :cond_2
 
+    .line 123
     const-string v0, "BT Audio Gateway"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -214,6 +228,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 126
     iget-object v0, p0, Landroid/bluetooth/BluetoothAudioGateway$1;->this$0:Landroid/bluetooth/BluetoothAudioGateway;
 
     #getter for: Landroid/bluetooth/BluetoothAudioGateway;->mCallback:Landroid/os/Handler;
@@ -225,11 +240,13 @@
 
     move-result-object v7
 
+    .line 127
     .local v7, msg:Landroid/os/Message;
     const/16 v0, 0x64
 
     iput v0, v7, Landroid/os/Message;->what:I
 
+    .line 128
     new-instance v0, Landroid/bluetooth/BluetoothAudioGateway$IncomingConnectionInfo;
 
     iget-object v1, p0, Landroid/bluetooth/BluetoothAudioGateway$1;->this$0:Landroid/bluetooth/BluetoothAudioGateway;
@@ -277,8 +294,10 @@
 
     iput-object v0, v7, Landroid/os/Message;->obj:Ljava/lang/Object;
 
+    .line 133
     invoke-virtual {v7}, Landroid/os/Message;->sendToTarget()V
 
+    .line 135
     .end local v7           #msg:Landroid/os/Message;
     :cond_2
     iget-object v0, p0, Landroid/bluetooth/BluetoothAudioGateway$1;->this$0:Landroid/bluetooth/BluetoothAudioGateway;
@@ -290,6 +309,7 @@
 
     if-ltz v0, :cond_0
 
+    .line 136
     const-string v0, "BT Audio Gateway"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -336,10 +356,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 139
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v7
 
+    .line 140
     .restart local v7       #msg:Landroid/os/Message;
     iget-object v0, p0, Landroid/bluetooth/BluetoothAudioGateway$1;->this$0:Landroid/bluetooth/BluetoothAudioGateway;
 
@@ -350,10 +372,12 @@
 
     invoke-virtual {v7, v0}, Landroid/os/Message;->setTarget(Landroid/os/Handler;)V
 
+    .line 141
     const/16 v0, 0x65
 
     iput v0, v7, Landroid/os/Message;->what:I
 
+    .line 142
     new-instance v0, Landroid/bluetooth/BluetoothAudioGateway$IncomingConnectionInfo;
 
     iget-object v1, p0, Landroid/bluetooth/BluetoothAudioGateway$1;->this$0:Landroid/bluetooth/BluetoothAudioGateway;
@@ -401,10 +425,12 @@
 
     iput-object v0, v7, Landroid/os/Message;->obj:Ljava/lang/Object;
 
+    .line 147
     invoke-virtual {v7}, Landroid/os/Message;->sendToTarget()V
 
     goto/16 :goto_0
 
+    .line 152
     .end local v7           #msg:Landroid/os/Message;
     :cond_3
     return-void

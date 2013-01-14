@@ -27,6 +27,7 @@
     .parameter
 
     .prologue
+    .line 120
     iput-object p1, p0, Lcom/android/internal/policy/impl/LockScreen$2;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +42,13 @@
     .parameter "simState"
 
     .prologue
+    .line 122
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen$2;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #calls: Lcom/android/internal/policy/impl/LockScreen;->updateTargets()V
     invoke-static {v0}, Lcom/android/internal/policy/impl/LockScreen;->access$200(Lcom/android/internal/policy/impl/LockScreen;)V
 
+    .line 123
     return-void
 .end method
 
@@ -55,10 +58,12 @@
     .parameter "subscription"
 
     .prologue
+    .line 126
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen$2;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #calls: Lcom/android/internal/policy/impl/LockScreen;->updateTargets()V
     invoke-static {v0}, Lcom/android/internal/policy/impl/LockScreen;->access$200(Lcom/android/internal/policy/impl/LockScreen;)V
 
+    .line 127
     return-void
 .end method

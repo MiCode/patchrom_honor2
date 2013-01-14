@@ -32,6 +32,7 @@
     .locals 0
 
     .prologue
+    .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,6 +45,7 @@
     .parameter "source"
 
     .prologue
+    .line 36
     new-instance v0, Landroid/hardware/input/KeyboardLayout;
 
     const/4 v1, 0x0
@@ -58,6 +60,7 @@
     .parameter "x0"
 
     .prologue
+    .line 34
     invoke-virtual {p0, p1}, Landroid/hardware/input/KeyboardLayout$1;->createFromParcel(Landroid/os/Parcel;)Landroid/hardware/input/KeyboardLayout;
 
     move-result-object v0
@@ -70,6 +73,7 @@
     .parameter "size"
 
     .prologue
+    .line 39
     new-array v0, p1, [Landroid/hardware/input/KeyboardLayout;
 
     return-object v0
@@ -80,6 +84,7 @@
     .parameter "x0"
 
     .prologue
+    .line 34
     invoke-virtual {p0, p1}, Landroid/hardware/input/KeyboardLayout$1;->newArray(I)[Landroid/hardware/input/KeyboardLayout;
 
     move-result-object v0

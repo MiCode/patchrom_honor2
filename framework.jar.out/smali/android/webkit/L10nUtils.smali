@@ -28,6 +28,7 @@
     .locals 1
 
     .prologue
+    .line 32
     const/16 v0, 0x39
 
     new-array v0, v0, [I
@@ -104,6 +105,7 @@
     .locals 0
 
     .prologue
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -114,17 +116,21 @@
     .parameter "id"
 
     .prologue
+    .line 110
     sget-object v2, Landroid/webkit/L10nUtils;->mStrings:Ljava/util/Map;
 
     if-nez v2, :cond_0
 
+    .line 113
     invoke-static {p0}, Landroid/webkit/L10nUtils;->loadString(I)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 118
     :goto_0
     return-object v2
 
+    .line 116
     :cond_0
     sget-object v2, Landroid/webkit/L10nUtils;->mStrings:Ljava/util/Map;
 
@@ -138,6 +144,7 @@
 
     check-cast v1, Ljava/lang/ref/SoftReference;
 
+    .line 117
     .local v1, ref:Ljava/lang/ref/SoftReference;,"Ljava/lang/ref/SoftReference<Ljava/lang/String;>;"
     if-eqz v1, :cond_1
 
@@ -150,6 +157,7 @@
     :cond_1
     const/4 v0, 0x1
 
+    .line 118
     .local v0, needToLoad:Z
     :goto_1
     if-eqz v0, :cond_3
@@ -160,12 +168,14 @@
 
     goto :goto_0
 
+    .line 117
     .end local v0           #needToLoad:Z
     :cond_2
     const/4 v0, 0x0
 
     goto :goto_1
 
+    .line 118
     .restart local v0       #needToLoad:Z
     :cond_3
     invoke-virtual {v1}, Ljava/lang/ref/SoftReference;->get()Ljava/lang/Object;
@@ -182,10 +192,12 @@
     .parameter "id"
 
     .prologue
+    .line 100
     sget-object v1, Landroid/webkit/L10nUtils;->mStrings:Ljava/util/Map;
 
     if-nez v1, :cond_0
 
+    .line 101
     new-instance v1, Ljava/util/HashMap;
 
     sget-object v2, Landroid/webkit/L10nUtils;->mIdsArray:[I
@@ -196,6 +208,7 @@
 
     sput-object v1, Landroid/webkit/L10nUtils;->mStrings:Ljava/util/Map;
 
+    .line 104
     :cond_0
     sget-object v1, Landroid/webkit/L10nUtils;->mApplicationContext:Landroid/content/Context;
 
@@ -211,6 +224,7 @@
 
     move-result-object v0
 
+    .line 105
     .local v0, localisedString:Ljava/lang/String;
     sget-object v1, Landroid/webkit/L10nUtils;->mStrings:Ljava/util/Map;
 
@@ -224,6 +238,7 @@
 
     invoke-interface {v1, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 106
     return-object v0
 .end method
 
@@ -232,11 +247,13 @@
     .parameter "applicationContext"
 
     .prologue
+    .line 96
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
     sput-object v0, Landroid/webkit/L10nUtils;->mApplicationContext:Landroid/content/Context;
 
+    .line 97
     return-void
 .end method

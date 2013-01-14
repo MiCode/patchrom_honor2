@@ -28,6 +28,7 @@
     .parameter
 
     .prologue
+    .line 929
     iput-object p1, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,6 +42,7 @@
     .parameter "x1"
 
     .prologue
+    .line 929
     invoke-direct {p0, p1}, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;-><init>(Landroid/view/ViewPropertyAnimator;)V
 
     return-void
@@ -53,6 +55,7 @@
     .parameter "animation"
 
     .prologue
+    .line 954
     iget-object v0, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
     #getter for: Landroid/view/ViewPropertyAnimator;->mListener:Landroid/animation/Animator$AnimatorListener;
@@ -62,6 +65,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 955
     iget-object v0, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
     #getter for: Landroid/view/ViewPropertyAnimator;->mListener:Landroid/animation/Animator$AnimatorListener;
@@ -71,6 +75,7 @@
 
     invoke-interface {v0, p1}, Landroid/animation/Animator$AnimatorListener;->onAnimationCancel(Landroid/animation/Animator;)V
 
+    .line 957
     :cond_0
     iget-object v0, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
@@ -81,6 +86,7 @@
 
     if-eqz v0, :cond_1
 
+    .line 958
     iget-object v0, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
     #getter for: Landroid/view/ViewPropertyAnimator;->mAnimatorOnEndMap:Ljava/util/HashMap;
@@ -90,6 +96,7 @@
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 960
     :cond_1
     return-void
 .end method
@@ -99,6 +106,7 @@
     .parameter "animation"
 
     .prologue
+    .line 971
     iget-object v1, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
     #getter for: Landroid/view/ViewPropertyAnimator;->mView:Landroid/view/View;
@@ -110,6 +118,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setHasTransientState(Z)V
 
+    .line 972
     iget-object v1, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
     #getter for: Landroid/view/ViewPropertyAnimator;->mListener:Landroid/animation/Animator$AnimatorListener;
@@ -119,6 +128,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 973
     iget-object v1, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
     #getter for: Landroid/view/ViewPropertyAnimator;->mListener:Landroid/animation/Animator$AnimatorListener;
@@ -128,6 +138,7 @@
 
     invoke-interface {v1, p1}, Landroid/animation/Animator$AnimatorListener;->onAnimationEnd(Landroid/animation/Animator;)V
 
+    .line 975
     :cond_0
     iget-object v1, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
@@ -138,6 +149,7 @@
 
     if-eqz v1, :cond_2
 
+    .line 976
     iget-object v1, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
     #getter for: Landroid/view/ViewPropertyAnimator;->mAnimatorOnEndMap:Ljava/util/HashMap;
@@ -151,11 +163,14 @@
 
     check-cast v0, Ljava/lang/Runnable;
 
+    .line 977
     .local v0, r:Ljava/lang/Runnable;
     if-eqz v0, :cond_1
 
+    .line 978
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
+    .line 980
     :cond_1
     iget-object v1, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
@@ -166,6 +181,7 @@
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 982
     .end local v0           #r:Ljava/lang/Runnable;
     :cond_2
     iget-object v1, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
@@ -177,6 +193,7 @@
 
     if-eqz v1, :cond_4
 
+    .line 983
     iget-object v1, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
     #getter for: Landroid/view/ViewPropertyAnimator;->mAnimatorCleanupMap:Ljava/util/HashMap;
@@ -190,11 +207,14 @@
 
     check-cast v0, Ljava/lang/Runnable;
 
+    .line 984
     .restart local v0       #r:Ljava/lang/Runnable;
     if-eqz v0, :cond_3
 
+    .line 985
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
+    .line 987
     :cond_3
     iget-object v1, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
@@ -205,6 +225,7 @@
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 989
     .end local v0           #r:Ljava/lang/Runnable;
     :cond_4
     iget-object v1, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
@@ -216,6 +237,7 @@
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 990
     return-void
 .end method
 
@@ -224,6 +246,7 @@
     .parameter "animation"
 
     .prologue
+    .line 964
     iget-object v0, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
     #getter for: Landroid/view/ViewPropertyAnimator;->mListener:Landroid/animation/Animator$AnimatorListener;
@@ -233,6 +256,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 965
     iget-object v0, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
     #getter for: Landroid/view/ViewPropertyAnimator;->mListener:Landroid/animation/Animator$AnimatorListener;
@@ -242,6 +266,7 @@
 
     invoke-interface {v0, p1}, Landroid/animation/Animator$AnimatorListener;->onAnimationRepeat(Landroid/animation/Animator;)V
 
+    .line 967
     :cond_0
     return-void
 .end method
@@ -251,6 +276,7 @@
     .parameter "animation"
 
     .prologue
+    .line 933
     iget-object v1, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
     #getter for: Landroid/view/ViewPropertyAnimator;->mAnimatorSetupMap:Ljava/util/HashMap;
@@ -260,6 +286,7 @@
 
     if-eqz v1, :cond_1
 
+    .line 934
     iget-object v1, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
     #getter for: Landroid/view/ViewPropertyAnimator;->mAnimatorSetupMap:Ljava/util/HashMap;
@@ -273,11 +300,14 @@
 
     check-cast v0, Ljava/lang/Runnable;
 
+    .line 935
     .local v0, r:Ljava/lang/Runnable;
     if-eqz v0, :cond_0
 
+    .line 936
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
+    .line 938
     :cond_0
     iget-object v1, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
@@ -288,6 +318,7 @@
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 940
     .end local v0           #r:Ljava/lang/Runnable;
     :cond_1
     iget-object v1, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
@@ -299,6 +330,7 @@
 
     if-eqz v1, :cond_3
 
+    .line 941
     iget-object v1, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
     #getter for: Landroid/view/ViewPropertyAnimator;->mAnimatorOnStartMap:Ljava/util/HashMap;
@@ -312,11 +344,14 @@
 
     check-cast v0, Ljava/lang/Runnable;
 
+    .line 942
     .restart local v0       #r:Ljava/lang/Runnable;
     if-eqz v0, :cond_2
 
+    .line 943
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
+    .line 945
     :cond_2
     iget-object v1, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
@@ -327,6 +362,7 @@
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 947
     .end local v0           #r:Ljava/lang/Runnable;
     :cond_3
     iget-object v1, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
@@ -338,6 +374,7 @@
 
     if-eqz v1, :cond_4
 
+    .line 948
     iget-object v1, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
     #getter for: Landroid/view/ViewPropertyAnimator;->mListener:Landroid/animation/Animator$AnimatorListener;
@@ -347,6 +384,7 @@
 
     invoke-interface {v1, p1}, Landroid/animation/Animator$AnimatorListener;->onAnimationStart(Landroid/animation/Animator;)V
 
+    .line 950
     :cond_4
     return-void
 .end method
@@ -360,6 +398,7 @@
 
     const/4 v11, 0x0
 
+    .line 1002
     iget-object v12, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
     #getter for: Landroid/view/ViewPropertyAnimator;->mAnimatorMap:Ljava/util/HashMap;
@@ -373,12 +412,15 @@
 
     check-cast v4, Landroid/view/ViewPropertyAnimator$PropertyBundle;
 
+    .line 1003
     .local v4, propertyBundle:Landroid/view/ViewPropertyAnimator$PropertyBundle;
     if-nez v4, :cond_0
 
+    .line 1049
     :goto_0
     return-void
 
+    .line 1007
     :cond_0
     iget-object v12, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
@@ -393,13 +435,16 @@
 
     move v6, v10
 
+    .line 1014
     .local v6, useDisplayListProperties:Z
     :goto_1
     const/4 v0, 0x0
 
+    .line 1015
     .local v0, alphaHandled:Z
     if-nez v6, :cond_1
 
+    .line 1016
     iget-object v12, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
     #getter for: Landroid/view/ViewPropertyAnimator;->mView:Landroid/view/View;
@@ -409,19 +454,23 @@
 
     invoke-virtual {v12}, Landroid/view/View;->invalidateParentCaches()V
 
+    .line 1018
     :cond_1
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
     move-result v2
 
+    .line 1019
     .local v2, fraction:F
     iget v5, v4, Landroid/view/ViewPropertyAnimator$PropertyBundle;->mPropertyMask:I
 
+    .line 1020
     .local v5, propertyMask:I
     and-int/lit16 v12, v5, 0x1ff
 
     if-eqz v12, :cond_2
 
+    .line 1021
     iget-object v12, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
     #getter for: Landroid/view/ViewPropertyAnimator;->mView:Landroid/view/View;
@@ -431,16 +480,20 @@
 
     invoke-virtual {v12, v11, v11}, Landroid/view/View;->invalidateViewProperty(ZZ)V
 
+    .line 1023
     :cond_2
     iget-object v8, v4, Landroid/view/ViewPropertyAnimator$PropertyBundle;->mNameValuesHolder:Ljava/util/ArrayList;
 
+    .line 1024
     .local v8, valueList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/ViewPropertyAnimator$NameValuesHolder;>;"
     if-eqz v8, :cond_5
 
+    .line 1025
     invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
+    .line 1026
     .local v1, count:I
     const/4 v3, 0x0
 
@@ -448,12 +501,14 @@
     :goto_2
     if-ge v3, v1, :cond_5
 
+    .line 1027
     invoke-virtual {v8, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v9
 
     check-cast v9, Landroid/view/ViewPropertyAnimator$NameValuesHolder;
 
+    .line 1028
     .local v9, values:Landroid/view/ViewPropertyAnimator$NameValuesHolder;
     iget v12, v9, Landroid/view/ViewPropertyAnimator$NameValuesHolder;->mFromValue:F
 
@@ -463,6 +518,7 @@
 
     add-float v7, v12, v13
 
+    .line 1029
     .local v7, value:F
     iget v12, v9, Landroid/view/ViewPropertyAnimator$NameValuesHolder;->mNameConstant:I
 
@@ -470,6 +526,7 @@
 
     if-ne v12, v13, :cond_4
 
+    .line 1030
     iget-object v12, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
     #getter for: Landroid/view/ViewPropertyAnimator;->mView:Landroid/view/View;
@@ -481,6 +538,7 @@
 
     move-result v0
 
+    .line 1026
     :goto_3
     add-int/lit8 v3, v3, 0x1
 
@@ -498,8 +556,10 @@
     :cond_3
     move v6, v11
 
+    .line 1007
     goto :goto_1
 
+    .line 1032
     .restart local v0       #alphaHandled:Z
     .restart local v1       #count:I
     .restart local v2       #fraction:F
@@ -519,6 +579,7 @@
 
     goto :goto_3
 
+    .line 1036
     .end local v1           #count:I
     .end local v3           #i:I
     .end local v7           #value:F
@@ -528,6 +589,7 @@
 
     if-eqz v12, :cond_6
 
+    .line 1037
     iget-object v12, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
     #getter for: Landroid/view/ViewPropertyAnimator;->mView:Landroid/view/View;
@@ -539,8 +601,10 @@
 
     iput-boolean v10, v12, Landroid/view/View$TransformationInfo;->mMatrixDirty:Z
 
+    .line 1038
     if-nez v6, :cond_6
 
+    .line 1039
     iget-object v12, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
     #getter for: Landroid/view/ViewPropertyAnimator;->mView:Landroid/view/View;
@@ -554,9 +618,11 @@
 
     iput v13, v12, Landroid/view/View;->mPrivateFlags:I
 
+    .line 1044
     :cond_6
     if-eqz v0, :cond_7
 
+    .line 1045
     iget-object v11, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 
     #getter for: Landroid/view/ViewPropertyAnimator;->mView:Landroid/view/View;
@@ -568,6 +634,7 @@
 
     goto/16 :goto_0
 
+    .line 1047
     :cond_7
     iget-object v10, p0, Landroid/view/ViewPropertyAnimator$AnimatorEventListener;->this$0:Landroid/view/ViewPropertyAnimator;
 

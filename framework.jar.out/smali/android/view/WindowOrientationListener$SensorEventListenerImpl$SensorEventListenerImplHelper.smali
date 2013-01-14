@@ -25,8 +25,10 @@
     .locals 0
 
     .prologue
+    .line 744
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 745
     return-void
 .end method
 
@@ -35,6 +37,7 @@
     .parameter "x0"
 
     .prologue
+    .line 725
     invoke-static {p0}, Landroid/view/WindowOrientationListener$SensorEventListenerImpl$SensorEventListenerImplHelper;->getLowerBound(I)I
 
     move-result v0
@@ -47,6 +50,7 @@
     .parameter "x0"
 
     .prologue
+    .line 725
     invoke-static {p0}, Landroid/view/WindowOrientationListener$SensorEventListenerImpl$SensorEventListenerImplHelper;->getUpperBound(I)I
 
     move-result v0
@@ -59,6 +63,7 @@
     .parameter "rotation"
 
     .prologue
+    .line 749
     const/4 v0, 0x1
 
     if-eq p0, v0, :cond_0
@@ -92,6 +97,7 @@
     .parameter "rotation"
 
     .prologue
+    .line 756
     const/4 v0, 0x1
 
     if-eq p0, v0, :cond_0

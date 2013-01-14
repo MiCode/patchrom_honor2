@@ -16,10 +16,13 @@
     .parameter "parser"
 
     .prologue
+    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 30
     iput-object p1, p0, Landroid/util/XmlPullAttributes;->mParser:Lorg/xmlpull/v1/XmlPullParser;
 
+    .line 31
     return-void
 .end method
 
@@ -31,6 +34,7 @@
     .parameter "defaultValue"
 
     .prologue
+    .line 103
     invoke-virtual {p0, p1}, Landroid/util/XmlPullAttributes;->getAttributeValue(I)Ljava/lang/String;
 
     move-result-object v0
@@ -49,6 +53,7 @@
     .parameter "defaultValue"
 
     .prologue
+    .line 65
     invoke-virtual {p0, p1, p2}, Landroid/util/XmlPullAttributes;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -64,6 +69,7 @@
     .locals 1
 
     .prologue
+    .line 34
     iget-object v0, p0, Landroid/util/XmlPullAttributes;->mParser:Lorg/xmlpull/v1/XmlPullParser;
 
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeCount()I
@@ -79,17 +85,21 @@
     .parameter "defaultValue"
 
     .prologue
+    .line 123
     invoke-virtual {p0, p1}, Landroid/util/XmlPullAttributes;->getAttributeValue(I)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 124
     .local v0, s:Ljava/lang/String;
     if-eqz v0, :cond_0
 
+    .line 125
     invoke-static {v0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result p2
 
+    .line 127
     .end local p2
     :cond_0
     return p2
@@ -102,17 +112,21 @@
     .parameter "defaultValue"
 
     .prologue
+    .line 89
     invoke-virtual {p0, p1, p2}, Landroid/util/XmlPullAttributes;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 90
     .local v0, s:Ljava/lang/String;
     if-eqz v0, :cond_0
 
+    .line 91
     invoke-static {v0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result p3
 
+    .line 93
     .end local p3
     :cond_0
     return p3
@@ -124,6 +138,7 @@
     .parameter "defaultValue"
 
     .prologue
+    .line 113
     invoke-virtual {p0, p1}, Landroid/util/XmlPullAttributes;->getAttributeValue(I)Ljava/lang/String;
 
     move-result-object v0
@@ -142,6 +157,7 @@
     .parameter "defaultValue"
 
     .prologue
+    .line 77
     invoke-virtual {p0, p1, p2}, Landroid/util/XmlPullAttributes;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -160,6 +176,7 @@
     .parameter "defaultValue"
 
     .prologue
+    .line 98
     invoke-virtual {p0, p1}, Landroid/util/XmlPullAttributes;->getAttributeValue(I)Ljava/lang/String;
 
     move-result-object v0
@@ -179,6 +196,7 @@
     .parameter "defaultValue"
 
     .prologue
+    .line 59
     invoke-virtual {p0, p1, p2}, Landroid/util/XmlPullAttributes;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -195,6 +213,7 @@
     .parameter "index"
 
     .prologue
+    .line 38
     iget-object v0, p0, Landroid/util/XmlPullAttributes;->mParser:Lorg/xmlpull/v1/XmlPullParser;
 
     invoke-interface {v0, p1}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeName(I)Ljava/lang/String;
@@ -209,6 +228,7 @@
     .parameter "index"
 
     .prologue
+    .line 54
     const/4 v0, 0x0
 
     return v0
@@ -220,6 +240,7 @@
     .parameter "defaultValue"
 
     .prologue
+    .line 108
     invoke-virtual {p0, p1}, Landroid/util/XmlPullAttributes;->getAttributeValue(I)Ljava/lang/String;
 
     move-result-object v0
@@ -238,6 +259,7 @@
     .parameter "defaultValue"
 
     .prologue
+    .line 71
     invoke-virtual {p0, p1, p2}, Landroid/util/XmlPullAttributes;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -255,6 +277,7 @@
     .parameter "defaultValue"
 
     .prologue
+    .line 118
     invoke-virtual {p0, p1}, Landroid/util/XmlPullAttributes;->getAttributeValue(I)Ljava/lang/String;
 
     move-result-object v0
@@ -273,6 +296,7 @@
     .parameter "defaultValue"
 
     .prologue
+    .line 83
     invoke-virtual {p0, p1, p2}, Landroid/util/XmlPullAttributes;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -289,6 +313,7 @@
     .parameter "index"
 
     .prologue
+    .line 42
     iget-object v0, p0, Landroid/util/XmlPullAttributes;->mParser:Lorg/xmlpull/v1/XmlPullParser;
 
     invoke-interface {v0, p1}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(I)Ljava/lang/String;
@@ -304,6 +329,7 @@
     .parameter "name"
 
     .prologue
+    .line 46
     iget-object v0, p0, Landroid/util/XmlPullAttributes;->mParser:Lorg/xmlpull/v1/XmlPullParser;
 
     invoke-interface {v0, p1, p2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -317,6 +343,7 @@
     .locals 2
 
     .prologue
+    .line 135
     const/4 v0, 0x0
 
     const-string v1, "class"
@@ -332,6 +359,7 @@
     .locals 2
 
     .prologue
+    .line 131
     const/4 v0, 0x0
 
     const-string v1, "id"
@@ -348,6 +376,7 @@
     .parameter "defaultValue"
 
     .prologue
+    .line 139
     const/4 v0, 0x0
 
     const-string v1, "id"
@@ -363,6 +392,7 @@
     .locals 1
 
     .prologue
+    .line 50
     iget-object v0, p0, Landroid/util/XmlPullAttributes;->mParser:Lorg/xmlpull/v1/XmlPullParser;
 
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->getPositionDescription()Ljava/lang/String;
@@ -376,9 +406,10 @@
     .locals 3
 
     .prologue
+    .line 143
     const/4 v0, 0x0
 
-    const-string v1, "style"
+    const-string/jumbo v1, "style"
 
     const/4 v2, 0x0
 

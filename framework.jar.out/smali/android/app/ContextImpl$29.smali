@@ -19,6 +19,7 @@
     .locals 0
 
     .prologue
+    .line 441
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -31,6 +32,7 @@
     .parameter "ctx"
 
     .prologue
+    .line 443
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v0
@@ -41,6 +43,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 444
     new-instance v0, Landroid/telephony/MSimTelephonyManager;
 
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
@@ -49,6 +52,7 @@
 
     invoke-direct {v0, v1}, Landroid/telephony/MSimTelephonyManager;-><init>(Landroid/content/Context;)V
 
+    .line 446
     :goto_0
     return-object v0
 

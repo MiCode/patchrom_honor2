@@ -30,6 +30,7 @@
     .parameter
 
     .prologue
+    .line 1364
     iput-object p1, p0, Lcom/android/server/input/InputManagerService$8;->this$0:Lcom/android/server/input/InputManagerService;
 
     iput-object p2, p0, Lcom/android/server/input/InputManagerService$8;->val$result:[Ljava/lang/String;
@@ -50,6 +51,7 @@
     .parameter "keyboardLayoutResId"
 
     .prologue
+    .line 1369
     :try_start_0
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$8;->val$result:[Ljava/lang/String;
 
@@ -57,6 +59,7 @@
 
     aput-object p2, v0, v1
 
+    .line 1370
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$8;->val$result:[Ljava/lang/String;
 
     const/4 v1, 0x1
@@ -78,14 +81,17 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 1375
     :goto_0
     return-void
 
+    .line 1373
     :catch_0
     move-exception v0
 
     goto :goto_0
 
+    .line 1372
     :catch_1
     move-exception v0
 

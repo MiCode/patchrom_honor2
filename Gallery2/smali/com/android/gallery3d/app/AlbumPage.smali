@@ -1360,7 +1360,7 @@
 
     move-result-object v2
 
-    const-wide/16 v3, 0xb4
+    const-wide/16 v3, 0x3c
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 

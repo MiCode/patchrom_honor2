@@ -30,6 +30,7 @@
     .locals 1
 
     .prologue
+    .line 81
     const-class v0, Landroid/webkit/DeviceMotionService;
 
     invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
@@ -56,6 +57,7 @@
     .parameter
 
     .prologue
+    .line 81
     iput-object p1, p0, Landroid/webkit/DeviceMotionService$1;->this$0:Landroid/webkit/DeviceMotionService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -71,6 +73,7 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 84
     sget-boolean v0, Landroid/webkit/DeviceMotionService$1;->$assertionsDisabled:Z
 
     if-nez v0, :cond_0
@@ -97,6 +100,7 @@
 
     throw v0
 
+    .line 85
     :cond_0
     iget-object v0, p0, Landroid/webkit/DeviceMotionService$1;->this$0:Landroid/webkit/DeviceMotionService;
 
@@ -107,6 +111,7 @@
 
     if-eqz v0, :cond_1
 
+    .line 87
     iget-object v0, p0, Landroid/webkit/DeviceMotionService$1;->this$0:Landroid/webkit/DeviceMotionService;
 
     #getter for: Landroid/webkit/DeviceMotionService;->mManager:Landroid/webkit/DeviceMotionAndOrientationManager;
@@ -122,6 +127,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/webkit/DeviceMotionAndOrientationManager;->onMotionChange(Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/Double;D)V
 
+    .line 89
     :cond_1
     return-void
 .end method

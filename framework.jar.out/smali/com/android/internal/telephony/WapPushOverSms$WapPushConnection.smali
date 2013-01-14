@@ -32,12 +32,15 @@
     .parameter "ownerContext"
 
     .prologue
+    .line 71
     iput-object p1, p0, Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection;->this$0:Lcom/android/internal/telephony/WapPushOverSms;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 72
     iput-object p2, p0, Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection;->mOwner:Landroid/content/Context;
 
+    .line 73
     return-void
 .end method
 
@@ -46,6 +49,7 @@
     .parameter "x0"
 
     .prologue
+    .line 67
     iget-object v0, p0, Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection;->mWapPushMan:Lcom/android/internal/telephony/IWapPushManager;
 
     return-object v0
@@ -56,6 +60,7 @@
     .parameter "x0"
 
     .prologue
+    .line 67
     iget-object v0, p0, Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection;->mOwner:Landroid/content/Context;
 
     return-object v0
@@ -65,16 +70,20 @@
     .locals 2
 
     .prologue
+    .line 105
     iget-object v1, p0, Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection;->mWapPushMan:Lcom/android/internal/telephony/IWapPushManager;
 
     if-eqz v1, :cond_0
 
+    .line 121
     :goto_0
     return-void
 
+    .line 107
     :cond_0
     move-object v0, p0
 
+    .line 108
     .local v0, wapPushConnection:Landroid/content/ServiceConnection;
     new-instance v1, Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection$1;
 
@@ -91,16 +100,20 @@
     .locals 4
 
     .prologue
+    .line 92
     iget-object v1, p0, Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection;->mWapPushMan:Lcom/android/internal/telephony/IWapPushManager;
 
     if-eqz v1, :cond_0
 
+    .line 98
     :goto_0
     return-void
 
+    .line 94
     :cond_0
     move-object v0, p0
 
+    .line 96
     .local v0, wapPushConnection:Landroid/content/ServiceConnection;
     iget-object v1, p0, Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection;->mOwner:Landroid/content/Context;
 
@@ -125,6 +138,7 @@
     .locals 1
 
     .prologue
+    .line 127
     iget-object v0, p0, Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection;->mWapPushMan:Lcom/android/internal/telephony/IWapPushManager;
 
     return-object v0
@@ -136,12 +150,14 @@
     .parameter "service"
 
     .prologue
+    .line 76
     invoke-static {p2}, Lcom/android/internal/telephony/IWapPushManager$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/telephony/IWapPushManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection;->mWapPushMan:Lcom/android/internal/telephony/IWapPushManager;
 
+    .line 79
     return-void
 .end method
 
@@ -150,11 +166,14 @@
     .parameter "name"
 
     .prologue
+    .line 82
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection;->mWapPushMan:Lcom/android/internal/telephony/IWapPushManager;
 
+    .line 85
     invoke-direct {p0}, Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection;->rebindWapPushManager()V
 
+    .line 86
     return-void
 .end method

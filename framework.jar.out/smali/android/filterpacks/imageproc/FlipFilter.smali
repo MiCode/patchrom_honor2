@@ -38,18 +38,24 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 50
     invoke-direct {p0, p1}, Landroid/filterfw/core/Filter;-><init>(Ljava/lang/String;)V
 
+    .line 37
     iput-boolean v1, p0, Landroid/filterpacks/imageproc/FlipFilter;->mVertical:Z
 
+    .line 40
     iput-boolean v1, p0, Landroid/filterpacks/imageproc/FlipFilter;->mHorizontal:Z
 
+    .line 43
     const/16 v0, 0x280
 
     iput v0, p0, Landroid/filterpacks/imageproc/FlipFilter;->mTileSize:I
 
+    .line 47
     iput v1, p0, Landroid/filterpacks/imageproc/FlipFilter;->mTarget:I
 
+    .line 51
     return-void
 .end method
 
@@ -63,12 +69,14 @@
 
     const/high16 v4, 0x3f80
 
+    .line 112
     iget-boolean v7, p0, Landroid/filterpacks/imageproc/FlipFilter;->mHorizontal:Z
 
     if-eqz v7, :cond_0
 
     move v2, v4
 
+    .line 113
     .local v2, x_origin:F
     :goto_0
     iget-boolean v7, p0, Landroid/filterpacks/imageproc/FlipFilter;->mVertical:Z
@@ -77,6 +85,7 @@
 
     move v3, v4
 
+    .line 115
     .local v3, y_origin:F
     :goto_1
     iget-boolean v5, p0, Landroid/filterpacks/imageproc/FlipFilter;->mHorizontal:Z
@@ -85,6 +94,7 @@
 
     move v1, v6
 
+    .line 116
     .local v1, width:F
     :goto_2
     iget-boolean v5, p0, Landroid/filterpacks/imageproc/FlipFilter;->mVertical:Z
@@ -93,6 +103,7 @@
 
     move v0, v6
 
+    .line 118
     .local v0, height:F
     :goto_3
     iget-object v4, p0, Landroid/filterpacks/imageproc/FlipFilter;->mProgram:Landroid/filterfw/core/Program;
@@ -101,6 +112,7 @@
 
     invoke-virtual {v4, v2, v3, v1, v0}, Landroid/filterfw/core/ShaderProgram;->setSourceRect(FFFF)V
 
+    .line 119
     return-void
 
     .end local v0           #height:F
@@ -110,24 +122,28 @@
     :cond_0
     move v2, v5
 
+    .line 112
     goto :goto_0
 
     .restart local v2       #x_origin:F
     :cond_1
     move v3, v5
 
+    .line 113
     goto :goto_1
 
     .restart local v3       #y_origin:F
     :cond_2
     move v1, v4
 
+    .line 115
     goto :goto_2
 
     .restart local v1       #width:F
     :cond_3
     move v0, v4
 
+    .line 116
     goto :goto_3
 .end method
 
@@ -139,12 +155,15 @@
     .parameter "context"
 
     .prologue
+    .line 82
     iget-object v0, p0, Landroid/filterpacks/imageproc/FlipFilter;->mProgram:Landroid/filterfw/core/Program;
 
     if-eqz v0, :cond_0
 
+    .line 83
     invoke-direct {p0}, Landroid/filterpacks/imageproc/FlipFilter;->updateParameters()V
 
+    .line 85
     :cond_0
     return-void
 .end method
@@ -155,6 +174,7 @@
     .parameter "inputFormat"
 
     .prologue
+    .line 61
     return-object p2
 .end method
 
@@ -164,8 +184,10 @@
     .parameter "target"
 
     .prologue
+    .line 65
     packed-switch p2, :pswitch_data_0
 
+    .line 73
     new-instance v1, Ljava/lang/RuntimeException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -196,24 +218,31 @@
 
     throw v1
 
+    .line 67
     :pswitch_0
     invoke-static {p1}, Landroid/filterfw/core/ShaderProgram;->createIdentity(Landroid/filterfw/core/FilterContext;)Landroid/filterfw/core/ShaderProgram;
 
     move-result-object v0
 
+    .line 68
     .local v0, shaderProgram:Landroid/filterfw/core/ShaderProgram;
     iget v1, p0, Landroid/filterpacks/imageproc/FlipFilter;->mTileSize:I
 
     invoke-virtual {v0, v1}, Landroid/filterfw/core/ShaderProgram;->setMaximumTileSize(I)V
 
+    .line 69
     iput-object v0, p0, Landroid/filterpacks/imageproc/FlipFilter;->mProgram:Landroid/filterfw/core/Program;
 
+    .line 76
     iput p2, p0, Landroid/filterpacks/imageproc/FlipFilter;->mTarget:I
 
+    .line 77
     invoke-direct {p0}, Landroid/filterpacks/imageproc/FlipFilter;->updateParameters()V
 
+    .line 78
     return-void
 
+    .line 65
     nop
 
     :pswitch_data_0
@@ -227,17 +256,20 @@
     .parameter "context"
 
     .prologue
+    .line 90
     const-string v3, "image"
 
     invoke-virtual {p0, v3}, Landroid/filterpacks/imageproc/FlipFilter;->pullInput(Ljava/lang/String;)Landroid/filterfw/core/Frame;
 
     move-result-object v0
 
+    .line 91
     .local v0, input:Landroid/filterfw/core/Frame;
     invoke-virtual {v0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v1
 
+    .line 94
     .local v1, inputFormat:Landroid/filterfw/core/FrameFormat;
     iget-object v3, p0, Landroid/filterpacks/imageproc/FlipFilter;->mProgram:Landroid/filterfw/core/Program;
 
@@ -251,6 +283,7 @@
 
     if-eq v3, v4, :cond_1
 
+    .line 95
     :cond_0
     invoke-virtual {v1}, Landroid/filterfw/core/FrameFormat;->getTarget()I
 
@@ -258,6 +291,7 @@
 
     invoke-virtual {p0, p1, v3}, Landroid/filterpacks/imageproc/FlipFilter;->initProgram(Landroid/filterfw/core/FilterContext;I)V
 
+    .line 99
     :cond_1
     invoke-virtual {p1}, Landroid/filterfw/core/FilterContext;->getFrameManager()Landroid/filterfw/core/FrameManager;
 
@@ -267,17 +301,21 @@
 
     move-result-object v2
 
+    .line 102
     .local v2, output:Landroid/filterfw/core/Frame;
     iget-object v3, p0, Landroid/filterpacks/imageproc/FlipFilter;->mProgram:Landroid/filterfw/core/Program;
 
     invoke-virtual {v3, v0, v2}, Landroid/filterfw/core/Program;->process(Landroid/filterfw/core/Frame;Landroid/filterfw/core/Frame;)V
 
+    .line 105
     const-string v3, "image"
 
     invoke-virtual {p0, v3, v2}, Landroid/filterpacks/imageproc/FlipFilter;->pushOutput(Ljava/lang/String;Landroid/filterfw/core/Frame;)V
 
+    .line 108
     invoke-virtual {v2}, Landroid/filterfw/core/Frame;->release()Landroid/filterfw/core/Frame;
 
+    .line 109
     return-void
 .end method
 
@@ -285,6 +323,7 @@
     .locals 2
 
     .prologue
+    .line 55
     const-string v0, "image"
 
     const/4 v1, 0x3
@@ -295,11 +334,13 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/filterpacks/imageproc/FlipFilter;->addMaskedInputPort(Ljava/lang/String;Landroid/filterfw/core/FrameFormat;)V
 
+    .line 56
     const-string v0, "image"
 
     const-string v1, "image"
 
     invoke-virtual {p0, v0, v1}, Landroid/filterpacks/imageproc/FlipFilter;->addOutputBasedOnInput(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 57
     return-void
 .end method

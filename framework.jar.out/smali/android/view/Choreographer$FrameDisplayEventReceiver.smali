@@ -34,10 +34,13 @@
     .parameter "looper"
 
     .prologue
+    .line 675
     iput-object p1, p0, Landroid/view/Choreographer$FrameDisplayEventReceiver;->this$0:Landroid/view/Choreographer;
 
+    .line 676
     invoke-direct {p0, p2}, Landroid/view/DisplayEventReceiver;-><init>(Landroid/os/Looper;)V
 
+    .line 677
     return-void
 .end method
 
@@ -51,15 +54,18 @@
     .prologue
     const/4 v7, 0x1
 
+    .line 686
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v1
 
+    .line 687
     .local v1, now:J
     cmp-long v3, p1, v1
 
     if-lez v3, :cond_0
 
+    .line 688
     const-string v3, "Choreographer"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -90,7 +96,7 @@
 
     move-result-object v4
 
-    const-string v5, "timestamps using the correct timebase."
+    const-string/jumbo v5, "timestamps using the correct timebase."
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -102,24 +108,30 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 691
     move-wide p1, v1
 
+    .line 694
     :cond_0
     iget-boolean v3, p0, Landroid/view/Choreographer$FrameDisplayEventReceiver;->mHavePendingVsync:Z
 
     if-eqz v3, :cond_1
 
+    .line 695
     const-string v3, "Choreographer"
 
     const-string v4, "Already have a pending vsync event.  There should only be one at a time."
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 701
     :goto_0
     iput-wide p1, p0, Landroid/view/Choreographer$FrameDisplayEventReceiver;->mTimestampNanos:J
 
+    .line 702
     iput p3, p0, Landroid/view/Choreographer$FrameDisplayEventReceiver;->mFrame:I
 
+    .line 703
     iget-object v3, p0, Landroid/view/Choreographer$FrameDisplayEventReceiver;->this$0:Landroid/view/Choreographer;
 
     #getter for: Landroid/view/Choreographer;->mHandler:Landroid/view/Choreographer$FrameHandler;
@@ -131,9 +143,11 @@
 
     move-result-object v0
 
+    .line 704
     .local v0, msg:Landroid/os/Message;
     invoke-virtual {v0, v7}, Landroid/os/Message;->setAsynchronous(Z)V
 
+    .line 705
     iget-object v3, p0, Landroid/view/Choreographer$FrameDisplayEventReceiver;->this$0:Landroid/view/Choreographer;
 
     #getter for: Landroid/view/Choreographer;->mHandler:Landroid/view/Choreographer$FrameHandler;
@@ -147,8 +161,10 @@
 
     invoke-virtual {v3, v0, v4, v5}, Landroid/view/Choreographer$FrameHandler;->sendMessageAtTime(Landroid/os/Message;J)Z
 
+    .line 706
     return-void
 
+    .line 698
     .end local v0           #msg:Landroid/os/Message;
     :cond_1
     iput-boolean v7, p0, Landroid/view/Choreographer$FrameDisplayEventReceiver;->mHavePendingVsync:Z
@@ -160,10 +176,12 @@
     .locals 4
 
     .prologue
+    .line 710
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/view/Choreographer$FrameDisplayEventReceiver;->mHavePendingVsync:Z
 
+    .line 711
     iget-object v0, p0, Landroid/view/Choreographer$FrameDisplayEventReceiver;->this$0:Landroid/view/Choreographer;
 
     iget-wide v1, p0, Landroid/view/Choreographer$FrameDisplayEventReceiver;->mTimestampNanos:J
@@ -172,5 +190,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/view/Choreographer;->doFrame(JI)V
 
+    .line 712
     return-void
 .end method

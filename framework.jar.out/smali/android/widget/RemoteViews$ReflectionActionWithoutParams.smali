@@ -34,16 +34,20 @@
     .parameter "methodName"
 
     .prologue
+    .line 644
     iput-object p1, p0, Landroid/widget/RemoteViews$ReflectionActionWithoutParams;->this$0:Landroid/widget/RemoteViews;
 
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews$Action;-><init>(Landroid/widget/RemoteViews$1;)V
 
+    .line 645
     iput p2, p0, Landroid/widget/RemoteViews$ReflectionActionWithoutParams;->viewId:I
 
+    .line 646
     iput-object p3, p0, Landroid/widget/RemoteViews$ReflectionActionWithoutParams;->methodName:Ljava/lang/String;
 
+    .line 647
     return-void
 .end method
 
@@ -53,24 +57,28 @@
     .parameter "in"
 
     .prologue
+    .line 649
     iput-object p1, p0, Landroid/widget/RemoteViews$ReflectionActionWithoutParams;->this$0:Landroid/widget/RemoteViews;
 
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews$Action;-><init>(Landroid/widget/RemoteViews$1;)V
 
+    .line 650
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/RemoteViews$ReflectionActionWithoutParams;->viewId:I
 
+    .line 651
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/widget/RemoteViews$ReflectionActionWithoutParams;->methodName:Ljava/lang/String;
 
+    .line 652
     return-void
 .end method
 
@@ -83,23 +91,28 @@
     .parameter "handler"
 
     .prologue
+    .line 662
     iget v4, p0, Landroid/widget/RemoteViews$ReflectionActionWithoutParams;->viewId:I
 
     invoke-virtual {p1, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v3
 
+    .line 663
     .local v3, view:Landroid/view/View;
     if-nez v3, :cond_0
 
+    .line 690
     :goto_0
     return-void
 
+    .line 665
     :cond_0
     invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
 
+    .line 668
     .local v1, klass:Ljava/lang/Class;
     :try_start_0
     iget-object v4, p0, Landroid/widget/RemoteViews$ReflectionActionWithoutParams;->methodName:Ljava/lang/String;
@@ -114,6 +127,7 @@
 
     move-result-object v2
 
+    .line 674
     .local v2, method:Ljava/lang/reflect/Method;
     const-class v4, Landroid/view/RemotableViewMethod;
 
@@ -123,13 +137,14 @@
 
     if-nez v4, :cond_1
 
+    .line 675
     new-instance v4, Landroid/widget/RemoteViews$ActionException;
 
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "view: "
+    const-string/jumbo v6, "view: "
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -169,10 +184,12 @@
 
     throw v4
 
+    .line 669
     .end local v2           #method:Ljava/lang/reflect/Method;
     :catch_0
     move-exception v0
 
+    .line 670
     .local v0, ex:Ljava/lang/NoSuchMethodException;
     new-instance v4, Landroid/widget/RemoteViews$ActionException;
 
@@ -180,7 +197,7 @@
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "view: "
+    const-string/jumbo v6, "view: "
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -220,6 +237,7 @@
 
     throw v4
 
+    .line 686
     .end local v0           #ex:Ljava/lang/NoSuchMethodException;
     .restart local v2       #method:Ljava/lang/reflect/Method;
     :cond_1
@@ -234,9 +252,11 @@
 
     goto :goto_0
 
+    .line 687
     :catch_1
     move-exception v0
 
+    .line 688
     .local v0, ex:Ljava/lang/Exception;
     new-instance v4, Landroid/widget/RemoteViews$ActionException;
 
@@ -251,17 +271,21 @@
     .parameter "flags"
 
     .prologue
+    .line 655
     const/4 v0, 0x5
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 656
     iget v0, p0, Landroid/widget/RemoteViews$ReflectionActionWithoutParams;->viewId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 657
     iget-object v0, p0, Landroid/widget/RemoteViews$ReflectionActionWithoutParams;->methodName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 658
     return-void
 .end method

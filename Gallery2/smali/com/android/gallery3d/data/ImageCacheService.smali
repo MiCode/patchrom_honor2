@@ -43,21 +43,21 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 99
+    .line 109
     array-length v1, p0
 
-    .line 100
+    .line 110
     .local v1, n:I
     array-length v3, p1
 
     if-ge v3, v1, :cond_1
 
-    .line 108
+    .line 118
     :cond_0
     :goto_0
     return v2
 
-    .line 103
+    .line 113
     :cond_1
     const/4 v0, 0x0
 
@@ -65,19 +65,19 @@
     :goto_1
     if-ge v0, v1, :cond_2
 
-    .line 104
+    .line 114
     aget-byte v3, p0, v0
 
     aget-byte v4, p1, v0
 
     if-ne v3, v4, :cond_0
 
-    .line 103
+    .line 113
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 108
+    .line 118
     :cond_2
     const/4 v2, 0x1
 
@@ -90,7 +90,7 @@
     .parameter "type"
 
     .prologue
-    .line 95
+    .line 105
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -135,41 +135,52 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 58
+    .line 59
+    iget-object v5, p0, Lcom/android/gallery3d/data/ImageCacheService;->mCache:Lcom/android/gallery3d/common/BlobCache;
+
+    if-nez v5, :cond_1
+
+    .line 81
+    :cond_0
+    :goto_0
+    return v4
+
+    .line 63
+    :cond_1
     invoke-static {p1, p2}, Lcom/android/gallery3d/data/ImageCacheService;->makeKey(Lcom/android/gallery3d/data/Path;I)[B
 
     move-result-object v2
 
-    .line 59
+    .line 64
     .local v2, key:[B
     invoke-static {v2}, Lcom/android/gallery3d/common/Utils;->crc64Long([B)J
 
     move-result-wide v0
 
-    .line 61
+    .line 66
     .local v0, cacheKey:J
     :try_start_0
     new-instance v3, Lcom/android/gallery3d/common/BlobCache$LookupRequest;
 
     invoke-direct {v3}, Lcom/android/gallery3d/common/BlobCache$LookupRequest;-><init>()V
 
-    .line 62
+    .line 67
     .local v3, request:Lcom/android/gallery3d/common/BlobCache$LookupRequest;
     iput-wide v0, v3, Lcom/android/gallery3d/common/BlobCache$LookupRequest;->key:J
 
-    .line 63
+    .line 68
     iget-object v5, p3, Lcom/android/gallery3d/data/BytesBufferPool$BytesBuffer;->data:[B
 
     iput-object v5, v3, Lcom/android/gallery3d/common/BlobCache$LookupRequest;->buffer:[B
 
-    .line 64
+    .line 69
     iget-object v6, p0, Lcom/android/gallery3d/data/ImageCacheService;->mCache:Lcom/android/gallery3d/common/BlobCache;
 
     monitor-enter v6
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 65
+    .line 70
     :try_start_1
     iget-object v5, p0, Lcom/android/gallery3d/data/ImageCacheService;->mCache:Lcom/android/gallery3d/common/BlobCache;
 
@@ -177,25 +188,42 @@
 
     move-result v5
 
-    if-nez v5, :cond_1
+    if-nez v5, :cond_2
 
     monitor-exit v6
 
-    .line 76
-    .end local v3           #request:Lcom/android/gallery3d/common/BlobCache$LookupRequest;
-    :cond_0
-    :goto_0
-    return v4
+    goto :goto_0
 
-    .line 66
-    .restart local v3       #request:Lcom/android/gallery3d/common/BlobCache$LookupRequest;
-    :cond_1
+    .line 71
+    :catchall_0
+    move-exception v5
+
     monitor-exit v6
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 67
     :try_start_2
+    throw v5
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+
+    .line 78
+    .end local v3           #request:Lcom/android/gallery3d/common/BlobCache$LookupRequest;
+    :catch_0
+    move-exception v5
+
+    goto :goto_0
+
+    .line 71
+    .restart local v3       #request:Lcom/android/gallery3d/common/BlobCache$LookupRequest;
+    :cond_2
+    :try_start_3
+    monitor-exit v6
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    .line 72
+    :try_start_4
     iget-object v5, v3, Lcom/android/gallery3d/common/BlobCache$LookupRequest;->buffer:[B
 
     invoke-static {v2, v5}, Lcom/android/gallery3d/data/ImageCacheService;->isSameKey([B[B)Z
@@ -204,17 +232,17 @@
 
     if-eqz v5, :cond_0
 
-    .line 68
+    .line 73
     iget-object v5, v3, Lcom/android/gallery3d/common/BlobCache$LookupRequest;->buffer:[B
 
     iput-object v5, p3, Lcom/android/gallery3d/data/BytesBufferPool$BytesBuffer;->data:[B
 
-    .line 69
+    .line 74
     array-length v5, v2
 
     iput v5, p3, Lcom/android/gallery3d/data/BytesBufferPool$BytesBuffer;->offset:I
 
-    .line 70
+    .line 75
     iget v5, v3, Lcom/android/gallery3d/common/BlobCache$LookupRequest;->length:I
 
     iget v6, p3, Lcom/android/gallery3d/data/BytesBufferPool$BytesBuffer;->offset:I
@@ -222,32 +250,11 @@
     sub-int/2addr v5, v6
 
     iput v5, p3, Lcom/android/gallery3d/data/BytesBufferPool$BytesBuffer;->length:I
-    :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
-
-    .line 71
-    const/4 v4, 0x1
-
-    goto :goto_0
-
-    .line 66
-    :catchall_0
-    move-exception v5
-
-    :try_start_3
-    monitor-exit v6
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    :try_start_4
-    throw v5
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
 
-    .line 73
-    .end local v3           #request:Lcom/android/gallery3d/common/BlobCache$LookupRequest;
-    :catch_0
-    move-exception v5
+    .line 76
+    const/4 v4, 0x1
 
     goto :goto_0
 .end method
@@ -259,18 +266,28 @@
     .parameter "value"
 
     .prologue
-    .line 80
+    .line 86
+    iget-object v4, p0, Lcom/android/gallery3d/data/ImageCacheService;->mCache:Lcom/android/gallery3d/common/BlobCache;
+
+    if-nez v4, :cond_0
+
+    .line 102
+    :goto_0
+    return-void
+
+    .line 90
+    :cond_0
     invoke-static {p1, p2}, Lcom/android/gallery3d/data/ImageCacheService;->makeKey(Lcom/android/gallery3d/data/Path;I)[B
 
     move-result-object v3
 
-    .line 81
+    .line 91
     .local v3, key:[B
     invoke-static {v3}, Lcom/android/gallery3d/common/Utils;->crc64Long([B)J
 
     move-result-wide v1
 
-    .line 82
+    .line 92
     .local v1, cacheKey:J
     array-length v4, v3
 
@@ -282,19 +299,19 @@
 
     move-result-object v0
 
-    .line 83
+    .line 93
     .local v0, buffer:Ljava/nio/ByteBuffer;
     invoke-virtual {v0, v3}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
-    .line 84
+    .line 94
     invoke-virtual {v0, p3}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
-    .line 85
+    .line 95
     iget-object v5, p0, Lcom/android/gallery3d/data/ImageCacheService;->mCache:Lcom/android/gallery3d/common/BlobCache;
 
     monitor-enter v5
 
-    .line 87
+    .line 97
     :try_start_0
     iget-object v4, p0, Lcom/android/gallery3d/data/ImageCacheService;->mCache:Lcom/android/gallery3d/common/BlobCache;
 
@@ -307,15 +324,13 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 91
-    :goto_0
+    .line 101
+    :goto_1
     :try_start_1
     monitor-exit v5
 
-    .line 92
-    return-void
+    goto :goto_0
 
-    .line 91
     :catchall_0
     move-exception v4
 
@@ -325,9 +340,9 @@
 
     throw v4
 
-    .line 88
+    .line 98
     :catch_0
     move-exception v4
 
-    goto :goto_0
+    goto :goto_1
 .end method

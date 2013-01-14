@@ -42,6 +42,7 @@
     .parameter
 
     .prologue
+    .line 1111
     .local p4, x2:Landroid/accounts/AccountManagerCallback;,"Landroid/accounts/AccountManagerCallback<Landroid/os/Bundle;>;"
     iput-object p1, p0, Landroid/accounts/AccountManager$7;->this$0:Landroid/accounts/AccountManager;
 
@@ -71,6 +72,7 @@
     .end annotation
 
     .prologue
+    .line 1113
     iget-object v0, p0, Landroid/accounts/AccountManager$7;->this$0:Landroid/accounts/AccountManager;
 
     #getter for: Landroid/accounts/AccountManager;->mService:Landroid/accounts/IAccountManager;
@@ -97,8 +99,10 @@
 
     invoke-interface/range {v0 .. v6}, Landroid/accounts/IAccountManager;->addAcount(Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;ZLandroid/os/Bundle;)V
 
+    .line 1115
     return-void
 
+    .line 1113
     :cond_0
     const/4 v5, 0x0
 

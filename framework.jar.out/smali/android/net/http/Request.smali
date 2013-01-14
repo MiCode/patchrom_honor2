@@ -46,6 +46,7 @@
     .locals 1
 
     .prologue
+    .line 97
     new-instance v0, Lorg/apache/http/protocol/RequestContent;
 
     invoke-direct {v0}, Lorg/apache/http/protocol/RequestContent;-><init>()V
@@ -87,34 +88,47 @@
     .local p8, headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     const/4 v1, 0x0
 
+    .line 114
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 72
     iput-boolean v1, p0, Landroid/net/http/Request;->mCancelled:Z
 
+    .line 74
     iput v1, p0, Landroid/net/http/Request;->mFailCount:I
 
+    .line 78
     iput v1, p0, Landroid/net/http/Request;->mReceivedBytes:I
 
+    .line 88
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/net/http/Request;->mClientResource:Ljava/lang/Object;
 
+    .line 91
     iput-boolean v1, p0, Landroid/net/http/Request;->mLoadingPaused:Z
 
+    .line 115
     iput-object p7, p0, Landroid/net/http/Request;->mEventHandler:Landroid/net/http/EventHandler;
 
+    .line 116
     iput-object p2, p0, Landroid/net/http/Request;->mHost:Lorg/apache/http/HttpHost;
 
+    .line 117
     iput-object p3, p0, Landroid/net/http/Request;->mProxyHost:Lorg/apache/http/HttpHost;
 
+    .line 118
     iput-object p4, p0, Landroid/net/http/Request;->mPath:Ljava/lang/String;
 
+    .line 119
     iput-object p5, p0, Landroid/net/http/Request;->mBodyProvider:Ljava/io/InputStream;
 
+    .line 120
     iput p6, p0, Landroid/net/http/Request;->mBodyLength:I
 
+    .line 122
     if-nez p5, :cond_1
 
     const-string v0, "POST"
@@ -125,6 +139,7 @@
 
     if-nez v0, :cond_1
 
+    .line 123
     new-instance v0, Lorg/apache/http/message/BasicHttpRequest;
 
     invoke-virtual {p0}, Landroid/net/http/Request;->getUri()Ljava/lang/String;
@@ -135,6 +150,7 @@
 
     iput-object v0, p0, Landroid/net/http/Request;->mHttpRequest:Lorg/apache/http/message/BasicHttpRequest;
 
+    .line 134
     :cond_0
     :goto_0
     const-string v0, "Host"
@@ -145,16 +161,20 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/net/http/Request;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 139
     const-string v0, "Accept-Encoding"
 
     const-string v1, "gzip"
 
     invoke-virtual {p0, v0, v1}, Landroid/net/http/Request;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 140
     invoke-virtual {p0, p8}, Landroid/net/http/Request;->addHeaders(Ljava/util/Map;)V
 
+    .line 141
     return-void
 
+    .line 125
     :cond_1
     new-instance v0, Lorg/apache/http/message/BasicHttpEntityEnclosingRequest;
 
@@ -166,8 +186,10 @@
 
     iput-object v0, p0, Landroid/net/http/Request;->mHttpRequest:Lorg/apache/http/message/BasicHttpRequest;
 
+    .line 130
     if-eqz p5, :cond_0
 
+    .line 131
     invoke-direct {p0, p5, p6}, Landroid/net/http/Request;->setBodyProvider(Ljava/io/InputStream;I)V
 
     goto :goto_0
@@ -181,6 +203,7 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 478
     const-string v1, "HEAD"
 
     invoke-interface {p0}, Lorg/apache/http/HttpRequest;->getRequestLine()Lorg/apache/http/RequestLine;
@@ -197,6 +220,7 @@
 
     if-eqz v1, :cond_1
 
+    .line 481
     :cond_0
     :goto_0
     return v0
@@ -225,12 +249,14 @@
     .parameter "bodyLength"
 
     .prologue
+    .line 495
     invoke-virtual {p1}, Ljava/io/InputStream;->markSupported()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
+    .line 496
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "bodyProvider must support mark()"
@@ -239,11 +265,13 @@
 
     throw v0
 
+    .line 500
     :cond_0
     const v0, 0x7fffffff
 
     invoke-virtual {p1, v0}, Ljava/io/InputStream;->mark(I)V
 
+    .line 502
     iget-object v0, p0, Landroid/net/http/Request;->mHttpRequest:Lorg/apache/http/message/BasicHttpRequest;
 
     check-cast v0, Lorg/apache/http/message/BasicHttpEntityEnclosingRequest;
@@ -256,6 +284,7 @@
 
     invoke-virtual {v0, v1}, Lorg/apache/http/message/BasicHttpEntityEnclosingRequest;->setEntity(Lorg/apache/http/HttpEntity;)V
 
+    .line 504
     return-void
 .end method
 
@@ -267,19 +296,24 @@
     .parameter "value"
 
     .prologue
+    .line 173
     if-nez p1, :cond_0
 
+    .line 174
     const-string v0, "Null http header name"
 
+    .line 175
     .local v0, damage:Ljava/lang/String;
     invoke-static {v0}, Landroid/net/http/HttpLog;->e(Ljava/lang/String;)V
 
+    .line 176
     new-instance v1, Ljava/lang/NullPointerException;
 
     invoke-direct {v1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
+    .line 178
     .end local v0           #damage:Ljava/lang/String;
     :cond_0
     if-eqz p2, :cond_1
@@ -290,6 +324,7 @@
 
     if-nez v1, :cond_2
 
+    .line 179
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -315,21 +350,25 @@
 
     move-result-object v0
 
+    .line 180
     .restart local v0       #damage:Ljava/lang/String;
     invoke-static {v0}, Landroid/net/http/HttpLog;->e(Ljava/lang/String;)V
 
+    .line 181
     new-instance v1, Ljava/lang/RuntimeException;
 
     invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
+    .line 183
     .end local v0           #damage:Ljava/lang/String;
     :cond_2
     iget-object v1, p0, Landroid/net/http/Request;->mHttpRequest:Lorg/apache/http/message/BasicHttpRequest;
 
     invoke-virtual {v1, p1, p2}, Lorg/apache/http/message/BasicHttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 184
     return-void
 .end method
 
@@ -348,12 +387,15 @@
     .end annotation
 
     .prologue
+    .line 191
     .local p1, headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     if-nez p1, :cond_1
 
+    .line 201
     :cond_0
     return-void
 
+    .line 196
     :cond_1
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -363,6 +405,7 @@
 
     move-result-object v1
 
+    .line 197
     .local v1, i:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;>;"
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
@@ -371,12 +414,14 @@
 
     if-eqz v2, :cond_0
 
+    .line 198
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Map$Entry;
 
+    .line 199
     .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -399,6 +444,7 @@
     .locals 1
 
     .prologue
+    .line 374
     monitor-enter p0
 
     const/4 v0, 0x0
@@ -406,27 +452,33 @@
     :try_start_0
     iput-boolean v0, p0, Landroid/net/http/Request;->mLoadingPaused:Z
 
+    .line 375
     invoke-virtual {p0}, Ljava/lang/Object;->notify()V
 
+    .line 377
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/net/http/Request;->mCancelled:Z
 
+    .line 378
     iget-object v0, p0, Landroid/net/http/Request;->mConnection:Landroid/net/http/Connection;
 
     if-eqz v0, :cond_0
 
+    .line 379
     iget-object v0, p0, Landroid/net/http/Request;->mConnection:Landroid/net/http/Connection;
 
     invoke-virtual {v0}, Landroid/net/http/Connection;->cancel()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 381
     :cond_0
     monitor-exit p0
 
     return-void
 
+    .line 374
     :catchall_0
     move-exception v0
 
@@ -439,19 +491,24 @@
     .locals 2
 
     .prologue
+    .line 457
     iget-object v1, p0, Landroid/net/http/Request;->mClientResource:Ljava/lang/Object;
 
     monitor-enter v1
 
+    .line 458
     :try_start_0
     iget-object v0, p0, Landroid/net/http/Request;->mClientResource:Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
+    .line 459
     monitor-exit v1
 
+    .line 460
     return-void
 
+    .line 459
     :catchall_0
     move-exception v0
 
@@ -468,6 +525,7 @@
     .parameter "resourceId"
 
     .prologue
+    .line 523
     iget-object v0, p0, Landroid/net/http/Request;->mEventHandler:Landroid/net/http/EventHandler;
 
     iget-object v1, p0, Landroid/net/http/Request;->mConnection:Landroid/net/http/Connection;
@@ -484,6 +542,7 @@
 
     invoke-interface {v0, p1, v1}, Landroid/net/http/EventHandler;->error(ILjava/lang/String;)V
 
+    .line 527
     return-void
 .end method
 
@@ -491,6 +550,7 @@
     .locals 1
 
     .prologue
+    .line 163
     iget-object v0, p0, Landroid/net/http/Request;->mEventHandler:Landroid/net/http/EventHandler;
 
     return-object v0
@@ -500,12 +560,14 @@
     .locals 3
 
     .prologue
+    .line 384
     iget-object v2, p0, Landroid/net/http/Request;->mHost:Lorg/apache/http/HttpHost;
 
     invoke-virtual {v2}, Lorg/apache/http/HttpHost;->getSchemeName()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 385
     .local v1, myScheme:Ljava/lang/String;
     iget-object v2, p0, Landroid/net/http/Request;->mHost:Lorg/apache/http/HttpHost;
 
@@ -513,6 +575,7 @@
 
     move-result v0
 
+    .line 388
     .local v0, myPort:I
     const/16 v2, 0x50
 
@@ -539,6 +602,7 @@
 
     if-eqz v2, :cond_2
 
+    .line 390
     :cond_1
     iget-object v2, p0, Landroid/net/http/Request;->mHost:Lorg/apache/http/HttpHost;
 
@@ -546,6 +610,7 @@
 
     move-result-object v2
 
+    .line 392
     :goto_0
     return-object v2
 
@@ -563,6 +628,7 @@
     .locals 2
 
     .prologue
+    .line 397
     iget-object v0, p0, Landroid/net/http/Request;->mProxyHost:Lorg/apache/http/HttpHost;
 
     if-eqz v0, :cond_0
@@ -581,9 +647,11 @@
 
     if-eqz v0, :cond_1
 
+    .line 399
     :cond_0
     iget-object v0, p0, Landroid/net/http/Request;->mPath:Ljava/lang/String;
 
+    .line 401
     :goto_0
     return-object v0
 
@@ -634,6 +702,7 @@
     .parameter "proceed"
 
     .prologue
+    .line 512
     iget-object v1, p0, Landroid/net/http/Request;->mConnection:Landroid/net/http/Connection;
 
     check-cast v1, Landroid/net/http/HttpsConnection;
@@ -642,11 +711,14 @@
 
     check-cast v0, Landroid/net/http/HttpsConnection;
 
+    .line 513
     .local v0, connection:Landroid/net/http/HttpsConnection;
     if-eqz v0, :cond_0
 
+    .line 514
     invoke-virtual {v0, p1}, Landroid/net/http/HttpsConnection;->restartConnection(Z)V
 
+    .line 516
     :cond_0
     return-void
 .end method
@@ -662,6 +734,7 @@
     .end annotation
 
     .prologue
+    .line 245
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Landroid/net/http/Request;->mCancelled:Z
@@ -670,25 +743,32 @@
 
     if-eqz v21, :cond_0
 
+    .line 359
     :goto_0
     return-void
 
+    .line 247
     :cond_0
     const/16 v18, 0x0
 
+    .line 248
     .local v18, statusLine:Lorg/apache/http/StatusLine;
     const/4 v10, 0x0
 
+    .line 249
     .local v10, hasBody:Z
     invoke-virtual/range {p1 .. p1}, Landroid/net/http/AndroidHttpClientConnection;->flush()V
 
+    .line 250
     const/16 v17, 0x0
 
+    .line 252
     .local v17, statusCode:I
     new-instance v11, Landroid/net/http/Headers;
 
     invoke-direct {v11}, Landroid/net/http/Headers;-><init>()V
 
+    .line 254
     .local v11, header:Landroid/net/http/Headers;
     :cond_1
     move-object/from16 v0, p1
@@ -697,10 +777,12 @@
 
     move-result-object v18
 
+    .line 255
     invoke-interface/range {v18 .. v18}, Lorg/apache/http/StatusLine;->getStatusCode()I
 
     move-result v17
 
+    .line 256
     const/16 v21, 0xc8
 
     move/from16 v0, v17
@@ -709,10 +791,12 @@
 
     if-lt v0, v1, :cond_1
 
+    .line 261
     invoke-interface/range {v18 .. v18}, Lorg/apache/http/StatusLine;->getProtocolVersion()Lorg/apache/http/ProtocolVersion;
 
     move-result-object v20
 
+    .line 262
     .local v20, v:Lorg/apache/http/ProtocolVersion;
     move-object/from16 v0, p0
 
@@ -744,6 +828,7 @@
 
     invoke-interface {v0, v1, v2, v3, v4}, Landroid/net/http/EventHandler;->status(IIILjava/lang/String;)V
 
+    .line 264
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/net/http/Request;->mEventHandler:Landroid/net/http/EventHandler;
@@ -754,8 +839,10 @@
 
     invoke-interface {v0, v11}, Landroid/net/http/EventHandler;->headers(Landroid/net/http/Headers;)V
 
+    .line 265
     const/4 v9, 0x0
 
+    .line 266
     .local v9, entity:Lorg/apache/http/HttpEntity;
     move-object/from16 v0, p0
 
@@ -771,14 +858,17 @@
 
     move-result v10
 
+    .line 268
     if-eqz v10, :cond_2
 
+    .line 269
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v11}, Landroid/net/http/AndroidHttpClientConnection;->receiveResponseEntity(Landroid/net/http/Headers;)Lorg/apache/http/HttpEntity;
 
     move-result-object v9
 
+    .line 273
     :cond_2
     const-string v21, "bytes"
 
@@ -790,27 +880,34 @@
 
     move-result v19
 
+    .line 276
     .local v19, supportPartialContent:Z
     if-eqz v9, :cond_5
 
+    .line 277
     invoke-interface {v9}, Lorg/apache/http/HttpEntity;->getContent()Ljava/io/InputStream;
 
     move-result-object v12
 
+    .line 280
     .local v12, is:Ljava/io/InputStream;
     invoke-interface {v9}, Lorg/apache/http/HttpEntity;->getContentEncoding()Lorg/apache/http/Header;
 
     move-result-object v6
 
+    .line 281
     .local v6, contentEncoding:Lorg/apache/http/Header;
     const/4 v15, 0x0
 
+    .line 282
     .local v15, nis:Ljava/io/InputStream;
     const/4 v5, 0x0
 
+    .line 283
     .local v5, buf:[B
     const/4 v7, 0x0
 
+    .line 285
     .local v7, count:I
     if-eqz v6, :cond_6
 
@@ -827,6 +924,7 @@
 
     if-eqz v21, :cond_6
 
+    .line 287
     new-instance v16, Ljava/util/zip/GZIPInputStream;
 
     move-object/from16 v0, v16
@@ -837,6 +935,7 @@
     .local v16, nis:Ljava/io/InputStream;
     move-object/from16 v15, v16
 
+    .line 294
     .end local v16           #nis:Ljava/io/InputStream;
     .restart local v15       #nis:Ljava/io/InputStream;
     :goto_1
@@ -850,8 +949,10 @@
 
     move-result-object v5
 
+    .line 295
     const/4 v13, 0x0
 
+    .line 296
     .local v13, len:I
     array-length v0, v5
 
@@ -859,6 +960,7 @@
 
     div-int/lit8 v14, v21, 0x2
 
+    .line 297
     .local v14, lowWater:I
     :cond_3
     :goto_2
@@ -868,12 +970,14 @@
 
     if-eq v13, v0, :cond_a
 
+    .line 298
     monitor-enter p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
     .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
 
+    .line 299
     :goto_3
     :try_start_1
     move-object/from16 v0, p0
@@ -886,6 +990,7 @@
 
     if-eqz v21, :cond_7
 
+    .line 305
     :try_start_2
     invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->wait()V
     :try_end_2
@@ -894,9 +999,11 @@
 
     goto :goto_3
 
+    .line 306
     :catch_0
     move-exception v8
 
+    .line 307
     .local v8, e:Ljava/lang/InterruptedException;
     :try_start_3
     new-instance v21, Ljava/lang/StringBuilder;
@@ -925,6 +1032,7 @@
 
     goto :goto_3
 
+    .line 312
     .end local v8           #e:Ljava/lang/InterruptedException;
     :catchall_0
     move-exception v21
@@ -940,14 +1048,17 @@
     .catch Ljava/io/EOFException; {:try_start_4 .. :try_end_4} :catch_1
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
 
+    .line 326
     .end local v13           #len:I
     .end local v14           #lowWater:I
     :catch_1
     move-exception v8
 
+    .line 330
     .local v8, e:Ljava/io/EOFException;
     if-lez v7, :cond_4
 
+    .line 332
     :try_start_5
     move-object/from16 v0, p0
 
@@ -961,11 +1072,14 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
+    .line 347
     :cond_4
     if-eqz v15, :cond_5
 
+    .line 348
     invoke-virtual {v15}, Ljava/io/InputStream;->close()V
 
+    .line 352
     .end local v5           #buf:[B
     .end local v6           #contentEncoding:Lorg/apache/http/Header;
     .end local v7           #count:I
@@ -996,6 +1110,7 @@
 
     invoke-virtual {v0, v9, v1, v2}, Landroid/net/http/Connection;->setCanPersist(Lorg/apache/http/HttpEntity;Lorg/apache/http/ProtocolVersion;I)V
 
+    .line 354
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/net/http/Request;->mEventHandler:Landroid/net/http/EventHandler;
@@ -1004,10 +1119,12 @@
 
     invoke-interface/range {v21 .. v21}, Landroid/net/http/EventHandler;->endData()V
 
+    .line 355
     invoke-virtual/range {p0 .. p0}, Landroid/net/http/Request;->complete()V
 
     goto/16 :goto_0
 
+    .line 289
     .restart local v5       #buf:[B
     .restart local v6       #contentEncoding:Lorg/apache/http/Header;
     .restart local v7       #count:I
@@ -1018,6 +1135,7 @@
 
     goto :goto_1
 
+    .line 312
     .restart local v13       #len:I
     .restart local v14       #lowWater:I
     :cond_7
@@ -1026,6 +1144,7 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
+    .line 314
     :try_start_7
     array-length v0, v5
 
@@ -1039,14 +1158,17 @@
 
     move-result v13
 
+    .line 316
     const/16 v21, -0x1
 
     move/from16 v0, v21
 
     if-eq v13, v0, :cond_8
 
+    .line 317
     add-int/2addr v7, v13
 
+    .line 318
     if-eqz v19, :cond_8
 
     move-object/from16 v0, p0
@@ -1063,6 +1185,7 @@
 
     iput v0, v1, Landroid/net/http/Request;->mReceivedBytes:I
 
+    .line 320
     :cond_8
     const/16 v21, -0x1
 
@@ -1072,6 +1195,7 @@
 
     if-lt v7, v14, :cond_3
 
+    .line 322
     :cond_9
     move-object/from16 v0, p0
 
@@ -1087,22 +1211,27 @@
     .catch Ljava/io/EOFException; {:try_start_7 .. :try_end_7} :catch_1
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_2
 
+    .line 323
     const/4 v7, 0x0
 
     goto/16 :goto_2
 
+    .line 347
     :cond_a
     if-eqz v15, :cond_5
 
+    .line 348
     invoke-virtual {v15}, Ljava/io/InputStream;->close()V
 
     goto :goto_4
 
+    .line 335
     .end local v13           #len:I
     .end local v14           #lowWater:I
     :catch_2
     move-exception v8
 
+    .line 337
     .local v8, e:Ljava/io/IOException;
     const/16 v21, 0xc8
 
@@ -1120,11 +1249,13 @@
 
     if-ne v0, v1, :cond_e
 
+    .line 339
     :cond_b
     if-eqz v19, :cond_c
 
     if-lez v7, :cond_c
 
+    .line 342
     :try_start_8
     move-object/from16 v0, p0
 
@@ -1136,26 +1267,31 @@
 
     invoke-interface {v0, v5, v7}, Landroid/net/http/EventHandler;->data([BI)V
 
+    .line 344
     :cond_c
     throw v8
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_1
 
+    .line 347
     .end local v8           #e:Ljava/io/IOException;
     :catchall_1
     move-exception v21
 
     if-eqz v15, :cond_d
 
+    .line 348
     invoke-virtual {v15}, Ljava/io/InputStream;->close()V
 
     :cond_d
     throw v21
 
+    .line 347
     .restart local v8       #e:Ljava/io/IOException;
     :cond_e
     if-eqz v15, :cond_5
 
+    .line 348
     invoke-virtual {v15}, Ljava/io/InputStream;->close()V
 
     goto/16 :goto_4
@@ -1165,16 +1301,19 @@
     .locals 4
 
     .prologue
+    .line 418
     iget-object v0, p0, Landroid/net/http/Request;->mHttpRequest:Lorg/apache/http/message/BasicHttpRequest;
 
     const-string v1, "content-length"
 
     invoke-virtual {v0, v1}, Lorg/apache/http/message/BasicHttpRequest;->removeHeaders(Ljava/lang/String;)V
 
+    .line 420
     iget-object v0, p0, Landroid/net/http/Request;->mBodyProvider:Ljava/io/InputStream;
 
     if-eqz v0, :cond_0
 
+    .line 422
     :try_start_0
     iget-object v0, p0, Landroid/net/http/Request;->mBodyProvider:Ljava/io/InputStream;
 
@@ -1182,6 +1321,7 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 428
     :goto_0
     iget-object v0, p0, Landroid/net/http/Request;->mBodyProvider:Ljava/io/InputStream;
 
@@ -1189,15 +1329,18 @@
 
     invoke-direct {p0, v0, v1}, Landroid/net/http/Request;->setBodyProvider(Ljava/io/InputStream;I)V
 
+    .line 431
     :cond_0
     iget v0, p0, Landroid/net/http/Request;->mReceivedBytes:I
 
     if-lez v0, :cond_1
 
+    .line 433
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/net/http/Request;->mFailCount:I
 
+    .line 436
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1220,6 +1363,7 @@
 
     invoke-static {v0}, Landroid/net/http/HttpLog;->v(Ljava/lang/String;)V
 
+    .line 437
     iget-object v0, p0, Landroid/net/http/Request;->mHttpRequest:Lorg/apache/http/message/BasicHttpRequest;
 
     const-string v1, "Range"
@@ -1252,9 +1396,11 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/http/message/BasicHttpRequest;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 439
     :cond_1
     return-void
 
+    .line 423
     :catch_0
     move-exception v0
 
@@ -1272,14 +1418,17 @@
     .end annotation
 
     .prologue
+    .line 209
     iget-boolean v0, p0, Landroid/net/http/Request;->mCancelled:Z
 
     if-eqz v0, :cond_1
 
+    .line 234
     :cond_0
     :goto_0
     return-void
 
+    .line 223
     :cond_1
     sget-object v0, Landroid/net/http/Request;->requestContentProcessor:Lorg/apache/http/protocol/RequestContent;
 
@@ -1293,16 +1442,19 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/apache/http/protocol/RequestContent;->process(Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpContext;)V
 
+    .line 225
     iget-object v0, p0, Landroid/net/http/Request;->mHttpRequest:Lorg/apache/http/message/BasicHttpRequest;
 
     invoke-virtual {p1, v0}, Landroid/net/http/AndroidHttpClientConnection;->sendRequestHeader(Lorg/apache/http/HttpRequest;)V
 
+    .line 226
     iget-object v0, p0, Landroid/net/http/Request;->mHttpRequest:Lorg/apache/http/message/BasicHttpRequest;
 
     instance-of v0, v0, Lorg/apache/http/HttpEntityEnclosingRequest;
 
     if-eqz v0, :cond_0
 
+    .line 227
     iget-object v0, p0, Landroid/net/http/Request;->mHttpRequest:Lorg/apache/http/message/BasicHttpRequest;
 
     check-cast v0, Lorg/apache/http/HttpEntityEnclosingRequest;
@@ -1317,8 +1469,10 @@
     .parameter "connection"
 
     .prologue
+    .line 159
     iput-object p1, p0, Landroid/net/http/Request;->mConnection:Landroid/net/http/Connection;
 
+    .line 160
     return-void
 .end method
 
@@ -1327,24 +1481,29 @@
     .parameter "pause"
 
     .prologue
+    .line 147
     monitor-enter p0
 
     :try_start_0
     iput-boolean p1, p0, Landroid/net/http/Request;->mLoadingPaused:Z
 
+    .line 150
     iget-boolean v0, p0, Landroid/net/http/Request;->mLoadingPaused:Z
 
     if-nez v0, :cond_0
 
+    .line 151
     invoke-virtual {p0}, Ljava/lang/Object;->notify()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 153
     :cond_0
     monitor-exit p0
 
     return-void
 
+    .line 147
     :catchall_0
     move-exception v0
 
@@ -1357,6 +1516,7 @@
     .locals 1
 
     .prologue
+    .line 408
     iget-object v0, p0, Landroid/net/http/Request;->mPath:Ljava/lang/String;
 
     return-object v0
@@ -1366,10 +1526,12 @@
     .locals 2
 
     .prologue
+    .line 446
     iget-object v1, p0, Landroid/net/http/Request;->mClientResource:Ljava/lang/Object;
 
     monitor-enter v1
 
+    .line 449
     :try_start_0
     iget-object v0, p0, Landroid/net/http/Request;->mClientResource:Ljava/lang/Object;
 
@@ -1378,12 +1540,15 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 453
     :goto_0
     :try_start_1
     monitor-exit v1
 
+    .line 454
     return-void
 
+    .line 453
     :catchall_0
     move-exception v0
 
@@ -1393,6 +1558,7 @@
 
     throw v0
 
+    .line 451
     :catch_0
     move-exception v0
 

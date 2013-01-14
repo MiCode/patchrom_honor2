@@ -27,10 +27,13 @@
     .parameter "remote"
 
     .prologue
+    .line 103
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 104
     iput-object p1, p0, Landroid/content/ISyncAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
+    .line 105
     return-void
 .end method
 
@@ -40,6 +43,7 @@
     .locals 1
 
     .prologue
+    .line 108
     iget-object v0, p0, Landroid/content/ISyncAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     return-object v0
@@ -57,16 +61,19 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 158
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
+    .line 160
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.content.ISyncAdapter"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
+    .line 161
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Landroid/content/ISyncContext;->asBinder()Landroid/os/IBinder;
@@ -76,6 +83,7 @@
     :cond_0
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
+    .line 162
     iget-object v1, p0, Landroid/content/ISyncAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x2
@@ -88,10 +96,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 165
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 167
     return-void
 
+    .line 165
     :catchall_0
     move-exception v1
 
@@ -104,6 +115,7 @@
     .locals 1
 
     .prologue
+    .line 112
     const-string v0, "android.content.ISyncAdapter"
 
     return-object v0
@@ -120,29 +132,36 @@
     .end annotation
 
     .prologue
+    .line 176
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
+    .line 178
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v1, "android.content.ISyncAdapter"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
+    .line 179
     if-eqz p1, :cond_0
 
+    .line 180
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 181
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/accounts/Account;->writeToParcel(Landroid/os/Parcel;I)V
 
+    .line 186
     :goto_0
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 187
     iget-object v1, p0, Landroid/content/ISyncAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x3
@@ -155,10 +174,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 190
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 192
     return-void
 
+    .line 184
     :cond_0
     const/4 v1, 0x0
 
@@ -169,6 +191,7 @@
 
     goto :goto_0
 
+    .line 190
     :catchall_0
     move-exception v1
 
@@ -192,16 +215,19 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 126
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
+    .line 128
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.content.ISyncAdapter"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
+    .line 129
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Landroid/content/ISyncContext;->asBinder()Landroid/os/IBinder;
@@ -211,29 +237,37 @@
     :cond_0
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
+    .line 130
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 131
     if-eqz p3, :cond_1
 
+    .line 132
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 133
     const/4 v1, 0x0
 
     invoke-virtual {p3, v0, v1}, Landroid/accounts/Account;->writeToParcel(Landroid/os/Parcel;I)V
 
+    .line 138
     :goto_0
     if-eqz p4, :cond_2
 
+    .line 139
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 140
     const/4 v1, 0x0
 
     invoke-virtual {p4, v0, v1}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V
 
+    .line 145
     :goto_1
     iget-object v1, p0, Landroid/content/ISyncAdapter$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -247,10 +281,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 148
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 150
     return-void
 
+    .line 136
     :cond_1
     const/4 v1, 0x0
 
@@ -261,6 +298,7 @@
 
     goto :goto_0
 
+    .line 148
     :catchall_0
     move-exception v1
 
@@ -268,6 +306,7 @@
 
     throw v1
 
+    .line 143
     :cond_2
     const/4 v1, 0x0
 

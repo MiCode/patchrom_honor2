@@ -25,12 +25,16 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 353
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 345
     iput v0, p0, Landroid/os/StrictMode$ThreadPolicy$Builder;->mMask:I
 
+    .line 354
     iput v0, p0, Landroid/os/StrictMode$ThreadPolicy$Builder;->mMask:I
 
+    .line 355
     return-void
 .end method
 
@@ -39,16 +43,20 @@
     .parameter "policy"
 
     .prologue
+    .line 360
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 345
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/os/StrictMode$ThreadPolicy$Builder;->mMask:I
 
+    .line 361
     iget v0, p1, Landroid/os/StrictMode$ThreadPolicy;->mask:I
 
     iput v0, p0, Landroid/os/StrictMode$ThreadPolicy$Builder;->mMask:I
 
+    .line 362
     return-void
 .end method
 
@@ -57,6 +65,7 @@
     .parameter "bit"
 
     .prologue
+    .line 500
     iget v0, p0, Landroid/os/StrictMode$ThreadPolicy$Builder;->mMask:I
 
     xor-int/lit8 v1, p1, -0x1
@@ -65,6 +74,7 @@
 
     iput v0, p0, Landroid/os/StrictMode$ThreadPolicy$Builder;->mMask:I
 
+    .line 501
     return-object p0
 .end method
 
@@ -73,12 +83,14 @@
     .parameter "bit"
 
     .prologue
+    .line 495
     iget v0, p0, Landroid/os/StrictMode$ThreadPolicy$Builder;->mMask:I
 
     or-int/2addr v0, p1
 
     iput v0, p0, Landroid/os/StrictMode$ThreadPolicy$Builder;->mMask:I
 
+    .line 496
     return-object p0
 .end method
 
@@ -88,6 +100,7 @@
     .locals 3
 
     .prologue
+    .line 514
     iget v0, p0, Landroid/os/StrictMode$ThreadPolicy$Builder;->mMask:I
 
     if-eqz v0, :cond_0
@@ -98,8 +111,10 @@
 
     if-nez v0, :cond_0
 
+    .line 517
     invoke-virtual {p0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->penaltyLog()Landroid/os/StrictMode$ThreadPolicy$Builder;
 
+    .line 519
     :cond_0
     new-instance v0, Landroid/os/StrictMode$ThreadPolicy;
 
@@ -116,6 +131,7 @@
     .locals 1
 
     .prologue
+    .line 371
     const/16 v0, 0xf
 
     invoke-direct {p0, v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->enable(I)Landroid/os/StrictMode$ThreadPolicy$Builder;
@@ -129,6 +145,7 @@
     .locals 1
 
     .prologue
+    .line 413
     const/16 v0, 0x8
 
     invoke-direct {p0, v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->enable(I)Landroid/os/StrictMode$ThreadPolicy$Builder;
@@ -142,6 +159,7 @@
     .locals 1
 
     .prologue
+    .line 399
     const/4 v0, 0x2
 
     invoke-direct {p0, v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->enable(I)Landroid/os/StrictMode$ThreadPolicy$Builder;
@@ -155,6 +173,7 @@
     .locals 1
 
     .prologue
+    .line 427
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->enable(I)Landroid/os/StrictMode$ThreadPolicy$Builder;
@@ -168,6 +187,7 @@
     .locals 1
 
     .prologue
+    .line 385
     const/4 v0, 0x4
 
     invoke-direct {p0, v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->enable(I)Landroid/os/StrictMode$ThreadPolicy$Builder;
@@ -181,6 +201,7 @@
     .locals 1
 
     .prologue
+    .line 455
     const/16 v0, 0x40
 
     invoke-direct {p0, v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->enable(I)Landroid/os/StrictMode$ThreadPolicy$Builder;
@@ -194,6 +215,7 @@
     .locals 1
 
     .prologue
+    .line 467
     const/16 v0, 0x200
 
     invoke-direct {p0, v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->enable(I)Landroid/os/StrictMode$ThreadPolicy$Builder;
@@ -207,6 +229,7 @@
     .locals 1
 
     .prologue
+    .line 442
     const/16 v0, 0x20
 
     invoke-direct {p0, v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->enable(I)Landroid/os/StrictMode$ThreadPolicy$Builder;
@@ -220,6 +243,7 @@
     .locals 1
 
     .prologue
+    .line 491
     const/16 v0, 0x80
 
     invoke-direct {p0, v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->enable(I)Landroid/os/StrictMode$ThreadPolicy$Builder;
@@ -233,6 +257,7 @@
     .locals 1
 
     .prologue
+    .line 474
     const/16 v0, 0x800
 
     invoke-direct {p0, v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->enable(I)Landroid/os/StrictMode$ThreadPolicy$Builder;
@@ -246,6 +271,7 @@
     .locals 1
 
     .prologue
+    .line 481
     const/16 v0, 0x10
 
     invoke-direct {p0, v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->enable(I)Landroid/os/StrictMode$ThreadPolicy$Builder;
@@ -259,6 +285,7 @@
     .locals 1
 
     .prologue
+    .line 378
     const/16 v0, 0xf
 
     invoke-direct {p0, v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->disable(I)Landroid/os/StrictMode$ThreadPolicy$Builder;
@@ -272,6 +299,7 @@
     .locals 1
 
     .prologue
+    .line 420
     const/16 v0, 0x8
 
     invoke-direct {p0, v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->enable(I)Landroid/os/StrictMode$ThreadPolicy$Builder;
@@ -285,6 +313,7 @@
     .locals 1
 
     .prologue
+    .line 406
     const/4 v0, 0x2
 
     invoke-direct {p0, v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->disable(I)Landroid/os/StrictMode$ThreadPolicy$Builder;
@@ -298,6 +327,7 @@
     .locals 1
 
     .prologue
+    .line 434
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->disable(I)Landroid/os/StrictMode$ThreadPolicy$Builder;
@@ -311,6 +341,7 @@
     .locals 1
 
     .prologue
+    .line 392
     const/4 v0, 0x4
 
     invoke-direct {p0, v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->disable(I)Landroid/os/StrictMode$ThreadPolicy$Builder;

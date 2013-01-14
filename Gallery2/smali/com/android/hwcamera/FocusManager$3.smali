@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1132
+    .line 926
     iput-object p1, p0, Lcom/android/hwcamera/FocusManager$3;->this$0:Lcom/android/hwcamera/FocusManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,14 +41,14 @@
     .locals 2
 
     .prologue
-    .line 1135
+    .line 929
     const-string v0, "FocusManager"
 
     const-string v1, "onAutoFocusMoving done"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1136
+    .line 930
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager$3;->this$0:Lcom/android/hwcamera/FocusManager;
 
     #getter for: Lcom/android/hwcamera/FocusManager;->mFocusIndicator:Lcom/android/hwcamera/hwui/FocusIndicatorView;
@@ -58,6 +58,6 @@
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/FocusIndicatorView;->showSuccess()V
 
-    .line 1137
+    .line 931
     return-void
 .end method

@@ -32,6 +32,7 @@
     .locals 0
 
     .prologue
+    .line 144
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,6 +45,7 @@
     .parameter "in"
 
     .prologue
+    .line 146
     new-instance v0, Landroid/telephony/CdmaEmergencyMessage;
 
     const/4 v1, 0x0
@@ -58,6 +60,7 @@
     .parameter "x0"
 
     .prologue
+    .line 144
     invoke-virtual {p0, p1}, Landroid/telephony/CdmaEmergencyMessage$1;->createFromParcel(Landroid/os/Parcel;)Landroid/telephony/CdmaEmergencyMessage;
 
     move-result-object v0
@@ -70,6 +73,7 @@
     .parameter "size"
 
     .prologue
+    .line 150
     new-array v0, p1, [Landroid/telephony/CdmaEmergencyMessage;
 
     return-object v0
@@ -80,6 +84,7 @@
     .parameter "x0"
 
     .prologue
+    .line 144
     invoke-virtual {p0, p1}, Landroid/telephony/CdmaEmergencyMessage$1;->newArray(I)[Landroid/telephony/CdmaEmergencyMessage;
 
     move-result-object v0

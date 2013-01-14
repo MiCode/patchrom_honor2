@@ -24,6 +24,7 @@
     .parameter
 
     .prologue
+    .line 1012
     iput-object p1, p0, Landroid/widget/CalendarView$1;->this$0:Landroid/widget/CalendarView;
 
     invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
@@ -37,6 +38,7 @@
     .locals 6
 
     .prologue
+    .line 1015
     iget-object v1, p0, Landroid/widget/CalendarView$1;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mOnDateChangeListener:Landroid/widget/CalendarView$OnDateChangeListener;
@@ -46,6 +48,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 1016
     iget-object v1, p0, Landroid/widget/CalendarView$1;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mAdapter:Landroid/widget/CalendarView$WeeksAdapter;
@@ -57,6 +60,7 @@
 
     move-result-object v0
 
+    .line 1017
     .local v0, selectedDay:Ljava/util/Calendar;
     iget-object v1, p0, Landroid/widget/CalendarView$1;->this$0:Landroid/widget/CalendarView;
 
@@ -87,6 +91,7 @@
 
     invoke-interface {v1, v2, v3, v4, v5}, Landroid/widget/CalendarView$OnDateChangeListener;->onSelectedDayChange(Landroid/widget/CalendarView;III)V
 
+    .line 1022
     .end local v0           #selectedDay:Ljava/util/Calendar;
     :cond_0
     return-void

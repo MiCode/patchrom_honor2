@@ -47,20 +47,24 @@
     .locals 1
 
     .prologue
+    .line 114
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 94
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/RetryManager;->mRetryArray:Ljava/util/ArrayList;
 
+    .line 109
     new-instance v0, Ljava/util/Random;
 
     invoke-direct {v0}, Ljava/util/Random;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/RetryManager;->rng:Ljava/util/Random;
 
+    .line 116
     return-void
 .end method
 
@@ -69,6 +73,7 @@
     .parameter "s"
 
     .prologue
+    .line 408
     const-string v0, "GSM"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -91,6 +96,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 409
     return-void
 .end method
 
@@ -99,6 +105,7 @@
     .parameter "index"
 
     .prologue
+    .line 399
     iget-object v1, p0, Lcom/android/internal/telephony/RetryManager;->mRetryArray:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -109,11 +116,14 @@
 
     iget v0, v1, Lcom/android/internal/telephony/RetryManager$RetryRec;->mRandomizationTime:I
 
+    .line 400
     .local v0, randomTime:I
     if-nez v0, :cond_0
 
+    .line 401
     const/4 v1, 0x0
 
+    .line 403
     :goto_0
     return v1
 
@@ -148,11 +158,13 @@
     .prologue
     const/4 v6, 0x0
 
+    .line 365
     :try_start_0
     invoke-static {p2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v2
 
+    .line 366
     .local v2, value:I
     new-instance v1, Landroid/util/Pair;
 
@@ -172,15 +184,18 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 373
     .end local v2           #value:I
     .local v1, retVal:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/Boolean;Ljava/lang/Integer;>;"
     :goto_0
     return-object v1
 
+    .line 367
     .end local v1           #retVal:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/Boolean;Ljava/lang/Integer;>;"
     :catch_0
     move-exception v0
 
+    .line 368
     .local v0, e:Ljava/lang/NumberFormatException;
     const-string v3, "GSM"
 
@@ -208,6 +223,7 @@
 
     invoke-static {v3, v4, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 369
     new-instance v1, Landroid/util/Pair;
 
     invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -230,8 +246,10 @@
     .parameter "value"
 
     .prologue
+    .line 385
     if-gez p2, :cond_0
 
+    .line 386
     const-string v1, "GSM"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -254,12 +272,15 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 387
     const/4 v0, 0x0
 
+    .line 392
     .local v0, retVal:Z
     :goto_0
     return v0
 
+    .line 389
     .end local v0           #retVal:Z
     :cond_0
     const/4 v0, 0x1
@@ -279,7 +300,8 @@
     .prologue
     const/4 v0, 0x0
 
-    const-string v1, "maxRetryCount"
+    .line 144
+    const-string/jumbo v1, "maxRetryCount"
 
     invoke-direct {p0, v1, p1}, Lcom/android/internal/telephony/RetryManager;->validateNonNegativeInt(Ljava/lang/String;I)Z
 
@@ -287,12 +309,14 @@
 
     if-nez v1, :cond_1
 
+    .line 161
     :cond_0
     :goto_0
     return v0
 
+    .line 148
     :cond_1
-    const-string v1, "retryTime"
+    const-string/jumbo v1, "retryTime"
 
     invoke-direct {p0, v1, p2}, Lcom/android/internal/telephony/RetryManager;->validateNonNegativeInt(Ljava/lang/String;I)Z
 
@@ -300,7 +324,8 @@
 
     if-eqz v1, :cond_0
 
-    const-string v1, "randomizationTime"
+    .line 152
+    const-string/jumbo v1, "randomizationTime"
 
     invoke-direct {p0, v1, p3}, Lcom/android/internal/telephony/RetryManager;->validateNonNegativeInt(Ljava/lang/String;I)Z
 
@@ -308,14 +333,18 @@
 
     if-eqz v1, :cond_0
 
+    .line 156
     iput p1, p0, Lcom/android/internal/telephony/RetryManager;->mMaxRetryCount:I
 
+    .line 157
     invoke-virtual {p0}, Lcom/android/internal/telephony/RetryManager;->resetRetryCount()V
 
+    .line 158
     iget-object v0, p0, Lcom/android/internal/telephony/RetryManager;->mRetryArray:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
+    .line 159
     iget-object v0, p0, Lcom/android/internal/telephony/RetryManager;->mRetryArray:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/RetryManager$RetryRec;
@@ -324,6 +353,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 161
     const/4 v0, 0x1
 
     goto :goto_0
@@ -340,6 +370,7 @@
 
     const/4 v7, 0x0
 
+    .line 173
     const-string v6, "\""
 
     invoke-virtual {p1, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -356,6 +387,7 @@
 
     if-eqz v6, :cond_0
 
+    .line 174
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v6
@@ -366,32 +398,40 @@
 
     move-result-object p1
 
+    .line 177
     :cond_0
     iput-object p1, p0, Lcom/android/internal/telephony/RetryManager;->mConfig:Ljava/lang/String;
 
+    .line 179
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v6
 
     if-nez v6, :cond_c
 
+    .line 180
     const/4 v0, 0x0
 
+    .line 184
     .local v0, defaultRandomization:I
     iput v7, p0, Lcom/android/internal/telephony/RetryManager;->mMaxRetryCount:I
 
+    .line 185
     invoke-virtual {p0}, Lcom/android/internal/telephony/RetryManager;->resetRetryCount()V
 
+    .line 186
     iget-object v6, p0, Lcom/android/internal/telephony/RetryManager;->mRetryArray:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->clear()V
 
+    .line 188
     const-string v6, ","
 
     invoke-virtual {p1, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v4
 
+    .line 189
     .local v4, strArray:[Ljava/lang/String;
     const/4 v1, 0x0
 
@@ -401,6 +441,7 @@
 
     if-ge v1, v6, :cond_a
 
+    .line 192
     aget-object v6, v4, v1
 
     const-string v9, "="
@@ -409,6 +450,7 @@
 
     move-result-object v3
 
+    .line 193
     .local v3, splitStr:[Ljava/lang/String;
     aget-object v6, v3, v7
 
@@ -418,10 +460,12 @@
 
     aput-object v6, v3, v7
 
+    .line 195
     array-length v6, v3
 
     if-le v6, v8, :cond_6
 
+    .line 196
     aget-object v6, v3, v8
 
     invoke-virtual {v6}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -430,6 +474,7 @@
 
     aput-object v6, v3, v8
 
+    .line 198
     aget-object v6, v3, v7
 
     const-string v9, "default_randomization"
@@ -440,6 +485,7 @@
 
     if-eqz v6, :cond_2
 
+    .line 199
     aget-object v6, v3, v7
 
     aget-object v9, v3, v8
@@ -448,6 +494,7 @@
 
     move-result-object v5
 
+    .line 200
     .local v5, value:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/Boolean;Ljava/lang/Integer;>;"
     iget-object v6, v5, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -461,6 +508,7 @@
 
     move v6, v7
 
+    .line 248
     .end local v0           #defaultRandomization:I
     .end local v1           #i:I
     .end local v3           #splitStr:[Ljava/lang/String;
@@ -469,6 +517,7 @@
     :goto_1
     return v6
 
+    .line 201
     .restart local v0       #defaultRandomization:I
     .restart local v1       #i:I
     .restart local v3       #splitStr:[Ljava/lang/String;
@@ -483,16 +532,18 @@
 
     move-result v0
 
+    .line 189
     .end local v5           #value:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/Boolean;Ljava/lang/Integer;>;"
     :goto_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 202
     :cond_2
     aget-object v6, v3, v7
 
-    const-string v9, "max_retries"
+    const-string/jumbo v9, "max_retries"
 
     invoke-static {v6, v9}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -500,6 +551,7 @@
 
     if-eqz v6, :cond_5
 
+    .line 203
     const-string v6, "infinite"
 
     aget-object v9, v3, v8
@@ -510,10 +562,12 @@
 
     if-eqz v6, :cond_3
 
+    .line 204
     iput-boolean v8, p0, Lcom/android/internal/telephony/RetryManager;->mRetryForever:Z
 
     goto :goto_2
 
+    .line 206
     :cond_3
     aget-object v6, v3, v7
 
@@ -523,6 +577,7 @@
 
     move-result-object v5
 
+    .line 207
     .restart local v5       #value:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/Boolean;Ljava/lang/Integer;>;"
     iget-object v6, v5, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -538,6 +593,7 @@
 
     goto :goto_1
 
+    .line 208
     :cond_4
     iget-object v6, v5, Landroid/util/Pair;->second:Ljava/lang/Object;
 
@@ -551,6 +607,7 @@
 
     goto :goto_2
 
+    .line 211
     .end local v5           #value:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/Boolean;Ljava/lang/Integer;>;"
     :cond_5
     const-string v6, "GSM"
@@ -579,8 +636,10 @@
 
     move v6, v7
 
+    .line 213
     goto :goto_1
 
+    .line 220
     :cond_6
     aget-object v6, v4, v1
 
@@ -590,6 +649,7 @@
 
     move-result-object v3
 
+    .line 221
     aget-object v6, v3, v7
 
     invoke-virtual {v6}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -598,10 +658,12 @@
 
     aput-object v6, v3, v7
 
+    .line 222
     new-instance v2, Lcom/android/internal/telephony/RetryManager$RetryRec;
 
     invoke-direct {v2, v7, v7}, Lcom/android/internal/telephony/RetryManager$RetryRec;-><init>(II)V
 
+    .line 223
     .local v2, rr:Lcom/android/internal/telephony/RetryManager$RetryRec;
     const-string v6, "delayTime"
 
@@ -611,6 +673,7 @@
 
     move-result-object v5
 
+    .line 224
     .restart local v5       #value:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/Boolean;Ljava/lang/Integer;>;"
     iget-object v6, v5, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -626,6 +689,7 @@
 
     goto/16 :goto_1
 
+    .line 225
     :cond_7
     iget-object v6, v5, Landroid/util/Pair;->second:Ljava/lang/Object;
 
@@ -637,10 +701,12 @@
 
     iput v6, v2, Lcom/android/internal/telephony/RetryManager$RetryRec;->mDelayTime:I
 
+    .line 228
     array-length v6, v3
 
     if-le v6, v8, :cond_9
 
+    .line 229
     aget-object v6, v3, v8
 
     invoke-virtual {v6}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -649,7 +715,8 @@
 
     aput-object v6, v3, v8
 
-    const-string v6, "randomizationTime"
+    .line 231
+    const-string/jumbo v6, "randomizationTime"
 
     aget-object v9, v3, v8
 
@@ -657,6 +724,7 @@
 
     move-result-object v5
 
+    .line 232
     iget-object v6, v5, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v6, Ljava/lang/Boolean;
@@ -671,6 +739,7 @@
 
     goto/16 :goto_1
 
+    .line 233
     :cond_8
     iget-object v6, v5, Landroid/util/Pair;->second:Ljava/lang/Object;
 
@@ -682,6 +751,7 @@
 
     iput v6, v2, Lcom/android/internal/telephony/RetryManager$RetryRec;->mRandomizationTime:I
 
+    .line 237
     :goto_3
     iget-object v6, p0, Lcom/android/internal/telephony/RetryManager;->mRetryArray:Ljava/util/ArrayList;
 
@@ -689,11 +759,13 @@
 
     goto/16 :goto_2
 
+    .line 235
     :cond_9
     iput v0, v2, Lcom/android/internal/telephony/RetryManager$RetryRec;->mRandomizationTime:I
 
     goto :goto_3
 
+    .line 240
     .end local v2           #rr:Lcom/android/internal/telephony/RetryManager$RetryRec;
     .end local v3           #splitStr:[Ljava/lang/String;
     .end local v5           #value:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/Boolean;Ljava/lang/Integer;>;"
@@ -708,6 +780,7 @@
 
     if-le v6, v7, :cond_b
 
+    .line 241
     iget-object v6, p0, Lcom/android/internal/telephony/RetryManager;->mRetryArray:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
@@ -719,6 +792,7 @@
     :cond_b
     move v6, v8
 
+    .line 245
     goto/16 :goto_1
 
     .end local v0           #defaultRandomization:I
@@ -727,6 +801,7 @@
     :cond_c
     move v6, v7
 
+    .line 248
     goto/16 :goto_1
 .end method
 
@@ -734,6 +809,7 @@
     .locals 2
 
     .prologue
+    .line 290
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -756,6 +832,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RetryManager;->log(Ljava/lang/String;)V
 
+    .line 291
     iget v0, p0, Lcom/android/internal/telephony/RetryManager;->mRetryCount:I
 
     return v0
@@ -765,6 +842,7 @@
     .locals 4
 
     .prologue
+    .line 269
     iget v2, p0, Lcom/android/internal/telephony/RetryManager;->mRetryCount:I
 
     iget-object v3, p0, Lcom/android/internal/telephony/RetryManager;->mRetryArray:Ljava/util/ArrayList;
@@ -775,8 +853,10 @@
 
     if-ge v2, v3, :cond_0
 
+    .line 270
     iget v0, p0, Lcom/android/internal/telephony/RetryManager;->mRetryCount:I
 
+    .line 276
     .local v0, index:I
     :goto_0
     if-ltz v0, :cond_1
@@ -789,6 +869,7 @@
 
     if-ge v0, v2, :cond_1
 
+    .line 277
     iget-object v2, p0, Lcom/android/internal/telephony/RetryManager;->mRetryArray:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -805,6 +886,7 @@
 
     add-int v1, v2, v3
 
+    .line 282
     .local v1, retVal:I
     :goto_1
     new-instance v2, Ljava/lang/StringBuilder;
@@ -827,8 +909,10 @@
 
     invoke-direct {p0, v2}, Lcom/android/internal/telephony/RetryManager;->log(Ljava/lang/String;)V
 
+    .line 283
     return v1
 
+    .line 272
     .end local v0           #index:I
     .end local v1           #retVal:I
     :cond_0
@@ -843,6 +927,7 @@
     .restart local v0       #index:I
     goto :goto_0
 
+    .line 279
     :cond_1
     const/4 v1, 0x0
 
@@ -854,22 +939,26 @@
     .locals 2
 
     .prologue
+    .line 298
     iget v0, p0, Lcom/android/internal/telephony/RetryManager;->mRetryCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/internal/telephony/RetryManager;->mRetryCount:I
 
+    .line 299
     iget v0, p0, Lcom/android/internal/telephony/RetryManager;->mRetryCount:I
 
     iget v1, p0, Lcom/android/internal/telephony/RetryManager;->mMaxRetryCount:I
 
     if-le v0, v1, :cond_0
 
+    .line 300
     iget v0, p0, Lcom/android/internal/telephony/RetryManager;->mMaxRetryCount:I
 
     iput v0, p0, Lcom/android/internal/telephony/RetryManager;->mRetryCount:I
 
+    .line 302
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -893,6 +982,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RetryManager;->log(Ljava/lang/String;)V
 
+    .line 303
     return-void
 .end method
 
@@ -900,6 +990,7 @@
     .locals 2
 
     .prologue
+    .line 350
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -922,6 +1013,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RetryManager;->log(Ljava/lang/String;)V
 
+    .line 351
     iget-boolean v0, p0, Lcom/android/internal/telephony/RetryManager;->mRetryForever:Z
 
     return v0
@@ -931,6 +1023,7 @@
     .locals 3
 
     .prologue
+    .line 259
     iget-boolean v1, p0, Lcom/android/internal/telephony/RetryManager;->mRetryForever:Z
 
     if-nez v1, :cond_0
@@ -944,6 +1037,7 @@
     :cond_0
     const/4 v0, 0x1
 
+    .line 260
     .local v0, retVal:Z
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
@@ -966,8 +1060,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/RetryManager;->log(Ljava/lang/String;)V
 
+    .line 261
     return v0
 
+    .line 259
     .end local v0           #retVal:Z
     :cond_1
     const/4 v0, 0x0
@@ -979,15 +1075,17 @@
     .locals 2
 
     .prologue
+    .line 333
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/telephony/RetryManager;->mRetryCount:I
 
+    .line 334
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "resetRetryCount: "
+    const-string/jumbo v1, "resetRetryCount: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1005,6 +1103,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RetryManager;->log(Ljava/lang/String;)V
 
+    .line 335
     return-void
 .end method
 
@@ -1012,19 +1111,22 @@
     .locals 2
 
     .prologue
+    .line 341
     iget v0, p0, Lcom/android/internal/telephony/RetryManager;->mMaxRetryCount:I
 
     iput v0, p0, Lcom/android/internal/telephony/RetryManager;->mRetryCount:I
 
+    .line 342
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/RetryManager;->mRetryForever:Z
 
+    .line 343
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "retryForeverUsingLastTimeout: "
+    const-string/jumbo v1, "retryForeverUsingLastTimeout: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1054,6 +1156,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RetryManager;->log(Ljava/lang/String;)V
 
+    .line 344
     return-void
 .end method
 
@@ -1062,33 +1165,39 @@
     .parameter "count"
 
     .prologue
+    .line 309
     iput p1, p0, Lcom/android/internal/telephony/RetryManager;->mRetryCount:I
 
+    .line 310
     iget v0, p0, Lcom/android/internal/telephony/RetryManager;->mRetryCount:I
 
     iget v1, p0, Lcom/android/internal/telephony/RetryManager;->mMaxRetryCount:I
 
     if-le v0, v1, :cond_0
 
+    .line 311
     iget v0, p0, Lcom/android/internal/telephony/RetryManager;->mMaxRetryCount:I
 
     iput v0, p0, Lcom/android/internal/telephony/RetryManager;->mRetryCount:I
 
+    .line 314
     :cond_0
     iget v0, p0, Lcom/android/internal/telephony/RetryManager;->mRetryCount:I
 
     if-gez v0, :cond_1
 
+    .line 315
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/telephony/RetryManager;->mRetryCount:I
 
+    .line 318
     :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "setRetryCount: "
+    const-string/jumbo v1, "setRetryCount: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1106,6 +1215,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RetryManager;->log(Ljava/lang/String;)V
 
+    .line 319
     return-void
 .end method
 
@@ -1114,13 +1224,15 @@
     .parameter "retryForever"
 
     .prologue
+    .line 325
     iput-boolean p1, p0, Lcom/android/internal/telephony/RetryManager;->mRetryForever:Z
 
+    .line 326
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "setRetryForever: "
+    const-string/jumbo v1, "setRetryForever: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1138,6 +1250,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/RetryManager;->log(Ljava/lang/String;)V
 
+    .line 327
     return-void
 .end method
 
@@ -1145,6 +1258,7 @@
     .locals 5
 
     .prologue
+    .line 119
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1201,6 +1315,7 @@
 
     move-result-object v2
 
+    .line 121
     .local v2, ret:Ljava/lang/String;
     iget-object v3, p0, Lcom/android/internal/telephony/RetryManager;->mRetryArray:Ljava/util/ArrayList;
 
@@ -1222,6 +1337,7 @@
 
     check-cast v1, Lcom/android/internal/telephony/RetryManager$RetryRec;
 
+    .line 122
     .local v1, r:Lcom/android/internal/telephony/RetryManager$RetryRec;
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -1261,6 +1377,7 @@
 
     goto :goto_0
 
+    .line 124
     .end local v1           #r:Lcom/android/internal/telephony/RetryManager$RetryRec;
     :cond_0
     return-object v2

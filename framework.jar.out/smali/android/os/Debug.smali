@@ -49,10 +49,12 @@
     .locals 2
 
     .prologue
+    .line 79
     const/4 v0, 0x0
 
     sput-boolean v0, Landroid/os/Debug;->mWaiting:Z
 
+    .line 97
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -81,6 +83,7 @@
 
     sput-object v0, Landroid/os/Debug;->DEFAULT_TRACE_PATH_PREFIX:Ljava/lang/String;
 
+    .line 101
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -109,10 +112,12 @@
 
     sput-object v0, Landroid/os/Debug;->DEFAULT_TRACE_FILE_PATH:Ljava/lang/String;
 
+    .line 1119
     const/4 v0, 0x0
 
     sput-object v0, Landroid/os/Debug;->debugProperties:Lcom/android/internal/util/TypedProperties;
 
+    .line 1121
     return-void
 .end method
 
@@ -120,6 +125,7 @@
     .locals 0
 
     .prologue
+    .line 81
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -130,6 +136,7 @@
     .parameter "classAndMethodDesc"
 
     .prologue
+    .line 980
     invoke-static {p0}, Ldalvik/system/VMDebug;->cacheRegisterMap(Ljava/lang/String;)Z
 
     move-result v0
@@ -144,6 +151,7 @@
     .end annotation
 
     .prologue
+    .line 325
     return-void
 .end method
 
@@ -152,6 +160,7 @@
     .parameter "cls"
 
     .prologue
+    .line 926
     const/4 v0, 0x1
 
     invoke-static {p0, v0}, Ldalvik/system/VMDebug;->countInstancesOfClass(Ljava/lang/Class;Z)J
@@ -171,8 +180,10 @@
     .end annotation
 
     .prologue
+    .line 885
     invoke-static {p0}, Ldalvik/system/VMDebug;->dumpHprofData(Ljava/lang/String;)V
 
+    .line 886
     return-void
 .end method
 
@@ -187,8 +198,10 @@
     .end annotation
 
     .prologue
+    .line 899
     invoke-static {p0, p1}, Ldalvik/system/VMDebug;->dumpHprofData(Ljava/lang/String;Ljava/io/FileDescriptor;)V
 
+    .line 900
     return-void
 .end method
 
@@ -196,8 +209,10 @@
     .locals 0
 
     .prologue
+    .line 910
     invoke-static {}, Ldalvik/system/VMDebug;->dumpHprofDataDdms()V
 
+    .line 911
     return-void
 .end method
 
@@ -211,8 +226,10 @@
     .locals 0
 
     .prologue
+    .line 990
     invoke-static {}, Ldalvik/system/VMDebug;->dumpReferenceTables()V
 
+    .line 991
     return-void
 .end method
 
@@ -225,13 +242,16 @@
     .prologue
     const/4 v2, 0x0
 
+    .line 1318
     invoke-static {p0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v1
 
+    .line 1319
     .local v1, service:Landroid/os/IBinder;
     if-nez v1, :cond_0
 
+    .line 1320
     const-string v3, "Debug"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -254,22 +274,27 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1329
     :goto_0
     return v2
 
+    .line 1325
     :cond_0
     :try_start_0
     invoke-interface {v1, p1, p2}, Landroid/os/IBinder;->dump(Ljava/io/FileDescriptor;[Ljava/lang/String;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 1326
     const/4 v2, 0x1
 
     goto :goto_0
 
+    .line 1327
     :catch_0
     move-exception v0
 
+    .line 1328
     .local v0, e:Landroid/os/RemoteException;
     const-string v3, "Debug"
 
@@ -300,8 +325,10 @@
     .locals 0
 
     .prologue
+    .line 418
     invoke-static {}, Ldalvik/system/VMDebug;->startEmulatorTracing()V
 
+    .line 419
     return-void
 .end method
 
@@ -324,18 +351,22 @@
 
     const/4 v5, 0x0
 
+    .line 1131
     invoke-virtual {p0}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
 
     move-result-object v1
 
+    .line 1132
     .local v1, fieldClass:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     if-ne v1, p1, :cond_0
 
     move v5, v4
 
+    .line 1148
     :goto_0
     return v5
 
+    .line 1141
     :cond_0
     :try_start_0
     const-string v3, "TYPE"
@@ -346,6 +377,7 @@
 
     move-result-object v2
 
+    .line 1146
     .local v2, primitiveTypeField:Ljava/lang/reflect/Field;
     const/4 v3, 0x0
 
@@ -367,10 +399,12 @@
 
     goto :goto_0
 
+    .line 1142
     .end local v2           #primitiveTypeField:Ljava/lang/reflect/Field;
     :catch_0
     move-exception v0
 
+    .line 1143
     .local v0, ex:Ljava/lang/NoSuchFieldException;
     goto :goto_0
 
@@ -379,11 +413,14 @@
     :cond_1
     move v3, v5
 
+    .line 1146
     goto :goto_1
 
+    .line 1147
     :catch_1
     move-exception v0
 
+    .line 1148
     .local v0, ex:Ljava/lang/IllegalAccessException;
     goto :goto_0
 .end method
@@ -407,6 +444,7 @@
     .locals 2
 
     .prologue
+    .line 1375
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -430,22 +468,27 @@
     .parameter "depth"
 
     .prologue
+    .line 1348
     add-int/lit8 v1, p1, 0x4
 
     array-length v2, p0
 
     if-lt v1, v2, :cond_0
 
+    .line 1349
     const-string v1, "<bottom of call stack>"
 
+    .line 1352
     :goto_0
     return-object v1
 
+    .line 1351
     :cond_0
     add-int/lit8 v1, p1, 0x4
 
     aget-object v0, p0, v1
 
+    .line 1352
     .local v0, caller:Ljava/lang/StackTraceElement;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -499,6 +542,7 @@
     .parameter "depth"
 
     .prologue
+    .line 1362
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v3
@@ -507,11 +551,13 @@
 
     move-result-object v0
 
+    .line 1363
     .local v0, callStack:[Ljava/lang/StackTraceElement;
     new-instance v2, Ljava/lang/StringBuffer;
 
     invoke-direct {v2}, Ljava/lang/StringBuffer;-><init>()V
 
+    .line 1364
     .local v2, sb:Ljava/lang/StringBuffer;
     const/4 v1, 0x0
 
@@ -519,6 +565,7 @@
     :goto_0
     if-ge v1, p0, :cond_0
 
+    .line 1365
     invoke-static {v0, v1}, Landroid/os/Debug;->getCaller([Ljava/lang/StackTraceElement;I)Ljava/lang/String;
 
     move-result-object v3
@@ -531,10 +578,12 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
+    .line 1364
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 1367
     :cond_0
     invoke-virtual {v2}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
@@ -547,6 +596,7 @@
     .locals 1
 
     .prologue
+    .line 581
     const/4 v0, 0x1
 
     invoke-static {v0}, Ldalvik/system/VMDebug;->getAllocCount(I)I
@@ -560,6 +610,7 @@
     .locals 1
 
     .prologue
+    .line 584
     const/4 v0, 0x2
 
     invoke-static {v0}, Ldalvik/system/VMDebug;->getAllocCount(I)I
@@ -573,6 +624,7 @@
     .locals 1
 
     .prologue
+    .line 594
     const/16 v0, 0x20
 
     invoke-static {v0}, Ldalvik/system/VMDebug;->getAllocCount(I)I
@@ -586,6 +638,7 @@
     .locals 1
 
     .prologue
+    .line 598
     const/16 v0, 0x40
 
     invoke-static {v0}, Ldalvik/system/VMDebug;->getAllocCount(I)I
@@ -601,6 +654,7 @@
     .end annotation
 
     .prologue
+    .line 610
     const/4 v0, 0x0
 
     return v0
@@ -612,6 +666,7 @@
     .end annotation
 
     .prologue
+    .line 622
     const/4 v0, 0x0
 
     return v0
@@ -623,6 +678,7 @@
     .end annotation
 
     .prologue
+    .line 635
     const/4 v0, 0x0
 
     return v0
@@ -634,6 +690,7 @@
     .end annotation
 
     .prologue
+    .line 648
     const/4 v0, 0x0
 
     return v0
@@ -643,6 +700,7 @@
     .locals 1
 
     .prologue
+    .line 587
     const/4 v0, 0x4
 
     invoke-static {v0}, Ldalvik/system/VMDebug;->getAllocCount(I)I
@@ -656,6 +714,7 @@
     .locals 1
 
     .prologue
+    .line 590
     const/16 v0, 0x8
 
     invoke-static {v0}, Ldalvik/system/VMDebug;->getAllocCount(I)I
@@ -669,6 +728,7 @@
     .locals 1
 
     .prologue
+    .line 652
     const/16 v0, 0x10
 
     invoke-static {v0}, Ldalvik/system/VMDebug;->getAllocCount(I)I
@@ -682,6 +742,7 @@
     .locals 1
 
     .prologue
+    .line 873
     invoke-static {}, Ldalvik/system/VMDebug;->getLoadedClassCount()I
 
     move-result v0
@@ -717,6 +778,7 @@
     .locals 1
 
     .prologue
+    .line 655
     const/high16 v0, 0x1
 
     invoke-static {v0}, Ldalvik/system/VMDebug;->getAllocCount(I)I
@@ -730,6 +792,7 @@
     .locals 1
 
     .prologue
+    .line 658
     const/high16 v0, 0x2
 
     invoke-static {v0}, Ldalvik/system/VMDebug;->getAllocCount(I)I
@@ -745,6 +808,7 @@
     .end annotation
 
     .prologue
+    .line 671
     const/4 v0, 0x0
 
     return v0
@@ -756,6 +820,7 @@
     .end annotation
 
     .prologue
+    .line 683
     const/4 v0, 0x0
 
     return v0
@@ -765,6 +830,7 @@
     .locals 1
 
     .prologue
+    .line 687
     const/high16 v0, 0x10
 
     invoke-static {v0}, Ldalvik/system/VMDebug;->getAllocCount(I)I
@@ -778,6 +844,7 @@
     .locals 1
 
     .prologue
+    .line 316
     invoke-static {}, Ldalvik/system/VMDebug;->getVmFeatureList()[Ljava/lang/String;
 
     move-result-object v0
@@ -789,6 +856,7 @@
     .locals 1
 
     .prologue
+    .line 305
     invoke-static {}, Ldalvik/system/VMDebug;->isDebuggerConnected()Z
 
     move-result v0
@@ -800,6 +868,7 @@
     .locals 1
 
     .prologue
+    .line 529
     invoke-static {}, Ldalvik/system/VMDebug;->isMethodTracingActive()Z
 
     move-result v0
@@ -814,6 +883,7 @@
     .parameter "propertyName"
 
     .prologue
+    .line 1159
     invoke-virtual {p0}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
 
     move-result-object v3
@@ -822,13 +892,16 @@
 
     if-ne v3, v4, :cond_1
 
+    .line 1160
     invoke-virtual {p1, p2}, Lcom/android/internal/util/TypedProperties;->getStringInfo(Ljava/lang/String;)I
 
     move-result v1
 
+    .line 1161
     .local v1, stringInfo:I
     packed-switch v1, :pswitch_data_0
 
+    .line 1180
     new-instance v3, Ljava/lang/IllegalStateException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -863,6 +936,7 @@
 
     throw v3
 
+    .line 1167
     :pswitch_0
     const/4 v3, 0x0
 
@@ -873,16 +947,19 @@
     :try_end_0
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 1199
     .end local v1           #stringInfo:I
     :cond_0
     :goto_0
     :pswitch_1
     return-void
 
+    .line 1168
     .restart local v1       #stringInfo:I
     :catch_0
     move-exception v0
 
+    .line 1169
     .local v0, ex:Ljava/lang/IllegalAccessException;
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
@@ -908,6 +985,7 @@
 
     throw v3
 
+    .line 1176
     .end local v0           #ex:Ljava/lang/IllegalAccessException;
     :pswitch_2
     new-instance v3, Ljava/lang/IllegalArgumentException;
@@ -960,6 +1038,7 @@
 
     throw v3
 
+    .line 1185
     .end local v1           #stringInfo:I
     :cond_1
     :pswitch_3
@@ -967,9 +1046,11 @@
 
     move-result-object v2
 
+    .line 1186
     .local v2, value:Ljava/lang/Object;
     if-eqz v2, :cond_0
 
+    .line 1187
     invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v3
@@ -980,6 +1061,7 @@
 
     if-nez v3, :cond_2
 
+    .line 1188
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1044,6 +1126,7 @@
 
     throw v3
 
+    .line 1193
     :cond_2
     const/4 v3, 0x0
 
@@ -1054,9 +1137,11 @@
 
     goto/16 :goto_0
 
+    .line 1194
     :catch_1
     move-exception v0
 
+    .line 1195
     .restart local v0       #ex:Ljava/lang/IllegalAccessException;
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
@@ -1082,6 +1167,7 @@
 
     throw v3
 
+    .line 1161
     :pswitch_data_0
     .packed-switch -0x2
         :pswitch_2
@@ -1096,8 +1182,10 @@
     .parameter "flags"
 
     .prologue
+    .line 865
     invoke-static {p0}, Ldalvik/system/VMDebug;->printLoadedClasses(I)V
 
+    .line 866
     return-void
 .end method
 
@@ -1105,10 +1193,12 @@
     .locals 1
 
     .prologue
+    .line 786
     const/4 v0, -0x1
 
     invoke-static {v0}, Ldalvik/system/VMDebug;->resetAllocCount(I)V
 
+    .line 787
     return-void
 .end method
 
@@ -1116,10 +1206,12 @@
     .locals 1
 
     .prologue
+    .line 691
     const/4 v0, 0x1
 
     invoke-static {v0}, Ldalvik/system/VMDebug;->resetAllocCount(I)V
 
+    .line 692
     return-void
 .end method
 
@@ -1127,10 +1219,12 @@
     .locals 1
 
     .prologue
+    .line 694
     const/4 v0, 0x2
 
     invoke-static {v0}, Ldalvik/system/VMDebug;->resetAllocCount(I)V
 
+    .line 695
     return-void
 .end method
 
@@ -1138,10 +1232,12 @@
     .locals 1
 
     .prologue
+    .line 703
     const/16 v0, 0x20
 
     invoke-static {v0}, Ldalvik/system/VMDebug;->resetAllocCount(I)V
 
+    .line 704
     return-void
 .end method
 
@@ -1149,10 +1245,12 @@
     .locals 1
 
     .prologue
+    .line 706
     const/16 v0, 0x40
 
     invoke-static {v0}, Ldalvik/system/VMDebug;->resetAllocCount(I)V
 
+    .line 707
     return-void
 .end method
 
@@ -1162,6 +1260,7 @@
     .end annotation
 
     .prologue
+    .line 717
     return-void
 .end method
 
@@ -1171,6 +1270,7 @@
     .end annotation
 
     .prologue
+    .line 727
     return-void
 .end method
 
@@ -1180,6 +1280,7 @@
     .end annotation
 
     .prologue
+    .line 737
     return-void
 .end method
 
@@ -1189,6 +1290,7 @@
     .end annotation
 
     .prologue
+    .line 748
     return-void
 .end method
 
@@ -1196,10 +1298,12 @@
     .locals 1
 
     .prologue
+    .line 697
     const/4 v0, 0x4
 
     invoke-static {v0}, Ldalvik/system/VMDebug;->resetAllocCount(I)V
 
+    .line 698
     return-void
 .end method
 
@@ -1207,10 +1311,12 @@
     .locals 1
 
     .prologue
+    .line 700
     const/16 v0, 0x8
 
     invoke-static {v0}, Ldalvik/system/VMDebug;->resetAllocCount(I)V
 
+    .line 701
     return-void
 .end method
 
@@ -1218,10 +1324,12 @@
     .locals 1
 
     .prologue
+    .line 751
     const/16 v0, 0x10
 
     invoke-static {v0}, Ldalvik/system/VMDebug;->resetAllocCount(I)V
 
+    .line 752
     return-void
 .end method
 
@@ -1229,10 +1337,12 @@
     .locals 1
 
     .prologue
+    .line 754
     const/high16 v0, 0x1
 
     invoke-static {v0}, Ldalvik/system/VMDebug;->resetAllocCount(I)V
 
+    .line 755
     return-void
 .end method
 
@@ -1240,10 +1350,12 @@
     .locals 1
 
     .prologue
+    .line 757
     const/high16 v0, 0x2
 
     invoke-static {v0}, Ldalvik/system/VMDebug;->resetAllocCount(I)V
 
+    .line 758
     return-void
 .end method
 
@@ -1253,6 +1365,7 @@
     .end annotation
 
     .prologue
+    .line 769
     return-void
 .end method
 
@@ -1262,6 +1375,7 @@
     .end annotation
 
     .prologue
+    .line 780
     return-void
 .end method
 
@@ -1269,10 +1383,12 @@
     .locals 1
 
     .prologue
+    .line 783
     const/high16 v0, 0x10
 
     invoke-static {v0}, Ldalvik/system/VMDebug;->resetAllocCount(I)V
 
+    .line 784
     return-void
 .end method
 
@@ -1283,6 +1399,7 @@
     .end annotation
 
     .prologue
+    .line 843
     const/4 v0, -0x1
 
     return v0
@@ -1300,11 +1417,13 @@
     .end annotation
 
     .prologue
+    .line 1210
     .local p0, cl:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Landroid/os/Debug;->setFieldsOn(Ljava/lang/Class;Z)V
 
+    .line 1211
     return-void
 .end method
 
@@ -1321,6 +1440,7 @@
     .end annotation
 
     .prologue
+    .line 1289
     .local p0, cl:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     const-string v1, "Debug"
 
@@ -1328,7 +1448,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "setFieldsOn("
+    const-string/jumbo v2, "setFieldsOn("
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1336,7 +1456,7 @@
 
     if-nez p0, :cond_0
 
-    const-string v0, "null"
+    const-string/jumbo v0, "null"
 
     :goto_0
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1355,8 +1475,10 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1293
     return-void
 
+    .line 1289
     :cond_0
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
@@ -1372,6 +1494,7 @@
     .end annotation
 
     .prologue
+    .line 856
     const/4 v0, -0x1
 
     return v0
@@ -1381,8 +1504,10 @@
     .locals 0
 
     .prologue
+    .line 568
     invoke-static {}, Ldalvik/system/VMDebug;->startAllocCounting()V
 
+    .line 569
     return-void
 .end method
 
@@ -1392,10 +1517,12 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 428
     sget-object v0, Landroid/os/Debug;->DEFAULT_TRACE_FILE_PATH:Ljava/lang/String;
 
     invoke-static {v0, v1, v1}, Ldalvik/system/VMDebug;->startMethodTracing(Ljava/lang/String;II)V
 
+    .line 429
     return-void
 .end method
 
@@ -1406,8 +1533,10 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 444
     invoke-static {p0, v0, v0}, Landroid/os/Debug;->startMethodTracing(Ljava/lang/String;II)V
 
+    .line 445
     return-void
 .end method
 
@@ -1417,10 +1546,12 @@
     .parameter "bufferSize"
 
     .prologue
+    .line 461
     const/4 v0, 0x0
 
     invoke-static {p0, p1, v0}, Landroid/os/Debug;->startMethodTracing(Ljava/lang/String;II)V
 
+    .line 462
     return-void
 .end method
 
@@ -1431,8 +1562,10 @@
     .parameter "flags"
 
     .prologue
+    .line 490
     move-object v0, p0
 
+    .line 491
     .local v0, pathName:Ljava/lang/String;
     const/4 v1, 0x0
 
@@ -1444,6 +1577,7 @@
 
     if-eq v1, v2, :cond_0
 
+    .line 492
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1462,6 +1596,7 @@
 
     move-result-object v0
 
+    .line 493
     :cond_0
     const-string v1, ".trace"
 
@@ -1471,6 +1606,7 @@
 
     if-nez v1, :cond_1
 
+    .line 494
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1489,9 +1625,11 @@
 
     move-result-object v0
 
+    .line 496
     :cond_1
     invoke-static {v0, p1, p2}, Ldalvik/system/VMDebug;->startMethodTracing(Ljava/lang/String;II)V
 
+    .line 497
     return-void
 .end method
 
@@ -1503,8 +1641,10 @@
     .parameter "flags"
 
     .prologue
+    .line 510
     invoke-static {p0, p1, p2, p3}, Ldalvik/system/VMDebug;->startMethodTracing(Ljava/lang/String;Ljava/io/FileDescriptor;II)V
 
+    .line 511
     return-void
 .end method
 
@@ -1514,8 +1654,10 @@
     .parameter "flags"
 
     .prologue
+    .line 521
     invoke-static {p0, p1}, Ldalvik/system/VMDebug;->startMethodTracingDdms(II)V
 
+    .line 522
     return-void
 .end method
 
@@ -1523,8 +1665,10 @@
     .locals 4
 
     .prologue
+    .line 363
     const/4 v1, 0x0
 
+    .line 365
     .local v1, outStream:Ljava/io/PrintWriter;
     :try_start_0
     new-instance v0, Ljava/io/FileOutputStream;
@@ -1533,6 +1677,7 @@
 
     invoke-direct {v0, v3}, Ljava/io/FileOutputStream;-><init>(Ljava/lang/String;)V
 
+    .line 366
     .local v0, fos:Ljava/io/FileOutputStream;
     new-instance v2, Ljava/io/PrintWriter;
 
@@ -1545,6 +1690,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 367
     .end local v1           #outStream:Ljava/io/PrintWriter;
     .local v2, outStream:Ljava/io/PrintWriter;
     :try_start_1
@@ -1555,12 +1701,15 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
+    .line 370
     if-eqz v2, :cond_2
 
+    .line 371
     invoke-virtual {v2}, Ljava/io/PrintWriter;->close()V
 
     move-object v1, v2
 
+    .line 374
     .end local v0           #fos:Ljava/io/FileOutputStream;
     .end local v2           #outStream:Ljava/io/PrintWriter;
     .restart local v1       #outStream:Ljava/io/PrintWriter;
@@ -1568,29 +1717,36 @@
     :goto_0
     invoke-static {}, Ldalvik/system/VMDebug;->startEmulatorTracing()V
 
+    .line 375
     return-void
 
+    .line 368
     :catch_0
     move-exception v3
 
+    .line 370
     :goto_1
     if-eqz v1, :cond_0
 
+    .line 371
     invoke-virtual {v1}, Ljava/io/PrintWriter;->close()V
 
     goto :goto_0
 
+    .line 370
     :catchall_0
     move-exception v3
 
     :goto_2
     if-eqz v1, :cond_1
 
+    .line 371
     invoke-virtual {v1}, Ljava/io/PrintWriter;->close()V
 
     :cond_1
     throw v3
 
+    .line 370
     .end local v1           #outStream:Ljava/io/PrintWriter;
     .restart local v0       #fos:Ljava/io/FileOutputStream;
     .restart local v2       #outStream:Ljava/io/PrintWriter;
@@ -1603,6 +1759,7 @@
     .restart local v1       #outStream:Ljava/io/PrintWriter;
     goto :goto_2
 
+    .line 368
     .end local v1           #outStream:Ljava/io/PrintWriter;
     .restart local v2       #outStream:Ljava/io/PrintWriter;
     :catch_1
@@ -1628,8 +1785,10 @@
     .locals 0
 
     .prologue
+    .line 577
     invoke-static {}, Ldalvik/system/VMDebug;->stopAllocCounting()V
 
+    .line 578
     return-void
 .end method
 
@@ -1637,8 +1796,10 @@
     .locals 0
 
     .prologue
+    .line 536
     invoke-static {}, Ldalvik/system/VMDebug;->stopMethodTracing()V
 
+    .line 537
     return-void
 .end method
 
@@ -1646,10 +1807,13 @@
     .locals 4
 
     .prologue
+    .line 388
     invoke-static {}, Ldalvik/system/VMDebug;->stopEmulatorTracing()V
 
+    .line 391
     const/4 v1, 0x0
 
+    .line 393
     .local v1, outStream:Ljava/io/PrintWriter;
     :try_start_0
     new-instance v0, Ljava/io/FileOutputStream;
@@ -1658,6 +1822,7 @@
 
     invoke-direct {v0, v3}, Ljava/io/FileOutputStream;-><init>(Ljava/lang/String;)V
 
+    .line 394
     .local v0, fos:Ljava/io/FileOutputStream;
     new-instance v2, Ljava/io/PrintWriter;
 
@@ -1670,6 +1835,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 395
     .end local v1           #outStream:Ljava/io/PrintWriter;
     .local v2, outStream:Ljava/io/PrintWriter;
     :try_start_1
@@ -1680,12 +1846,15 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
+    .line 400
     if-eqz v2, :cond_2
 
+    .line 401
     invoke-virtual {v2}, Ljava/io/PrintWriter;->close()V
 
     move-object v1, v2
 
+    .line 403
     .end local v0           #fos:Ljava/io/FileOutputStream;
     .end local v2           #outStream:Ljava/io/PrintWriter;
     .restart local v1       #outStream:Ljava/io/PrintWriter;
@@ -1693,27 +1862,33 @@
     :goto_0
     return-void
 
+    .line 396
     :catch_0
     move-exception v3
 
+    .line 400
     :goto_1
     if-eqz v1, :cond_0
 
+    .line 401
     invoke-virtual {v1}, Ljava/io/PrintWriter;->close()V
 
     goto :goto_0
 
+    .line 400
     :catchall_0
     move-exception v3
 
     :goto_2
     if-eqz v1, :cond_1
 
+    .line 401
     invoke-virtual {v1}, Ljava/io/PrintWriter;->close()V
 
     :cond_1
     throw v3
 
+    .line 400
     .end local v1           #outStream:Ljava/io/PrintWriter;
     .restart local v0       #fos:Ljava/io/FileOutputStream;
     .restart local v2       #outStream:Ljava/io/PrintWriter;
@@ -1726,6 +1901,7 @@
     .restart local v1       #outStream:Ljava/io/PrintWriter;
     goto :goto_2
 
+    .line 396
     .end local v1           #outStream:Ljava/io/PrintWriter;
     .restart local v2       #outStream:Ljava/io/PrintWriter;
     :catch_1
@@ -1751,6 +1927,7 @@
     .locals 2
 
     .prologue
+    .line 551
     invoke-static {}, Ldalvik/system/VMDebug;->threadCpuTimeNanos()J
 
     move-result-wide v0
@@ -1766,12 +1943,14 @@
 
     const/4 v6, 0x0
 
+    .line 244
     invoke-static {}, Ldalvik/system/VMDebug;->isDebuggingEnabled()Z
 
     move-result v4
 
     if-nez v4, :cond_1
 
+    .line 291
     .local v0, data:[B
     .local v1, delta:J
     .local v3, waitChunk:Lorg/apache/harmony/dalvik/ddmc/Chunk;
@@ -1779,6 +1958,7 @@
     :goto_0
     return-void
 
+    .line 248
     .end local v0           #data:[B
     .end local v1           #delta:J
     .end local v3           #waitChunk:Lorg/apache/harmony/dalvik/ddmc/Chunk;
@@ -1789,16 +1969,19 @@
 
     if-nez v4, :cond_0
 
+    .line 252
     sget-object v4, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     const-string v5, "Sending WAIT chunk"
 
     invoke-virtual {v4, v5}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
+    .line 253
     new-array v0, v7, [B
 
     aput-byte v6, v0, v6
 
+    .line 254
     .restart local v0       #data:[B
     new-instance v3, Lorg/apache/harmony/dalvik/ddmc/Chunk;
 
@@ -1810,11 +1993,14 @@
 
     invoke-direct {v3, v4, v0, v6, v7}, Lorg/apache/harmony/dalvik/ddmc/Chunk;-><init>(I[BII)V
 
+    .line 255
     .restart local v3       #waitChunk:Lorg/apache/harmony/dalvik/ddmc/Chunk;
     invoke-static {v3}, Lorg/apache/harmony/dalvik/ddmc/DdmServer;->sendChunk(Lorg/apache/harmony/dalvik/ddmc/Chunk;)V
 
+    .line 257
     sput-boolean v7, Landroid/os/Debug;->mWaiting:Z
 
+    .line 258
     :goto_1
     invoke-static {}, Landroid/os/Debug;->isDebuggerConnected()Z
 
@@ -1822,6 +2008,7 @@
 
     if-nez v4, :cond_2
 
+    .line 259
     const-wide/16 v4, 0xc8
 
     :try_start_0
@@ -1831,25 +2018,30 @@
 
     goto :goto_1
 
+    .line 260
     :catch_0
     move-exception v4
 
     goto :goto_1
 
+    .line 262
     :cond_2
     sput-boolean v6, Landroid/os/Debug;->mWaiting:Z
 
+    .line 264
     sget-object v4, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     const-string v5, "Debugger has connected"
 
     invoke-virtual {v4, v5}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
+    .line 276
     :goto_2
     invoke-static {}, Ldalvik/system/VMDebug;->lastDebuggerActivity()J
 
     move-result-wide v1
 
+    .line 277
     .restart local v1       #delta:J
     const-wide/16 v4, 0x0
 
@@ -1857,6 +2049,7 @@
 
     if-gez v4, :cond_3
 
+    .line 278
     sget-object v4, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     const-string v5, "debugger detached?"
@@ -1865,6 +2058,7 @@
 
     goto :goto_0
 
+    .line 282
     :cond_3
     const-wide/16 v4, 0x514
 
@@ -1872,12 +2066,14 @@
 
     if-gez v4, :cond_4
 
+    .line 283
     sget-object v4, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
-    const-string v5, "waiting for debugger to settle..."
+    const-string/jumbo v5, "waiting for debugger to settle..."
 
     invoke-virtual {v4, v5}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
+    .line 284
     const-wide/16 v4, 0xc8
 
     :try_start_1
@@ -1887,11 +2083,13 @@
 
     goto :goto_2
 
+    .line 285
     :catch_1
     move-exception v4
 
     goto :goto_2
 
+    .line 287
     :cond_4
     sget-object v4, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
@@ -1928,6 +2126,7 @@
     .locals 1
 
     .prologue
+    .line 298
     sget-boolean v0, Landroid/os/Debug;->mWaiting:Z
 
     return v0

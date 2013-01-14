@@ -96,10 +96,12 @@
 
     const/4 v3, 0x0
 
+    .line 161
     new-array v0, v3, [I
 
     sput-object v0, Landroid/widget/ExpandableListView;->EMPTY_STATE_SET:[I
 
+    .line 164
     new-array v0, v4, [I
 
     const v1, 0x10100a8
@@ -108,6 +110,7 @@
 
     sput-object v0, Landroid/widget/ExpandableListView;->GROUP_EXPANDED_STATE_SET:[I
 
+    .line 168
     new-array v0, v4, [I
 
     const v1, 0x10100a9
@@ -116,12 +119,14 @@
 
     sput-object v0, Landroid/widget/ExpandableListView;->GROUP_EMPTY_STATE_SET:[I
 
+    .line 172
     new-array v0, v2, [I
 
     fill-array-data v0, :array_0
 
     sput-object v0, Landroid/widget/ExpandableListView;->GROUP_EXPANDED_EMPTY_STATE_SET:[I
 
+    .line 176
     const/4 v0, 0x4
 
     new-array v0, v0, [[I
@@ -146,6 +151,7 @@
 
     sput-object v0, Landroid/widget/ExpandableListView;->GROUP_STATE_SETS:[[I
 
+    .line 184
     new-array v0, v4, [I
 
     const v1, 0x10100a6
@@ -156,6 +162,7 @@
 
     return-void
 
+    .line 172
     :array_0
     .array-data 0x4
         0xa8t 0x0t 0x1t 0x1t
@@ -168,10 +175,12 @@
     .parameter "context"
 
     .prologue
+    .line 194
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroid/widget/ExpandableListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
+    .line 195
     return-void
 .end method
 
@@ -181,10 +190,12 @@
     .parameter "attrs"
 
     .prologue
+    .line 198
     const v0, 0x101006f
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/ExpandableListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
+    .line 199
     return-void
 .end method
 
@@ -199,20 +210,24 @@
 
     const/4 v2, 0x0
 
+    .line 202
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/ListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
+    .line 191
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v1, p0, Landroid/widget/ExpandableListView;->mIndicatorRect:Landroid/graphics/Rect;
 
+    .line 204
     sget-object v1, Lcom/android/internal/R$styleable;->ExpandableListView:[I
 
     invoke-virtual {p1, p2, v1, p3, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
+    .line 208
     .local v0, a:Landroid/content/res/TypedArray;
     invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -220,6 +235,7 @@
 
     iput-object v1, p0, Landroid/widget/ExpandableListView;->mGroupIndicator:Landroid/graphics/drawable/Drawable;
 
+    .line 210
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -228,6 +244,7 @@
 
     iput-object v1, p0, Landroid/widget/ExpandableListView;->mChildIndicator:Landroid/graphics/drawable/Drawable;
 
+    .line 212
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
@@ -236,6 +253,7 @@
 
     iput v1, p0, Landroid/widget/ExpandableListView;->mIndicatorLeft:I
 
+    .line 214
     const/4 v1, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
@@ -244,6 +262,7 @@
 
     iput v1, p0, Landroid/widget/ExpandableListView;->mIndicatorRight:I
 
+    .line 216
     iget v1, p0, Landroid/widget/ExpandableListView;->mIndicatorRight:I
 
     if-nez v1, :cond_0
@@ -252,6 +271,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 217
     iget v1, p0, Landroid/widget/ExpandableListView;->mIndicatorLeft:I
 
     iget-object v2, p0, Landroid/widget/ExpandableListView;->mGroupIndicator:Landroid/graphics/drawable/Drawable;
@@ -264,6 +284,7 @@
 
     iput v1, p0, Landroid/widget/ExpandableListView;->mIndicatorRight:I
 
+    .line 219
     :cond_0
     const/4 v1, 0x4
 
@@ -273,6 +294,7 @@
 
     iput v1, p0, Landroid/widget/ExpandableListView;->mChildIndicatorLeft:I
 
+    .line 221
     const/4 v1, 0x5
 
     invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
@@ -281,6 +303,7 @@
 
     iput v1, p0, Landroid/widget/ExpandableListView;->mChildIndicatorRight:I
 
+    .line 223
     const/4 v1, 0x6
 
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -289,8 +312,10 @@
 
     iput-object v1, p0, Landroid/widget/ExpandableListView;->mChildDivider:Landroid/graphics/drawable/Drawable;
 
+    .line 225
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
+    .line 226
     return-void
 .end method
 
@@ -299,6 +324,7 @@
     .parameter "flatListPosition"
 
     .prologue
+    .line 509
     invoke-virtual {p0}, Landroid/widget/ExpandableListView;->getHeaderViewsCount()I
 
     move-result v0
@@ -313,12 +339,14 @@
     .parameter "position"
 
     .prologue
+    .line 1012
     iget v0, p1, Landroid/widget/ExpandableListPosition;->type:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
+    .line 1013
     iget-object v0, p0, Landroid/widget/ExpandableListView;->mAdapter:Landroid/widget/ExpandableListAdapter;
 
     iget v1, p1, Landroid/widget/ExpandableListPosition;->groupPos:I
@@ -329,6 +357,7 @@
 
     move-result-wide v0
 
+    .line 1015
     :goto_0
     return-wide v0
 
@@ -349,6 +378,7 @@
     .parameter "flatListPosition"
 
     .prologue
+    .line 498
     invoke-virtual {p0}, Landroid/widget/ExpandableListView;->getHeaderViewsCount()I
 
     move-result v0
@@ -369,14 +399,17 @@
 
     const/4 v4, 0x0
 
+    .line 348
     iget-object v7, p1, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
 
     iget v7, v7, Landroid/widget/ExpandableListPosition;->type:I
 
     if-ne v7, v6, :cond_5
 
+    .line 349
     iget-object v0, p0, Landroid/widget/ExpandableListView;->mGroupIndicator:Landroid/graphics/drawable/Drawable;
 
+    .line 351
     .local v0, indicator:Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_2
 
@@ -386,6 +419,7 @@
 
     if-eqz v7, :cond_2
 
+    .line 355
     iget-object v7, p1, Landroid/widget/ExpandableListConnector$PositionMetadata;->groupMetadata:Landroid/widget/ExpandableListConnector$GroupMetadata;
 
     if-eqz v7, :cond_0
@@ -403,6 +437,7 @@
     :cond_0
     move v1, v5
 
+    .line 358
     .local v1, isEmpty:Z
     :goto_0
     invoke-virtual {p1}, Landroid/widget/ExpandableListConnector$PositionMetadata;->isExpanded()Z
@@ -419,6 +454,7 @@
     :cond_1
     or-int v3, v5, v4
 
+    .line 361
     .local v3, stateSetIndex:I
     sget-object v4, Landroid/widget/ExpandableListView;->GROUP_STATE_SETS:[[I
 
@@ -426,6 +462,7 @@
 
     invoke-virtual {v0, v4}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
+    .line 375
     .end local v1           #isEmpty:Z
     .end local v3           #stateSetIndex:I
     :cond_2
@@ -435,19 +472,23 @@
     :cond_3
     move v1, v4
 
+    .line 355
     goto :goto_0
 
     .restart local v1       #isEmpty:Z
     :cond_4
     move v5, v4
 
+    .line 358
     goto :goto_1
 
+    .line 364
     .end local v0           #indicator:Landroid/graphics/drawable/Drawable;
     .end local v1           #isEmpty:Z
     :cond_5
     iget-object v0, p0, Landroid/widget/ExpandableListView;->mChildIndicator:Landroid/graphics/drawable/Drawable;
 
+    .line 366
     .restart local v0       #indicator:Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_2
 
@@ -457,6 +498,7 @@
 
     if-eqz v4, :cond_2
 
+    .line 368
     iget-object v4, p1, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
 
     iget v4, v4, Landroid/widget/ExpandableListPosition;->flatListPos:I
@@ -469,12 +511,14 @@
 
     sget-object v2, Landroid/widget/ExpandableListView;->CHILD_LAST_STATE_SET:[I
 
+    .line 371
     .local v2, stateSet:[I
     :goto_3
     invoke-virtual {v0, v2}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
     goto :goto_2
 
+    .line 368
     .end local v2           #stateSet:[I
     :cond_6
     sget-object v2, Landroid/widget/ExpandableListView;->EMPTY_STATE_SET:[I
@@ -493,14 +537,17 @@
 
     const/4 v0, -0x1
 
+    .line 940
     cmp-long v1, p0, v5
 
     if-nez v1, :cond_1
 
+    .line 945
     :cond_0
     :goto_0
     return v0
 
+    .line 943
     :cond_1
     and-long v1, p0, v3
 
@@ -508,6 +555,7 @@
 
     if-nez v1, :cond_0
 
+    .line 945
     and-long v0, p0, v5
 
     long-to-int v0, v0
@@ -521,6 +569,7 @@
     .parameter "childPosition"
 
     .prologue
+    .line 965
     const-wide/high16 v0, -0x8000
 
     int-to-long v2, p0
@@ -551,6 +600,7 @@
     .parameter "groupPosition"
 
     .prologue
+    .line 980
     int-to-long v0, p0
 
     const-wide/32 v2, 0x7fffffff
@@ -569,6 +619,7 @@
     .parameter "packedPosition"
 
     .prologue
+    .line 921
     const-wide v0, 0xffffffffL
 
     cmp-long v0, p0, v0
@@ -577,6 +628,7 @@
 
     const/4 v0, -0x1
 
+    .line 923
     :goto_0
     return v0
 
@@ -601,14 +653,17 @@
     .prologue
     const-wide/high16 v2, -0x8000
 
+    .line 901
     const-wide v0, 0xffffffffL
 
     cmp-long v0, p0, v0
 
     if-nez v0, :cond_0
 
+    .line 902
     const/4 v0, 0x2
 
+    .line 905
     :goto_0
     return v0
 
@@ -634,6 +689,7 @@
     .parameter "position"
 
     .prologue
+    .line 486
     iget v1, p0, Landroid/widget/ExpandableListView;->mItemCount:I
 
     invoke-virtual {p0}, Landroid/widget/ExpandableListView;->getFooterViewsCount()I
@@ -642,6 +698,7 @@
 
     sub-int v0, v1, v2
 
+    .line 487
     .local v0, footerViewsStart:I
     invoke-virtual {p0}, Landroid/widget/ExpandableListView;->getHeaderViewsCount()I
 
@@ -670,21 +727,25 @@
     .parameter "groupPos"
 
     .prologue
+    .line 645
     iget-object v1, p0, Landroid/widget/ExpandableListView;->mConnector:Landroid/widget/ExpandableListConnector;
 
     invoke-virtual {v1, p1}, Landroid/widget/ExpandableListConnector;->collapseGroup(I)Z
 
     move-result v0
 
+    .line 647
     .local v0, retValue:Z
     iget-object v1, p0, Landroid/widget/ExpandableListView;->mOnGroupCollapseListener:Landroid/widget/ExpandableListView$OnGroupCollapseListener;
 
     if-eqz v1, :cond_0
 
+    .line 648
     iget-object v1, p0, Landroid/widget/ExpandableListView;->mOnGroupCollapseListener:Landroid/widget/ExpandableListView$OnGroupCollapseListener;
 
     invoke-interface {v1, p1}, Landroid/widget/ExpandableListView$OnGroupCollapseListener;->onGroupCollapse(I)V
 
+    .line 651
     :cond_0
     return v0
 .end method
@@ -696,24 +757,29 @@
     .parameter "id"
 
     .prologue
+    .line 986
     invoke-direct {p0, p2}, Landroid/widget/ExpandableListView;->isHeaderOrFooterPosition(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 988
     new-instance v0, Landroid/widget/AdapterView$AdapterContextMenuInfo;
 
     invoke-direct {v0, p1, p2, p3, p4}, Landroid/widget/AdapterView$AdapterContextMenuInfo;-><init>(Landroid/view/View;IJ)V
 
+    .line 1000
     :goto_0
     return-object v0
 
+    .line 991
     :cond_0
     invoke-direct {p0, p2}, Landroid/widget/ExpandableListView;->getFlatPositionForConnector(I)I
 
     move-result v6
 
+    .line 992
     .local v6, adjustedPosition:I
     iget-object v0, p0, Landroid/widget/ExpandableListView;->mConnector:Landroid/widget/ExpandableListConnector;
 
@@ -721,21 +787,26 @@
 
     move-result-object v7
 
+    .line 993
     .local v7, pm:Landroid/widget/ExpandableListConnector$PositionMetadata;
     iget-object v8, v7, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
 
+    .line 995
     .local v8, pos:Landroid/widget/ExpandableListPosition;
     invoke-direct {p0, v8}, Landroid/widget/ExpandableListView;->getChildOrGroupId(Landroid/widget/ExpandableListPosition;)J
 
     move-result-wide p3
 
+    .line 996
     invoke-virtual {v8}, Landroid/widget/ExpandableListPosition;->getPackedPosition()J
 
     move-result-wide v2
 
+    .line 998
     .local v2, packedPosition:J
     invoke-virtual {v7}, Landroid/widget/ExpandableListConnector$PositionMetadata;->recycle()V
 
+    .line 1000
     new-instance v0, Landroid/widget/ExpandableListView$ExpandableListContextMenuInfo;
 
     move-object v1, p1
@@ -752,8 +823,10 @@
     .parameter "canvas"
 
     .prologue
+    .line 232
     invoke-super/range {p0 .. p1}, Landroid/widget/ListView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
+    .line 235
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/ExpandableListView;->mChildIndicator:Landroid/graphics/drawable/Drawable;
@@ -770,13 +843,16 @@
 
     if-nez v22, :cond_1
 
+    .line 335
     :cond_0
     :goto_0
     return-void
 
+    .line 239
     :cond_1
     const/16 v18, 0x0
 
+    .line 240
     .local v18, saveCount:I
     move-object/from16 v0, p0
 
@@ -796,20 +872,24 @@
 
     const/4 v8, 0x1
 
+    .line 241
     .local v8, clipToPadding:Z
     :goto_1
     if-eqz v8, :cond_2
 
+    .line 242
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v18
 
+    .line 243
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/ExpandableListView;->mScrollX:I
 
     move/from16 v19, v0
 
+    .line 244
     .local v19, scrollX:I
     move-object/from16 v0, p0
 
@@ -817,6 +897,7 @@
 
     move/from16 v20, v0
 
+    .line 245
     .local v20, scrollY:I
     move-object/from16 v0, p0
 
@@ -894,6 +975,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
+    .line 250
     .end local v19           #scrollX:I
     .end local v20           #scrollY:I
     :cond_2
@@ -901,6 +983,7 @@
 
     move-result v9
 
+    .line 252
     .local v9, headerViewsCount:I
     move-object/from16 v0, p0
 
@@ -918,6 +1001,7 @@
 
     add-int/lit8 v14, v22, -0x1
 
+    .line 254
     .local v14, lastChildFlPos:I
     move-object/from16 v0, p0
 
@@ -925,19 +1009,23 @@
 
     move/from16 v16, v0
 
+    .line 262
     .local v16, myB:I
     const/4 v15, -0x4
 
+    .line 264
     .local v15, lastItemType:I
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/widget/ExpandableListView;->mIndicatorRect:Landroid/graphics/Rect;
 
+    .line 269
     .local v12, indicatorRect:Landroid/graphics/Rect;
     invoke-virtual/range {p0 .. p0}, Landroid/widget/ExpandableListView;->getChildCount()I
 
     move-result v6
 
+    .line 270
     .local v6, childCount:I
     const/4 v10, 0x0
 
@@ -954,8 +1042,10 @@
     :goto_2
     if-ge v10, v6, :cond_6
 
+    .line 273
     if-gez v7, :cond_5
 
+    .line 271
     :cond_3
     :goto_3
     add-int/lit8 v10, v10, 0x1
@@ -964,6 +1054,7 @@
 
     goto :goto_2
 
+    .line 240
     .end local v6           #childCount:I
     .end local v7           #childFlPos:I
     .end local v8           #clipToPadding:Z
@@ -978,6 +1069,7 @@
 
     goto/16 :goto_1
 
+    .line 276
     .restart local v6       #childCount:I
     .restart local v7       #childFlPos:I
     .restart local v8       #clipToPadding:Z
@@ -990,9 +1082,11 @@
     :cond_5
     if-le v7, v14, :cond_7
 
+    .line 332
     :cond_6
     if-eqz v8, :cond_0
 
+    .line 333
     move-object/from16 v0, p1
 
     move/from16 v1, v18
@@ -1001,6 +1095,7 @@
 
     goto/16 :goto_0
 
+    .line 281
     :cond_7
     move-object/from16 v0, p0
 
@@ -1008,16 +1103,19 @@
 
     move-result-object v13
 
+    .line 282
     .local v13, item:Landroid/view/View;
     invoke-virtual {v13}, Landroid/view/View;->getTop()I
 
     move-result v21
 
+    .line 283
     .local v21, t:I
     invoke-virtual {v13}, Landroid/view/View;->getBottom()I
 
     move-result v5
 
+    .line 286
     .local v5, b:I
     if-ltz v5, :cond_3
 
@@ -1027,6 +1125,7 @@
 
     if-gt v0, v1, :cond_3
 
+    .line 289
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/ExpandableListView;->mConnector:Landroid/widget/ExpandableListConnector;
@@ -1039,6 +1138,7 @@
 
     move-result-object v17
 
+    .line 293
     .local v17, pos:Landroid/widget/ExpandableListConnector$PositionMetadata;
     move-object/from16 v0, v17
 
@@ -1056,6 +1156,7 @@
 
     if-eq v0, v15, :cond_8
 
+    .line 294
     move-object/from16 v0, v17
 
     iget-object v0, v0, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
@@ -1076,6 +1177,7 @@
 
     if-ne v0, v1, :cond_c
 
+    .line 295
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/ExpandableListView;->mChildIndicatorLeft:I
@@ -1101,6 +1203,7 @@
 
     iput v0, v12, Landroid/graphics/Rect;->left:I
 
+    .line 297
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/ExpandableListView;->mChildIndicatorRight:I
@@ -1126,6 +1229,7 @@
 
     iput v0, v12, Landroid/graphics/Rect;->right:I
 
+    .line 304
     :goto_6
     iget v0, v12, Landroid/graphics/Rect;->left:I
 
@@ -1143,6 +1247,7 @@
 
     iput v0, v12, Landroid/graphics/Rect;->left:I
 
+    .line 305
     iget v0, v12, Landroid/graphics/Rect;->right:I
 
     move/from16 v22, v0
@@ -1159,6 +1264,7 @@
 
     iput v0, v12, Landroid/graphics/Rect;->right:I
 
+    .line 307
     move-object/from16 v0, v17
 
     iget-object v0, v0, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
@@ -1169,6 +1275,7 @@
 
     iget v15, v0, Landroid/widget/ExpandableListPosition;->type:I
 
+    .line 310
     :cond_8
     iget v0, v12, Landroid/graphics/Rect;->left:I
 
@@ -1184,6 +1291,7 @@
 
     if-eq v0, v1, :cond_9
 
+    .line 312
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Landroid/widget/ExpandableListView;->mStackFromBottom:Z
@@ -1192,12 +1300,15 @@
 
     if-eqz v22, :cond_d
 
+    .line 314
     move/from16 v0, v21
 
     iput v0, v12, Landroid/graphics/Rect;->top:I
 
+    .line 315
     iput v5, v12, Landroid/graphics/Rect;->bottom:I
 
+    .line 322
     :goto_7
     move-object/from16 v0, p0
 
@@ -1207,21 +1318,26 @@
 
     move-result-object v11
 
+    .line 323
     .local v11, indicator:Landroid/graphics/drawable/Drawable;
     if-eqz v11, :cond_9
 
+    .line 325
     invoke-virtual {v11, v12}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
+    .line 326
     move-object/from16 v0, p1
 
     invoke-virtual {v11, v0}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
+    .line 329
     .end local v11           #indicator:Landroid/graphics/drawable/Drawable;
     :cond_9
     invoke-virtual/range {v17 .. v17}, Landroid/widget/ExpandableListConnector$PositionMetadata;->recycle()V
 
     goto/16 :goto_3
 
+    .line 295
     :cond_a
     move-object/from16 v0, p0
 
@@ -1231,6 +1347,7 @@
 
     goto :goto_4
 
+    .line 297
     :cond_b
     move-object/from16 v0, p0
 
@@ -1240,6 +1357,7 @@
 
     goto :goto_5
 
+    .line 300
     :cond_c
     move-object/from16 v0, p0
 
@@ -1251,6 +1369,7 @@
 
     iput v0, v12, Landroid/graphics/Rect;->left:I
 
+    .line 301
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/ExpandableListView;->mIndicatorRight:I
@@ -1263,11 +1382,13 @@
 
     goto :goto_6
 
+    .line 317
     :cond_d
     move/from16 v0, v21
 
     iput v0, v12, Landroid/graphics/Rect;->top:I
 
+    .line 318
     iput v5, v12, Landroid/graphics/Rect;->bottom:I
 
     goto :goto_7
@@ -1280,17 +1401,21 @@
     .parameter "childIndex"
 
     .prologue
+    .line 391
     iget v4, p0, Landroid/widget/ExpandableListView;->mFirstPosition:I
 
     add-int v2, p3, v4
 
+    .line 395
     .local v2, flatListPosition:I
     if-ltz v2, :cond_2
 
+    .line 396
     invoke-direct {p0, v2}, Landroid/widget/ExpandableListView;->getFlatPositionForConnector(I)I
 
     move-result v0
 
+    .line 397
     .local v0, adjustedPosition:I
     iget-object v4, p0, Landroid/widget/ExpandableListView;->mConnector:Landroid/widget/ExpandableListConnector;
 
@@ -1298,6 +1423,7 @@
 
     move-result-object v3
 
+    .line 399
     .local v3, pos:Landroid/widget/ExpandableListConnector$PositionMetadata;
     iget-object v4, v3, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
 
@@ -1323,27 +1449,34 @@
 
     if-eq v4, v5, :cond_1
 
+    .line 402
     :cond_0
     iget-object v1, p0, Landroid/widget/ExpandableListView;->mChildDivider:Landroid/graphics/drawable/Drawable;
 
+    .line 403
     .local v1, divider:Landroid/graphics/drawable/Drawable;
     invoke-virtual {v1, p2}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
+    .line 404
     invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
+    .line 405
     invoke-virtual {v3}, Landroid/widget/ExpandableListConnector$PositionMetadata;->recycle()V
 
+    .line 413
     .end local v0           #adjustedPosition:I
     .end local v1           #divider:Landroid/graphics/drawable/Drawable;
     .end local v3           #pos:Landroid/widget/ExpandableListConnector$PositionMetadata;
     :goto_0
     return-void
 
+    .line 408
     .restart local v0       #adjustedPosition:I
     .restart local v3       #pos:Landroid/widget/ExpandableListConnector$PositionMetadata;
     :cond_1
     invoke-virtual {v3}, Landroid/widget/ExpandableListConnector$PositionMetadata;->recycle()V
 
+    .line 412
     .end local v0           #adjustedPosition:I
     .end local v3           #pos:Landroid/widget/ExpandableListConnector$PositionMetadata;
     :cond_2
@@ -1357,6 +1490,7 @@
     .parameter "groupPos"
 
     .prologue
+    .line 603
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Landroid/widget/ExpandableListView;->expandGroup(IZ)Z
@@ -1374,12 +1508,14 @@
     .prologue
     const/4 v6, -0x1
 
+    .line 615
     const/4 v5, 0x2
 
     invoke-static {v5, p1, v6, v6}, Landroid/widget/ExpandableListPosition;->obtain(IIII)Landroid/widget/ExpandableListPosition;
 
     move-result-object v0
 
+    .line 617
     .local v0, elGroupPos:Landroid/widget/ExpandableListPosition;
     iget-object v5, p0, Landroid/widget/ExpandableListView;->mConnector:Landroid/widget/ExpandableListConnector;
 
@@ -1387,31 +1523,38 @@
 
     move-result-object v2
 
+    .line 618
     .local v2, pm:Landroid/widget/ExpandableListConnector$PositionMetadata;
     invoke-virtual {v0}, Landroid/widget/ExpandableListPosition;->recycle()V
 
+    .line 619
     iget-object v5, p0, Landroid/widget/ExpandableListView;->mConnector:Landroid/widget/ExpandableListConnector;
 
     invoke-virtual {v5, v2}, Landroid/widget/ExpandableListConnector;->expandGroup(Landroid/widget/ExpandableListConnector$PositionMetadata;)Z
 
     move-result v3
 
+    .line 621
     .local v3, retValue:Z
     iget-object v5, p0, Landroid/widget/ExpandableListView;->mOnGroupExpandListener:Landroid/widget/ExpandableListView$OnGroupExpandListener;
 
     if-eqz v5, :cond_0
 
+    .line 622
     iget-object v5, p0, Landroid/widget/ExpandableListView;->mOnGroupExpandListener:Landroid/widget/ExpandableListView$OnGroupExpandListener;
 
     invoke-interface {v5, p1}, Landroid/widget/ExpandableListView$OnGroupExpandListener;->onGroupExpand(I)V
 
+    .line 625
     :cond_0
     if-eqz p2, :cond_1
 
+    .line 626
     iget-object v5, v2, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
 
     iget v1, v5, Landroid/widget/ExpandableListPosition;->flatListPos:I
 
+    .line 628
     .local v1, groupFlatPos:I
     invoke-virtual {p0}, Landroid/widget/ExpandableListView;->getHeaderViewsCount()I
 
@@ -1419,6 +1562,7 @@
 
     add-int v4, v1, v5
 
+    .line 629
     .local v4, shiftedGroupPosition:I
     iget-object v5, p0, Landroid/widget/ExpandableListView;->mAdapter:Landroid/widget/ExpandableListAdapter;
 
@@ -1430,11 +1574,13 @@
 
     invoke-virtual {p0, v5, v4}, Landroid/widget/ExpandableListView;->smoothScrollToPosition(II)V
 
+    .line 632
     .end local v1           #groupFlatPos:I
     .end local v4           #shiftedGroupPosition:I
     :cond_1
     invoke-virtual {v2}, Landroid/widget/ExpandableListConnector$PositionMetadata;->recycle()V
 
+    .line 634
     return v3
 .end method
 
@@ -1442,6 +1588,7 @@
     .locals 1
 
     .prologue
+    .line 80
     invoke-virtual {p0}, Landroid/widget/ExpandableListView;->getAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v0
@@ -1453,6 +1600,7 @@
     .locals 1
 
     .prologue
+    .line 438
     invoke-super {p0}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v0
@@ -1464,6 +1612,7 @@
     .locals 1
 
     .prologue
+    .line 478
     iget-object v0, p0, Landroid/widget/ExpandableListView;->mAdapter:Landroid/widget/ExpandableListAdapter;
 
     return-object v0
@@ -1474,22 +1623,27 @@
     .parameter "flatListPosition"
 
     .prologue
+    .line 757
     invoke-direct {p0, p1}, Landroid/widget/ExpandableListView;->isHeaderOrFooterPosition(I)Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
+    .line 758
     const-wide v1, 0xffffffffL
 
+    .line 765
     :goto_0
     return-wide v1
 
+    .line 761
     :cond_0
     invoke-direct {p0, p1}, Landroid/widget/ExpandableListView;->getFlatPositionForConnector(I)I
 
     move-result v0
 
+    .line 762
     .local v0, adjustedPosition:I
     iget-object v4, p0, Landroid/widget/ExpandableListView;->mConnector:Landroid/widget/ExpandableListConnector;
 
@@ -1497,6 +1651,7 @@
 
     move-result-object v3
 
+    .line 763
     .local v3, pm:Landroid/widget/ExpandableListConnector$PositionMetadata;
     iget-object v4, v3, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
 
@@ -1504,6 +1659,7 @@
 
     move-result-wide v1
 
+    .line 764
     .local v1, packedPos:J
     invoke-virtual {v3}, Landroid/widget/ExpandableListConnector$PositionMetadata;->recycle()V
 
@@ -1515,10 +1671,12 @@
     .parameter "packedPosition"
 
     .prologue
+    .line 780
     invoke-static {p1, p2}, Landroid/widget/ExpandableListPosition;->obtainPosition(J)Landroid/widget/ExpandableListPosition;
 
     move-result-object v0
 
+    .line 782
     .local v0, elPackedPos:Landroid/widget/ExpandableListPosition;
     iget-object v3, p0, Landroid/widget/ExpandableListView;->mConnector:Landroid/widget/ExpandableListConnector;
 
@@ -1526,16 +1684,20 @@
 
     move-result-object v2
 
+    .line 783
     .local v2, pm:Landroid/widget/ExpandableListConnector$PositionMetadata;
     invoke-virtual {v0}, Landroid/widget/ExpandableListPosition;->recycle()V
 
+    .line 784
     iget-object v3, v2, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
 
     iget v1, v3, Landroid/widget/ExpandableListPosition;->flatListPos:I
 
+    .line 785
     .local v1, flatListPosition:I
     invoke-virtual {v2}, Landroid/widget/ExpandableListConnector$PositionMetadata;->recycle()V
 
+    .line 786
     invoke-direct {p0, v1}, Landroid/widget/ExpandableListView;->getAbsoluteFlatPosition(I)I
 
     move-result v3
@@ -1547,10 +1709,12 @@
     .locals 5
 
     .prologue
+    .line 812
     invoke-virtual {p0}, Landroid/widget/ExpandableListView;->getSelectedPosition()J
 
     move-result-wide v1
 
+    .line 813
     .local v1, packedPos:J
     const-wide v3, 0xffffffffL
 
@@ -1560,14 +1724,17 @@
 
     const-wide/16 v3, -0x1
 
+    .line 822
     :goto_0
     return-wide v3
 
+    .line 815
     :cond_0
     invoke-static {v1, v2}, Landroid/widget/ExpandableListView;->getPackedPositionGroup(J)I
 
     move-result v0
 
+    .line 817
     .local v0, groupPos:I
     invoke-static {v1, v2}, Landroid/widget/ExpandableListView;->getPackedPositionType(J)I
 
@@ -1575,6 +1742,7 @@
 
     if-nez v3, :cond_1
 
+    .line 819
     iget-object v3, p0, Landroid/widget/ExpandableListView;->mAdapter:Landroid/widget/ExpandableListAdapter;
 
     invoke-interface {v3, v0}, Landroid/widget/ExpandableListAdapter;->getGroupId(I)J
@@ -1583,6 +1751,7 @@
 
     goto :goto_0
 
+    .line 822
     :cond_1
     iget-object v3, p0, Landroid/widget/ExpandableListView;->mAdapter:Landroid/widget/ExpandableListAdapter;
 
@@ -1601,10 +1770,12 @@
     .locals 3
 
     .prologue
+    .line 798
     invoke-virtual {p0}, Landroid/widget/ExpandableListView;->getSelectedItemPosition()I
 
     move-result v0
 
+    .line 801
     .local v0, selectedPos:I
     invoke-virtual {p0, v0}, Landroid/widget/ExpandableListView;->getExpandableListPosition(I)J
 
@@ -1620,12 +1791,14 @@
     .parameter "id"
 
     .prologue
+    .line 534
     iget-object v0, p0, Landroid/widget/ExpandableListView;->mConnector:Landroid/widget/ExpandableListConnector;
 
     invoke-virtual {v0, p2}, Landroid/widget/ExpandableListConnector;->getUnflattenedPos(I)Landroid/widget/ExpandableListConnector$PositionMetadata;
 
     move-result-object v9
 
+    .line 536
     .local v9, posMetadata:Landroid/widget/ExpandableListConnector$PositionMetadata;
     iget-object v0, v9, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
 
@@ -1633,6 +1806,7 @@
 
     move-result-wide p3
 
+    .line 539
     iget-object v0, v9, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
 
     iget v0, v0, Landroid/widget/ExpandableListPosition;->type:I
@@ -1641,10 +1815,12 @@
 
     if-ne v0, v1, :cond_4
 
+    .line 543
     iget-object v0, p0, Landroid/widget/ExpandableListView;->mOnGroupClickListener:Landroid/widget/ExpandableListView$OnGroupClickListener;
 
     if-eqz v0, :cond_0
 
+    .line 544
     iget-object v0, p0, Landroid/widget/ExpandableListView;->mOnGroupClickListener:Landroid/widget/ExpandableListView$OnGroupClickListener;
 
     iget-object v1, v9, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
@@ -1663,13 +1839,17 @@
 
     if-eqz v0, :cond_0
 
+    .line 546
     invoke-virtual {v9}, Landroid/widget/ExpandableListConnector$PositionMetadata;->recycle()V
 
+    .line 547
     const/4 v10, 0x1
 
+    .line 592
     :goto_0
     return v10
 
+    .line 551
     :cond_0
     invoke-virtual {v9}, Landroid/widget/ExpandableListConnector$PositionMetadata;->isExpanded()Z
 
@@ -1677,18 +1857,22 @@
 
     if-eqz v0, :cond_2
 
+    .line 553
     iget-object v0, p0, Landroid/widget/ExpandableListView;->mConnector:Landroid/widget/ExpandableListConnector;
 
     invoke-virtual {v0, v9}, Landroid/widget/ExpandableListConnector;->collapseGroup(Landroid/widget/ExpandableListConnector$PositionMetadata;)Z
 
+    .line 555
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/widget/ExpandableListView;->playSoundEffect(I)V
 
+    .line 557
     iget-object v0, p0, Landroid/widget/ExpandableListView;->mOnGroupCollapseListener:Landroid/widget/ExpandableListView$OnGroupCollapseListener;
 
     if-eqz v0, :cond_1
 
+    .line 558
     iget-object v0, p0, Landroid/widget/ExpandableListView;->mOnGroupCollapseListener:Landroid/widget/ExpandableListView$OnGroupCollapseListener;
 
     iget-object v1, v9, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
@@ -1697,30 +1881,36 @@
 
     invoke-interface {v0, v1}, Landroid/widget/ExpandableListView$OnGroupCollapseListener;->onGroupCollapse(I)V
 
+    .line 578
     :cond_1
     :goto_1
     const/4 v10, 0x1
 
+    .line 590
     .local v10, returnValue:Z
     :goto_2
     invoke-virtual {v9}, Landroid/widget/ExpandableListConnector$PositionMetadata;->recycle()V
 
     goto :goto_0
 
+    .line 562
     .end local v10           #returnValue:Z
     :cond_2
     iget-object v0, p0, Landroid/widget/ExpandableListView;->mConnector:Landroid/widget/ExpandableListConnector;
 
     invoke-virtual {v0, v9}, Landroid/widget/ExpandableListConnector;->expandGroup(Landroid/widget/ExpandableListConnector$PositionMetadata;)Z
 
+    .line 564
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/widget/ExpandableListView;->playSoundEffect(I)V
 
+    .line 566
     iget-object v0, p0, Landroid/widget/ExpandableListView;->mOnGroupExpandListener:Landroid/widget/ExpandableListView$OnGroupExpandListener;
 
     if-eqz v0, :cond_3
 
+    .line 567
     iget-object v0, p0, Landroid/widget/ExpandableListView;->mOnGroupExpandListener:Landroid/widget/ExpandableListView$OnGroupExpandListener;
 
     iget-object v1, v9, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
@@ -1729,16 +1919,19 @@
 
     invoke-interface {v0, v1}, Landroid/widget/ExpandableListView$OnGroupExpandListener;->onGroupExpand(I)V
 
+    .line 570
     :cond_3
     iget-object v0, v9, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
 
     iget v8, v0, Landroid/widget/ExpandableListPosition;->groupPos:I
 
+    .line 571
     .local v8, groupPos:I
     iget-object v0, v9, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
 
     iget v7, v0, Landroid/widget/ExpandableListPosition;->flatListPos:I
 
+    .line 573
     .local v7, groupFlatPos:I
     invoke-virtual {p0}, Landroid/widget/ExpandableListView;->getHeaderViewsCount()I
 
@@ -1746,6 +1939,7 @@
 
     add-int v11, v7, v0
 
+    .line 574
     .local v11, shiftedGroupPosition:I
     iget-object v0, p0, Landroid/widget/ExpandableListView;->mAdapter:Landroid/widget/ExpandableListAdapter;
 
@@ -1759,6 +1953,7 @@
 
     goto :goto_1
 
+    .line 581
     .end local v7           #groupFlatPos:I
     .end local v8           #groupPos:I
     .end local v11           #shiftedGroupPosition:I
@@ -1767,10 +1962,12 @@
 
     if-eqz v0, :cond_5
 
+    .line 582
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/widget/ExpandableListView;->playSoundEffect(I)V
 
+    .line 583
     iget-object v0, p0, Landroid/widget/ExpandableListView;->mOnChildClickListener:Landroid/widget/ExpandableListView$OnChildClickListener;
 
     iget-object v1, v9, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
@@ -1793,6 +1990,7 @@
 
     goto :goto_0
 
+    .line 587
     :cond_5
     const/4 v10, 0x0
 
@@ -1805,6 +2003,7 @@
     .parameter "groupPosition"
 
     .prologue
+    .line 888
     iget-object v0, p0, Landroid/widget/ExpandableListView;->mConnector:Landroid/widget/ExpandableListConnector;
 
     invoke-virtual {v0, p1}, Landroid/widget/ExpandableListConnector;->isGroupExpanded(I)Z
@@ -1819,8 +2018,10 @@
     .parameter "event"
 
     .prologue
+    .line 1177
     invoke-super {p0, p1}, Landroid/widget/ListView;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
+    .line 1178
     const-class v0, Landroid/widget/ExpandableListView;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -1829,6 +2030,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
 
+    .line 1179
     return-void
 .end method
 
@@ -1837,8 +2039,10 @@
     .parameter "info"
 
     .prologue
+    .line 1183
     invoke-super {p0, p1}, Landroid/widget/ListView;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
+    .line 1184
     const-class v0, Landroid/widget/ExpandableListView;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -1847,6 +2051,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
+    .line 1185
     return-void
 .end method
 
@@ -1855,12 +2060,15 @@
     .parameter "state"
 
     .prologue
+    .line 1162
     instance-of v1, p1, Landroid/widget/ExpandableListView$SavedState;
 
     if-nez v1, :cond_1
 
+    .line 1163
     invoke-super {p0, p1}, Landroid/widget/ListView;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
+    .line 1173
     :cond_0
     :goto_0
     return-void
@@ -1868,8 +2076,10 @@
     :cond_1
     move-object v0, p1
 
+    .line 1167
     check-cast v0, Landroid/widget/ExpandableListView$SavedState;
 
+    .line 1168
     .local v0, ss:Landroid/widget/ExpandableListView$SavedState;
     invoke-virtual {v0}, Landroid/widget/ExpandableListView$SavedState;->getSuperState()Landroid/os/Parcelable;
 
@@ -1877,6 +2087,7 @@
 
     invoke-super {p0, v1}, Landroid/widget/ListView;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
+    .line 1170
     iget-object v1, p0, Landroid/widget/ExpandableListView;->mConnector:Landroid/widget/ExpandableListConnector;
 
     if-eqz v1, :cond_0
@@ -1885,6 +2096,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 1171
     iget-object v1, p0, Landroid/widget/ExpandableListView;->mConnector:Landroid/widget/ExpandableListConnector;
 
     iget-object v2, v0, Landroid/widget/ExpandableListView$SavedState;->expandedGroupMetadataList:Ljava/util/ArrayList;
@@ -1898,10 +2110,12 @@
     .locals 3
 
     .prologue
+    .line 1155
     invoke-super {p0}, Landroid/widget/ListView;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v0
 
+    .line 1156
     .local v0, superState:Landroid/os/Parcelable;
     new-instance v2, Landroid/widget/ExpandableListView$SavedState;
 
@@ -1933,24 +2147,29 @@
     .parameter "id"
 
     .prologue
+    .line 515
     invoke-direct {p0, p2}, Landroid/widget/ExpandableListView;->isHeaderOrFooterPosition(I)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
+    .line 517
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/ListView;->performItemClick(Landroid/view/View;IJ)Z
 
     move-result v1
 
+    .line 522
     :goto_0
     return v1
 
+    .line 521
     :cond_0
     invoke-direct {p0, p2}, Landroid/widget/ExpandableListView;->getFlatPositionForConnector(I)I
 
     move-result v0
 
+    .line 522
     .local v0, adjustedPosition:I
     invoke-virtual {p0, p1, v0, p3, p4}, Landroid/widget/ExpandableListView;->handleItemClick(Landroid/view/View;IJ)Z
 
@@ -1964,6 +2183,7 @@
     .parameter "x0"
 
     .prologue
+    .line 80
     check-cast p1, Landroid/widget/ListAdapter;
 
     .end local p1
@@ -1977,23 +2197,29 @@
     .parameter "adapter"
 
     .prologue
+    .line 460
     iput-object p1, p0, Landroid/widget/ExpandableListView;->mAdapter:Landroid/widget/ExpandableListAdapter;
 
+    .line 462
     if-eqz p1, :cond_0
 
+    .line 464
     new-instance v0, Landroid/widget/ExpandableListConnector;
 
     invoke-direct {v0, p1}, Landroid/widget/ExpandableListConnector;-><init>(Landroid/widget/ExpandableListAdapter;)V
 
     iput-object v0, p0, Landroid/widget/ExpandableListView;->mConnector:Landroid/widget/ExpandableListConnector;
 
+    .line 470
     :goto_0
     iget-object v0, p0, Landroid/widget/ExpandableListView;->mConnector:Landroid/widget/ExpandableListConnector;
 
     invoke-super {p0, v0}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
+    .line 471
     return-void
 
+    .line 466
     :cond_0
     const/4 v0, 0x0
 
@@ -2007,6 +2233,7 @@
     .parameter "adapter"
 
     .prologue
+    .line 423
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "For ExpandableListView, use setAdapter(ExpandableListAdapter) instead of setAdapter(ListAdapter)"
@@ -2021,8 +2248,10 @@
     .parameter "childDivider"
 
     .prologue
+    .line 386
     iput-object p1, p0, Landroid/widget/ExpandableListView;->mChildDivider:Landroid/graphics/drawable/Drawable;
 
+    .line 387
     return-void
 .end method
 
@@ -2031,8 +2260,10 @@
     .parameter "childIndicator"
 
     .prologue
+    .line 1027
     iput-object p1, p0, Landroid/widget/ExpandableListView;->mChildIndicator:Landroid/graphics/drawable/Drawable;
 
+    .line 1028
     return-void
 .end method
 
@@ -2042,10 +2273,13 @@
     .parameter "right"
 
     .prologue
+    .line 1042
     iput p1, p0, Landroid/widget/ExpandableListView;->mChildIndicatorLeft:I
 
+    .line 1043
     iput p2, p0, Landroid/widget/ExpandableListView;->mChildIndicatorRight:I
 
+    .line 1044
     return-void
 .end method
 
@@ -2054,8 +2288,10 @@
     .parameter "groupIndicator"
 
     .prologue
+    .line 1055
     iput-object p1, p0, Landroid/widget/ExpandableListView;->mGroupIndicator:Landroid/graphics/drawable/Drawable;
 
+    .line 1056
     iget v0, p0, Landroid/widget/ExpandableListView;->mIndicatorRight:I
 
     if-nez v0, :cond_0
@@ -2064,6 +2300,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 1057
     iget v0, p0, Landroid/widget/ExpandableListView;->mIndicatorLeft:I
 
     iget-object v1, p0, Landroid/widget/ExpandableListView;->mGroupIndicator:Landroid/graphics/drawable/Drawable;
@@ -2076,6 +2313,7 @@
 
     iput v0, p0, Landroid/widget/ExpandableListView;->mIndicatorRight:I
 
+    .line 1059
     :cond_0
     return-void
 .end method
@@ -2086,10 +2324,13 @@
     .parameter "right"
 
     .prologue
+    .line 1073
     iput p1, p0, Landroid/widget/ExpandableListView;->mIndicatorLeft:I
 
+    .line 1074
     iput p2, p0, Landroid/widget/ExpandableListView;->mIndicatorRight:I
 
+    .line 1075
     return-void
 .end method
 
@@ -2098,8 +2339,10 @@
     .parameter "onChildClickListener"
 
     .prologue
+    .line 739
     iput-object p1, p0, Landroid/widget/ExpandableListView;->mOnChildClickListener:Landroid/widget/ExpandableListView$OnChildClickListener;
 
+    .line 740
     return-void
 .end method
 
@@ -2108,8 +2351,10 @@
     .parameter "onGroupClickListener"
 
     .prologue
+    .line 712
     iput-object p1, p0, Landroid/widget/ExpandableListView;->mOnGroupClickListener:Landroid/widget/ExpandableListView$OnGroupClickListener;
 
+    .line 713
     return-void
 .end method
 
@@ -2118,8 +2363,10 @@
     .parameter "onGroupCollapseListener"
 
     .prologue
+    .line 669
     iput-object p1, p0, Landroid/widget/ExpandableListView;->mOnGroupCollapseListener:Landroid/widget/ExpandableListView$OnGroupCollapseListener;
 
+    .line 670
     return-void
 .end method
 
@@ -2128,8 +2375,10 @@
     .parameter "onGroupExpandListener"
 
     .prologue
+    .line 687
     iput-object p1, p0, Landroid/widget/ExpandableListView;->mOnGroupExpandListener:Landroid/widget/ExpandableListView$OnGroupExpandListener;
 
+    .line 688
     return-void
 .end method
 
@@ -2138,8 +2387,10 @@
     .parameter "l"
 
     .prologue
+    .line 451
     invoke-super {p0, p1}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
+    .line 452
     return-void
 .end method
 
@@ -2150,10 +2401,12 @@
     .parameter "shouldExpandGroup"
 
     .prologue
+    .line 852
     invoke-static {p1, p2}, Landroid/widget/ExpandableListPosition;->obtainChildPosition(II)Landroid/widget/ExpandableListPosition;
 
     move-result-object v1
 
+    .line 854
     .local v1, elChildPos:Landroid/widget/ExpandableListPosition;
     iget-object v3, p0, Landroid/widget/ExpandableListView;->mConnector:Landroid/widget/ExpandableListConnector;
 
@@ -2161,27 +2414,34 @@
 
     move-result-object v2
 
+    .line 856
     .local v2, flatChildPos:Landroid/widget/ExpandableListConnector$PositionMetadata;
     if-nez v2, :cond_1
 
+    .line 860
     if-nez p3, :cond_0
 
     const/4 v3, 0x0
 
+    .line 878
     :goto_0
     return v3
 
+    .line 862
     :cond_0
     invoke-virtual {p0, p1}, Landroid/widget/ExpandableListView;->expandGroup(I)Z
 
+    .line 864
     iget-object v3, p0, Landroid/widget/ExpandableListView;->mConnector:Landroid/widget/ExpandableListConnector;
 
     invoke-virtual {v3, v1}, Landroid/widget/ExpandableListConnector;->getFlattenedPos(Landroid/widget/ExpandableListPosition;)Landroid/widget/ExpandableListConnector$PositionMetadata;
 
     move-result-object v2
 
+    .line 867
     if-nez v2, :cond_1
 
+    .line 868
     new-instance v3, Ljava/lang/IllegalStateException;
 
     const-string v4, "Could not find child"
@@ -2190,6 +2450,7 @@
 
     throw v3
 
+    .line 872
     :cond_1
     iget-object v3, v2, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
 
@@ -2199,13 +2460,17 @@
 
     move-result v0
 
+    .line 873
     .local v0, absoluteFlatPosition:I
     invoke-super {p0, v0}, Landroid/widget/ListView;->setSelection(I)V
 
+    .line 875
     invoke-virtual {v1}, Landroid/widget/ExpandableListPosition;->recycle()V
 
+    .line 876
     invoke-virtual {v2}, Landroid/widget/ExpandableListConnector$PositionMetadata;->recycle()V
 
+    .line 878
     const/4 v3, 0x1
 
     goto :goto_0
@@ -2216,10 +2481,12 @@
     .parameter "groupPosition"
 
     .prologue
+    .line 831
     invoke-static {p1}, Landroid/widget/ExpandableListPosition;->obtainGroupPosition(I)Landroid/widget/ExpandableListPosition;
 
     move-result-object v1
 
+    .line 833
     .local v1, elGroupPos:Landroid/widget/ExpandableListPosition;
     iget-object v3, p0, Landroid/widget/ExpandableListView;->mConnector:Landroid/widget/ExpandableListConnector;
 
@@ -2227,9 +2494,11 @@
 
     move-result-object v2
 
+    .line 834
     .local v2, pm:Landroid/widget/ExpandableListConnector$PositionMetadata;
     invoke-virtual {v1}, Landroid/widget/ExpandableListPosition;->recycle()V
 
+    .line 835
     iget-object v3, v2, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
 
     iget v3, v3, Landroid/widget/ExpandableListPosition;->flatListPos:I
@@ -2238,10 +2507,13 @@
 
     move-result v0
 
+    .line 836
     .local v0, absoluteFlatPosition:I
     invoke-super {p0, v0}, Landroid/widget/ListView;->setSelection(I)V
 
+    .line 837
     invoke-virtual {v2}, Landroid/widget/ExpandableListConnector$PositionMetadata;->recycle()V
 
+    .line 838
     return-void
 .end method

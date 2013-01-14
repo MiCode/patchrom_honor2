@@ -43,12 +43,14 @@
     .locals 1
 
     .prologue
+    .line 49
     new-instance v0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
 
     invoke-direct {v0}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;-><init>()V
 
     sput-object v0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->sInstance:Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
 
+    .line 50
     const/4 v0, 0x1
 
     sput v0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->sSequenceNumber:I
@@ -60,6 +62,7 @@
     .locals 0
 
     .prologue
+    .line 37
     invoke-direct {p0}, Lcom/android/internal/view/IInputContextCallback$Stub;-><init>()V
 
     return-void
@@ -69,6 +72,7 @@
     .locals 1
 
     .prologue
+    .line 37
     invoke-static {}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->getInstance()Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
 
     move-result-object v0
@@ -81,6 +85,7 @@
     .parameter "x0"
 
     .prologue
+    .line 37
     invoke-direct {p0}, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->dispose()V
 
     return-void
@@ -90,34 +95,43 @@
     .locals 2
 
     .prologue
+    .line 82
     const-class v1, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
 
     monitor-enter v1
 
+    .line 84
     :try_start_0
     sget-object v0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->sInstance:Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
 
     if-nez v0, :cond_0
 
+    .line 86
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mTextAfterCursor:Ljava/lang/CharSequence;
 
+    .line 87
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mTextBeforeCursor:Ljava/lang/CharSequence;
 
+    .line 88
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mExtractedText:Landroid/view/inputmethod/ExtractedText;
 
+    .line 89
     sput-object p0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->sInstance:Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
 
+    .line 91
     :cond_0
     monitor-exit v1
 
+    .line 92
     return-void
 
+    .line 91
     :catchall_0
     move-exception v0
 
@@ -132,26 +146,32 @@
     .locals 4
 
     .prologue
+    .line 59
     const-class v2, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
 
     monitor-enter v2
 
+    .line 62
     :try_start_0
     sget-object v1, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->sInstance:Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
 
     if-eqz v1, :cond_0
 
+    .line 63
     sget-object v0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->sInstance:Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
 
+    .line 64
     .local v0, callback:Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
     const/4 v1, 0x0
 
     sput-object v1, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->sInstance:Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
 
+    .line 67
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mHaveValue:Z
 
+    .line 73
     :goto_0
     sget v1, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->sSequenceNumber:I
 
@@ -161,10 +181,12 @@
 
     iput v1, v0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mSeq:I
 
+    .line 74
     monitor-exit v2
 
     return-object v0
 
+    .line 69
     .end local v0           #callback:Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
     :cond_0
     new-instance v0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
@@ -174,6 +196,7 @@
     .restart local v0       #callback:Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;
     goto :goto_0
 
+    .line 75
     :catchall_0
     move-exception v1
 
@@ -192,26 +215,34 @@
     .parameter "seq"
 
     .prologue
+    .line 134
     monitor-enter p0
 
+    .line 135
     :try_start_0
     iget v0, p0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mSeq:I
 
     if-ne p2, v0, :cond_0
 
+    .line 136
     iput p1, p0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mCursorCapsMode:I
 
+    .line 137
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mHaveValue:Z
 
+    .line 138
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
+    .line 143
     :goto_0
     monitor-exit p0
 
+    .line 144
     return-void
 
+    .line 140
     :cond_0
     const-string v0, "InputConnectionWrapper.ICC"
 
@@ -255,6 +286,7 @@
 
     goto :goto_0
 
+    .line 143
     :catchall_0
     move-exception v0
 
@@ -271,26 +303,34 @@
     .parameter "seq"
 
     .prologue
+    .line 147
     monitor-enter p0
 
+    .line 148
     :try_start_0
     iget v0, p0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mSeq:I
 
     if-ne p2, v0, :cond_0
 
+    .line 149
     iput-object p1, p0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mExtractedText:Landroid/view/inputmethod/ExtractedText;
 
+    .line 150
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mHaveValue:Z
 
+    .line 151
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
+    .line 156
     :goto_0
     monitor-exit p0
 
+    .line 157
     return-void
 
+    .line 153
     :cond_0
     const-string v0, "InputConnectionWrapper.ICC"
 
@@ -334,6 +374,7 @@
 
     goto :goto_0
 
+    .line 156
     :catchall_0
     move-exception v0
 
@@ -350,26 +391,34 @@
     .parameter "seq"
 
     .prologue
+    .line 121
     monitor-enter p0
 
+    .line 122
     :try_start_0
     iget v0, p0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mSeq:I
 
     if-ne p2, v0, :cond_0
 
+    .line 123
     iput-object p1, p0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mSelectedText:Ljava/lang/CharSequence;
 
+    .line 124
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mHaveValue:Z
 
+    .line 125
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
+    .line 130
     :goto_0
     monitor-exit p0
 
+    .line 131
     return-void
 
+    .line 127
     :cond_0
     const-string v0, "InputConnectionWrapper.ICC"
 
@@ -413,6 +462,7 @@
 
     goto :goto_0
 
+    .line 130
     :catchall_0
     move-exception v0
 
@@ -429,26 +479,34 @@
     .parameter "seq"
 
     .prologue
+    .line 108
     monitor-enter p0
 
+    .line 109
     :try_start_0
     iget v0, p0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mSeq:I
 
     if-ne p2, v0, :cond_0
 
+    .line 110
     iput-object p1, p0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mTextAfterCursor:Ljava/lang/CharSequence;
 
+    .line 111
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mHaveValue:Z
 
+    .line 112
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
+    .line 117
     :goto_0
     monitor-exit p0
 
+    .line 118
     return-void
 
+    .line 114
     :cond_0
     const-string v0, "InputConnectionWrapper.ICC"
 
@@ -492,6 +550,7 @@
 
     goto :goto_0
 
+    .line 117
     :catchall_0
     move-exception v0
 
@@ -508,26 +567,34 @@
     .parameter "seq"
 
     .prologue
+    .line 95
     monitor-enter p0
 
+    .line 96
     :try_start_0
     iget v0, p0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mSeq:I
 
     if-ne p2, v0, :cond_0
 
+    .line 97
     iput-object p1, p0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mTextBeforeCursor:Ljava/lang/CharSequence;
 
+    .line 98
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mHaveValue:Z
 
+    .line 99
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
+    .line 104
     :goto_0
     monitor-exit p0
 
+    .line 105
     return-void
 
+    .line 101
     :cond_0
     const-string v0, "InputConnectionWrapper.ICC"
 
@@ -571,6 +638,7 @@
 
     goto :goto_0
 
+    .line 104
     :catchall_0
     move-exception v0
 
@@ -585,27 +653,32 @@
     .locals 8
 
     .prologue
+    .line 165
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v4
 
+    .line 166
     .local v4, startTime:J
     const-wide/16 v6, 0x7d0
 
     add-long v0, v4, v6
 
+    .line 168
     .local v0, endTime:J
     :goto_0
     iget-boolean v6, p0, Lcom/android/internal/view/InputConnectionWrapper$InputContextCallback;->mHaveValue:Z
 
     if-nez v6, :cond_0
 
+    .line 169
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v6
 
     sub-long v2, v0, v6
 
+    .line 170
     .local v2, remainingTime:J
     const-wide/16 v6, 0x0
 
@@ -613,16 +686,19 @@
 
     if-gtz v6, :cond_1
 
+    .line 171
     const-string v6, "InputConnectionWrapper.ICC"
 
     const-string v7, "Timed out waiting on IInputContextCallback"
 
     invoke-static {v6, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 179
     .end local v2           #remainingTime:J
     :cond_0
     return-void
 
+    .line 175
     .restart local v2       #remainingTime:J
     :cond_1
     :try_start_0
@@ -632,6 +708,7 @@
 
     goto :goto_0
 
+    .line 176
     :catch_0
     move-exception v6
 

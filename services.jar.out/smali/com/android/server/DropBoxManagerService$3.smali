@@ -24,6 +24,7 @@
     .parameter
 
     .prologue
+    .line 156
     iput-object p1, p0, Lcom/android/server/DropBoxManagerService$3;->this$0:Lcom/android/server/DropBoxManagerService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -38,12 +39,14 @@
     .parameter "msg"
 
     .prologue
+    .line 159
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
+    .line 160
     iget-object v0, p0, Lcom/android/server/DropBoxManagerService$3;->this$0:Lcom/android/server/DropBoxManagerService;
 
     #getter for: Lcom/android/server/DropBoxManagerService;->mContext:Landroid/content/Context;
@@ -59,6 +62,7 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;Ljava/lang/String;)V
 
+    .line 162
     :cond_0
     return-void
 .end method

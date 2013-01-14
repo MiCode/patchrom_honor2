@@ -59,6 +59,7 @@
     .locals 2
 
     .prologue
+    .line 593
     new-instance v0, Landroid/widget/ProgressBar$RefreshData$1;
 
     invoke-direct {v0}, Landroid/widget/ProgressBar$RefreshData$1;-><init>()V
@@ -82,6 +83,7 @@
     .locals 0
 
     .prologue
+    .line 584
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -92,6 +94,7 @@
     .parameter "x0"
 
     .prologue
+    .line 584
     invoke-direct {p0}, Landroid/widget/ProgressBar$RefreshData;-><init>()V
 
     return-void
@@ -104,6 +107,7 @@
     .parameter "fromUser"
 
     .prologue
+    .line 610
     sget-object v1, Landroid/widget/ProgressBar$RefreshData;->sPool:Landroid/util/Pool;
 
     invoke-interface {v1}, Landroid/util/Pool;->acquire()Landroid/util/Poolable;
@@ -112,13 +116,17 @@
 
     check-cast v0, Landroid/widget/ProgressBar$RefreshData;
 
+    .line 611
     .local v0, rd:Landroid/widget/ProgressBar$RefreshData;
     iput p0, v0, Landroid/widget/ProgressBar$RefreshData;->id:I
 
+    .line 612
     iput p1, v0, Landroid/widget/ProgressBar$RefreshData;->progress:I
 
+    .line 613
     iput-boolean p2, v0, Landroid/widget/ProgressBar$RefreshData;->fromUser:Z
 
+    .line 614
     return-object v0
 .end method
 
@@ -128,6 +136,7 @@
     .locals 1
 
     .prologue
+    .line 628
     iget-object v0, p0, Landroid/widget/ProgressBar$RefreshData;->mNext:Landroid/widget/ProgressBar$RefreshData;
 
     return-object v0
@@ -137,6 +146,7 @@
     .locals 1
 
     .prologue
+    .line 584
     invoke-virtual {p0}, Landroid/widget/ProgressBar$RefreshData;->getNextPoolable()Landroid/widget/ProgressBar$RefreshData;
 
     move-result-object v0
@@ -148,6 +158,7 @@
     .locals 1
 
     .prologue
+    .line 633
     iget-boolean v0, p0, Landroid/widget/ProgressBar$RefreshData;->mIsPooled:Z
 
     return v0
@@ -157,10 +168,12 @@
     .locals 1
 
     .prologue
+    .line 618
     sget-object v0, Landroid/widget/ProgressBar$RefreshData;->sPool:Landroid/util/Pool;
 
     invoke-interface {v0, p0}, Landroid/util/Pool;->release(Landroid/util/Poolable;)V
 
+    .line 619
     return-void
 .end method
 
@@ -169,8 +182,10 @@
     .parameter "element"
 
     .prologue
+    .line 623
     iput-object p1, p0, Landroid/widget/ProgressBar$RefreshData;->mNext:Landroid/widget/ProgressBar$RefreshData;
 
+    .line 624
     return-void
 .end method
 
@@ -179,6 +194,7 @@
     .parameter "x0"
 
     .prologue
+    .line 584
     check-cast p1, Landroid/widget/ProgressBar$RefreshData;
 
     .end local p1
@@ -192,7 +208,9 @@
     .parameter "isPooled"
 
     .prologue
+    .line 638
     iput-boolean p1, p0, Landroid/widget/ProgressBar$RefreshData;->mIsPooled:Z
 
+    .line 639
     return-void
 .end method

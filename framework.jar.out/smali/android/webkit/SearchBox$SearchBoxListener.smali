@@ -19,6 +19,7 @@
     .locals 0
 
     .prologue
+    .line 98
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,6 +32,7 @@
     .parameter "called"
 
     .prologue
+    .line 103
     return-void
 .end method
 
@@ -39,6 +41,7 @@
     .parameter "called"
 
     .prologue
+    .line 100
     return-void
 .end method
 
@@ -47,6 +50,7 @@
     .parameter "called"
 
     .prologue
+    .line 102
     return-void
 .end method
 
@@ -55,6 +59,7 @@
     .parameter "called"
 
     .prologue
+    .line 101
     return-void
 .end method
 
@@ -74,6 +79,7 @@
     .end annotation
 
     .prologue
+    .line 99
     .local p2, suggestions:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     return-void
 .end method

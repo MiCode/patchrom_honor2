@@ -43,22 +43,29 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 38
     iput-boolean v0, p0, Landroid/net/DummyDataStateTracker;->mTeardownRequested:Z
 
+    .line 43
     iput-boolean v0, p0, Landroid/net/DummyDataStateTracker;->mPrivateDnsRouteSet:Z
 
+    .line 44
     iput-boolean v0, p0, Landroid/net/DummyDataStateTracker;->mDefaultRouteSet:Z
 
+    .line 48
     iput-boolean v0, p0, Landroid/net/DummyDataStateTracker;->mIsDefaultOrHipri:Z
 
+    .line 56
     new-instance v0, Landroid/net/NetworkInfo;
 
     invoke-direct {v0, p1}, Landroid/net/NetworkInfo;-><init>(I)V
 
     iput-object v0, p0, Landroid/net/DummyDataStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
 
+    .line 57
     return-void
 .end method
 
@@ -67,10 +74,12 @@
     .parameter "s"
 
     .prologue
+    .line 203
     const-string v0, "DummyDataStateTracker"
 
     invoke-static {v0, p0}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 204
     return-void
 .end method
 
@@ -79,10 +88,12 @@
     .parameter "s"
 
     .prologue
+    .line 207
     const-string v0, "DummyDataStateTracker"
 
     invoke-static {v0, p0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 208
     return-void
 .end method
 
@@ -93,11 +104,12 @@
     .parameter "extraInfo"
 
     .prologue
+    .line 133
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "setDetailed state, old ="
+    const-string/jumbo v2, "setDetailed state, old ="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -129,10 +141,12 @@
 
     invoke-static {v1}, Landroid/net/DummyDataStateTracker;->log(Ljava/lang/String;)V
 
+    .line 135
     iget-object v1, p0, Landroid/net/DummyDataStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     invoke-virtual {v1, p1, p2, p3}, Landroid/net/NetworkInfo;->setDetailedState(Landroid/net/NetworkInfo$DetailedState;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 136
     iget-object v1, p0, Landroid/net/DummyDataStateTracker;->mTarget:Landroid/os/Handler;
 
     const/4 v2, 0x1
@@ -143,9 +157,11 @@
 
     move-result-object v0
 
+    .line 137
     .local v0, msg:Landroid/os/Message;
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
+    .line 138
     return-void
 .end method
 
@@ -156,8 +172,10 @@
     .parameter "enabled"
 
     .prologue
+    .line 87
     iput-boolean p1, p0, Landroid/net/DummyDataStateTracker;->mDefaultRouteSet:Z
 
+    .line 88
     return-void
 .end method
 
@@ -165,6 +183,7 @@
     .locals 2
 
     .prologue
+    .line 195
     new-instance v0, Landroid/net/LinkCapabilities;
 
     iget-object v1, p0, Landroid/net/DummyDataStateTracker;->mLinkCapabilities:Landroid/net/LinkCapabilities;
@@ -178,6 +197,7 @@
     .locals 2
 
     .prologue
+    .line 188
     new-instance v0, Landroid/net/LinkProperties;
 
     iget-object v1, p0, Landroid/net/DummyDataStateTracker;->mLinkProperties:Landroid/net/LinkProperties;
@@ -191,6 +211,7 @@
     .locals 1
 
     .prologue
+    .line 79
     iget-object v0, p0, Landroid/net/DummyDataStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     return-object v0
@@ -200,7 +221,8 @@
     .locals 1
 
     .prologue
-    const-string v0, "net.tcp.buffersize.unknown"
+    .line 108
+    const-string/jumbo v0, "net.tcp.buffersize.unknown"
 
     return-object v0
 .end method
@@ -209,6 +231,7 @@
     .locals 1
 
     .prologue
+    .line 100
     const/4 v0, 0x1
 
     return v0
@@ -218,6 +241,7 @@
     .locals 1
 
     .prologue
+    .line 83
     iget-boolean v0, p0, Landroid/net/DummyDataStateTracker;->mDefaultRouteSet:Z
 
     return v0
@@ -227,6 +251,7 @@
     .locals 1
 
     .prologue
+    .line 71
     iget-boolean v0, p0, Landroid/net/DummyDataStateTracker;->mPrivateDnsRouteSet:Z
 
     return v0
@@ -236,6 +261,7 @@
     .locals 1
 
     .prologue
+    .line 145
     iget-boolean v0, p0, Landroid/net/DummyDataStateTracker;->mTeardownRequested:Z
 
     return v0
@@ -246,8 +272,10 @@
     .parameter "enabled"
 
     .prologue
+    .line 75
     iput-boolean p1, p0, Landroid/net/DummyDataStateTracker;->mPrivateDnsRouteSet:Z
 
+    .line 76
     return-void
 .end method
 
@@ -257,22 +285,26 @@
     .prologue
     const/4 v2, 0x0
 
+    .line 153
     sget-object v0, Landroid/net/NetworkInfo$DetailedState;->CONNECTING:Landroid/net/NetworkInfo$DetailedState;
 
     const-string v1, "enabled"
 
     invoke-direct {p0, v0, v1, v2}, Landroid/net/DummyDataStateTracker;->setDetailedState(Landroid/net/NetworkInfo$DetailedState;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 154
     sget-object v0, Landroid/net/NetworkInfo$DetailedState;->CONNECTED:Landroid/net/NetworkInfo$DetailedState;
 
     const-string v1, "enabled"
 
     invoke-direct {p0, v0, v1, v2}, Landroid/net/DummyDataStateTracker;->setDetailedState(Landroid/net/NetworkInfo$DetailedState;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 155
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/net/DummyDataStateTracker;->setTeardownRequested(Z)V
 
+    .line 156
     const/4 v0, 0x1
 
     return v0
@@ -282,6 +314,7 @@
     .locals 0
 
     .prologue
+    .line 94
     return-void
 .end method
 
@@ -290,6 +323,7 @@
     .parameter "met"
 
     .prologue
+    .line 200
     return-void
 .end method
 
@@ -298,6 +332,7 @@
     .parameter "enabled"
 
     .prologue
+    .line 176
     return-void
 .end method
 
@@ -306,6 +341,7 @@
     .parameter "turnOn"
 
     .prologue
+    .line 165
     const/4 v0, 0x1
 
     return v0
@@ -316,8 +352,10 @@
     .parameter "isRequested"
 
     .prologue
+    .line 141
     iput-boolean p1, p0, Landroid/net/DummyDataStateTracker;->mTeardownRequested:Z
 
+    .line 142
     return-void
 .end method
 
@@ -326,6 +364,7 @@
     .parameter "enabled"
 
     .prologue
+    .line 171
     return-void
 .end method
 
@@ -335,10 +374,13 @@
     .parameter "target"
 
     .prologue
+    .line 66
     iput-object p2, p0, Landroid/net/DummyDataStateTracker;->mTarget:Landroid/os/Handler;
 
+    .line 67
     iput-object p1, p0, Landroid/net/DummyDataStateTracker;->mContext:Landroid/content/Context;
 
+    .line 68
     return-void
 .end method
 
@@ -348,18 +390,21 @@
     .prologue
     const/4 v2, 0x0
 
+    .line 117
     sget-object v0, Landroid/net/NetworkInfo$DetailedState;->DISCONNECTING:Landroid/net/NetworkInfo$DetailedState;
 
     const-string v1, "disabled"
 
     invoke-direct {p0, v0, v1, v2}, Landroid/net/DummyDataStateTracker;->setDetailedState(Landroid/net/NetworkInfo$DetailedState;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 118
     sget-object v0, Landroid/net/NetworkInfo$DetailedState;->DISCONNECTED:Landroid/net/NetworkInfo$DetailedState;
 
     const-string v1, "disabled"
 
     invoke-direct {p0, v0, v1, v2}, Landroid/net/DummyDataStateTracker;->setDetailedState(Landroid/net/NetworkInfo$DetailedState;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 119
     const/4 v0, 0x1
 
     return v0
@@ -369,12 +414,14 @@
     .locals 2
 
     .prologue
+    .line 180
     new-instance v0, Ljava/lang/StringBuffer;
 
     const-string v1, "Dummy data state: none, dummy!"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
 
+    .line 181
     .local v0, sb:Ljava/lang/StringBuffer;
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 

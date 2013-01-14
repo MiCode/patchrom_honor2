@@ -813,23 +813,23 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->prepareQuitCameraLock:[Ljava/lang/Object;
 
-    .line 4548
+    .line 4547
     iput-boolean v4, p0, Lcom/android/hwcamera/Camera;->mIsCafSucceed:Z
 
-    .line 5616
+    .line 5615
     iput-boolean v2, p0, Lcom/android/hwcamera/Camera;->mIsAutoFocus:Z
 
-    .line 6062
+    .line 6061
     new-array v0, v2, [Ljava/lang/Object;
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mCloseCameraLock:[Ljava/lang/Object;
 
-    .line 6129
+    .line 6128
     new-array v0, v2, [Ljava/lang/Object;
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mStartPreviewLock:[Ljava/lang/Object;
 
-    .line 6131
+    .line 6130
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/hwcamera/Camera;->mLastAspectRatio:D
@@ -839,7 +839,7 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mStopPreviewLock:[Ljava/lang/Object;
 
-    .line 7741
+    .line 7697
     return-void
 .end method
 
@@ -2784,17 +2784,17 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 5818
+    .line 5817
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mImageSaver:Lcom/android/hwcamera/Camera$ImageSaver;
 
     if-nez v1, :cond_1
 
-    .line 5831
+    .line 5830
     :cond_0
     :goto_0
     return v0
 
-    .line 5821
+    .line 5820
     :cond_1
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mImageSaver:Lcom/android/hwcamera/Camera$ImageSaver;
 
@@ -2838,7 +2838,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 5831
+    .line 5830
     const/4 v0, 0x1
 
     goto :goto_0
@@ -2848,7 +2848,7 @@
     .locals 1
 
     .prologue
-    .line 5593
+    .line 5592
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->isCameraIdle()Z
 
     move-result v0
@@ -2877,20 +2877,20 @@
     .parameter
 
     .prologue
-    .line 3975
+    .line 3974
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->clearPanoramaMessage()V
 
-    .line 3976
+    .line 3975
     if-eqz p1, :cond_0
 
-    .line 3977
+    .line 3976
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     const/16 v1, 0x13
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 3979
+    .line 3978
     :cond_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
@@ -2898,20 +2898,20 @@
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/ShutterButton;->setImageResource(I)V
 
-    .line 3980
+    .line 3979
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
     invoke-direct {p0, v0, v1}, Lcom/android/hwcamera/Camera;->enableShutterButton(ZZ)V
 
-    .line 3981
+    .line 3980
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->closePanorama()V
 
-    .line 3982
+    .line 3981
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->initPanorama()V
 
-    .line 3983
+    .line 3982
     return-void
 .end method
 
@@ -2921,32 +2921,32 @@
     .prologue
     const/4 v3, 0x0
 
+    .line 4281
     .line 4282
-    .line 4283
     invoke-static {}, Lcom/android/hwcamera/Storage;->isSaveToSDCard()Z
 
     move-result v0
 
-    .line 4285
+    .line 4284
     iget-boolean v1, p0, Lcom/android/hwcamera/Camera;->mIsInternalStorageExist:Z
 
     if-nez v1, :cond_1
 
-    .line 4286
+    .line 4285
     const/4 v0, 0x1
 
     move v2, v0
 
-    .line 4293
+    .line 4292
     :goto_0
     if-eqz v2, :cond_2
 
-    .line 4294
+    .line 4293
     invoke-static {}, Lcom/android/hwcamera/Storage;->getSDCardAvailableSpace()J
 
     move-result-wide v0
 
-    .line 4299
+    .line 4298
     :goto_1
     const-wide/32 v4, 0x1400000
 
@@ -2954,7 +2954,7 @@
 
     if-lez v4, :cond_3
 
-    .line 4300
+    .line 4299
     const-string v3, "Camera"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2981,17 +2981,17 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4301
+    .line 4300
     invoke-direct {p0, v0, v1}, Lcom/android/hwcamera/Camera;->checkRemaining(J)I
 
     move-result v3
 
     iput v3, p0, Lcom/android/hwcamera/Camera;->mPicturesRemaining:I
 
-    .line 4302
+    .line 4301
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->updatePicturesRemaining()V
 
-    .line 4307
+    .line 4306
     :goto_2
     iget v3, p0, Lcom/android/hwcamera/Camera;->mPicturesRemaining:I
 
@@ -3001,14 +3001,14 @@
 
     if-ge v3, v4, :cond_0
 
-    .line 4310
+    .line 4309
     invoke-direct {p0, v2, v0, v1}, Lcom/android/hwcamera/Camera;->updateStorageHint(ZJ)V
 
-    .line 4312
+    .line 4311
     :cond_0
     return-void
 
-    .line 4288
+    .line 4287
     :cond_1
     iget-boolean v1, p0, Lcom/android/hwcamera/Camera;->mIsExternalStorageExist:Z
 
@@ -3016,10 +3016,10 @@
 
     move v2, v3
 
-    .line 4289
+    .line 4288
     goto :goto_0
 
-    .line 4296
+    .line 4295
     :cond_2
     invoke-static {}, Lcom/android/hwcamera/Storage;->getPhoneAvailableSpace()J
 
@@ -3027,7 +3027,7 @@
 
     goto :goto_1
 
-    .line 4304
+    .line 4303
     :cond_3
     iput v3, p0, Lcom/android/hwcamera/Camera;->mPicturesRemaining:I
 
@@ -3044,10 +3044,10 @@
     .parameter
 
     .prologue
-    .line 4428
+    .line 4427
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->updatePicSizePrefKey()V
 
-    .line 4429
+    .line 4428
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPictureRemaining:Lcom/android/hwcamera/PictureRemaining;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mPictureRemainingKey:Lcom/android/hwcamera/PictureRemaining$Key;
@@ -3056,7 +3056,7 @@
 
     move-result v0
 
-    .line 4430
+    .line 4429
     const-string v1, "Camera"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3093,7 +3093,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4431
+    .line 4430
     const-wide/32 v1, 0x1400000
 
     sub-long v1, p1, v1
@@ -3113,52 +3113,52 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 4375
+    .line 4374
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsInternalStorageExist:Z
 
     if-nez v0, :cond_0
 
-    .line 4377
+    .line 4376
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ComboPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 4378
+    .line 4377
     const-string v1, "pref_camera_save_location_key"
 
     const-string v2, "memorycard"
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 4379
+    .line 4378
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 4384
+    .line 4383
     :cond_0
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsExternalStorageExist:Z
 
     if-nez v0, :cond_1
 
-    .line 4385
+    .line 4384
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ComboPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 4386
+    .line 4385
     const-string v1, "pref_camera_save_location_key"
 
     const-string v2, "phone"
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 4387
+    .line 4386
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 4392
+    .line 4391
     :cond_1
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
@@ -3174,7 +3174,7 @@
 
     move-result-object v0
 
-    .line 4394
+    .line 4393
     const-string v1, "phone"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -3183,14 +3183,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 4396
+    .line 4395
     invoke-static {}, Lcom/android/hwcamera/Storage;->getPhoneAvailableSpace()J
 
     move-result-wide v0
 
     move v2, v3
 
-    .line 4402
+    .line 4401
     :goto_0
     const-wide/32 v4, 0x1400000
 
@@ -3198,7 +3198,7 @@
 
     if-lez v4, :cond_3
 
-    .line 4403
+    .line 4402
     const-string v3, "Camera"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -3225,17 +3225,17 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4404
+    .line 4403
     invoke-direct {p0, v0, v1}, Lcom/android/hwcamera/Camera;->checkRemaining(J)I
 
     move-result v3
 
     iput v3, p0, Lcom/android/hwcamera/Camera;->mPicturesRemaining:I
 
-    .line 4405
+    .line 4404
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->updatePicturesRemaining()V
 
-    .line 4410
+    .line 4409
     :goto_1
     iget v3, p0, Lcom/android/hwcamera/Camera;->mPicturesRemaining:I
 
@@ -3245,31 +3245,31 @@
 
     if-ge v3, v4, :cond_4
 
-    .line 4413
+    .line 4412
     invoke-direct {p0, v2, v0, v1}, Lcom/android/hwcamera/Camera;->updateStorageHint(ZJ)V
 
-    .line 4425
+    .line 4424
     :goto_2
     return-void
 
-    .line 4398
+    .line 4397
     :cond_2
     const/4 v2, 0x1
 
-    .line 4399
+    .line 4398
     invoke-static {}, Lcom/android/hwcamera/Storage;->getSDCardAvailableSpace()J
 
     move-result-wide v0
 
     goto :goto_0
 
-    .line 4407
+    .line 4406
     :cond_3
     iput v3, p0, Lcom/android/hwcamera/Camera;->mPicturesRemaining:I
 
     goto :goto_1
 
-    .line 4416
+    .line 4415
     :cond_4
     invoke-direct {p0, v2}, Lcom/android/hwcamera/Camera;->updateStorageHintEx(Z)V
 
@@ -3282,52 +3282,52 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 4317
+    .line 4316
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsInternalStorageExist:Z
 
     if-nez v0, :cond_0
 
-    .line 4319
+    .line 4318
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ComboPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 4320
+    .line 4319
     const-string v1, "pref_camera_save_location_key"
 
     const-string v2, "memorycard"
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 4321
+    .line 4320
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 4326
+    .line 4325
     :cond_0
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsExternalStorageExist:Z
 
     if-nez v0, :cond_1
 
-    .line 4327
+    .line 4326
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ComboPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 4328
+    .line 4327
     const-string v1, "pref_camera_save_location_key"
 
     const-string v2, "phone"
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 4329
+    .line 4328
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 4334
+    .line 4333
     :cond_1
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
@@ -3343,7 +3343,7 @@
 
     move-result-object v0
 
-    .line 4336
+    .line 4335
     const-string v1, "phone"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -3352,14 +3352,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 4338
+    .line 4337
     invoke-static {}, Lcom/android/hwcamera/Storage;->getPhoneAvailableSpace()J
 
     move-result-wide v0
 
     move v2, v3
 
-    .line 4344
+    .line 4343
     :goto_0
     const-wide/32 v4, 0x1400000
 
@@ -3367,7 +3367,7 @@
 
     if-lez v4, :cond_3
 
-    .line 4345
+    .line 4344
     const-string v3, "Camera"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -3394,14 +3394,14 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4346
+    .line 4345
     invoke-direct {p0, v0, v1}, Lcom/android/hwcamera/Camera;->checkRemaining(J)I
 
     move-result v0
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mPicturesRemaining:I
 
-    .line 4351
+    .line 4350
     :goto_1
     iget v0, p0, Lcom/android/hwcamera/Camera;->mPicturesRemaining:I
 
@@ -3411,49 +3411,49 @@
 
     if-ge v0, v1, :cond_5
 
-    .line 4354
+    .line 4353
     if-nez v2, :cond_4
 
-    .line 4355
+    .line 4354
     invoke-static {}, Lcom/android/hwcamera/Storage;->switchToExternalSdCard()V
 
-    .line 4366
+    .line 4365
     :goto_2
     return-void
 
-    .line 4340
+    .line 4339
     :cond_2
     const/4 v2, 0x1
 
-    .line 4341
+    .line 4340
     invoke-static {}, Lcom/android/hwcamera/Storage;->getSDCardAvailableSpace()J
 
     move-result-wide v0
 
     goto :goto_0
 
-    .line 4348
+    .line 4347
     :cond_3
     iput v3, p0, Lcom/android/hwcamera/Camera;->mPicturesRemaining:I
 
     goto :goto_1
 
-    .line 4357
+    .line 4356
     :cond_4
     invoke-static {}, Lcom/android/hwcamera/Storage;->switchToInternalSdCard()V
 
     goto :goto_2
 
-    .line 4360
+    .line 4359
     :cond_5
     if-eqz v2, :cond_6
 
-    .line 4361
+    .line 4360
     invoke-static {}, Lcom/android/hwcamera/Storage;->switchToExternalSdCard()V
 
     goto :goto_2
 
-    .line 4363
+    .line 4362
     :cond_6
     invoke-static {}, Lcom/android/hwcamera/Storage;->switchToInternalSdCard()V
 
@@ -3464,22 +3464,22 @@
     .locals 1
 
     .prologue
-    .line 5654
+    .line 5653
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFaceView:Lcom/android/hwcamera/hwui/FaceView;
 
     if-eqz v0, :cond_0
 
-    .line 5655
+    .line 5654
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFaceView:Lcom/android/hwcamera/hwui/FaceView;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/FaceView;->clear()V
 
-    .line 5656
+    .line 5655
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFaceView:Lcom/android/hwcamera/hwui/FaceView;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/FaceView;->invalidate()V
 
-    .line 5658
+    .line 5657
     :cond_0
     return-void
 .end method
@@ -3488,12 +3488,12 @@
     .locals 1
 
     .prologue
-    .line 8377
+    .line 8333
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHWExtCameraHandler:Lcom/android/hwcamera/HWExtCameraHandler;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/HWExtCameraHandler;->clearPanoramaMessage()V
 
-    .line 8378
+    .line 8334
     return-void
 .end method
 
@@ -3505,17 +3505,17 @@
 
     const/4 v1, 0x1
 
-    .line 5662
+    .line 5661
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     if-nez v2, :cond_1
 
-    .line 5675
+    .line 5674
     :cond_0
     :goto_0
     return v0
 
-    .line 5665
+    .line 5664
     :cond_1
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
@@ -3525,17 +3525,17 @@
 
     if-eqz v2, :cond_2
 
-    .line 5666
+    .line 5665
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/SuperPanel;->closePopWindowOnly()V
 
     move v0, v1
 
-    .line 5667
+    .line 5666
     goto :goto_0
 
-    .line 5668
+    .line 5667
     :cond_2
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
@@ -3545,17 +3545,17 @@
 
     if-eqz v2, :cond_3
 
-    .line 5669
+    .line 5668
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/SuperPanel;->closeSubPanelOnly()V
 
     move v0, v1
 
-    .line 5670
+    .line 5669
     goto :goto_0
 
-    .line 5671
+    .line 5670
     :cond_3
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
@@ -3565,14 +3565,14 @@
 
     if-eqz v2, :cond_0
 
-    .line 5672
+    .line 5671
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v2, v0, v1}, Lcom/android/hwcamera/hwui/SuperPanel;->setOpen(ZZ)V
 
     move v0, v1
 
-    .line 5673
+    .line 5672
     goto :goto_0
 .end method
 
@@ -3582,33 +3582,33 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 3986
+    .line 3985
     const/4 v0, 0x2
 
     invoke-static {v0}, Lcom/android/hwcamera/hwui/PanoramaBar;->setPanoramaState(I)V
 
-    .line 3987
+    .line 3986
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPanoramaBar:Lcom/android/hwcamera/hwui/PanoramaBar;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/PanoramaBar;->restoreUi()V
 
-    .line 3988
+    .line 3987
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mPanoramaBarListener:Lcom/android/hwcamera/Camera$PanoramaBarListener;
 
-    .line 3989
+    .line 3988
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mPanoramaBar:Lcom/android/hwcamera/hwui/PanoramaBar;
 
-    .line 3990
+    .line 3989
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->showNormalUi()V
 
-    .line 3991
+    .line 3990
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/ShutterButton;->setVisibility(I)V
 
-    .line 3992
+    .line 3991
     const v0, 0x7f0c001c
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -3619,7 +3619,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3993
+    .line 3992
     return-void
 .end method
 
@@ -4175,30 +4175,30 @@
 
     const/4 v3, -0x1
 
-    .line 4469
+    .line 4468
     iget-boolean v1, p0, Lcom/android/hwcamera/Camera;->mPausing:Z
 
     if-eqz v1, :cond_0
 
-    .line 4541
+    .line 4540
     :goto_0
     return-void
 
-    .line 4473
+    .line 4472
     :cond_0
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mJpegImageData:[B
 
-    .line 4475
+    .line 4474
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mCropValue:Ljava/lang/String;
 
     if-nez v2, :cond_2
 
-    .line 4480
+    .line 4479
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mSaveUri:Landroid/net/Uri;
 
     if-eqz v2, :cond_1
 
-    .line 4483
+    .line 4482
     :try_start_0
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mContentResolver:Landroid/content/ContentResolver;
 
@@ -4211,34 +4211,34 @@
 
     move-result-object v0
 
-    .line 4484
+    .line 4483
     :try_start_1
     invoke-virtual {v0, v1}, Ljava/io/OutputStream;->write([B)V
 
-    .line 4485
+    .line 4484
     invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
 
-    .line 4487
+    .line 4486
     const/4 v1, -0x1
 
     invoke-virtual {p0, v1}, Lcom/android/hwcamera/Camera;->setResultEx(I)V
 
-    .line 4488
+    .line 4487
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->finish()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_3
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 4492
+    .line 4491
     invoke-static {v0}, Lcom/android/hwcamera/Util;->closeSilently(Ljava/io/Closeable;)V
 
     goto :goto_0
 
-    .line 4489
+    .line 4488
     :catch_0
     move-exception v1
 
-    .line 4492
+    .line 4491
     invoke-static {v0}, Lcom/android/hwcamera/Util;->closeSilently(Ljava/io/Closeable;)V
 
     goto :goto_0
@@ -4257,25 +4257,25 @@
 
     throw v0
 
-    .line 4495
+    .line 4494
     :cond_1
     invoke-static {v1}, Lcom/android/hwcamera/Exif;->getOrientation([B)I
 
     move-result v0
 
-    .line 4496
+    .line 4495
     const v2, 0xc800
 
     invoke-static {v1, v2}, Lcom/android/hwcamera/Util;->makeBitmap([BI)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    .line 4497
+    .line 4496
     invoke-static {v1, v0}, Lcom/android/hwcamera/Util;->rotate(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 4498
+    .line 4497
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "inline-data"
@@ -4290,12 +4290,12 @@
 
     invoke-virtual {p0, v3, v0}, Lcom/android/hwcamera/Camera;->setResultEx(ILandroid/content/Intent;)V
 
-    .line 4499
+    .line 4498
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->finish()V
 
     goto :goto_0
 
-    .line 4506
+    .line 4505
     :cond_2
     :try_start_2
     const-string v2, "crop-temp"
@@ -4304,10 +4304,10 @@
 
     move-result-object v2
 
-    .line 4507
+    .line 4506
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
 
-    .line 4508
+    .line 4507
     const-string v3, "crop-temp"
 
     const/4 v4, 0x0
@@ -4320,14 +4320,14 @@
 
     move-result-object v0
 
-    .line 4509
+    .line 4508
     :try_start_3
     invoke-virtual {v0, v1}, Ljava/io/FileOutputStream;->write([B)V
 
-    .line 4510
+    .line 4509
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
 
-    .line 4511
+    .line 4510
     invoke-static {v2}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_2
@@ -4336,15 +4336,15 @@
 
     move-result-object v1
 
-    .line 4521
+    .line 4520
     invoke-static {v0}, Lcom/android/hwcamera/Util;->closeSilently(Ljava/io/Closeable;)V
 
-    .line 4524
+    .line 4523
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 4525
+    .line 4524
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mCropValue:Ljava/lang/String;
 
     const-string v3, "circle"
@@ -4355,27 +4355,27 @@
 
     if-eqz v2, :cond_3
 
-    .line 4526
+    .line 4525
     const-string v2, "circleCrop"
 
     const-string v3, "true"
 
     invoke-virtual {v0, v2, v3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4528
+    .line 4527
     :cond_3
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mSaveUri:Landroid/net/Uri;
 
     if-eqz v2, :cond_4
 
-    .line 4529
+    .line 4528
     const-string v2, "output"
 
     iget-object v3, p0, Lcom/android/hwcamera/Camera;->mSaveUri:Landroid/net/Uri;
 
     invoke-virtual {v0, v2, v3}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 4534
+    .line 4533
     :goto_2
     new-instance v2, Landroid/content/Intent;
 
@@ -4383,53 +4383,53 @@
 
     invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 4536
+    .line 4535
     invoke-virtual {v2, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 4537
+    .line 4536
     invoke-virtual {v2, v0}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
 
-    .line 4539
+    .line 4538
     invoke-virtual {p0, v2, v5}, Lcom/android/hwcamera/Camera;->startActivityForResult(Landroid/content/Intent;I)V
 
     goto/16 :goto_0
 
-    .line 4512
+    .line 4511
     :catch_1
     move-exception v1
 
-    .line 4513
+    .line 4512
     const/4 v1, 0x0
 
     :try_start_4
     invoke-virtual {p0, v1}, Lcom/android/hwcamera/Camera;->setResultEx(I)V
 
-    .line 4514
+    .line 4513
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->finish()V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
-    .line 4521
+    .line 4520
     invoke-static {v0}, Lcom/android/hwcamera/Util;->closeSilently(Ljava/io/Closeable;)V
 
     goto/16 :goto_0
 
-    .line 4516
+    .line 4515
     :catch_2
     move-exception v1
 
-    .line 4517
+    .line 4516
     const/4 v1, 0x0
 
     :try_start_5
     invoke-virtual {p0, v1}, Lcom/android/hwcamera/Camera;->setResultEx(I)V
 
-    .line 4518
+    .line 4517
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->finish()V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
-    .line 4521
+    .line 4520
     invoke-static {v0}, Lcom/android/hwcamera/Util;->closeSilently(Ljava/io/Closeable;)V
 
     goto/16 :goto_0
@@ -4448,7 +4448,7 @@
 
     throw v0
 
-    .line 4531
+    .line 4530
     :cond_4
     const-string v2, "return-data"
 
@@ -4456,7 +4456,7 @@
 
     goto :goto_2
 
-    .line 4521
+    .line 4520
     :catchall_2
     move-exception v1
 
@@ -4468,7 +4468,7 @@
 
     goto :goto_3
 
-    .line 4492
+    .line 4491
     :catchall_3
     move-exception v1
 
@@ -4485,7 +4485,7 @@
     .locals 2
 
     .prologue
-    .line 4544
+    .line 4543
     const/4 v0, 0x0
 
     new-instance v1, Landroid/content/Intent;
@@ -4494,10 +4494,10 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/hwcamera/Camera;->setResultEx(ILandroid/content/Intent;)V
 
-    .line 4545
+    .line 4544
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->finish()V
 
-    .line 4546
+    .line 4545
     return-void
 .end method
 
@@ -4505,7 +4505,7 @@
     .locals 3
 
     .prologue
-    .line 6031
+    .line 6030
     const-string v0, "Camera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4530,12 +4530,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6032
+    .line 6031
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->doSnap()V
 
-    .line 6033
+    .line 6032
     return-void
 .end method
 
@@ -4545,15 +4545,15 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 8063
+    .line 8019
     invoke-direct {p0, v1}, Lcom/android/hwcamera/Camera;->enableSwitcherThumbnail(Z)V
 
-    .line 8064
+    .line 8020
     const/4 v0, 0x1
 
     invoke-direct {p0, v1, v0}, Lcom/android/hwcamera/Camera;->enableShutterButton(ZZ)V
 
-    .line 8065
+    .line 8021
     const-string v0, "off"
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
@@ -4568,21 +4568,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 8066
+    .line 8022
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->resetTouchFocus()V
 
-    .line 8067
+    .line 8023
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->onShutterDown()V
 
-    .line 8069
+    .line 8025
     :cond_0
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->doSnap()V
 
-    .line 8070
+    .line 8026
     return-void
 .end method
 
@@ -4835,7 +4835,7 @@
     .locals 3
 
     .prologue
-    .line 3723
+    .line 3722
     const v0, 0x7f0c002c
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -4844,7 +4844,7 @@
 
     check-cast v0, Lcom/android/hwcamera/RotateImageView;
 
-    .line 3724
+    .line 3723
     new-instance v1, Lcom/android/hwcamera/hwui/FlashImageView;
 
     const/4 v2, 0x1
@@ -4853,44 +4853,44 @@
 
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mFlashImageView:Lcom/android/hwcamera/hwui/FlashImageView;
 
-    .line 3725
+    .line 3724
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFlashImageView:Lcom/android/hwcamera/hwui/FlashImageView;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mSuperPanelListener:Lcom/android/hwcamera/Camera$SuperPanelListener;
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/FlashImageView;->registerListeners(Lcom/android/hwcamera/hwui/SuperPanel$Listeners;)V
 
-    .line 3727
+    .line 3726
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFlashImageView:Lcom/android/hwcamera/hwui/FlashImageView;
 
     invoke-virtual {v0, p0}, Lcom/android/hwcamera/hwui/FlashImageView;->setFlashMocdChangeListener(Lcom/android/hwcamera/hwui/FlashImageView$OnFlashModeChangeListener;)V
 
-    .line 3730
+    .line 3729
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mFlashSupported:Z
 
     if-eqz v0, :cond_0
 
-    .line 3731
+    .line 3730
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFlashImageView:Lcom/android/hwcamera/hwui/FlashImageView;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/FlashImageView;->setComboPreferences(Lcom/android/hwcamera/ComboPreferences;)V
 
-    .line 3732
+    .line 3731
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFlashImageView:Lcom/android/hwcamera/hwui/FlashImageView;
 
     iget v1, p0, Lcom/android/hwcamera/Camera;->mCameraId:I
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/FlashImageView;->init(I)V
 
-    .line 3735
+    .line 3734
     :cond_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
     if-eqz v0, :cond_1
 
-    .line 3736
+    .line 3735
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFlashImageView:Lcom/android/hwcamera/hwui/FlashImageView;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
@@ -4901,7 +4901,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/FlashImageView;->setScenceDefaultValue(Ljava/lang/String;)V
 
-    .line 3740
+    .line 3739
     :cond_1
     return-void
 .end method
@@ -4910,12 +4910,12 @@
     .locals 2
 
     .prologue
-    .line 3744
+    .line 3743
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mFlashSupported:Z
 
     if-nez v0, :cond_0
 
-    .line 3745
+    .line 3744
     const v0, 0x7f0c002c
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -4926,11 +4926,11 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3751
+    .line 3750
     :goto_0
     return-void
 
-    .line 3749
+    .line 3748
     :cond_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFlashImageView:Lcom/android/hwcamera/hwui/FlashImageView;
 
@@ -4938,7 +4938,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/FlashImageView;->setComboPreferences(Lcom/android/hwcamera/ComboPreferences;)V
 
-    .line 3750
+    .line 3749
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFlashImageView:Lcom/android/hwcamera/hwui/FlashImageView;
 
     iget v1, p0, Lcom/android/hwcamera/Camera;->mCameraId:I
@@ -4952,7 +4952,7 @@
     .locals 3
 
     .prologue
-    .line 3808
+    .line 3807
     const v0, 0x7f0c002d
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -4961,7 +4961,7 @@
 
     check-cast v0, Lcom/android/hwcamera/RotateImageView;
 
-    .line 3809
+    .line 3808
     new-instance v1, Lcom/android/hwcamera/hwui/TimerImageView;
 
     const/4 v2, 0x1
@@ -4970,33 +4970,33 @@
 
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mTimerImageView:Lcom/android/hwcamera/hwui/TimerImageView;
 
-    .line 3810
+    .line 3809
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mTimerImageView:Lcom/android/hwcamera/hwui/TimerImageView;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mSuperPanelListener:Lcom/android/hwcamera/Camera$SuperPanelListener;
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/TimerImageView;->registerListeners(Lcom/android/hwcamera/hwui/SuperPanel$Listeners;)V
 
-    .line 3811
+    .line 3810
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mTimerImageView:Lcom/android/hwcamera/hwui/TimerImageView;
 
     invoke-virtual {v0, p0}, Lcom/android/hwcamera/hwui/TimerImageView;->setTimerStateChangeListener(Lcom/android/hwcamera/hwui/TimerImageView$OnTimerStateChangeListener;)V
 
-    .line 3812
+    .line 3811
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mTimerImageView:Lcom/android/hwcamera/hwui/TimerImageView;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/TimerImageView;->setComboPreferences(Lcom/android/hwcamera/ComboPreferences;)V
 
-    .line 3813
+    .line 3812
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mTimerImageView:Lcom/android/hwcamera/hwui/TimerImageView;
 
     iget v1, p0, Lcom/android/hwcamera/Camera;->mCameraId:I
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/TimerImageView;->init(I)V
 
-    .line 3814
+    .line 3813
     return-void
 .end method
 
@@ -5004,21 +5004,21 @@
     .locals 2
 
     .prologue
-    .line 3817
+    .line 3816
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mTimerImageView:Lcom/android/hwcamera/hwui/TimerImageView;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/TimerImageView;->setComboPreferences(Lcom/android/hwcamera/ComboPreferences;)V
 
-    .line 3818
+    .line 3817
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mTimerImageView:Lcom/android/hwcamera/hwui/TimerImageView;
 
     iget v1, p0, Lcom/android/hwcamera/Camera;->mCameraId:I
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/TimerImageView;->init(I)V
 
-    .line 3819
+    .line 3818
     return-void
 .end method
 
@@ -5028,40 +5028,40 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 3906
+    .line 3905
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mCurrentState:I
 
-    .line 3907
+    .line 3906
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGalleryExRoot:Lcom/android/hwcamera/hwui/RotateLinearLayout;
 
     if-eqz v0, :cond_0
 
-    .line 3908
+    .line 3907
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGalleryExRoot:Lcom/android/hwcamera/hwui/RotateLinearLayout;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/RotateLinearLayout;->setVisibility(I)V
 
-    .line 3910
+    .line 3909
     :cond_0
     invoke-direct {p0, v2}, Lcom/android/hwcamera/Camera;->setFlashSwitchIconVisibility(I)V
 
-    .line 3911
+    .line 3910
     invoke-direct {p0, v2}, Lcom/android/hwcamera/Camera;->setPromptIconVisibility(I)V
 
-    .line 3912
+    .line 3911
     invoke-direct {p0, v2}, Lcom/android/hwcamera/Camera;->setControlBarVisibility(I)V
 
-    .line 3913
+    .line 3912
     invoke-direct {p0, v2}, Lcom/android/hwcamera/Camera;->setSuperPanelVisibility(I)V
 
-    .line 3916
+    .line 3915
     invoke-direct {p0, v2}, Lcom/android/hwcamera/Camera;->setZoomBarVisibility(I)V
 
-    .line 3918
+    .line 3917
     return-void
 .end method
 
@@ -5073,17 +5073,17 @@
 
     const/4 v1, 0x0
 
-    .line 3883
+    .line 3882
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mCurrentState:I
 
-    .line 3884
+    .line 3883
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGalleryExHorScroll:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 3885
+    .line 3884
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -5096,21 +5096,21 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mGalleryExitAnim:Landroid/view/animation/Animation;
 
-    .line 3887
+    .line 3886
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGalleryExitAnim:Landroid/view/animation/Animation;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->animationListener:Landroid/view/animation/Animation$AnimationListener;
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 3888
+    .line 3887
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGalleryExHorScroll:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mGalleryExitAnim:Landroid/view/animation/Animation;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 3890
+    .line 3889
     const v0, 0x7f0c000b
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -5125,7 +5125,7 @@
 
     invoke-static {v0, v1}, Lcom/android/hwcamera/Util;->slideInControlBar(Landroid/view/View;Landroid/view/View;)V
 
-    .line 3891
+    .line 3890
     invoke-virtual {p0, v2}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
@@ -5142,24 +5142,24 @@
 
     invoke-static {v1, v0}, Lcom/android/hwcamera/Util;->slideInPanelHandler(Landroid/view/View;Landroid/view/View;)V
 
-    .line 3903
+    .line 3902
     :goto_0
     return-void
 
-    .line 3894
+    .line 3893
     :cond_0
     invoke-direct {p0, v1}, Lcom/android/hwcamera/Camera;->setFlashSwitchIconVisibility(I)V
 
-    .line 3895
+    .line 3894
     invoke-direct {p0, v1}, Lcom/android/hwcamera/Camera;->setPromptIconVisibility(I)V
 
-    .line 3896
+    .line 3895
     invoke-direct {p0, v1}, Lcom/android/hwcamera/Camera;->setControlBarVisibility(I)V
 
-    .line 3897
+    .line 3896
     invoke-direct {p0, v1}, Lcom/android/hwcamera/Camera;->setSuperPanelVisibility(I)V
 
-    .line 3900
+    .line 3899
     invoke-direct {p0, v1}, Lcom/android/hwcamera/Camera;->setZoomBarVisibility(I)V
 
     goto :goto_0
@@ -5169,27 +5169,27 @@
     .locals 4
 
     .prologue
-    .line 3858
+    .line 3857
     const/4 v0, 0x4
 
     invoke-direct {p0, v0}, Lcom/android/hwcamera/Camera;->setSuperPanelVisibility(I)V
 
-    .line 3860
+    .line 3859
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsGalleryExViewAdd:Z
 
     if-nez v0, :cond_0
 
-    .line 3861
+    .line 3860
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsGalleryExViewAdd:Z
 
-    .line 3862
+    .line 3861
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getLayoutInflater()Landroid/view/LayoutInflater;
 
     move-result-object v1
 
-    .line 3863
+    .line 3862
     const v0, 0x7f0c001e
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -5198,7 +5198,7 @@
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    .line 3864
+    .line 3863
     new-instance v2, Lcom/android/hwcamera/hwui/GalleryEx;
 
     const v3, 0x7f040011
@@ -5207,14 +5207,14 @@
 
     iput-object v2, p0, Lcom/android/hwcamera/Camera;->mGalleryExView:Lcom/android/hwcamera/hwui/GalleryEx;
 
-    .line 3865
+    .line 3864
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGalleryExView:Lcom/android/hwcamera/hwui/GalleryEx;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mSuperPanelListener:Lcom/android/hwcamera/Camera$SuperPanelListener;
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/GalleryEx;->registerListeners(Lcom/android/hwcamera/hwui/SuperPanel$Listeners;)V
 
-    .line 3866
+    .line 3865
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGalleryExView:Lcom/android/hwcamera/hwui/GalleryEx;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/GalleryEx;->getRotateLinearLayout()Lcom/android/hwcamera/hwui/RotateLinearLayout;
@@ -5223,7 +5223,7 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mGalleryExRoot:Lcom/android/hwcamera/hwui/RotateLinearLayout;
 
-    .line 3867
+    .line 3866
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGalleryExView:Lcom/android/hwcamera/hwui/GalleryEx;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/GalleryEx;->getHorizontalScrollView()Landroid/widget/HorizontalScrollView;
@@ -5232,7 +5232,7 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mGalleryExHorScroll:Landroid/view/View;
 
-    .line 3868
+    .line 3867
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGalleryExView:Lcom/android/hwcamera/hwui/GalleryEx;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/GalleryEx;->getLinearLayout()Landroid/widget/LinearLayout;
@@ -5241,7 +5241,7 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mGalleryExLinearLayout:Landroid/widget/LinearLayout;
 
-    .line 3873
+    .line 3872
     :goto_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGalleryExView:Lcom/android/hwcamera/hwui/GalleryEx;
 
@@ -5249,28 +5249,28 @@
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/GalleryEx;->setPreferenceGroup(Lcom/android/hwcamera/PreferenceGroup;)V
 
-    .line 3874
+    .line 3873
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGalleryExView:Lcom/android/hwcamera/hwui/GalleryEx;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/GalleryEx;->setComboPreferences(Lcom/android/hwcamera/ComboPreferences;)V
 
-    .line 3875
+    .line 3874
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGalleryExView:Lcom/android/hwcamera/hwui/GalleryEx;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mGalleryExKEY:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/GalleryEx;->init(Ljava/lang/String;)V
 
-    .line 3876
+    .line 3875
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGalleryExView:Lcom/android/hwcamera/hwui/GalleryEx;
 
     iget v1, p0, Lcom/android/hwcamera/Camera;->mOrientation:I
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/GalleryEx;->setOrientationEx(I)V
 
-    .line 3877
+    .line 3876
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -5281,15 +5281,15 @@
 
     move-result-object v0
 
-    .line 3879
+    .line 3878
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mGalleryExLinearLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1, v0}, Landroid/widget/LinearLayout;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 3880
+    .line 3879
     return-void
 
-    .line 3870
+    .line 3869
     :cond_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGalleryExRoot:Lcom/android/hwcamera/hwui/RotateLinearLayout;
 
@@ -5305,10 +5305,10 @@
     .parameter
 
     .prologue
-    .line 3838
+    .line 3837
     iput-object p1, p0, Lcom/android/hwcamera/Camera;->mGalleryExKEY:Ljava/lang/String;
 
-    .line 3839
+    .line 3838
     const-string v0, "pref_camera_distortion_key"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -5317,23 +5317,23 @@
 
     if-eqz v0, :cond_2
 
-    .line 3840
+    .line 3839
     const/4 v0, 0x5
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mCurrentState:I
 
-    .line 3844
+    .line 3843
     :goto_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     if-eqz v0, :cond_0
 
-    .line 3845
+    .line 3844
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/SuperPanel;->onPanelStartClose()Z
 
-    .line 3847
+    .line 3846
     :cond_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
@@ -5343,7 +5343,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 3848
+    .line 3847
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     const/4 v1, 0x0
@@ -5352,7 +5352,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/hwcamera/hwui/SuperPanel;->setOpen(ZZ)V
 
-    .line 3852
+    .line 3851
     :cond_1
     const v0, 0x7f0c000b
 
@@ -5368,10 +5368,10 @@
 
     invoke-static {v0, v1}, Lcom/android/hwcamera/Util;->slideOutControlBar(Landroid/view/View;Landroid/view/View;)V
 
-    .line 3854
+    .line 3853
     return-void
 
-    .line 3842
+    .line 3841
     :cond_2
     const/4 v0, 0x4
 
@@ -5386,35 +5386,35 @@
     .prologue
     const/high16 v3, 0x400
 
-    .line 5223
+    .line 5222
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.huawei.android.HelpCenter.help"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 5224
+    .line 5223
     const-string v1, "com.android.hwcamerahelp"
 
     const-string v2, "com.android.hwcamerahelp.help.HelpActivity"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 5226
+    .line 5225
     sget-object v1, Lcom/android/hwcamera/Camera;->PAGE_NUMBER:Ljava/lang/String;
 
     const/4 v2, -0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 5227
+    .line 5226
     const-string v1, "extra_from_activity"
 
     const-string v2, "hwCamera"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 5228
+    .line 5227
     sget-object v1, Lcom/android/hwcamera/Camera;->EXTRA_TARGET_PAGE:Ljava/lang/String;
 
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->genCameraHelpCurrentPage()I
@@ -5423,21 +5423,21 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 5229
+    .line 5228
+    invoke-virtual {v0, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    .line 5230
     invoke-virtual {v0, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     .line 5231
-    invoke-virtual {v0, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    .line 5232
     invoke-static {p0, v0}, Lcom/android/hwcamera/Util;->isIntentAvailable(Landroid/content/Context;Landroid/content/Intent;)Z
 
     move-result v1
 
-    .line 5233
+    .line 5232
     if-eqz v1, :cond_0
 
-    .line 5236
+    .line 5235
     :goto_0
     return-object v0
 
@@ -5451,7 +5451,7 @@
     .locals 3
 
     .prologue
-    .line 5240
+    .line 5239
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     const-string v1, "config_helpcenter_current_page"
@@ -5873,10 +5873,10 @@
 
     const/4 v6, 0x0
 
-    .line 6920
+    .line 6876
     const-string v0, "ro.camera.hw_preview_size_16_9"
 
-    .line 6921
+    .line 6877
     const-wide v1, 0x3ff5555555555555L
 
     sub-double v1, p2, v1
@@ -5891,21 +5891,21 @@
 
     if-gez v1, :cond_1
 
-    .line 6922
+    .line 6878
     const-string v0, "ro.camera.hw_preview_size_4_3"
 
-    .line 6923
+    .line 6879
     const-string v1, "Camera"
 
     const-string v2, "Current preview size is 4:3 !"
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6927
+    .line 6883
     :goto_0
     const/4 v1, 0x0
 
-    .line 6928
+    .line 6884
     const-string v2, "0x0"
 
     invoke-static {v0, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -5916,7 +5916,7 @@
 
     move-result-object v2
 
-    .line 6930
+    .line 6886
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -5934,7 +5934,7 @@
 
     check-cast v0, Landroid/hardware/Camera$Size;
 
-    .line 6931
+    .line 6887
     aget v4, v2, v6
 
     iget v5, v0, Landroid/hardware/Camera$Size;->width:I
@@ -5947,7 +5947,7 @@
 
     if-ne v4, v5, :cond_0
 
-    .line 6933
+    .line 6889
     const-string v1, "Camera"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -5990,11 +5990,11 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6938
+    .line 6894
     :goto_1
     return-object v0
 
-    .line 6925
+    .line 6881
     :cond_1
     const-string v1, "Camera"
 
@@ -6004,7 +6004,7 @@
 
     goto :goto_0
 
-    .line 6937
+    .line 6893
     :cond_2
     const-string v0, "Camera"
 
@@ -6050,7 +6050,7 @@
 
     move-object v0, v1
 
-    .line 6938
+    .line 6894
     goto :goto_1
 .end method
 
@@ -6058,66 +6058,66 @@
     .locals 2
 
     .prologue
-    .line 4774
+    .line 4773
     const/4 v0, 0x1
 
-    .line 4775
+    .line 4774
     .local v0, requestRemaining:I
     iget v1, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 4802
+    .line 4801
     :pswitch_0
     const/4 v0, 0x1
 
-    .line 4804
+    .line 4803
     :goto_0
     return v0
 
-    .line 4778
+    .line 4777
     :pswitch_1
     const/4 v0, 0x1
 
-    .line 4779
+    .line 4778
     goto :goto_0
 
-    .line 4782
+    .line 4781
     :pswitch_2
     const/4 v0, 0x2
 
-    .line 4783
+    .line 4782
     goto :goto_0
 
-    .line 4786
+    .line 4785
     :pswitch_3
     const/4 v0, 0x3
 
-    .line 4787
+    .line 4786
     goto :goto_0
 
-    .line 4790
+    .line 4789
     :pswitch_4
     const/4 v0, 0x1
 
-    .line 4791
+    .line 4790
     goto :goto_0
 
-    .line 4794
+    .line 4793
     :pswitch_5
     sget v0, Lcom/android/hwcamera/Config;->REWIND_PIC_NUM:I
 
-    .line 4795
+    .line 4794
     goto :goto_0
 
-    .line 4798
+    .line 4797
     :pswitch_6
     sget v0, Lcom/android/hwcamera/Config;->BURST_MAX_NUMBER:I
 
-    .line 4799
+    .line 4798
     goto :goto_0
 
-    .line 4775
+    .line 4774
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -6215,7 +6215,7 @@
     .locals 2
 
     .prologue
-    .line 7554
+    .line 7510
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->isFinishing()Z
 
     move-result v0
@@ -6228,31 +6228,31 @@
 
     if-nez v0, :cond_1
 
-    .line 7555
+    .line 7511
     :cond_0
     const/4 v0, 0x0
 
-    .line 7564
+    .line 7520
     :goto_0
     return v0
 
-    .line 7557
+    .line 7513
     :cond_1
     const/4 v0, 0x3
 
     invoke-direct {p0, v0}, Lcom/android/hwcamera/Camera;->switchToOtherMode(I)Z
 
-    .line 7558
+    .line 7514
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 7563
+    .line 7519
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->finish()V
 
-    .line 7564
+    .line 7520
     const/4 v0, 0x1
 
     goto :goto_0
@@ -6438,17 +6438,17 @@
     .locals 2
 
     .prologue
-    .line 5258
+    .line 5257
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mCurrentState:I
 
-    .line 5259
+    .line 5258
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsInvokeBarFirstInflate:Z
 
     if-nez v0, :cond_0
 
-    .line 5260
+    .line 5259
     const v0, 0x7f0c002f
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -6459,7 +6459,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 5263
+    .line 5262
     :cond_0
     return-void
 .end method
@@ -6517,10 +6517,10 @@
 
     const/4 v2, 0x0
 
-    .line 7110
+    .line 7066
     iput v3, p0, Lcom/android/hwcamera/Camera;->mCurrentState:I
 
-    .line 7112
+    .line 7068
     const v0, 0x7f0c00ba
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -6529,7 +6529,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 7113
+    .line 7069
     invoke-virtual {p0, v4}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
@@ -6546,7 +6546,7 @@
 
     invoke-static {v1, v0}, Lcom/android/hwcamera/Util;->slideInPanelHandler(Landroid/view/View;Landroid/view/View;)V
 
-    .line 7114
+    .line 7070
     const v0, 0x7f0c000b
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -6561,7 +6561,7 @@
 
     invoke-static {v0, v1}, Lcom/android/hwcamera/Util;->slideInControlBar(Landroid/view/View;Landroid/view/View;)V
 
-    .line 7115
+    .line 7071
     const v0, 0x7f0c002a
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -6570,18 +6570,18 @@
 
     invoke-static {v0}, Lcom/android/hwcamera/Util;->fadeIn(Landroid/view/View;)V
 
-    .line 7119
+    .line 7075
     invoke-direct {p0, v2}, Lcom/android/hwcamera/Camera;->setZoomBarVisibility(I)V
 
-    .line 7122
+    .line 7078
     invoke-direct {p0, v3, v2}, Lcom/android/hwcamera/Camera;->enableShutterButton(ZZ)V
 
-    .line 7123
+    .line 7079
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsInvokeBarFirstInflate:Z
 
     if-nez v0, :cond_0
 
-    .line 7124
+    .line 7080
     const v0, 0x7f0c002f
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -6592,7 +6592,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 7127
+    .line 7083
     :cond_0
     return-void
 .end method
@@ -6748,7 +6748,7 @@
     .locals 2
 
     .prologue
-    .line 3775
+    .line 3774
     const v0, 0x7f0c002b
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -6759,25 +6759,25 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mSwitchCameraImage:Lcom/android/hwcamera/RotateImageView;
 
-    .line 3777
+    .line 3776
     iget v0, p0, Lcom/android/hwcamera/Camera;->mNumberOfCameras:I
 
     const/4 v1, 0x2
 
     if-ge v0, v1, :cond_0
 
-    .line 3779
+    .line 3778
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSwitchCameraImage:Lcom/android/hwcamera/RotateImageView;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/RotateImageView;->setVisibility(I)V
 
-    .line 3784
+    .line 3783
     :goto_0
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->setCameraSwitcherIcon()V
 
-    .line 3785
+    .line 3784
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSwitchCameraImage:Lcom/android/hwcamera/RotateImageView;
 
     new-instance v1, Lcom/android/hwcamera/Camera$7;
@@ -6786,10 +6786,10 @@
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/RotateImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 3793
+    .line 3792
     return-void
 
-    .line 3781
+    .line 3780
     :cond_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSwitchCameraImage:Lcom/android/hwcamera/RotateImageView;
 
@@ -6807,23 +6807,23 @@
     .prologue
     const/16 v4, 0x8
 
-    .line 4019
+    .line 4018
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     if-nez v0, :cond_0
 
-    .line 4020
+    .line 4019
     const-string v0, "Camera"
 
     const-string v1, "initGridLines, but mPreferences is null!!"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4041
+    .line 4040
     :goto_0
     return-void
 
-    .line 4023
+    .line 4022
     :cond_0
     const v0, 0x7f0c0017
 
@@ -6833,7 +6833,7 @@
 
     check-cast v0, Lcom/android/hwcamera/hwui/GridLines;
 
-    .line 4024
+    .line 4023
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     const-string v2, "pref_camera_grid_key"
@@ -6848,12 +6848,12 @@
 
     move-result-object v1
 
-    .line 4026
+    .line 4025
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Lcom/android/hwcamera/hwui/GridLines;->setAnimationState(Z)V
 
-    .line 4027
+    .line 4026
     const-string v2, "on"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -6862,23 +6862,23 @@
 
     if-eqz v1, :cond_2
 
-    .line 4029
+    .line 4028
     if-eqz p1, :cond_1
 
-    .line 4031
+    .line 4030
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/GridLines;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 4034
+    .line 4033
     :cond_1
     invoke-virtual {v0, v4}, Lcom/android/hwcamera/hwui/GridLines;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 4038
+    .line 4037
     :cond_2
     invoke-virtual {v0, v4}, Lcom/android/hwcamera/hwui/GridLines;->setVisibility(I)V
 
@@ -6891,12 +6891,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 3933
+    .line 3932
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPanoramaBarListener:Lcom/android/hwcamera/Camera$PanoramaBarListener;
 
     if-nez v0, :cond_0
 
-    .line 3934
+    .line 3933
     new-instance v0, Lcom/android/hwcamera/Camera$PanoramaBarListener;
 
     const/4 v1, 0x0
@@ -6905,7 +6905,7 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mPanoramaBarListener:Lcom/android/hwcamera/Camera$PanoramaBarListener;
 
-    .line 3936
+    .line 3935
     :cond_0
     const v0, 0x7f0c0072
 
@@ -6917,19 +6917,19 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mPanoramaBar:Lcom/android/hwcamera/hwui/PanoramaBar;
 
-    .line 3937
+    .line 3936
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPanoramaBar:Lcom/android/hwcamera/hwui/PanoramaBar;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mPanoramaBarListener:Lcom/android/hwcamera/Camera$PanoramaBarListener;
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/PanoramaBar;->registerListeners(Lcom/android/hwcamera/hwui/PanoramaBar$Listeners;)V
 
-    .line 3938
+    .line 3937
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPanoramaBar:Lcom/android/hwcamera/hwui/PanoramaBar;
 
     invoke-virtual {v0, v2}, Lcom/android/hwcamera/hwui/PanoramaBar;->setVisibility(I)V
 
-    .line 3939
+    .line 3938
     const v0, 0x7f0c001c
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -6938,12 +6938,12 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3940
+    .line 3939
     const/4 v0, 0x2
 
     invoke-static {v0}, Lcom/android/hwcamera/hwui/PanoramaBar;->setPanoramaState(I)V
 
-    .line 3941
+    .line 3940
     return-void
 .end method
 
@@ -6973,7 +6973,7 @@
 
     const/4 v2, 0x0
 
-    .line 8453
+    .line 8409
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/HwCamera;->getParameters()Landroid/hardware/Camera$Parameters;
@@ -6982,30 +6982,30 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mInitialParams:Landroid/hardware/Camera$Parameters;
 
-    .line 8454
+    .line 8410
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     iget-object v3, p0, Lcom/android/hwcamera/Camera;->mInitialParams:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v0, v3}, Lcom/android/hwcamera/FocusManager;->initializeParameters(Landroid/hardware/Camera$Parameters;)V
 
-    .line 8457
+    .line 8413
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mInitialParams:Landroid/hardware/Camera$Parameters;
 
     if-nez v0, :cond_0
 
-    .line 8458
+    .line 8414
     const-string v0, "Camera"
 
     const-string v1, "error mCameraDevice.getParameters() is null "
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 8479
+    .line 8435
     :goto_0
     return-void
 
-    .line 8462
+    .line 8418
     :cond_0
     invoke-static {}, Lcom/android/hwcamera/Util;->isBuildVersionAboveICS()Z
 
@@ -7013,21 +7013,21 @@
 
     if-nez v0, :cond_1
 
-    .line 8463
+    .line 8419
     iput-boolean v2, p0, Lcom/android/hwcamera/Camera;->mFocusAreaSupported:Z
 
-    .line 8464
+    .line 8420
     iput-boolean v2, p0, Lcom/android/hwcamera/Camera;->mMeteringAreaSupported:Z
 
-    .line 8465
+    .line 8421
     iput-boolean v2, p0, Lcom/android/hwcamera/Camera;->mAeLockSupported:Z
 
-    .line 8466
+    .line 8422
     iput-boolean v2, p0, Lcom/android/hwcamera/Camera;->mAwbLockSupported:Z
 
     goto :goto_0
 
-    .line 8470
+    .line 8426
     :cond_1
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mInitialParams:Landroid/hardware/Camera$Parameters;
 
@@ -7056,7 +7056,7 @@
     :goto_1
     iput-boolean v0, p0, Lcom/android/hwcamera/Camera;->mFocusAreaSupported:Z
 
-    .line 8473
+    .line 8429
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mInitialParams:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v0}, Landroid/hardware/Camera$Parameters;->getMaxNumMeteringAreas()I
@@ -7070,7 +7070,7 @@
     :goto_2
     iput-boolean v0, p0, Lcom/android/hwcamera/Camera;->mMeteringAreaSupported:Z
 
-    .line 8474
+    .line 8430
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mInitialParams:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v0}, Landroid/hardware/Camera$Parameters;->isAutoExposureLockSupported()Z
@@ -7079,7 +7079,7 @@
 
     iput-boolean v0, p0, Lcom/android/hwcamera/Camera;->mAeLockSupported:Z
 
-    .line 8475
+    .line 8431
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mInitialParams:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v0}, Landroid/hardware/Camera$Parameters;->isAutoWhiteBalanceLockSupported()Z
@@ -7088,7 +7088,7 @@
 
     iput-boolean v0, p0, Lcom/android/hwcamera/Camera;->mAwbLockSupported:Z
 
-    .line 8477
+    .line 8433
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/HwCamera;->getParameters()Landroid/hardware/Camera$Parameters;
@@ -7109,19 +7109,19 @@
     :cond_2
     move v0, v2
 
-    .line 8470
+    .line 8426
     goto :goto_1
 
     :cond_3
     move v0, v2
 
-    .line 8473
+    .line 8429
     goto :goto_2
 
     :cond_4
     move v2, v1
 
-    .line 8477
+    .line 8433
     goto :goto_3
 .end method
 
@@ -7482,12 +7482,12 @@
     .locals 4
 
     .prologue
-    .line 5063
+    .line 5062
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
-    .line 5065
+    .line 5064
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -7500,25 +7500,25 @@
 
     move-result v1
 
-    .line 5068
+    .line 5067
     const/4 v2, 0x1
 
     if-ne v1, v2, :cond_0
 
-    .line 5069
+    .line 5068
     invoke-virtual {v0}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v1
 
-    .line 5070
+    .line 5069
     const v2, 0x3f333333
 
     iput v2, v1, Landroid/view/WindowManager$LayoutParams;->screenBrightness:F
 
-    .line 5071
+    .line 5070
     invoke-virtual {v0, v1}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    .line 5073
+    .line 5072
     :cond_0
     return-void
 .end method
@@ -7654,10 +7654,10 @@
     .locals 4
 
     .prologue
-    .line 5042
+    .line 5041
     const/4 v0, 0x1
 
-    .line 5043
+    .line 5042
     const-string v1, "ro.camera.sound.forced"
 
     const-string v2, "0"
@@ -7674,10 +7674,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 5044
+    .line 5043
     const/4 v0, 0x0
 
-    .line 5047
+    .line 5046
     :cond_0
     new-instance v1, Lcom/android/hwcamera/SoundPlayer;
 
@@ -7695,12 +7695,12 @@
 
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mTimerPlayer:Lcom/android/hwcamera/SoundPlayer;
 
-    .line 5049
+    .line 5048
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     invoke-virtual {v1, p0, v0}, Lcom/android/hwcamera/FocusManager;->initializeSoundPlayer(Landroid/content/Context;Z)V
 
-    .line 5050
+    .line 5049
     return-void
 .end method
 
@@ -7708,16 +7708,16 @@
     .locals 2
 
     .prologue
-    .line 5020
+    .line 5019
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mDidRegister:Z
 
     if-eqz v0, :cond_0
 
-    .line 5035
+    .line 5034
     :goto_0
     return-void
 
-    .line 5026
+    .line 5025
     :cond_0
     new-instance v0, Landroid/content/IntentFilter;
 
@@ -7725,42 +7725,42 @@
 
     invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 5027
+    .line 5026
     const-string v1, "android.intent.action.MEDIA_UNMOUNTED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 5028
+    .line 5027
     const-string v1, "android.intent.action.MEDIA_SCANNER_FINISHED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 5029
+    .line 5028
     const-string v1, "android.intent.action.MEDIA_CHECKING"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 5030
+    .line 5029
     const-string v1, "android.intent.action.MEDIA_EJECT"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 5031
+    .line 5030
     const-string v1, "android.intent.action.MEDIA_BAD_REMOVAL"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 5032
+    .line 5031
     const-string v1, "file"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addDataScheme(Ljava/lang/String;)V
 
-    .line 5033
+    .line 5032
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v1, v0}, Lcom/android/hwcamera/Camera;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 5034
+    .line 5033
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/hwcamera/Camera;->mDidRegister:Z
@@ -7806,7 +7806,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 7064
+    .line 7020
     iget v1, p0, Lcom/android/hwcamera/Camera;->mCameraState:I
 
     if-eq v1, v0, :cond_0
@@ -7837,10 +7837,10 @@
 
     const/4 v1, 0x0
 
-    .line 5796
+    .line 5795
     const/4 v0, 0x1
 
-    .line 5797
+    .line 5796
     iget-boolean v2, p0, Lcom/android/hwcamera/Camera;->isCounterDowning:Z
 
     if-nez v2, :cond_0
@@ -7849,13 +7849,13 @@
 
     if-eqz v2, :cond_1
 
-    .line 5798
+    .line 5797
     :cond_0
     iput-boolean v1, p0, Lcom/android/hwcamera/Camera;->mIsCounter:Z
 
     move v0, v1
 
-    .line 5801
+    .line 5800
     :cond_1
     iget v2, p0, Lcom/android/hwcamera/Camera;->mCurrentState:I
 
@@ -7869,13 +7869,13 @@
 
     if-ne v2, v3, :cond_3
 
-    .line 5802
+    .line 5801
     :cond_2
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->galleryExEnd()V
 
     move v0, v1
 
-    .line 5805
+    .line 5804
     :cond_3
     const v2, 0x7f0c0014
 
@@ -7893,11 +7893,11 @@
 
     if-eqz v2, :cond_6
 
-    .line 5807
+    .line 5806
     :cond_4
     iput-boolean v1, p0, Lcom/android/hwcamera/Camera;->mIsReview:Z
 
-    .line 5808
+    .line 5807
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v4}, Landroid/os/Handler;->hasMessages(I)Z
@@ -7906,12 +7906,12 @@
 
     if-eqz v0, :cond_5
 
-    .line 5809
+    .line 5808
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v4}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 5811
+    .line 5810
     :cond_5
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
@@ -7919,7 +7919,7 @@
 
     move v0, v1
 
-    .line 5814
+    .line 5813
     :cond_6
     return v0
 .end method
@@ -7931,7 +7931,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 8503
+    .line 8469
     const-string v0, "googlePanoramaPreference"
 
     const/4 v1, 0x2
@@ -7940,7 +7940,7 @@
 
     move-result-object v0
 
-    .line 8504
+    .line 8470
     const-string v1, "backButtonIsClickInGooglePanorama"
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
@@ -7949,23 +7949,23 @@
 
     if-eqz v1, :cond_0
 
-    .line 8505
+    .line 8471
     const/4 p1, 0x1
 
-    .line 8506
+    .line 8472
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 8507
+    .line 8473
     const-string v1, "backButtonIsClickInGooglePanorama"
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 8508
+    .line 8474
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 8510
+    .line 8476
     :cond_0
     return p1
 .end method
@@ -8123,18 +8123,18 @@
 
     const/4 v1, 0x0
 
+    .line 5779
     .line 5780
-    .line 5781
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->isCounterDowning:Z
 
     if-eqz v0, :cond_3
 
-    .line 5782
+    .line 5781
     iput-boolean v2, p0, Lcom/android/hwcamera/Camera;->mIsCounter:Z
 
     move v0, v1
 
-    .line 5785
+    .line 5784
     :goto_0
     iget v3, p0, Lcom/android/hwcamera/Camera;->mCurrentState:I
 
@@ -8151,7 +8151,7 @@
     :cond_0
     move v0, v1
 
-    .line 5788
+    .line 5787
     :cond_1
     const v3, 0x7f0c0014
 
@@ -8165,10 +8165,10 @@
 
     if-nez v3, :cond_2
 
-    .line 5789
+    .line 5788
     iput-boolean v2, p0, Lcom/android/hwcamera/Camera;->mIsReview:Z
 
-    .line 5792
+    .line 5791
     :goto_1
     return v1
 
@@ -8187,15 +8187,15 @@
     .locals 1
 
     .prologue
-    .line 8369
+    .line 8325
     iget v0, p0, Lcom/android/hwcamera/Camera;->mCameraId:I
 
     if-nez v0, :cond_0
 
-    .line 8370
+    .line 8326
     const/4 v0, 0x0
 
-    .line 8372
+    .line 8328
     :goto_0
     return v0
 
@@ -8254,7 +8254,7 @@
     .locals 2
 
     .prologue
-    .line 7068
+    .line 7024
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
@@ -8263,7 +8263,7 @@
 
     move-result-object v0
 
-    .line 7069
+    .line 7025
     const-string v1, "android.media.action.IMAGE_CAPTURE"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -8362,81 +8362,19 @@
     goto :goto_0
 .end method
 
-.method private isNullArea(Ljava/util/List;)Z
-    .locals 2
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Landroid/hardware/Camera$Area;",
-            ">;)Z"
-        }
-    .end annotation
-
-    .prologue
-    .local p1, area:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Area;>;"
-    const/4 v1, 0x0
-
-    .line 6566
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/hardware/Camera$Area;
-
-    iget-object v0, v0, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/hardware/Camera$Area;
-
-    iget-object v0, v0, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
-
-    invoke-virtual {v0}, Landroid/graphics/Rect;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    :cond_0
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_1
-    move v0, v1
-
-    goto :goto_0
-.end method
-
 .method private isOnWidescreen()Z
     .locals 3
 
     .prologue
-    .line 6861
+    .line 6817
     const-string v0, "off"
 
-    .line 6862
+    .line 6818
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsSupporetedWideScreen:Z
 
     if-eqz v0, :cond_0
 
-    .line 6863
+    .line 6819
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     const-string v1, "pref_camera_widescreen_key"
@@ -8451,7 +8389,7 @@
 
     move-result-object v0
 
-    .line 6868
+    .line 6824
     :goto_0
     const-string v1, "on"
 
@@ -8459,10 +8397,10 @@
 
     move-result v0
 
-    .line 6869
+    .line 6825
     return v0
 
-    .line 6866
+    .line 6822
     :cond_0
     const-string v0, "off"
 
@@ -8475,7 +8413,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 5598
+    .line 5597
     iget v1, p0, Lcom/android/hwcamera/Camera;->mPicturesRemaining:I
 
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->getRequestRemaining()I
@@ -8484,10 +8422,10 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 5599
+    .line 5598
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->checkCurrentStorage()V
 
-    .line 5602
+    .line 5601
     :cond_0
     iget v1, p0, Lcom/android/hwcamera/Camera;->mPicturesRemaining:I
 
@@ -8497,14 +8435,14 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 5603
+    .line 5602
     const-string v1, "Camera"
 
     const-string v2, "space is low include sd card and phone "
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5605
+    .line 5604
     invoke-static {}, Lcom/android/hwcamera/Storage;->getmStrongeHint()Ljava/lang/String;
 
     move-result-object v1
@@ -8513,7 +8451,7 @@
 
     invoke-direct {p0, v1, v0, v2}, Lcom/android/hwcamera/Camera;->makeRotateToastifNeeded(Ljava/lang/CharSequence;II)V
 
-    .line 5609
+    .line 5608
     :goto_0
     return v0
 
@@ -8592,14 +8530,14 @@
     .locals 2
 
     .prologue
-    .line 7626
+    .line 7582
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 7627
+    .line 7583
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -8608,7 +8546,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->addFlags(I)V
 
-    .line 7628
+    .line 7584
     return-void
 .end method
 
@@ -8618,12 +8556,12 @@
     .prologue
     const/4 v3, 0x4
 
-    .line 7630
+    .line 7586
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v3}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 7631
+    .line 7587
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -8632,14 +8570,14 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->addFlags(I)V
 
-    .line 7632
+    .line 7588
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const-wide/32 v1, 0x1d4c0
 
     invoke-virtual {v0, v3, v1, v2}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 7633
+    .line 7589
     return-void
 .end method
 
@@ -8712,25 +8650,25 @@
     .parameter "orientation"
 
     .prologue
-    .line 5002
+    .line 5001
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mRotateToast:Lcom/android/hwcamera/hwui/RotateToast;
 
     if-nez v0, :cond_1
 
-    .line 5003
+    .line 5002
     invoke-static {p0, p1, p2}, Lcom/android/hwcamera/hwui/RotateToast;->makeRotateText(Landroid/content/Context;Ljava/lang/CharSequence;I)Lcom/android/hwcamera/hwui/RotateToast;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mRotateToast:Lcom/android/hwcamera/hwui/RotateToast;
 
-    .line 5010
+    .line 5009
     :goto_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     if-eqz v0, :cond_0
 
-    .line 5011
+    .line 5010
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mRotateToast:Lcom/android/hwcamera/hwui/RotateToast;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
@@ -8741,22 +8679,22 @@
 
     invoke-virtual {v0, p3, v1}, Lcom/android/hwcamera/hwui/RotateToast;->setOrientationEx(II)V
 
-    .line 5015
+    .line 5014
     :cond_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mRotateToast:Lcom/android/hwcamera/hwui/RotateToast;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/RotateToast;->show()V
 
-    .line 5016
+    .line 5015
     return-void
 
-    .line 5005
+    .line 5004
     :cond_1
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mRotateToast:Lcom/android/hwcamera/hwui/RotateToast;
 
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/hwui/RotateToast;->setText(Ljava/lang/CharSequence;)V
 
-    .line 5006
+    .line 5005
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mRotateToast:Lcom/android/hwcamera/hwui/RotateToast;
 
     invoke-virtual {v0, p2}, Lcom/android/hwcamera/hwui/RotateToast;->setDuration(I)V
@@ -8884,7 +8822,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 4571
+    .line 4570
     iget-boolean v1, p0, Lcom/android/hwcamera/Camera;->mPausing:Z
 
     if-nez v1, :cond_0
@@ -8895,12 +8833,12 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 4602
+    .line 4601
     :cond_0
     :goto_0
     return v0
 
-    .line 4577
+    .line 4576
     :cond_1
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
@@ -8946,7 +8884,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 4580
+    .line 4579
     :cond_2
     invoke-static {}, Lcom/android/hwcamera/Util;->isCAFEnded()Z
 
@@ -8954,7 +8892,7 @@
 
     iput-boolean v1, p0, Lcom/android/hwcamera/Camera;->mIsCafSucceed:Z
 
-    .line 4581
+    .line 4580
     iget-boolean v1, p0, Lcom/android/hwcamera/Camera;->mIsCafSucceed:Z
 
     if-eqz v1, :cond_3
@@ -8965,11 +8903,11 @@
 
     if-nez v1, :cond_0
 
-    .line 4584
+    .line 4583
     :cond_3
     iput-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsCafSucceed:Z
 
-    .line 4589
+    .line 4588
     :cond_4
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
@@ -8983,7 +8921,7 @@
 
     if-nez v1, :cond_0
 
-    .line 4594
+    .line 4593
     :cond_5
     if-eqz p1, :cond_6
 
@@ -8993,13 +8931,13 @@
 
     if-eqz v1, :cond_0
 
-    .line 4599
+    .line 4598
     :cond_6
     iget v1, p0, Lcom/android/hwcamera/Camera;->mTimerValue:I
 
     if-nez v1, :cond_0
 
-    .line 4602
+    .line 4601
     const/4 v0, 0x1
 
     goto :goto_0
@@ -9054,7 +8992,7 @@
     .locals 3
 
     .prologue
-    .line 5245
+    .line 5244
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     const-string v1, "config_need_to_helpcenter"
@@ -9072,24 +9010,24 @@
     .locals 3
 
     .prologue
-    .line 5578
+    .line 5577
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ComboPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 5579
+    .line 5578
     const-string v1, "config_need_to_helpcenter"
 
     const/4 v2, 0x0
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 5580
+    .line 5579
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 5581
+    .line 5580
     return-void
 .end method
 
@@ -9097,16 +9035,16 @@
     .locals 5
 
     .prologue
-    .line 7592
+    .line 7548
     iget-boolean v3, p0, Lcom/android/hwcamera/Camera;->mPausing:Z
 
     if-eqz v3, :cond_0
 
-    .line 7611
+    .line 7567
     :goto_0
     return-void
 
-    .line 7598
+    .line 7554
     :cond_0
     iget-object v3, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
@@ -9116,48 +9054,48 @@
 
     move-result v2
 
-    .line 7601
+    .line 7557
     .local v2, recordLocation:Z
     iget-object v3, p0, Lcom/android/hwcamera/Camera;->mLocationManager:Lcom/android/hwcamera/LocationManager;
 
     invoke-virtual {v3, v2}, Lcom/android/hwcamera/LocationManager;->recordLocation(Z)V
 
-    .line 7602
+    .line 7558
     iget-object v3, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     invoke-static {v3}, Lcom/android/hwcamera/CameraSettings;->readPreferredCameraId(Landroid/content/SharedPreferences;)I
 
     move-result v0
 
-    .line 7603
+    .line 7559
     .local v0, cameraId:I
     iget v3, p0, Lcom/android/hwcamera/Camera;->mCameraId:I
 
     if-eq v3, v0, :cond_1
 
-    .line 7604
+    .line 7560
     invoke-direct {p0, v0}, Lcom/android/hwcamera/Camera;->switchCameraId(I)V
 
     goto :goto_0
 
-    .line 7606
+    .line 7562
     :cond_1
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v1
 
-    .line 7607
+    .line 7563
     .local v1, msg:Landroid/os/Message;
     const/4 v3, 0x4
 
     iput v3, v1, Landroid/os/Message;->arg1:I
 
-    .line 7608
+    .line 7564
     const/16 v3, 0xf
 
     iput v3, v1, Landroid/os/Message;->what:I
 
-    .line 7609
+    .line 7565
     iget-object v3, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     invoke-virtual {v3, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
@@ -9270,10 +9208,10 @@
 
     const/4 v3, 0x0
 
-    .line 6906
+    .line 6862
     new-array v0, v5, [I
 
-    .line 6907
+    .line 6863
     .local v0, setSize:[I
     const-string v2, "x"
 
@@ -9281,13 +9219,13 @@
 
     move-result-object v1
 
-    .line 6909
+    .line 6865
     .local v1, strArray:[Ljava/lang/String;
     array-length v2, v1
 
     if-lt v2, v5, :cond_0
 
-    .line 6911
+    .line 6867
     aget-object v2, v1, v3
 
     invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -9296,7 +9234,7 @@
 
     aput v2, v0, v3
 
-    .line 6912
+    .line 6868
     aget-object v2, v1, v4
 
     invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -9305,7 +9243,7 @@
 
     aput v2, v0, v4
 
-    .line 6915
+    .line 6871
     :cond_0
     return-object v0
 .end method
@@ -9338,22 +9276,22 @@
     .locals 1
 
     .prologue
-    .line 5056
+    .line 5055
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mTimerPlayer:Lcom/android/hwcamera/SoundPlayer;
 
     if-eqz v0, :cond_0
 
-    .line 5057
+    .line 5056
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mTimerPlayer:Lcom/android/hwcamera/SoundPlayer;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/SoundPlayer;->release()V
 
-    .line 5058
+    .line 5057
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mTimerPlayer:Lcom/android/hwcamera/SoundPlayer;
 
-    .line 5060
+    .line 5059
     :cond_0
     return-void
 .end method
@@ -9498,14 +9436,14 @@
     .locals 2
 
     .prologue
-    .line 7622
+    .line 7578
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 7623
+    .line 7579
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -9514,7 +9452,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->clearFlags(I)V
 
-    .line 7624
+    .line 7580
     return-void
 .end method
 
@@ -9524,59 +9462,59 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 7686
+    .line 7642
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mPreferenceGroup:Lcom/android/hwcamera/PreferenceGroup;
 
     invoke-virtual {v1}, Lcom/android/hwcamera/PreferenceGroup;->reloadValue()V
 
-    .line 7688
+    .line 7644
     iput v2, p0, Lcom/android/hwcamera/Camera;->mTimerValue:I
 
-    .line 7690
+    .line 7646
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->targetTrakingModeUpdate()V
 
-    .line 7692
+    .line 7648
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->flashModeUpdate()V
 
-    .line 7694
+    .line 7650
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->frontTimerUpdate()V
 
-    .line 7697
+    .line 7653
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->setCameraSwitcherIcon()V
 
-    .line 7699
+    .line 7655
     const/4 v1, 0x1
 
     invoke-direct {p0, v1}, Lcom/android/hwcamera/Camera;->initGridLines(Z)V
 
-    .line 7701
+    .line 7657
     const/4 v1, 0x0
 
     invoke-direct {p0, v1}, Lcom/android/hwcamera/Camera;->updateShootMode(Ljava/lang/String;)V
 
-    .line 7702
+    .line 7658
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->checkStorage()V
 
-    .line 7703
+    .line 7659
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 7704
+    .line 7660
     .local v0, msg:Landroid/os/Message;
     iput v2, v0, Landroid/os/Message;->arg1:I
 
-    .line 7705
+    .line 7661
     const/16 v1, 0xb
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 7706
+    .line 7662
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 7707
+    .line 7663
     return-void
 .end method
 
@@ -9584,32 +9522,32 @@
     .locals 4
 
     .prologue
-    .line 7636
+    .line 7592
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mPausing:Z
 
     if-eqz v0, :cond_0
 
-    .line 7674
+    .line 7630
     :goto_0
     return-void
 
-    .line 7640
+    .line 7596
     :cond_0
     new-instance v0, Lcom/android/hwcamera/Camera$8;
 
     invoke-direct {v0, p0}, Lcom/android/hwcamera/Camera$8;-><init>(Lcom/android/hwcamera/Camera;)V
 
-    .line 7665
+    .line 7621
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     if-eqz v1, :cond_1
 
-    .line 7666
+    .line 7622
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v1}, Lcom/android/hwcamera/hwui/SuperPanel;->onPanelStartClose()Z
 
-    .line 7668
+    .line 7624
     :cond_1
     new-instance v1, Lcom/android/hwcamera/hwui/RotateDailog;
 
@@ -9629,24 +9567,24 @@
 
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mDailogBoxView:Lcom/android/hwcamera/hwui/RotateDailog;
 
-    .line 7670
+    .line 7626
     const v0, 0x7f0c001e
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 7671
+    .line 7627
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mDailogBoxView:Lcom/android/hwcamera/hwui/RotateDailog;
 
     invoke-virtual {v1, v0}, Lcom/android/hwcamera/hwui/RotateDailog;->setParentView(Landroid/view/View;)V
 
-    .line 7672
+    .line 7628
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mDailogBoxView:Lcom/android/hwcamera/hwui/RotateDailog;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/RotateDailog;->createPopupWindowEx()V
 
-    .line 7673
+    .line 7629
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mDailogBoxView:Lcom/android/hwcamera/hwui/RotateDailog;
 
     iget v1, p0, Lcom/android/hwcamera/Camera;->mOrientationCompensation:I
@@ -9661,22 +9599,22 @@
     .parameter
 
     .prologue
-    .line 5584
+    .line 5583
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ComboPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 5585
+    .line 5584
     const-string v1, "config_helpcenter_current_page"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 5587
+    .line 5586
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 5588
+    .line 5587
     return-void
 .end method
 
@@ -9684,29 +9622,29 @@
     .locals 3
 
     .prologue
-    .line 7130
+    .line 7086
     invoke-static {p0}, Lcom/android/hwcamera/Storage;->saveLocationInit(Landroid/content/Context;)V
 
-    .line 7133
+    .line 7089
     invoke-static {}, Lcom/android/hwcamera/Storage;->isInternalStorageExist()Z
 
     move-result v1
 
     iput-boolean v1, p0, Lcom/android/hwcamera/Camera;->mIsInternalStorageExist:Z
 
-    .line 7134
+    .line 7090
     iget-boolean v1, p0, Lcom/android/hwcamera/Camera;->mIsInternalStorageExist:Z
 
     if-nez v1, :cond_0
 
-    .line 7135
+    .line 7091
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     invoke-virtual {v1}, Lcom/android/hwcamera/ComboPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 7136
+    .line 7092
     .local v0, editor:Landroid/content/SharedPreferences$Editor;
     const-string v1, "pref_camera_save_location_key"
 
@@ -9714,18 +9652,18 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 7137
+    .line 7093
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 7138
+    .line 7094
     invoke-static {}, Lcom/android/hwcamera/Storage;->switchToExternalSdCard()V
 
-    .line 7154
+    .line 7110
     .end local v0           #editor:Landroid/content/SharedPreferences$Editor;
     :goto_0
     return-void
 
-    .line 7144
+    .line 7100
     :cond_0
     invoke-static {}, Lcom/android/hwcamera/Storage;->isExternalStorageExist()Z
 
@@ -9733,19 +9671,19 @@
 
     iput-boolean v1, p0, Lcom/android/hwcamera/Camera;->mIsExternalStorageExist:Z
 
-    .line 7145
+    .line 7101
     iget-boolean v1, p0, Lcom/android/hwcamera/Camera;->mIsExternalStorageExist:Z
 
     if-nez v1, :cond_1
 
-    .line 7146
+    .line 7102
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     invoke-virtual {v1}, Lcom/android/hwcamera/ComboPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 7147
+    .line 7103
     .restart local v0       #editor:Landroid/content/SharedPreferences$Editor;
     const-string v1, "pref_camera_save_location_key"
 
@@ -9753,15 +9691,15 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 7148
+    .line 7104
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 7149
+    .line 7105
     invoke-static {}, Lcom/android/hwcamera/Storage;->switchToInternalSdCard()V
 
     goto :goto_0
 
-    .line 7153
+    .line 7109
     .end local v0           #editor:Landroid/content/SharedPreferences$Editor;
     :cond_1
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->checkStorageForFirstInit()V
@@ -9774,7 +9712,7 @@
     .parameter
 
     .prologue
-    .line 7953
+    .line 7909
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->isCAFSupported()Z
@@ -9783,11 +9721,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 7961
+    .line 7917
     :goto_0
     return-void
 
-    .line 7956
+    .line 7912
     :cond_0
     const-string v0, "on"
 
@@ -9797,14 +9735,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 7957
+    .line 7913
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mAFController:Lcom/android/hwcamera/CameraAutoFocusController;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/CameraAutoFocusController;->resume()V
 
     goto :goto_0
 
-    .line 7959
+    .line 7915
     :cond_1
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mAFController:Lcom/android/hwcamera/CameraAutoFocusController;
 
@@ -9822,27 +9760,27 @@
 
     const/4 v2, 0x0
 
-    .line 7032
+    .line 6988
     iget v1, p0, Lcom/android/hwcamera/Camera;->mUpdateSet:I
 
     or-int/2addr v1, p1
 
     iput v1, p0, Lcom/android/hwcamera/Camera;->mUpdateSet:I
 
-    .line 7033
+    .line 6989
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
 
     if-nez v1, :cond_1
 
-    .line 7036
+    .line 6992
     iput v2, p0, Lcom/android/hwcamera/Camera;->mUpdateSet:I
 
-    .line 7049
+    .line 7005
     :cond_0
     :goto_0
     return-void
 
-    .line 7038
+    .line 6994
     :cond_1
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->isCameraIdle()Z
 
@@ -9850,17 +9788,17 @@
 
     if-eqz v1, :cond_2
 
-    .line 7039
+    .line 6995
     iget v1, p0, Lcom/android/hwcamera/Camera;->mUpdateSet:I
 
     invoke-virtual {p0, v1}, Lcom/android/hwcamera/Camera;->setCameraParameters(I)V
 
-    .line 7040
+    .line 6996
     iput v2, p0, Lcom/android/hwcamera/Camera;->mUpdateSet:I
 
     goto :goto_0
 
-    .line 7042
+    .line 6998
     :cond_2
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
@@ -9870,19 +9808,19 @@
 
     if-nez v1, :cond_0
 
-    .line 7043
+    .line 6999
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 7044
+    .line 7000
     .local v0, msg:Landroid/os/Message;
     iput v2, v0, Landroid/os/Message;->arg1:I
 
-    .line 7045
+    .line 7001
     iput v3, v0, Landroid/os/Message;->what:I
 
-    .line 7046
+    .line 7002
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     const-wide/16 v2, 0x3e8
@@ -9898,8 +9836,8 @@
     .prologue
     const v3, 0x7f0e013e
 
+    .line 3795
     .line 3796
-    .line 3797
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     const-string v1, "pref_camera_id_key"
@@ -9912,7 +9850,7 @@
 
     move-result-object v0
 
-    .line 3799
+    .line 3798
     invoke-virtual {p0, v3}, Lcom/android/hwcamera/Camera;->getString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -9923,19 +9861,19 @@
 
     if-eqz v0, :cond_0
 
-    .line 3800
+    .line 3799
     const v0, 0x7f0200da
 
-    .line 3804
+    .line 3803
     :goto_0
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mSwitchCameraImage:Lcom/android/hwcamera/RotateImageView;
 
     invoke-virtual {v1, v0}, Lcom/android/hwcamera/RotateImageView;->setImageResource(I)V
 
-    .line 3805
+    .line 3804
     return-void
 
-    .line 3802
+    .line 3801
     :cond_0
     const v0, 0x7f0200db
 
@@ -9949,27 +9887,27 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 5968
+    .line 5967
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     if-eqz v0, :cond_0
 
-    .line 5969
+    .line 5968
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/SuperPanel;->dissmissPopWindowNoAni()V
 
-    .line 5970
+    .line 5969
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0, v1, v1}, Lcom/android/hwcamera/hwui/SuperPanel;->setOpen(ZZ)V
 
-    .line 5971
+    .line 5970
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/hwui/SuperPanel;->setVisibility(I)V
 
-    .line 5973
+    .line 5972
     :cond_0
     const v0, 0x7f0c001e
 
@@ -9979,7 +9917,7 @@
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 5974
+    .line 5973
     const v0, 0x7f0c002a
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -9988,7 +9926,7 @@
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 5975
+    .line 5974
     const v0, 0x7f0c00ba
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -9997,17 +9935,17 @@
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 5978
+    .line 5977
     iget v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
     const/4 v1, 0x1
 
     if-eq v0, v1, :cond_1
 
-    .line 5979
+    .line 5978
     invoke-direct {p0, p1}, Lcom/android/hwcamera/Camera;->setZoomBarVisibility(I)V
 
-    .line 5982
+    .line 5981
     :cond_1
     return-void
 .end method
@@ -10017,20 +9955,20 @@
     .parameter
 
     .prologue
-    .line 7986
+    .line 7942
     const v0, 0x7f0c000b
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 7987
+    .line 7943
     if-eqz v0, :cond_0
 
-    .line 7988
+    .line 7944
     invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 7990
+    .line 7946
     :cond_0
     return-void
 .end method
@@ -10044,10 +9982,10 @@
 
     const v2, 0x7f0c002a
 
-    .line 5985
+    .line 5984
     if-nez p1, :cond_2
 
-    .line 5988
+    .line 5987
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->needSnapShotAnim()Z
 
     move-result v0
@@ -10064,7 +10002,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 5991
+    .line 5990
     :cond_0
     invoke-virtual {p0, v3}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
 
@@ -10082,39 +10020,39 @@
 
     invoke-static {v1, v0}, Lcom/android/hwcamera/Util;->slideInPanelHandler(Landroid/view/View;Landroid/view/View;)V
 
-    .line 5993
+    .line 5992
     invoke-virtual {p0, v2}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     invoke-static {v0}, Lcom/android/hwcamera/Util;->fadeIn(Landroid/view/View;)V
 
-    .line 5995
+    .line 5994
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mZoomControl:Lcom/android/hwcamera/hwui/ZoomControl;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/ZoomControl;->zoomFade(Z)V
 
-    .line 6007
+    .line 6006
     :cond_1
     :goto_0
     return-void
 
-    .line 6000
+    .line 5999
     :cond_2
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-static {v0}, Lcom/android/hwcamera/Util;->fadeOut(Landroid/view/View;)V
 
-    .line 6001
+    .line 6000
     invoke-virtual {p0, v2}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     invoke-static {v0}, Lcom/android/hwcamera/Util;->fadeOut(Landroid/view/View;)V
 
-    .line 6004
+    .line 6003
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mZoomControl:Lcom/android/hwcamera/hwui/ZoomControl;
 
     const/4 v1, 0x0
@@ -10132,33 +10070,33 @@
 
     const/4 v3, 0x1
 
-    .line 3755
+    .line 3754
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mFlashSupported:Z
 
     if-nez v0, :cond_1
 
-    .line 3772
+    .line 3771
     :cond_0
     :goto_0
     return-void
 
-    .line 3759
+    .line 3758
     :cond_1
     iget v0, p0, Lcom/android/hwcamera/Camera;->mCameraId:I
 
     if-eq v0, v3, :cond_0
 
-    .line 3762
+    .line 3761
     invoke-virtual {p0, v2}, Lcom/android/hwcamera/Camera;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3763
+    .line 3762
     iget-boolean v1, p0, Lcom/android/hwcamera/Camera;->mIsImageCaptureIntent:Z
 
     if-nez v1, :cond_2
 
-    .line 3764
+    .line 3763
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     const-string v1, "pref_camera_shootmode_key"
@@ -10171,7 +10109,7 @@
 
     move-result-object v0
 
-    .line 3767
+    .line 3766
     :cond_2
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mFlashImageView:Lcom/android/hwcamera/hwui/FlashImageView;
 
@@ -10183,14 +10121,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 3768
+    .line 3767
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFlashImageView:Lcom/android/hwcamera/hwui/FlashImageView;
 
     invoke-virtual {v0, v3}, Lcom/android/hwcamera/hwui/FlashImageView;->setEnableEx(Z)V
 
     goto :goto_0
 
-    .line 3770
+    .line 3769
     :cond_3
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFlashImageView:Lcom/android/hwcamera/hwui/FlashImageView;
 
@@ -10206,20 +10144,20 @@
     .parameter
 
     .prologue
-    .line 7964
+    .line 7920
     const v0, 0x7f0c002a
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 7965
+    .line 7921
     if-eqz v0, :cond_0
 
-    .line 7966
+    .line 7922
     invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 7968
+    .line 7924
     :cond_0
     return-void
 .end method
@@ -10230,27 +10168,27 @@
     .prologue
     const v2, 0x7f0e0208
 
-    .line 3822
+    .line 3821
     iget v0, p0, Lcom/android/hwcamera/Camera;->mCameraId:I
 
     if-nez v0, :cond_0
 
-    .line 3835
+    .line 3834
     :goto_0
     return-void
 
-    .line 3825
+    .line 3824
     :cond_0
     invoke-virtual {p0, v2}, Lcom/android/hwcamera/Camera;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3826
+    .line 3825
     iget-boolean v1, p0, Lcom/android/hwcamera/Camera;->mIsImageCaptureIntent:Z
 
     if-nez v1, :cond_1
 
-    .line 3827
+    .line 3826
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     const-string v1, "pref_camera_shootmode_key"
@@ -10263,7 +10201,7 @@
 
     move-result-object v0
 
-    .line 3830
+    .line 3829
     :cond_1
     const-string v1, "smile"
 
@@ -10273,7 +10211,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 3831
+    .line 3830
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mTimerImageView:Lcom/android/hwcamera/hwui/TimerImageView;
 
     const/4 v1, 0x0
@@ -10282,7 +10220,7 @@
 
     goto :goto_0
 
-    .line 3833
+    .line 3832
     :cond_2
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mTimerImageView:Lcom/android/hwcamera/hwui/TimerImageView;
 
@@ -10397,12 +10335,12 @@
     .parameter
 
     .prologue
-    .line 4143
+    .line 4142
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsImageCaptureIntent:Z
 
     if-nez v0, :cond_0
 
-    .line 4144
+    .line 4143
     const v0, 0x7f0c0023
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -10413,7 +10351,7 @@
 
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/RotateImageView;->setDegree(I)V
 
-    .line 4145
+    .line 4144
     const v0, 0x7f0c0029
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -10424,7 +10362,7 @@
 
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/RotateImageView;->setDegree(I)V
 
-    .line 4146
+    .line 4145
     const v0, 0x7f0c0028
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -10435,13 +10373,13 @@
 
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/RotateImageView;->setDegree(I)V
 
-    .line 4149
+    .line 4148
     :cond_0
     rem-int/lit8 v0, p1, 0x5a
 
     if-nez v0, :cond_5
 
-    .line 4150
+    .line 4149
     const v0, 0x7f0c002c
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -10452,7 +10390,7 @@
 
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/RotateImageView;->setDegree(I)V
 
-    .line 4151
+    .line 4150
     const v0, 0x7f0c002b
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -10463,7 +10401,7 @@
 
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/RotateImageView;->setDegree(I)V
 
-    .line 4152
+    .line 4151
     const v0, 0x7f0c00bd
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -10474,7 +10412,7 @@
 
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/RotateImageView;->setDegree(I)V
 
-    .line 4153
+    .line 4152
     const v0, 0x7f0c00bc
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -10485,7 +10423,7 @@
 
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/RotateImageView;->setDegree(I)V
 
-    .line 4154
+    .line 4153
     const v0, 0x7f0c00bb
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -10496,7 +10434,7 @@
 
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/RotateImageView;->setDegree(I)V
 
-    .line 4155
+    .line 4154
     const v0, 0x7f0c00be
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -10507,7 +10445,7 @@
 
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/hwui/RotateTextView;->setDegree(I)V
 
-    .line 4156
+    .line 4155
     const v0, 0x7f0c001b
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -10518,7 +10456,7 @@
 
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/hwui/RotateTextView;->setDegree(I)V
 
-    .line 4158
+    .line 4157
     const v0, 0x7f0c002d
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -10529,48 +10467,48 @@
 
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/RotateImageView;->setDegree(I)V
 
-    .line 4162
+    .line 4161
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     if-eqz v0, :cond_1
 
-    .line 4163
+    .line 4162
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/hwui/SuperPanel;->setOrientationEx(I)V
 
-    .line 4168
+    .line 4167
     :cond_1
     invoke-virtual {p0, p1}, Lcom/android/hwcamera/Camera;->updateShutterButtonCenterRotation(I)V
 
-    .line 4169
+    .line 4168
     invoke-virtual {p0, p1}, Lcom/android/hwcamera/Camera;->updateShutterButtonBackground(I)V
 
-    .line 4170
+    .line 4169
     invoke-virtual {p0, p1}, Lcom/android/hwcamera/Camera;->updateSwitcherImageResource(I)V
 
-    .line 4176
+    .line 4175
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mDailogBoxView:Lcom/android/hwcamera/hwui/RotateDailog;
 
     if-eqz v0, :cond_2
 
-    .line 4177
+    .line 4176
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mDailogBoxView:Lcom/android/hwcamera/hwui/RotateDailog;
 
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/hwui/RotateDailog;->setOrientationEx(I)V
 
-    .line 4179
+    .line 4178
     :cond_2
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGalleryExView:Lcom/android/hwcamera/hwui/GalleryEx;
 
     if-eqz v0, :cond_3
 
-    .line 4180
+    .line 4179
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGalleryExView:Lcom/android/hwcamera/hwui/GalleryEx;
 
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/hwui/GalleryEx;->setOrientationEx(I)V
 
-    .line 4182
+    .line 4181
     :cond_3
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGPSDailog:Lcom/android/hwcamera/hwui/GPSDailog;
 
@@ -10580,7 +10518,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 4183
+    .line 4182
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGPSDailog:Lcom/android/hwcamera/hwui/GPSDailog;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/GPSDailog;->getDialogBoxView()Lcom/android/hwcamera/hwui/RotateDailog;
@@ -10589,20 +10527,20 @@
 
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/hwui/RotateDailog;->setOrientationEx(I)V
 
-    .line 4187
+    .line 4186
     :cond_4
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mZoomControl:Lcom/android/hwcamera/hwui/ZoomControl;
 
     if-eqz v0, :cond_5
 
-    .line 4188
+    .line 4187
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mZoomControl:Lcom/android/hwcamera/hwui/ZoomControl;
 
     iget v1, p0, Lcom/android/hwcamera/Camera;->mOrientation:I
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/ZoomControl;->setOrientationEx(I)V
 
-    .line 4192
+    .line 4191
     :cond_5
     return-void
 .end method
@@ -10612,23 +10550,23 @@
     .parameter "key"
 
     .prologue
-    .line 6873
+    .line 6829
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     if-nez v2, :cond_0
 
-    .line 6874
+    .line 6830
     const-string v2, "Camera"
 
     const-string v3, "setPictureSizeByKey: mPreferences == null"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6901
+    .line 6857
     :goto_0
     return-void
 
-    .line 6878
+    .line 6834
     :cond_0
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
@@ -10638,11 +10576,11 @@
 
     move-result-object v0
 
-    .line 6879
+    .line 6835
     .local v0, pictureSize:Ljava/lang/String;
     if-nez v0, :cond_1
 
-    .line 6890
+    .line 6846
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     iget-object v3, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
@@ -10653,13 +10591,13 @@
 
     goto :goto_0
 
-    .line 6894
+    .line 6850
     :cond_1
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     if-nez v2, :cond_2
 
-    .line 6895
+    .line 6851
     const-string v2, "Camera"
 
     const-string v3, "setPictureSizeByKey: mParameters == null"
@@ -10668,7 +10606,7 @@
 
     goto :goto_0
 
-    .line 6898
+    .line 6854
     :cond_2
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
@@ -10676,7 +10614,7 @@
 
     move-result-object v1
 
-    .line 6899
+    .line 6855
     .local v1, supported:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Size;>;"
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
@@ -10689,24 +10627,24 @@
     .locals 6
 
     .prologue
-    .line 6944
+    .line 6900
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     if-nez v0, :cond_1
 
-    .line 6945
+    .line 6901
     const-string v0, "Camera"
 
     const-string v1, "setPreviewFrameAspectRatio: mParameters == null"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6990
+    .line 6946
     :cond_0
     :goto_0
     return-void
 
-    .line 6950
+    .line 6906
     :cond_1
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
@@ -10714,10 +10652,10 @@
 
     move-result-object v0
 
-    .line 6951
+    .line 6907
     if-nez v0, :cond_2
 
-    .line 6952
+    .line 6908
     const-string v0, "Camera"
 
     const-string v1, "setPreviewFrameAspectRatio: size == null"
@@ -10726,33 +10664,33 @@
 
     goto :goto_0
 
-    .line 6955
+    .line 6911
     :cond_2
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v1
 
-    .line 6956
+    .line 6912
     iput-object v0, v1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 6957
+    .line 6913
     const/16 v2, 0x20
 
     iput v2, v1, Landroid/os/Message;->what:I
 
-    .line 6958
+    .line 6914
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v2, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 6962
+    .line 6918
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v1}, Landroid/hardware/Camera$Parameters;->getSupportedPreviewSizes()Ljava/util/List;
 
     move-result-object v1
 
-    .line 6964
+    .line 6920
     iget v2, v0, Landroid/hardware/Camera$Size;->width:I
 
     int-to-double v2, v2
@@ -10763,48 +10701,48 @@
 
     div-double/2addr v2, v4
 
-    .line 6965
+    .line 6921
     invoke-direct {p0, v1, v2, v3}, Lcom/android/hwcamera/Camera;->getPropPreviewSize(Ljava/util/List;D)Landroid/hardware/Camera$Size;
 
     move-result-object v0
 
-    .line 6966
+    .line 6922
     if-nez v0, :cond_3
 
-    .line 6967
+    .line 6923
     invoke-virtual {p0, v1, v2, v3}, Lcom/android/hwcamera/Camera;->getOptimalPreviewSize(Ljava/util/List;D)Landroid/hardware/Camera$Size;
 
     move-result-object v0
 
-    .line 6973
+    .line 6929
     :goto_1
     if-eqz v0, :cond_0
 
-    .line 6974
+    .line 6930
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v1}, Landroid/hardware/Camera$Parameters;->getPreviewSize()Landroid/hardware/Camera$Size;
 
     move-result-object v1
 
-    .line 6975
+    .line 6931
     invoke-virtual {v1, v0}, Landroid/hardware/Camera$Size;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-nez v1, :cond_4
 
-    .line 6977
+    .line 6933
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v1
 
-    .line 6978
+    .line 6934
     const/16 v2, 0x27
 
     iput v2, v1, Landroid/os/Message;->what:I
 
-    .line 6979
+    .line 6935
     const/high16 v2, -0x100
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -10813,12 +10751,12 @@
 
     iput-object v2, v1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 6980
+    .line 6936
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v2, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 6983
+    .line 6939
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     iget v2, v0, Landroid/hardware/Camera$Size;->width:I
@@ -10829,7 +10767,7 @@
 
     goto :goto_0
 
-    .line 6969
+    .line 6925
     :cond_3
     const-string v1, "Camera"
 
@@ -10869,13 +10807,13 @@
 
     goto :goto_1
 
-    .line 6986
+    .line 6942
     :cond_4
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/hwcamera/Camera;->mRestartPreviewNeed:Z
 
-    .line 6987
+    .line 6943
     const-string v0, "Camera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -10908,20 +10846,20 @@
     .parameter
 
     .prologue
-    .line 7971
+    .line 7927
     const v0, 0x7f0c00ba
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 7972
+    .line 7928
     if-eqz v0, :cond_0
 
-    .line 7973
+    .line 7929
     invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 7975
+    .line 7931
     :cond_0
     return-void
 .end method
@@ -10931,7 +10869,7 @@
     .parameter
 
     .prologue
-    .line 8344
+    .line 8300
     const v0, 0x7f0c00bc
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -10940,15 +10878,15 @@
 
     check-cast v0, Lcom/android/hwcamera/RotateImageView;
 
-    .line 8345
+    .line 8301
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/RotateImageView;->setVisibility(I)V
 
-    .line 8346
+    .line 8302
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/RotateImageView;->setImageResource(I)V
 
-    .line 8347
+    .line 8303
     return-void
 .end method
 
@@ -10957,17 +10895,17 @@
     .parameter "visibility"
 
     .prologue
-    .line 7993
+    .line 7949
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     if-eqz v0, :cond_0
 
-    .line 7994
+    .line 7950
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/hwui/SuperPanel;->setHandleVisiable(I)V
 
-    .line 7996
+    .line 7952
     :cond_0
     return-void
 .end method
@@ -11085,14 +11023,14 @@
     .locals 3
 
     .prologue
-    .line 4006
+    .line 4005
     const v0, 0x7f0c00bd
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 4008
+    .line 4007
     iget v1, p0, Lcom/android/hwcamera/Camera;->mTimerValue:I
 
     if-eqz v1, :cond_0
@@ -11103,17 +11041,17 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 4010
+    .line 4009
     :cond_0
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 4014
+    .line 4013
     :goto_0
     return-void
 
-    .line 4012
+    .line 4011
     :cond_1
     const/4 v1, 0x0
 
@@ -11127,17 +11065,17 @@
     .parameter "visibility"
 
     .prologue
-    .line 7979
+    .line 7935
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mZoomControl:Lcom/android/hwcamera/hwui/ZoomControl;
 
     if-eqz v0, :cond_0
 
-    .line 7980
+    .line 7936
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mZoomControl:Lcom/android/hwcamera/hwui/ZoomControl;
 
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/hwui/ZoomControl;->setVisibility(I)V
 
-    .line 7982
+    .line 7938
     :cond_0
     return-void
 .end method
@@ -11146,7 +11084,7 @@
     .locals 2
 
     .prologue
-    .line 7073
+    .line 7029
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
@@ -11155,10 +11093,10 @@
 
     move-result-object v1
 
-    .line 7074
+    .line 7030
     if-eqz v1, :cond_0
 
-    .line 7075
+    .line 7031
     const-string v0, "output"
 
     invoke-virtual {v1, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -11169,7 +11107,7 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mSaveUri:Landroid/net/Uri;
 
-    .line 7076
+    .line 7032
     const-string v0, "crop"
 
     invoke-virtual {v1, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -11178,7 +11116,7 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mCropValue:Ljava/lang/String;
 
-    .line 7078
+    .line 7034
     :cond_0
     return-void
 .end method
@@ -11189,10 +11127,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 6017
+    .line 6016
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->showOnlyShutterButton()V
 
-    .line 6018
+    .line 6017
     const v0, 0x7f0c0023
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -11201,7 +11139,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setClickable(Z)V
 
-    .line 6019
+    .line 6018
     const v0, 0x7f0c000c
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -11210,7 +11148,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 6020
+    .line 6019
     const v0, 0x7f0c0025
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -11221,7 +11159,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 6021
+    .line 6020
     const v0, 0x7f0c00ba
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -11230,7 +11168,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 6022
+    .line 6021
     return-void
 .end method
 
@@ -11238,12 +11176,12 @@
     .locals 3
 
     .prologue
-    .line 6085
+    .line 6084
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 6086
+    .line 6085
     const v1, 0x7f0e0129
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -11258,7 +11196,7 @@
 
     invoke-static {p0, v1, v0}, Lcom/android/hwcamera/Util;->showFatalErrorAndFinish(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6088
+    .line 6087
     return-void
 .end method
 
@@ -11266,12 +11204,12 @@
     .locals 3
 
     .prologue
-    .line 6091
+    .line 6090
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 6092
+    .line 6091
     const v1, 0x7f0e012b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -11286,7 +11224,7 @@
 
     invoke-static {p0, v1, v0}, Lcom/android/hwcamera/Util;->showFatalErrorAndFinish(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6094
+    .line 6093
     return-void
 .end method
 
@@ -11294,21 +11232,21 @@
     .locals 2
 
     .prologue
-    .line 7711
+    .line 7667
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGPSDailog:Lcom/android/hwcamera/hwui/GPSDailog;
 
     const-string v1, "pref_camera_gps_key"
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/GPSDailog;->setKey(Ljava/lang/String;)V
 
-    .line 7712
+    .line 7668
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGPSDailog:Lcom/android/hwcamera/hwui/GPSDailog;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/GPSDailog;->setSuperPanel(Lcom/android/hwcamera/hwui/SuperPanel;)V
 
-    .line 7713
+    .line 7669
     const v0, 0x7f0c001e
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -11317,12 +11255,12 @@
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    .line 7714
+    .line 7670
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mGPSDailog:Lcom/android/hwcamera/hwui/GPSDailog;
 
     invoke-virtual {v1, v0}, Lcom/android/hwcamera/hwui/GPSDailog;->creatGpsDialogBox(Landroid/view/ViewGroup;)V
 
-    .line 7715
+    .line 7671
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGPSDailog:Lcom/android/hwcamera/hwui/GPSDailog;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/GPSDailog;->getDialogBoxView()Lcom/android/hwcamera/hwui/RotateDailog;
@@ -11333,7 +11271,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/RotateDailog;->setOrientationEx(I)V
 
-    .line 7716
+    .line 7672
     return-void
 .end method
 
@@ -11341,14 +11279,14 @@
     .locals 4
 
     .prologue
-    .line 7719
+    .line 7675
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGPSDailog:Lcom/android/hwcamera/hwui/GPSDailog;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/GPSDailog;->setSuperPanel(Lcom/android/hwcamera/hwui/SuperPanel;)V
 
-    .line 7720
+    .line 7676
     const v0, 0x7f0c001e
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -11357,7 +11295,7 @@
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    .line 7721
+    .line 7677
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mGPSDailog:Lcom/android/hwcamera/hwui/GPSDailog;
 
     new-instance v2, Lcom/android/hwcamera/Camera$9;
@@ -11368,7 +11306,7 @@
 
     invoke-virtual {v1, v0, v2, v3}, Lcom/android/hwcamera/hwui/GPSDailog;->creatFirstTimeDialogBox(Landroid/view/ViewGroup;Ljava/lang/Runnable;Ljava/lang/String;)V
 
-    .line 7737
+    .line 7693
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGPSDailog:Lcom/android/hwcamera/hwui/GPSDailog;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/GPSDailog;->getDialogBoxView()Lcom/android/hwcamera/hwui/RotateDailog;
@@ -11379,7 +11317,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/RotateDailog;->setOrientationEx(I)V
 
-    .line 7738
+    .line 7694
     return-void
 .end method
 
@@ -11432,32 +11370,32 @@
     .prologue
     const/4 v2, 0x4
 
-    .line 3965
+    .line 3964
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     const v1, 0x7f020038
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/ShutterButton;->setImageResource(I)V
 
-    .line 3966
+    .line 3965
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     invoke-virtual {v0, v2}, Lcom/android/hwcamera/ShutterButton;->setVisibility(I)V
 
-    .line 3967
+    .line 3966
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->clearPanoramaMessage()V
 
-    .line 3968
+    .line 3967
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPanoramaBar:Lcom/android/hwcamera/hwui/PanoramaBar;
 
     if-eqz v0, :cond_0
 
-    .line 3969
+    .line 3968
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPanoramaBar:Lcom/android/hwcamera/hwui/PanoramaBar;
 
     invoke-virtual {v0, v2}, Lcom/android/hwcamera/hwui/PanoramaBar;->setVisibility(I)V
 
-    .line 3971
+    .line 3970
     :cond_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
@@ -11465,7 +11403,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 3972
+    .line 3971
     return-void
 .end method
 
@@ -11475,13 +11413,13 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 4000
+    .line 3999
     invoke-direct {p0, v1}, Lcom/android/hwcamera/Camera;->setCameraUIVisibility(I)V
 
-    .line 4001
+    .line 4000
     invoke-direct {p0, v1}, Lcom/android/hwcamera/Camera;->setControlBarVisibility(I)V
 
-    .line 4002
+    .line 4001
     const v0, 0x7f0c000c
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -11490,7 +11428,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 4003
+    .line 4002
     return-void
 .end method
 
@@ -11502,10 +11440,10 @@
 
     const/4 v1, 0x0
 
-    .line 6009
+    .line 6008
     invoke-direct {p0, v2}, Lcom/android/hwcamera/Camera;->setCameraUIVisibility(I)V
 
-    .line 6010
+    .line 6009
     const v0, 0x7f0c001e
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -11514,7 +11452,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 6011
+    .line 6010
     const v0, 0x7f0c000b
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -11523,7 +11461,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 6012
+    .line 6011
     const v0, 0x7f0c000c
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -11532,7 +11470,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 6013
+    .line 6012
     const v0, 0x7f0c0011
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -11541,7 +11479,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 6014
+    .line 6013
     return-void
 .end method
 
@@ -11553,26 +11491,26 @@
 
     const/4 v3, 0x0
 
-    .line 7081
+    .line 7037
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsImageCaptureIntent:Z
 
     if-eqz v0, :cond_1
 
-    .line 7082
+    .line 7038
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsInvokeBarFirstInflate:Z
 
     if-eqz v0, :cond_0
 
-    .line 7083
+    .line 7039
     iput-boolean v3, p0, Lcom/android/hwcamera/Camera;->mIsInvokeBarFirstInflate:Z
 
-    .line 7085
+    .line 7041
     :cond_0
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getLayoutInflater()Landroid/view/LayoutInflater;
 
     move-result-object v1
 
-    .line 7086
+    .line 7042
     const v0, 0x7f0c001e
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -11581,14 +11519,14 @@
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    .line 7087
+    .line 7043
     const v2, 0x7f040009
 
     invoke-virtual {v1, v2, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
 
-    .line 7089
+    .line 7045
     const v1, 0x7f0c0030
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -11597,7 +11535,7 @@
 
     invoke-virtual {v1, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 7090
+    .line 7046
     const v1, 0x7f0c0031
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -11606,7 +11544,7 @@
 
     invoke-virtual {v1, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 7091
+    .line 7047
     const v1, 0x7f0c0032
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -11615,7 +11553,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 7092
+    .line 7048
     const v0, 0x7f0c002f
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -11624,7 +11562,7 @@
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 7094
+    .line 7050
     const v0, 0x7f0c00ba
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -11633,7 +11571,7 @@
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 7095
+    .line 7051
     const v0, 0x7f0c000b
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -11648,25 +11586,25 @@
 
     invoke-static {v0, v1}, Lcom/android/hwcamera/Util;->slideOutControlBar(Landroid/view/View;Landroid/view/View;)V
 
-    .line 7099
+    .line 7055
     const/4 v0, 0x1
 
     invoke-direct {p0, v0, v3}, Lcom/android/hwcamera/Camera;->enableShutterButton(ZZ)V
 
-    .line 7100
+    .line 7056
     invoke-direct {p0, v4}, Lcom/android/hwcamera/Camera;->setZoomBarVisibility(I)V
 
-    .line 7103
+    .line 7059
     const/4 v0, 0x6
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mCurrentState:I
 
-    .line 7104
+    .line 7060
     iget v0, p0, Lcom/android/hwcamera/Camera;->mOrientationCompensation:I
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->setOrientationInvokeAfterCaptureEx(I)V
 
-    .line 7106
+    .line 7062
     :cond_1
     return-void
 .end method
@@ -11677,10 +11615,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 6025
+    .line 6024
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->showNormalUi()V
 
-    .line 6026
+    .line 6025
     const v0, 0x7f0c0023
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -11689,7 +11627,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 6027
+    .line 6026
     const v0, 0x7f0c0025
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -11698,7 +11636,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 6028
+    .line 6027
     return-void
 .end method
 
@@ -11772,41 +11710,41 @@
 
     const/4 v2, 0x0
 
-    .line 3921
+    .line 3920
     const-string v0, "Camera"
 
     const-string v1, "startPanorama"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3922
+    .line 3921
     invoke-static {v3}, Lcom/android/hwcamera/hwui/PanoramaBar;->setPanoramaState(I)V
 
-    .line 3923
+    .line 3922
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     const v1, 0x7f02003f
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/ShutterButton;->setImageResource(I)V
 
-    .line 3924
+    .line 3923
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->showOnlyShutterButton()V
 
-    .line 3925
+    .line 3924
     invoke-direct {p0, v2, v3}, Lcom/android/hwcamera/Camera;->enableShutterButton(ZZ)V
 
-    .line 3926
+    .line 3925
     invoke-virtual {p0, v2}, Lcom/android/hwcamera/Camera;->enableSlideToGalleryImmediately(Z)V
 
-    .line 3927
+    .line 3926
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHWExtCameraHandler:Lcom/android/hwcamera/HWExtCameraHandler;
 
     if-eqz v0, :cond_0
 
-    .line 3928
+    .line 3927
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->doSnap()V
 
-    .line 3930
+    .line 3929
     :cond_0
     return-void
 .end method
@@ -12087,7 +12025,7 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 6133
+    .line 6132
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mPausing:Z
 
     if-nez v0, :cond_0
@@ -12103,11 +12041,11 @@
     :goto_0
     return-void
 
-    .line 6135
+    .line 6134
     :cond_1
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->openCameraDevice()V
 
-    .line 6137
+    .line 6136
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mOpenCameraFail:Z
 
     if-nez v0, :cond_2
@@ -12116,19 +12054,19 @@
 
     if-eqz v0, :cond_3
 
-    .line 6138
+    .line 6137
     :cond_2
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mStartPreviewLock:[Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 6139
+    .line 6138
     :try_start_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mStartPreviewLock:[Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 6140
+    .line 6139
     monitor-exit v1
 
     goto :goto_0
@@ -12142,7 +12080,7 @@
 
     throw v0
 
-    .line 6144
+    .line 6143
     :cond_3
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
@@ -12150,7 +12088,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 6149
+    .line 6148
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mRestartPreviewNeed:Z
 
     if-eqz v0, :cond_4
@@ -12159,10 +12097,10 @@
 
     if-eqz v0, :cond_4
 
-    .line 6150
+    .line 6149
     iput-boolean v7, p0, Lcom/android/hwcamera/Camera;->mRestartPreviewNeed:Z
 
-    .line 6151
+    .line 6150
     const-string v0, "Camera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -12187,29 +12125,36 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6152
+    .line 6151
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->stopPreview()V
 
-    .line 6156
+    .line 6155
     :cond_4
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->setDisplayOrientation()V
 
-    .line 6157
+    .line 6156
     iget v0, p0, Lcom/android/hwcamera/Camera;->mOrientationCompensation:I
 
     invoke-static {v0}, Lcom/android/hwcamera/Util;->setFaceOrientation(I)Z
 
-    .line 6158
+    .line 6157
     iget v0, p0, Lcom/android/hwcamera/Camera;->mCameraId:I
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
 
     invoke-static {p0, v0, v1}, Lcom/android/hwcamera/Util;->setCameraDisplayOrientation(Landroid/app/Activity;ILcom/android/hwcamera/HwCamera;)V
 
-    .line 6160
+    .line 6159
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     invoke-virtual {v0, v7}, Lcom/android/hwcamera/FocusManager;->setAeAwbLock(Z)V
+
+    .line 6160
+    iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
+
+    const/4 v1, 0x2
+
+    invoke-virtual {v0, v1}, Lcom/android/hwcamera/FocusManager;->setFocusPolicy(I)V
 
     .line 6161
     const/4 v0, -0x1
@@ -12812,7 +12757,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 3954
+    .line 3953
     const-string v0, "Camera"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -12847,12 +12792,12 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3955
+    .line 3954
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v2
 
-    .line 3956
+    .line 3955
     if-eqz p1, :cond_0
 
     move v0, v1
@@ -12860,31 +12805,31 @@
     :goto_0
     iput v0, v2, Landroid/os/Message;->arg1:I
 
-    .line 3957
+    .line 3956
     const/16 v0, 0x15
 
     iput v0, v2, Landroid/os/Message;->what:I
 
-    .line 3958
+    .line 3957
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 3959
+    .line 3958
     const/4 v0, 0x3
 
     invoke-static {v0}, Lcom/android/hwcamera/hwui/PanoramaBar;->setPanoramaState(I)V
 
-    .line 3960
+    .line 3959
     invoke-virtual {p0, v1}, Lcom/android/hwcamera/Camera;->enableSlideToGalleryImmediately(Z)V
 
-    .line 3961
+    .line 3960
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->showJointUi()V
 
-    .line 3962
+    .line 3961
     return-void
 
-    .line 3956
+    .line 3955
     :cond_0
     const/4 v0, 0x0
 
@@ -12897,33 +12842,33 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 6036
+    .line 6035
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsSmileCaptureState:Z
 
     if-eqz v0, :cond_0
 
-    .line 6037
+    .line 6036
     invoke-virtual {p0, v2}, Lcom/android/hwcamera/Camera;->enableSlideToGalleryImmediately(Z)V
 
-    .line 6038
+    .line 6037
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsSmileCaptureState:Z
 
-    .line 6039
+    .line 6038
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     const v1, 0x7f020038
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/ShutterButton;->setImageResource(I)V
 
-    .line 6040
+    .line 6039
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->showThumbAndSwitcher()V
 
-    .line 6041
+    .line 6040
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->keepScreenOnAwhile()V
 
-    .line 6042
+    .line 6041
     const v0, 0x7f0c00bc
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -12934,7 +12879,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 6043
+    .line 6042
     const v0, 0x7f0c0023
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -12943,7 +12888,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setClickable(Z)V
 
-    .line 6045
+    .line 6044
     :cond_0
     return-void
 .end method
@@ -12954,7 +12899,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 4044
+    .line 4043
     const v0, 0x7f0c0056
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -12965,52 +12910,52 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
-    .line 4045
+    .line 4044
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mSuperPanelListener:Lcom/android/hwcamera/Camera$SuperPanelListener;
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/SuperPanel;->registerListeners(Lcom/android/hwcamera/hwui/SuperPanel$Listeners;)V
 
-    .line 4046
+    .line 4045
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/SuperPanel;->setComboPreferences(Lcom/android/hwcamera/ComboPreferences;)V
 
-    .line 4047
+    .line 4046
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mPreferenceGroup:Lcom/android/hwcamera/PreferenceGroup;
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/SuperPanel;->setPreferenceGroupEx(Lcom/android/hwcamera/PreferenceGroup;)V
 
-    .line 4048
+    .line 4047
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     iget-boolean v1, p0, Lcom/android/hwcamera/Camera;->mIsImageCaptureIntent:Z
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/SuperPanel;->setCameraCaptureIntent(Z)V
 
-    .line 4050
+    .line 4049
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     iget-boolean v1, p0, Lcom/android/hwcamera/Camera;->mIsInternalStorageExist:Z
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/SuperPanel;->setIsInternalStorageExist(Z)V
 
-    .line 4053
+    .line 4052
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     iget-boolean v1, p0, Lcom/android/hwcamera/Camera;->mIsExternalStorageExist:Z
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/SuperPanel;->setIsExternalStorageExist(Z)V
 
-    .line 4055
+    .line 4054
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->updateSuperPanel()V
 
-    .line 4056
+    .line 4055
     const v0, 0x7f0c001f
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -13019,7 +12964,7 @@
 
     check-cast v0, Lcom/android/hwcamera/hwui/RotateLinearLayout;
 
-    .line 4058
+    .line 4057
     const v1, 0x7f0c0021
 
     invoke-virtual {p0, v1}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -13028,7 +12973,7 @@
 
     check-cast v1, Lcom/android/hwcamera/hwui/RotateLinearLayout;
 
-    .line 4059
+    .line 4058
     const/4 v2, 0x2
 
     new-array v2, v2, [Lcom/android/hwcamera/hwui/RotateLinearLayout;
@@ -13039,22 +12984,22 @@
 
     aput-object v1, v2, v0
 
-    .line 4060
+    .line 4059
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0, v2}, Lcom/android/hwcamera/hwui/SuperPanel;->initSettingmenu([Lcom/android/hwcamera/hwui/RotateLinearLayout;)V
 
-    .line 4062
+    .line 4061
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0, v3}, Lcom/android/hwcamera/hwui/SuperPanel;->setCurrentState(Z)V
 
-    .line 4063
+    .line 4062
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/SuperPanel;->initImageSubPanel()V
 
-    .line 4064
+    .line 4063
     return-void
 .end method
 
@@ -13067,7 +13012,7 @@
 
     const/4 v3, 0x1
 
-    .line 7177
+    .line 7133
     const-string v0, "Camera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -13102,7 +13047,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7178
+    .line 7134
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mPausing:Z
 
     if-nez v0, :cond_0
@@ -13113,12 +13058,12 @@
 
     if-nez v0, :cond_1
 
-    .line 7221
+    .line 7177
     :cond_0
     :goto_0
     return-void
 
-    .line 7181
+    .line 7137
     :cond_1
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSwitchCameraImage:Lcom/android/hwcamera/RotateImageView;
 
@@ -13128,7 +13073,7 @@
 
     if-nez v0, :cond_2
 
-    .line 7182
+    .line 7138
     const-string v0, "Camera"
 
     const-string v1, "switchCameraId too fast"
@@ -13137,7 +13082,7 @@
 
     goto :goto_0
 
-    .line 7185
+    .line 7141
     :cond_2
     const-string v0, "Camera"
 
@@ -13161,22 +13106,22 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7192
+    .line 7148
     iput p1, p0, Lcom/android/hwcamera/Camera;->mCameraId:I
 
-    .line 7193
+    .line 7149
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     invoke-static {v0, p1}, Lcom/android/hwcamera/CameraSettings;->writePreferredCameraId(Landroid/content/SharedPreferences;I)V
 
-    .line 7195
+    .line 7151
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     const/4 v1, 0x3
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 7197
+    .line 7153
     iget v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
     if-ne v0, v3, :cond_3
@@ -13185,7 +13130,7 @@
 
     if-ne v0, v3, :cond_3
 
-    .line 7198
+    .line 7154
     const v0, 0x7f0c001c
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -13196,29 +13141,29 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 7199
+    .line 7155
     invoke-static {v4}, Lcom/android/hwcamera/hwui/PanoramaBar;->setPanoramaState(I)V
 
-    .line 7203
+    .line 7159
     :cond_3
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/hwcamera/Camera;->mJpegPictureCallbackTime:J
 
-    .line 7204
+    .line 7160
     iput v4, p0, Lcom/android/hwcamera/Camera;->mZoomValue:I
 
-    .line 7205
+    .line 7161
     invoke-direct {p0, v4, v3}, Lcom/android/hwcamera/Camera;->enableCameraControl(ZZ)V
 
-    .line 7207
+    .line 7163
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     iget v1, p0, Lcom/android/hwcamera/Camera;->mCameraId:I
 
     invoke-virtual {v0, p0, v1}, Lcom/android/hwcamera/ComboPreferences;->setLocalId(Landroid/content/Context;I)V
 
-    .line 7208
+    .line 7164
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ComboPreferences;->getLocal()Landroid/content/SharedPreferences;
@@ -13227,7 +13172,7 @@
 
     invoke-static {v0}, Lcom/android/hwcamera/CameraSettings;->upgradeLocalPreferences(Landroid/content/SharedPreferences;)V
 
-    .line 7211
+    .line 7167
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mLocationManager:Lcom/android/hwcamera/LocationManager;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mContentResolver:Landroid/content/ContentResolver;
@@ -13238,7 +13183,7 @@
 
     if-nez v0, :cond_4
 
-    .line 7212
+    .line 7168
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     const-string v1, "pref_camera_gps_key"
@@ -13247,7 +13192,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/hwcamera/RecordLocationPreference;->setLocationPreference(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 7217
+    .line 7173
     :cond_4
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
@@ -13255,7 +13200,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 7219
+    .line 7175
     invoke-virtual {p0, v3}, Lcom/android/hwcamera/Camera;->updateZoomControlWhenSwitchCameraId(Z)V
 
     goto/16 :goto_0
@@ -13267,7 +13212,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 7329
+    .line 7285
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     const-string v1, "pref_camera_gps_key"
@@ -13276,30 +13221,30 @@
 
     move-result v0
 
-    .line 7332
+    .line 7288
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mLocationManager:Lcom/android/hwcamera/LocationManager;
 
     invoke-virtual {v1, v0}, Lcom/android/hwcamera/LocationManager;->recordLocation(Z)V
 
-    .line 7335
+    .line 7291
     invoke-direct {p0, v2, v2}, Lcom/android/hwcamera/Camera;->enableCameraControl(ZZ)V
 
-    .line 7337
+    .line 7293
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mFirstTimeInitialized:Z
 
     if-eqz v0, :cond_0
 
-    .line 7338
+    .line 7294
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->initializeHeadUpDisplay()V
 
-    .line 7342
+    .line 7298
     :cond_0
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->targetTrakingModeUpdate()V
 
-    .line 7344
+    .line 7300
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->flashModeUpdate()V
 
-    .line 7345
+    .line 7301
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferenceGroup:Lcom/android/hwcamera/PreferenceGroup;
 
     const-string v1, "pref_camera_shootmode_key"
@@ -13310,25 +13255,25 @@
 
     if-eqz v0, :cond_1
 
-    .line 7346
+    .line 7302
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/hwcamera/Camera;->updateShootMode(Ljava/lang/String;)V
 
-    .line 7348
+    .line 7304
     :cond_1
     iget v0, p0, Lcom/android/hwcamera/Camera;->mCameraId:I
 
     if-nez v0, :cond_2
 
-    .line 7349
+    .line 7305
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSwitchCameraImage:Lcom/android/hwcamera/RotateImageView;
 
     const v1, 0x7f0200da
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/RotateImageView;->setImageResource(I)V
 
-    .line 7354
+    .line 7310
     :goto_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
@@ -13336,18 +13281,18 @@
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/SuperPanel;->setPreferenceGroupEx(Lcom/android/hwcamera/PreferenceGroup;)V
 
-    .line 7357
+    .line 7313
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->checkCurrentStorage()V
 
-    .line 7360
+    .line 7316
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->updateZoomControlWhenSwitchCameraId(Z)V
 
-    .line 7362
+    .line 7318
     return-void
 
-    .line 7351
+    .line 7307
     :cond_2
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSwitchCameraImage:Lcom/android/hwcamera/RotateImageView;
 
@@ -13362,7 +13307,7 @@
     .locals 5
 
     .prologue
-    .line 8382
+    .line 8338
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFaceView:Lcom/android/hwcamera/hwui/FaceView;
 
     if-eqz v0, :cond_0
@@ -13375,12 +13320,12 @@
 
     if-nez v0, :cond_1
 
-    .line 8410
+    .line 8366
     :cond_0
     :goto_0
     return-void
 
-    .line 8388
+    .line 8344
     :cond_1
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
@@ -13388,16 +13333,16 @@
 
     move-result-object v0
 
-    .line 8389
+    .line 8345
     if-eqz v0, :cond_3
 
-    .line 8390
+    .line 8346
     iget v1, v0, Landroid/hardware/Camera$Size;->height:I
 
-    .line 8391
+    .line 8347
     iget v0, v0, Landroid/hardware/Camera$Size;->width:I
 
-    .line 8408
+    .line 8364
     :cond_2
     :goto_1
     const-string v2, "Camera"
@@ -13438,38 +13383,38 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 8409
+    .line 8365
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mFaceView:Lcom/android/hwcamera/hwui/FaceView;
 
     invoke-virtual {v2, v0, v1}, Lcom/android/hwcamera/hwui/FaceView;->setScale(II)V
 
     goto :goto_0
 
-    .line 8393
+    .line 8349
     :cond_3
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 8394
+    .line 8350
     invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
     move-result-object v0
 
-    .line 8395
+    .line 8351
     iget v1, v0, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    .line 8396
+    .line 8352
     iget v0, v0, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    .line 8398
+    .line 8354
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
     invoke-virtual {v2}, Lcom/android/hwcamera/ParametersManager;->getWideScreenValue()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 8399
+    .line 8355
     const-string v3, "on"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -13478,7 +13423,7 @@
 
     if-nez v2, :cond_2
 
-    .line 8403
+    .line 8359
     mul-int/lit8 v0, v1, 0x4
 
     div-int/lit8 v0, v0, 0x3
@@ -13515,62 +13460,62 @@
     .prologue
     const/4 v1, 0x2
 
-    .line 7161
+    .line 7117
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->isFinishing()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 7162
+    .line 7118
     const/4 v0, 0x0
 
-    .line 7173
+    .line 7129
     :goto_0
     return v0
 
-    .line 7163
+    .line 7119
     :cond_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mImageSaver:Lcom/android/hwcamera/Camera$ImageSaver;
 
     if-eqz v0, :cond_1
 
-    .line 7164
+    .line 7120
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mImageSaver:Lcom/android/hwcamera/Camera$ImageSaver;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/Camera$ImageSaver;->waitDone()V
 
-    .line 7165
+    .line 7121
     :cond_1
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mBurstThread:Lcom/android/hwcamera/Camera$DecodeThumbnailThread;
 
     if-eqz v0, :cond_2
 
-    .line 7166
+    .line 7122
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mBurstThread:Lcom/android/hwcamera/Camera$DecodeThumbnailThread;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/Camera$DecodeThumbnailThread;->waitDone()V
 
-    .line 7167
+    .line 7123
     :cond_2
     invoke-static {p1, p0}, Lcom/android/hwcamera/MenuHelper;->gotoMode(ILandroid/app/Activity;)V
 
-    .line 7168
+    .line 7124
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 7170
+    .line 7126
     if-eq p1, v1, :cond_3
 
     const/4 v0, 0x4
 
     if-eq p1, v0, :cond_3
 
-    .line 7171
+    .line 7127
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->finish()V
 
-    .line 7173
+    .line 7129
     :cond_3
     const/4 v0, 0x1
 
@@ -13583,7 +13528,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 7531
+    .line 7487
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->isFinishing()Z
 
     move-result v1
@@ -13596,12 +13541,12 @@
 
     if-nez v1, :cond_1
 
-    .line 7550
+    .line 7506
     :cond_0
     :goto_0
     return v0
 
-    .line 7535
+    .line 7491
     :cond_1
     iget v1, p0, Lcom/android/hwcamera/Camera;->mCurrentState:I
 
@@ -13615,28 +13560,28 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 7540
+    .line 7496
     const-string v0, "Camera"
 
     const-string v1, "[Flow] SwitchToVideoMode"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7541
+    .line 7497
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     const/16 v1, 0x14
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 7544
+    .line 7500
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x65
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 7550
+    .line 7506
     const/4 v0, 0x1
 
     goto :goto_0
@@ -13742,14 +13687,10 @@
 .end method
 
 .method private updateCameraParametersFocus()V
-    .locals 7
+    .locals 4
 
     .prologue
-    const/4 v3, 0x1
-
-    const/4 v6, 0x0
-
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 6440
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
@@ -13772,27 +13713,27 @@
     .line 6442
     const-string v0, "Camera"
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "updateCameraParametersFocus is null!, get new mParameters = "
+    const-string v3, "updateCameraParametersFocus is null!, get new mParameters = "
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    iget-object v4, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
+    iget-object v3, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 6445
     :cond_0
@@ -13805,25 +13746,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_7
 
     .line 6447
     const-string v0, "Camera"
 
-    const-string v1, "updateCameraParametersFocus lock ae(AutoExposure)"
+    const-string v2, "updateCameraParametersFocus lock ae(AutoExposure)"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 6448
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
-    iget-object v1, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
+    iget-object v2, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
-    invoke-virtual {v1}, Lcom/android/hwcamera/FocusManager;->getAeAwbLock()Z
+    invoke-virtual {v2}, Lcom/android/hwcamera/FocusManager;->getAeAwbLock()Z
 
-    move-result v1
+    move-result v2
 
-    invoke-virtual {v0, v1}, Landroid/hardware/Camera$Parameters;->setAutoExposureLock(Z)V
+    invoke-virtual {v0, v2}, Landroid/hardware/Camera$Parameters;->setAutoExposureLock(Z)V
 
     .line 6454
     :cond_1
@@ -13837,43 +13778,43 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_8
 
     .line 6456
     const-string v0, "Camera"
 
-    const-string v1, "updateCameraParametersFocus lock awb(AutoWhiteBalance)"
+    const-string v2, "updateCameraParametersFocus lock awb(AutoWhiteBalance)"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 6457
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
-    iget-object v1, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
+    iget-object v2, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
-    invoke-virtual {v1}, Lcom/android/hwcamera/FocusManager;->getAeAwbLock()Z
+    invoke-virtual {v2}, Lcom/android/hwcamera/FocusManager;->getAeAwbLock()Z
 
-    move-result v1
+    move-result v2
 
-    invoke-virtual {v0, v1}, Landroid/hardware/Camera$Parameters;->setAutoWhiteBalanceLock(Z)V
+    invoke-virtual {v0, v2}, Landroid/hardware/Camera$Parameters;->setAutoWhiteBalanceLock(Z)V
 
     .line 6463
     :cond_2
     :goto_1
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
-    const-string v1, "touch-af-aec"
+    const-string v2, "touch-af-aec"
 
-    invoke-virtual {v0, v1}, Landroid/hardware/Camera$Parameters;->get(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v2}, Landroid/hardware/Camera$Parameters;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     .line 6464
     if-eqz v0, :cond_3
 
-    const-string v1, "touch-off"
+    const-string v2, "touch-off"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -13882,139 +13823,49 @@
     .line 6465
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
-    const-string v1, "touch-af-aec"
+    const-string v2, "touch-af-aec"
 
-    const-string v4, "touch-on"
+    const-string v3, "touch-on"
 
-    invoke-virtual {v0, v1, v4}, Landroid/hardware/Camera$Parameters;->set(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v2, v3}, Landroid/hardware/Camera$Parameters;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 6467
+    :cond_3
+    iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
+
+    iget-object v2, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
+
+    invoke-virtual {v0, v2}, Lcom/android/hwcamera/FocusManager;->doFoucsPolicy(Landroid/hardware/Camera$Parameters;)V
 
     .line 6468
-    :cond_3
-    iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mMeteringAreaSupported:Z
-
-    if-eqz v0, :cond_4
-
-    .line 6471
-    iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
-
-    invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->getMeteringAreas()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/android/hwcamera/Camera;->isNullArea(Ljava/util/List;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_a
-
-    .line 6472
-    iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
-
-    invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->getMeteringAreas()Ljava/util/List;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    .line 6478
-    :goto_2
-    invoke-direct {p0, v1}, Lcom/android/hwcamera/Camera;->isNullArea(Ljava/util/List;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_c
-
-    .line 6479
-    const-string v0, "Camera"
-
-    const-string v1, "set_focusmode : Metering area: null"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 6480
-    iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
-
-    invoke-virtual {v0, v6}, Landroid/hardware/Camera$Parameters;->setMeteringAreas(Ljava/util/List;)V
-
-    .line 6486
-    :cond_4
-    :goto_3
-    iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mFocusAreaSupported:Z
-
-    if-eqz v0, :cond_10
-
-    .line 6488
-    iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
-
-    invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->getFocusAreas()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/android/hwcamera/Camera;->isNullArea(Ljava/util/List;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_d
-
-    .line 6489
-    iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
-
-    invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->getFocusAreas()Ljava/util/List;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    .line 6495
-    :goto_4
-    invoke-direct {p0, v1}, Lcom/android/hwcamera/Camera;->isNullArea(Ljava/util/List;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_f
-
-    .line 6496
-    const-string v0, "Camera"
-
-    const-string v1, "set_focusmode : caf area: null"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 6497
-    iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
-
-    invoke-virtual {v0, v6}, Landroid/hardware/Camera$Parameters;->setFocusAreas(Ljava/util/List;)V
-
-    .line 6512
-    :goto_5
     const-string v0, "auto"
 
-    .line 6513
-    iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
+    .line 6469
+    iget-object v2, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
-    if-eqz v1, :cond_5
+    if-eqz v2, :cond_4
 
-    .line 6514
+    .line 6470
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ParametersManager;->getScenceDefaultValue()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 6516
-    :cond_5
-    iget-object v1, p0, Lcom/android/hwcamera/Camera;->mSceneMode:Ljava/lang/String;
+    .line 6472
+    :cond_4
+    iget-object v2, p0, Lcom/android/hwcamera/Camera;->mSceneMode:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_a
 
-    .line 6520
+    .line 6476
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_9
 
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
@@ -14028,20 +13879,22 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_9
 
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsCafSucceed:Z
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_9
 
-    .line 6523
+    .line 6479
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
-    invoke-virtual {v0, v6}, Lcom/android/hwcamera/FocusManager;->overrideFocusMode(Ljava/lang/String;)V
+    const/4 v1, 0x0
 
-    .line 6529
-    :cond_6
-    :goto_6
+    invoke-virtual {v0, v1}, Lcom/android/hwcamera/FocusManager;->overrideFocusMode(Ljava/lang/String;)V
+
+    .line 6485
+    :cond_5
+    :goto_2
     const-string v0, "Camera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -14070,239 +13923,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6531
-    const-string v0, "auto"
-
-    iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
-
-    invoke-virtual {v1}, Landroid/hardware/Camera$Parameters;->getSupportedFocusModes()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/android/hwcamera/Camera;->isSupported(Ljava/lang/String;Ljava/util/List;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_7
-
-    .line 6532
-    iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
-
-    iget-object v1, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
-
-    invoke-virtual {v1}, Lcom/android/hwcamera/FocusManager;->getFocusMode()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/hardware/Camera$Parameters;->setFocusMode(Ljava/lang/String;)V
-
-    .line 6563
-    :cond_7
-    :goto_7
-    return-void
-
-    .line 6450
-    :cond_8
-    iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
-
-    invoke-virtual {v0, v2}, Landroid/hardware/Camera$Parameters;->setAutoExposureLock(Z)V
-
-    goto/16 :goto_0
-
-    .line 6459
-    :cond_9
-    iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
-
-    invoke-virtual {v0, v2}, Landroid/hardware/Camera$Parameters;->setAutoWhiteBalanceLock(Z)V
-
-    goto/16 :goto_1
-
-    .line 6473
-    :cond_a
-    iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
-
-    invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->getCAFMeteringAreas()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/android/hwcamera/Camera;->isNullArea(Ljava/util/List;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_b
-
-    .line 6474
-    iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
-
-    invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->getCAFMeteringAreas()Ljava/util/List;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    goto/16 :goto_2
-
-    .line 6476
-    :cond_b
-    iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
-
-    invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->getDefaultMeteringAreas()Ljava/util/List;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    goto/16 :goto_2
-
-    .line 6482
-    :cond_c
-    const-string v4, "Camera"
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "set_focusmode : Metering area:"
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/hardware/Camera$Area;
-
-    iget-object v0, v0, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v4, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 6483
-    iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
-
-    invoke-virtual {v0, v1}, Landroid/hardware/Camera$Parameters;->setMeteringAreas(Ljava/util/List;)V
-
-    goto/16 :goto_3
-
-    .line 6490
-    :cond_d
-    iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
-
-    invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->getCAFFocusAreas()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/android/hwcamera/Camera;->isNullArea(Ljava/util/List;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_e
-
-    .line 6491
-    iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
-
-    invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->getCAFFocusAreas()Ljava/util/List;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    goto/16 :goto_4
-
-    .line 6493
-    :cond_e
-    iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
-
-    invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->getDefaultFocusAreas()Ljava/util/List;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    goto/16 :goto_4
-
-    .line 6499
-    :cond_f
-    const-string v4, "Camera"
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "set_focusmode : caf area:"
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/hardware/Camera$Area;
-
-    iget-object v0, v0, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v4, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 6500
-    iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
-
-    invoke-virtual {v0, v1}, Landroid/hardware/Camera$Parameters;->setFocusAreas(Ljava/util/List;)V
-
-    goto/16 :goto_5
-
-    .line 6503
-    :cond_10
-    const/4 v0, 0x2
-
-    new-array v0, v0, [F
-
-    .line 6504
-    iget-object v1, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
-
-    iget-object v4, p0, Lcom/android/hwcamera/Camera;->mPreviewFrameLayout:Lcom/android/hwcamera/PreviewFrameLayout;
-
-    iget-object v5, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
-
-    invoke-virtual {v5}, Landroid/hardware/Camera$Parameters;->getPreviewSize()Landroid/hardware/Camera$Size;
-
-    move-result-object v5
-
-    invoke-virtual {v1, v0, v4, v5}, Lcom/android/hwcamera/FocusManager;->transformCoordinate([FLandroid/view/View;Landroid/hardware/Camera$Size;)V
-
-    .line 6506
-    aget v1, v0, v2
-
-    float-to-int v1, v1
-
-    aget v0, v0, v3
-
-    float-to-int v0, v0
-
-    invoke-static {v1, v0}, Lcom/android/hwcamera/Util;->setTouchPosition(II)V
-
-    goto/16 :goto_5
-
-    .line 6525
-    :cond_11
+    .line 6487
     const-string v0, "auto"
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
@@ -14317,101 +13938,149 @@
 
     if-eqz v0, :cond_6
 
-    .line 6527
+    .line 6488
+    iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
+
+    iget-object v1, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
+
+    invoke-virtual {v1}, Lcom/android/hwcamera/FocusManager;->getFocusMode()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/hardware/Camera$Parameters;->setFocusMode(Ljava/lang/String;)V
+
+    .line 6519
+    :cond_6
+    :goto_3
+    return-void
+
+    .line 6450
+    :cond_7
+    iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
+
+    invoke-virtual {v0, v1}, Landroid/hardware/Camera$Parameters;->setAutoExposureLock(Z)V
+
+    goto/16 :goto_0
+
+    .line 6459
+    :cond_8
+    iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
+
+    invoke-virtual {v0, v1}, Landroid/hardware/Camera$Parameters;->setAutoWhiteBalanceLock(Z)V
+
+    goto/16 :goto_1
+
+    .line 6481
+    :cond_9
+    const-string v0, "auto"
+
+    iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
+
+    invoke-virtual {v1}, Landroid/hardware/Camera$Parameters;->getSupportedFocusModes()Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/android/hwcamera/Camera;->isSupported(Ljava/lang/String;Ljava/util/List;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    .line 6483
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     const-string v1, "auto"
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/FocusManager;->overrideFocusMode(Ljava/lang/String;)V
 
-    goto/16 :goto_6
+    goto :goto_2
 
-    .line 6538
-    :cond_12
+    .line 6494
+    :cond_a
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSenceToFocusMode:Ljava/util/Map;
 
-    iget-object v1, p0, Lcom/android/hwcamera/Camera;->mSceneMode:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/hwcamera/Camera;->mSceneMode:Ljava/lang/String;
 
-    invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+    invoke-interface {v0, v2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_b
 
-    .line 6539
+    .line 6495
     const-string v0, "Camera"
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "PUT "
+    const-string v3, "PUT "
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    iget-object v4, p0, Lcom/android/hwcamera/Camera;->mSceneMode:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/hwcamera/Camera;->mSceneMode:Ljava/lang/String;
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v4, " : focusmode = "
+    const-string v3, " : focusmode = "
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    iget-object v4, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
+    iget-object v3, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
-    invoke-virtual {v4}, Landroid/hardware/Camera$Parameters;->getFocusMode()Ljava/lang/String;
+    invoke-virtual {v3}, Landroid/hardware/Camera$Parameters;->getFocusMode()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6540
+    .line 6496
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSenceToFocusMode:Ljava/util/Map;
 
-    iget-object v1, p0, Lcom/android/hwcamera/Camera;->mSceneMode:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/hwcamera/Camera;->mSceneMode:Ljava/lang/String;
 
-    iget-object v4, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
+    iget-object v3, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
-    invoke-virtual {v4}, Landroid/hardware/Camera$Parameters;->getFocusMode()Ljava/lang/String;
+    invoke-virtual {v3}, Landroid/hardware/Camera$Parameters;->getFocusMode()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-interface {v0, v1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 6544
-    :cond_13
+    .line 6500
+    :cond_b
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->getFocusAreas()Ljava/util/List;
 
     move-result-object v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_c
 
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsCafSucceed:Z
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_e
 
-    :cond_14
-    move v0, v3
+    :cond_c
+    const/4 v0, 0x1
 
-    .line 6546
-    :goto_8
-    if-nez v0, :cond_15
+    .line 6502
+    :goto_4
+    if-nez v0, :cond_d
 
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
@@ -14419,33 +14088,33 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_f
 
-    .line 6547
-    :cond_15
+    .line 6503
+    :cond_d
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     const-string v1, "auto"
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/FocusManager;->overrideFocusMode(Ljava/lang/String;)V
 
-    .line 6548
+    .line 6504
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     const-string v1, "auto"
 
     invoke-virtual {v0, v1}, Landroid/hardware/Camera$Parameters;->setFocusMode(Ljava/lang/String;)V
 
-    goto/16 :goto_7
+    goto/16 :goto_3
 
-    :cond_16
-    move v0, v2
+    :cond_e
+    move v0, v1
 
-    .line 6544
-    goto :goto_8
+    .line 6500
+    goto :goto_4
 
-    .line 6550
-    :cond_17
+    .line 6506
+    :cond_f
     const-string v1, "Camera"
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -14490,7 +14159,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6551
+    .line 6507
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSenceToFocusMode:Ljava/util/Map;
@@ -14505,7 +14174,7 @@
 
     invoke-virtual {v1, v0}, Lcom/android/hwcamera/FocusManager;->overrideFocusMode(Ljava/lang/String;)V
 
-    .line 6554
+    .line 6510
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSenceToFocusMode:Ljava/util/Map;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mSceneMode:Ljava/lang/String;
@@ -14514,19 +14183,19 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_10
 
-    .line 6555
+    .line 6511
     const-string v0, "Camera"
 
     const-string v1, "mSenceToFocusMode.get(mSceneMode) is null!"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_7
+    goto/16 :goto_3
 
-    .line 6559
-    :cond_18
+    .line 6515
+    :cond_10
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSenceToFocusMode:Ljava/util/Map;
@@ -14541,7 +14210,7 @@
 
     invoke-virtual {v1, v0}, Landroid/hardware/Camera$Parameters;->setFocusMode(Ljava/lang/String;)V
 
-    goto/16 :goto_7
+    goto/16 :goto_3
 .end method
 
 .method private updateCameraParametersInitialize()V
@@ -14634,12 +14303,12 @@
 
     const/4 v4, 0x0
 
-    .line 6573
+    .line 6529
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mFirstEnter:Z
 
     if-eqz v0, :cond_0
 
-    .line 6574
+    .line 6530
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-static {p0, v0}, Lcom/android/hwcamera/CameraSettings;->isSupportWideScreen(Landroid/content/Context;Landroid/hardware/Camera$Parameters;)Z
@@ -14648,22 +14317,22 @@
 
     iput-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsSupporetedWideScreen:Z
 
-    .line 6576
+    .line 6532
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/ParametersManager;->setScenceDefaultValue(Landroid/hardware/Camera$Parameters;)V
 
-    .line 6584
+    .line 6540
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ParametersManager;->initImagejustMentValue()V
 
-    .line 6586
+    .line 6542
     iput-boolean v4, p0, Lcom/android/hwcamera/Camera;->mFirstEnter:Z
 
-    .line 6589
+    .line 6545
     :cond_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
@@ -14671,7 +14340,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/ParametersManager;->setConflitParameters(Landroid/hardware/Camera$Parameters;)V
 
-    .line 6591
+    .line 6547
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ParametersManager;->getShootingmodeIndex()I
@@ -14680,7 +14349,7 @@
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
-    .line 6592
+    .line 6548
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ParametersManager;->getReviewValue()Ljava/lang/String;
@@ -14693,7 +14362,7 @@
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mReviewTime:I
 
-    .line 6593
+    .line 6549
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ParametersManager;->getTimerValue()Ljava/lang/String;
@@ -14706,21 +14375,21 @@
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mTimerValue:I
 
-    .line 6594
+    .line 6550
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x24
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 6596
+    .line 6552
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ParametersManager;->getFaceDecetionValue()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 6597
+    .line 6553
     const-string v1, "off"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -14729,10 +14398,10 @@
 
     if-eqz v0, :cond_1a
 
-    .line 6598
+    .line 6554
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->stopFaceDetection()V
 
-    .line 6609
+    .line 6565
     :goto_0
     iget v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
@@ -14750,17 +14419,17 @@
 
     if-eq v0, v1, :cond_1b
 
-    .line 6622
+    .line 6578
     const-string v0, "pref_camera_picturesize_key"
 
     invoke-direct {p0, v0}, Lcom/android/hwcamera/Camera;->setPictureSizeByKey(Ljava/lang/String;)V
 
-    .line 6636
+    .line 6592
     :cond_1
     :goto_1
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->setPreviewFrameAspectRatio()V
 
-    .line 6640
+    .line 6596
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ParametersManager;->getSceneValue()Ljava/lang/String;
@@ -14769,7 +14438,7 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mSceneMode:Ljava/lang/String;
 
-    .line 6641
+    .line 6597
     iget v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
     if-ne v0, v3, :cond_3
@@ -14778,7 +14447,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 6642
+    .line 6598
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSceneMode:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
@@ -14793,7 +14462,7 @@
 
     if-nez v0, :cond_2
 
-    .line 6643
+    .line 6599
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v0}, Landroid/hardware/Camera$Parameters;->getSceneMode()Ljava/lang/String;
@@ -14802,11 +14471,11 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mSceneMode:Ljava/lang/String;
 
-    .line 6645
+    .line 6601
     :cond_2
     iput-boolean v4, p0, Lcom/android/hwcamera/Camera;->mPreviewOnPara:Z
 
-    .line 6647
+    .line 6603
     :cond_3
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
@@ -14816,7 +14485,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 6648
+    .line 6604
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/HwCamera;->getParameters()Landroid/hardware/Camera$Parameters;
@@ -14825,7 +14494,7 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
-    .line 6649
+    .line 6605
     const-string v0, "Camera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -14850,7 +14519,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6651
+    .line 6607
     :cond_4
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSceneMode:Ljava/lang/String;
 
@@ -14866,7 +14535,7 @@
 
     if-eqz v0, :cond_1d
 
-    .line 6652
+    .line 6608
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v0}, Landroid/hardware/Camera$Parameters;->getSceneMode()Ljava/lang/String;
@@ -14881,21 +14550,21 @@
 
     if-nez v0, :cond_5
 
-    .line 6653
+    .line 6609
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mSceneMode:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/hardware/Camera$Parameters;->setSceneMode(Ljava/lang/String;)V
 
-    .line 6654
+    .line 6610
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/HwCamera;->setParameters(Landroid/hardware/Camera$Parameters;)V
 
-    .line 6659
+    .line 6615
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/HwCamera;->getParameters()Landroid/hardware/Camera$Parameters;
@@ -14904,7 +14573,7 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
-    .line 6660
+    .line 6616
     const-string v0, "Camera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -14929,7 +14598,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6672
+    .line 6628
     :cond_5
     :goto_2
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
@@ -14946,14 +14615,14 @@
 
     move-result-object v0
 
-    .line 6675
+    .line 6631
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v1}, Landroid/hardware/Camera$Parameters;->getPictureSize()Landroid/hardware/Camera$Size;
 
     move-result-object v1
 
-    .line 6676
+    .line 6632
     const-string v2, "100"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -14968,7 +14637,7 @@
 
     if-lt v1, v2, :cond_1e
 
-    .line 6684
+    .line 6640
     :goto_3
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
@@ -14976,12 +14645,12 @@
 
     move-result-object v0
 
-    .line 6685
+    .line 6641
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mISO_key:Ljava/lang/String;
 
     if-nez v1, :cond_6
 
-    .line 6686
+    .line 6642
     const-string v1, "KEY_HUAWEI_ISO"
 
     invoke-static {v1}, Lcom/android/hwcamera/Util;->getKey(Ljava/lang/String;)Ljava/lang/String;
@@ -14990,7 +14659,7 @@
 
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mISO_key:Ljava/lang/String;
 
-    .line 6688
+    .line 6644
     :cond_6
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mISO_key:Ljava/lang/String;
 
@@ -15006,14 +14675,14 @@
 
     if-nez v1, :cond_7
 
-    .line 6689
+    .line 6645
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mISO_key:Ljava/lang/String;
 
     invoke-virtual {v1, v2, v0}, Landroid/hardware/Camera$Parameters;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6693
+    .line 6649
     :cond_7
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
@@ -15021,10 +14690,10 @@
 
     move-result-object v0
 
-    .line 6695
+    .line 6651
     if-eqz v0, :cond_a
 
-    .line 6697
+    .line 6653
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
@@ -15041,12 +14710,12 @@
 
     add-int/2addr v0, v1
 
-    .line 6698
+    .line 6654
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mContrast_key:Ljava/lang/String;
 
     if-nez v1, :cond_8
 
-    .line 6699
+    .line 6655
     const-string v1, "KEY_HUAWEI_CONTRAST"
 
     invoke-static {v1}, Lcom/android/hwcamera/Util;->getKey(Ljava/lang/String;)Ljava/lang/String;
@@ -15055,7 +14724,7 @@
 
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mContrast_key:Ljava/lang/String;
 
-    .line 6701
+    .line 6657
     :cond_8
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mContrast_key:Ljava/lang/String;
 
@@ -15071,14 +14740,14 @@
 
     if-nez v1, :cond_9
 
-    .line 6702
+    .line 6658
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mContrast_key:Ljava/lang/String;
 
     invoke-virtual {v1, v2, v0}, Landroid/hardware/Camera$Parameters;->set(Ljava/lang/String;I)V
 
-    .line 6704
+    .line 6660
     :cond_9
     const-string v1, "Camera"
 
@@ -15102,7 +14771,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6707
+    .line 6663
     :cond_a
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
@@ -15118,7 +14787,7 @@
 
     move-result-object v0
 
-    .line 6709
+    .line 6665
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v1}, Landroid/hardware/Camera$Parameters;->getSupportedAntibanding()Ljava/util/List;
@@ -15131,12 +14800,12 @@
 
     if-eqz v1, :cond_b
 
-    .line 6710
+    .line 6666
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v1, v0}, Landroid/hardware/Camera$Parameters;->setAntibanding(Ljava/lang/String;)V
 
-    .line 6713
+    .line 6669
     :cond_b
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
@@ -15144,10 +14813,10 @@
 
     move-result-object v0
 
-    .line 6715
+    .line 6671
     if-eqz v0, :cond_e
 
-    .line 6717
+    .line 6673
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
@@ -15164,12 +14833,12 @@
 
     add-int/2addr v0, v1
 
-    .line 6718
+    .line 6674
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mBrightness_key:Ljava/lang/String;
 
     if-nez v1, :cond_c
 
-    .line 6719
+    .line 6675
     const-string v1, "KEY_HUAWEI_BRIGHTNESS"
 
     invoke-static {v1}, Lcom/android/hwcamera/Util;->getKey(Ljava/lang/String;)Ljava/lang/String;
@@ -15178,7 +14847,7 @@
 
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mBrightness_key:Ljava/lang/String;
 
-    .line 6721
+    .line 6677
     :cond_c
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mBrightness_key:Ljava/lang/String;
 
@@ -15194,7 +14863,7 @@
 
     if-nez v1, :cond_d
 
-    .line 6722
+    .line 6678
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mBrightness_key:Ljava/lang/String;
@@ -15205,7 +14874,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/hardware/Camera$Parameters;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6724
+    .line 6680
     :cond_d
     const-string v1, "Camera"
 
@@ -15229,7 +14898,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6726
+    .line 6682
     :cond_e
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
@@ -15237,10 +14906,10 @@
 
     move-result-object v0
 
-    .line 6728
+    .line 6684
     if-eqz v0, :cond_11
 
-    .line 6730
+    .line 6686
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
@@ -15257,12 +14926,12 @@
 
     add-int/2addr v0, v1
 
-    .line 6731
+    .line 6687
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mSaturation_key:Ljava/lang/String;
 
     if-nez v1, :cond_f
 
-    .line 6732
+    .line 6688
     const-string v1, "KEY_HUAWEI_SATURATION"
 
     invoke-static {v1}, Lcom/android/hwcamera/Util;->getKey(Ljava/lang/String;)Ljava/lang/String;
@@ -15271,7 +14940,7 @@
 
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mSaturation_key:Ljava/lang/String;
 
-    .line 6734
+    .line 6690
     :cond_f
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mSaturation_key:Ljava/lang/String;
 
@@ -15287,7 +14956,7 @@
 
     if-nez v1, :cond_10
 
-    .line 6735
+    .line 6691
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mSaturation_key:Ljava/lang/String;
@@ -15298,7 +14967,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/hardware/Camera$Parameters;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6737
+    .line 6693
     :cond_10
     const-string v1, "Camera"
 
@@ -15322,7 +14991,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6742
+    .line 6698
     :cond_11
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
@@ -15330,7 +14999,7 @@
 
     move-result-object v0
 
-    .line 6743
+    .line 6699
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v1}, Landroid/hardware/Camera$Parameters;->getSupportedColorEffects()Ljava/util/List;
@@ -15343,12 +15012,12 @@
 
     if-eqz v1, :cond_12
 
-    .line 6744
+    .line 6700
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v1, v0}, Landroid/hardware/Camera$Parameters;->setColorEffect(Ljava/lang/String;)V
 
-    .line 6747
+    .line 6703
     :cond_12
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
@@ -15356,37 +15025,37 @@
 
     move-result-object v0
 
-    .line 6748
+    .line 6704
     invoke-static {v0}, Lcom/android/hwcamera/Util;->setDistortionValue(Ljava/lang/String;)V
 
-    .line 6750
+    .line 6706
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mRecordLocation:Z
 
     if-eqz v0, :cond_13
 
-    .line 6752
+    .line 6708
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v0, v5, v6}, Landroid/hardware/Camera$Parameters;->setGpsLatitude(D)V
 
-    .line 6753
+    .line 6709
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v0, v5, v6}, Landroid/hardware/Camera$Parameters;->setGpsLongitude(D)V
 
-    .line 6754
+    .line 6710
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v0, v5, v6}, Landroid/hardware/Camera$Parameters;->setGpsAltitude(D)V
 
-    .line 6755
+    .line 6711
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     const-wide/16 v1, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/hardware/Camera$Parameters;->setGpsTimestamp(J)V
 
-    .line 6761
+    .line 6717
     :cond_13
     const v0, 0x7f0e0170
 
@@ -15394,14 +15063,14 @@
 
     move-result-object v0
 
-    .line 6762
+    .line 6718
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     const-string v2, "picture-format"
 
     invoke-virtual {v1, v2, v0}, Landroid/hardware/Camera$Parameters;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6768
+    .line 6724
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ParametersManager;->getScenceDefaultValue()Ljava/lang/String;
@@ -15416,33 +15085,33 @@
 
     if-eqz v0, :cond_15
 
-    .line 6772
+    .line 6728
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ParametersManager;->getFlashValue()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 6773
+    .line 6729
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v1}, Landroid/hardware/Camera$Parameters;->getSupportedFlashModes()Ljava/util/List;
 
     move-result-object v1
 
-    .line 6774
+    .line 6730
     invoke-static {v0, v1}, Lcom/android/hwcamera/Camera;->isSupported(Ljava/lang/String;Ljava/util/List;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1f
 
-    .line 6775
+    .line 6731
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v1, v0}, Landroid/hardware/Camera$Parameters;->setFlashMode(Ljava/lang/String;)V
 
-    .line 6784
+    .line 6740
     :cond_14
     :goto_4
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
@@ -15451,7 +15120,7 @@
 
     move-result-object v0
 
-    .line 6785
+    .line 6741
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v1}, Landroid/hardware/Camera$Parameters;->getSupportedWhiteBalance()Ljava/util/List;
@@ -15464,12 +15133,12 @@
 
     if-eqz v1, :cond_20
 
-    .line 6786
+    .line 6742
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v1, v0}, Landroid/hardware/Camera$Parameters;->setWhiteBalance(Ljava/lang/String;)V
 
-    .line 6794
+    .line 6750
     :cond_15
     :goto_5
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
@@ -15478,14 +15147,14 @@
 
     move-result-object v0
 
-    .line 6795
+    .line 6751
     invoke-static {}, Lcom/android/hwcamera/Util;->getRedEyeReductionSupported()Z
 
     move-result v1
 
     if-eqz v1, :cond_16
 
-    .line 6796
+    .line 6752
     const-string v1, "on"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -15494,49 +15163,49 @@
 
     invoke-static {v0}, Lcom/android/hwcamera/Util;->setRedEyeReduction(Z)V
 
-    .line 6798
+    .line 6754
     :cond_16
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->updateCameraParametersFocus()V
 
-    .line 6801
+    .line 6757
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v0}, Landroid/hardware/Camera$Parameters;->getMaxExposureCompensation()I
 
     move-result v0
 
-    .line 6802
+    .line 6758
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v1}, Landroid/hardware/Camera$Parameters;->getMinExposureCompensation()I
 
     move-result v1
 
-    .line 6803
+    .line 6759
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v2}, Landroid/hardware/Camera$Parameters;->getExposureCompensationStep()F
 
     move-result v2
 
-    .line 6804
+    .line 6760
     iget-object v3, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
     invoke-virtual {v3}, Lcom/android/hwcamera/ParametersManager;->getExposureValue()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 6805
+    .line 6761
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v3
 
-    .line 6806
+    .line 6762
     if-lt v3, v1, :cond_21
 
     if-gt v3, v0, :cond_21
 
-    .line 6807
+    .line 6763
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     int-to-float v1, v3
@@ -15547,7 +15216,7 @@
 
     invoke-virtual {v0, v1}, Landroid/hardware/Camera$Parameters;->setExposureCompensation(I)V
 
-    .line 6813
+    .line 6769
     :goto_6
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
@@ -15563,7 +15232,7 @@
 
     move-result-object v0
 
-    .line 6816
+    .line 6772
     const-string v1, "on"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -15572,28 +15241,28 @@
 
     iput-boolean v0, p0, Lcom/android/hwcamera/Camera;->mHdrSaveOrgPic:Z
 
-    .line 6818
+    .line 6774
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mHdrSaveOrgPic:Z
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-static {v0, v1}, Lcom/android/hwcamera/Util;->setHdrSaveMode(ZLandroid/hardware/Camera$Parameters;)V
 
-    .line 6820
+    .line 6776
     iget v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
     const/4 v1, 0x4
 
     if-ne v0, v1, :cond_22
 
-    .line 6821
+    .line 6777
     const-string v0, "on"
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-static {v0, v1}, Lcom/android/hwcamera/Util;->setHdrMode(Ljava/lang/String;Landroid/hardware/Camera$Parameters;)V
 
-    .line 6827
+    .line 6783
     :goto_7
     invoke-static {}, Lcom/android/hwcamera/Util;->isBuildVersionAboveICS()Z
 
@@ -15601,7 +15270,7 @@
 
     if-eqz v0, :cond_17
 
-    .line 6828
+    .line 6784
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     const-string v1, "recording-hint"
@@ -15610,7 +15279,7 @@
 
     move-result-object v0
 
-    .line 6829
+    .line 6785
     const-string v1, "false"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -15619,12 +15288,12 @@
 
     if-nez v0, :cond_17
 
-    .line 6830
+    .line 6786
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v0, v4}, Landroid/hardware/Camera$Parameters;->setRecordingHint(Z)V
 
-    .line 6834
+    .line 6790
     :cond_17
     const-string v0, "ro.camera.shuttersound"
 
@@ -15642,7 +15311,7 @@
 
     if-eqz v0, :cond_18
 
-    .line 6835
+    .line 6791
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     const-string v1, "pref_camera_shutter_sound_key"
@@ -15653,7 +15322,7 @@
 
     move-result-object v0
 
-    .line 6836
+    .line 6792
     const-string v1, "Camera"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -15676,7 +15345,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6837
+    .line 6793
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
 
     invoke-virtual {v1}, Lcom/android/hwcamera/HwCamera;->getAndroidCamera()Landroid/hardware/Camera;
@@ -15691,7 +15360,7 @@
 
     invoke-static {v1, v0}, Lcom/android/hwcamera/Util;->setSilentOption(Ljava/lang/Object;Z)V
 
-    .line 6850
+    .line 6806
     :cond_18
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
@@ -15701,7 +15370,7 @@
 
     if-eqz v0, :cond_19
 
-    .line 6851
+    .line 6807
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v0}, Landroid/hardware/Camera$Parameters;->getFocusMode()Ljava/lang/String;
@@ -15716,7 +15385,7 @@
 
     if-eqz v0, :cond_23
 
-    .line 6853
+    .line 6809
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mAutoFocusMoveCallback:Lcom/android/hwcamera/Camera$AutoFocusMoveCallback;
@@ -15727,18 +15396,18 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 6858
+    .line 6814
     :cond_19
     :goto_8
     return-void
 
-    .line 6600
+    .line 6556
     :cond_1a
     invoke-virtual {p0, v3}, Lcom/android/hwcamera/Camera;->startFaceDetection(Z)V
 
     goto/16 :goto_0
 
-    .line 6625
+    .line 6581
     :cond_1b
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->isOnWidescreen()Z
 
@@ -15746,10 +15415,10 @@
 
     if-nez v0, :cond_1c
 
-    .line 6626
+    .line 6582
     iput-boolean v4, p0, Lcom/android/hwcamera/Camera;->mPreviewOnPara:Z
 
-    .line 6628
+    .line 6584
     :cond_1c
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
@@ -15757,24 +15426,24 @@
 
     move-result-object v0
 
-    .line 6630
+    .line 6586
     if-eqz v0, :cond_1
 
-    .line 6631
+    .line 6587
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v1}, Landroid/hardware/Camera$Parameters;->getSupportedPictureSizes()Ljava/util/List;
 
     move-result-object v1
 
-    .line 6632
+    .line 6588
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-static {v0, v1, v2}, Lcom/android/hwcamera/CameraSettings;->setCameraPictureSize(Ljava/lang/String;Ljava/util/List;Landroid/hardware/Camera$Parameters;)Z
 
     goto/16 :goto_1
 
-    .line 6663
+    .line 6619
     :cond_1d
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
@@ -15784,12 +15453,12 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mSceneMode:Ljava/lang/String;
 
-    .line 6664
+    .line 6620
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSceneMode:Ljava/lang/String;
 
     if-nez v0, :cond_5
 
-    .line 6666
+    .line 6622
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ParametersManager;->getScenceDefaultValue()Ljava/lang/String;
@@ -15800,7 +15469,7 @@
 
     goto/16 :goto_2
 
-    .line 6678
+    .line 6634
     :cond_1e
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
@@ -15812,7 +15481,7 @@
 
     goto/16 :goto_3
 
-    .line 6777
+    .line 6733
     :cond_1f
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
@@ -15820,17 +15489,17 @@
 
     move-result-object v0
 
-    .line 6778
+    .line 6734
     if-nez v0, :cond_14
 
-    .line 6779
+    .line 6735
     const v0, 0x7f0e0179
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->getString(I)Ljava/lang/String;
 
     goto/16 :goto_4
 
-    .line 6788
+    .line 6744
     :cond_20
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
@@ -15838,15 +15507,15 @@
 
     move-result-object v0
 
-    .line 6789
+    .line 6745
     if-nez v0, :cond_15
 
-    .line 6790
+    .line 6746
     const-string v0, "auto"
 
     goto/16 :goto_5
 
-    .line 6809
+    .line 6765
     :cond_21
     const-string v0, "Camera"
 
@@ -15872,7 +15541,7 @@
 
     goto/16 :goto_6
 
-    .line 6823
+    .line 6779
     :cond_22
     const-string v0, "off"
 
@@ -15882,7 +15551,7 @@
 
     goto/16 :goto_7
 
-    .line 6855
+    .line 6811
     :cond_23
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
@@ -15937,7 +15606,7 @@
 
     const/4 v3, 0x0
 
-    .line 8022
+    .line 7978
     const v0, 0x7f0c001b
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -15946,12 +15615,12 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 8023
+    .line 7979
     iget v1, p0, Lcom/android/hwcamera/Camera;->mDelayTimeRemaining:I
 
     if-lez v1, :cond_3
 
-    .line 8025
+    .line 7981
     const-string v1, "ro.camera.support.led"
 
     const-string v2, "0"
@@ -15968,12 +15637,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 8026
+    .line 7982
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mNM:Landroid/app/NotificationManager;
 
     invoke-static {v1}, Lcom/android/hwcamera/LedLightManager;->ledoff(Landroid/app/NotificationManager;)V
 
-    .line 8027
+    .line 7983
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mNM:Landroid/app/NotificationManager;
 
     iget v2, p0, Lcom/android/hwcamera/Camera;->mDelayTimeRemaining:I
@@ -15982,7 +15651,7 @@
 
     invoke-static {v1, v2}, Lcom/android/hwcamera/LedLightManager;->ledOn(Landroid/app/NotificationManager;I)V
 
-    .line 8030
+    .line 7986
     :cond_0
     iget v1, p0, Lcom/android/hwcamera/Camera;->mDelayTimeRemaining:I
 
@@ -15990,30 +15659,30 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 8031
+    .line 7987
     invoke-direct {p0, v4}, Lcom/android/hwcamera/Camera;->setCameraUIVisibility(I)V
 
-    .line 8033
+    .line 7989
     :cond_1
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/hwcamera/Camera;->isCounterDowning:Z
 
-    .line 8034
+    .line 7990
     iget-boolean v1, p0, Lcom/android/hwcamera/Camera;->mIsMute:Z
 
     if-nez v1, :cond_2
 
-    .line 8035
+    .line 7991
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mTimerPlayer:Lcom/android/hwcamera/SoundPlayer;
 
     invoke-virtual {v1}, Lcom/android/hwcamera/SoundPlayer;->play()V
 
-    .line 8037
+    .line 7993
     :cond_2
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 8038
+    .line 7994
     iget v1, p0, Lcom/android/hwcamera/Camera;->mDelayTimeRemaining:I
 
     div-int/lit16 v1, v1, 0x3e8
@@ -16024,7 +15693,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 8039
+    .line 7995
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
@@ -16035,32 +15704,32 @@
 
     move-result-object v1
 
-    .line 8040
+    .line 7996
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 8041
+    .line 7997
     iget v0, p0, Lcom/android/hwcamera/Camera;->mDelayTimeRemaining:I
 
     add-int/lit16 v0, v0, -0x3e8
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mDelayTimeRemaining:I
 
-    .line 8042
+    .line 7998
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const-wide/16 v1, 0x3e8
 
     invoke-virtual {v0, v5, v1, v2}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 8060
+    .line 8016
     :goto_0
     return-void
 
-    .line 8044
+    .line 8000
     :cond_3
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 8045
+    .line 8001
     const v0, 0x7f0c001e
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -16069,7 +15738,7 @@
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 8046
+    .line 8002
     const v0, 0x7f0c00ba
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -16078,37 +15747,37 @@
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 8047
+    .line 8003
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v5}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 8048
+    .line 8004
     iget v0, p0, Lcom/android/hwcamera/Camera;->mTimerValue:I
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mDelayTimeRemaining:I
 
-    .line 8049
+    .line 8005
     iput-boolean v3, p0, Lcom/android/hwcamera/Camera;->isCounterDowning:Z
 
-    .line 8050
+    .line 8006
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mCancelTimer:Z
 
     if-eqz v0, :cond_4
 
-    .line 8051
+    .line 8007
     iput-boolean v3, p0, Lcom/android/hwcamera/Camera;->mCancelTimer:Z
 
-    .line 8052
+    .line 8008
     invoke-direct {p0, v3}, Lcom/android/hwcamera/Camera;->setControlbarAndPanel(I)V
 
     goto :goto_0
 
-    .line 8054
+    .line 8010
     :cond_4
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->doTakePicture()V
 
-    .line 8056
+    .line 8012
     invoke-direct {p0, v3}, Lcom/android/hwcamera/Camera;->setControlbarAndPanel(I)V
 
     goto :goto_0
@@ -16121,26 +15790,26 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 4931
+    .line 4930
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsExternalStorageExist:Z
 
     if-nez v0, :cond_2
 
-    .line 4933
+    .line 4932
     const-wide/16 v2, -0x4
 
     cmp-long v0, p1, v2
 
     if-nez v0, :cond_0
 
-    .line 4935
+    .line 4934
     const v0, 0x7f0e0136
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4940
+    .line 4939
     :goto_0
     invoke-static {}, Lcom/android/hwcamera/Storage;->getmStrongeHint()Ljava/lang/String;
 
@@ -16152,18 +15821,18 @@
 
     if-eqz v2, :cond_1
 
-    .line 4944
+    .line 4943
     :goto_1
     invoke-static {v0}, Lcom/android/hwcamera/Storage;->setmStrongeHint(Ljava/lang/String;)V
 
-    .line 4945
+    .line 4944
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->updatePicturesRemaining()V
 
-    .line 4999
+    .line 4998
     :goto_2
     return-void
 
-    .line 4938
+    .line 4937
     :cond_0
     const v0, 0x7f0e0135
 
@@ -16173,7 +15842,7 @@
 
     goto :goto_0
 
-    .line 4942
+    .line 4941
     :cond_1
     iget v2, p0, Lcom/android/hwcamera/Camera;->mOrientationCompensation:I
 
@@ -16181,38 +15850,38 @@
 
     goto :goto_1
 
-    .line 4951
+    .line 4950
     :cond_2
     invoke-static {}, Lcom/android/hwcamera/Storage;->getSDCardAvailableSpace()J
 
     move-result-wide v2
 
-    .line 4952
+    .line 4951
     const-wide/32 v4, 0x1400000
 
     cmp-long v0, v2, v4
 
     if-lez v0, :cond_9
 
-    .line 4953
+    .line 4952
     invoke-direct {p0, v2, v3}, Lcom/android/hwcamera/Camera;->checkRemaining(J)I
 
     move-result v0
 
-    .line 4958
+    .line 4957
     :goto_3
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->getRequestRemaining()I
 
     move-result v4
 
-    .line 4959
+    .line 4958
     const-wide/16 v5, -0x1
 
     cmp-long v5, v2, v5
 
     if-nez v5, :cond_5
 
-    .line 4963
+    .line 4962
     const v2, 0x7f0e0269
 
     invoke-virtual {p0, v2}, Lcom/android/hwcamera/Camera;->getString(I)Ljava/lang/String;
@@ -16221,11 +15890,11 @@
 
     move v3, v1
 
-    .line 4986
+    .line 4985
     :goto_4
     if-eqz v2, :cond_3
 
-    .line 4987
+    .line 4986
     invoke-static {}, Lcom/android/hwcamera/Storage;->getmStrongeHint()Ljava/lang/String;
 
     move-result-object v4
@@ -16236,27 +15905,27 @@
 
     if-eqz v4, :cond_8
 
-    .line 4992
+    .line 4991
     :cond_3
     :goto_5
     invoke-static {v2}, Lcom/android/hwcamera/Storage;->setmStrongeHint(Ljava/lang/String;)V
 
-    .line 4994
+    .line 4993
     if-eqz v3, :cond_4
 
-    .line 4995
+    .line 4994
     invoke-static {}, Lcom/android/hwcamera/Storage;->switchToExternalSdCard()V
 
-    .line 4996
+    .line 4995
     iput v0, p0, Lcom/android/hwcamera/Camera;->mPicturesRemaining:I
 
-    .line 4998
+    .line 4997
     :cond_4
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->updatePicturesRemaining()V
 
     goto :goto_2
 
-    .line 4965
+    .line 4964
     :cond_5
     const-wide/16 v5, -0x2
 
@@ -16264,7 +15933,7 @@
 
     if-nez v2, :cond_6
 
-    .line 4969
+    .line 4968
     const v2, 0x7f0e026b
 
     invoke-virtual {p0, v2}, Lcom/android/hwcamera/Camera;->getString(I)Ljava/lang/String;
@@ -16275,14 +15944,14 @@
 
     goto :goto_4
 
-    .line 4973
+    .line 4972
     :cond_6
     if-lt v0, v4, :cond_7
 
-    .line 4974
+    .line 4973
     const/4 v3, 0x1
 
-    .line 4976
+    .line 4975
     const v2, 0x7f0e026e
 
     invoke-virtual {p0, v2}, Lcom/android/hwcamera/Camera;->getString(I)Ljava/lang/String;
@@ -16291,7 +15960,7 @@
 
     goto :goto_4
 
-    .line 4981
+    .line 4980
     :cond_7
     const v2, 0x7f0e026d
 
@@ -16303,7 +15972,7 @@
 
     goto :goto_4
 
-    .line 4989
+    .line 4988
     :cond_8
     iget v4, p0, Lcom/android/hwcamera/Camera;->mOrientationCompensation:I
 
@@ -16386,24 +16055,24 @@
 
     const/4 v1, 0x0
 
-    .line 4844
+    .line 4843
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsInternalStorageExist:Z
 
     if-nez v0, :cond_3
 
-    .line 4846
+    .line 4845
     cmp-long v0, p1, v10
 
     if-nez v0, :cond_0
 
-    .line 4848
+    .line 4847
     const v0, 0x7f0e0132
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4857
+    .line 4856
     :goto_0
     invoke-static {}, Lcom/android/hwcamera/Storage;->getmStrongeHint()Ljava/lang/String;
 
@@ -16415,24 +16084,24 @@
 
     if-eqz v2, :cond_2
 
-    .line 4861
+    .line 4860
     :goto_1
     invoke-static {v0}, Lcom/android/hwcamera/Storage;->setmStrongeHint(Ljava/lang/String;)V
 
-    .line 4863
+    .line 4862
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->updatePicturesRemaining()V
 
-    .line 4927
+    .line 4926
     :goto_2
     return-void
 
-    .line 4849
+    .line 4848
     :cond_0
     cmp-long v0, p1, v8
 
     if-nez v0, :cond_1
 
-    .line 4851
+    .line 4850
     const v0, 0x7f0e0134
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->getString(I)Ljava/lang/String;
@@ -16441,7 +16110,7 @@
 
     goto :goto_0
 
-    .line 4854
+    .line 4853
     :cond_1
     const v0, 0x7f0e0133
 
@@ -16451,7 +16120,7 @@
 
     goto :goto_0
 
-    .line 4859
+    .line 4858
     :cond_2
     iget v2, p0, Lcom/android/hwcamera/Camera;->mOrientationCompensation:I
 
@@ -16459,50 +16128,50 @@
 
     goto :goto_1
 
-    .line 4869
+    .line 4868
     :cond_3
     invoke-static {}, Lcom/android/hwcamera/Storage;->getPhoneAvailableSpace()J
 
     move-result-wide v4
 
-    .line 4870
+    .line 4869
     const-wide/32 v6, 0x1400000
 
     cmp-long v0, v4, v6
 
     if-lez v0, :cond_c
 
-    .line 4871
+    .line 4870
     invoke-direct {p0, v4, v5}, Lcom/android/hwcamera/Camera;->checkRemaining(J)I
 
     move-result v0
 
-    .line 4876
+    .line 4875
     :goto_3
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->getRequestRemaining()I
 
     move-result v2
 
-    .line 4877
+    .line 4876
     cmp-long v4, p1, v10
 
     if-nez v4, :cond_7
 
-    .line 4879
+    .line 4878
     if-lt v0, v2, :cond_6
 
-    .line 4882
+    .line 4881
     const v2, 0x7f0e0268
 
     invoke-virtual {p0, v2}, Lcom/android/hwcamera/Camera;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 4913
+    .line 4912
     :goto_4
     if-eqz v2, :cond_4
 
-    .line 4914
+    .line 4913
     invoke-static {}, Lcom/android/hwcamera/Storage;->getmStrongeHint()Ljava/lang/String;
 
     move-result-object v4
@@ -16513,27 +16182,27 @@
 
     if-eqz v4, :cond_b
 
-    .line 4919
+    .line 4918
     :cond_4
     :goto_5
     invoke-static {v2}, Lcom/android/hwcamera/Storage;->setmStrongeHint(Ljava/lang/String;)V
 
-    .line 4922
+    .line 4921
     if-eqz v3, :cond_5
 
-    .line 4923
+    .line 4922
     invoke-static {}, Lcom/android/hwcamera/Storage;->switchToInternalSdCard()V
 
-    .line 4924
+    .line 4923
     iput v0, p0, Lcom/android/hwcamera/Camera;->mPicturesRemaining:I
 
-    .line 4926
+    .line 4925
     :cond_5
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->updatePicturesRemaining()V
 
     goto :goto_2
 
-    .line 4885
+    .line 4884
     :cond_6
     const v2, 0x7f0e0269
 
@@ -16545,16 +16214,16 @@
 
     goto :goto_4
 
-    .line 4888
+    .line 4887
     :cond_7
     cmp-long v4, p1, v8
 
     if-nez v4, :cond_9
 
-    .line 4890
+    .line 4889
     if-lt v0, v2, :cond_8
 
-    .line 4893
+    .line 4892
     const v2, 0x7f0e026a
 
     invoke-virtual {p0, v2}, Lcom/android/hwcamera/Camera;->getString(I)Ljava/lang/String;
@@ -16563,7 +16232,7 @@
 
     goto :goto_4
 
-    .line 4896
+    .line 4895
     :cond_8
     const v2, 0x7f0e026b
 
@@ -16575,11 +16244,11 @@
 
     goto :goto_4
 
-    .line 4901
+    .line 4900
     :cond_9
     if-lt v0, v2, :cond_a
 
-    .line 4904
+    .line 4903
     const v2, 0x7f0e026c
 
     invoke-virtual {p0, v2}, Lcom/android/hwcamera/Camera;->getString(I)Ljava/lang/String;
@@ -16588,7 +16257,7 @@
 
     goto :goto_4
 
-    .line 4907
+    .line 4906
     :cond_a
     const v2, 0x7f0e026d
 
@@ -16600,7 +16269,7 @@
 
     goto :goto_4
 
-    .line 4916
+    .line 4915
     :cond_b
     iget v4, p0, Lcom/android/hwcamera/Camera;->mOrientationCompensation:I
 
@@ -16629,20 +16298,20 @@
 
     const/4 v3, 0x0
 
-    .line 7369
-    .line 7370
+    .line 7325
+    .line 7326
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsImageCaptureIntent:Z
 
     if-eqz v0, :cond_1
 
-    .line 7371
+    .line 7327
     const v0, 0x7f0e0208
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->getString(I)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 7376
+    .line 7332
     :cond_0
     :goto_0
     const-string v0, "Camera"
@@ -16667,18 +16336,18 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7377
+    .line 7333
     if-nez p1, :cond_2
 
-    .line 7450
+    .line 7406
     :goto_1
     return-void
 
-    .line 7372
+    .line 7328
     :cond_1
     if-nez p1, :cond_0
 
-    .line 7373
+    .line 7329
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     const-string v1, "pref_camera_shootmode_key"
@@ -16695,7 +16364,7 @@
 
     goto :goto_0
 
-    .line 7381
+    .line 7337
     :cond_2
     const-string v0, "group"
 
@@ -16713,37 +16382,37 @@
 
     if-eqz v0, :cond_11
 
-    .line 7383
+    .line 7339
     :cond_3
     const-string v0, "burst"
 
-    .line 7386
+    .line 7342
     :goto_2
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v1
 
-    .line 7387
+    .line 7343
     iput-object v0, v1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 7388
+    .line 7344
     const/16 v0, 0xa
 
     iput v0, v1, Landroid/os/Message;->what:I
 
-    .line 7389
+    .line 7345
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 7391
+    .line 7347
     invoke-static {}, Lcom/android/hwcamera/hwui/PanoramaBar;->isOnPanoramazPreview()Z
 
     move-result v0
 
     if-eqz v0, :cond_4
 
-    .line 7392
+    .line 7348
     const v0, 0x7f0c001c
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -16752,10 +16421,10 @@
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 7393
+    .line 7349
     invoke-static {v3}, Lcom/android/hwcamera/hwui/PanoramaBar;->setPanoramaState(I)V
 
-    .line 7395
+    .line 7351
     :cond_4
     iget v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
@@ -16769,14 +16438,14 @@
 
     if-nez v0, :cond_5
 
-    .line 7396
+    .line 7352
     invoke-static {v3}, Lcom/android/hwcamera/Util;->setSmileDetection(Z)V
 
-    .line 7398
+    .line 7354
     :cond_5
     invoke-direct {p0, v3, v3}, Lcom/android/hwcamera/Camera;->enableShutterButton(ZZ)V
 
-    .line 7399
+    .line 7355
     const v0, 0x7f0c00bc
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -16785,7 +16454,7 @@
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 7400
+    .line 7356
     const-string v0, "single"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -16794,17 +16463,17 @@
 
     if-eqz v0, :cond_7
 
-    .line 7402
+    .line 7358
     iput v3, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
-    .line 7432
+    .line 7388
     :cond_6
     :goto_3
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/hwui/SuperPanel;->setFirstLevelMenuEnableByShoot(Ljava/lang/String;)V
 
-    .line 7433
+    .line 7389
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     const-string v1, "pref_camera_shootmode_key"
@@ -16813,16 +16482,16 @@
 
     invoke-virtual {v0, p1, v1, v2}, Lcom/android/hwcamera/hwui/SuperPanel;->menuItemIconRefresh(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 7434
+    .line 7390
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->setFlashModeEnable()V
 
-    .line 7436
+    .line 7392
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->setTargetTrakingEnable()V
 
-    .line 7439
+    .line 7395
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->setFrontTimerEnable()V
 
-    .line 7444
+    .line 7400
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/SuperPanel;->isOpen()Z
@@ -16835,12 +16504,12 @@
 
     if-eq v0, v5, :cond_10
 
-    .line 7445
+    .line 7401
     invoke-direct {p0, v3}, Lcom/android/hwcamera/Camera;->setZoomBarVisibility(I)V
 
     goto/16 :goto_1
 
-    .line 7403
+    .line 7359
     :cond_7
     const-string v0, "hdr"
 
@@ -16850,14 +16519,14 @@
 
     if-eqz v0, :cond_8
 
-    .line 7405
+    .line 7361
     const/4 v0, 0x4
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
     goto :goto_3
 
-    .line 7406
+    .line 7362
     :cond_8
     const-string v0, "group"
 
@@ -16867,12 +16536,12 @@
 
     if-eqz v0, :cond_9
 
-    .line 7408
+    .line 7364
     iput v6, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
     goto :goto_3
 
-    .line 7409
+    .line 7365
     :cond_9
     const-string v0, "panorama"
 
@@ -16882,18 +16551,18 @@
 
     if-eqz v0, :cond_a
 
-    .line 7411
+    .line 7367
     invoke-static {v6}, Lcom/android/hwcamera/hwui/PanoramaBar;->setPanoramaState(I)V
 
-    .line 7412
+    .line 7368
     iput v5, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
-    .line 7413
+    .line 7369
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->initPanorama()V
 
     goto :goto_3
 
-    .line 7414
+    .line 7370
     :cond_a
     const-string v0, "burst"
 
@@ -16903,14 +16572,14 @@
 
     if-eqz v0, :cond_b
 
-    .line 7416
+    .line 7372
     const/4 v0, 0x3
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
     goto :goto_3
 
-    .line 7417
+    .line 7373
     :cond_b
     const-string v0, "smile"
 
@@ -16920,30 +16589,30 @@
 
     if-eqz v0, :cond_c
 
-    .line 7418
+    .line 7374
     iput v7, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
-    .line 7419
+    .line 7375
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 7420
+    .line 7376
     iput v5, v0, Landroid/os/Message;->arg1:I
 
-    .line 7421
+    .line 7377
     const/16 v1, 0xb
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 7422
+    .line 7378
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     goto :goto_3
 
-    .line 7423
+    .line 7379
     :cond_c
     const-string v0, "beauty"
 
@@ -16953,14 +16622,14 @@
 
     if-eqz v0, :cond_d
 
-    .line 7424
+    .line 7380
     const/4 v0, 0x6
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
     goto/16 :goto_3
 
-    .line 7425
+    .line 7381
     :cond_d
     const-string v0, "zsl"
 
@@ -16970,12 +16639,12 @@
 
     if-eqz v0, :cond_e
 
-    .line 7426
+    .line 7382
     iput v4, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
     goto/16 :goto_3
 
-    .line 7427
+    .line 7383
     :cond_e
     const-string v0, "lowlight"
 
@@ -16985,14 +16654,14 @@
 
     if-eqz v0, :cond_f
 
-    .line 7428
+    .line 7384
     const/16 v0, 0x9
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
     goto/16 :goto_3
 
-    .line 7429
+    .line 7385
     :cond_f
     const-string v0, "action"
 
@@ -17002,14 +16671,14 @@
 
     if-eqz v0, :cond_6
 
-    .line 7430
+    .line 7386
     const/4 v0, 0x7
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
     goto/16 :goto_3
 
-    .line 7447
+    .line 7403
     :cond_10
     invoke-direct {p0, v4}, Lcom/android/hwcamera/Camera;->setZoomBarVisibility(I)V
 
@@ -17027,17 +16696,17 @@
     .parameter "storageAvailableSpace"
 
     .prologue
-    .line 4835
+    .line 4834
     if-eqz p1, :cond_0
 
-    .line 4836
+    .line 4835
     invoke-direct {p0, p2, p3}, Lcom/android/hwcamera/Camera;->updateSDCardStorageHint(J)V
 
-    .line 4840
+    .line 4839
     :goto_0
     return-void
 
-    .line 4838
+    .line 4837
     :cond_0
     invoke-direct {p0, p2, p3}, Lcom/android/hwcamera/Camera;->updatePhoneStorageHint(J)V
 
@@ -17049,24 +16718,24 @@
     .parameter
 
     .prologue
-    .line 4808
+    .line 4807
     const/4 v0, 0x0
 
-    .line 4809
+    .line 4808
     if-eqz p1, :cond_3
 
-    .line 4810
+    .line 4809
     invoke-static {}, Lcom/android/hwcamera/Storage;->isSaveToSDCard()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 4832
+    .line 4831
     :goto_0
     return-void
 
-    .line 4813
+    .line 4812
     :cond_0
     const v0, 0x7f0e0257
 
@@ -17074,15 +16743,15 @@
 
     move-result-object v0
 
-    .line 4814
+    .line 4813
     invoke-static {}, Lcom/android/hwcamera/Storage;->switchToExternalSdCard()V
 
-    .line 4824
+    .line 4823
     :cond_1
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 4825
+    .line 4824
     invoke-static {}, Lcom/android/hwcamera/Storage;->getmStrongeHint()Ljava/lang/String;
 
     move-result-object v1
@@ -17093,14 +16762,14 @@
 
     if-eqz v1, :cond_4
 
-    .line 4830
+    .line 4829
     :cond_2
     :goto_2
     invoke-static {v0}, Lcom/android/hwcamera/Storage;->setmStrongeHint(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 4816
+    .line 4815
     :cond_3
     invoke-static {}, Lcom/android/hwcamera/Storage;->isSaveToSDCard()Z
 
@@ -17108,19 +16777,19 @@
 
     if-eqz v1, :cond_1
 
-    .line 4818
+    .line 4817
     const v0, 0x7f0e026f
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4820
+    .line 4819
     invoke-static {}, Lcom/android/hwcamera/Storage;->switchToInternalSdCard()V
 
     goto :goto_1
 
-    .line 4827
+    .line 4826
     :cond_4
     const/4 v1, 0x0
 
@@ -17137,27 +16806,27 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 7676
+    .line 7632
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     if-eqz v0, :cond_0
 
-    .line 7677
+    .line 7633
     iget v0, p0, Lcom/android/hwcamera/Camera;->mCameraId:I
 
     if-nez v0, :cond_1
 
-    .line 7678
+    .line 7634
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/SuperPanel;->onChangeToBackCamera(Z)V
 
-    .line 7683
+    .line 7639
     :cond_0
     :goto_0
     return-void
 
-    .line 7680
+    .line 7636
     :cond_1
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
@@ -17183,17 +16852,17 @@
     .locals 2
 
     .prologue
-    .line 7052
+    .line 7008
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mThumbnail:Lcom/android/hwcamera/Thumbnail;
 
     if-nez v0, :cond_1
 
-    .line 7061
+    .line 7017
     :cond_0
     :goto_0
     return-void
 
-    .line 7055
+    .line 7011
     :cond_1
     const-string v0, "Camera"
 
@@ -17201,19 +16870,19 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7056
+    .line 7012
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->gotoGallery()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 7057
+    .line 7013
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsSmileCaptureState:Z
 
     if-eqz v0, :cond_0
 
-    .line 7058
+    .line 7014
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->stopSmileCapture()V
 
     goto :goto_0
@@ -17328,39 +16997,39 @@
     .locals 2
 
     .prologue
-    .line 5620
+    .line 5619
     const-string v0, "Camera"
 
     const-string v1, "[Flow] Send msg to start autoFocus"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5621
+    .line 5620
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsAutoFocus:Z
 
-    .line 5628
+    .line 5627
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 5629
+    .line 5628
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mAutoFocusCallback:Lcom/android/hwcamera/Camera$AutoFocusCallback;
 
     iput-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 5630
+    .line 5629
     const/16 v1, 0x11
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 5631
+    .line 5630
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 5632
+    .line 5631
     return-void
 .end method
 
@@ -17372,7 +17041,7 @@
 
     const/4 v0, 0x0
 
-    .line 8351
+    .line 8307
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     if-eqz v1, :cond_1
@@ -17385,12 +17054,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 8360
+    .line 8316
     :cond_0
     :goto_0
     return v0
 
-    .line 8355
+    .line 8311
     :cond_1
     iget v1, p0, Lcom/android/hwcamera/Camera;->mCurrentState:I
 
@@ -17410,7 +17079,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 8360
+    .line 8316
     const/4 v0, 0x1
 
     goto :goto_0
@@ -17421,42 +17090,42 @@
     .parameter
 
     .prologue
-    .line 5636
+    .line 5635
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsAutoFocus:Z
 
     if-nez v0, :cond_0
 
-    .line 5651
+    .line 5650
     :goto_0
     return-void
 
-    .line 5639
+    .line 5638
     :cond_0
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsAutoFocus:Z
 
-    .line 5646
+    .line 5645
     const-string v0, "Camera"
 
     const-string v1, "[Flow] Send msg to cancel autoFocus"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5647
+    .line 5646
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 5648
+    .line 5647
     iput p1, v0, Landroid/os/Message;->arg1:I
 
-    .line 5649
+    .line 5648
     const/16 v1, 0x10
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 5650
+    .line 5649
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
@@ -17555,12 +17224,12 @@
     .locals 3
 
     .prologue
-    .line 6064
+    .line 6063
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
 
     if-eqz v0, :cond_0
 
-    .line 6066
+    .line 6065
     :try_start_0
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mCloseCameraLock:[Ljava/lang/Object;
 
@@ -17568,7 +17237,7 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 6067
+    .line 6066
     :try_start_1
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
 
@@ -17576,51 +17245,51 @@
 
     invoke-virtual {v0, v2}, Lcom/android/hwcamera/HwCamera;->setZoomChangeListener(Landroid/hardware/Camera$OnZoomChangeListener;)V
 
-    .line 6068
+    .line 6067
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Lcom/android/hwcamera/HwCamera;->setErrorCallback(Landroid/hardware/Camera$ErrorCallback;)V
 
-    .line 6069
+    .line 6068
     invoke-static {}, Lcom/android/hwcamera/CameraHolder;->instance()Lcom/android/hwcamera/CameraHolder;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/android/hwcamera/CameraHolder;->release()V
 
-    .line 6070
+    .line 6069
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
 
-    .line 6071
+    .line 6070
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mCameraState:I
 
-    .line 6072
+    .line 6071
     const-string v0, "Camera"
 
     const-string v2, "[Flow] Camera released!"
 
     invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6073
+    .line 6072
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mCloseCameraLock:[Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 6074
+    .line 6073
     monitor-exit v1
 
-    .line 6078
+    .line 6077
     :cond_0
     :goto_0
     return-void
 
-    .line 6074
+    .line 6073
     :catchall_0
     move-exception v0
 
@@ -17633,7 +17302,7 @@
     :try_end_2
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 6075
+    .line 6074
     :catch_0
     move-exception v0
 
@@ -17687,26 +17356,26 @@
     .parameter "facesList"
 
     .prologue
-    .line 8199
+    .line 8155
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 8200
+    .line 8156
     .local v0, msg:Landroid/os/Message;
     iput-object p1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 8201
+    .line 8157
     const/16 v1, 0xb
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 8202
+    .line 8158
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 8203
+    .line 8159
     return-void
 .end method
 
@@ -17774,22 +17443,22 @@
     .locals 2
 
     .prologue
-    .line 7288
+    .line 7244
     invoke-static {}, Lcom/android/hwcamera/Util;->cancelPanorama()V
 
-    .line 7289
+    .line 7245
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mCameraState:I
 
-    .line 7290
+    .line 7246
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0xf
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 7291
+    .line 7247
     return-void
 .end method
 
@@ -17797,18 +17466,18 @@
     .locals 1
 
     .prologue
-    .line 7293
+    .line 7249
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mPausing:Z
 
     if-nez v0, :cond_0
 
-    .line 7294
+    .line 7250
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mImageCapture:Lcom/android/hwcamera/Camera$ImageCapture;
 
     #calls: Lcom/android/hwcamera/Camera$ImageCapture;->capture()V
     invoke-static {v0}, Lcom/android/hwcamera/Camera$ImageCapture;->access$12800(Lcom/android/hwcamera/Camera$ImageCapture;)V
 
-    .line 7296
+    .line 7252
     :cond_0
     return-void
 .end method
@@ -17827,19 +17496,19 @@
 
     const/4 v4, 0x0
 
-    .line 8208
+    .line 8164
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->isFrontCamera()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 8257
+    .line 8213
     :cond_0
     :goto_0
     return-void
 
-    .line 8213
+    .line 8169
     :cond_1
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
@@ -17847,7 +17516,7 @@
 
     move-result-object v0
 
-    .line 8214
+    .line 8170
     const-string v1, "continuous-picture"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -17864,7 +17533,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 8220
+    .line 8176
     :cond_2
     const v0, 0x7f0c0018
 
@@ -17876,7 +17545,7 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mFaceView:Lcom/android/hwcamera/hwui/FaceView;
 
-    .line 8221
+    .line 8177
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFaceView:Lcom/android/hwcamera/hwui/FaceView;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/hwcamera/hwui/FaceView;->isNeedFocus(Lcom/android/hwcamera/hwui/FaceInfo;Lcom/android/hwcamera/hwui/FaceInfo;)Z
@@ -17885,7 +17554,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 8223
+    .line 8179
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v3}, Landroid/os/Handler;->hasMessages(I)Z
@@ -17894,12 +17563,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 8224
+    .line 8180
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v3}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 8227
+    .line 8183
     :cond_3
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
@@ -17909,33 +17578,33 @@
 
     if-eqz v0, :cond_4
 
-    .line 8228
+    .line 8184
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 8230
+    .line 8186
     :cond_4
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 8231
+    .line 8187
     invoke-virtual {p1, p2}, Lcom/android/hwcamera/hwui/FaceInfo;->clone(Lcom/android/hwcamera/hwui/FaceInfo;)V
 
-    .line 8232
+    .line 8188
     invoke-static {}, Lcom/android/hwcamera/Util;->isBuildVersionAboveICS()Z
 
     move-result v0
 
     if-eqz v0, :cond_6
 
-    .line 8233
+    .line 8189
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 8234
+    .line 8190
     new-instance v1, Landroid/hardware/Camera$Area;
 
     iget-object v2, p2, Lcom/android/hwcamera/hwui/FaceInfo;->rect:Landroid/graphics/Rect;
@@ -17944,25 +17613,25 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 8239
+    .line 8195
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v1
 
-    .line 8240
+    .line 8196
     iput-object v0, v1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 8241
+    .line 8197
     const/16 v0, 0x12
 
     iput v0, v1, Landroid/os/Message;->what:I
 
-    .line 8242
+    .line 8198
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 8252
+    .line 8208
     :cond_5
     :goto_1
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
@@ -17973,14 +17642,14 @@
 
     if-eqz v0, :cond_7
 
-    .line 8253
+    .line 8209
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHWExtCameraHandler:Lcom/android/hwcamera/HWExtCameraHandler;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/HWExtCameraHandler;->setFocusState()V
 
     goto :goto_0
 
-    .line 8244
+    .line 8200
     :cond_6
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFaceView:Lcom/android/hwcamera/hwui/FaceView;
 
@@ -17988,7 +17657,7 @@
 
     move-result-object v0
 
-    .line 8245
+    .line 8201
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->centerX()I
@@ -18001,7 +17670,7 @@
 
     invoke-virtual {v1, v2, v3, v4, v4}, Lcom/android/hwcamera/FocusManager;->handleFocus(IIIZ)Z
 
-    .line 8247
+    .line 8203
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->centerX()I
@@ -18016,7 +17685,7 @@
 
     goto :goto_1
 
-    .line 8255
+    .line 8211
     :cond_7
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHWExtCameraHandler:Lcom/android/hwcamera/HWExtCameraHandler;
 
@@ -18031,261 +17700,261 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 8073
+    .line 8029
     invoke-static {}, Lcom/android/hwcamera/BlueToothMediaButton;->getInstance()Lcom/android/hwcamera/BlueToothMediaButton;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/android/hwcamera/BlueToothMediaButton;->removeOnBlueToothMediaButtonListener()V
 
-    .line 8074
+    .line 8030
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mZoomControl:Lcom/android/hwcamera/hwui/ZoomControl;
 
     if-eqz v0, :cond_0
 
-    .line 8075
+    .line 8031
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mZoomControl:Lcom/android/hwcamera/hwui/ZoomControl;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/ZoomControl;->release()V
 
-    .line 8077
+    .line 8033
     :cond_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 8078
+    .line 8034
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     if-eqz v0, :cond_1
 
-    .line 8079
+    .line 8035
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->clearFocusUI()V
 
-    .line 8080
+    .line 8036
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mFocusIndicator:Landroid/view/View;
 
-    .line 8083
+    .line 8039
     :cond_1
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mLocationManager:Lcom/android/hwcamera/LocationManager;
 
     if-eqz v0, :cond_2
 
-    .line 8084
+    .line 8040
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mLocationManager:Lcom/android/hwcamera/LocationManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/LocationManager;->release()V
 
-    .line 8086
+    .line 8042
     :cond_2
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mThumnailAnimation:Landroid/view/animation/Animation;
 
     if-eqz v0, :cond_3
 
-    .line 8087
+    .line 8043
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mThumnailAnimation:Landroid/view/animation/Animation;
 
     invoke-virtual {v0}, Landroid/view/animation/Animation;->cancel()V
 
-    .line 8088
+    .line 8044
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mThumnailAnimation:Landroid/view/animation/Animation;
 
-    .line 8092
+    .line 8048
     :cond_3
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHWExtCameraHandler:Lcom/android/hwcamera/HWExtCameraHandler;
 
     if-eqz v0, :cond_4
 
-    .line 8093
+    .line 8049
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHWExtCameraHandler:Lcom/android/hwcamera/HWExtCameraHandler;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/HWExtCameraHandler;->unRegisterListener()V
 
-    .line 8095
+    .line 8051
     :cond_4
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mAutoFocusListener:Lcom/android/hwcamera/AutoFocusListener;
 
     if-eqz v0, :cond_5
 
-    .line 8096
+    .line 8052
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mAutoFocusListener:Lcom/android/hwcamera/AutoFocusListener;
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/AutoFocusListener;->setListener(Lcom/android/hwcamera/AutoFocusListener$OnAutoFocusListener;)V
 
-    .line 8099
+    .line 8055
     :cond_5
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mAutoFocusListener:Lcom/android/hwcamera/AutoFocusListener;
 
     if-eqz v0, :cond_6
 
-    .line 8100
+    .line 8056
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mAutoFocusListener:Lcom/android/hwcamera/AutoFocusListener;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/AutoFocusListener;->unsetFocusManager()V
 
-    .line 8103
+    .line 8059
     :cond_6
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     if-eqz v0, :cond_7
 
-    .line 8104
+    .line 8060
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/SuperPanel;->unsetOnPanelListener()V
 
-    .line 8105
+    .line 8061
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/SuperPanel;->unInitSettingmenu()V
 
-    .line 8106
+    .line 8062
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/SuperPanel;->unsetComboPreferences()V
 
-    .line 8108
+    .line 8064
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/SuperPanel;->relase()V
 
-    .line 8111
+    .line 8067
     :cond_7
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mZoomControl:Lcom/android/hwcamera/hwui/ZoomControl;
 
     if-eqz v0, :cond_8
 
-    .line 8112
+    .line 8068
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mZoomControl:Lcom/android/hwcamera/hwui/ZoomControl;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/ZoomControl;->unInitZoomControl()V
 
-    .line 8115
+    .line 8071
     :cond_8
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
     if-eqz v0, :cond_9
 
-    .line 8116
+    .line 8072
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ParametersManager;->unInitParametersManager()V
 
-    .line 8119
+    .line 8075
     :cond_9
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGPSDailog:Lcom/android/hwcamera/hwui/GPSDailog;
 
     if-eqz v0, :cond_a
 
-    .line 8120
+    .line 8076
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGPSDailog:Lcom/android/hwcamera/hwui/GPSDailog;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/GPSDailog;->unInitGPSDailog()V
 
-    .line 8123
+    .line 8079
     :cond_a
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFlashImageView:Lcom/android/hwcamera/hwui/FlashImageView;
 
     if-eqz v0, :cond_b
 
-    .line 8124
+    .line 8080
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFlashImageView:Lcom/android/hwcamera/hwui/FlashImageView;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/FlashImageView;->unsetComboPreferences()V
 
-    .line 8127
+    .line 8083
     :cond_b
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mTimerImageView:Lcom/android/hwcamera/hwui/TimerImageView;
 
     if-eqz v0, :cond_c
 
-    .line 8128
+    .line 8084
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mTimerImageView:Lcom/android/hwcamera/hwui/TimerImageView;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/TimerImageView;->unsetComboPreferences()V
 
-    .line 8131
+    .line 8087
     :cond_c
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     if-eqz v0, :cond_d
 
-    .line 8132
+    .line 8088
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ComboPreferences;->unInitComboPreferences()V
 
-    .line 8136
+    .line 8092
     :cond_d
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mAutoFocusListener:Lcom/android/hwcamera/AutoFocusListener;
 
-    .line 8137
+    .line 8093
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
-    .line 8138
+    .line 8094
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
-    .line 8139
+    .line 8095
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mZoomControl:Lcom/android/hwcamera/hwui/ZoomControl;
 
-    .line 8140
+    .line 8096
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mThumbnailView:Lcom/android/hwcamera/RotateImageView;
 
-    .line 8141
+    .line 8097
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mThumbnailMaskView:Lcom/android/hwcamera/RotateImageView;
 
-    .line 8142
+    .line 8098
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mPreviewFrameLayout:Lcom/android/hwcamera/PreviewFrameLayout;
 
-    .line 8143
+    .line 8099
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
-    .line 8144
+    .line 8100
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mSwitcher:Lcom/android/hwcamera/Switcher;
 
-    .line 8145
+    .line 8101
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
-    .line 8146
+    .line 8102
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mZoomSeekBar:Landroid/widget/SeekBar;
 
-    .line 8147
+    .line 8103
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mShutterCenter:Lcom/android/hwcamera/RotateImageView;
 
-    .line 8148
+    .line 8104
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mFocusIndicator:Landroid/view/View;
 
-    .line 8149
+    .line 8105
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mGPSDailog:Lcom/android/hwcamera/hwui/GPSDailog;
 
-    .line 8150
+    .line 8106
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mFaceView:Lcom/android/hwcamera/hwui/FaceView;
 
-    .line 8151
+    .line 8107
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mFlashImageView:Lcom/android/hwcamera/hwui/FlashImageView;
 
-    .line 8152
+    .line 8108
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mTimerImageView:Lcom/android/hwcamera/hwui/TimerImageView;
 
-    .line 8153
+    .line 8109
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mSwitchCameraImage:Lcom/android/hwcamera/RotateImageView;
 
-    .line 8154
+    .line 8110
     iput-object v1, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
-    .line 8155
+    .line 8111
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferenceGroup:Lcom/android/hwcamera/PreferenceGroup;
 
     if-eqz v0, :cond_e
 
-    .line 8156
+    .line 8112
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferenceGroup:Lcom/android/hwcamera/PreferenceGroup;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/PreferenceGroup;->deleteAllPreferences()V
 
-    .line 8158
+    .line 8114
     :cond_e
     return-void
 .end method
@@ -18302,13 +17971,13 @@
 
     const/4 v5, 0x0
 
-    .line 5086
+    .line 5085
     iput-boolean v5, p0, Lcom/android/hwcamera/Camera;->mIsResetThumbnail:Z
 
-    .line 5088
+    .line 5087
     invoke-static {p0}, Lcom/android/hwcamera/Storage;->saveLocationInit(Landroid/content/Context;)V
 
-    .line 5093
+    .line 5092
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mOpenCameraFail:Z
 
     if-nez v0, :cond_0
@@ -18317,12 +17986,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 5219
+    .line 5218
     :cond_0
     :goto_0
     return-void
 
-    .line 5099
+    .line 5098
     :cond_1
     invoke-static {}, Lcom/android/hwcamera/Util;->isTabletUI()Z
 
@@ -18330,10 +17999,10 @@
 
     if-eqz v0, :cond_b
 
-    .line 5101
+    .line 5100
     invoke-virtual {p0, v5}, Lcom/android/hwcamera/Camera;->setRequestedOrientation(I)V
 
-    .line 5107
+    .line 5106
     :goto_1
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -18347,10 +18016,10 @@
 
     if-eqz v0, :cond_2
 
-    .line 5109
+    .line 5108
     invoke-static {p0}, Lcom/android/hwcamera/Util;->stopFMRadioPlay(Landroid/content/Context;)V
 
-    .line 5115
+    .line 5114
     :cond_2
     const v0, 0x7f0c000b
 
@@ -18360,7 +18029,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 5116
+    .line 5115
     const v0, 0x7f0c0056
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -18369,7 +18038,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 5131
+    .line 5130
     iget v0, p0, Lcom/android/hwcamera/Camera;->mCameraId:I
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
@@ -18380,14 +18049,14 @@
 
     if-eq v0, v1, :cond_3
 
-    .line 5132
+    .line 5131
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     iget v1, p0, Lcom/android/hwcamera/Camera;->mCameraId:I
 
     invoke-static {v0, v1}, Lcom/android/hwcamera/CameraSettings;->writePreferredCameraId(Landroid/content/SharedPreferences;I)V
 
-    .line 5137
+    .line 5136
     :cond_3
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
@@ -18397,18 +18066,18 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 5138
+    .line 5137
     iput-boolean v5, p0, Lcom/android/hwcamera/Camera;->mPausing:Z
 
-    .line 5139
+    .line 5138
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/hwcamera/Camera;->mJpegPictureCallbackTime:J
 
-    .line 5140
+    .line 5139
     iput v5, p0, Lcom/android/hwcamera/Camera;->mZoomValue:I
 
-    .line 5141
+    .line 5140
     new-instance v0, Lcom/android/hwcamera/Camera$ImageCapture;
 
     const/4 v1, 0x0
@@ -18417,15 +18086,15 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mImageCapture:Lcom/android/hwcamera/Camera$ImageCapture;
 
-    .line 5143
+    .line 5142
     iput-boolean v4, p0, Lcom/android/hwcamera/Camera;->mIsGroupFinish:Z
 
-    .line 5146
+    .line 5145
     iget v0, p0, Lcom/android/hwcamera/Camera;->mCameraState:I
 
     if-nez v0, :cond_4
 
-    .line 5149
+    .line 5148
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getApplication()Landroid/app/Application;
 
     move-result-object v0
@@ -18434,7 +18103,7 @@
 
     invoke-virtual {v0, p0}, Lcom/android/hwcamera/CameraAppImpl;->setCameraActivityInfo(Lcom/android/hwcamera/Camera;)V
 
-    .line 5150
+    .line 5149
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getApplication()Landroid/app/Application;
 
     move-result-object v0
@@ -18447,15 +18116,15 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
-    .line 5151
+    .line 5150
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v6}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 5154
+    .line 5153
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->waitPreviewOpened()V
 
-    .line 5156
+    .line 5155
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mOpenCameraFail:Z
 
     if-nez v0, :cond_0
@@ -18464,27 +18133,27 @@
 
     if-nez v0, :cond_0
 
-    .line 5161
+    .line 5160
     :cond_4
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsImageCaptureIntent:Z
 
     if-nez v0, :cond_5
 
-    .line 5162
+    .line 5161
     invoke-virtual {p0, v4}, Lcom/android/hwcamera/Camera;->updateThumbnailButton(Z)V
 
-    .line 5164
+    .line 5163
     :cond_5
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     if-eqz v0, :cond_6
 
-    .line 5167
+    .line 5166
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mFirstTimeInitialized:Z
 
     if-nez v0, :cond_c
 
-    .line 5168
+    .line 5167
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x2
@@ -18493,12 +18162,12 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 5173
+    .line 5172
     :cond_6
     :goto_2
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->keepScreenOnAwhile()V
 
-    .line 5175
+    .line 5174
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->isCAFSupported()Z
@@ -18507,7 +18176,7 @@
 
     if-nez v0, :cond_7
 
-    .line 5176
+    .line 5175
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     const-string v1, "pref_camera_auto_focusmode_key"
@@ -18522,7 +18191,7 @@
 
     move-result-object v0
 
-    .line 5178
+    .line 5177
     const-string v1, "on"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -18537,28 +18206,28 @@
 
     if-nez v0, :cond_7
 
-    .line 5179
+    .line 5178
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mAFController:Lcom/android/hwcamera/CameraAutoFocusController;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/CameraAutoFocusController;->resume()V
 
-    .line 5183
+    .line 5182
     :cond_7
     iget v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
     if-ne v0, v4, :cond_8
 
-    .line 5185
+    .line 5184
     invoke-static {}, Lcom/android/hwcamera/Util;->isPanoramaSupportedByScalado()Z
 
     move-result v0
 
     if-eqz v0, :cond_d
 
-    .line 5186
+    .line 5185
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->initPanorama()V
 
-    .line 5187
+    .line 5186
     const v0, 0x7f0c0011
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -18567,14 +18236,14 @@
 
     invoke-virtual {v0, v5}, Landroid/view/View;->setVisibility(I)V
 
-    .line 5195
+    .line 5194
     :cond_8
     :goto_3
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsImageCaptureIntent:Z
 
     if-nez v0, :cond_9
 
-    .line 5196
+    .line 5195
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     const-string v1, "pref_camera_reset_tag"
@@ -18583,7 +18252,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/hwcamera/ResetPreference;->writePreferredTag(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5200
+    .line 5199
     :cond_9
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGPSDailog:Lcom/android/hwcamera/hwui/GPSDailog;
 
@@ -18595,10 +18264,10 @@
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/GPSDailog;->initGpsAnimation(Landroid/view/View;)V
 
-    .line 5203
+    .line 5202
     const/16 v0, 0x3e8
 
-    .line 5204
+    .line 5203
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/4 v2, 0x5
@@ -18607,15 +18276,15 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 5213
+    .line 5212
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsImageCaptureIntent:Z
 
     if-eqz v0, :cond_a
 
-    .line 5214
+    .line 5213
     invoke-direct {p0, v5}, Lcom/android/hwcamera/Camera;->setCameraUIVisibility(I)V
 
-    .line 5218
+    .line 5217
     :cond_a
     const-string v0, "Camera"
 
@@ -18625,23 +18294,23 @@
 
     goto/16 :goto_0
 
-    .line 5104
+    .line 5103
     :cond_b
     invoke-virtual {p0, v4}, Lcom/android/hwcamera/Camera;->setRequestedOrientation(I)V
 
     goto/16 :goto_1
 
-    .line 5170
+    .line 5169
     :cond_c
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->initializeSecondTime()V
 
     goto :goto_2
 
-    .line 5189
+    .line 5188
     :cond_d
     invoke-static {v6, p0}, Lcom/android/hwcamera/MenuHelper;->gotoMode(ILandroid/app/Activity;)V
 
-    .line 5190
+    .line 5189
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->finish()V
 
     goto :goto_3
@@ -18653,23 +18322,23 @@
     .parameter "arg2"
 
     .prologue
-    .line 7298
+    .line 7254
     const/4 v0, 0x2
 
     if-ne v0, p1, :cond_1
 
-    .line 7299
+    .line 7255
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->canSetZoom()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 7316
+    .line 7272
     :goto_0
     return-void
 
-    .line 7312
+    .line 7268
     :cond_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mZoomControl:Lcom/android/hwcamera/hwui/ZoomControl;
 
@@ -18677,7 +18346,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/ZoomControl;->setZoomIndex(I)V
 
-    .line 7315
+    .line 7271
     :cond_1
     invoke-direct {p0, p1}, Lcom/android/hwcamera/Camera;->setCameraParametersWhenIdle(I)V
 
@@ -18709,7 +18378,7 @@
     .parameter
 
     .prologue
-    .line 7319
+    .line 7275
     :try_start_0
     const-string v0, "Camera"
 
@@ -18717,19 +18386,19 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7320
+    .line 7276
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mCameraState:I
 
-    .line 7321
+    .line 7277
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/hwcamera/Camera;->mFocusStartTime:J
 
-    .line 7322
+    .line 7278
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
 
     check-cast p1, Lcom/android/hwcamera/Camera$AutoFocusCallback;
@@ -18738,15 +18407,15 @@
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 7326
+    .line 7282
     :goto_0
     return-void
 
-    .line 7323
+    .line 7279
     :catch_0
     move-exception v0
 
-    .line 7324
+    .line 7280
     const-string v0, "Camera"
 
     const-string v1, "autoFocus failed"
@@ -18762,47 +18431,47 @@
     .prologue
     const/16 v3, 0x22
 
-    .line 7233
+    .line 7189
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mAFController:Lcom/android/hwcamera/CameraAutoFocusController;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/CameraAutoFocusController;->pause()V
 
-    .line 7237
+    .line 7193
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ComboPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
 
-    .line 7239
+    .line 7195
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsMute:Z
 
     if-eqz v0, :cond_0
 
-    .line 7240
+    .line 7196
     const-string v0, "off"
 
-    .line 7244
+    .line 7200
     :goto_0
     const-string v2, "pref_video_sound_state_key"
 
     invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 7245
+    .line 7201
     const-string v2, "pref_camera_sound_state_key"
 
     invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 7246
+    .line 7202
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 7248
+    .line 7204
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->stopPreview()V
 
-    .line 7249
+    .line 7205
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->closeCamera()V
 
-    .line 7251
+    .line 7207
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     const/4 v1, 0x6
@@ -18813,18 +18482,18 @@
 
     if-eqz v0, :cond_1
 
-    .line 7252
+    .line 7208
     const-string v0, "Camera"
 
     const-string v1, "doSwitchCamera don\'t open new device as quiting msg is queue!!"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7255
+    .line 7211
     :try_start_0
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->openCameraDevice()V
 
-    .line 7256
+    .line 7212
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x22
@@ -18833,7 +18502,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 7260
+    .line 7216
     :goto_1
     const-string v0, "Camera"
 
@@ -18841,21 +18510,21 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7286
+    .line 7242
     :goto_2
     return-void
 
-    .line 7242
+    .line 7198
     :cond_0
     const-string v0, "on"
 
     goto :goto_0
 
-    .line 7257
+    .line 7213
     :catch_0
     move-exception v0
 
-    .line 7258
+    .line 7214
     const-string v0, "Camera"
 
     const-string v1, "Open Camera failed when switch camera!!"
@@ -18864,11 +18533,11 @@
 
     goto :goto_1
 
-    .line 7265
+    .line 7221
     :cond_1
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->restartPreview()Z
 
-    .line 7267
+    .line 7223
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     const-string v1, "pref_camera_sound_state_key"
@@ -18879,7 +18548,7 @@
 
     move-result-object v0
 
-    .line 7268
+    .line 7224
     const-string v1, "off"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -18888,12 +18557,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 7269
+    .line 7225
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsMute:Z
 
-    .line 7273
+    .line 7229
     :goto_3
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
@@ -18901,19 +18570,19 @@
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/FocusManager;->setSoundState(Z)V
 
-    .line 7279
+    .line 7235
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->isFrontCamera()Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 7280
+    .line 7236
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mAFController:Lcom/android/hwcamera/CameraAutoFocusController;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/CameraAutoFocusController;->resume()V
 
-    .line 7284
+    .line 7240
     :cond_2
     const-string v0, "Camera"
 
@@ -18921,14 +18590,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7285
+    .line 7241
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v3}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     goto :goto_2
 
-    .line 7271
+    .line 7227
     :cond_3
     const/4 v0, 0x0
 
@@ -18942,17 +18611,17 @@
     .parameter "shootMode"
 
     .prologue
-    .line 7453
+    .line 7409
     invoke-static {p1}, Lcom/android/hwcamera/Util;->setShootingMode(Ljava/lang/String;)Z
 
-    .line 7463
+    .line 7419
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0xf
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 7464
+    .line 7420
     return-void
 .end method
 
@@ -19103,14 +18772,14 @@
     .prologue
     const/16 v3, 0x18
 
-    .line 8188
+    .line 8144
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0xc
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 8190
+    .line 8146
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v3}, Landroid/os/Handler;->hasMessages(I)Z
@@ -19119,12 +18788,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 8191
+    .line 8147
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v3}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 8193
+    .line 8149
     :cond_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
@@ -19132,7 +18801,7 @@
 
     invoke-virtual {v0, v3, v1, v2}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 8195
+    .line 8151
     return-void
 .end method
 
@@ -19142,17 +18811,17 @@
     .prologue
     const/16 v1, 0x8
 
-    .line 8438
+    .line 8394
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/hwcamera/Camera;->mGpsSignalState:Z
 
-    .line 8441
+    .line 8397
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mPausing:Z
 
     if-nez v0, :cond_0
 
-    .line 8442
+    .line 8398
     const v0, 0x7f0c0048
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -19161,7 +18830,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 8443
+    .line 8399
     const v0, 0x7f0c0047
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -19170,7 +18839,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 8444
+    .line 8400
     const v0, 0x7f0c0049
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -19179,13 +18848,13 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 8447
+    .line 8403
     :cond_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGPSDailog:Lcom/android/hwcamera/hwui/GPSDailog;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/GPSDailog;->hideGpsAnimation()V
 
-    .line 8448
+    .line 8404
     return-void
 .end method
 
@@ -19195,14 +18864,14 @@
     .prologue
     const v1, 0x7f0c000c
 
-    .line 8756
+    .line 8723
     invoke-static {}, Lcom/android/hwcamera/Util;->isTabletUI()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 8757
+    .line 8724
     invoke-virtual {p0, v1}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
@@ -19213,7 +18882,7 @@
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mControlBarHeight:I
 
-    .line 8761
+    .line 8728
     :goto_0
     const-string v0, "Camera"
 
@@ -19239,15 +18908,15 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 8762
+    .line 8729
     iget v0, p0, Lcom/android/hwcamera/Camera;->mControlBarHeight:I
 
     invoke-static {v0}, Lcom/android/hwcamera/hwui/MenuCommon;->setControlBarHeight(I)V
 
-    .line 8764
+    .line 8731
     return-void
 
-    .line 8759
+    .line 8726
     :cond_0
     invoke-virtual {p0, v1}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
 
@@ -19500,7 +19169,7 @@
     .locals 1
 
     .prologue
-    .line 6081
+    .line 6080
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
 
     if-nez v0, :cond_0
@@ -19520,7 +19189,7 @@
     .locals 1
 
     .prologue
-    .line 8365
+    .line 8321
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->isFrontCamera()Z
 
     move-result v0
@@ -19555,7 +19224,7 @@
 
     const/4 v1, 0x1
 
-    .line 5509
+    .line 5508
     const-string v0, "Camera"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -19578,71 +19247,71 @@
 
     invoke-static {v0, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5510
+    .line 5509
     sparse-switch p1, :sswitch_data_0
 
-    .line 5570
+    .line 5569
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mThumbnail:Lcom/android/hwcamera/Thumbnail;
 
-    .line 5571
+    .line 5570
     invoke-super {p0, p1, p2, p3}, Lcom/android/hwcamera/ActivityBase;->onActivityResult(IILandroid/content/Intent;)V
 
-    .line 5575
+    .line 5574
     :cond_0
     :goto_0
     return-void
 
-    .line 5512
+    .line 5511
     :sswitch_0
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 5513
+    .line 5512
     if-eqz p3, :cond_1
 
-    .line 5514
+    .line 5513
     invoke-virtual {p3}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v1
 
-    .line 5515
+    .line 5514
     if-eqz v1, :cond_1
 
-    .line 5516
+    .line 5515
     invoke-virtual {v0, v1}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
 
-    .line 5519
+    .line 5518
     :cond_1
     invoke-virtual {p0, p2, v0}, Lcom/android/hwcamera/Camera;->setResultEx(ILandroid/content/Intent;)V
 
-    .line 5520
+    .line 5519
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->finish()V
 
-    .line 5522
+    .line 5521
     const-string v0, "crop-temp"
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->getFileStreamPath(Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v0
 
-    .line 5523
+    .line 5522
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
     goto :goto_0
 
-    .line 5529
+    .line 5528
     :sswitch_1
     iput-boolean v1, p0, Lcom/android/hwcamera/Camera;->mIsActivityExit:Z
 
-    .line 5530
+    .line 5529
     const/4 v0, 0x5
 
     if-ne v0, p2, :cond_0
 
-    .line 5531
+    .line 5530
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x26
@@ -19651,22 +19320,22 @@
 
     goto :goto_0
 
-    .line 5537
+    .line 5536
     :sswitch_2
     iput-boolean v1, p0, Lcom/android/hwcamera/Camera;->mIsActivityExit:Z
 
     goto :goto_0
 
-    .line 5542
+    .line 5541
     :sswitch_3
     iput-boolean v1, p0, Lcom/android/hwcamera/Camera;->mIsActivityExit:Z
 
-    .line 5543
+    .line 5542
     const/4 v0, 0x6
 
     if-ne v0, p2, :cond_0
 
-    .line 5544
+    .line 5543
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x28
@@ -19675,38 +19344,38 @@
 
     goto :goto_0
 
-    .line 5553
+    .line 5552
     :sswitch_4
     if-eqz p3, :cond_3
 
-    .line 5554
+    .line 5553
     const-string v0, "config_need_to_helpcenter"
 
     invoke-virtual {p3, v0, v1}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v0
 
-    .line 5556
+    .line 5555
     const-string v3, "config_helpcenter_current_page"
 
     invoke-virtual {p3, v3, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v2
 
-    .line 5559
+    .line 5558
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 5560
+    .line 5559
     invoke-direct {p0, v2}, Lcom/android/hwcamera/Camera;->saveHelpCenterCurrentPage(I)V
 
-    .line 5564
+    .line 5563
     :goto_2
     iput-boolean v1, p0, Lcom/android/hwcamera/Camera;->ishelpexit:Z
 
     goto :goto_0
 
-    .line 5562
+    .line 5561
     :cond_2
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->notNeedToHelpCenter()V
 
@@ -19717,7 +19386,7 @@
 
     goto :goto_1
 
-    .line 5510
+    .line 5509
     nop
 
     :sswitch_data_0
@@ -19744,14 +19413,14 @@
 
     const/4 v3, 0x1
 
-    .line 5680
+    .line 5679
     const-string v0, "Camera"
 
     const-string v1, "[Flow] onBackPressed"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5683
+    .line 5682
     :try_start_0
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->exitGallery()Z
     :try_end_0
@@ -19761,22 +19430,22 @@
 
     if-eqz v0, :cond_1
 
-    .line 5777
+    .line 5776
     :cond_0
     :goto_0
     return-void
 
-    .line 5686
+    .line 5685
     :catch_0
     move-exception v0
 
-    .line 5687
+    .line 5686
     #calls: Lcom/android/gallery3d/app/AbstractGalleryActivity;->onBackPressed()V
     invoke-static {p0}, Lcom/android/hwcamera/Camera;->access$12701(Lcom/android/hwcamera/Camera;)V
 
     goto :goto_0
 
-    .line 5691
+    .line 5690
     :cond_1
     iget v0, p0, Lcom/android/hwcamera/Camera;->mCurrentState:I
 
@@ -19788,13 +19457,13 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 5692
+    .line 5691
     :cond_2
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->galleryExEnd()V
 
     goto :goto_0
 
-    .line 5695
+    .line 5694
     :cond_3
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->isCameraIdle()Z
 
@@ -19806,7 +19475,7 @@
 
     if-eq v0, v5, :cond_4
 
-    .line 5697
+    .line 5696
     iget v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
     if-ne v0, v3, :cond_0
@@ -19817,27 +19486,27 @@
 
     if-eqz v0, :cond_0
 
-    .line 5703
+    .line 5702
     :cond_4
     iget v0, p0, Lcom/android/hwcamera/Camera;->mCurrentState:I
 
     if-ne v0, v5, :cond_5
 
-    .line 5705
+    .line 5704
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0xe
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 5706
+    .line 5705
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0xe
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 5707
+    .line 5706
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x10
@@ -19846,21 +19515,21 @@
 
     goto :goto_0
 
-    .line 5710
+    .line 5709
     :cond_5
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->isCounterDowning:Z
 
     if-eqz v0, :cond_6
 
-    .line 5711
+    .line 5710
     iput-boolean v3, p0, Lcom/android/hwcamera/Camera;->mCancelTimer:Z
 
-    .line 5712
+    .line 5711
     iput v4, p0, Lcom/android/hwcamera/Camera;->mDelayTimeRemaining:I
 
     goto :goto_0
 
-    .line 5715
+    .line 5714
     :cond_6
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->closeOpenedPanel()Z
 
@@ -19868,29 +19537,29 @@
 
     if-nez v0, :cond_0
 
-    .line 5716
+    .line 5715
     invoke-static {}, Lcom/android/hwcamera/hwui/PanoramaBar;->isOnPanoramazPreview()Z
 
     move-result v0
 
     if-eqz v0, :cond_8
 
-    .line 5717
+    .line 5716
     invoke-static {v4}, Lcom/android/hwcamera/hwui/PanoramaBar;->setPanoramaState(I)V
 
-    .line 5730
+    .line 5729
     :cond_7
     :goto_1
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsSmileCaptureState:Z
 
     if-eqz v0, :cond_a
 
-    .line 5731
+    .line 5730
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->stopSmileCapture()V
 
     goto :goto_0
 
-    .line 5718
+    .line 5717
     :cond_8
     invoke-static {}, Lcom/android/hwcamera/hwui/PanoramaBar;->isOnPanoramazProcessing()Z
 
@@ -19898,12 +19567,12 @@
 
     if-eqz v0, :cond_9
 
-    .line 5719
+    .line 5718
     invoke-static {v6}, Lcom/android/hwcamera/hwui/PanoramaBar;->setPanoramaState(I)V
 
     goto :goto_1
 
-    .line 5720
+    .line 5719
     :cond_9
     invoke-static {}, Lcom/android/hwcamera/hwui/PanoramaBar;->isOnPanoramaCapture()Z
 
@@ -19911,7 +19580,7 @@
 
     if-eqz v0, :cond_7
 
-    .line 5721
+    .line 5720
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPanoramaBar:Lcom/android/hwcamera/hwui/PanoramaBar;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/PanoramaBar;->getPanoramaControlAble()Z
@@ -19920,15 +19589,15 @@
 
     if-eqz v0, :cond_0
 
-    .line 5722
+    .line 5721
     invoke-static {v2}, Lcom/android/hwcamera/hwui/PanoramaBar;->setPanoramaState(I)V
 
-    .line 5723
+    .line 5722
     invoke-direct {p0, v3}, Lcom/android/hwcamera/Camera;->cancelPanorama(Z)V
 
     goto :goto_0
 
-    .line 5735
+    .line 5734
     :cond_a
     iget v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
@@ -19949,11 +19618,11 @@
 
     if-eqz v0, :cond_d
 
-    .line 5738
+    .line 5737
     :cond_c
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->stopBurst()V
 
-    .line 5739
+    .line 5738
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mImageSaver:Lcom/android/hwcamera/Camera$ImageSaver;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/Camera$ImageSaver;->isAllImageSaved()Z
@@ -19962,10 +19631,10 @@
 
     if-eqz v0, :cond_e
 
-    .line 5740
+    .line 5739
     invoke-direct {p0, v3}, Lcom/android/hwcamera/Camera;->enableSwitcherThumbnail(Z)V
 
-    .line 5746
+    .line 5745
     :cond_d
     :goto_2
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
@@ -19976,7 +19645,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/hwcamera/ResetPreference;->writePreferredTag(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5749
+    .line 5748
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     const-string v1, "pref_camera_reset_tag"
@@ -19985,7 +19654,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/hwcamera/ResetPreference;->writePreferredTag(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5752
+    .line 5751
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getApplication()Landroid/app/Application;
 
     move-result-object v0
@@ -19994,15 +19663,15 @@
 
     invoke-virtual {v0, v3}, Lcom/android/hwcamera/CameraAppImpl;->resetMakeZoomHint(Z)V
 
-    .line 5755
+    .line 5754
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/android/hwcamera/Storage;->setmStrongeHint(Ljava/lang/String;)V
 
-    .line 5761
+    .line 5760
     invoke-static {v4}, Lcom/android/hwcamera/hwui/ZoomControl;->resetFirstTimeInitialized(Z)V
 
-    .line 5773
+    .line 5772
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x64
@@ -20011,7 +19680,7 @@
 
     goto/16 :goto_0
 
-    .line 5743
+    .line 5742
     :cond_e
     invoke-direct {p0, v4, v3}, Lcom/android/hwcamera/Camera;->enableShutterButton(ZZ)V
 
@@ -20022,14 +19691,14 @@
     .locals 2
 
     .prologue
-    .line 8570
+    .line 8536
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->isFocusAvailable()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 8571
+    .line 8537
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ShutterButton;->isEnabled()Z
@@ -20038,14 +19707,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 8572
+    .line 8538
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     const/4 v1, 0x1
 
     invoke-virtual {p0, v0, v1}, Lcom/android/hwcamera/Camera;->onShutterButtonFocus(Lcom/android/hwcamera/ShutterButton;Z)V
 
-    .line 8575
+    .line 8541
     :cond_0
     return-void
 .end method
@@ -20054,14 +19723,14 @@
     .locals 2
 
     .prologue
-    .line 8560
+    .line 8526
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->isCaptureAvailable()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 8561
+    .line 8527
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ShutterButton;->isEnabled()Z
@@ -20070,19 +19739,19 @@
 
     if-eqz v0, :cond_0
 
-    .line 8562
+    .line 8528
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->onShutterButtonClick(Lcom/android/hwcamera/ShutterButton;)V
 
-    .line 8563
+    .line 8529
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v1}, Lcom/android/hwcamera/Camera;->onShutterButtonFocus(Lcom/android/hwcamera/ShutterButton;Z)V
 
-    .line 8566
+    .line 8532
     :cond_0
     return-void
 .end method
@@ -20092,43 +19761,43 @@
     .parameter "v"
 
     .prologue
-    .line 4435
+    .line 4434
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v0
 
     sparse-switch v0, :sswitch_data_0
 
-    .line 4466
+    .line 4465
     :cond_0
     :goto_0
     return-void
 
-    .line 4437
+    .line 4436
     :sswitch_0
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->doAttach()V
 
     goto :goto_0
 
-    .line 4442
+    .line 4441
     :sswitch_1
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->showGrid()V
 
-    .line 4445
+    .line 4444
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->hidePostCaptureAlert()V
 
-    .line 4446
+    .line 4445
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->restartPreview()Z
 
     goto :goto_0
 
-    .line 4449
+    .line 4448
     :sswitch_2
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->doCancel()V
 
     goto :goto_0
 
-    .line 4457
+    .line 4456
     :sswitch_3
     iget v0, p0, Lcom/android/hwcamera/Camera;->mCurrentState:I
 
@@ -20142,19 +19811,19 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 4461
+    .line 4460
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->isCameraIdle()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 4462
+    .line 4461
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->viewLastImage()V
 
     goto :goto_0
 
-    .line 4435
+    .line 4434
     :sswitch_data_0
     .sparse-switch
         0x7f0c0024 -> :sswitch_3
@@ -20169,13 +19838,13 @@
     .parameter "config"
 
     .prologue
-    .line 5252
+    .line 5251
     invoke-super {p0, p1}, Lcom/android/hwcamera/ActivityBase;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 5253
+    .line 5252
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->initializeMiscControls()V
 
-    .line 5254
+    .line 5253
     return-void
 .end method
 
@@ -20837,52 +20506,52 @@
     .locals 3
 
     .prologue
-    .line 8163
+    .line 8119
     invoke-super {p0}, Lcom/android/hwcamera/ActivityBase;->onDestroy()V
 
-    .line 8165
+    .line 8121
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ComboPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
 
-    .line 8167
+    .line 8123
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsMute:Z
 
     if-eqz v0, :cond_0
 
-    .line 8168
+    .line 8124
     const-string v0, "off"
 
-    .line 8172
+    .line 8128
     :goto_0
     const-string v2, "pref_video_sound_state_key"
 
     invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 8173
+    .line 8129
     const-string v2, "pref_camera_sound_state_key"
 
     invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 8174
+    .line 8130
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 8176
+    .line 8132
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->doForRecycleMemory()V
 
-    .line 8180
+    .line 8136
     const-string v0, "Camera"
 
     const-string v1, "[Flow] onDestroy"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 8184
+    .line 8140
     return-void
 
-    .line 8170
+    .line 8126
     :cond_0
     const-string v0, "on"
 
@@ -20893,7 +20562,7 @@
     .locals 1
 
     .prologue
-    .line 7583
+    .line 7539
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->isFinishing()Z
 
     move-result v0
@@ -20906,11 +20575,11 @@
 
     if-nez v0, :cond_1
 
-    .line 7584
+    .line 7540
     :cond_0
     const/4 v0, 0x0
 
-    .line 7586
+    .line 7542
     :goto_0
     return v0
 
@@ -20929,21 +20598,21 @@
 
     const/4 v2, 0x0
 
-    .line 8768
+    .line 8735
     const-string v0, "Camera"
 
     const-string v1, "onFullScreenChanged 1"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 8769
+    .line 8736
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsSwitchControlBar:Z
 
     if-nez v0, :cond_0
 
     if-eqz p1, :cond_1
 
-    .line 8770
+    .line 8737
     :cond_0
     const-string v0, "Camera"
 
@@ -20951,32 +20620,32 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 8771
+    .line 8738
     invoke-super {p0, p1}, Lcom/android/hwcamera/ActivityBase;->onFullScreenChanged(Z)V
 
-    .line 8773
+    .line 8740
     :cond_1
     iput-boolean v3, p0, Lcom/android/hwcamera/Camera;->mIsSwitchControlBar:Z
 
-    .line 8774
+    .line 8741
     if-eqz p1, :cond_3
 
-    .line 8775
+    .line 8742
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->hideReviewUI()V
 
-    .line 8776
+    .line 8743
     invoke-direct {p0, v3, v2}, Lcom/android/hwcamera/Camera;->enableShutterButton(ZZ)V
 
-    .line 8777
+    .line 8744
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mThumbnailView:Lcom/android/hwcamera/RotateImageView;
 
     if-nez v0, :cond_2
 
-    .line 8789
+    .line 8756
     :goto_0
     return-void
 
-    .line 8780
+    .line 8747
     :cond_2
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mThumbnailView:Lcom/android/hwcamera/RotateImageView;
 
@@ -20990,7 +20659,7 @@
 
     goto :goto_0
 
-    .line 8787
+    .line 8754
     :cond_3
     invoke-direct {p0, v2, v2}, Lcom/android/hwcamera/Camera;->enableShutterButton(ZZ)V
 
@@ -21005,10 +20674,10 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 5835
+    .line 5834
     sparse-switch p1, :sswitch_data_0
 
-    .line 5910
+    .line 5909
     :cond_0
     :goto_0
     :sswitch_0
@@ -21019,7 +20688,7 @@
     :goto_1
     return v0
 
-    .line 5837
+    .line 5836
     :sswitch_1
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mFirstTimeInitialized:Z
 
@@ -21031,12 +20700,12 @@
 
     if-nez v0, :cond_1
 
-    .line 5839
+    .line 5838
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->resetTouchFocus()V
 
-    .line 5841
+    .line 5840
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     invoke-virtual {p0, v0, v1}, Lcom/android/hwcamera/Camera;->onShutterButtonFocus(Lcom/android/hwcamera/ShutterButton;Z)V
@@ -21044,10 +20713,10 @@
     :cond_1
     move v0, v1
 
-    .line 5845
+    .line 5844
     goto :goto_1
 
-    .line 5847
+    .line 5846
     :sswitch_2
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mFirstTimeInitialized:Z
 
@@ -21059,7 +20728,7 @@
 
     if-nez v0, :cond_2
 
-    .line 5849
+    .line 5848
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->onShutterButtonClick(Lcom/android/hwcamera/ShutterButton;)V
@@ -21067,10 +20736,10 @@
     :cond_2
     move v0, v1
 
-    .line 5852
+    .line 5851
     goto :goto_1
 
-    .line 5860
+    .line 5859
     :sswitch_3
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mFirstTimeInitialized:Z
 
@@ -21082,17 +20751,17 @@
 
     if-nez v0, :cond_3
 
-    .line 5865
+    .line 5864
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->resetTouchFocus()V
 
-    .line 5867
+    .line 5866
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     invoke-virtual {p0, v0, v1}, Lcom/android/hwcamera/Camera;->onShutterButtonFocus(Lcom/android/hwcamera/ShutterButton;Z)V
 
-    .line 5870
+    .line 5869
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ShutterButton;->isInTouchMode()Z
@@ -21101,12 +20770,12 @@
 
     if-eqz v0, :cond_4
 
-    .line 5871
+    .line 5870
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ShutterButton;->requestFocusFromTouch()Z
 
-    .line 5875
+    .line 5874
     :goto_2
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
@@ -21115,10 +20784,10 @@
     :cond_3
     move v0, v1
 
-    .line 5877
+    .line 5876
     goto :goto_1
 
-    .line 5873
+    .line 5872
     :cond_4
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
@@ -21129,10 +20798,10 @@
     :sswitch_4
     move v0, v1
 
-    .line 5884
+    .line 5883
     goto :goto_1
 
-    .line 5890
+    .line 5889
     :sswitch_5
     const-string v0, "audio"
 
@@ -21142,10 +20811,10 @@
 
     check-cast v0, Landroid/media/AudioManager;
 
-    .line 5891
+    .line 5890
     if-eqz v0, :cond_5
 
-    .line 5892
+    .line 5891
     new-instance v2, Landroid/content/ComponentName;
 
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getPackageName()Ljava/lang/String;
@@ -21162,7 +20831,7 @@
 
     invoke-virtual {v0, v2}, Landroid/media/AudioManager;->registerMediaButtonEventReceiver(Landroid/content/ComponentName;)V
 
-    .line 5899
+    .line 5898
     :cond_5
     :sswitch_6
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->isFocusAvailable()Z
@@ -21171,17 +20840,17 @@
 
     if-eqz v0, :cond_6
 
-    .line 5900
+    .line 5899
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mVolumePlusButton:Lcom/android/hwcamera/VolumePlusButton;
 
     invoke-virtual {v0, p2}, Lcom/android/hwcamera/VolumePlusButton;->onVolumePlusButtonDown(Landroid/view/KeyEvent;)V
 
     move v0, v1
 
-    .line 5901
+    .line 5900
     goto :goto_1
 
-    .line 5905
+    .line 5904
     :cond_6
     :sswitch_7
     iget v0, p0, Lcom/android/hwcamera/Camera;->mCurrentState:I
@@ -21190,7 +20859,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 5906
+    .line 5905
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x10
@@ -21199,7 +20868,7 @@
 
     goto/16 :goto_0
 
-    .line 5835
+    .line 5834
     nop
 
     :sswitch_data_0
@@ -21229,10 +20898,10 @@
 
     const/4 v1, 0x1
 
-    .line 5915
+    .line 5914
     sparse-switch p1, :sswitch_data_0
 
-    .line 5958
+    .line 5957
     :cond_0
     invoke-super {p0, p1, p2}, Lcom/android/hwcamera/ActivityBase;->onKeyUp(ILandroid/view/KeyEvent;)Z
 
@@ -21241,7 +20910,7 @@
     :goto_0
     return v0
 
-    .line 5917
+    .line 5916
     :sswitch_0
     const-string v0, "Camera"
 
@@ -21249,36 +20918,36 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5918
+    .line 5917
     invoke-static {}, Lcom/android/hwcamera/Util;->isTabletUI()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 5919
+    .line 5918
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 5920
+    .line 5919
     const/16 v2, 0x63
 
     iput v2, v0, Landroid/os/Message;->what:I
 
-    .line 5921
+    .line 5920
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v2
 
     iput-object v2, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 5922
+    .line 5921
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v2, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 5923
+    .line 5922
     const v0, 0x7f0c000b
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -21295,7 +20964,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/android/hwcamera/Util;->slideOutControlBar(Landroid/view/View;Landroid/view/View;I)V
 
-    .line 5924
+    .line 5923
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const-wide/16 v2, 0xfa
@@ -21305,10 +20974,10 @@
     :goto_1
     move v0, v1
 
-    .line 5928
+    .line 5927
     goto :goto_0
 
-    .line 5926
+    .line 5925
     :cond_1
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
@@ -21316,13 +20985,13 @@
 
     goto :goto_1
 
-    .line 5930
+    .line 5929
     :sswitch_1
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mFirstTimeInitialized:Z
 
     if-eqz v0, :cond_2
 
-    .line 5932
+    .line 5931
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     const/4 v2, 0x0
@@ -21332,10 +21001,10 @@
     :cond_2
     move v0, v1
 
-    .line 5935
+    .line 5934
     goto :goto_0
 
-    .line 5940
+    .line 5939
     :sswitch_2
     const-string v0, "audio"
 
@@ -21345,10 +21014,10 @@
 
     check-cast v0, Landroid/media/AudioManager;
 
-    .line 5941
+    .line 5940
     if-eqz v0, :cond_3
 
-    .line 5942
+    .line 5941
     new-instance v2, Landroid/content/ComponentName;
 
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getPackageName()Ljava/lang/String;
@@ -21365,14 +21034,14 @@
 
     invoke-virtual {v0, v2}, Landroid/media/AudioManager;->unregisterMediaButtonEventReceiver(Landroid/content/ComponentName;)V
 
-    .line 5944
+    .line 5943
     const-string v0, "Camera"
 
     const-string v2, "unregister reciever"
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5951
+    .line 5950
     :cond_3
     :sswitch_3
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->isCaptureAvailable()Z
@@ -21381,17 +21050,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 5952
+    .line 5951
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mVolumePlusButton:Lcom/android/hwcamera/VolumePlusButton;
 
     invoke-virtual {v0, p2}, Lcom/android/hwcamera/VolumePlusButton;->onVolumePlusButtonUp(Landroid/view/KeyEvent;)V
 
     move v0, v1
 
-    .line 5953
+    .line 5952
     goto :goto_0
 
-    .line 5915
+    .line 5914
     nop
 
     :sswitch_data_0
@@ -21418,7 +21087,7 @@
 
     const/4 v4, 0x2
 
-    .line 8693
+    .line 8660
     iget-boolean v1, p0, Lcom/android/hwcamera/Camera;->mPausing:Z
 
     if-nez v1, :cond_0
@@ -21437,12 +21106,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 8748
+    .line 8715
     :cond_0
     :goto_0
     return-void
 
-    .line 8697
+    .line 8664
     :cond_1
     iget v1, p0, Lcom/android/hwcamera/Camera;->mCameraState:I
 
@@ -21452,7 +21121,7 @@
 
     if-eqz v1, :cond_6
 
-    .line 8698
+    .line 8665
     :cond_2
     const-string v1, "Camera"
 
@@ -21478,15 +21147,15 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 8701
+    .line 8668
     iget-boolean v1, p0, Lcom/android/hwcamera/Camera;->mRestartPreviewNeed:Z
 
     if-eqz v1, :cond_3
 
-    .line 8702
+    .line 8669
     iput-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsSwitchControlBar:Z
 
-    .line 8705
+    .line 8672
     :cond_3
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
@@ -21500,19 +21169,19 @@
 
     if-eqz v1, :cond_4
 
-    .line 8706
+    .line 8673
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v6}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 8716
+    .line 8683
     :cond_4
     :goto_1
     iget-boolean v1, p0, Lcom/android/hwcamera/Camera;->mFirstTimeInitialized:Z
 
     if-nez v1, :cond_7
 
-    .line 8717
+    .line 8684
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v4}, Landroid/os/Handler;->hasMessages(I)Z
@@ -21521,48 +21190,48 @@
 
     if-eqz v0, :cond_5
 
-    .line 8718
+    .line 8685
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v4}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 8720
+    .line 8687
     :cond_5
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v4}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 8732
+    .line 8699
     :goto_2
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->initControlBarHeight()V
 
-    .line 8733
+    .line 8700
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreviewFrameLayout:Lcom/android/hwcamera/PreviewFrameLayout;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/PreviewFrameLayout;->calPreviewFrameMargin()V
 
-    .line 8734
+    .line 8701
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->setIconsArrayPaddingBottom()V
 
-    .line 8738
+    .line 8705
     invoke-static {}, Lcom/android/hwcamera/Util;->calValidTouchFocusArea()V
 
-    .line 8739
+    .line 8706
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mZoomControl:Lcom/android/hwcamera/hwui/ZoomControl;
 
     if-eqz v0, :cond_0
 
-    .line 8740
+    .line 8707
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mZoomControl:Lcom/android/hwcamera/hwui/ZoomControl;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/ZoomControl;->calZoomControlRegions()V
 
-    .line 8741
+    .line 8708
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mZoomControl:Lcom/android/hwcamera/hwui/ZoomControl;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/ZoomControl;->updateZoomControlLayoutSize()V
 
-    .line 8742
+    .line 8709
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mZoomControl:Lcom/android/hwcamera/hwui/ZoomControl;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/ZoomControl;->getVisibility()I
@@ -21571,12 +21240,12 @@
 
     if-nez v0, :cond_0
 
-    .line 8743
+    .line 8710
     const/16 v0, 0x8
 
     invoke-direct {p0, v0}, Lcom/android/hwcamera/Camera;->setZoomBarVisibility(I)V
 
-    .line 8744
+    .line 8711
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x2002
@@ -21587,7 +21256,7 @@
 
     goto/16 :goto_0
 
-    .line 8709
+    .line 8676
     :cond_6
     invoke-static {p0}, Lcom/android/hwcamera/Util;->getDisplayRotation(Landroid/app/Activity;)I
 
@@ -21597,7 +21266,7 @@
 
     if-eq v1, v2, :cond_4
 
-    .line 8710
+    .line 8677
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     const/16 v2, 0x9
@@ -21606,11 +21275,11 @@
 
     goto :goto_1
 
-    .line 8722
+    .line 8689
     :cond_7
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->initializeSecondTime()V
 
-    .line 8725
+    .line 8692
     invoke-static {}, Lcom/android/hwcamera/CameraHolder;->instance()Lcom/android/hwcamera/CameraHolder;
 
     move-result-object v1
@@ -21623,12 +21292,12 @@
 
     aget-object v1, v1, v2
 
-    .line 8726
+    .line 8693
     iget v1, v1, Landroid/hardware/Camera$CameraInfo;->facing:I
 
     if-ne v1, v5, :cond_8
 
-    .line 8727
+    .line 8694
     :goto_3
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
@@ -21649,7 +21318,7 @@
     :cond_8
     move v5, v0
 
-    .line 8726
+    .line 8693
     goto :goto_3
 .end method
 
@@ -21667,24 +21336,24 @@
 
     const/4 v3, 0x0
 
-    .line 5269
+    .line 5268
     invoke-static {}, Lcom/android/hwcamera/Util;->isTabletUI()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 5271
+    .line 5270
     invoke-virtual {p0, v2}, Lcom/android/hwcamera/Camera;->setRequestedOrientation(I)V
 
-    .line 5277
+    .line 5276
     :goto_0
     iput-boolean v4, p0, Lcom/android/hwcamera/Camera;->mIsHomeExit:Z
 
-    .line 5278
+    .line 5277
     invoke-super {p0}, Lcom/android/hwcamera/ActivityBase;->onPause()V
 
-    .line 5281
+    .line 5280
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getApplication()Landroid/app/Application;
 
     move-result-object v0
@@ -21697,24 +21366,24 @@
 
     if-eqz v0, :cond_1
 
-    .line 5282
+    .line 5281
     const-string v0, "Camera"
 
     const-string v1, "Donot do anything in onPause!"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5505
+    .line 5504
     :goto_1
     return-void
 
-    .line 5274
+    .line 5273
     :cond_0
     invoke-virtual {p0, v4}, Lcom/android/hwcamera/Camera;->setRequestedOrientation(I)V
 
     goto :goto_0
 
-    .line 5287
+    .line 5286
     :cond_1
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
@@ -21726,14 +21395,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 5288
+    .line 5287
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x67
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 5290
+    .line 5289
     :cond_2
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
@@ -21745,14 +21414,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 5291
+    .line 5290
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x68
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 5294
+    .line 5293
     :cond_3
     const-string v0, "Camera"
 
@@ -21760,50 +21429,50 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5308
+    .line 5307
     iput-boolean v2, p0, Lcom/android/hwcamera/Camera;->mShowProcess:Z
 
-    .line 5310
+    .line 5309
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsImageCaptureIntent:Z
 
     if-nez v0, :cond_4
 
-    .line 5311
+    .line 5310
     invoke-direct {p0, v2}, Lcom/android/hwcamera/Camera;->setCameraUIVisibility(I)V
 
-    .line 5314
+    .line 5313
     :cond_4
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsBursting:Z
 
     if-eqz v0, :cond_5
 
-    .line 5315
+    .line 5314
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x17
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 5316
+    .line 5315
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0, v4}, Lcom/android/hwcamera/hwui/SuperPanel;->setFlyable(Z)V
 
-    .line 5317
+    .line 5316
     iget v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_1b
 
-    .line 5318
+    .line 5317
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x1e
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 5325
+    .line 5324
     :cond_5
     :goto_2
     invoke-static {}, Lcom/android/hwcamera/hwui/PanoramaBar;->isOnPanoramazPreview()Z
@@ -21812,25 +21481,25 @@
 
     if-eqz v0, :cond_1c
 
-    .line 5326
+    .line 5325
     invoke-static {v2}, Lcom/android/hwcamera/hwui/PanoramaBar;->setPanoramaState(I)V
 
-    .line 5333
+    .line 5332
     :cond_6
     :goto_3
     iput-boolean v4, p0, Lcom/android/hwcamera/Camera;->mPausing:Z
 
-    .line 5335
+    .line 5334
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFaceView:Lcom/android/hwcamera/hwui/FaceView;
 
     if-eqz v0, :cond_7
 
-    .line 5336
+    .line 5335
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFaceView:Lcom/android/hwcamera/hwui/FaceView;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/FaceView;->clear()V
 
-    .line 5341
+    .line 5340
     :cond_7
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mCameraDisabled:Z
 
@@ -21840,50 +21509,50 @@
 
     if-nez v0, :cond_8
 
-    .line 5344
+    .line 5343
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v6}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 5348
+    .line 5347
     :cond_8
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->resetScreenOn()V
 
-    .line 5349
+    .line 5348
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGPSDailog:Lcom/android/hwcamera/hwui/GPSDailog;
 
     if-eqz v0, :cond_9
 
-    .line 5350
+    .line 5349
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGPSDailog:Lcom/android/hwcamera/hwui/GPSDailog;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/GPSDailog;->dismissDialogBox()V
 
-    .line 5352
+    .line 5351
     :cond_9
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mDailogBoxView:Lcom/android/hwcamera/hwui/RotateDailog;
 
     if-eqz v0, :cond_a
 
-    .line 5353
+    .line 5352
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mDailogBoxView:Lcom/android/hwcamera/hwui/RotateDailog;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/RotateDailog;->dismissPoupWindowEx()V
 
-    .line 5355
+    .line 5354
     :cond_a
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->isCounterDowning:Z
 
     if-eqz v0, :cond_b
 
-    .line 5357
+    .line 5356
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x9
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 5358
+    .line 5357
     const v0, 0x7f0c001b
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -21894,139 +21563,139 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 5359
+    .line 5358
     iget v0, p0, Lcom/android/hwcamera/Camera;->mTimerValue:I
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mDelayTimeRemaining:I
 
-    .line 5360
+    .line 5359
     iput-boolean v2, p0, Lcom/android/hwcamera/Camera;->isCounterDowning:Z
 
-    .line 5362
+    .line 5361
     :cond_b
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     if-eqz v0, :cond_c
 
-    .line 5363
+    .line 5362
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/SuperPanel;->collapseAllPanelsControls()V
 
-    .line 5365
+    .line 5364
     :cond_c
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mFirstTimeInitialized:Z
 
     if-eqz v0, :cond_d
 
-    .line 5366
+    .line 5365
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mOrientationListener:Lcom/android/hwcamera/Camera$MyOrientationEventListener;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/Camera$MyOrientationEventListener;->disable()V
 
-    .line 5367
+    .line 5366
     invoke-direct {p0, v4, v4}, Lcom/android/hwcamera/Camera;->enableShutterButton(ZZ)V
 
-    .line 5368
+    .line 5367
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsImageCaptureIntent:Z
 
     if-nez v0, :cond_d
 
-    .line 5369
+    .line 5368
     invoke-direct {p0, v4}, Lcom/android/hwcamera/Camera;->enableSwitcherThumbnail(Z)V
 
-    .line 5376
+    .line 5375
     :cond_d
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mDidRegister:Z
 
     if-eqz v0, :cond_e
 
-    .line 5377
+    .line 5376
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 5378
+    .line 5377
     iput-boolean v2, p0, Lcom/android/hwcamera/Camera;->mDidRegister:Z
 
-    .line 5381
+    .line 5380
     :cond_e
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusToneGenerator:Landroid/media/ToneGenerator;
 
     if-eqz v0, :cond_f
 
-    .line 5382
+    .line 5381
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusToneGenerator:Landroid/media/ToneGenerator;
 
     invoke-virtual {v0}, Landroid/media/ToneGenerator;->release()V
 
-    .line 5383
+    .line 5382
     iput-object v3, p0, Lcom/android/hwcamera/Camera;->mFocusToneGenerator:Landroid/media/ToneGenerator;
 
-    .line 5388
+    .line 5387
     :cond_f
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->releaseSoundPlayer()V
 
-    .line 5389
+    .line 5388
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->releaseSoundPlayer()V
 
-    .line 5391
+    .line 5390
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->releaseBurstSound()V
 
-    .line 5395
+    .line 5394
     iget v0, p0, Lcom/android/hwcamera/Camera;->mCurrentState:I
 
     if-ne v0, v6, :cond_1e
 
-    .line 5397
+    .line 5396
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->hideAfterCaptureAlertOnPause()V
 
-    .line 5406
+    .line 5405
     :cond_10
     :goto_4
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mRotateToast:Lcom/android/hwcamera/hwui/RotateToast;
 
     if-eqz v0, :cond_11
 
-    .line 5407
+    .line 5406
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mRotateToast:Lcom/android/hwcamera/hwui/RotateToast;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/RotateToast;->cancel()V
 
-    .line 5408
+    .line 5407
     iput-object v3, p0, Lcom/android/hwcamera/Camera;->mRotateToast:Lcom/android/hwcamera/hwui/RotateToast;
 
-    .line 5412
+    .line 5411
     :cond_11
     iput-object v3, p0, Lcom/android/hwcamera/Camera;->mImageCapture:Lcom/android/hwcamera/Camera$ImageCapture;
 
-    .line 5416
+    .line 5415
     iput-object v3, p0, Lcom/android/hwcamera/Camera;->mJpegImageData:[B
 
-    .line 5418
+    .line 5417
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mOpenCameraHandler:Landroid/os/Handler;
 
     const/4 v1, 0x3
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 5419
+    .line 5418
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 5421
+    .line 5420
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x2003
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 5425
+    .line 5424
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v5}, Landroid/os/Handler;->hasMessages(I)Z
@@ -22035,58 +21704,58 @@
 
     if-eqz v0, :cond_12
 
-    .line 5426
+    .line 5425
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v5}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 5430
+    .line 5429
     :cond_12
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mProgressDialog:Landroid/app/ProgressDialog;
 
     if-eqz v0, :cond_13
 
-    .line 5431
+    .line 5430
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x14
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 5432
+    .line 5431
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mProgressDialog:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->cancel()V
 
-    .line 5433
+    .line 5432
     iput-object v3, p0, Lcom/android/hwcamera/Camera;->mProgressDialog:Landroid/app/ProgressDialog;
 
-    .line 5437
+    .line 5436
     :cond_13
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mLocationManager:Lcom/android/hwcamera/LocationManager;
 
     if-eqz v0, :cond_14
 
-    .line 5438
+    .line 5437
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mLocationManager:Lcom/android/hwcamera/LocationManager;
 
     invoke-virtual {v0, v2}, Lcom/android/hwcamera/LocationManager;->recordLocation(Z)V
 
-    .line 5440
+    .line 5439
     :cond_14
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->stopSmileCapture()V
 
-    .line 5441
+    .line 5440
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mAFController:Lcom/android/hwcamera/CameraAutoFocusController;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/CameraAutoFocusController;->pause()V
 
-    .line 5443
+    .line 5442
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mCameraMovedController:Lcom/android/hwcamera/CameraMovedController;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/CameraMovedController;->pause()V
 
-    .line 5447
+    .line 5446
     :try_start_0
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->prepareQuitCameraLock:[Ljava/lang/Object;
 
@@ -22094,7 +21763,7 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 5448
+    .line 5447
     :try_start_1
     iget v0, p0, Lcom/android/hwcamera/Camera;->mCameraState:I
 
@@ -22110,7 +21779,7 @@
 
     if-eqz v0, :cond_16
 
-    .line 5450
+    .line 5449
     :cond_15
     const-string v0, "Camera"
 
@@ -22118,7 +21787,7 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5452
+    .line 5451
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getApplication()Landroid/app/Application;
 
     move-result-object v0
@@ -22131,63 +21800,63 @@
 
     if-eqz v0, :cond_16
 
-    .line 5453
+    .line 5452
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->prepareQuitCameraLock:[Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Object;->wait()V
 
-    .line 5457
+    .line 5456
     :cond_16
     monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 5469
+    .line 5468
     :goto_5
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->closeCamera()V
 
-    .line 5470
+    .line 5469
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     if-eqz v0, :cond_17
 
-    .line 5471
+    .line 5470
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mCameraScreenNail:Lcom/android/camera/CameraScreenNail;
 
     invoke-virtual {v0}, Lcom/android/camera/CameraScreenNail;->releaseSurfaceTexture()V
 
-    .line 5472
+    .line 5471
     iput-object v3, p0, Lcom/android/hwcamera/Camera;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
-    .line 5476
+    .line 5475
     :cond_17
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mBurstThread:Lcom/android/hwcamera/Camera$DecodeThumbnailThread;
 
     if-eqz v0, :cond_18
 
-    .line 5477
+    .line 5476
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mBurstThread:Lcom/android/hwcamera/Camera$DecodeThumbnailThread;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/Camera$DecodeThumbnailThread;->finish()V
 
-    .line 5478
+    .line 5477
     iput-object v3, p0, Lcom/android/hwcamera/Camera;->mBurstThread:Lcom/android/hwcamera/Camera$DecodeThumbnailThread;
 
-    .line 5480
+    .line 5479
     :cond_18
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mImageSaver:Lcom/android/hwcamera/Camera$ImageSaver;
 
     if-eqz v0, :cond_19
 
-    .line 5481
+    .line 5480
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mImageSaver:Lcom/android/hwcamera/Camera$ImageSaver;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/Camera$ImageSaver;->finish()V
 
-    .line 5482
+    .line 5481
     iput-object v3, p0, Lcom/android/hwcamera/Camera;->mImageSaver:Lcom/android/hwcamera/Camera$ImageSaver;
 
-    .line 5488
+    .line 5487
     :cond_19
     const-string v0, "ro.camera.support.led"
 
@@ -22205,21 +21874,21 @@
 
     if-eqz v0, :cond_1a
 
-    .line 5489
+    .line 5488
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mNM:Landroid/app/NotificationManager;
 
     invoke-static {v0}, Lcom/android/hwcamera/LedLightManager;->ledoff(Landroid/app/NotificationManager;)V
 
-    .line 5494
+    .line 5493
     :cond_1a
     const/16 v0, 0x8
 
     invoke-direct {p0, v0}, Lcom/android/hwcamera/Camera;->setZoomBarVisibility(I)V
 
-    .line 5502
+    .line 5501
     invoke-static {}, Lcom/android/hwcamera/Storage;->saveLocationUnInit()V
 
-    .line 5504
+    .line 5503
     const-string v0, "Camera"
 
     const-string v1, "[Flow] onPause end"
@@ -22228,7 +21897,7 @@
 
     goto/16 :goto_1
 
-    .line 5320
+    .line 5319
     :cond_1b
     iget v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
@@ -22236,7 +21905,7 @@
 
     if-ne v0, v1, :cond_5
 
-    .line 5321
+    .line 5320
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x25
@@ -22245,7 +21914,7 @@
 
     goto/16 :goto_2
 
-    .line 5327
+    .line 5326
     :cond_1c
     invoke-static {}, Lcom/android/hwcamera/hwui/PanoramaBar;->isOnPanoramaCapture()Z
 
@@ -22253,12 +21922,12 @@
 
     if-eqz v0, :cond_1d
 
-    .line 5328
+    .line 5327
     invoke-direct {p0, v4}, Lcom/android/hwcamera/Camera;->cancelPanorama(Z)V
 
     goto/16 :goto_3
 
-    .line 5329
+    .line 5328
     :cond_1d
     invoke-static {}, Lcom/android/hwcamera/hwui/PanoramaBar;->isOnPanoramazProcessing()Z
 
@@ -22266,12 +21935,12 @@
 
     if-eqz v0, :cond_6
 
-    .line 5331
+    .line 5330
     invoke-direct {p0, v2}, Lcom/android/hwcamera/Camera;->cancelPanorama(Z)V
 
     goto/16 :goto_3
 
-    .line 5399
+    .line 5398
     :cond_1e
     iget v0, p0, Lcom/android/hwcamera/Camera;->mCurrentState:I
 
@@ -22279,15 +21948,15 @@
 
     if-ne v0, v1, :cond_1f
 
-    .line 5400
+    .line 5399
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->hideReviewUI()V
 
-    .line 5401
+    .line 5400
     iput-object v3, p0, Lcom/android/hwcamera/Camera;->mBitmap:Landroid/graphics/Bitmap;
 
     goto/16 :goto_4
 
-    .line 5402
+    .line 5401
     :cond_1f
     iget v0, p0, Lcom/android/hwcamera/Camera;->mCurrentState:I
 
@@ -22299,13 +21968,13 @@
 
     if-ne v0, v5, :cond_10
 
-    .line 5403
+    .line 5402
     :cond_20
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->galleryExClose()V
 
     goto/16 :goto_4
 
-    .line 5457
+    .line 5456
     :catchall_0
     move-exception v0
 
@@ -22319,7 +21988,7 @@
     :try_end_3
     .catch Ljava/lang/InterruptedException; {:try_start_3 .. :try_end_3} :catch_0
 
-    .line 5458
+    .line 5457
     :catch_0
     move-exception v0
 
@@ -22332,14 +22001,14 @@
     .parameter "camera"
 
     .prologue
-    .line 8591
+    .line 8557
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x27
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 8592
+    .line 8558
     return-void
 .end method
 
@@ -22358,14 +22027,14 @@
 
     const/4 v3, 0x0
 
-    .line 4606
+    .line 4605
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/hwcamera/Camera;->mShutterupTime:J
 
-    .line 4607
+    .line 4606
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mPausing:Z
 
     if-nez v0, :cond_0
@@ -22378,12 +22047,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 4743
+    .line 4742
     :cond_0
     :goto_0
     return-void
 
-    .line 4611
+    .line 4610
     :cond_1
     iget v0, p0, Lcom/android/hwcamera/Camera;->mCameraState:I
 
@@ -22397,12 +22066,12 @@
 
     if-eq v0, v4, :cond_2
 
-    .line 4613
+    .line 4612
     iput-boolean v4, p0, Lcom/android/hwcamera/Camera;->mSnapshotOnIdle:Z
 
     goto :goto_0
 
-    .line 4617
+    .line 4616
     :cond_2
     iget v0, p0, Lcom/android/hwcamera/Camera;->mCurrentState:I
 
@@ -22414,7 +22083,7 @@
 
     if-eq v0, v5, :cond_0
 
-    .line 4622
+    .line 4621
     const-string v0, "Camera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -22439,10 +22108,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4623
+    .line 4622
     iput-boolean v3, p0, Lcom/android/hwcamera/Camera;->mSnapshotOnIdle:Z
 
-    .line 4624
+    .line 4623
     invoke-virtual {p1}, Lcom/android/hwcamera/ShutterButton;->getId()I
 
     move-result v0
@@ -22451,7 +22120,7 @@
 
     goto :goto_0
 
-    .line 4627
+    .line 4626
     :pswitch_0
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->isStorageSpaceEnough()Z
 
@@ -22459,7 +22128,7 @@
 
     if-nez v0, :cond_3
 
-    .line 4629
+    .line 4628
     iget v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
     if-ne v0, v5, :cond_0
@@ -22468,16 +22137,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 4630
+    .line 4629
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->stopSmileCapture()V
 
     goto :goto_0
 
-    .line 4635
+    .line 4634
     :cond_3
     invoke-virtual {p0, v4, v3}, Lcom/android/hwcamera/Camera;->enableSlideToGallery(ZZ)V
 
-    .line 4636
+    .line 4635
     iget v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
     if-ne v0, v5, :cond_4
@@ -22486,19 +22155,19 @@
 
     if-nez v0, :cond_4
 
-    .line 4637
+    .line 4636
     invoke-virtual {p0, v3}, Lcom/android/hwcamera/Camera;->enableSlideToGalleryImmediately(Z)V
 
-    .line 4638
+    .line 4637
     iput-boolean v4, p0, Lcom/android/hwcamera/Camera;->mIsSmileCaptureState:Z
 
-    .line 4639
+    .line 4638
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->showBarAndShutterButton()V
 
-    .line 4640
+    .line 4639
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->keepScreenOn()V
 
-    .line 4641
+    .line 4640
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     const v1, 0x7f02003f
@@ -22507,7 +22176,7 @@
 
     goto :goto_0
 
-    .line 4643
+    .line 4642
     :cond_4
     iget v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
@@ -22517,18 +22186,18 @@
 
     if-eqz v0, :cond_5
 
-    .line 4644
+    .line 4643
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->stopSmileCapture()V
 
     goto :goto_0
 
-    .line 4648
+    .line 4647
     :cond_5
     iget v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
     if-ne v0, v4, :cond_7
 
-    .line 4649
+    .line 4648
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPanoramaBar:Lcom/android/hwcamera/hwui/PanoramaBar;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/PanoramaBar;->getPanoramaControlAble()Z
@@ -22537,19 +22206,19 @@
 
     if-eqz v0, :cond_0
 
-    .line 4650
+    .line 4649
     invoke-static {}, Lcom/android/hwcamera/hwui/PanoramaBar;->isOnPanoramazPreview()Z
 
     move-result v0
 
     if-eqz v0, :cond_6
 
-    .line 4651
+    .line 4650
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->startPanorama()V
 
     goto/16 :goto_0
 
-    .line 4652
+    .line 4651
     :cond_6
     invoke-static {}, Lcom/android/hwcamera/hwui/PanoramaBar;->isOnPanoramaCapture()Z
 
@@ -22557,12 +22226,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 4653
+    .line 4652
     invoke-direct {p0, v4}, Lcom/android/hwcamera/Camera;->stopPanorama(Z)V
 
     goto/16 :goto_0
 
-    .line 4661
+    .line 4660
     :cond_7
     iget v0, p0, Lcom/android/hwcamera/Camera;->mTimerValue:I
 
@@ -22584,36 +22253,36 @@
 
     if-ne v0, v1, :cond_9
 
-    .line 4664
+    .line 4663
     :cond_8
     iget v0, p0, Lcom/android/hwcamera/Camera;->mTimerValue:I
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mDelayTimeRemaining:I
 
-    .line 4667
+    .line 4666
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mZoomControl:Lcom/android/hwcamera/hwui/ZoomControl;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/ZoomControl;->setVisibility(I)V
 
-    .line 4670
+    .line 4669
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x9
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 4671
+    .line 4670
     invoke-virtual {p0, v3}, Lcom/android/hwcamera/Camera;->enableSlideToGalleryImmediately(Z)V
 
     goto/16 :goto_0
 
-    .line 4674
+    .line 4673
     :cond_9
     iput v3, p0, Lcom/android/hwcamera/Camera;->mTimerValue:I
 
-    .line 4677
+    .line 4676
     iget v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
     invoke-direct {p0, v0}, Lcom/android/hwcamera/Camera;->isBasedBurstShootMode(I)Z
@@ -22622,25 +22291,25 @@
 
     if-eqz v0, :cond_c
 
-    .line 4678
+    .line 4677
     sget v0, Lcom/android/hwcamera/Config;->BURST_MAX_NUMBER:I
 
-    .line 4679
+    .line 4678
     iget v1, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
     const/4 v2, 0x2
 
     if-ne v1, v2, :cond_b
 
-    .line 4680
+    .line 4679
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0, v3}, Lcom/android/hwcamera/hwui/SuperPanel;->setFlyable(Z)V
 
-    .line 4681
+    .line 4680
     sget v0, Lcom/android/hwcamera/Config;->REWIND_PIC_NUM:I
 
-    .line 4683
+    .line 4682
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     const-string v2, "pref_camera_reset_tag"
@@ -22649,14 +22318,14 @@
 
     invoke-static {v1, v2, v3}, Lcom/android/hwcamera/ResetPreference;->writePreferredTag(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4695
+    .line 4694
     :cond_a
     :goto_1
     invoke-direct {p0, v0}, Lcom/android/hwcamera/Camera;->startBurst(I)V
 
     goto/16 :goto_0
 
-    .line 4686
+    .line 4685
     :cond_b
     iget v1, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
@@ -22664,15 +22333,15 @@
 
     if-ne v1, v2, :cond_a
 
-    .line 4687
+    .line 4686
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0, v3}, Lcom/android/hwcamera/hwui/SuperPanel;->setFlyable(Z)V
 
-    .line 4688
+    .line 4687
     sget v0, Lcom/android/hwcamera/Config;->ACTION_PIC_NUM:I
 
-    .line 4690
+    .line 4689
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     const-string v2, "pref_camera_reset_tag"
@@ -22683,7 +22352,7 @@
 
     goto :goto_1
 
-    .line 4699
+    .line 4698
     :cond_c
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
@@ -22701,7 +22370,7 @@
 
     if-nez v0, :cond_e
 
-    .line 4702
+    .line 4701
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->needSnapShotAnim()Z
 
     move-result v0
@@ -22718,7 +22387,7 @@
 
     if-eqz v0, :cond_e
 
-    .line 4705
+    .line 4704
     :cond_d
     invoke-virtual {p0, v6}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
 
@@ -22736,7 +22405,7 @@
 
     invoke-static {v1, v0}, Lcom/android/hwcamera/Util;->slideOutPanelHandler(Landroid/view/View;Landroid/view/View;)V
 
-    .line 4712
+    .line 4711
     :cond_e
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->needSnapShotAnim()Z
 
@@ -22754,7 +22423,7 @@
 
     if-eqz v0, :cond_10
 
-    .line 4714
+    .line 4713
     :cond_f
     const v0, 0x7f0c002a
 
@@ -22764,7 +22433,7 @@
 
     invoke-static {v0}, Lcom/android/hwcamera/Util;->fadeOut(Landroid/view/View;)V
 
-    .line 4720
+    .line 4719
     :cond_10
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mZoomControl:Lcom/android/hwcamera/hwui/ZoomControl;
 
@@ -22786,13 +22455,13 @@
 
     if-eqz v0, :cond_12
 
-    .line 4723
+    .line 4722
     :cond_11
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mZoomControl:Lcom/android/hwcamera/hwui/ZoomControl;
 
     invoke-virtual {v0, v3}, Lcom/android/hwcamera/hwui/ZoomControl;->zoomFade(Z)V
 
-    .line 4728
+    .line 4727
     :cond_12
     iget v0, p0, Lcom/android/hwcamera/Camera;->mReviewTime:I
 
@@ -22802,17 +22471,17 @@
 
     if-eqz v0, :cond_14
 
-    .line 4729
+    .line 4728
     :cond_13
     invoke-direct {p0, v3, v4}, Lcom/android/hwcamera/Camera;->enableShutterButton(ZZ)V
 
-    .line 4734
+    .line 4733
     :cond_14
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsImageCaptureIntent:Z
 
     if-eqz v0, :cond_15
 
-    .line 4735
+    .line 4734
     const v0, 0x7f0c002a
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -22821,20 +22490,20 @@
 
     invoke-static {v0}, Lcom/android/hwcamera/Util;->fadeOut(Landroid/view/View;)V
 
-    .line 4736
+    .line 4735
     invoke-virtual {p0, v6}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     invoke-static {v0}, Lcom/android/hwcamera/Util;->fadeOut(Landroid/view/View;)V
 
-    .line 4739
+    .line 4738
     :cond_15
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->doSnap()V
 
     goto/16 :goto_0
 
-    .line 4624
+    .line 4623
     :pswitch_data_0
     .packed-switch 0x7f0c0011
         :pswitch_0
@@ -22847,7 +22516,7 @@
     .parameter
 
     .prologue
-    .line 4552
+    .line 4551
     const-string v0, "Camera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -22882,7 +22551,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4553
+    .line 4552
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mPausing:Z
 
     if-nez v0, :cond_0
@@ -22903,40 +22572,40 @@
 
     if-nez v0, :cond_1
 
-    .line 4568
+    .line 4567
     :cond_0
     :goto_0
     return-void
 
-    .line 4557
+    .line 4556
     :cond_1
     if-eqz p2, :cond_2
 
-    .line 4558
+    .line 4557
     invoke-direct {p0, p2}, Lcom/android/hwcamera/Camera;->needShutterButtonFocus(Z)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 4559
+    .line 4558
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->enableFocusSound()V
 
-    .line 4560
+    .line 4559
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->onShutterDown()V
 
-    .line 4562
+    .line 4561
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsCafSucceed:Z
 
     goto :goto_0
 
-    .line 4566
+    .line 4565
     :cond_2
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
@@ -22949,7 +22618,7 @@
     .locals 2
 
     .prologue
-    .line 4747
+    .line 4746
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mPausing:Z
 
     if-nez v0, :cond_0
@@ -22964,12 +22633,12 @@
 
     if-nez v0, :cond_1
 
-    .line 4771
+    .line 4770
     :cond_0
     :goto_0
     return-void
 
-    .line 4752
+    .line 4751
     :cond_1
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
@@ -22983,7 +22652,7 @@
 
     if-nez v0, :cond_0
 
-    .line 4756
+    .line 4755
     :cond_2
     const-string v0, "Camera"
 
@@ -22991,14 +22660,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4758
+    .line 4757
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->isStorageSpaceEnough()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 4761
+    .line 4760
     iget v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
     const/4 v1, 0x1
@@ -23011,12 +22680,12 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 4767
+    .line 4766
     iget v0, p0, Lcom/android/hwcamera/Camera;->mTimerValue:I
 
     if-nez v0, :cond_0
 
-    .line 4770
+    .line 4769
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->shutterLongPressed()V
@@ -23031,10 +22700,17 @@
     .parameter "y"
 
     .prologue
-    .line 8607
+    .line 8573
     invoke-super {p0, p1, p2, p3}, Lcom/android/hwcamera/ActivityBase;->onSingleTapUp(Landroid/view/View;II)V
 
-    .line 8608
+    .line 8574
+    const-string v0, "Camera"
+
+    const-string v1, "onSingleTapUp"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 8575
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mPausing:Z
 
     if-nez v0, :cond_0
@@ -23057,12 +22733,12 @@
 
     if-nez v0, :cond_1
 
-    .line 8679
+    .line 8646
     :cond_0
     :goto_0
     return-void
 
-    .line 8615
+    .line 8582
     :cond_1
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->collapseCameraControls()Z
 
@@ -23070,19 +22746,19 @@
 
     if-nez v0, :cond_0
 
-    .line 8620
+    .line 8587
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->isFrontCamera()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 8625
+    .line 8592
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->isCounterDowning:Z
 
     if-nez v0, :cond_0
 
-    .line 8629
+    .line 8596
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsBursting:Z
 
     if-nez v0, :cond_0
@@ -23099,21 +22775,21 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 8640
+    .line 8607
     invoke-static {p2, p3}, Lcom/android/hwcamera/Util;->isTouchFocusAreaValid(II)Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 8646
+    .line 8613
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->clearFocusUI()V
 
     goto :goto_0
 
-    .line 8652
+    .line 8619
     :cond_2
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHWExtCameraHandler:Lcom/android/hwcamera/HWExtCameraHandler;
 
@@ -23125,32 +22801,32 @@
 
     if-eqz v0, :cond_3
 
-    .line 8654
+    .line 8621
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x7
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 8655
+    .line 8622
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->setFocusStateCAFFace()Z
 
-    .line 8656
+    .line 8623
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHWExtCameraHandler:Lcom/android/hwcamera/HWExtCameraHandler;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/HWExtCameraHandler;->doFaceFocus()V
 
     goto :goto_0
 
-    .line 8662
+    .line 8629
     :cond_3
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHWExtCameraHandler:Lcom/android/hwcamera/HWExtCameraHandler;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/HWExtCameraHandler;->clearFocusState()V
 
-    .line 8676
+    .line 8643
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mFocusAreaSupported:Z
 
     if-nez v0, :cond_4
@@ -23159,7 +22835,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 8678
+    .line 8645
     :cond_4
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
 
@@ -23172,29 +22848,29 @@
     .locals 2
 
     .prologue
-    .line 4240
+    .line 4239
     invoke-super {p0}, Lcom/android/hwcamera/ActivityBase;->onStart()V
 
-    .line 4241
+    .line 4240
     const-string v0, "Camera"
 
     const-string v1, "[Flow] onStart"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4242
+    .line 4241
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsImageCaptureIntent:Z
 
     if-nez v0, :cond_0
 
-    .line 4243
+    .line 4242
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSwitcher:Lcom/android/hwcamera/Switcher;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/Switcher;->setSwitch(Z)V
 
-    .line 4245
+    .line 4244
     :cond_0
     return-void
 .end method
@@ -23203,32 +22879,32 @@
     .locals 2
 
     .prologue
-    .line 4249
+    .line 4248
     invoke-super {p0}, Lcom/android/hwcamera/ActivityBase;->onStop()V
 
-    .line 4250
+    .line 4249
     const-string v0, "Camera"
 
     const-string v1, "[Flow] onStop"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4251
+    .line 4250
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mMediaProviderClient:Landroid/content/ContentProviderClient;
 
     if-eqz v0, :cond_0
 
-    .line 4252
+    .line 4251
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mMediaProviderClient:Landroid/content/ContentProviderClient;
 
     invoke-virtual {v0}, Landroid/content/ContentProviderClient;->release()Z
 
-    .line 4253
+    .line 4252
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mMediaProviderClient:Landroid/content/ContentProviderClient;
 
-    .line 4255
+    .line 4254
     :cond_0
     return-void
 .end method
@@ -23239,10 +22915,10 @@
     .parameter "onOff"
 
     .prologue
-    .line 7568
+    .line 7524
     if-nez p2, :cond_0
 
-    .line 7569
+    .line 7525
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     const-string v1, "pref_camera_reset_tag"
@@ -23251,7 +22927,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/hwcamera/ResetPreference;->writePreferredTag(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 7571
+    .line 7527
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPreferences:Lcom/android/hwcamera/ComboPreferences;
 
     const-string v1, "pref_camera_tag"
@@ -23260,12 +22936,12 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/hwcamera/ResetPreference;->writePreferredTag(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 7573
+    .line 7529
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->switchToVideoMode()Z
 
     move-result v0
 
-    .line 7575
+    .line 7531
     :goto_0
     return v0
 
@@ -23279,7 +22955,7 @@
     .locals 1
 
     .prologue
-    .line 8598
+    .line 8564
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->isFinishing()Z
 
     move-result v0
@@ -23292,11 +22968,11 @@
 
     if-nez v0, :cond_1
 
-    .line 8599
+    .line 8565
     :cond_0
     const/4 v0, 0x0
 
-    .line 8601
+    .line 8567
     :goto_0
     return v0
 
@@ -23904,18 +23580,18 @@
     .locals 1
 
     .prologue
-    .line 7615
+    .line 7571
     invoke-super {p0}, Lcom/android/hwcamera/ActivityBase;->onUserInteraction()V
 
-    .line 7616
+    .line 7572
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsSmileCaptureState:Z
 
     if-nez v0, :cond_0
 
-    .line 7617
+    .line 7573
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->keepScreenOnAwhile()V
 
-    .line 7619
+    .line 7575
     :cond_0
     return-void
 .end method
@@ -23924,7 +23600,7 @@
     .locals 1
 
     .prologue
-    .line 8531
+    .line 8497
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ShutterButton;->isEnabled()Z
@@ -23933,12 +23609,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 8532
+    .line 8498
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->onShutterButtonClick(Lcom/android/hwcamera/ShutterButton;)V
 
-    .line 8535
+    .line 8501
     :cond_0
     return-void
 .end method
@@ -23948,7 +23624,7 @@
     .parameter "pressed"
 
     .prologue
-    .line 8541
+    .line 8507
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ShutterButton;->isEnabled()Z
@@ -23957,12 +23633,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 8542
+    .line 8508
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     invoke-virtual {p0, v0, p1}, Lcom/android/hwcamera/Camera;->onShutterButtonFocus(Lcom/android/hwcamera/ShutterButton;Z)V
 
-    .line 8545
+    .line 8511
     :cond_0
     return-void
 .end method
@@ -23971,7 +23647,7 @@
     .locals 1
 
     .prologue
-    .line 8551
+    .line 8517
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ShutterButton;->isEnabled()Z
@@ -23980,10 +23656,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 8552
+    .line 8518
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->onShutterButtonLongPressed()V
 
-    .line 8555
+    .line 8521
     :cond_0
     return-void
 .end method
@@ -24132,19 +23808,19 @@
     .parameter
 
     .prologue
-    .line 8325
+    .line 8281
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/Bundle;
 
-    .line 8326
+    .line 8282
     const-string v1, "direction"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 8327
+    .line 8283
     const-string v1, "Camera"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -24167,7 +23843,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 8328
+    .line 8284
     const-string v1, "Left"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -24176,19 +23852,19 @@
 
     if-eqz v1, :cond_1
 
-    .line 8329
+    .line 8285
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPanoramaBar:Lcom/android/hwcamera/hwui/PanoramaBar;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/PanoramaBar;->movePanoramaToEdge(I)V
 
-    .line 8333
+    .line 8289
     :cond_0
     :goto_0
     return-void
 
-    .line 8330
+    .line 8286
     :cond_1
     const-string v1, "Right"
 
@@ -24198,7 +23874,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 8331
+    .line 8287
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPanoramaBar:Lcom/android/hwcamera/hwui/PanoramaBar;
 
     const/4 v1, 0x0
@@ -24213,12 +23889,12 @@
     .parameter "msg"
 
     .prologue
-    .line 8304
+    .line 8260
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/Bundle;
 
-    .line 8305
+    .line 8261
     .local v0, bundle:Landroid/os/Bundle;
     const-string v3, "offx"
 
@@ -24226,7 +23902,7 @@
 
     move-result v1
 
-    .line 8306
+    .line 8262
     .local v1, offx:I
     const-string v3, "offy"
 
@@ -24234,7 +23910,7 @@
 
     move-result v2
 
-    .line 8307
+    .line 8263
     .local v2, offy:I
     invoke-static {}, Lcom/android/hwcamera/hwui/PanoramaBar;->isOnPanoramaCapture()Z
 
@@ -24242,23 +23918,23 @@
 
     if-eqz v3, :cond_1
 
-    .line 8309
+    .line 8265
     invoke-static {}, Lcom/android/hwcamera/Util;->isTabletUI()Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 8311
+    .line 8267
     iget-object v3, p0, Lcom/android/hwcamera/Camera;->mPanoramaBar:Lcom/android/hwcamera/hwui/PanoramaBar;
 
     invoke-virtual {v3, v1, v2}, Lcom/android/hwcamera/hwui/PanoramaBar;->setPosition(II)V
 
-    .line 8321
+    .line 8277
     :goto_0
     return-void
 
-    .line 8315
+    .line 8271
     :cond_0
     iget-object v3, p0, Lcom/android/hwcamera/Camera;->mPanoramaBar:Lcom/android/hwcamera/hwui/PanoramaBar;
 
@@ -24266,7 +23942,7 @@
 
     goto :goto_0
 
-    .line 8319
+    .line 8275
     :cond_1
     const-string v3, "Camera"
 
@@ -24283,10 +23959,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 8338
+    .line 8294
     invoke-direct {p0, v0, v0}, Lcom/android/hwcamera/Camera;->enableShutterButton(ZZ)V
 
-    .line 8339
+    .line 8295
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0xf
@@ -24295,12 +23971,12 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 8340
+    .line 8296
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mPanoramaBar:Lcom/android/hwcamera/hwui/PanoramaBar;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/PanoramaBar;->notifyBeforeCaputre()V
 
-    .line 8341
+    .line 8297
     return-void
 .end method
 
@@ -24379,7 +24055,7 @@
     .locals 3
 
     .prologue
-    .line 7470
+    .line 7426
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
 
     if-eqz v0, :cond_0
@@ -24388,7 +24064,7 @@
 
     if-nez v0, :cond_2
 
-    .line 7471
+    .line 7427
     :cond_0
     const-string v0, "Camera"
 
@@ -24396,28 +24072,28 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7528
+    .line 7484
     :cond_1
     :goto_0
     return-void
 
-    .line 7476
+    .line 7432
     :cond_2
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
     if-eqz v0, :cond_1
 
-    .line 7479
+    .line 7435
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ParametersManager;->getContrastDefaultValue()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 7481
+    .line 7437
     if-eqz v0, :cond_3
 
-    .line 7484
+    .line 7440
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
@@ -24434,14 +24110,14 @@
 
     add-int/2addr v0, v1
 
-    .line 7486
+    .line 7442
     const-string v1, "KEY_HUAWEI_CONTRAST"
 
     invoke-static {v1}, Lcom/android/hwcamera/Util;->getKey(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 7487
+    .line 7443
     if-eqz v1, :cond_3
 
     const-string v2, ""
@@ -24452,12 +24128,12 @@
 
     if-nez v2, :cond_3
 
-    .line 7488
+    .line 7444
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v2, v1, v0}, Landroid/hardware/Camera$Parameters;->set(Ljava/lang/String;I)V
 
-    .line 7492
+    .line 7448
     :cond_3
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
@@ -24465,10 +24141,10 @@
 
     move-result-object v0
 
-    .line 7494
+    .line 7450
     if-eqz v0, :cond_4
 
-    .line 7497
+    .line 7453
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
@@ -24485,14 +24161,14 @@
 
     add-int/2addr v0, v1
 
-    .line 7500
+    .line 7456
     const-string v1, "KEY_HUAWEI_BRIGHTNESS"
 
     invoke-static {v1}, Lcom/android/hwcamera/Util;->getKey(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 7501
+    .line 7457
     if-eqz v1, :cond_4
 
     const-string v2, ""
@@ -24503,7 +24179,7 @@
 
     if-nez v2, :cond_4
 
-    .line 7502
+    .line 7458
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -24512,7 +24188,7 @@
 
     invoke-virtual {v2, v1, v0}, Landroid/hardware/Camera$Parameters;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 7507
+    .line 7463
     :cond_4
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParametersManager:Lcom/android/hwcamera/ParametersManager;
 
@@ -24520,10 +24196,10 @@
 
     move-result-object v0
 
-    .line 7509
+    .line 7465
     if-eqz v0, :cond_5
 
-    .line 7512
+    .line 7468
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
@@ -24540,14 +24216,14 @@
 
     add-int/2addr v0, v1
 
-    .line 7514
+    .line 7470
     const-string v1, "KEY_HUAWEI_SATURATION"
 
     invoke-static {v1}, Lcom/android/hwcamera/Util;->getKey(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 7515
+    .line 7471
     if-eqz v1, :cond_5
 
     const-string v2, ""
@@ -24558,7 +24234,7 @@
 
     if-nez v2, :cond_5
 
-    .line 7516
+    .line 7472
     iget-object v2, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -24567,7 +24243,7 @@
 
     invoke-virtual {v2, v1, v0}, Landroid/hardware/Camera$Parameters;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 7527
+    .line 7483
     :cond_5
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
 
@@ -24582,27 +24258,27 @@
     .locals 2
 
     .prologue
-    .line 6098
+    .line 6097
     :try_start_0
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->startPreview()V
     :try_end_0
     .catch Lcom/android/hwcamera/CameraHardwareException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 6103
+    .line 6102
     const/4 v1, 0x1
 
     :goto_0
     return v1
 
-    .line 6099
+    .line 6098
     :catch_0
     move-exception v0
 
-    .line 6100
+    .line 6099
     .local v0, e:Lcom/android/hwcamera/CameraHardwareException;
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->showCameraErrorAndFinish()V
 
-    .line 6101
+    .line 6100
     const/4 v1, 0x0
 
     goto :goto_0
@@ -24613,19 +24289,19 @@
     .parameter "cb"
 
     .prologue
-    .line 8750
+    .line 8717
     const-string v0, "Camera"
 
     const-string v1, "invoke setAutoFocusMoveCallback!"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 8751
+    .line 8718
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
 
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/HwCamera;->setAutoFocusMoveCallback(Landroid/hardware/Camera$AutoFocusMoveCallback;)V
 
-    .line 8752
+    .line 8719
     return-void
 .end method
 
@@ -24634,23 +24310,23 @@
     .parameter
 
     .prologue
-    .line 6997
+    .line 6953
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
 
     if-nez v0, :cond_0
 
-    .line 6998
+    .line 6954
     const-string v0, "Camera"
 
     const-string v1, "TODO: avoid NullPointerException from doFaceFocus"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7027
+    .line 6983
     :goto_0
     return-void
 
-    .line 7002
+    .line 6958
     :cond_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
 
@@ -24660,7 +24336,7 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
-    .line 7003
+    .line 6959
     const-string v0, "Camera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -24685,12 +24361,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7005
+    .line 6961
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
 
     if-nez v0, :cond_1
 
-    .line 7006
+    .line 6962
     const-string v0, "TAG"
 
     const-string v1, "mParameters==null"
@@ -24699,43 +24375,43 @@
 
     goto :goto_0
 
-    .line 7011
+    .line 6967
     :cond_1
     and-int/lit8 v0, p1, 0x1
 
     if-eqz v0, :cond_2
 
-    .line 7012
+    .line 6968
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->updateCameraParametersInitialize()V
 
-    .line 7015
+    .line 6971
     :cond_2
     and-int/lit8 v0, p1, 0x2
 
     if-eqz v0, :cond_3
 
-    .line 7016
+    .line 6972
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->updateCameraParametersZoom()V
 
-    .line 7019
+    .line 6975
     :cond_3
     and-int/lit8 v0, p1, 0x4
 
     if-eqz v0, :cond_4
 
-    .line 7020
+    .line 6976
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->updateCameraParametersPreference()V
 
-    .line 7022
+    .line 6978
     :cond_4
     and-int/lit8 v0, p1, 0x8
 
     if-eqz v0, :cond_5
 
-    .line 7023
+    .line 6979
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->updateCameraParametersFocus()V
 
-    .line 7025
+    .line 6981
     :cond_5
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
 
@@ -24743,7 +24419,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/HwCamera;->setParameters(Landroid/hardware/Camera$Parameters;)V
 
-    .line 7026
+    .line 6982
     const-string v0, "Camera"
 
     const-string v1, "setCameraParameters end"
@@ -24757,14 +24433,14 @@
     .locals 2
 
     .prologue
-    .line 6121
+    .line 6120
     invoke-static {p0}, Lcom/android/hwcamera/Util;->getDisplayRotation(Landroid/app/Activity;)I
 
     move-result v0
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mDisplayRotation:I
 
-    .line 6122
+    .line 6121
     iget v0, p0, Lcom/android/hwcamera/Camera;->mDisplayRotation:I
 
     iget v1, p0, Lcom/android/hwcamera/Camera;->mCameraId:I
@@ -24775,26 +24451,26 @@
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mDisplayOrientation:I
 
-    .line 6123
+    .line 6122
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
 
     iget v1, p0, Lcom/android/hwcamera/Camera;->mDisplayOrientation:I
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/HwCamera;->setDisplayOrientation(I)V
 
-    .line 6124
+    .line 6123
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFaceView:Lcom/android/hwcamera/hwui/FaceView;
 
     if-eqz v0, :cond_0
 
-    .line 6125
+    .line 6124
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mFaceView:Lcom/android/hwcamera/hwui/FaceView;
 
     iget v1, p0, Lcom/android/hwcamera/Camera;->mDisplayOrientation:I
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/FaceView;->setDisplayOrientation(I)V
 
-    .line 6127
+    .line 6126
     :cond_0
     return-void
 .end method
@@ -24840,12 +24516,12 @@
     .locals 1
 
     .prologue
-    .line 8488
+    .line 8444
     const/16 v0, 0x8
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->setCameraParameters(I)V
 
-    .line 8489
+    .line 8445
     return-void
 .end method
 
@@ -24854,7 +24530,7 @@
     .parameter
 
     .prologue
-    .line 4113
+    .line 4112
     const v0, 0x7f0c002f
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -24863,20 +24539,20 @@
 
     check-cast v0, Lcom/android/hwcamera/hwui/RotateLinearLayout;
 
-    .line 4114
+    .line 4113
     if-nez v0, :cond_0
 
-    .line 4140
+    .line 4139
     :goto_0
     return-void
 
-    .line 4117
+    .line 4116
     :cond_0
     new-instance v1, Landroid/util/DisplayMetrics;
 
     invoke-direct {v1}, Landroid/util/DisplayMetrics;-><init>()V
 
-    .line 4118
+    .line 4117
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getWindowManager()Landroid/view/WindowManager;
 
     move-result-object v2
@@ -24887,44 +24563,44 @@
 
     invoke-virtual {v2, v1}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
 
-    .line 4119
+    .line 4118
     iget v2, v1, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    .line 4120
+    .line 4119
     iget v1, v1, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    .line 4122
+    .line 4121
     sparse-switch p1, :sswitch_data_0
 
     goto :goto_0
 
-    .line 4131
+    .line 4130
     :sswitch_0
     const/4 v2, -0x2
 
     invoke-virtual {v0, v1, v2}, Lcom/android/hwcamera/hwui/RotateLinearLayout;->setNewWithHeight(II)V
 
-    .line 4133
+    .line 4132
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/RotateLinearLayout;->setOrientation(I)V
 
     goto :goto_0
 
-    .line 4124
+    .line 4123
     :sswitch_1
     const/16 v1, 0x5e
 
     invoke-virtual {v0, v2, v1}, Lcom/android/hwcamera/hwui/RotateLinearLayout;->setNewWithHeight(II)V
 
-    .line 4125
+    .line 4124
     const/4 v1, 0x3
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/RotateLinearLayout;->setOrientation(I)V
 
     goto :goto_0
 
-    .line 4122
+    .line 4121
     nop
 
     :sswitch_data_0
@@ -24939,7 +24615,7 @@
     .parameter
 
     .prologue
-    .line 6107
+    .line 6106
     const-string v0, "Camera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -24962,23 +24638,23 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6108
+    .line 6107
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
 
     if-nez v0, :cond_0
 
-    .line 6109
+    .line 6108
     const-string v0, "Camera"
 
     const-string v1, "setPreviewDisplay mCameraDevice is null"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6118
+    .line 6117
     :goto_0
     return-void
 
-    .line 6113
+    .line 6112
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
@@ -24989,14 +24665,14 @@
 
     goto :goto_0
 
-    .line 6114
+    .line 6113
     :catch_0
     move-exception v0
 
-    .line 6115
+    .line 6114
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->closeCamera()V
 
-    .line 6116
+    .line 6115
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "setPreviewDisplay failed"
@@ -25019,7 +24695,7 @@
 
     const/4 v2, 0x0
 
-    .line 8418
+    .line 8374
     const v0, 0x7f0c0047
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -25030,39 +24706,39 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 8419
+    .line 8375
     iput-boolean p1, p0, Lcom/android/hwcamera/Camera;->mGpsSignalState:Z
 
-    .line 8420
+    .line 8376
     if-eqz p1, :cond_0
 
-    .line 8421
+    .line 8377
     iget-object v1, p0, Lcom/android/hwcamera/Camera;->mGPSDailog:Lcom/android/hwcamera/hwui/GPSDailog;
 
     invoke-virtual {v1}, Lcom/android/hwcamera/hwui/GPSDailog;->hideGpsAnimation()V
 
-    .line 8422
+    .line 8378
     invoke-virtual {p0, v4}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 8423
+    .line 8379
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 8424
+    .line 8380
     invoke-virtual {p0, v5}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 8431
+    .line 8387
     :goto_0
     return-void
 
-    .line 8426
+    .line 8382
     :cond_0
     invoke-virtual {p0, v4}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
 
@@ -25070,17 +24746,17 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 8427
+    .line 8383
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 8428
+    .line 8384
     invoke-virtual {p0, v5}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 8429
+    .line 8385
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mGPSDailog:Lcom/android/hwcamera/hwui/GPSDailog;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/GPSDailog;->showGpsAnimation()V
@@ -25092,17 +24768,17 @@
     .locals 2
 
     .prologue
-    .line 8293
+    .line 8249
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mShowProcess:Z
 
     if-nez v0, :cond_1
 
-    .line 8300
+    .line 8256
     :cond_0
     :goto_0
     return-void
 
-    .line 8296
+    .line 8252
     :cond_1
     iget v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
@@ -25116,7 +24792,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 8298
+    .line 8254
     :cond_2
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mHandler:Landroid/os/Handler;
 
@@ -25134,38 +24810,38 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 8261
+    .line 8217
     iget-boolean v0, p0, Lcom/android/hwcamera/Camera;->mIsSmileCaptureState:Z
 
     if-nez v0, :cond_1
 
-    .line 8263
+    .line 8219
     iput v4, p0, Lcom/android/hwcamera/Camera;->mSmileRepeateCount:I
 
-    .line 8290
+    .line 8246
     :cond_0
     :goto_0
     return-void
 
-    .line 8266
+    .line 8222
     :cond_1
     const/16 v0, 0x32
 
     if-lt p1, v0, :cond_3
 
-    .line 8267
+    .line 8223
     const v0, 0x7f02011c
 
     invoke-direct {p0, v0}, Lcom/android/hwcamera/Camera;->setSmileIcon(I)V
 
-    .line 8268
+    .line 8224
     iget v0, p0, Lcom/android/hwcamera/Camera;->mSmileRepeateCount:I
 
     const/4 v1, 0x2
 
     if-ge v0, v1, :cond_2
 
-    .line 8269
+    .line 8225
     iget v0, p0, Lcom/android/hwcamera/Camera;->mSmileRepeateCount:I
 
     add-int/lit8 v0, v0, 0x1
@@ -25174,7 +24850,7 @@
 
     goto :goto_0
 
-    .line 8271
+    .line 8227
     :cond_2
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -25190,58 +24866,58 @@
 
     if-ltz v0, :cond_0
 
-    .line 8272
+    .line 8228
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/hwcamera/Camera;->mLastSmileCapTime:J
 
-    .line 8273
+    .line 8229
     iput v4, p0, Lcom/android/hwcamera/Camera;->mSmileRepeateCount:I
 
-    .line 8274
+    .line 8230
     invoke-direct {p0}, Lcom/android/hwcamera/Camera;->doSnap()V
 
     goto :goto_0
 
-    .line 8279
+    .line 8235
     :cond_3
     const/16 v0, 0x28
 
     if-lt p1, v0, :cond_4
 
-    .line 8280
+    .line 8236
     const v0, 0x7f02011b
 
     invoke-direct {p0, v0}, Lcom/android/hwcamera/Camera;->setSmileIcon(I)V
 
-    .line 8281
+    .line 8237
     iput v4, p0, Lcom/android/hwcamera/Camera;->mSmileRepeateCount:I
 
     goto :goto_0
 
-    .line 8282
+    .line 8238
     :cond_4
     const/16 v0, 0x14
 
     if-lt p1, v0, :cond_5
 
-    .line 8283
+    .line 8239
     const v0, 0x7f02011a
 
     invoke-direct {p0, v0}, Lcom/android/hwcamera/Camera;->setSmileIcon(I)V
 
-    .line 8284
+    .line 8240
     iput v4, p0, Lcom/android/hwcamera/Camera;->mSmileRepeateCount:I
 
     goto :goto_0
 
-    .line 8286
+    .line 8242
     :cond_5
     iput v4, p0, Lcom/android/hwcamera/Camera;->mSmileRepeateCount:I
 
-    .line 8288
+    .line 8244
     const v0, 0x7f0c00bc
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -25622,7 +25298,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 8004
+    .line 7960
     const v0, 0x7f0c00be
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -25631,23 +25307,23 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 8005
+    .line 7961
     if-nez v0, :cond_0
 
-    .line 8019
+    .line 7975
     :goto_0
     return-void
 
-    .line 8009
+    .line 7965
     :cond_0
     iget v1, p0, Lcom/android/hwcamera/Camera;->mPicturesRemaining:I
 
     if-gez v1, :cond_1
 
-    .line 8010
+    .line 7966
     iput v3, p0, Lcom/android/hwcamera/Camera;->mPicturesRemaining:I
 
-    .line 8013
+    .line 7969
     :cond_1
     iget v1, p0, Lcom/android/hwcamera/Camera;->mPicturesRemaining:I
 
@@ -25655,14 +25331,14 @@
 
     if-le v1, v2, :cond_2
 
-    .line 8014
+    .line 7970
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 8016
+    .line 7972
     :cond_2
     iget v1, p0, Lcom/android/hwcamera/Camera;->mPicturesRemaining:I
 
@@ -25672,7 +25348,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 8017
+    .line 7973
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
     goto :goto_0
@@ -25682,31 +25358,31 @@
     .locals 6
 
     .prologue
+    .line 4257
     .line 4258
-    .line 4259
     invoke-static {}, Lcom/android/hwcamera/Storage;->isSaveToSDCard()Z
 
     move-result v0
 
-    .line 4260
+    .line 4259
     iget-boolean v1, p0, Lcom/android/hwcamera/Camera;->mIsInternalStorageExist:Z
 
     if-nez v1, :cond_1
 
-    .line 4261
+    .line 4260
     const/4 v0, 0x1
 
-    .line 4265
+    .line 4264
     :cond_0
     :goto_0
     if-eqz v0, :cond_2
 
-    .line 4266
+    .line 4265
     invoke-static {}, Lcom/android/hwcamera/Storage;->getSDCardAvailableSpace()J
 
     move-result-wide v0
 
-    .line 4271
+    .line 4270
     :goto_1
     const-string v2, "Camera"
 
@@ -25734,31 +25410,31 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4272
+    .line 4271
     invoke-direct {p0, v0, v1}, Lcom/android/hwcamera/Camera;->checkRemaining(J)I
 
     move-result v0
 
     iput v0, p0, Lcom/android/hwcamera/Camera;->mPicturesRemaining:I
 
-    .line 4273
+    .line 4272
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->updatePicturesRemaining()V
 
-    .line 4274
+    .line 4273
     return-void
 
-    .line 4262
+    .line 4261
     :cond_1
     iget-boolean v1, p0, Lcom/android/hwcamera/Camera;->mIsExternalStorageExist:Z
 
     if-nez v1, :cond_0
 
-    .line 4263
+    .line 4262
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 4268
+    .line 4267
     :cond_2
     invoke-static {}, Lcom/android/hwcamera/Storage;->getPhoneAvailableSpace()J
 
@@ -25772,12 +25448,12 @@
     .parameter
 
     .prologue
-    .line 4196
+    .line 4195
     rem-int/lit16 v0, p1, 0xb4
 
     if-nez v0, :cond_1
 
-    .line 4198
+    .line 4197
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/SuperPanel;->isOpen()Z
@@ -25786,7 +25462,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4199
+    .line 4198
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getResources()Landroid/content/res/Resources;
@@ -25801,11 +25477,11 @@
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/ShutterButton;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 4211
+    .line 4210
     :goto_0
     return-void
 
-    .line 4201
+    .line 4200
     :cond_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
@@ -25823,7 +25499,7 @@
 
     goto :goto_0
 
-    .line 4205
+    .line 4204
     :cond_1
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
 
@@ -25833,7 +25509,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 4206
+    .line 4205
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
     invoke-virtual {p0}, Lcom/android/hwcamera/Camera;->getResources()Landroid/content/res/Resources;
@@ -25850,7 +25526,7 @@
 
     goto :goto_0
 
-    .line 4208
+    .line 4207
     :cond_2
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mShutterButton:Lcom/android/hwcamera/ShutterButton;
 
@@ -25874,7 +25550,7 @@
     .parameter
 
     .prologue
-    .line 4214
+    .line 4213
     const v0, 0x7f0c0012
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/Camera;->findViewById(I)Landroid/view/View;
@@ -25883,13 +25559,13 @@
 
     check-cast v0, Lcom/android/hwcamera/RotateImageView;
 
-    .line 4215
+    .line 4214
     if-eqz v0, :cond_0
 
-    .line 4216
+    .line 4215
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/RotateImageView;->setOrientation(I)V
 
-    .line 4218
+    .line 4217
     :cond_0
     return-void
 .end method
@@ -25899,22 +25575,22 @@
     .parameter
 
     .prologue
-    .line 4221
+    .line 4220
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSwitcher:Lcom/android/hwcamera/Switcher;
 
     if-nez v0, :cond_0
 
-    .line 4230
+    .line 4229
     :goto_0
     return-void
 
-    .line 4225
+    .line 4224
     :cond_0
     rem-int/lit16 v0, p1, 0xb4
 
     if-nez v0, :cond_1
 
-    .line 4226
+    .line 4225
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSwitcher:Lcom/android/hwcamera/Switcher;
 
     const v1, 0x7f020048
@@ -25923,7 +25599,7 @@
 
     goto :goto_0
 
-    .line 4228
+    .line 4227
     :cond_1
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mSwitcher:Lcom/android/hwcamera/Switcher;
 
@@ -26049,19 +25725,19 @@
     .parameter "beforeSwitch"
 
     .prologue
-    .line 7225
+    .line 7181
     iget v0, p0, Lcom/android/hwcamera/Camera;->mShootingMode:I
 
     const/4 v1, 0x1
 
     if-eq v0, v1, :cond_0
 
-    .line 7226
+    .line 7182
     iget-object v0, p0, Lcom/android/hwcamera/Camera;->mZoomControl:Lcom/android/hwcamera/hwui/ZoomControl;
 
     invoke-virtual {v0, p1}, Lcom/android/hwcamera/hwui/ZoomControl;->updateZoomControlWhenSwitchCameraId(Z)V
 
-    .line 7228
+    .line 7184
     :cond_0
     return-void
 .end method

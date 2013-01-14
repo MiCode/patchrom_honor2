@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 7721
+    .line 7677
     iput-object p1, p0, Lcom/android/hwcamera/Camera$9;->this$0:Lcom/android/hwcamera/Camera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 4
 
     .prologue
-    .line 7725
+    .line 7681
     iget-object v1, p0, Lcom/android/hwcamera/Camera$9;->this$0:Lcom/android/hwcamera/Camera;
 
     #getter for: Lcom/android/hwcamera/Camera;->mEulaPreference:Landroid/content/SharedPreferences;
@@ -53,7 +53,7 @@
 
     invoke-static {v1, v2}, Lcom/android/hwcamera/CameraSettings;->writeFirstTime(Landroid/content/SharedPreferences;Z)V
 
-    .line 7726
+    .line 7682
     iget-object v1, p0, Lcom/android/hwcamera/Camera$9;->this$0:Lcom/android/hwcamera/Camera;
 
     #getter for: Lcom/android/hwcamera/Camera;->mLocationManager:Lcom/android/hwcamera/LocationManager;
@@ -72,21 +72,21 @@
 
     move-result v0
 
-    .line 7727
+    .line 7683
     .local v0, state:Z
     if-nez v0, :cond_0
 
-    .line 7728
+    .line 7684
     iget-object v1, p0, Lcom/android/hwcamera/Camera$9;->this$0:Lcom/android/hwcamera/Camera;
 
     #calls: Lcom/android/hwcamera/Camera;->showConfirmGpsDialog()V
     invoke-static {v1}, Lcom/android/hwcamera/Camera;->access$13600(Lcom/android/hwcamera/Camera;)V
 
-    .line 7735
+    .line 7691
     :goto_0
     return-void
 
-    .line 7730
+    .line 7686
     :cond_0
     iget-object v1, p0, Lcom/android/hwcamera/Camera$9;->this$0:Lcom/android/hwcamera/Camera;
 
@@ -101,7 +101,7 @@
 
     invoke-static {v1, v2, v3}, Lcom/android/hwcamera/RecordLocationPreference;->setLocationPreference(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 7732
+    .line 7688
     iget-object v1, p0, Lcom/android/hwcamera/Camera$9;->this$0:Lcom/android/hwcamera/Camera;
 
     #getter for: Lcom/android/hwcamera/Camera;->mSuperPanel:Lcom/android/hwcamera/hwui/SuperPanel;
@@ -113,7 +113,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/hwcamera/hwui/SuperPanel;->setGPSstatus(Z)V
 
-    .line 7733
+    .line 7689
     iget-object v1, p0, Lcom/android/hwcamera/Camera$9;->this$0:Lcom/android/hwcamera/Camera;
 
     #calls: Lcom/android/hwcamera/Camera;->onSharedPreferenceChanged()V

@@ -27,6 +27,7 @@
     .parameter
 
     .prologue
+    .line 1886
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,11 +41,13 @@
     .locals 4
 
     .prologue
+    .line 1889
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
     #calls: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->updateDataActivity()V
     invoke-static {v0}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$100(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;)V
 
+    .line 1891
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
     #getter for: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->mIsScreenOn:Z
@@ -54,6 +57,7 @@
 
     if-eqz v0, :cond_1
 
+    .line 1892
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
@@ -63,7 +67,7 @@
 
     move-result-object v1
 
-    const-string v2, "pdp_watchdog_poll_interval_ms"
+    const-string/jumbo v2, "pdp_watchdog_poll_interval_ms"
 
     const/16 v3, 0x3e8
 
@@ -74,6 +78,7 @@
     #setter for: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->mNetStatPollPeriod:I
     invoke-static {v0, v1}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$302(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;I)I
 
+    .line 1900
     :goto_0
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
@@ -84,6 +89,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 1901
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
@@ -97,9 +103,11 @@
 
     invoke-virtual {v0, p0, v1, v2}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->postDelayed(Ljava/lang/Runnable;J)Z
 
+    .line 1903
     :cond_0
     return-void
 
+    .line 1895
     :cond_1
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
@@ -110,7 +118,7 @@
 
     move-result-object v1
 
-    const-string v2, "pdp_watchdog_long_poll_interval_ms"
+    const-string/jumbo v2, "pdp_watchdog_long_poll_interval_ms"
 
     const v3, 0x927c0
 

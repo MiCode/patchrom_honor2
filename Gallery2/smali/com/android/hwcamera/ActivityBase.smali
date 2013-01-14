@@ -202,7 +202,7 @@
     .locals 7
 
     .prologue
-    .line 530
+    .line 528
     invoke-static {}, Lcom/android/hwcamera/Storage;->getCameraPath()Ljava/lang/String;
 
     move-result-object v3
@@ -213,7 +213,7 @@
 
     if-nez v3, :cond_0
 
-    .line 531
+    .line 529
     const-string v3, "ActivityBase"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -240,17 +240,17 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 549
+    .line 547
     :goto_0
     return-void
 
-    .line 534
+    .line 532
     :cond_0
     invoke-static {}, Lcom/android/hwcamera/Storage;->getCameraBucketId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 535
+    .line 533
     .local v0, bucketId:Ljava/lang/String;
     iget-object v3, p0, Lcom/android/hwcamera/ActivityBase;->mAppBridge:Lcom/android/hwcamera/ActivityBase$MyAppBridge;
 
@@ -274,7 +274,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 536
+    .line 534
     :cond_1
     const-string v3, "ActivityBase"
 
@@ -300,7 +300,7 @@
 
     goto :goto_0
 
-    .line 539
+    .line 537
     :cond_2
     const-string v3, "ActivityBase"
 
@@ -324,19 +324,19 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 540
+    .line 538
     iput-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mOriginBucketId:Ljava/lang/String;
 
-    .line 541
+    .line 539
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 542
+    .line 540
     .local v1, data:Landroid/os/Bundle;
     const-string v2, "/local/all/"
 
-    .line 543
+    .line 541
     .local v2, path:Ljava/lang/String;
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -354,30 +354,30 @@
 
     move-result-object v2
 
-    .line 544
+    .line 542
     const-string v3, "media-set-path"
 
     invoke-virtual {v1, v3, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 545
+    .line 543
     const-string v3, "media-item-path"
 
     invoke-virtual {v1, v3, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 546
+    .line 544
     const-string v3, "app-bridge"
 
     iget-object v4, p0, Lcom/android/hwcamera/ActivityBase;->mAppBridge:Lcom/android/hwcamera/ActivityBase$MyAppBridge;
 
     invoke-virtual {v1, v3, v4}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 547
+    .line 545
     iget-object v3, p0, Lcom/android/hwcamera/ActivityBase;->mAppBridge:Lcom/android/hwcamera/ActivityBase$MyAppBridge;
 
     #calls: Lcom/android/hwcamera/ActivityBase$MyAppBridge;->changeMediaSetPath(Ljava/lang/String;Landroid/os/Bundle;)V
     invoke-static {v3, v2, v1}, Lcom/android/hwcamera/ActivityBase$MyAppBridge;->access$800(Lcom/android/hwcamera/ActivityBase$MyAppBridge;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 548
+    .line 546
     iget-object v3, p0, Lcom/android/hwcamera/ActivityBase;->mHandler:Landroid/os/Handler;
 
     const/16 v4, 0x13
@@ -394,7 +394,7 @@
     .parameter
 
     .prologue
-    .line 495
+    .line 493
     const v0, 0x7f0c0015
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/ActivityBase;->findViewById(I)Landroid/view/View;
@@ -403,15 +403,15 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mCameraAppView:Landroid/view/View;
 
-    .line 496
+    .line 494
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 497
+    .line 495
     const-string v2, "/local/all/"
 
-    .line 502
+    .line 500
     if-eqz p1, :cond_0
 
     invoke-static {}, Lcom/android/hwcamera/Storage;->getCameraBucketId()Ljava/lang/String;
@@ -421,7 +421,7 @@
     :goto_0
     iput-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mOriginBucketId:Ljava/lang/String;
 
-    .line 503
+    .line 501
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -440,31 +440,31 @@
 
     move-result-object v0
 
-    .line 505
+    .line 503
     const-string v2, "media-set-path"
 
     invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 506
+    .line 504
     const-string v2, "media-item-path"
 
     invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 509
+    .line 507
     new-instance v0, Lcom/android/hwcamera/ActivityBase$MyAppBridge;
 
     invoke-direct {v0, p0}, Lcom/android/hwcamera/ActivityBase$MyAppBridge;-><init>(Lcom/android/hwcamera/ActivityBase;)V
 
     iput-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mAppBridge:Lcom/android/hwcamera/ActivityBase$MyAppBridge;
 
-    .line 510
+    .line 508
     const-string v0, "app-bridge"
 
     iget-object v2, p0, Lcom/android/hwcamera/ActivityBase;->mAppBridge:Lcom/android/hwcamera/ActivityBase$MyAppBridge;
 
     invoke-virtual {v1, v0, v2}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 511
+    .line 509
     invoke-virtual {p0}, Lcom/android/hwcamera/ActivityBase;->getStateManager()Lcom/android/gallery3d/app/StateManager;
 
     move-result-object v0
@@ -473,7 +473,7 @@
 
     invoke-virtual {v0, v2, v1}, Lcom/android/gallery3d/app/StateManager;->startState(Ljava/lang/Class;Landroid/os/Bundle;)V
 
-    .line 512
+    .line 510
     iget-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mAppBridge:Lcom/android/hwcamera/ActivityBase$MyAppBridge;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/ActivityBase$MyAppBridge;->getCameraScreenNail()Lcom/android/camera/CameraScreenNail;
@@ -482,10 +482,10 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mCameraScreenNail:Lcom/android/camera/CameraScreenNail;
 
-    .line 513
+    .line 511
     return-void
 
-    .line 502
+    .line 500
     :cond_0
     const-string v0, "0"
 
@@ -503,7 +503,7 @@
     .prologue
     const/16 v3, 0x12
 
-    .line 412
+    .line 410
     iget-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v3}, Landroid/os/Handler;->hasMessages(I)Z
@@ -512,34 +512,34 @@
 
     if-eqz v0, :cond_0
 
-    .line 413
+    .line 411
     iget-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v3}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 415
+    .line 413
     :cond_0
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/ActivityBase;->setSwipingEnabled(Z)V
 
-    .line 416
+    .line 414
     if-eqz p1, :cond_1
 
-    .line 417
+    .line 415
     if-eqz p2, :cond_2
 
-    .line 418
+    .line 416
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/ActivityBase;->setSwipingEnabled(Z)V
 
-    .line 423
+    .line 421
     :cond_1
     :goto_0
     return-void
 
-    .line 420
+    .line 418
     :cond_2
     iget-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mHandler:Landroid/os/Handler;
 
@@ -555,12 +555,12 @@
     .parameter "enable"
 
     .prologue
-    .line 408
+    .line 406
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, v0}, Lcom/android/hwcamera/ActivityBase;->enableSlideToGallery(ZZ)V
 
-    .line 409
+    .line 407
     return-void
 .end method
 
@@ -568,12 +568,12 @@
     .locals 2
 
     .prologue
-    .line 426
+    .line 424
     iget-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mAppBridge:Lcom/android/hwcamera/ActivityBase$MyAppBridge;
 
     if-eqz v0, :cond_0
 
-    .line 427
+    .line 425
     iget-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mAppBridge:Lcom/android/hwcamera/ActivityBase$MyAppBridge;
 
     const/4 v1, -0x1
@@ -583,7 +583,7 @@
 
     move-result v0
 
-    .line 429
+    .line 427
     :goto_0
     return v0
 
@@ -597,7 +597,7 @@
     .locals 2
 
     .prologue
-    .line 385
+    .line 383
     iget-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mAppBridge:Lcom/android/hwcamera/ActivityBase$MyAppBridge;
 
     if-eqz v0, :cond_0
@@ -606,7 +606,7 @@
 
     if-nez v0, :cond_0
 
-    .line 386
+    .line 384
     iget-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mAppBridge:Lcom/android/hwcamera/ActivityBase$MyAppBridge;
 
     const/4 v1, 0x1
@@ -616,7 +616,7 @@
 
     move-result v0
 
-    .line 388
+    .line 386
     :goto_0
     return v0
 
@@ -630,7 +630,7 @@
     .locals 2
 
     .prologue
-    .line 394
+    .line 392
     iget-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mAppBridge:Lcom/android/hwcamera/ActivityBase$MyAppBridge;
 
     if-eqz v0, :cond_0
@@ -639,7 +639,7 @@
 
     if-nez v0, :cond_0
 
-    .line 395
+    .line 393
     iget-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mAppBridge:Lcom/android/hwcamera/ActivityBase$MyAppBridge;
 
     const/4 v1, 0x1
@@ -647,7 +647,7 @@
     #calls: Lcom/android/hwcamera/ActivityBase$MyAppBridge;->switchWithOutCaptureAnimation(I)Z
     invoke-static {v0, v1}, Lcom/android/hwcamera/ActivityBase$MyAppBridge;->access$200(Lcom/android/hwcamera/ActivityBase$MyAppBridge;I)Z
 
-    .line 397
+    .line 395
     :cond_0
     return-void
 .end method
@@ -656,13 +656,13 @@
     .locals 1
 
     .prologue
-    .line 481
+    .line 479
     iget-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mAppBridge:Lcom/android/hwcamera/ActivityBase$MyAppBridge;
 
     #calls: Lcom/android/hwcamera/ActivityBase$MyAppBridge;->notifyScreenNailChanged()V
     invoke-static {v0}, Lcom/android/hwcamera/ActivityBase$MyAppBridge;->access$700(Lcom/android/hwcamera/ActivityBase$MyAppBridge;)V
 
-    .line 482
+    .line 480
     return-void
 .end method
 
@@ -672,7 +672,7 @@
     .prologue
     const/16 v3, 0x11
 
-    .line 516
+    .line 514
     iget-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v3}, Landroid/os/Handler;->hasMessages(I)Z
@@ -681,30 +681,30 @@
 
     if-eqz v0, :cond_0
 
-    .line 517
+    .line 515
     iget-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v3}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 519
+    .line 517
     :cond_0
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/ActivityBase;->setSwipingEnabled(Z)V
 
-    .line 520
+    .line 518
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/hwcamera/ActivityBase;->mIsSwitchStorage:Z
 
-    .line 521
+    .line 519
     iget-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mHandler:Landroid/os/Handler;
 
     const-wide/16 v1, 0x3e8
 
     invoke-virtual {v0, v3, v1, v2}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 522
+    .line 520
     return-void
 .end method
 
@@ -789,10 +789,10 @@
     .parameter "menu"
 
     .prologue
-    .line 595
+    .line 593
     invoke-super {p0, p1}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->onCreateOptionsMenu(Landroid/view/Menu;)Z
 
-    .line 596
+    .line 594
     invoke-virtual {p0}, Lcom/android/hwcamera/ActivityBase;->getStateManager()Lcom/android/gallery3d/app/StateManager;
 
     move-result-object v0
@@ -828,7 +828,7 @@
     .parameter "full"
 
     .prologue
-    .line 434
+    .line 432
     const-string v0, "ActivityBase"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -851,10 +851,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 436
+    .line 434
     if-eqz p1, :cond_0
 
-    .line 438
+    .line 436
     :try_start_0
     invoke-virtual {p0}, Lcom/android/hwcamera/ActivityBase;->getActionBar()Landroid/app/ActionBar;
 
@@ -864,36 +864,36 @@
     :try_end_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 441
+    .line 439
     :goto_0
     iget-boolean v0, p0, Lcom/android/hwcamera/ActivityBase;->mIsDeletePicOnGallery:Z
 
     if-eqz v0, :cond_0
 
-    .line 442
+    .line 440
     invoke-virtual {p0}, Lcom/android/hwcamera/ActivityBase;->updateRemaining()V
 
-    .line 443
+    .line 441
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/hwcamera/ActivityBase;->mIsDeletePicOnGallery:Z
 
-    .line 447
+    .line 445
     :cond_0
     iget-boolean v0, p0, Lcom/android/hwcamera/ActivityBase;->mShowCameraAppView:Z
 
     if-ne v0, p1, :cond_2
 
-    .line 457
+    .line 455
     :cond_1
     :goto_1
     return-void
 
-    .line 448
+    .line 446
     :cond_2
     iput-boolean p1, p0, Lcom/android/hwcamera/ActivityBase;->mShowCameraAppView:Z
 
-    .line 449
+    .line 447
     iget-boolean v0, p0, Lcom/android/hwcamera/ActivityBase;->mPausing:Z
 
     if-nez v0, :cond_1
@@ -904,12 +904,12 @@
 
     if-nez v0, :cond_1
 
-    .line 451
+    .line 449
     iget-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mHideCameraAppView:Lcom/android/hwcamera/ActivityBase$HideCameraAppView;
 
     if-nez v0, :cond_3
 
-    .line 452
+    .line 450
     new-instance v0, Lcom/android/hwcamera/ActivityBase$HideCameraAppView;
 
     const/4 v1, 0x0
@@ -918,7 +918,7 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mHideCameraAppView:Lcom/android/hwcamera/ActivityBase$HideCameraAppView;
 
-    .line 453
+    .line 451
     iget-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mCameraAppView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -931,13 +931,13 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
-    .line 456
+    .line 454
     :cond_3
     invoke-virtual {p0}, Lcom/android/hwcamera/ActivityBase;->updateCameraAppView()V
 
     goto :goto_1
 
-    .line 439
+    .line 437
     :catch_0
     move-exception v0
 
@@ -985,7 +985,7 @@
     .locals 0
 
     .prologue
-    .line 591
+    .line 589
     return-void
 .end method
 
@@ -1002,23 +1002,23 @@
     .parameter "oldBottom"
 
     .prologue
-    .line 555
+    .line 553
     iget-object v12, p0, Lcom/android/hwcamera/ActivityBase;->mAppBridge:Lcom/android/hwcamera/ActivityBase$MyAppBridge;
 
     if-nez v12, :cond_1
 
-    .line 588
+    .line 586
     :cond_0
     :goto_0
     return-void
 
-    .line 556
+    .line 554
     :cond_1
     iget-boolean v12, p0, Lcom/android/hwcamera/ActivityBase;->mShowCameraAppView:Z
 
     if-eqz v12, :cond_0
 
-    .line 557
+    .line 555
     move/from16 v0, p2
 
     move/from16 v1, p6
@@ -1043,18 +1043,18 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 561
+    .line 559
     :cond_2
     invoke-virtual {p0}, Lcom/android/hwcamera/ActivityBase;->onLayoutChange()V
 
-    .line 562
+    .line 560
     sub-int v11, p4, p2
 
-    .line 563
+    .line 561
     .local v11, width:I
     sub-int v4, p5, p3
 
-    .line 564
+    .line 562
     .local v4, height:I
     invoke-static {p0}, Lcom/android/hwcamera/Util;->getDisplayRotation(Landroid/app/Activity;)I
 
@@ -1064,12 +1064,12 @@
 
     if-nez v12, :cond_3
 
-    .line 565
+    .line 563
     iget-object v12, p0, Lcom/android/hwcamera/ActivityBase;->mCameraScreenNail:Lcom/android/camera/CameraScreenNail;
 
     invoke-virtual {v12, v11, v4}, Lcom/android/camera/CameraScreenNail;->setPreviewFrameLayoutSize(II)V
 
-    .line 571
+    .line 569
     :goto_1
     const-string v12, "ActivityBase"
 
@@ -1103,7 +1103,7 @@
 
     invoke-static {v12, v13}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 573
+    .line 571
     const-string v12, "ActivityBase"
 
     new-instance v13, Ljava/lang/StringBuilder;
@@ -1148,35 +1148,35 @@
 
     invoke-static {v12, v13}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 576
+    .line 574
     invoke-virtual {p0}, Lcom/android/hwcamera/ActivityBase;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
 
     move-result-object v7
 
     check-cast v7, Landroid/view/View;
 
-    .line 577
+    .line 575
     .local v7, root:Landroid/view/View;
     const/4 v12, 0x4
 
     new-array v8, v12, [I
 
-    .line 578
+    .line 576
     .local v8, rootLocation:[I
     const/4 v12, 0x4
 
     new-array v10, v12, [I
 
-    .line 579
+    .line 577
     .local v10, viewLocation:[I
     invoke-virtual {v7, v8}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 580
+    .line 578
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v10}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 581
+    .line 579
     const/4 v12, 0x0
 
     aget v12, v10, v12
@@ -1187,7 +1187,7 @@
 
     sub-int v5, v12, v13
 
-    .line 582
+    .line 580
     .local v5, l:I
     const/4 v12, 0x1
 
@@ -1199,21 +1199,21 @@
 
     sub-int v9, v12, v13
 
-    .line 583
+    .line 581
     .local v9, t:I
     add-int v6, v5, v11
 
-    .line 584
+    .line 582
     .local v6, r:I
     add-int v2, v9, v4
 
-    .line 585
+    .line 583
     .local v2, b:I
     new-instance v3, Landroid/graphics/Rect;
 
     invoke-direct {v3, v5, v9, v6, v2}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 586
+    .line 584
     .local v3, frame:Landroid/graphics/Rect;
     const-string v12, "ActivityBase"
 
@@ -1237,7 +1237,7 @@
 
     invoke-static {v12, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 587
+    .line 585
     iget-object v12, p0, Lcom/android/hwcamera/ActivityBase;->mAppBridge:Lcom/android/hwcamera/ActivityBase$MyAppBridge;
 
     #calls: Lcom/android/hwcamera/ActivityBase$MyAppBridge;->setCameraRelativeFrame(Landroid/graphics/Rect;)V
@@ -1245,7 +1245,7 @@
 
     goto/16 :goto_0
 
-    .line 569
+    .line 567
     .end local v2           #b:I
     .end local v3           #frame:Landroid/graphics/Rect;
     .end local v5           #l:I
@@ -1425,57 +1425,18 @@
 .end method
 
 .method protected onSingleTapUp(Landroid/view/View;II)V
-    .locals 3
+    .locals 0
     .parameter "view"
     .parameter "x"
     .parameter "y"
 
     .prologue
-    .line 379
-    const-string v0, "ActivityBase"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "onSingleTapUp2("
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ","
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ")"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 380
+    .line 378
     return-void
 .end method
 
 .method public onSingleTapUp(II)Z
-    .locals 6
+    .locals 5
     .parameter "x"
     .parameter "y"
 
@@ -1484,46 +1445,7 @@
 
     const/4 v3, 0x0
 
-    .line 362
-    const-string v1, "ActivityBase"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "onSingleTapUp1("
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, ","
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, ")"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v1, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 364
+    .line 363
     iget-object v1, p0, Lcom/android/hwcamera/ActivityBase;->mSingleTapArea:Landroid/view/View;
 
     if-eqz v1, :cond_0
@@ -1535,11 +1457,11 @@
     :cond_0
     move v1, v3
 
-    .line 375
+    .line 374
     :goto_0
     return v1
 
-    .line 366
+    .line 365
     :cond_1
     invoke-virtual {p0}, Lcom/android/hwcamera/ActivityBase;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
 
@@ -1553,18 +1475,18 @@
 
     move-result-object v0
 
-    .line 368
+    .line 367
     .local v0, relativeLocation:[I
     aget v1, v0, v3
 
     sub-int/2addr p1, v1
 
-    .line 369
+    .line 368
     aget v1, v0, v2
 
     sub-int/2addr p2, v1
 
-    .line 370
+    .line 369
     if-ltz p1, :cond_2
 
     iget-object v1, p0, Lcom/android/hwcamera/ActivityBase;->mSingleTapArea:Landroid/view/View;
@@ -1585,20 +1507,20 @@
 
     if-ge p2, v1, :cond_2
 
-    .line 372
+    .line 371
     iget-object v1, p0, Lcom/android/hwcamera/ActivityBase;->mSingleTapArea:Landroid/view/View;
 
     invoke-virtual {p0, v1, p1, p2}, Lcom/android/hwcamera/ActivityBase;->onSingleTapUp(Landroid/view/View;II)V
 
     move v1, v2
 
-    .line 373
+    .line 372
     goto :goto_0
 
     :cond_2
     move v1, v3
 
-    .line 375
+    .line 374
     goto :goto_0
 .end method
 
@@ -1672,17 +1594,17 @@
     .parameter "layoutResID"
 
     .prologue
-    .line 486
+    .line 484
     invoke-super {p0, p1}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->setContentView(I)V
 
-    .line 490
+    .line 488
     invoke-virtual {p0}, Lcom/android/hwcamera/ActivityBase;->getActionBar()Landroid/app/ActionBar;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/ActionBar;->hide()V
 
-    .line 491
+    .line 489
     return-void
 .end method
 
@@ -1737,12 +1659,12 @@
     .parameter "enabled"
 
     .prologue
-    .line 401
+    .line 399
     iget-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mAppBridge:Lcom/android/hwcamera/ActivityBase$MyAppBridge;
 
     if-eqz v0, :cond_0
 
-    .line 402
+    .line 400
     const-string v0, "ActivityBase"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1765,13 +1687,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 403
+    .line 401
     iget-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mAppBridge:Lcom/android/hwcamera/ActivityBase$MyAppBridge;
 
     #calls: Lcom/android/hwcamera/ActivityBase$MyAppBridge;->setSwipingEnabled(Z)V
     invoke-static {v0, p1}, Lcom/android/hwcamera/ActivityBase$MyAppBridge;->access$500(Lcom/android/hwcamera/ActivityBase$MyAppBridge;Z)V
 
-    .line 405
+    .line 403
     :cond_0
     return-void
 .end method
@@ -1780,12 +1702,12 @@
     .locals 1
 
     .prologue
-    .line 477
+    .line 475
     iget-boolean v0, p0, Lcom/android/hwcamera/ActivityBase;->mShowCameraAppView:Z
 
     invoke-virtual {p0, v0}, Lcom/android/hwcamera/ActivityBase;->updateCameraAppView(Z)V
 
-    .line 478
+    .line 476
     return-void
 .end method
 
@@ -1794,19 +1716,19 @@
     .parameter "isShow"
 
     .prologue
-    .line 459
+    .line 457
     if-eqz p1, :cond_0
 
-    .line 467
+    .line 465
     iget-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mCameraAppView:Landroid/view/View;
 
     invoke-static {v0}, Lcom/android/hwcamera/Util;->fadeIn(Landroid/view/View;)V
 
-    .line 474
+    .line 472
     :goto_0
     return-void
 
-    .line 471
+    .line 469
     :cond_0
     iget-object v0, p0, Lcom/android/hwcamera/ActivityBase;->mCameraAppView:Landroid/view/View;
 

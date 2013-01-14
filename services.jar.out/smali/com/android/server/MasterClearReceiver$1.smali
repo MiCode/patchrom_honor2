@@ -28,6 +28,7 @@
     .parameter
 
     .prologue
+    .line 45
     iput-object p1, p0, Lcom/android/server/MasterClearReceiver$1;->this$0:Lcom/android/server/MasterClearReceiver;
 
     iput-object p3, p0, Lcom/android/server/MasterClearReceiver$1;->val$context:Landroid/content/Context;
@@ -43,6 +44,7 @@
     .locals 3
 
     .prologue
+    .line 50
     :try_start_0
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
@@ -50,10 +52,12 @@
 
     invoke-virtual {v1}, Landroid/telephony/TelephonyManager;->invokeSimlessHW()V
 
+    .line 52
     iget-object v1, p0, Lcom/android/server/MasterClearReceiver$1;->val$context:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/os/RecoverySystem;->rebootWipeUserData(Landroid/content/Context;)V
 
+    .line 53
     const-string v1, "MasterClear"
 
     const-string v2, "Still running after master clear?!"
@@ -62,12 +66,15 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 57
     :goto_0
     return-void
 
+    .line 54
     :catch_0
     move-exception v0
 
+    .line 55
     .local v0, e:Ljava/io/IOException;
     const-string v1, "MasterClear"
 

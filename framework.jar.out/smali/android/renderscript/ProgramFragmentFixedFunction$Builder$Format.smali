@@ -54,6 +54,7 @@
 
     const/4 v2, 0x1
 
+    .line 133
     new-instance v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;
 
     const-string v1, "ALPHA"
@@ -62,6 +63,7 @@
 
     sput-object v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;->ALPHA:Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;
 
+    .line 137
     new-instance v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;
 
     const-string v1, "LUMINANCE_ALPHA"
@@ -70,6 +72,7 @@
 
     sput-object v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;->LUMINANCE_ALPHA:Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;
 
+    .line 141
     new-instance v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;
 
     const-string v1, "RGB"
@@ -78,6 +81,7 @@
 
     sput-object v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;->RGB:Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;
 
+    .line 145
     new-instance v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;
 
     const-string v1, "RGBA"
@@ -86,6 +90,7 @@
 
     sput-object v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;->RGBA:Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;
 
+    .line 129
     new-array v0, v6, [Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;
 
     sget-object v1, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;->ALPHA:Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;
@@ -121,10 +126,13 @@
     .end annotation
 
     .prologue
+    .line 148
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 149
     iput p3, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;->mID:I
 
+    .line 150
     return-void
 .end method
 
@@ -133,6 +141,7 @@
     .parameter "name"
 
     .prologue
+    .line 129
     const-class v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -148,6 +157,7 @@
     .locals 1
 
     .prologue
+    .line 129
     sget-object v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;->$VALUES:[Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;
 
     invoke-virtual {v0}, [Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;->clone()Ljava/lang/Object;

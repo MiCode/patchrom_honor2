@@ -24,6 +24,7 @@
     .parameter
 
     .prologue
+    .line 425
     iput-object p1, p0, Lcom/android/server/WallpaperManagerService$1;->this$0:Lcom/android/server/WallpaperManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -41,10 +42,12 @@
     .prologue
     const/4 v3, 0x0
 
+    .line 428
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 429
     .local v0, action:Ljava/lang/String;
     const-string v1, "android.intent.action.USER_SWITCHED"
 
@@ -54,6 +57,7 @@
 
     if-eqz v1, :cond_1
 
+    .line 430
     iget-object v1, p0, Lcom/android/server/WallpaperManagerService$1;->this$0:Lcom/android/server/WallpaperManagerService;
 
     const-string v2, "android.intent.extra.user_id"
@@ -64,10 +68,12 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/WallpaperManagerService;->switchUser(I)V
 
+    .line 434
     :cond_0
     :goto_0
     return-void
 
+    .line 431
     :cond_1
     const-string v1, "android.intent.action.USER_REMOVED"
 
@@ -77,6 +83,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 432
     iget-object v1, p0, Lcom/android/server/WallpaperManagerService$1;->this$0:Lcom/android/server/WallpaperManagerService;
 
     const-string v2, "android.intent.extra.user_id"

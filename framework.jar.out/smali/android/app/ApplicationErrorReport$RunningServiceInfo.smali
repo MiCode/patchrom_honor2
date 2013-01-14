@@ -25,8 +25,10 @@
     .locals 0
 
     .prologue
+    .line 534
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 535
     return-void
 .end method
 
@@ -35,20 +37,24 @@
     .parameter "in"
 
     .prologue
+    .line 540
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 541
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/app/ApplicationErrorReport$RunningServiceInfo;->durationMillis:J
 
+    .line 542
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/ApplicationErrorReport$RunningServiceInfo;->serviceDetails:Ljava/lang/String;
 
+    .line 543
     return-void
 .end method
 
@@ -60,6 +66,7 @@
     .parameter "prefix"
 
     .prologue
+    .line 557
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -86,6 +93,7 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
+    .line 558
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -94,7 +102,7 @@
 
     move-result-object v0
 
-    const-string v1, "serviceDetails: "
+    const-string/jumbo v1, "serviceDetails: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -112,6 +120,7 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
+    .line 559
     return-void
 .end method
 
@@ -121,13 +130,16 @@
     .parameter "flags"
 
     .prologue
+    .line 549
     iget-wide v0, p0, Landroid/app/ApplicationErrorReport$RunningServiceInfo;->durationMillis:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 550
     iget-object v0, p0, Landroid/app/ApplicationErrorReport$RunningServiceInfo;->serviceDetails:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 551
     return-void
 .end method

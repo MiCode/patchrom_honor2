@@ -27,6 +27,7 @@
     .parameter
 
     .prologue
+    .line 741
     iput-object p1, p0, Landroid/database/sqlite/SQLiteDatabase$2;->val$prefix:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,6 +42,7 @@
     .parameter "candidate"
 
     .prologue
+    .line 744
     invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v0

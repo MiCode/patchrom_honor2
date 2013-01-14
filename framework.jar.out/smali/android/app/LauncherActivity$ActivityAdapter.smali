@@ -66,18 +66,22 @@
     .parameter "resizer"
 
     .prologue
+    .line 108
     iput-object p1, p0, Landroid/app/LauncherActivity$ActivityAdapter;->this$0:Landroid/app/LauncherActivity;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
+    .line 97
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/app/LauncherActivity$ActivityAdapter;->lock:Ljava/lang/Object;
 
+    .line 109
     iput-object p2, p0, Landroid/app/LauncherActivity$ActivityAdapter;->mIconResizer:Landroid/app/LauncherActivity$IconResizer;
 
+    .line 110
     const-string v0, "layout_inflater"
 
     invoke-virtual {p1, v0}, Landroid/app/LauncherActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -88,18 +92,21 @@
 
     iput-object v0, p0, Landroid/app/LauncherActivity$ActivityAdapter;->mInflater:Landroid/view/LayoutInflater;
 
+    .line 112
     invoke-virtual {p1}, Landroid/app/LauncherActivity;->onEvaluateShowIcons()Z
 
     move-result v0
 
     iput-boolean v0, p0, Landroid/app/LauncherActivity$ActivityAdapter;->mShowIcons:Z
 
+    .line 113
     invoke-virtual {p1}, Landroid/app/LauncherActivity;->makeListItems()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/LauncherActivity$ActivityAdapter;->mActivitiesList:Ljava/util/List;
 
+    .line 114
     return-void
 .end method
 
@@ -108,6 +115,7 @@
     .parameter "x0"
 
     .prologue
+    .line 96
     iget-object v0, p0, Landroid/app/LauncherActivity$ActivityAdapter;->mOriginalValues:Ljava/util/ArrayList;
 
     return-object v0
@@ -119,6 +127,7 @@
     .parameter "x1"
 
     .prologue
+    .line 96
     iput-object p1, p0, Landroid/app/LauncherActivity$ActivityAdapter;->mOriginalValues:Ljava/util/ArrayList;
 
     return-object p1
@@ -129,6 +138,7 @@
     .parameter "x0"
 
     .prologue
+    .line 96
     iget-object v0, p0, Landroid/app/LauncherActivity$ActivityAdapter;->lock:Ljava/lang/Object;
 
     return-object v0
@@ -142,23 +152,28 @@
     .prologue
     const/4 v4, 0x0
 
+    .line 163
     move-object v0, p1
 
     check-cast v0, Landroid/widget/TextView;
 
+    .line 164
     .local v0, text:Landroid/widget/TextView;
     iget-object v1, p2, Landroid/app/LauncherActivity$ListItem;->label:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
+    .line 165
     iget-boolean v1, p0, Landroid/app/LauncherActivity$ActivityAdapter;->mShowIcons:Z
 
     if-eqz v1, :cond_1
 
+    .line 166
     iget-object v1, p2, Landroid/app/LauncherActivity$ListItem;->icon:Landroid/graphics/drawable/Drawable;
 
     if-nez v1, :cond_0
 
+    .line 167
     iget-object v1, p0, Landroid/app/LauncherActivity$ActivityAdapter;->mIconResizer:Landroid/app/LauncherActivity$IconResizer;
 
     iget-object v2, p2, Landroid/app/LauncherActivity$ListItem;->resolveInfo:Landroid/content/pm/ResolveInfo;
@@ -179,11 +194,13 @@
 
     iput-object v1, p2, Landroid/app/LauncherActivity$ListItem;->icon:Landroid/graphics/drawable/Drawable;
 
+    .line 169
     :cond_0
     iget-object v1, p2, Landroid/app/LauncherActivity$ListItem;->icon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, v1, v4, v4, v4}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
+    .line 171
     :cond_1
     return-void
 .end method
@@ -194,6 +211,7 @@
     .locals 1
 
     .prologue
+    .line 139
     iget-object v0, p0, Landroid/app/LauncherActivity$ActivityAdapter;->mActivitiesList:Ljava/util/List;
 
     if-eqz v0, :cond_0
@@ -217,10 +235,12 @@
     .locals 2
 
     .prologue
+    .line 174
     iget-object v0, p0, Landroid/app/LauncherActivity$ActivityAdapter;->mFilter:Landroid/widget/Filter;
 
     if-nez v0, :cond_0
 
+    .line 175
     new-instance v0, Landroid/app/LauncherActivity$ActivityAdapter$ArrayFilter;
 
     const/4 v1, 0x0
@@ -229,6 +249,7 @@
 
     iput-object v0, p0, Landroid/app/LauncherActivity$ActivityAdapter;->mFilter:Landroid/widget/Filter;
 
+    .line 177
     :cond_0
     iget-object v0, p0, Landroid/app/LauncherActivity$ActivityAdapter;->mFilter:Landroid/widget/Filter;
 
@@ -240,6 +261,7 @@
     .parameter "position"
 
     .prologue
+    .line 143
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -252,6 +274,7 @@
     .parameter "position"
 
     .prologue
+    .line 147
     int-to-long v0, p1
 
     return-wide v0
@@ -264,8 +287,10 @@
     .parameter "parent"
 
     .prologue
+    .line 152
     if-nez p2, :cond_0
 
+    .line 153
     iget-object v1, p0, Landroid/app/LauncherActivity$ActivityAdapter;->mInflater:Landroid/view/LayoutInflater;
 
     const v2, 0x1090021
@@ -276,6 +301,7 @@
 
     move-result-object v0
 
+    .line 158
     .local v0, view:Landroid/view/View;
     :goto_0
     iget-object v1, p0, Landroid/app/LauncherActivity$ActivityAdapter;->mActivitiesList:Ljava/util/List;
@@ -288,8 +314,10 @@
 
     invoke-direct {p0, v0, v1}, Landroid/app/LauncherActivity$ActivityAdapter;->bindView(Landroid/view/View;Landroid/app/LauncherActivity$ListItem;)V
 
+    .line 159
     return-object v0
 
+    .line 156
     .end local v0           #view:Landroid/view/View;
     :cond_0
     move-object v0, p2
@@ -303,16 +331,20 @@
     .parameter "position"
 
     .prologue
+    .line 117
     iget-object v2, p0, Landroid/app/LauncherActivity$ActivityAdapter;->mActivitiesList:Ljava/util/List;
 
     if-nez v2, :cond_1
 
+    .line 118
     const/4 v0, 0x0
 
+    .line 127
     :cond_0
     :goto_0
     return-object v0
 
+    .line 121
     :cond_1
     new-instance v0, Landroid/content/Intent;
 
@@ -322,6 +354,7 @@
 
     invoke-direct {v0, v2}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
+    .line 122
     .local v0, intent:Landroid/content/Intent;
     iget-object v2, p0, Landroid/app/LauncherActivity$ActivityAdapter;->mActivitiesList:Ljava/util/List;
 
@@ -331,6 +364,7 @@
 
     check-cast v1, Landroid/app/LauncherActivity$ListItem;
 
+    .line 123
     .local v1, item:Landroid/app/LauncherActivity$ListItem;
     iget-object v2, v1, Landroid/app/LauncherActivity$ListItem;->packageName:Ljava/lang/String;
 
@@ -338,10 +372,12 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 124
     iget-object v2, v1, Landroid/app/LauncherActivity$ListItem;->extras:Landroid/os/Bundle;
 
     if-eqz v2, :cond_0
 
+    .line 125
     iget-object v2, v1, Landroid/app/LauncherActivity$ListItem;->extras:Landroid/os/Bundle;
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
@@ -354,12 +390,15 @@
     .parameter "position"
 
     .prologue
+    .line 131
     iget-object v0, p0, Landroid/app/LauncherActivity$ActivityAdapter;->mActivitiesList:Ljava/util/List;
 
     if-nez v0, :cond_0
 
+    .line 132
     const/4 v0, 0x0
 
+    .line 135
     :goto_0
     return-object v0
 

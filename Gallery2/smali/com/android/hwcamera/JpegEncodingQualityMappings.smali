@@ -22,14 +22,14 @@
     .locals 3
 
     .prologue
-    .line 8800
+    .line 8767
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Lcom/android/hwcamera/JpegEncodingQualityMappings;->mHashMap:Ljava/util/HashMap;
 
-    .line 8803
+    .line 8770
     sget-object v0, Lcom/android/hwcamera/JpegEncodingQualityMappings;->mHashMap:Ljava/util/HashMap;
 
     const-string v1, "normal"
@@ -42,7 +42,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 8804
+    .line 8771
     sget-object v0, Lcom/android/hwcamera/JpegEncodingQualityMappings;->mHashMap:Ljava/util/HashMap;
 
     const-string v1, "fine"
@@ -55,7 +55,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 8805
+    .line 8772
     sget-object v0, Lcom/android/hwcamera/JpegEncodingQualityMappings;->mHashMap:Ljava/util/HashMap;
 
     const-string v1, "superfine"
@@ -68,7 +68,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 8806
+    .line 8773
     return-void
 .end method
 
@@ -76,7 +76,7 @@
     .locals 0
 
     .prologue
-    .line 8797
+    .line 8764
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -89,7 +89,7 @@
     .prologue
     const/16 v2, 0x55
 
-    .line 8812
+    .line 8779
     :try_start_0
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
     :try_end_0
@@ -97,7 +97,7 @@
 
     move-result v1
 
-    .line 8813
+    .line 8780
     .local v1, qualityPercentile:I
     if-ltz v1, :cond_0
 
@@ -105,7 +105,7 @@
 
     if-gt v1, v3, :cond_0
 
-    .line 8825
+    .line 8792
     .end local v1           #qualityPercentile:I
     :goto_0
     return v1
@@ -114,15 +114,15 @@
     :cond_0
     move v1, v2
 
-    .line 8816
+    .line 8783
     goto :goto_0
 
-    .line 8817
+    .line 8784
     .end local v1           #qualityPercentile:I
     :catch_0
     move-exception v3
 
-    .line 8820
+    .line 8787
     sget-object v3, Lcom/android/hwcamera/JpegEncodingQualityMappings;->mHashMap:Ljava/util/HashMap;
 
     invoke-virtual {v3, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -131,11 +131,11 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 8821
+    .line 8788
     .local v0, quality:Ljava/lang/Integer;
     if-nez v0, :cond_1
 
-    .line 8822
+    .line 8789
     const-string v3, "JpegEncodingQualityMappings"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -160,10 +160,10 @@
 
     move v1, v2
 
-    .line 8823
+    .line 8790
     goto :goto_0
 
-    .line 8825
+    .line 8792
     :cond_1
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 

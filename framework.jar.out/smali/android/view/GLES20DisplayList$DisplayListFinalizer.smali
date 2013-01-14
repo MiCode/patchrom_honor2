@@ -24,10 +24,13 @@
     .parameter "nativeDisplayList"
 
     .prologue
+    .line 331
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 332
     iput p1, p0, Landroid/view/GLES20DisplayList$DisplayListFinalizer;->mNativeDisplayList:I
 
+    .line 333
     return-void
 .end method
 
@@ -42,6 +45,7 @@
     .end annotation
 
     .prologue
+    .line 338
     :try_start_0
     iget v0, p0, Landroid/view/GLES20DisplayList$DisplayListFinalizer;->mNativeDisplayList:I
 
@@ -49,10 +53,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 340
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
+    .line 342
     return-void
 
+    .line 340
     :catchall_0
     move-exception v0
 

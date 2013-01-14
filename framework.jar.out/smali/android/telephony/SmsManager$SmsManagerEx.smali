@@ -24,6 +24,7 @@
     .parameter
 
     .prologue
+    .line 844
     iput-object p1, p0, Landroid/telephony/SmsManager$SmsManagerEx;->this$0:Landroid/telephony/SmsManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +38,7 @@
     .parameter "x1"
 
     .prologue
+    .line 844
     invoke-direct {p0, p1}, Landroid/telephony/SmsManager$SmsManagerEx;-><init>(Landroid/telephony/SmsManager;)V
 
     return-void
@@ -47,6 +49,7 @@
     .parameter "x0"
 
     .prologue
+    .line 844
     invoke-direct {p0}, Landroid/telephony/SmsManager$SmsManagerEx;->getNewbyte()[B
 
     move-result-object v0
@@ -58,6 +61,7 @@
     .locals 2
 
     .prologue
+    .line 846
     const/4 v0, 0x2
 
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
@@ -70,10 +74,12 @@
 
     if-ne v0, v1, :cond_0
 
+    .line 847
     const/16 v0, 0xfe
 
     new-array v0, v0, [B
 
+    .line 849
     :goto_0
     return-object v0
 

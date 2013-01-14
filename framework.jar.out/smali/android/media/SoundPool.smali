@@ -35,7 +35,8 @@
     .locals 1
 
     .prologue
-    const-string v0, "soundpool"
+    .line 107
+    const-string/jumbo v0, "soundpool"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
@@ -49,8 +50,10 @@
     .parameter "srcQuality"
 
     .prologue
+    .line 137
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 140
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -61,6 +64,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 141
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Native setup failed"
@@ -69,6 +73,7 @@
 
     throw v0
 
+    .line 143
     :cond_0
     new-instance v0, Ljava/lang/Object;
 
@@ -76,6 +81,7 @@
 
     iput-object v0, p0, Landroid/media/SoundPool;->mLock:Ljava/lang/Object;
 
+    .line 144
     return-void
 .end method
 
@@ -90,6 +96,7 @@
     .parameter "x0"
 
     .prologue
+    .line 105
     iget-object v0, p0, Landroid/media/SoundPool;->mLock:Ljava/lang/Object;
 
     return-object v0
@@ -100,6 +107,7 @@
     .parameter "x0"
 
     .prologue
+    .line 105
     iget-object v0, p0, Landroid/media/SoundPool;->mOnLoadCompleteListener:Landroid/media/SoundPool$OnLoadCompleteListener;
 
     return-object v0
@@ -117,6 +125,7 @@
     .parameter "obj"
 
     .prologue
+    .line 464
     check-cast p0, Ljava/lang/ref/WeakReference;
 
     .end local p0
@@ -126,24 +135,29 @@
 
     check-cast v1, Landroid/media/SoundPool;
 
+    .line 465
     .local v1, soundPool:Landroid/media/SoundPool;
     if-nez v1, :cond_1
 
+    .line 472
     :cond_0
     :goto_0
     return-void
 
+    .line 468
     :cond_1
     iget-object v2, v1, Landroid/media/SoundPool;->mEventHandler:Landroid/media/SoundPool$EventHandler;
 
     if-eqz v2, :cond_0
 
+    .line 469
     iget-object v2, v1, Landroid/media/SoundPool;->mEventHandler:Landroid/media/SoundPool$EventHandler;
 
     invoke-virtual {v2, p1, p2, p3, p4}, Landroid/media/SoundPool$EventHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
+    .line 470
     .local v0, m:Landroid/os/Message;
     iget-object v2, v1, Landroid/media/SoundPool;->mEventHandler:Landroid/media/SoundPool$EventHandler;
 
@@ -164,6 +178,7 @@
     .locals 0
 
     .prologue
+    .line 485
     invoke-virtual {p0}, Landroid/media/SoundPool;->release()V
 
     return-void
@@ -176,6 +191,7 @@
     .parameter "priority"
 
     .prologue
+    .line 191
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -184,12 +200,15 @@
 
     move-result-object v7
 
+    .line 192
     .local v7, afd:Landroid/content/res/AssetFileDescriptor;
     const/4 v8, 0x0
 
+    .line 193
     .local v8, id:I
     if-eqz v7, :cond_0
 
+    .line 194
     invoke-virtual {v7}, Landroid/content/res/AssetFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
     move-result-object v1
@@ -210,15 +229,18 @@
 
     move-result v8
 
+    .line 196
     :try_start_0
     invoke-virtual {v7}, Landroid/content/res/AssetFileDescriptor;->close()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 201
     :cond_0
     :goto_0
     return v8
 
+    .line 197
     :catch_0
     move-exception v0
 
@@ -231,12 +253,15 @@
     .parameter "priority"
 
     .prologue
+    .line 213
     if-eqz p1, :cond_1
 
+    .line 214
     invoke-virtual {p1}, Landroid/content/res/AssetFileDescriptor;->getLength()J
 
     move-result-wide v4
 
+    .line 215
     .local v4, len:J
     const-wide/16 v0, 0x0
 
@@ -244,14 +269,16 @@
 
     if-gez v0, :cond_0
 
+    .line 216
     new-instance v0, Landroid/util/AndroidRuntimeException;
 
-    const-string v1, "no length for fd"
+    const-string/jumbo v1, "no length for fd"
 
     invoke-direct {v0, v1}, Landroid/util/AndroidRuntimeException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
+    .line 218
     :cond_0
     invoke-virtual {p1}, Landroid/content/res/AssetFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
@@ -269,6 +296,7 @@
 
     move-result v0
 
+    .line 220
     .end local v4           #len:J
     :goto_0
     return v0
@@ -287,6 +315,7 @@
     .parameter "priority"
 
     .prologue
+    .line 239
     invoke-direct/range {p0 .. p6}, Landroid/media/SoundPool;->_load(Ljava/io/FileDescriptor;JJI)I
 
     move-result v0
@@ -300,6 +329,7 @@
     .parameter "priority"
 
     .prologue
+    .line 157
     const-string v0, "http:"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -308,23 +338,28 @@
 
     if-eqz v0, :cond_1
 
+    .line 158
     invoke-direct {p0, p1, p2}, Landroid/media/SoundPool;->_load(Ljava/lang/String;I)I
 
     move-result v10
 
+    .line 172
     :cond_0
     :goto_0
     return v10
 
+    .line 161
     :cond_1
     const/4 v10, 0x0
 
+    .line 163
     .local v10, id:I
     :try_start_0
     new-instance v8, Ljava/io/File;
 
     invoke-direct {v8, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
+    .line 164
     .local v8, f:Ljava/io/File;
     const/high16 v0, 0x1000
 
@@ -332,9 +367,11 @@
 
     move-result-object v9
 
+    .line 165
     .local v9, fd:Landroid/os/ParcelFileDescriptor;
     if-eqz v9, :cond_0
 
+    .line 166
     invoke-virtual {v9}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
     move-result-object v1
@@ -353,17 +390,20 @@
 
     move-result v10
 
+    .line 167
     invoke-virtual {v9}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
+    .line 169
     .end local v8           #f:Ljava/io/File;
     .end local v9           #fd:Landroid/os/ParcelFileDescriptor;
     :catch_0
     move-exception v7
 
+    .line 170
     .local v7, e:Ljava/io/IOException;
     const-string v0, "SoundPool"
 
@@ -410,12 +450,15 @@
     .parameter "listener"
 
     .prologue
+    .line 416
     iget-object v2, p0, Landroid/media/SoundPool;->mLock:Ljava/lang/Object;
 
     monitor-enter v2
 
+    .line 417
     if-eqz p1, :cond_2
 
+    .line 420
     :try_start_0
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
@@ -424,20 +467,25 @@
     .local v0, looper:Landroid/os/Looper;
     if-eqz v0, :cond_0
 
+    .line 421
     new-instance v1, Landroid/media/SoundPool$EventHandler;
 
     invoke-direct {v1, p0, p0, v0}, Landroid/media/SoundPool$EventHandler;-><init>(Landroid/media/SoundPool;Landroid/media/SoundPool;Landroid/os/Looper;)V
 
     iput-object v1, p0, Landroid/media/SoundPool;->mEventHandler:Landroid/media/SoundPool$EventHandler;
 
+    .line 430
     .end local v0           #looper:Landroid/os/Looper;
     :goto_0
     iput-object p1, p0, Landroid/media/SoundPool;->mOnLoadCompleteListener:Landroid/media/SoundPool$OnLoadCompleteListener;
 
+    .line 431
     monitor-exit v2
 
+    .line 432
     return-void
 
+    .line 422
     .restart local v0       #looper:Landroid/os/Looper;
     :cond_0
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -446,6 +494,7 @@
 
     if-eqz v0, :cond_1
 
+    .line 423
     new-instance v1, Landroid/media/SoundPool$EventHandler;
 
     invoke-direct {v1, p0, p0, v0}, Landroid/media/SoundPool$EventHandler;-><init>(Landroid/media/SoundPool;Landroid/media/SoundPool;Landroid/os/Looper;)V
@@ -454,6 +503,7 @@
 
     goto :goto_0
 
+    .line 431
     .end local v0           #looper:Landroid/os/Looper;
     :catchall_0
     move-exception v1
@@ -464,6 +514,7 @@
 
     throw v1
 
+    .line 425
     .restart local v0       #looper:Landroid/os/Looper;
     :cond_1
     const/4 v1, 0x0
@@ -473,6 +524,7 @@
 
     goto :goto_0
 
+    .line 428
     .end local v0           #looper:Landroid/os/Looper;
     :cond_2
     const/4 v1, 0x0

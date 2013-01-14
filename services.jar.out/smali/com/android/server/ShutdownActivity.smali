@@ -18,6 +18,7 @@
     .locals 0
 
     .prologue
+    .line 31
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
     return-void
@@ -28,6 +29,7 @@
     .parameter "x0"
 
     .prologue
+    .line 31
     iget-boolean v0, p0, Lcom/android/server/ShutdownActivity;->mReboot:Z
 
     return v0
@@ -38,6 +40,7 @@
     .parameter "x0"
 
     .prologue
+    .line 31
     iget-boolean v0, p0, Lcom/android/server/ShutdownActivity;->mConfirm:Z
 
     return v0
@@ -50,12 +53,15 @@
     .parameter "savedInstanceState"
 
     .prologue
+    .line 39
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
+    .line 41
     invoke-virtual {p0}, Lcom/android/server/ShutdownActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v1
 
+    .line 42
     .local v1, intent:Landroid/content/Intent;
     const-string v2, "android.intent.action.REBOOT"
 
@@ -69,6 +75,7 @@
 
     iput-boolean v2, p0, Lcom/android/server/ShutdownActivity;->mReboot:Z
 
+    .line 43
     const-string v2, "android.intent.extra.KEY_CONFIRM"
 
     const/4 v3, 0x0
@@ -79,6 +86,7 @@
 
     iput-boolean v2, p0, Lcom/android/server/ShutdownActivity;->mConfirm:Z
 
+    .line 44
     const-string v2, "ShutdownActivity"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -103,10 +111,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 46
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
+    .line 47
     .local v0, h:Landroid/os/Handler;
     new-instance v2, Lcom/android/server/ShutdownActivity$1;
 
@@ -114,6 +124,7 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 65
     return-void
 .end method
 
@@ -121,12 +132,15 @@
     .locals 2
 
     .prologue
+    .line 69
     invoke-super {p0}, Landroid/app/Activity;->onPause()V
 
+    .line 70
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
+    .line 71
     .local v0, h:Landroid/os/Handler;
     new-instance v1, Lcom/android/server/ShutdownActivity$2;
 
@@ -134,5 +148,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 76
     return-void
 .end method

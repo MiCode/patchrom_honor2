@@ -8,6 +8,7 @@
     .locals 0
 
     .prologue
+    .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -18,10 +19,12 @@
     .parameter "name"
 
     .prologue
+    .line 34
     const-string v0, "ctl.restart"
 
     invoke-static {v0, p0}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 35
     return-void
 .end method
 
@@ -30,10 +33,12 @@
     .parameter "name"
 
     .prologue
+    .line 24
     const-string v0, "ctl.start"
 
     invoke-static {v0, p0}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 25
     return-void
 .end method
 
@@ -42,9 +47,11 @@
     .parameter "name"
 
     .prologue
+    .line 29
     const-string v0, "ctl.stop"
 
     invoke-static {v0, p0}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 30
     return-void
 .end method

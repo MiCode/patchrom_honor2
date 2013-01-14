@@ -51,10 +51,13 @@
     .parameter "registered"
 
     .prologue
+    .line 786
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 787
     if-nez p3, :cond_0
 
+    .line 788
     new-instance v0, Ljava/lang/NullPointerException;
 
     const-string v1, "Handler must not be null"
@@ -63,6 +66,7 @@
 
     throw v0
 
+    .line 791
     :cond_0
     new-instance v1, Landroid/app/LoadedApk$ReceiverDispatcher$InnerReceiver;
 
@@ -75,16 +79,22 @@
 
     iput-object v1, p0, Landroid/app/LoadedApk$ReceiverDispatcher;->mIIntentReceiver:Landroid/content/IIntentReceiver$Stub;
 
+    .line 792
     iput-object p1, p0, Landroid/app/LoadedApk$ReceiverDispatcher;->mReceiver:Landroid/content/BroadcastReceiver;
 
+    .line 793
     iput-object p2, p0, Landroid/app/LoadedApk$ReceiverDispatcher;->mContext:Landroid/content/Context;
 
+    .line 794
     iput-object p3, p0, Landroid/app/LoadedApk$ReceiverDispatcher;->mActivityThread:Landroid/os/Handler;
 
+    .line 795
     iput-object p4, p0, Landroid/app/LoadedApk$ReceiverDispatcher;->mInstrumentation:Landroid/app/Instrumentation;
 
+    .line 796
     iput-boolean p5, p0, Landroid/app/LoadedApk$ReceiverDispatcher;->mRegistered:Z
 
+    .line 797
     new-instance v0, Landroid/app/IntentReceiverLeaked;
 
     const/4 v1, 0x0
@@ -93,12 +103,15 @@
 
     iput-object v0, p0, Landroid/app/LoadedApk$ReceiverDispatcher;->mLocation:Landroid/app/IntentReceiverLeaked;
 
+    .line 798
     iget-object v0, p0, Landroid/app/LoadedApk$ReceiverDispatcher;->mLocation:Landroid/app/IntentReceiverLeaked;
 
     invoke-virtual {v0}, Landroid/app/IntentReceiverLeaked;->fillInStackTrace()Ljava/lang/Throwable;
 
+    .line 799
     return-void
 
+    .line 791
     :cond_1
     const/4 v0, 0x0
 
@@ -111,6 +124,7 @@
     .locals 1
 
     .prologue
+    .line 825
     iget-object v0, p0, Landroid/app/LoadedApk$ReceiverDispatcher;->mIIntentReceiver:Landroid/content/IIntentReceiver$Stub;
 
     return-object v0
@@ -120,6 +134,7 @@
     .locals 1
 
     .prologue
+    .line 821
     iget-object v0, p0, Landroid/app/LoadedApk$ReceiverDispatcher;->mReceiver:Landroid/content/BroadcastReceiver;
 
     return-object v0
@@ -129,6 +144,7 @@
     .locals 1
 
     .prologue
+    .line 817
     iget-object v0, p0, Landroid/app/LoadedApk$ReceiverDispatcher;->mLocation:Landroid/app/IntentReceiverLeaked;
 
     return-object v0
@@ -138,6 +154,7 @@
     .locals 1
 
     .prologue
+    .line 833
     iget-object v0, p0, Landroid/app/LoadedApk$ReceiverDispatcher;->mUnregisterLocation:Ljava/lang/RuntimeException;
 
     return-object v0
@@ -153,6 +170,7 @@
     .parameter "sticky"
 
     .prologue
+    .line 843
     new-instance v0, Landroid/app/LoadedApk$ReceiverDispatcher$Args;
 
     move-object v1, p0
@@ -171,6 +189,7 @@
 
     invoke-direct/range {v0 .. v7}, Landroid/app/LoadedApk$ReceiverDispatcher$Args;-><init>(Landroid/app/LoadedApk$ReceiverDispatcher;Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;ZZ)V
 
+    .line 844
     .local v0, args:Landroid/app/LoadedApk$ReceiverDispatcher$Args;
     iget-object v1, p0, Landroid/app/LoadedApk$ReceiverDispatcher;->mActivityThread:Landroid/os/Handler;
 
@@ -180,19 +199,23 @@
 
     if-nez v1, :cond_0
 
+    .line 845
     iget-boolean v1, p0, Landroid/app/LoadedApk$ReceiverDispatcher;->mRegistered:Z
 
     if-eqz v1, :cond_0
 
     if-eqz p5, :cond_0
 
+    .line 846
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v8
 
+    .line 849
     .local v8, mgr:Landroid/app/IActivityManager;
     invoke-virtual {v0, v8}, Landroid/app/LoadedApk$ReceiverDispatcher$Args;->sendFinished(Landroid/app/IActivityManager;)V
 
+    .line 852
     .end local v8           #mgr:Landroid/app/IActivityManager;
     :cond_0
     return-void
@@ -203,8 +226,10 @@
     .parameter "ex"
 
     .prologue
+    .line 829
     iput-object p1, p0, Landroid/app/LoadedApk$ReceiverDispatcher;->mUnregisterLocation:Ljava/lang/RuntimeException;
 
+    .line 830
     return-void
 .end method
 
@@ -214,10 +239,12 @@
     .parameter "activityThread"
 
     .prologue
+    .line 802
     iget-object v0, p0, Landroid/app/LoadedApk$ReceiverDispatcher;->mContext:Landroid/content/Context;
 
     if-eq v0, p1, :cond_0
 
+    .line 803
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -272,11 +299,13 @@
 
     throw v0
 
+    .line 808
     :cond_0
     iget-object v0, p0, Landroid/app/LoadedApk$ReceiverDispatcher;->mActivityThread:Landroid/os/Handler;
 
     if-eq v0, p2, :cond_1
 
+    .line 809
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -331,6 +360,7 @@
 
     throw v0
 
+    .line 814
     :cond_1
     return-void
 .end method

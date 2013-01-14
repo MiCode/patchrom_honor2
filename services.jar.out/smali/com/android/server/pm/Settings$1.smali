@@ -34,6 +34,7 @@
     .parameter
 
     .prologue
+    .line 122
     iput-object p1, p0, Lcom/android/server/pm/Settings$1;->this$0:Lcom/android/server/pm/Settings;
 
     invoke-direct {p0}, Lcom/android/server/IntentResolver;-><init>()V
@@ -50,6 +51,7 @@
     .parameter "x2"
 
     .prologue
+    .line 122
     check-cast p3, Lcom/android/server/pm/PreferredActivity;
 
     .end local p3
@@ -65,10 +67,12 @@
     .parameter "filter"
 
     .prologue
+    .line 130
     iget-object v0, p3, Lcom/android/server/pm/PreferredActivity;->mPref:Lcom/android/server/PreferredComponent;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/server/PreferredComponent;->dump(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 131
     return-void
 .end method
 
@@ -77,6 +81,7 @@
     .parameter "x0"
 
     .prologue
+    .line 122
     check-cast p1, Lcom/android/server/pm/PreferredActivity;
 
     .end local p1
@@ -92,6 +97,7 @@
     .parameter "filter"
 
     .prologue
+    .line 125
     iget-object v0, p1, Lcom/android/server/pm/PreferredActivity;->mPref:Lcom/android/server/PreferredComponent;
 
     iget-object v0, v0, Lcom/android/server/PreferredComponent;->mComponent:Landroid/content/ComponentName;

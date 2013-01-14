@@ -39,14 +39,14 @@
     .locals 4
 
     .prologue
-    .line 27
+    .line 29
     new-instance v0, Lcom/android/gallery3d/util/MediaSetUtils$NameComparator;
 
     invoke-direct {v0}, Lcom/android/gallery3d/util/MediaSetUtils$NameComparator;-><init>()V
 
     sput-object v0, Lcom/android/gallery3d/util/MediaSetUtils;->NAME_COMPARATOR:Ljava/util/Comparator;
 
-    .line 29
+    .line 31
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -79,7 +79,7 @@
 
     sput v0, Lcom/android/gallery3d/util/MediaSetUtils;->CAMERA_BUCKET_ID:I
 
-    .line 31
+    .line 33
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -118,7 +118,7 @@
 
     sput v0, Lcom/android/gallery3d/util/MediaSetUtils;->DOWNLOAD_BUCKET_ID:I
 
-    .line 34
+    .line 36
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -157,7 +157,7 @@
 
     sput v0, Lcom/android/gallery3d/util/MediaSetUtils;->IMPORTED_BUCKET_ID:I
 
-    .line 37
+    .line 39
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -190,7 +190,7 @@
 
     sput v0, Lcom/android/gallery3d/util/MediaSetUtils;->SNAPSHOT_BUCKET_ID:I
 
-    .line 41
+    .line 43
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/gallery3d/data/Path;
@@ -288,11 +288,83 @@
     .locals 0
 
     .prologue
-    .line 26
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 52
+    .line 54
     return-void
+.end method
+
+.method public static getLocalizedName(Landroid/content/res/Resources;ILjava/lang/String;)Ljava/lang/String;
+    .locals 1
+    .parameter "res"
+    .parameter "bucketId"
+    .parameter "name"
+
+    .prologue
+    .line 63
+    sget v0, Lcom/android/gallery3d/util/MediaSetUtils;->CAMERA_BUCKET_ID:I
+
+    if-ne p1, v0, :cond_1
+
+    .line 64
+    const v0, 0x7f0e010d
+
+    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object p2
+
+    .line 72
+    .end local p2
+    :cond_0
+    :goto_0
+    return-object p2
+
+    .line 65
+    .restart local p2
+    :cond_1
+    sget v0, Lcom/android/gallery3d/util/MediaSetUtils;->DOWNLOAD_BUCKET_ID:I
+
+    if-ne p1, v0, :cond_2
+
+    .line 66
+    const v0, 0x7f0e010f
+
+    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object p2
+
+    goto :goto_0
+
+    .line 67
+    :cond_2
+    sget v0, Lcom/android/gallery3d/util/MediaSetUtils;->IMPORTED_BUCKET_ID:I
+
+    if-ne p1, v0, :cond_3
+
+    .line 68
+    const v0, 0x7f0e010e
+
+    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object p2
+
+    goto :goto_0
+
+    .line 69
+    :cond_3
+    sget v0, Lcom/android/gallery3d/util/MediaSetUtils;->SNAPSHOT_BUCKET_ID:I
+
+    if-ne p1, v0, :cond_0
+
+    .line 70
+    const v0, 0x7f0e0110
+
+    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object p2
+
+    goto :goto_0
 .end method
 
 .method public static isCameraSource(Lcom/android/gallery3d/data/Path;)Z
@@ -304,7 +376,7 @@
 
     const/4 v0, 0x0
 
-    .line 47
+    .line 49
     sget-object v2, Lcom/android/gallery3d/util/MediaSetUtils;->CAMERA_PATHS:[Lcom/android/gallery3d/data/Path;
 
     aget-object v2, v2, v0

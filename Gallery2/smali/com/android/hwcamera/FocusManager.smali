@@ -13,37 +13,13 @@
 
 
 # static fields
-.field private static FOCUS_AREA_LENGTH:I
-
-.field private static FOCUS_AREA_RATE:F
+.field private static FOCUS_AREA_WIDTH_DP:I
 
 
 # instance fields
 .field private cameraMovedListener:Lcom/android/hwcamera/CameraMovedController$OnCameraMovedListener;
 
 .field private mAeAwbLock:Z
-
-.field private mCAFFocusArea:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Landroid/hardware/Camera$Area;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private mCAFMeteringArea:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Landroid/hardware/Camera$Area;",
-            ">;"
-        }
-    .end annotation
-.end field
 
 .field private mCameraMovedController:Lcom/android/hwcamera/CameraMovedController;
 
@@ -70,6 +46,8 @@
 
 .field private mFocusMode:Ljava/lang/String;
 
+.field private mFocusPolicy:I
+
 .field private mFocusState:I
 
 .field private mHandler:Landroid/os/Handler;
@@ -82,13 +60,7 @@
 
 .field private mIsNeedPlaySound:Z
 
-.field mListener:Lcom/android/hwcamera/FocusManager$Listener;
-
-.field private mLockAeAwbNeeded:Z
-
-.field private mMatrix:Landroid/graphics/Matrix;
-
-.field private mMeteringArea:Ljava/util/List;
+.field private mLastFocusArea:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
@@ -99,6 +71,14 @@
     .end annotation
 .end field
 
+.field mListener:Lcom/android/hwcamera/FocusManager$Listener;
+
+.field private mLockAeAwbNeeded:Z
+
+.field private mMatrix:Landroid/graphics/Matrix;
+
+.field private mMeteringAreaSupported:Z
+
 .field private mOverrideFocusMode:Ljava/lang/String;
 
 .field private mParameters:Landroid/hardware/Camera$Parameters;
@@ -108,6 +88,17 @@
 .field private mSoundPlayerSuccess:Lcom/android/hwcamera/SoundPlayer;
 
 .field private mState:I
+
+.field private mTargetFocusArea:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Landroid/hardware/Camera$Area;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field private mTouchFocusEnable:Z
 
@@ -121,15 +112,10 @@
     .locals 1
 
     .prologue
-    .line 314
-    const v0, 0x3e3bbbbc
+    .line 280
+    const/16 v0, 0x4c
 
-    sput v0, Lcom/android/hwcamera/FocusManager;->FOCUS_AREA_RATE:F
-
-    .line 1151
-    const/16 v0, 0x7d0
-
-    sput v0, Lcom/android/hwcamera/FocusManager;->FOCUS_AREA_LENGTH:I
+    sput v0, Lcom/android/hwcamera/FocusManager;->FOCUS_AREA_WIDTH_DP:I
 
     return-void
 .end method
@@ -143,25 +129,25 @@
 
     const/4 v1, 0x0
 
-    .line 170
+    .line 171
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 60
     iput v1, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
-    .line 92
+    .line 91
     iput v1, p0, Lcom/android/hwcamera/FocusManager;->mTouchPointX:I
 
-    .line 93
+    .line 92
     iput v1, p0, Lcom/android/hwcamera/FocusManager;->mTouchPointY:I
 
-    .line 94
+    .line 93
     iput-boolean v1, p0, Lcom/android/hwcamera/FocusManager;->mIsNeedPlaySound:Z
 
-    .line 97
+    .line 96
     iput-boolean v1, p0, Lcom/android/hwcamera/FocusManager;->mIsMute:Z
 
-    .line 104
+    .line 103
     new-instance v0, Lcom/android/hwcamera/FocusManager$1;
 
     invoke-direct {v0, p0}, Lcom/android/hwcamera/FocusManager$1;-><init>(Lcom/android/hwcamera/FocusManager;)V
@@ -174,10 +160,10 @@
     .line 124
     iput-boolean v1, p0, Lcom/android/hwcamera/FocusManager;->mTouchFocusEnable:Z
 
-    .line 171
+    .line 172
     iput-object p1, p0, Lcom/android/hwcamera/FocusManager;->mDefaultFocusMode:Ljava/lang/String;
 
-    .line 172
+    .line 173
     new-instance v0, Lcom/android/hwcamera/FocusManager$MainHandler;
 
     const/4 v1, 0x0
@@ -186,17 +172,17 @@
 
     iput-object v0, p0, Lcom/android/hwcamera/FocusManager;->mHandler:Landroid/os/Handler;
 
-    .line 174
+    .line 175
     invoke-virtual {p0, v2}, Lcom/android/hwcamera/FocusManager;->setTouchFocusEnable(Z)V
 
-    .line 176
+    .line 177
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v0, p0, Lcom/android/hwcamera/FocusManager;->mMatrix:Landroid/graphics/Matrix;
 
-    .line 177
+    .line 178
     return-void
 .end method
 
@@ -261,7 +247,7 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 647
+    .line 506
     const-string v0, "FocusManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -286,7 +272,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 648
+    .line 507
     iget v0, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
     if-eq v0, v3, :cond_0
@@ -297,31 +283,31 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 659
+    .line 518
     :cond_0
     :goto_0
     return-void
 
-    .line 651
+    .line 510
     :cond_1
     iput v3, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
-    .line 652
+    .line 511
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mListener:Lcom/android/hwcamera/FocusManager$Listener;
 
     invoke-interface {v0}, Lcom/android/hwcamera/FocusManager$Listener;->autoFocus()V
 
-    .line 656
+    .line 515
     invoke-virtual {p0}, Lcom/android/hwcamera/FocusManager;->updateFocusUI()V
 
-    .line 657
+    .line 516
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 658
+    .line 517
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v3}, Landroid/os/Handler;->removeMessages(I)V
@@ -335,7 +321,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 684
+    .line 543
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mListener:Lcom/android/hwcamera/FocusManager$Listener;
 
     invoke-interface {v0}, Lcom/android/hwcamera/FocusManager$Listener;->capture()Z
@@ -344,10 +330,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 685
+    .line 544
     iput v4, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
-    .line 686
+    .line 545
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x1
@@ -356,97 +342,436 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 687
+    .line 546
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v4}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 689
+    .line 548
     :cond_0
     return-void
 .end method
 
-.method private genFoucsRect(I)Landroid/graphics/Rect;
-    .locals 6
-    .parameter "width"
+.method private genFocusAreaByFocusPolicy(I)Ljava/util/List;
+    .locals 8
+    .parameter "mFocusPolicy"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)",
+            "Ljava/util/List",
+            "<",
+            "Landroid/hardware/Camera$Area;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
-    .line 1171
-    const/high16 v2, 0x3f80
+    .line 1025
+    const/4 v5, 0x0
 
-    .line 1172
-    .local v2, rate:F
-    iget-object v3, p0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
+    .line 1026
+    .local v5, rect:Landroid/graphics/Rect;
+    packed-switch p1, :pswitch_data_0
 
-    if-eqz v3, :cond_0
-
-    .line 1174
-    :try_start_0
-    iget-object v3, p0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
-
-    invoke-virtual {v3}, Landroid/view/View;->getWidth()I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    invoke-static {v3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/Float;->floatValue()F
-
-    move-result v3
-
-    iget-object v4, p0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
-
-    invoke-virtual {v4}, Landroid/view/View;->getHeight()I
-
-    move-result v4
-
-    int-to-float v4, v4
-
-    invoke-static {v4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/Float;->floatValue()F
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result v4
-
-    div-float v2, v3, v4
-
-    .line 1180
-    :cond_0
+    .line 1044
     :goto_0
-    int-to-float v3, p1
+    invoke-static {v5}, Lcom/android/hwcamera/Util;->isEmptyRect(Landroid/graphics/Rect;)Z
 
-    mul-float/2addr v3, v2
+    move-result v6
 
-    float-to-int v1, v3
+    if-nez v6, :cond_0
 
-    .line 1181
-    .local v1, height:I
-    new-instance v3, Landroid/graphics/Rect;
+    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
 
-    neg-int v4, p1
+    if-eqz v6, :cond_0
 
-    neg-int v5, v1
+    .line 1045
+    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
 
-    invoke-direct {v3, v4, v5, p1, v1}, Landroid/graphics/Rect;-><init>(IIII)V
+    invoke-virtual {v6}, Landroid/view/View;->getWidth()I
 
-    return-object v3
+    move-result v4
 
-    .line 1176
-    .end local v1           #height:I
-    :catch_0
-    move-exception v0
+    .line 1046
+    .local v4, previewWidth:I
+    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
 
-    .line 1177
-    .local v0, e:Ljava/lang/Exception;
-    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v6}, Landroid/view/View;->getHeight()I
+
+    move-result v3
+
+    .line 1047
+    .local v3, previewHeight:I
+    new-instance v2, Landroid/graphics/Point;
+
+    invoke-virtual {v5}, Landroid/graphics/Rect;->centerX()I
+
+    move-result v6
+
+    invoke-virtual {v5}, Landroid/graphics/Rect;->centerY()I
+
+    move-result v7
+
+    invoke-direct {v2, v6, v7}, Landroid/graphics/Point;-><init>(II)V
+
+    .line 1048
+    .local v2, point:Landroid/graphics/Point;
+    int-to-float v6, v3
+
+    int-to-float v7, v4
+
+    div-float/2addr v6, v7
+
+    invoke-static {v5, v2, v6}, Lcom/android/hwcamera/Util;->optmizeFocusAreaRect(Landroid/graphics/Rect;Landroid/graphics/Point;F)Landroid/graphics/Rect;
+
+    move-result-object v1
+
+    .line 1049
+    .local v1, _rect:Landroid/graphics/Rect;
+    invoke-static {v1}, Lcom/android/hwcamera/Util;->isEmptyRect(Landroid/graphics/Rect;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_0
+
+    .line 1050
+    move-object v5, v1
+
+    .line 1053
+    .end local v1           #_rect:Landroid/graphics/Rect;
+    .end local v2           #point:Landroid/graphics/Point;
+    .end local v3           #previewHeight:I
+    .end local v4           #previewWidth:I
+    :cond_0
+    invoke-static {v5}, Lcom/android/hwcamera/Util;->isEmptyRect(Landroid/graphics/Rect;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_1
+
+    .line 1054
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    .line 1055
+    .local v0, _focusArea:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Area;>;"
+    new-instance v6, Landroid/hardware/Camera$Area;
+
+    const/4 v7, 0x1
+
+    invoke-direct {v6, v5, v7}, Landroid/hardware/Camera$Area;-><init>(Landroid/graphics/Rect;I)V
+
+    invoke-interface {v0, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 1058
+    .end local v0           #_focusArea:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Area;>;"
+    :goto_1
+    return-object v0
+
+    .line 1028
+    :pswitch_0
+    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mLastFocusArea:Ljava/util/List;
+
+    invoke-direct {p0, v6}, Lcom/android/hwcamera/FocusManager;->genRectFromArea(Ljava/util/List;)Landroid/graphics/Rect;
+
+    move-result-object v5
+
+    .line 1029
+    goto :goto_0
+
+    .line 1032
+    :pswitch_1
+    invoke-virtual {p0}, Lcom/android/hwcamera/FocusManager;->getDefaultFocusRect()Landroid/graphics/Rect;
+
+    move-result-object v5
+
+    .line 1033
+    goto :goto_0
+
+    .line 1035
+    :pswitch_2
+    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
+
+    invoke-direct {p0, v6}, Lcom/android/hwcamera/FocusManager;->genRectFromArea(Ljava/util/List;)Landroid/graphics/Rect;
+
+    move-result-object v5
+
+    .line 1036
+    goto :goto_0
+
+    .line 1039
+    :pswitch_3
+    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mTargetFocusArea:Ljava/util/List;
+
+    invoke-direct {p0, v6}, Lcom/android/hwcamera/FocusManager;->genRectFromArea(Ljava/util/List;)Landroid/graphics/Rect;
+
+    move-result-object v5
+
+    .line 1040
+    goto :goto_0
+
+    .line 1058
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    .line 1026
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_1
+        :pswitch_3
+        :pswitch_3
+    .end packed-switch
+.end method
+
+.method private genMeteringArea(Landroid/graphics/Rect;F)Landroid/graphics/Rect;
+    .locals 9
+    .parameter "rect"
+    .parameter "areaMultiple"
+
+    .prologue
+    const/16 v8, -0x3e8
+
+    .line 1015
+    invoke-virtual {p1}, Landroid/graphics/Rect;->centerX()I
+
+    move-result v4
+
+    .line 1016
+    .local v4, x:I
+    invoke-virtual {p1}, Landroid/graphics/Rect;->centerY()I
+
+    move-result v5
+
+    .line 1017
+    .local v5, y:I
+    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
+
+    move-result v6
+
+    int-to-float v6, v6
+
+    mul-float/2addr v6, p2
+
+    float-to-int v1, v6
+
+    .line 1018
+    .local v1, areaWidth:I
+    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
+
+    move-result v6
+
+    int-to-float v6, v6
+
+    mul-float/2addr v6, p2
+
+    float-to-int v0, v6
+
+    .line 1019
+    .local v0, areaHeight:I
+    div-int/lit8 v6, v1, 0x2
+
+    sub-int v6, v4, v6
+
+    rsub-int v7, v1, 0x3e8
+
+    invoke-static {v6, v8, v7}, Lcom/android/hwcamera/Util;->clamp(III)I
+
+    move-result v2
+
+    .line 1020
+    .local v2, left:I
+    div-int/lit8 v6, v0, 0x2
+
+    sub-int v6, v5, v6
+
+    rsub-int v7, v0, 0x3e8
+
+    invoke-static {v6, v8, v7}, Lcom/android/hwcamera/Util;->clamp(III)I
+
+    move-result v3
+
+    .line 1021
+    .local v3, top:I
+    new-instance v6, Landroid/graphics/Rect;
+
+    add-int v7, v2, v1
+
+    int-to-float v7, v7
+
+    invoke-static {v7}, Ljava/lang/Math;->round(F)I
+
+    move-result v7
+
+    add-int v8, v3, v0
+
+    int-to-float v8, v8
+
+    invoke-static {v8}, Ljava/lang/Math;->round(F)I
+
+    move-result v8
+
+    invoke-direct {v6, v2, v3, v7, v8}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    return-object v6
+.end method
+
+.method private genMeteringAreaByFocusPolicy(I)Ljava/util/List;
+    .locals 5
+    .parameter "mFocusPolicy"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)",
+            "Ljava/util/List",
+            "<",
+            "Landroid/hardware/Camera$Area;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 979
+    const/4 v2, 0x0
+
+    .line 980
+    .local v2, rect:Landroid/graphics/Rect;
+    packed-switch p1, :pswitch_data_0
+
+    .line 995
+    :goto_0
+    :pswitch_0
+    const/high16 v1, 0x3fc0
+
+    .line 996
+    .local v1, areaMultiple:F
+    invoke-static {v2}, Lcom/android/hwcamera/Util;->isEmptyRect(Landroid/graphics/Rect;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    .line 997
+    invoke-direct {p0, v2, v1}, Lcom/android/hwcamera/FocusManager;->genMeteringArea(Landroid/graphics/Rect;F)Landroid/graphics/Rect;
+
+    move-result-object v2
+
+    .line 999
+    :cond_0
+    invoke-static {v2}, Lcom/android/hwcamera/Util;->isEmptyRect(Landroid/graphics/Rect;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    .line 1000
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    .line 1001
+    .local v0, _meteringArea:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Area;>;"
+    new-instance v3, Landroid/hardware/Camera$Area;
+
+    const/4 v4, 0x1
+
+    invoke-direct {v3, v2, v4}, Landroid/hardware/Camera$Area;-><init>(Landroid/graphics/Rect;I)V
+
+    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 1004
+    .end local v0           #_meteringArea:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Area;>;"
+    :goto_1
+    return-object v0
+
+    .line 982
+    .end local v1           #areaMultiple:F
+    :pswitch_1
+    iget-object v3, p0, Lcom/android/hwcamera/FocusManager;->mLastFocusArea:Ljava/util/List;
+
+    invoke-direct {p0, v3}, Lcom/android/hwcamera/FocusManager;->genRectFromArea(Ljava/util/List;)Landroid/graphics/Rect;
+
+    move-result-object v2
+
+    .line 983
+    goto :goto_0
+
+    .line 985
+    :pswitch_2
+    iget-object v3, p0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
+
+    invoke-direct {p0, v3}, Lcom/android/hwcamera/FocusManager;->genRectFromArea(Ljava/util/List;)Landroid/graphics/Rect;
+
+    move-result-object v2
+
+    .line 986
+    goto :goto_0
+
+    .line 1004
+    .restart local v1       #areaMultiple:F
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    .line 980
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_0
+        :pswitch_2
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method private genRectFromArea(Ljava/util/List;)Landroid/graphics/Rect;
+    .locals 1
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Landroid/hardware/Camera$Area;",
+            ">;)",
+            "Landroid/graphics/Rect;"
+        }
+    .end annotation
+
+    .prologue
+    .line 1008
+    .local p1, area:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Area;>;"
+    invoke-static {p1}, Lcom/android/hwcamera/Util;->isNullArea(Ljava/util/List;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 1009
+    const/4 v0, 0x0
+
+    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/hardware/Camera$Area;
+
+    iget-object v0, v0, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
+
+    .line 1011
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method
@@ -455,7 +780,7 @@
     .locals 1
 
     .prologue
-    .line 321
+    .line 287
     invoke-direct {p0}, Lcom/android/hwcamera/FocusManager;->getFocusAreaWidth()I
 
     move-result v0
@@ -464,35 +789,17 @@
 .end method
 
 .method private getFocusAreaWidth()I
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 317
-    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
+    .line 283
+    sget v0, Lcom/android/hwcamera/FocusManager;->FOCUS_AREA_WIDTH_DP:I
 
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->getWidth()I
+    invoke-static {v0}, Lcom/android/hwcamera/Util;->dpToPixel(I)I
 
     move-result v0
 
-    int-to-float v0, v0
-
-    sget v1, Lcom/android/hwcamera/FocusManager;->FOCUS_AREA_RATE:F
-
-    mul-float/2addr v0, v1
-
-    float-to-int v0, v0
-
-    :goto_0
     return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
 .method private static isSupported(Ljava/lang/String;Ljava/util/List;)Z
@@ -514,7 +821,7 @@
     .local p1, supported:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     const/4 v0, 0x0
 
-    .line 944
+    .line 762
     if-nez p1, :cond_1
 
     :cond_0
@@ -539,16 +846,16 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 957
+    .line 775
     invoke-virtual {p0}, Lcom/android/hwcamera/FocusManager;->getFocusMode()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 959
+    .line 777
     .local v0, focusMode:Ljava/lang/String;
     if-nez v0, :cond_1
 
-    .line 963
+    .line 781
     :cond_0
     :goto_0
     return v1
@@ -587,28 +894,77 @@
     .locals 2
 
     .prologue
-    .line 437
+    .line 405
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mCameraMovedController:Lcom/android/hwcamera/CameraMovedController;
 
     iget-object v1, p0, Lcom/android/hwcamera/FocusManager;->cameraMovedListener:Lcom/android/hwcamera/CameraMovedController$OnCameraMovedListener;
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/CameraMovedController;->addOnCameraMovedListener(Lcom/android/hwcamera/CameraMovedController$OnCameraMovedListener;)V
 
-    .line 438
+    .line 406
     return-void
+.end method
+
+.method private toString(Ljava/util/List;)Ljava/lang/String;
+    .locals 2
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Landroid/hardware/Camera$Area;",
+            ">;)",
+            "Ljava/lang/String;"
+        }
+    .end annotation
+
+    .prologue
+    .line 972
+    .local p1, areas:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Area;>;"
+    const/4 v1, 0x0
+
+    :try_start_0
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/hardware/Camera$Area;
+
+    iget-object v1, v1, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
+
+    invoke-virtual {v1}, Landroid/graphics/Rect;->toString()Ljava/lang/String;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v1
+
+    .line 974
+    :goto_0
+    return-object v1
+
+    .line 973
+    :catch_0
+    move-exception v0
+
+    .line 974
+    .local v0, e:Ljava/lang/Exception;
+    const-string v1, "[0,0,0,0]"
+
+    goto :goto_0
 .end method
 
 .method private updatePreviewStoppedUi()V
     .locals 0
 
     .prologue
-    .line 637
+    .line 496
     invoke-virtual {p0}, Lcom/android/hwcamera/FocusManager;->resetTouchFocus()V
 
-    .line 639
+    .line 498
     invoke-virtual {p0}, Lcom/android/hwcamera/FocusManager;->updateFocusUI()V
 
-    .line 640
+    .line 499
     return-void
 .end method
 
@@ -626,14 +982,14 @@
     .parameter "rect"
 
     .prologue
-    .line 862
+    .line 680
     int-to-float v6, p1
 
     mul-float/2addr v6, p3
 
     float-to-int v2, v6
 
-    .line 863
+    .line 681
     .local v2, areaWidth:I
     int-to-float v6, p2
 
@@ -641,7 +997,7 @@
 
     float-to-int v1, v6
 
-    .line 864
+    .line 682
     .local v1, areaHeight:I
     div-int/lit8 v6, v2, 0x2
 
@@ -655,7 +1011,7 @@
 
     move-result v3
 
-    .line 865
+    .line 683
     .local v3, left:I
     div-int/lit8 v6, v1, 0x2
 
@@ -669,7 +1025,7 @@
 
     move-result v5
 
-    .line 867
+    .line 685
     .local v5, top:I
     new-instance v4, Landroid/graphics/RectF;
 
@@ -687,18 +1043,18 @@
 
     invoke-direct {v4, v6, v7, v8, v9}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    .line 868
+    .line 686
     .local v4, rectF:Landroid/graphics/RectF;
     iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v6, v4}, Landroid/graphics/Matrix;->mapRect(Landroid/graphics/RectF;)Z
 
-    .line 869
+    .line 687
     move-object/from16 v0, p8
 
     invoke-static {v4, v0}, Lcom/android/hwcamera/Util;->rectFToRect(Landroid/graphics/RectF;Landroid/graphics/Rect;)V
 
-    .line 870
+    .line 688
     return-void
 .end method
 
@@ -708,7 +1064,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 621
+    .line 480
     iget v1, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
     if-eq v1, v0, :cond_0
@@ -719,11 +1075,11 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 622
+    .line 481
     :cond_0
     const/4 v0, 0x0
 
-    .line 624
+    .line 483
     :cond_1
     return v0
 .end method
@@ -732,58 +1088,61 @@
     .locals 4
 
     .prologue
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
-    .line 662
+    .line 521
     iget-boolean v0, p0, Lcom/android/hwcamera/FocusManager;->mInitialized:Z
 
     if-nez v0, :cond_0
 
-    .line 681
+    .line 540
     :goto_0
     return-void
 
-    .line 669
+    .line 527
     :cond_0
-    invoke-virtual {p0, v2}, Lcom/android/hwcamera/FocusManager;->resetTouchFocus(Z)V
+    invoke-virtual {p0, v2}, Lcom/android/hwcamera/FocusManager;->setFocusPolicy(I)V
 
-    .line 671
+    .line 528
+    invoke-virtual {p0}, Lcom/android/hwcamera/FocusManager;->resetTouchFocus()V
+
+    .line 530
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mListener:Lcom/android/hwcamera/FocusManager$Listener;
 
-    invoke-interface {v0, v3}, Lcom/android/hwcamera/FocusManager$Listener;->cancelAutoFocus(I)V
+    invoke-interface {v0, v2}, Lcom/android/hwcamera/FocusManager$Listener;->cancelAutoFocus(I)V
 
-    .line 673
+    .line 532
     const-string v0, "FocusManager"
 
     const-string v1, "FocusManager cancelAutoFocus() mState = STATE_IDLE"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 674
-    iput v2, p0, Lcom/android/hwcamera/FocusManager;->mState:I
+    .line 533
+    iput v3, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
-    .line 675
+    .line 534
     invoke-virtual {p0}, Lcom/android/hwcamera/FocusManager;->updateFocusUI()V
 
-    .line 676
+    .line 535
     invoke-virtual {p0}, Lcom/android/hwcamera/FocusManager;->isCAFSupported()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 677
-    iput v3, p0, Lcom/android/hwcamera/FocusManager;->mFocusState:I
+    .line 536
+    iput v2, p0, Lcom/android/hwcamera/FocusManager;->mFocusState:I
 
-    .line 679
+    .line 538
     :cond_1
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mHandler:Landroid/os/Handler;
 
-    invoke-virtual {v0, v2}, Landroid/os/Handler;->removeMessages(I)V
+    invoke-virtual {v0, v3}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 680
+    .line 539
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x3
@@ -797,36 +1156,173 @@
     .locals 1
 
     .prologue
-    .line 930
+    .line 748
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusIndicator:Lcom/android/hwcamera/hwui/FocusIndicatorView;
 
     if-eqz v0, :cond_0
 
-    .line 931
+    .line 749
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusIndicator:Lcom/android/hwcamera/hwui/FocusIndicatorView;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/hwui/FocusIndicatorView;->clear()V
 
-    .line 933
+    .line 751
     :cond_0
     return-void
+.end method
+
+.method public doFoucsPolicy(Landroid/hardware/Camera$Parameters;)V
+    .locals 5
+    .parameter "parameters"
+
+    .prologue
+    .line 952
+    const-string v2, "FocusManager"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "doFoucsPolicy="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget v4, p0, Lcom/android/hwcamera/FocusManager;->mFocusPolicy:I
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 953
+    if-nez p1, :cond_1
+
+    .line 954
+    const-string v2, "FocusManager"
+
+    const-string v3, "cannot doFoucsPolicy if parameters is null"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 968
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 958
+    :cond_1
+    iget-boolean v2, p0, Lcom/android/hwcamera/FocusManager;->mMeteringAreaSupported:Z
+
+    if-eqz v2, :cond_2
+
+    .line 959
+    iget v2, p0, Lcom/android/hwcamera/FocusManager;->mFocusPolicy:I
+
+    invoke-direct {p0, v2}, Lcom/android/hwcamera/FocusManager;->genMeteringAreaByFocusPolicy(I)Ljava/util/List;
+
+    move-result-object v1
+
+    .line 960
+    .local v1, _meteringArea:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Area;>;"
+    const-string v2, "FocusManager"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "set_focus : meteringArea:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-direct {p0, v1}, Lcom/android/hwcamera/FocusManager;->toString(Ljava/util/List;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 961
+    invoke-virtual {p1, v1}, Landroid/hardware/Camera$Parameters;->setMeteringAreas(Ljava/util/List;)V
+
+    .line 963
+    .end local v1           #_meteringArea:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Area;>;"
+    :cond_2
+    iget-boolean v2, p0, Lcom/android/hwcamera/FocusManager;->mFocusAreaSupported:Z
+
+    if-eqz v2, :cond_0
+
+    .line 964
+    iget v2, p0, Lcom/android/hwcamera/FocusManager;->mFocusPolicy:I
+
+    invoke-direct {p0, v2}, Lcom/android/hwcamera/FocusManager;->genFocusAreaByFocusPolicy(I)Ljava/util/List;
+
+    move-result-object v0
+
+    .line 965
+    .local v0, _focusArea:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Area;>;"
+    const-string v2, "FocusManager"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "set_focus :focusArea:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-direct {p0, v0}, Lcom/android/hwcamera/FocusManager;->toString(Ljava/util/List;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 966
+    invoke-virtual {p1, v0}, Landroid/hardware/Camera$Parameters;->setFocusAreas(Ljava/util/List;)V
+
+    goto :goto_0
 .end method
 
 .method public doSnap()V
     .locals 2
 
     .prologue
-    .line 346
+    .line 314
     iget-boolean v0, p0, Lcom/android/hwcamera/FocusManager;->mInitialized:Z
 
     if-nez v0, :cond_1
 
-    .line 366
+    .line 334
     :cond_0
     :goto_0
     return-void
 
-    .line 351
+    .line 319
     :cond_1
     invoke-direct {p0}, Lcom/android/hwcamera/FocusManager;->needAutoFocusCall()Z
 
@@ -846,13 +1342,13 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 352
+    .line 320
     :cond_2
     invoke-direct {p0}, Lcom/android/hwcamera/FocusManager;->capture()V
 
     goto :goto_0
 
-    .line 353
+    .line 321
     :cond_3
     iget v0, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
@@ -860,27 +1356,27 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 357
+    .line 325
     const-string v0, "FocusManager"
 
     const-string v1, "FocusManger doSnap()  mState = STATE_FOCUSING_SNAP_ON_FINISH "
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 358
+    .line 326
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
     goto :goto_0
 
-    .line 359
+    .line 327
     :cond_4
     iget v0, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
     if-nez v0, :cond_0
 
-    .line 364
+    .line 332
     invoke-direct {p0}, Lcom/android/hwcamera/FocusManager;->capture()V
 
     goto :goto_0
@@ -890,12 +1386,12 @@
     .locals 1
 
     .prologue
-    .line 940
+    .line 758
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/hwcamera/FocusManager;->mIsNeedPlaySound:Z
 
-    .line 941
+    .line 759
     return-void
 .end method
 
@@ -903,205 +1399,71 @@
     .locals 1
 
     .prologue
-    .line 890
+    .line 708
     iget-boolean v0, p0, Lcom/android/hwcamera/FocusManager;->mAeAwbLock:Z
 
     return v0
 .end method
 
-.method public declared-synchronized getCAFFocusAreas()Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Landroid/hardware/Camera$Area;",
-            ">;"
-        }
-    .end annotation
+.method public getDefaultFocusRect()Landroid/graphics/Rect;
+    .locals 9
 
     .prologue
-    .line 1145
-    monitor-enter p0
+    .line 1081
+    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
 
-    :try_start_0
-    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mCAFFocusArea:Ljava/util/List;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    if-nez v0, :cond_0
 
-    monitor-exit p0
+    .line 1082
+    const/4 v8, 0x0
 
-    return-object v0
+    .line 1090
+    :goto_0
+    return-object v8
 
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized getCAFMeteringAreas()Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Landroid/hardware/Camera$Area;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 1149
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mCAFMeteringArea:Ljava/util/List;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public getDefaultFocusAreas()Ljava/util/List;
-    .locals 7
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Landroid/hardware/Camera$Area;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    const/4 v6, 0x0
-
-    .line 1153
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    .line 1154
-    .local v1, defaultArea:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Area;>;"
-    sget v4, Lcom/android/hwcamera/FocusManager;->FOCUS_AREA_LENGTH:I
-
-    div-int/lit8 v4, v4, 0x2
-
-    int-to-float v4, v4
-
-    sget v5, Lcom/android/hwcamera/FocusManager;->FOCUS_AREA_RATE:F
-
-    mul-float/2addr v4, v5
-
-    float-to-int v3, v4
-
-    .line 1155
-    .local v3, width:I
-    invoke-direct {p0, v3}, Lcom/android/hwcamera/FocusManager;->genFoucsRect(I)Landroid/graphics/Rect;
-
-    move-result-object v0
-
-    .line 1156
-    .local v0, _area:Landroid/graphics/Rect;
-    new-instance v4, Landroid/graphics/Point;
-
-    invoke-direct {v4, v6, v6}, Landroid/graphics/Point;-><init>(II)V
-
-    const/high16 v5, 0x3f80
-
-    invoke-static {v0, v4, v5}, Lcom/android/hwcamera/Util;->optmizeFocusAreaRect(Landroid/graphics/Rect;Landroid/graphics/Point;F)Landroid/graphics/Rect;
-
-    move-result-object v2
-
-    .line 1157
-    .local v2, optmizeRect:Landroid/graphics/Rect;
-    if-eqz v2, :cond_0
-
-    .line 1158
-    move-object v0, v2
-
-    .line 1160
+    .line 1084
     :cond_0
-    new-instance v4, Landroid/hardware/Camera$Area;
+    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
 
-    const/4 v5, 0x1
+    invoke-virtual {v0}, Landroid/view/View;->getWidth()I
 
-    invoke-direct {v4, v0, v5}, Landroid/hardware/Camera$Area;-><init>(Landroid/graphics/Rect;I)V
+    move-result v6
 
-    invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    .line 1085
+    .local v6, previewWidth:I
+    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
 
-    .line 1161
-    return-object v1
-.end method
+    invoke-virtual {v0}, Landroid/view/View;->getHeight()I
 
-.method public getDefaultMeteringAreas()Ljava/util/List;
-    .locals 6
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Landroid/hardware/Camera$Area;",
-            ">;"
-        }
-    .end annotation
+    move-result v7
 
-    .prologue
-    .line 1164
-    new-instance v0, Ljava/util/ArrayList;
+    .line 1086
+    .local v7, previewHeight:I
+    new-instance v8, Landroid/graphics/Rect;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v8}, Landroid/graphics/Rect;-><init>()V
 
-    .line 1165
-    .local v0, defaultArea:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Area;>;"
-    sget v2, Lcom/android/hwcamera/FocusManager;->FOCUS_AREA_LENGTH:I
+    .line 1087
+    .local v8, rect:Landroid/graphics/Rect;
+    invoke-direct {p0}, Lcom/android/hwcamera/FocusManager;->getFocusAreaWidth()I
 
-    div-int/lit8 v2, v2, 0x2
+    move-result v1
 
-    int-to-float v2, v2
+    invoke-direct {p0}, Lcom/android/hwcamera/FocusManager;->getFocusAreaHeight()I
 
-    sget v3, Lcom/android/hwcamera/FocusManager;->FOCUS_AREA_RATE:F
+    move-result v2
 
-    mul-float/2addr v2, v3
+    const/high16 v3, 0x3f80
 
-    float-to-double v2, v2
+    div-int/lit8 v4, v6, 0x2
 
-    const-wide/high16 v4, 0x3ff8
+    div-int/lit8 v5, v7, 0x2
 
-    mul-double/2addr v2, v4
+    move-object v0, p0
 
-    double-to-int v1, v2
+    invoke-virtual/range {v0 .. v8}, Lcom/android/hwcamera/FocusManager;->calculateTapArea(IIFIIIILandroid/graphics/Rect;)V
 
-    .line 1166
-    .local v1, width:I
-    new-instance v2, Landroid/hardware/Camera$Area;
-
-    invoke-direct {p0, v1}, Lcom/android/hwcamera/FocusManager;->genFoucsRect(I)Landroid/graphics/Rect;
-
-    move-result-object v3
-
-    const/4 v4, 0x1
-
-    invoke-direct {v2, v3, v4}, Landroid/hardware/Camera$Area;-><init>(Landroid/graphics/Rect;I)V
-
-    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 1167
-    return-object v0
+    goto :goto_0
 .end method
 
 .method public declared-synchronized getFocusAreas()Ljava/util/List;
@@ -1117,7 +1479,7 @@
     .end annotation
 
     .prologue
-    .line 755
+    .line 614
     monitor-enter p0
 
     :try_start_0
@@ -1141,29 +1503,29 @@
     .locals 2
 
     .prologue
-    .line 726
+    .line 585
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mOverrideFocusMode:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mOverrideFocusMode:Ljava/lang/String;
 
-    .line 749
+    .line 608
     :goto_0
     return-object v0
 
-    .line 728
+    .line 587
     :cond_0
     iget-boolean v0, p0, Lcom/android/hwcamera/FocusManager;->mInLongPress:Z
 
     if-eqz v0, :cond_2
 
-    .line 731
+    .line 590
     const-string v0, "auto"
 
     iput-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusMode:Ljava/lang/String;
 
-    .line 739
+    .line 598
     :goto_1
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusMode:Ljava/lang/String;
 
@@ -1179,7 +1541,7 @@
 
     if-nez v0, :cond_1
 
-    .line 742
+    .line 601
     const-string v0, "auto"
 
     iget-object v1, p0, Lcom/android/hwcamera/FocusManager;->mParameters:Landroid/hardware/Camera$Parameters;
@@ -1194,19 +1556,19 @@
 
     if-eqz v0, :cond_4
 
-    .line 744
+    .line 603
     const-string v0, "auto"
 
     iput-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusMode:Ljava/lang/String;
 
-    .line 749
+    .line 608
     :cond_1
     :goto_2
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusMode:Ljava/lang/String;
 
     goto :goto_0
 
-    .line 732
+    .line 591
     :cond_2
     iget-boolean v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusAreaSupported:Z
 
@@ -1218,14 +1580,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 734
+    .line 593
     const-string v0, "auto"
 
     iput-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusMode:Ljava/lang/String;
 
     goto :goto_1
 
-    .line 737
+    .line 596
     :cond_3
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mDefaultFocusMode:Ljava/lang/String;
 
@@ -1233,7 +1595,7 @@
 
     goto :goto_1
 
-    .line 746
+    .line 605
     :cond_4
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mParameters:Landroid/hardware/Camera$Parameters;
 
@@ -1244,39 +1606,6 @@
     iput-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusMode:Ljava/lang/String;
 
     goto :goto_2
-.end method
-
-.method public declared-synchronized getMeteringAreas()Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Landroid/hardware/Camera$Area;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 761
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mMeteringArea:Ljava/util/List;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method
 
 .method public handleFocus(IIIZ)Z
@@ -1293,13 +1622,13 @@
 
     const/4 v7, 0x0
 
-    .line 565
+    .line 424
     iput v9, p0, Lcom/android/hwcamera/FocusManager;->mFocusState:I
 
-    .line 566
+    .line 425
     iput-boolean p4, p0, Lcom/android/hwcamera/FocusManager;->mIsNeedPlaySound:Z
 
-    .line 568
+    .line 427
     iget-boolean v8, p0, Lcom/android/hwcamera/FocusManager;->mInitialized:Z
 
     if-eqz v8, :cond_0
@@ -1311,11 +1640,11 @@
     :cond_0
     move v6, v7
 
-    .line 617
+    .line 476
     :goto_0
     return v6
 
-    .line 573
+    .line 432
     :cond_1
     iget v8, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
@@ -1333,23 +1662,23 @@
 
     if-ne v8, v9, :cond_3
 
-    .line 574
+    .line 433
     :cond_2
     invoke-virtual {p0}, Lcom/android/hwcamera/FocusManager;->cancelAutoFocus()V
 
-    .line 580
+    .line 439
     :cond_3
     invoke-direct {p0}, Lcom/android/hwcamera/FocusManager;->getFocusAreaWidth()I
 
     move-result v1
 
-    .line 581
+    .line 440
     .local v1, focusWidth:I
     invoke-direct {p0}, Lcom/android/hwcamera/FocusManager;->getFocusAreaHeight()I
 
     move-result v0
 
-    .line 582
+    .line 441
     .local v0, focusHeight:I
     iget-object v8, p0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
 
@@ -1357,7 +1686,7 @@
 
     move-result v4
 
-    .line 583
+    .line 442
     .local v4, previewWidth:I
     iget-object v8, p0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
 
@@ -1365,14 +1694,14 @@
 
     move-result v3
 
-    .line 585
+    .line 444
     .local v3, previewHeight:I
     iput p1, p0, Lcom/android/hwcamera/FocusManager;->mTouchPointX:I
 
-    .line 586
+    .line 445
     iput p2, p0, Lcom/android/hwcamera/FocusManager;->mTouchPointY:I
 
-    .line 598
+    .line 457
     add-int/lit8 v8, p1, -0x20
 
     add-int/lit8 v9, v4, -0x41
@@ -1381,7 +1710,7 @@
 
     move-result v2
 
-    .line 599
+    .line 458
     .local v2, left:I
     add-int/lit8 v8, p2, -0x20
 
@@ -1391,35 +1720,35 @@
 
     move-result v5
 
-    .line 600
+    .line 459
     .local v5, top:I
     iget-object v8, p0, Lcom/android/hwcamera/FocusManager;->mFocusIndicator:Lcom/android/hwcamera/hwui/FocusIndicatorView;
 
     invoke-virtual {v8, v2, v5}, Lcom/android/hwcamera/hwui/FocusIndicatorView;->setLocation(II)V
 
-    .line 602
+    .line 461
     if-ne p3, v6, :cond_4
 
-    .line 603
+    .line 462
     iget-object v7, p0, Lcom/android/hwcamera/FocusManager;->mListener:Lcom/android/hwcamera/FocusManager$Listener;
 
     invoke-interface {v7}, Lcom/android/hwcamera/FocusManager$Listener;->setFocusParameters()V
 
-    .line 610
+    .line 469
     invoke-direct {p0}, Lcom/android/hwcamera/FocusManager;->autoFocus()V
 
     goto :goto_0
 
-    .line 612
+    .line 471
     :cond_4
     invoke-virtual {p0}, Lcom/android/hwcamera/FocusManager;->updateFocusUI()V
 
-    .line 614
+    .line 473
     iget-object v8, p0, Lcom/android/hwcamera/FocusManager;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v8, v7}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 615
+    .line 474
     iget-object v8, p0, Lcom/android/hwcamera/FocusManager;->mHandler:Landroid/os/Handler;
 
     const-wide/16 v9, 0x3e8
@@ -1439,10 +1768,10 @@
     .parameter "displayOrientation"
 
     .prologue
-    .line 209
+    .line 211
     iput-object p1, p0, Lcom/android/hwcamera/FocusManager;->mFocusIndicatorRotateLayout:Landroid/view/View;
 
-    .line 210
+    .line 212
     const v1, 0x7f0c003f
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1453,21 +1782,21 @@
 
     iput-object v1, p0, Lcom/android/hwcamera/FocusManager;->mFocusIndicator:Lcom/android/hwcamera/hwui/FocusIndicatorView;
 
-    .line 212
+    .line 214
     iput-object p2, p0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
 
-    .line 213
+    .line 215
     iput-object p3, p0, Lcom/android/hwcamera/FocusManager;->mFaceView:Lcom/android/hwcamera/hwui/FaceView;
 
-    .line 214
+    .line 216
     iput-object p4, p0, Lcom/android/hwcamera/FocusManager;->mListener:Lcom/android/hwcamera/FocusManager$Listener;
 
-    .line 217
+    .line 219
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 218
+    .line 220
     .local v0, matrix:Landroid/graphics/Matrix;
     invoke-virtual {p2}, Landroid/view/View;->getWidth()I
 
@@ -1479,26 +1808,31 @@
 
     invoke-static {v0, p5, p6, v1, v2}, Lcom/android/hwcamera/Util;->prepareMatrix(Landroid/graphics/Matrix;ZIII)V
 
-    .line 223
+    .line 225
     iget-object v1, p0, Lcom/android/hwcamera/FocusManager;->mMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->invert(Landroid/graphics/Matrix;)Z
 
-    .line 225
+    .line 227
     iget-object v1, p0, Lcom/android/hwcamera/FocusManager;->mParameters:Landroid/hardware/Camera$Parameters;
 
     if-eqz v1, :cond_0
 
-    .line 226
+    .line 228
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/hwcamera/FocusManager;->mInitialized:Z
 
-    .line 230
+    .line 232
     :goto_0
+    const/4 v1, 0x2
+
+    invoke-virtual {p0, v1}, Lcom/android/hwcamera/FocusManager;->setFocusPolicy(I)V
+
+    .line 233
     return-void
 
-    .line 228
+    .line 230
     :cond_0
     const-string v1, "FocusManager"
 
@@ -1521,7 +1855,7 @@
     .line 191
     if-nez p1, :cond_0
 
-    .line 205
+    .line 207
     :goto_0
     return-void
 
@@ -1537,14 +1871,17 @@
     if-nez v0, :cond_1
 
     .line 196
-    iput-boolean v2, p0, Lcom/android/hwcamera/FocusManager;->mFocusAreaSupported:Z
+    iput-boolean v2, p0, Lcom/android/hwcamera/FocusManager;->mMeteringAreaSupported:Z
 
     .line 197
+    iput-boolean v2, p0, Lcom/android/hwcamera/FocusManager;->mFocusAreaSupported:Z
+
+    .line 198
     iput-boolean v2, p0, Lcom/android/hwcamera/FocusManager;->mLockAeAwbNeeded:Z
 
     goto :goto_0
 
-    .line 200
+    .line 201
     :cond_1
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mParameters:Landroid/hardware/Camera$Parameters;
 
@@ -1573,7 +1910,21 @@
     :goto_1
     iput-boolean v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusAreaSupported:Z
 
-    .line 203
+    .line 204
+    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mParameters:Landroid/hardware/Camera$Parameters;
+
+    invoke-virtual {v0}, Landroid/hardware/Camera$Parameters;->getMaxNumMeteringAreas()I
+
+    move-result v0
+
+    if-lez v0, :cond_5
+
+    move v0, v1
+
+    :goto_2
+    iput-boolean v0, p0, Lcom/android/hwcamera/FocusManager;->mMeteringAreaSupported:Z
+
+    .line 205
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-virtual {v0}, Landroid/hardware/Camera$Parameters;->isAutoExposureLockSupported()Z
@@ -1601,8 +1952,14 @@
     :cond_4
     move v0, v2
 
-    .line 200
+    .line 201
     goto :goto_1
+
+    :cond_5
+    move v0, v2
+
+    .line 204
+    goto :goto_2
 .end method
 
 .method public initializeSoundPlayer(Landroid/content/Context;Z)V
@@ -1611,12 +1968,12 @@
     .parameter "isEnforceAudible"
 
     .prologue
-    .line 695
+    .line 554
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 697
+    .line 556
     .local v0, resources:Landroid/content/res/Resources;
     new-instance v1, Lcom/android/hwcamera/SoundPlayer;
 
@@ -1630,7 +1987,7 @@
 
     iput-object v1, p0, Lcom/android/hwcamera/FocusManager;->mSoundPlayerSuccess:Lcom/android/hwcamera/SoundPlayer;
 
-    .line 708
+    .line 567
     return-void
 .end method
 
@@ -1638,7 +1995,7 @@
     .locals 2
 
     .prologue
-    .line 925
+    .line 743
     const-string v0, "continuous-picture"
 
     iget-object v1, p0, Lcom/android/hwcamera/FocusManager;->mParameters:Landroid/hardware/Camera$Parameters;
@@ -1658,7 +2015,7 @@
     .locals 1
 
     .prologue
-    .line 449
+    .line 417
     monitor-enter p0
 
     :try_start_0
@@ -1692,7 +2049,7 @@
     .locals 2
 
     .prologue
-    .line 873
+    .line 691
     iget v0, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
     const/4 v1, 0x3
@@ -1723,7 +2080,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 912
+    .line 730
     iget v1, p0, Lcom/android/hwcamera/FocusManager;->mFocusState:I
 
     if-ne v1, v0, :cond_0
@@ -1743,7 +2100,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 936
+    .line 754
     iget v1, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
     if-eq v1, v0, :cond_0
@@ -1768,7 +2125,7 @@
     .locals 1
 
     .prologue
-    .line 970
+    .line 788
     iget-boolean v0, p0, Lcom/android/hwcamera/FocusManager;->mInLongPress:Z
 
     return v0
@@ -1783,10 +2140,10 @@
 
     const/4 v3, 0x0
 
-    .line 976
+    .line 794
     monitor-enter p0
 
-    .line 977
+    .line 795
     :try_start_0
     iget-object v2, p0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
 
@@ -1800,21 +2157,21 @@
 
     if-nez v2, :cond_1
 
-    .line 978
+    .line 796
     :cond_0
     monitor-exit p0
 
-    .line 984
+    .line 802
     :goto_0
     return v1
 
-    .line 980
+    .line 798
     :cond_1
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 981
+    .line 799
     const/4 v2, 0x2
 
     new-array v0, v2, [F
@@ -1831,16 +2188,16 @@
 
     aput v2, v0, v1
 
-    .line 982
+    .line 800
     .local v0, points:[F
     iget-object v1, p0, Lcom/android/hwcamera/FocusManager;->mMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v1, v0}, Landroid/graphics/Matrix;->mapPoints([F)V
 
-    .line 983
+    .line 801
     monitor-enter p0
 
-    .line 984
+    .line 802
     :try_start_1
     iget-object v1, p0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
 
@@ -1874,7 +2231,7 @@
 
     goto :goto_0
 
-    .line 986
+    .line 804
     :catchall_0
     move-exception v1
 
@@ -1884,7 +2241,7 @@
 
     throw v1
 
-    .line 980
+    .line 798
     .end local v0           #points:[F
     :catchall_1
     move-exception v1
@@ -1906,7 +2263,7 @@
 
     const/4 v4, 0x3
 
-    .line 374
+    .line 342
     const-string v1, "FocusManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1941,43 +2298,43 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 375
+    .line 343
     const/4 v1, 0x0
 
     iput v1, p0, Lcom/android/hwcamera/FocusManager;->mFocusState:I
 
-    .line 379
+    .line 347
     iget v1, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
     const/4 v2, 0x2
 
     if-ne v1, v2, :cond_2
 
-    .line 383
+    .line 351
     if-eqz p1, :cond_1
 
-    .line 384
+    .line 352
     iput v4, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
-    .line 388
+    .line 356
     :goto_0
     invoke-virtual {p0}, Lcom/android/hwcamera/FocusManager;->updateFocusUI()V
 
-    .line 389
+    .line 357
     invoke-direct {p0}, Lcom/android/hwcamera/FocusManager;->capture()V
 
-    .line 432
+    .line 400
     :cond_0
     :goto_1
     return-void
 
-    .line 386
+    .line 354
     :cond_1
     iput v5, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
     goto :goto_0
 
-    .line 390
+    .line 358
     :cond_2
     iget v1, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
@@ -1985,16 +2342,16 @@
 
     if-ne v1, v2, :cond_6
 
-    .line 395
+    .line 363
     if-eqz p1, :cond_4
 
-    .line 396
+    .line 364
     iput v4, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
-    .line 397
+    .line 365
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mSoundPlayerSuccess:Lcom/android/hwcamera/SoundPlayer;
 
-    .line 408
+    .line 376
     .local v0, soundPlayer:Lcom/android/hwcamera/SoundPlayer;
     :goto_2
     const-string v1, "continuous-picture"
@@ -2017,17 +2374,17 @@
 
     if-nez v1, :cond_3
 
-    .line 410
+    .line 378
     invoke-virtual {v0}, Lcom/android/hwcamera/SoundPlayer;->play()V
 
-    .line 413
+    .line 381
     :cond_3
     invoke-virtual {p0}, Lcom/android/hwcamera/FocusManager;->updateFocusUI()V
 
-    .line 421
+    .line 389
     if-eqz p1, :cond_5
 
-    .line 422
+    .line 390
     iget-object v1, p0, Lcom/android/hwcamera/FocusManager;->mHandler:Landroid/os/Handler;
 
     const-wide/16 v2, 0x3e8
@@ -2036,18 +2393,18 @@
 
     goto :goto_1
 
-    .line 399
+    .line 367
     .end local v0           #soundPlayer:Lcom/android/hwcamera/SoundPlayer;
     :cond_4
     iput v5, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
-    .line 401
+    .line 369
     const/4 v0, 0x0
 
     .restart local v0       #soundPlayer:Lcom/android/hwcamera/SoundPlayer;
     goto :goto_2
 
-    .line 424
+    .line 392
     :cond_5
     iget-object v1, p0, Lcom/android/hwcamera/FocusManager;->mHandler:Landroid/os/Handler;
 
@@ -2057,7 +2414,7 @@
 
     goto :goto_1
 
-    .line 428
+    .line 396
     .end local v0           #soundPlayer:Lcom/android/hwcamera/SoundPlayer;
     :cond_6
     iget v1, p0, Lcom/android/hwcamera/FocusManager;->mState:I
@@ -2074,7 +2431,7 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 1104
+    .line 898
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFaceView:Lcom/android/hwcamera/hwui/FaceView;
 
     if-eqz v0, :cond_1
@@ -2087,26 +2444,26 @@
 
     if-eqz v0, :cond_1
 
-    .line 1142
+    .line 936
     :cond_0
     :goto_0
     return-void
 
-    .line 1108
+    .line 902
     :cond_1
     iget v0, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
     if-nez v0, :cond_0
 
-    .line 1110
+    .line 904
     if-eqz p1, :cond_3
 
-    .line 1112
+    .line 906
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/android/hwcamera/Util;->setIsCafEnded(Z)V
 
-    .line 1114
+    .line 908
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v3}, Landroid/os/Handler;->hasMessages(I)Z
@@ -2115,18 +2472,18 @@
 
     if-eqz v0, :cond_2
 
-    .line 1115
+    .line 909
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v3}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 1117
+    .line 911
     :cond_2
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusIndicator:Lcom/android/hwcamera/hwui/FocusIndicatorView;
 
     if-eqz v0, :cond_0
 
-    .line 1118
+    .line 912
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusIndicator:Lcom/android/hwcamera/hwui/FocusIndicatorView;
 
     new-instance v1, Lcom/android/hwcamera/FocusManager$2;
@@ -2137,16 +2494,16 @@
 
     goto :goto_0
 
-    .line 1129
+    .line 923
     :cond_3
     invoke-static {v3}, Lcom/android/hwcamera/Util;->setIsCafEnded(Z)V
 
-    .line 1131
+    .line 925
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusIndicator:Lcom/android/hwcamera/hwui/FocusIndicatorView;
 
     if-eqz v0, :cond_0
 
-    .line 1132
+    .line 926
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusIndicator:Lcom/android/hwcamera/hwui/FocusIndicatorView;
 
     new-instance v1, Lcom/android/hwcamera/FocusManager$3;
@@ -2155,7 +2512,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/FocusIndicatorView;->post(Ljava/lang/Runnable;)Z
 
-    .line 1139
+    .line 933
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mHandler:Landroid/os/Handler;
 
     const-wide/16 v1, 0x3e8
@@ -2169,12 +2526,12 @@
     .locals 1
 
     .prologue
-    .line 628
+    .line 487
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
-    .line 629
+    .line 488
     return-void
 .end method
 
@@ -2184,42 +2541,44 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 632
+    .line 491
     iput v1, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
-    .line 633
+    .line 492
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 634
+    .line 493
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 635
+    .line 494
     return-void
 .end method
 
 .method public onShutterDown()V
-    .locals 4
+    .locals 5
 
     .prologue
+    const/4 v4, 0x4
+
     const/4 v3, 0x1
 
-    .line 233
+    .line 236
     iget-boolean v1, p0, Lcom/android/hwcamera/FocusManager;->mInitialized:Z
 
     if-nez v1, :cond_1
 
-    .line 255
+    .line 258
     :cond_0
     :goto_0
     return-void
 
-    .line 236
+    .line 239
     :cond_1
     iget-boolean v1, p0, Lcom/android/hwcamera/FocusManager;->mLockAeAwbNeeded:Z
 
@@ -2229,15 +2588,18 @@
 
     if-nez v1, :cond_2
 
-    .line 237
+    .line 240
     iput-boolean v3, p0, Lcom/android/hwcamera/FocusManager;->mAeAwbLock:Z
 
-    .line 238
+    .line 241
+    invoke-virtual {p0, v4}, Lcom/android/hwcamera/FocusManager;->setFocusPolicy(I)V
+
+    .line 242
     iget-object v1, p0, Lcom/android/hwcamera/FocusManager;->mListener:Lcom/android/hwcamera/FocusManager$Listener;
 
     invoke-interface {v1}, Lcom/android/hwcamera/FocusManager$Listener;->setFocusParameters()V
 
-    .line 241
+    .line 245
     :cond_2
     invoke-direct {p0}, Lcom/android/hwcamera/FocusManager;->needAutoFocusCall()Z
 
@@ -2245,7 +2607,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 243
+    .line 247
     iget v1, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
     const/4 v2, 0x3
@@ -2254,33 +2616,28 @@
 
     iget v1, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
-    const/4 v2, 0x4
+    if-eq v1, v4, :cond_0
 
-    if-eq v1, v2, :cond_0
-
-    .line 244
+    .line 248
     const/4 v0, 0x0
 
-    .line 245
+    .line 249
     .local v0, isNeedPlaySound:Z
     iget-boolean v1, p0, Lcom/android/hwcamera/FocusManager;->mIsNeedPlaySound:Z
 
     if-eqz v1, :cond_3
 
-    .line 246
+    .line 250
     const/4 v0, 0x1
 
-    .line 248
+    .line 252
     :cond_3
-    invoke-virtual {p0}, Lcom/android/hwcamera/FocusManager;->resetTouchFocus()V
-
-    .line 249
     if-eqz v0, :cond_4
 
-    .line 250
+    .line 253
     iput-boolean v3, p0, Lcom/android/hwcamera/FocusManager;->mIsNeedPlaySound:Z
 
-    .line 252
+    .line 255
     :cond_4
     invoke-direct {p0}, Lcom/android/hwcamera/FocusManager;->autoFocus()V
 
@@ -2291,17 +2648,17 @@
     .locals 2
 
     .prologue
-    .line 258
+    .line 261
     iget-boolean v0, p0, Lcom/android/hwcamera/FocusManager;->mInitialized:Z
 
     if-nez v0, :cond_1
 
-    .line 274
+    .line 277
     :cond_0
     :goto_0
     return-void
 
-    .line 260
+    .line 263
     :cond_1
     invoke-direct {p0}, Lcom/android/hwcamera/FocusManager;->needAutoFocusCall()Z
 
@@ -2309,7 +2666,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 262
+    .line 265
     iget v0, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
     const/4 v1, 0x1
@@ -2328,11 +2685,11 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 264
+    .line 267
     :cond_2
     invoke-virtual {p0}, Lcom/android/hwcamera/FocusManager;->cancelAutoFocus()V
 
-    .line 270
+    .line 273
     :cond_3
     iget-boolean v0, p0, Lcom/android/hwcamera/FocusManager;->mLockAeAwbNeeded:Z
 
@@ -2348,12 +2705,12 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 271
+    .line 274
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/hwcamera/FocusManager;->mAeAwbLock:Z
 
-    .line 272
+    .line 275
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mListener:Lcom/android/hwcamera/FocusManager$Listener;
 
     invoke-interface {v0}, Lcom/android/hwcamera/FocusManager$Listener;->setFocusParameters()V
@@ -2367,28 +2724,32 @@
     .parameter "y"
 
     .prologue
-    .line 990
-    const/4 v0, 0x2
+    const/4 v4, 0x3
 
-    iput v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusState:I
+    const/4 v3, 0x2
 
-    .line 992
+    const/4 v12, 0x0
+
+    const/4 v11, 0x1
+
+    .line 808
+    iput v3, p0, Lcom/android/hwcamera/FocusManager;->mFocusState:I
+
+    .line 810
     iget-boolean v0, p0, Lcom/android/hwcamera/FocusManager;->mInitialized:Z
 
     if-eqz v0, :cond_0
 
     iget v0, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
-    const/4 v3, 0x2
-
     if-ne v0, v3, :cond_1
 
-    .line 1099
+    .line 893
     :cond_0
     :goto_0
     return-void
 
-    .line 995
+    .line 813
     :cond_1
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
 
@@ -2396,17 +2757,15 @@
 
     iget v0, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
-    const/4 v3, 0x1
+    if-eq v0, v11, :cond_0
 
-    if-eq v0, v3, :cond_0
-
-    .line 1000
+    .line 818
     :cond_2
     iget-boolean v0, p0, Lcom/android/hwcamera/FocusManager;->mTouchFocusEnable:Z
 
     if-nez v0, :cond_3
 
-    .line 1001
+    .line 819
     const-string v0, "FocusManager"
 
     const-string v3, "onTouch, !mTouchFocusEnable return"
@@ -2415,7 +2774,7 @@
 
     goto :goto_0
 
-    .line 1005
+    .line 823
     :cond_3
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mCameraMovedController:Lcom/android/hwcamera/CameraMovedController;
 
@@ -2423,22 +2782,18 @@
 
     invoke-virtual {v0, v3}, Lcom/android/hwcamera/CameraMovedController;->removeOnCameraMovedListener(Lcom/android/hwcamera/CameraMovedController$OnCameraMovedListener;)V
 
-    .line 1007
+    .line 825
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
 
     if-eqz v0, :cond_5
 
     iget v0, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
-    const/4 v3, 0x1
-
-    if-eq v0, v3, :cond_4
+    if-eq v0, v11, :cond_4
 
     iget v0, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
-    const/4 v3, 0x3
-
-    if-eq v0, v3, :cond_4
+    if-eq v0, v4, :cond_4
 
     iget v0, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
@@ -2446,28 +2801,26 @@
 
     if-ne v0, v3, :cond_5
 
-    .line 1013
+    .line 831
     :cond_4
     invoke-virtual {p0}, Lcom/android/hwcamera/FocusManager;->cancelAutoFocus()V
 
-    .line 1015
+    .line 833
     :cond_5
-    const/4 v0, 0x1
+    iput-boolean v11, p0, Lcom/android/hwcamera/FocusManager;->mIsNeedPlaySound:Z
 
-    iput-boolean v0, p0, Lcom/android/hwcamera/FocusManager;->mIsNeedPlaySound:Z
-
-    .line 1019
+    .line 837
     invoke-direct {p0}, Lcom/android/hwcamera/FocusManager;->getFocusAreaWidth()I
 
     move-result v1
 
-    .line 1020
+    .line 838
     .local v1, focusWidth:I
     invoke-direct {p0}, Lcom/android/hwcamera/FocusManager;->getFocusAreaHeight()I
 
     move-result v2
 
-    .line 1021
+    .line 839
     .local v2, focusHeight:I
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
 
@@ -2475,7 +2828,7 @@
 
     move-result v6
 
-    .line 1022
+    .line 840
     .local v6, previewWidth:I
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
 
@@ -2483,24 +2836,24 @@
 
     move-result v7
 
-    .line 1025
+    .line 843
     .local v7, previewHeight:I
     monitor-enter p0
 
-    .line 1026
+    .line 844
     :try_start_0
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
 
     if-nez v0, :cond_6
 
-    .line 1033
+    .line 845
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
 
-    .line 1034
+    .line 846
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
 
     new-instance v3, Landroid/hardware/Camera$Area;
@@ -2515,29 +2868,7 @@
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1035
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/android/hwcamera/FocusManager;->mMeteringArea:Ljava/util/List;
-
-    .line 1036
-    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mMeteringArea:Ljava/util/List;
-
-    new-instance v3, Landroid/hardware/Camera$Area;
-
-    new-instance v4, Landroid/graphics/Rect;
-
-    invoke-direct {v4}, Landroid/graphics/Rect;-><init>()V
-
-    const/4 v5, 0x1
-
-    invoke-direct {v3, v4, v5}, Landroid/hardware/Camera$Area;-><init>(Landroid/graphics/Rect;I)V
-
-    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 1042
+    .line 852
     :cond_6
     const/high16 v3, 0x3f80
 
@@ -2561,189 +2892,81 @@
 
     invoke-virtual/range {v0 .. v8}, Lcom/android/hwcamera/FocusManager;->calculateTapArea(IIFIIIILandroid/graphics/Rect;)V
 
-    .line 1050
-    const/4 v0, 0x2
+    .line 854
+    const/4 v0, 0x3
 
-    new-array v11, v0, [F
+    invoke-virtual {p0, v0}, Lcom/android/hwcamera/FocusManager;->setFocusPolicy(I)V
 
-    const/4 v0, 0x0
-
-    int-to-float v3, p1
-
-    aput v3, v11, v0
-
-    const/4 v0, 0x1
-
-    int-to-float v3, p2
-
-    aput v3, v11, v0
-
-    .line 1051
-    .local v11, points:[F
-    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mMatrix:Landroid/graphics/Matrix;
-
-    invoke-virtual {v0, v11}, Landroid/graphics/Matrix;->mapPoints([F)V
-
-    .line 1052
-    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
-
-    const/4 v3, 0x0
-
-    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/hardware/Camera$Area;
-
-    iget-object v0, v0, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
-
-    new-instance v3, Landroid/graphics/Point;
-
-    const/4 v4, 0x0
-
-    aget v4, v11, v4
-
-    float-to-int v4, v4
-
-    const/4 v5, 0x1
-
-    aget v5, v11, v5
-
-    float-to-int v5, v5
-
-    invoke-direct {v3, v4, v5}, Landroid/graphics/Point;-><init>(II)V
-
-    int-to-float v4, v7
-
-    int-to-float v5, v6
-
-    div-float/2addr v4, v5
-
-    invoke-static {v0, v3, v4}, Lcom/android/hwcamera/Util;->optmizeFocusAreaRect(Landroid/graphics/Rect;Landroid/graphics/Point;F)Landroid/graphics/Rect;
-
-    move-result-object v10
-
-    .line 1055
-    .local v10, optmizeRect:Landroid/graphics/Rect;
-    if-eqz v10, :cond_7
-
-    .line 1056
-    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
-
-    const/4 v3, 0x0
-
-    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/hardware/Camera$Area;
-
-    iput-object v10, v0, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
-
-    .line 1059
-    :cond_7
-    const/high16 v3, 0x3fc0
-
-    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mMeteringArea:Ljava/util/List;
-
-    const/4 v4, 0x0
-
-    invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/hardware/Camera$Area;
-
-    iget-object v8, v0, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
-
-    move-object v0, p0
-
-    move v4, p1
-
-    move v5, p2
-
-    invoke-virtual/range {v0 .. v8}, Lcom/android/hwcamera/FocusManager;->calculateTapArea(IIFIIIILandroid/graphics/Rect;)V
-
-    .line 1061
+    .line 855
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1074
+    .line 868
     add-int/lit8 v0, p1, -0x20
 
-    const/4 v3, 0x0
+    add-int/lit8 v3, v6, -0x41
 
-    add-int/lit8 v4, v6, -0x41
-
-    invoke-static {v0, v3, v4}, Lcom/android/hwcamera/Util;->clamp(III)I
+    invoke-static {v0, v12, v3}, Lcom/android/hwcamera/Util;->clamp(III)I
 
     move-result v9
 
-    .line 1075
+    .line 869
     .local v9, left:I
     add-int/lit8 v0, p2, -0x20
 
-    const/4 v3, 0x0
+    add-int/lit8 v3, v7, -0x41
 
-    add-int/lit8 v4, v7, -0x41
+    invoke-static {v0, v12, v3}, Lcom/android/hwcamera/Util;->clamp(III)I
 
-    invoke-static {v0, v3, v4}, Lcom/android/hwcamera/Util;->clamp(III)I
+    move-result v10
 
-    move-result v12
-
-    .line 1076
-    .local v12, top:I
+    .line 870
+    .local v10, top:I
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusIndicator:Lcom/android/hwcamera/hwui/FocusIndicatorView;
 
-    invoke-virtual {v0, v9, v12}, Lcom/android/hwcamera/hwui/FocusIndicatorView;->setLocation(II)V
+    invoke-virtual {v0, v9, v10}, Lcom/android/hwcamera/hwui/FocusIndicatorView;->setLocation(II)V
 
-    .line 1079
+    .line 873
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mHandler:Landroid/os/Handler;
 
-    const/4 v3, 0x1
-
-    invoke-virtual {v0, v3}, Landroid/os/Handler;->hasMessages(I)Z
+    invoke-virtual {v0, v11}, Landroid/os/Handler;->hasMessages(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_7
 
-    .line 1080
+    .line 874
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mHandler:Landroid/os/Handler;
 
-    const/4 v3, 0x1
+    invoke-virtual {v0, v11}, Landroid/os/Handler;->removeMessages(I)V
 
-    invoke-virtual {v0, v3}, Landroid/os/Handler;->removeMessages(I)V
-
-    .line 1083
-    :cond_8
+    .line 877
+    :cond_7
     iget-boolean v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusAreaSupported:Z
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_8
 
-    .line 1084
+    .line 878
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mListener:Lcom/android/hwcamera/FocusManager$Listener;
 
     invoke-interface {v0}, Lcom/android/hwcamera/FocusManager$Listener;->setFocusParameters()V
 
-    .line 1091
+    .line 885
     const-string v0, "FocusManager"
 
     const-string v3, "FocusMange autoFocus"
 
     invoke-static {v0, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1092
+    .line 886
     invoke-direct {p0}, Lcom/android/hwcamera/FocusManager;->autoFocus()V
 
     goto/16 :goto_0
 
-    .line 1061
+    .line 855
     .end local v9           #left:I
-    .end local v10           #optmizeRect:Landroid/graphics/Rect;
-    .end local v11           #points:[F
-    .end local v12           #top:I
+    .end local v10           #top:I
     :catchall_0
     move-exception v0
 
@@ -2754,590 +2977,36 @@
 
     throw v0
 
-    .line 1094
+    .line 888
     .restart local v9       #left:I
-    .restart local v10       #optmizeRect:Landroid/graphics/Rect;
-    .restart local v11       #points:[F
-    .restart local v12       #top:I
-    :cond_9
+    .restart local v10       #top:I
+    :cond_8
     invoke-virtual {p0}, Lcom/android/hwcamera/FocusManager;->updateFocusUI()V
 
-    .line 1096
+    .line 890
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mHandler:Landroid/os/Handler;
 
-    const/4 v3, 0x0
+    invoke-virtual {v0, v12}, Landroid/os/Handler;->removeMessages(I)V
 
-    invoke-virtual {v0, v3}, Landroid/os/Handler;->removeMessages(I)V
-
-    .line 1097
+    .line 891
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mHandler:Landroid/os/Handler;
 
-    const/4 v3, 0x0
+    const-wide/16 v3, 0x3e8
 
-    const-wide/16 v4, 0x3e8
-
-    invoke-virtual {v0, v3, v4, v5}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
+    invoke-virtual {v0, v12, v3, v4}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     goto/16 :goto_0
 .end method
 
 .method public onTouch(Landroid/view/MotionEvent;)Z
-    .locals 19
+    .locals 1
     .parameter "event"
 
     .prologue
-    .line 453
-    const/4 v2, 0x2
+    .line 420
+    const/4 v0, 0x0
 
-    move-object/from16 v0, p0
-
-    iput v2, v0, Lcom/android/hwcamera/FocusManager;->mFocusState:I
-
-    .line 454
-    const/4 v2, 0x1
-
-    move-object/from16 v0, p0
-
-    iput-boolean v2, v0, Lcom/android/hwcamera/FocusManager;->mIsNeedPlaySound:Z
-
-    .line 456
-    move-object/from16 v0, p0
-
-    iget-boolean v2, v0, Lcom/android/hwcamera/FocusManager;->mInitialized:Z
-
-    if-eqz v2, :cond_0
-
-    move-object/from16 v0, p0
-
-    iget v2, v0, Lcom/android/hwcamera/FocusManager;->mState:I
-
-    const/4 v5, 0x2
-
-    if-ne v2, v5, :cond_1
-
-    .line 457
-    :cond_0
-    const/4 v2, 0x0
-
-    .line 560
-    :goto_0
-    return v2
-
-    .line 459
-    :cond_1
-    invoke-virtual/range {p0 .. p0}, Lcom/android/hwcamera/FocusManager;->isFocusAreaNotNull()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    move-object/from16 v0, p0
-
-    iget v2, v0, Lcom/android/hwcamera/FocusManager;->mState:I
-
-    const/4 v5, 0x1
-
-    if-ne v2, v5, :cond_2
-
-    .line 460
-    const/4 v2, 0x1
-
-    goto :goto_0
-
-    .line 464
-    :cond_2
-    move-object/from16 v0, p0
-
-    iget-boolean v2, v0, Lcom/android/hwcamera/FocusManager;->mTouchFocusEnable:Z
-
-    if-nez v2, :cond_3
-
-    .line 465
-    const-string v2, "FocusManager"
-
-    const-string v5, "onTouch, !mTouchFocusEnable return"
-
-    invoke-static {v2, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 466
-    const/4 v2, 0x1
-
-    goto :goto_0
-
-    .line 471
-    :cond_3
-    invoke-virtual/range {p0 .. p0}, Lcom/android/hwcamera/FocusManager;->isFocusAreaNotNull()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_5
-
-    move-object/from16 v0, p0
-
-    iget v2, v0, Lcom/android/hwcamera/FocusManager;->mState:I
-
-    const/4 v5, 0x1
-
-    if-eq v2, v5, :cond_4
-
-    move-object/from16 v0, p0
-
-    iget v2, v0, Lcom/android/hwcamera/FocusManager;->mState:I
-
-    const/4 v5, 0x3
-
-    if-eq v2, v5, :cond_4
-
-    move-object/from16 v0, p0
-
-    iget v2, v0, Lcom/android/hwcamera/FocusManager;->mState:I
-
-    const/4 v5, 0x4
-
-    if-ne v2, v5, :cond_5
-
-    .line 475
-    :cond_4
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/hwcamera/FocusManager;->mCameraMovedController:Lcom/android/hwcamera/CameraMovedController;
-
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Lcom/android/hwcamera/FocusManager;->cameraMovedListener:Lcom/android/hwcamera/CameraMovedController$OnCameraMovedListener;
-
-    invoke-virtual {v2, v5}, Lcom/android/hwcamera/CameraMovedController;->removeOnCameraMovedListener(Lcom/android/hwcamera/CameraMovedController$OnCameraMovedListener;)V
-
-    .line 478
-    invoke-virtual/range {p0 .. p0}, Lcom/android/hwcamera/FocusManager;->cancelAutoFocus()V
-
-    .line 482
-    :cond_5
-    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Math;->round(F)I
-
-    move-result v6
-
-    .line 483
-    .local v6, x:I
-    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Math;->round(F)I
-
-    move-result v7
-
-    .line 484
-    .local v7, y:I
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/hwcamera/FocusManager;->mFocusIndicatorRotateLayout:Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getWidth()I
-
-    move-result v3
-
-    .line 485
-    .local v3, focusWidth:I
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/hwcamera/FocusManager;->mFocusIndicatorRotateLayout:Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getHeight()I
-
-    move-result v4
-
-    .line 486
-    .local v4, focusHeight:I
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getWidth()I
-
-    move-result v8
-
-    .line 487
-    .local v8, previewWidth:I
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getHeight()I
-
-    move-result v9
-
-    .line 490
-    .local v9, previewHeight:I
-    monitor-enter p0
-
-    .line 491
-    :try_start_0
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
-
-    if-nez v2, :cond_6
-
-    .line 498
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
-
-    move-object/from16 v0, p0
-
-    iput-object v2, v0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
-
-    .line 499
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
-
-    new-instance v5, Landroid/hardware/Camera$Area;
-
-    new-instance v10, Landroid/graphics/Rect;
-
-    invoke-direct {v10}, Landroid/graphics/Rect;-><init>()V
-
-    const/16 v17, 0x1
-
-    move/from16 v0, v17
-
-    invoke-direct {v5, v10, v0}, Landroid/hardware/Camera$Area;-><init>(Landroid/graphics/Rect;I)V
-
-    invoke-interface {v2, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 500
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
-
-    move-object/from16 v0, p0
-
-    iput-object v2, v0, Lcom/android/hwcamera/FocusManager;->mMeteringArea:Ljava/util/List;
-
-    .line 501
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/hwcamera/FocusManager;->mMeteringArea:Ljava/util/List;
-
-    new-instance v5, Landroid/hardware/Camera$Area;
-
-    new-instance v10, Landroid/graphics/Rect;
-
-    invoke-direct {v10}, Landroid/graphics/Rect;-><init>()V
-
-    const/16 v17, 0x1
-
-    move/from16 v0, v17
-
-    invoke-direct {v5, v10, v0}, Landroid/hardware/Camera$Area;-><init>(Landroid/graphics/Rect;I)V
-
-    invoke-interface {v2, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 507
-    :cond_6
-    const/high16 v5, 0x3f80
-
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
-
-    const/4 v10, 0x0
-
-    invoke-interface {v2, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/hardware/Camera$Area;
-
-    iget-object v10, v2, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
-
-    move-object/from16 v2, p0
-
-    invoke-virtual/range {v2 .. v10}, Lcom/android/hwcamera/FocusManager;->calculateTapArea(IIFIIIILandroid/graphics/Rect;)V
-
-    .line 515
-    const/4 v2, 0x2
-
-    new-array v14, v2, [F
-
-    const/4 v2, 0x0
-
-    int-to-float v5, v6
-
-    aput v5, v14, v2
-
-    const/4 v2, 0x1
-
-    int-to-float v5, v7
-
-    aput v5, v14, v2
-
-    .line 516
-    .local v14, points:[F
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/hwcamera/FocusManager;->mMatrix:Landroid/graphics/Matrix;
-
-    invoke-virtual {v2, v14}, Landroid/graphics/Matrix;->mapPoints([F)V
-
-    .line 517
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
-
-    const/4 v5, 0x0
-
-    invoke-interface {v2, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/hardware/Camera$Area;
-
-    iget-object v2, v2, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
-
-    new-instance v5, Landroid/graphics/Point;
-
-    const/4 v10, 0x0
-
-    aget v10, v14, v10
-
-    float-to-int v10, v10
-
-    const/16 v17, 0x1
-
-    aget v17, v14, v17
-
-    move/from16 v0, v17
-
-    float-to-int v0, v0
-
-    move/from16 v17, v0
-
-    move/from16 v0, v17
-
-    invoke-direct {v5, v10, v0}, Landroid/graphics/Point;-><init>(II)V
-
-    int-to-float v10, v9
-
-    int-to-float v0, v8
-
-    move/from16 v17, v0
-
-    div-float v10, v10, v17
-
-    invoke-static {v2, v5, v10}, Lcom/android/hwcamera/Util;->optmizeFocusAreaRect(Landroid/graphics/Rect;Landroid/graphics/Point;F)Landroid/graphics/Rect;
-
-    move-result-object v12
-
-    .line 520
-    .local v12, optmizeRect:Landroid/graphics/Rect;
-    if-eqz v12, :cond_7
-
-    .line 521
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
-
-    const/4 v5, 0x0
-
-    invoke-interface {v2, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/hardware/Camera$Area;
-
-    iput-object v12, v2, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
-
-    .line 524
-    :cond_7
-    const/high16 v5, 0x3fc0
-
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/hwcamera/FocusManager;->mMeteringArea:Ljava/util/List;
-
-    const/4 v10, 0x0
-
-    invoke-interface {v2, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/hardware/Camera$Area;
-
-    iget-object v10, v2, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
-
-    move-object/from16 v2, p0
-
-    invoke-virtual/range {v2 .. v10}, Lcom/android/hwcamera/FocusManager;->calculateTapArea(IIFIIIILandroid/graphics/Rect;)V
-
-    .line 526
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 530
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/hwcamera/FocusManager;->mFocusIndicatorRotateLayout:Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v13
-
-    check-cast v13, Landroid/widget/RelativeLayout$LayoutParams;
-
-    .line 532
-    .local v13, p:Landroid/widget/RelativeLayout$LayoutParams;
-    div-int/lit8 v2, v3, 0x2
-
-    sub-int v2, v6, v2
-
-    const/4 v5, 0x0
-
-    sub-int v10, v8, v3
-
-    invoke-static {v2, v5, v10}, Lcom/android/hwcamera/Util;->clamp(III)I
-
-    move-result v11
-
-    .line 533
-    .local v11, left:I
-    div-int/lit8 v2, v4, 0x2
-
-    sub-int v2, v7, v2
-
-    const/4 v5, 0x0
-
-    sub-int v10, v9, v4
-
-    invoke-static {v2, v5, v10}, Lcom/android/hwcamera/Util;->clamp(III)I
-
-    move-result v16
-
-    .line 534
-    .local v16, top:I
-    const/4 v2, 0x0
-
-    const/4 v5, 0x0
-
-    move/from16 v0, v16
-
-    invoke-virtual {v13, v11, v0, v2, v5}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
-
-    .line 536
-    invoke-virtual {v13}, Landroid/widget/RelativeLayout$LayoutParams;->getRules()[I
-
-    move-result-object v15
-
-    .line 537
-    .local v15, rules:[I
-    const/16 v2, 0xd
-
-    const/4 v5, 0x0
-
-    aput v5, v15, v2
-
-    .line 538
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/hwcamera/FocusManager;->mFocusIndicatorRotateLayout:Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->requestLayout()V
-
-    .line 544
-    move-object/from16 v0, p0
-
-    iget-boolean v2, v0, Lcom/android/hwcamera/FocusManager;->mFocusAreaSupported:Z
-
-    if-eqz v2, :cond_8
-
-    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result v2
-
-    const/4 v5, 0x1
-
-    if-ne v2, v5, :cond_8
-
-    .line 545
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/hwcamera/FocusManager;->mListener:Lcom/android/hwcamera/FocusManager$Listener;
-
-    invoke-interface {v2}, Lcom/android/hwcamera/FocusManager$Listener;->setFocusParameters()V
-
-    .line 552
-    const-string v2, "FocusManager"
-
-    const-string v5, "FocusMange autoFocus"
-
-    invoke-static {v2, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 553
-    invoke-direct/range {p0 .. p0}, Lcom/android/hwcamera/FocusManager;->autoFocus()V
-
-    .line 560
-    :goto_1
-    const/4 v2, 0x1
-
-    goto/16 :goto_0
-
-    .line 526
-    .end local v11           #left:I
-    .end local v12           #optmizeRect:Landroid/graphics/Rect;
-    .end local v13           #p:Landroid/widget/RelativeLayout$LayoutParams;
-    .end local v14           #points:[F
-    .end local v15           #rules:[I
-    .end local v16           #top:I
-    :catchall_0
-    move-exception v2
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v2
-
-    .line 555
-    .restart local v11       #left:I
-    .restart local v12       #optmizeRect:Landroid/graphics/Rect;
-    .restart local v13       #p:Landroid/widget/RelativeLayout$LayoutParams;
-    .restart local v14       #points:[F
-    .restart local v15       #rules:[I
-    .restart local v16       #top:I
-    :cond_8
-    invoke-virtual/range {p0 .. p0}, Lcom/android/hwcamera/FocusManager;->updateFocusUI()V
-
-    .line 557
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/hwcamera/FocusManager;->mHandler:Landroid/os/Handler;
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v2, v5}, Landroid/os/Handler;->removeMessages(I)V
-
-    .line 558
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/hwcamera/FocusManager;->mHandler:Landroid/os/Handler;
-
-    const/4 v5, 0x0
-
-    const-wide/16 v17, 0x3e8
-
-    move-wide/from16 v0, v17
-
-    invoke-virtual {v2, v5, v0, v1}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
-
-    goto :goto_1
+    return v0
 .end method
 
 .method public overrideFocusMode(Ljava/lang/String;)V
@@ -3345,13 +3014,13 @@
     .parameter "focusMode"
 
     .prologue
-    .line 881
+    .line 699
     iput-object p1, p0, Lcom/android/hwcamera/FocusManager;->mOverrideFocusMode:Ljava/lang/String;
 
-    .line 882
+    .line 700
     iput-object p1, p0, Lcom/android/hwcamera/FocusManager;->mFocusMode:Ljava/lang/String;
 
-    .line 883
+    .line 701
     return-void
 .end method
 
@@ -3359,23 +3028,78 @@
     .locals 1
 
     .prologue
-    .line 715
+    .line 574
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mSoundPlayerSuccess:Lcom/android/hwcamera/SoundPlayer;
 
     if-eqz v0, :cond_0
 
-    .line 716
+    .line 575
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mSoundPlayerSuccess:Lcom/android/hwcamera/SoundPlayer;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/SoundPlayer;->release()V
 
-    .line 717
+    .line 576
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/hwcamera/FocusManager;->mSoundPlayerSuccess:Lcom/android/hwcamera/SoundPlayer;
 
-    .line 722
+    .line 581
     :cond_0
+    return-void
+.end method
+
+.method public resetFocusFrame()V
+    .locals 7
+
+    .prologue
+    const/4 v6, 0x0
+
+    .line 667
+    iget-object v4, p0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
+
+    invoke-virtual {v4}, Landroid/view/View;->getWidth()I
+
+    move-result v2
+
+    .line 668
+    .local v2, previewWidth:I
+    iget-object v4, p0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
+
+    invoke-virtual {v4}, Landroid/view/View;->getHeight()I
+
+    move-result v1
+
+    .line 669
+    .local v1, previewHeight:I
+    div-int/lit8 v4, v2, 0x2
+
+    add-int/lit8 v4, v4, -0x20
+
+    add-int/lit8 v5, v2, -0x41
+
+    invoke-static {v4, v6, v5}, Lcom/android/hwcamera/Util;->clamp(III)I
+
+    move-result v0
+
+    .line 672
+    .local v0, left:I
+    div-int/lit8 v4, v1, 0x2
+
+    add-int/lit8 v4, v4, -0x20
+
+    add-int/lit8 v5, v1, -0x41
+
+    invoke-static {v4, v6, v5}, Lcom/android/hwcamera/Util;->clamp(III)I
+
+    move-result v3
+
+    .line 675
+    .local v3, top:I
+    iget-object v4, p0, Lcom/android/hwcamera/FocusManager;->mFocusIndicator:Lcom/android/hwcamera/hwui/FocusIndicatorView;
+
+    invoke-virtual {v4, v0, v3}, Lcom/android/hwcamera/hwui/FocusIndicatorView;->setLocation(II)V
+
+    .line 676
     return-void
 .end method
 
@@ -3383,276 +3107,47 @@
     .locals 1
 
     .prologue
-    .line 805
-    const/4 v0, 0x1
+    .line 658
+    iget-boolean v0, p0, Lcom/android/hwcamera/FocusManager;->mInitialized:Z
 
-    invoke-virtual {p0, v0}, Lcom/android/hwcamera/FocusManager;->resetTouchFocus(Z)V
+    if-nez v0, :cond_0
 
-    .line 806
-    return-void
-.end method
-
-.method public resetTouchFocus(Z)V
-    .locals 11
-    .parameter "isForce"
-
-    .prologue
-    const/4 v10, 0x0
-
-    const/4 v9, 0x1
-
-    .line 809
-    iget-boolean v6, p0, Lcom/android/hwcamera/FocusManager;->mInitialized:Z
-
-    if-nez v6, :cond_0
-
-    .line 858
+    .line 664
     :goto_0
     return-void
 
-    .line 811
+    .line 660
     :cond_0
-    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mCAFFocusArea:Ljava/util/List;
-
-    if-eqz v6, :cond_1
-
-    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mCAFFocusArea:Ljava/util/List;
-
-    invoke-interface {v6}, Ljava/util/List;->size()I
-
-    move-result v6
-
-    if-eqz v6, :cond_1
-
-    if-eqz p1, :cond_3
-
-    .line 819
-    :cond_1
-    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
-
-    invoke-virtual {v6}, Landroid/view/View;->getWidth()I
-
-    move-result v4
-
-    .line 820
-    .local v4, previewWidth:I
-    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
-
-    invoke-virtual {v6}, Landroid/view/View;->getHeight()I
-
-    move-result v3
-
-    .line 821
-    .local v3, previewHeight:I
-    invoke-direct {p0}, Lcom/android/hwcamera/FocusManager;->getFocusAreaWidth()I
-
-    move-result v1
-
-    .line 822
-    .local v1, focusWidth:I
-    invoke-direct {p0}, Lcom/android/hwcamera/FocusManager;->getFocusAreaHeight()I
-
-    move-result v0
-
-    .line 823
-    .local v0, focusHeight:I
-    div-int/lit8 v6, v4, 0x2
-
-    add-int/lit8 v6, v6, -0x20
-
-    add-int/lit8 v7, v4, -0x41
-
-    invoke-static {v6, v10, v7}, Lcom/android/hwcamera/Util;->clamp(III)I
-
-    move-result v2
-
-    .line 825
-    .local v2, left:I
-    div-int/lit8 v6, v3, 0x2
-
-    add-int/lit8 v6, v6, -0x20
-
-    add-int/lit8 v7, v3, -0x41
-
-    invoke-static {v6, v10, v7}, Lcom/android/hwcamera/Util;->clamp(III)I
-
-    move-result v5
-
-    .line 827
-    .local v5, top:I
-    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mFocusIndicator:Lcom/android/hwcamera/hwui/FocusIndicatorView;
-
-    invoke-virtual {v6, v2, v5}, Lcom/android/hwcamera/hwui/FocusIndicatorView;->setLocation(II)V
-
-    .line 828
-    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mCAFFocusArea:Ljava/util/List;
-
-    if-eqz v6, :cond_2
-
-    .line 829
-    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mCAFFocusArea:Ljava/util/List;
-
-    invoke-interface {v6}, Ljava/util/List;->clear()V
-
-    .line 830
-    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mCAFFocusArea:Ljava/util/List;
-
-    new-instance v7, Landroid/hardware/Camera$Area;
-
-    new-instance v8, Landroid/graphics/Rect;
-
-    invoke-direct {v8}, Landroid/graphics/Rect;-><init>()V
-
-    invoke-direct {v7, v8, v9}, Landroid/hardware/Camera$Area;-><init>(Landroid/graphics/Rect;I)V
-
-    invoke-interface {v6, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 832
-    :cond_2
-    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mCAFMeteringArea:Ljava/util/List;
-
-    if-eqz v6, :cond_3
-
-    .line 833
-    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mCAFMeteringArea:Ljava/util/List;
-
-    invoke-interface {v6}, Ljava/util/List;->clear()V
-
-    .line 834
-    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mCAFMeteringArea:Ljava/util/List;
-
-    new-instance v7, Landroid/hardware/Camera$Area;
-
-    new-instance v8, Landroid/graphics/Rect;
-
-    invoke-direct {v8}, Landroid/graphics/Rect;-><init>()V
-
-    invoke-direct {v7, v8, v9}, Landroid/hardware/Camera$Area;-><init>(Landroid/graphics/Rect;I)V
-
-    invoke-interface {v6, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 837
-    .end local v0           #focusHeight:I
-    .end local v1           #focusWidth:I
-    .end local v2           #left:I
-    .end local v3           #previewHeight:I
-    .end local v4           #previewWidth:I
-    .end local v5           #top:I
-    :cond_3
-    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mCAFFocusArea:Ljava/util/List;
-
-    if-nez v6, :cond_4
-
-    .line 838
-    new-instance v6, Ljava/util/ArrayList;
-
-    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v6, p0, Lcom/android/hwcamera/FocusManager;->mCAFFocusArea:Ljava/util/List;
-
-    .line 839
-    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mCAFFocusArea:Ljava/util/List;
-
-    new-instance v7, Landroid/hardware/Camera$Area;
-
-    new-instance v8, Landroid/graphics/Rect;
-
-    invoke-direct {v8}, Landroid/graphics/Rect;-><init>()V
-
-    invoke-direct {v7, v8, v9}, Landroid/hardware/Camera$Area;-><init>(Landroid/graphics/Rect;I)V
-
-    invoke-interface {v6, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 841
-    :cond_4
-    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mCAFMeteringArea:Ljava/util/List;
-
-    if-nez v6, :cond_5
-
-    .line 842
-    new-instance v6, Ljava/util/ArrayList;
-
-    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v6, p0, Lcom/android/hwcamera/FocusManager;->mCAFMeteringArea:Ljava/util/List;
-
-    .line 843
-    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mCAFMeteringArea:Ljava/util/List;
-
-    new-instance v7, Landroid/hardware/Camera$Area;
-
-    new-instance v8, Landroid/graphics/Rect;
-
-    invoke-direct {v8}, Landroid/graphics/Rect;-><init>()V
-
-    invoke-direct {v7, v8, v9}, Landroid/hardware/Camera$Area;-><init>(Landroid/graphics/Rect;I)V
-
-    invoke-interface {v6, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 845
-    :cond_5
-    if-nez p1, :cond_7
-
-    .line 846
-    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
-
-    if-eqz v6, :cond_6
-
-    .line 847
-    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mCAFFocusArea:Ljava/util/List;
-
-    iget-object v7, p0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
-
-    invoke-static {v6, v7}, Ljava/util/Collections;->copy(Ljava/util/List;Ljava/util/List;)V
-
-    .line 849
-    :cond_6
-    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mMeteringArea:Ljava/util/List;
-
-    if-eqz v6, :cond_7
-
-    .line 850
-    iget-object v6, p0, Lcom/android/hwcamera/FocusManager;->mCAFMeteringArea:Ljava/util/List;
-
-    iget-object v7, p0, Lcom/android/hwcamera/FocusManager;->mMeteringArea:Ljava/util/List;
-
-    invoke-static {v6, v7}, Ljava/util/Collections;->copy(Ljava/util/List;Ljava/util/List;)V
-
-    .line 853
-    :cond_7
     monitor-enter p0
 
-    .line 854
-    const/4 v6, 0x0
+    .line 661
+    const/4 v0, 0x0
 
     :try_start_0
-    iput-object v6, p0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
+    iput-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
 
-    .line 855
-    const/4 v6, 0x0
-
-    iput-object v6, p0, Lcom/android/hwcamera/FocusManager;->mMeteringArea:Ljava/util/List;
-
-    .line 856
+    .line 662
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 857
-    iput-boolean v10, p0, Lcom/android/hwcamera/FocusManager;->mIsNeedPlaySound:Z
+    .line 663
+    const/4 v0, 0x0
 
-    goto/16 :goto_0
+    iput-boolean v0, p0, Lcom/android/hwcamera/FocusManager;->mIsNeedPlaySound:Z
 
-    .line 856
+    goto :goto_0
+
+    .line 662
     :catchall_0
-    move-exception v6
+    move-exception v0
 
     :try_start_1
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    throw v6
+    throw v0
 .end method
 
 .method public setAeAwbLock(Z)V
@@ -3660,10 +3155,10 @@
     .parameter "lock"
 
     .prologue
-    .line 886
+    .line 704
     iput-boolean p1, p0, Lcom/android/hwcamera/FocusManager;->mAeAwbLock:Z
 
-    .line 887
+    .line 705
     return-void
 .end method
 
@@ -3672,291 +3167,66 @@
     .parameter "mCameraMovedController"
 
     .prologue
-    .line 950
+    .line 768
     iput-object p1, p0, Lcom/android/hwcamera/FocusManager;->mCameraMovedController:Lcom/android/hwcamera/CameraMovedController;
 
-    .line 951
+    .line 769
     return-void
 .end method
 
-.method public setFocusAreaCentra()V
-    .locals 14
+.method public setFocusPolicy(I)V
+    .locals 2
+    .parameter "focusPolicy"
 
     .prologue
-    const/4 v13, 0x1
+    .line 1062
+    iput p1, p0, Lcom/android/hwcamera/FocusManager;->mFocusPolicy:I
 
-    const/4 v12, 0x0
+    .line 1063
+    iget v1, p0, Lcom/android/hwcamera/FocusManager;->mFocusPolicy:I
 
-    .line 278
-    const-string v0, "Focus"
+    packed-switch v1, :pswitch_data_0
 
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "shutterLongPressed, Parameters: continuous-picture, "
-
-    invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v8, p0, Lcom/android/hwcamera/FocusManager;->mFocusMode:Ljava/lang/String;
-
-    invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v0, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 281
-    invoke-direct {p0}, Lcom/android/hwcamera/FocusManager;->getFocusAreaWidth()I
-
-    move-result v1
-
-    .line 282
-    .local v1, focusWidth:I
-    invoke-direct {p0}, Lcom/android/hwcamera/FocusManager;->getFocusAreaHeight()I
-
-    move-result v2
-
-    .line 283
-    .local v2, focusHeight:I
-    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->getWidth()I
-
-    move-result v6
-
-    .line 284
-    .local v6, previewWidth:I
-    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mPreviewFrame:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->getHeight()I
-
-    move-result v7
-
-    .line 285
-    .local v7, previewHeight:I
-    div-int/lit8 v4, v6, 0x2
-
-    .line 286
-    .local v4, x:I
-    div-int/lit8 v5, v7, 0x2
-
-    .line 288
-    .local v5, y:I
-    monitor-enter p0
-
-    .line 289
-    :try_start_0
-    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
-
-    if-nez v0, :cond_0
-
-    .line 290
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
-
-    .line 291
-    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
-
-    new-instance v3, Landroid/hardware/Camera$Area;
-
-    new-instance v8, Landroid/graphics/Rect;
-
-    invoke-direct {v8}, Landroid/graphics/Rect;-><init>()V
-
-    const/4 v11, 0x1
-
-    invoke-direct {v3, v8, v11}, Landroid/hardware/Camera$Area;-><init>(Landroid/graphics/Rect;I)V
-
-    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 292
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/android/hwcamera/FocusManager;->mMeteringArea:Ljava/util/List;
-
-    .line 293
-    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mMeteringArea:Ljava/util/List;
-
-    new-instance v3, Landroid/hardware/Camera$Area;
-
-    new-instance v8, Landroid/graphics/Rect;
-
-    invoke-direct {v8}, Landroid/graphics/Rect;-><init>()V
-
-    const/4 v11, 0x1
-
-    invoke-direct {v3, v8, v11}, Landroid/hardware/Camera$Area;-><init>(Landroid/graphics/Rect;I)V
-
-    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 295
-    :cond_0
-    const/high16 v3, 0x3f80
-
-    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
-
-    const/4 v8, 0x0
-
-    invoke-interface {v0, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/hardware/Camera$Area;
-
-    iget-object v8, v0, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
-
-    move-object v0, p0
-
-    invoke-virtual/range {v0 .. v8}, Lcom/android/hwcamera/FocusManager;->calculateTapArea(IIFIIIILandroid/graphics/Rect;)V
-
-    .line 297
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 298
-    const/4 v0, 0x2
-
-    new-array v10, v0, [F
-
-    int-to-float v0, v4
-
-    aput v0, v10, v12
-
-    int-to-float v0, v5
-
-    aput v0, v10, v13
-
-    .line 299
-    .local v10, points:[F
-    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mMatrix:Landroid/graphics/Matrix;
-
-    invoke-virtual {v0, v10}, Landroid/graphics/Matrix;->mapPoints([F)V
-
-    .line 300
-    monitor-enter p0
-
-    .line 301
-    :try_start_1
-    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
-
-    const/4 v3, 0x0
-
-    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/hardware/Camera$Area;
-
-    iget-object v0, v0, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
-
-    new-instance v3, Landroid/graphics/Point;
-
-    const/4 v8, 0x0
-
-    aget v8, v10, v8
-
-    float-to-int v8, v8
-
-    const/4 v11, 0x1
-
-    aget v11, v10, v11
-
-    float-to-int v11, v11
-
-    invoke-direct {v3, v8, v11}, Landroid/graphics/Point;-><init>(II)V
-
-    int-to-float v8, v7
-
-    int-to-float v11, v6
-
-    div-float/2addr v8, v11
-
-    invoke-static {v0, v3, v8}, Lcom/android/hwcamera/Util;->optmizeFocusAreaRect(Landroid/graphics/Rect;Landroid/graphics/Point;F)Landroid/graphics/Rect;
-
-    move-result-object v9
-
-    .line 305
-    .local v9, optmizeRect:Landroid/graphics/Rect;
-    if-eqz v9, :cond_1
-
-    .line 306
-    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
-
-    const/4 v3, 0x0
-
-    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/hardware/Camera$Area;
-
-    iput-object v9, v0, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
-
-    .line 308
-    :cond_1
-    const/high16 v3, 0x3fc0
-
-    iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mMeteringArea:Ljava/util/List;
-
-    const/4 v8, 0x0
-
-    invoke-interface {v0, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/hardware/Camera$Area;
-
-    iget-object v8, v0, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
-
-    move-object v0, p0
-
-    invoke-virtual/range {v0 .. v8}, Lcom/android/hwcamera/FocusManager;->calculateTapArea(IIFIIIILandroid/graphics/Rect;)V
-
-    .line 310
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    .line 311
+    .line 1078
+    :goto_0
+    :pswitch_0
     return-void
 
-    .line 297
-    .end local v9           #optmizeRect:Landroid/graphics/Rect;
-    .end local v10           #points:[F
-    :catchall_0
+    .line 1065
+    :pswitch_1
+    iget-object v1, p0, Lcom/android/hwcamera/FocusManager;->mFocusArea:Ljava/util/List;
+
+    iput-object v1, p0, Lcom/android/hwcamera/FocusManager;->mLastFocusArea:Ljava/util/List;
+
+    goto :goto_0
+
+    .line 1070
+    :pswitch_2
+    :try_start_0
+    invoke-virtual {p0}, Lcom/android/hwcamera/FocusManager;->resetFocusFrame()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    .line 1071
+    :catch_0
     move-exception v0
 
-    :try_start_2
-    monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    .line 1072
+    .local v0, e:Ljava/lang/Exception;
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    throw v0
+    goto :goto_0
 
-    .line 310
-    .restart local v10       #points:[F
-    :catchall_1
-    move-exception v0
-
-    :try_start_3
-    monitor-exit p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    throw v0
+    .line 1063
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_2
+        :pswitch_0
+        :pswitch_2
+    .end packed-switch
 .end method
 
 .method public setFocusStateCAFFace()Z
@@ -3965,19 +3235,19 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 916
+    .line 734
     iget v1, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
     if-eqz v1, :cond_0
 
-    .line 917
+    .line 735
     const/4 v0, 0x0
 
-    .line 921
+    .line 739
     :goto_0
     return v0
 
-    .line 920
+    .line 738
     :cond_0
     iput v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusState:I
 
@@ -3989,10 +3259,10 @@
     .parameter "isMute"
 
     .prologue
-    .line 180
+    .line 181
     iput-boolean p1, p0, Lcom/android/hwcamera/FocusManager;->mIsMute:Z
 
-    .line 181
+    .line 182
     return-void
 .end method
 
@@ -4001,10 +3271,10 @@
     .parameter "enable"
 
     .prologue
-    .line 444
+    .line 412
     iput-boolean p1, p0, Lcom/android/hwcamera/FocusManager;->mTouchFocusEnable:Z
 
-    .line 445
+    .line 413
     return-void
 .end method
 
@@ -4014,10 +3284,12 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 325
-    invoke-virtual {p0}, Lcom/android/hwcamera/FocusManager;->setFocusAreaCentra()V
+    .line 292
+    const/4 v0, 0x4
 
-    .line 326
+    invoke-virtual {p0, v0}, Lcom/android/hwcamera/FocusManager;->setFocusPolicy(I)V
+
+    .line 294
     const-string v0, "continuous-picture"
 
     iget-object v1, p0, Lcom/android/hwcamera/FocusManager;->mFocusMode:Ljava/lang/String;
@@ -4042,7 +3314,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 328
+    .line 296
     iget v0, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
     if-eqz v0, :cond_0
@@ -4053,7 +3325,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 329
+    .line 297
     :cond_0
     const-string v0, "FocusManager"
 
@@ -4079,7 +3351,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 332
+    .line 300
     :cond_1
     const-string v0, "FocusManager"
 
@@ -4087,167 +3359,71 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 334
+    .line 302
     iput-boolean v3, p0, Lcom/android/hwcamera/FocusManager;->mIsNeedPlaySound:Z
 
-    .line 335
+    .line 303
     iput-boolean v3, p0, Lcom/android/hwcamera/FocusManager;->mInLongPress:Z
 
-    .line 338
+    .line 306
     invoke-virtual {p0}, Lcom/android/hwcamera/FocusManager;->onShutterUp()V
 
-    .line 340
+    .line 308
     invoke-virtual {p0}, Lcom/android/hwcamera/FocusManager;->onShutterDown()V
 
-    .line 341
+    .line 309
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/hwcamera/FocusManager;->mInLongPress:Z
 
-    .line 343
+    .line 311
     :cond_2
     return-void
-.end method
-
-.method public transformCoordinate([FLandroid/view/View;Landroid/hardware/Camera$Size;)V
-    .locals 9
-    .parameter "Coordinate"
-    .parameter "surfaceview"
-    .parameter "previewSize"
-
-    .prologue
-    const/4 v8, 0x1
-
-    const/4 v7, 0x0
-
-    .line 895
-    if-nez p3, :cond_0
-
-    .line 896
-    const-string v5, "FocusManager"
-
-    const-string v6, "previewSize is null"
-
-    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 909
-    :goto_0
-    return-void
-
-    .line 900
-    :cond_0
-    const/4 v5, 0x2
-
-    new-array v1, v5, [I
-
-    .line 901
-    .local v1, SurfaceViewLocation:[I
-    invoke-virtual {p2, v1}, Landroid/view/View;->getLocationOnScreen([I)V
-
-    .line 902
-    iget v5, p0, Lcom/android/hwcamera/FocusManager;->mTouchPointX:I
-
-    aget v6, v1, v7
-
-    sub-int/2addr v5, v6
-
-    int-to-float v3, v5
-
-    .line 903
-    .local v3, x:F
-    iget v5, p0, Lcom/android/hwcamera/FocusManager;->mTouchPointY:I
-
-    aget v6, v1, v8
-
-    sub-int/2addr v5, v6
-
-    int-to-float v4, v5
-
-    .line 905
-    .local v4, y:F
-    invoke-virtual {p2}, Landroid/view/View;->getWidth()I
-
-    move-result v2
-
-    .line 906
-    .local v2, SurfaceViewWidth:I
-    invoke-virtual {p2}, Landroid/view/View;->getHeight()I
-
-    move-result v0
-
-    .line 907
-    .local v0, SurfaceViewHeight:I
-    iget v5, p3, Landroid/hardware/Camera$Size;->width:I
-
-    int-to-float v5, v5
-
-    mul-float/2addr v5, v3
-
-    int-to-float v6, v2
-
-    div-float/2addr v5, v6
-
-    aput v5, p1, v7
-
-    .line 908
-    iget v5, p3, Landroid/hardware/Camera$Size;->height:I
-
-    int-to-float v5, v5
-
-    mul-float/2addr v5, v4
-
-    int-to-float v6, v0
-
-    div-float/2addr v5, v6
-
-    aput v5, p1, v8
-
-    goto :goto_0
 .end method
 
 .method public updateFocusUI()V
     .locals 3
 
     .prologue
-    .line 765
+    .line 618
     iget-boolean v1, p0, Lcom/android/hwcamera/FocusManager;->mInitialized:Z
 
     if-nez v1, :cond_1
 
-    .line 802
+    .line 655
     :cond_0
     :goto_0
     return-void
 
-    .line 776
+    .line 629
     :cond_1
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager;->mFocusIndicator:Lcom/android/hwcamera/hwui/FocusIndicatorView;
 
-    .line 778
+    .line 631
     .local v0, focusIndicator:Lcom/android/hwcamera/hwui/FocusIndicator;
     iget v1, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
     if-nez v1, :cond_3
 
-    .line 779
+    .line 632
     invoke-virtual {p0}, Lcom/android/hwcamera/FocusManager;->isFocusAreaNotNull()Z
 
     move-result v1
 
     if-nez v1, :cond_2
 
-    .line 780
+    .line 633
     invoke-interface {v0}, Lcom/android/hwcamera/hwui/FocusIndicator;->clear()V
 
     goto :goto_0
 
-    .line 785
+    .line 638
     :cond_2
     invoke-interface {v0}, Lcom/android/hwcamera/hwui/FocusIndicator;->showStart()V
 
     goto :goto_0
 
-    .line 787
+    .line 640
     :cond_3
     iget v1, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
@@ -4261,13 +3437,13 @@
 
     if-ne v1, v2, :cond_5
 
-    .line 788
+    .line 641
     :cond_4
     invoke-interface {v0}, Lcom/android/hwcamera/hwui/FocusIndicator;->showFocuing()V
 
     goto :goto_0
 
-    .line 796
+    .line 649
     :cond_5
     iget v1, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
@@ -4275,12 +3451,12 @@
 
     if-ne v1, v2, :cond_6
 
-    .line 797
+    .line 650
     invoke-interface {v0}, Lcom/android/hwcamera/hwui/FocusIndicator;->showSuccess()V
 
     goto :goto_0
 
-    .line 798
+    .line 651
     :cond_6
     iget v1, p0, Lcom/android/hwcamera/FocusManager;->mState:I
 
@@ -4288,7 +3464,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 799
+    .line 652
     invoke-interface {v0}, Lcom/android/hwcamera/hwui/FocusIndicator;->showFail()V
 
     goto :goto_0

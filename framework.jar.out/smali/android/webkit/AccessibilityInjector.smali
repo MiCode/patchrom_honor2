@@ -55,22 +55,27 @@
     .parameter "webViewClassic"
 
     .prologue
+    .line 100
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 101
     iput-object p1, p0, Landroid/webkit/AccessibilityInjector;->mWebViewClassic:Landroid/webkit/WebViewClassic;
 
+    .line 102
     invoke-virtual {p1}, Landroid/webkit/WebViewClassic;->getWebView()Landroid/webkit/WebView;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/webkit/AccessibilityInjector;->mWebView:Landroid/webkit/WebView;
 
+    .line 103
     invoke-virtual {p1}, Landroid/webkit/WebViewClassic;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/webkit/AccessibilityInjector;->mContext:Landroid/content/Context;
 
+    .line 104
     iget-object v0, p0, Landroid/webkit/AccessibilityInjector;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
@@ -79,6 +84,7 @@
 
     iput-object v0, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityManager:Landroid/view/accessibility/AccessibilityManager;
 
+    .line 105
     return-void
 .end method
 
@@ -86,13 +92,16 @@
     .locals 4
 
     .prologue
+    .line 373
     iget-object v0, p0, Landroid/webkit/AccessibilityInjector;->mCallback:Landroid/webkit/AccessibilityInjector$CallbackHandler;
 
     if-eqz v0, :cond_0
 
+    .line 379
     :goto_0
     return-void
 
+    .line 377
     :cond_0
     new-instance v0, Landroid/webkit/AccessibilityInjector$CallbackHandler;
 
@@ -104,6 +113,7 @@
 
     iput-object v0, p0, Landroid/webkit/AccessibilityInjector;->mCallback:Landroid/webkit/AccessibilityInjector$CallbackHandler;
 
+    .line 378
     iget-object v0, p0, Landroid/webkit/AccessibilityInjector;->mWebViewClassic:Landroid/webkit/WebViewClassic;
 
     iget-object v1, p0, Landroid/webkit/AccessibilityInjector;->mCallback:Landroid/webkit/AccessibilityInjector$CallbackHandler;
@@ -121,13 +131,16 @@
     .locals 4
 
     .prologue
+    .line 350
     iget-object v0, p0, Landroid/webkit/AccessibilityInjector;->mTextToSpeech:Landroid/webkit/AccessibilityInjector$TextToSpeechWrapper;
 
     if-eqz v0, :cond_0
 
+    .line 355
     :goto_0
     return-void
 
+    .line 353
     :cond_0
     new-instance v0, Landroid/webkit/AccessibilityInjector$TextToSpeechWrapper;
 
@@ -137,6 +150,7 @@
 
     iput-object v0, p0, Landroid/webkit/AccessibilityInjector;->mTextToSpeech:Landroid/webkit/AccessibilityInjector$TextToSpeechWrapper;
 
+    .line 354
     iget-object v0, p0, Landroid/webkit/AccessibilityInjector;->mWebViewClassic:Landroid/webkit/WebViewClassic;
 
     iget-object v1, p0, Landroid/webkit/AccessibilityInjector;->mTextToSpeech:Landroid/webkit/AccessibilityInjector$TextToSpeechWrapper;
@@ -157,12 +171,15 @@
     .prologue
     const/4 v3, -0x1
 
+    .line 399
     if-nez p1, :cond_1
 
+    .line 415
     :cond_0
     :goto_0
     return v3
 
+    .line 404
     :cond_1
     :try_start_0
     new-instance v4, Ljava/net/URI;
@@ -175,6 +192,7 @@
 
     move-result-object v2
 
+    .line 406
     .local v2, params:Ljava/util/List;,"Ljava/util/List<Lorg/apache/http/NameValuePair;>;"
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -194,6 +212,7 @@
 
     check-cast v1, Lorg/apache/http/NameValuePair;
 
+    .line 407
     .local v1, param:Lorg/apache/http/NameValuePair;
     const-string v4, "axs"
 
@@ -207,6 +226,7 @@
 
     if-eqz v4, :cond_2
 
+    .line 408
     invoke-interface {v1}, Lorg/apache/http/NameValuePair;->getValue()Ljava/lang/String;
 
     move-result-object v4
@@ -219,6 +239,7 @@
 
     goto :goto_0
 
+    .line 411
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #param:Lorg/apache/http/NameValuePair;
     .end local v2           #params:Ljava/util/List;,"Ljava/util/List<Lorg/apache/http/NameValuePair;>;"
@@ -232,6 +253,7 @@
     .locals 4
 
     .prologue
+    .line 439
     iget-object v1, p0, Landroid/webkit/AccessibilityInjector;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -244,6 +266,7 @@
 
     move-result-object v0
 
+    .line 441
     .local v0, screenReaderUrl:Ljava/lang/String;
     const-string v1, "javascript:(function() {    var chooser = document.createElement(\'script\');    chooser.type = \'text/javascript\';    chooser.src = \'%1s\';    document.getElementsByTagName(\'head\')[0].appendChild(chooser);  })();"
 
@@ -266,6 +289,7 @@
     .locals 1
 
     .prologue
+    .line 456
     iget-object v0, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityManager:Landroid/view/accessibility/AccessibilityManager;
 
     invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityManager;->isEnabled()Z
@@ -279,6 +303,7 @@
     .locals 1
 
     .prologue
+    .line 449
     iget-object v0, p0, Landroid/webkit/AccessibilityInjector;->mWebView:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
@@ -300,6 +325,7 @@
 
     const/4 v2, 0x0
 
+    .line 340
     iget-object v3, p0, Landroid/webkit/AccessibilityInjector;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -312,6 +338,7 @@
 
     move-result v0
 
+    .line 342
     .local v0, injectionSetting:I
     if-ne v0, v1, :cond_0
 
@@ -328,13 +355,16 @@
     .locals 2
 
     .prologue
+    .line 382
     iget-object v0, p0, Landroid/webkit/AccessibilityInjector;->mCallback:Landroid/webkit/AccessibilityInjector$CallbackHandler;
 
     if-nez v0, :cond_0
 
+    .line 388
     :goto_0
     return-void
 
+    .line 386
     :cond_0
     iget-object v0, p0, Landroid/webkit/AccessibilityInjector;->mWebView:Landroid/webkit/WebView;
 
@@ -342,6 +372,7 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->removeJavascriptInterface(Ljava/lang/String;)V
 
+    .line 387
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/webkit/AccessibilityInjector;->mCallback:Landroid/webkit/AccessibilityInjector$CallbackHandler;
@@ -353,13 +384,16 @@
     .locals 2
 
     .prologue
+    .line 362
     iget-object v0, p0, Landroid/webkit/AccessibilityInjector;->mTextToSpeech:Landroid/webkit/AccessibilityInjector$TextToSpeechWrapper;
 
     if-nez v0, :cond_0
 
+    .line 370
     :goto_0
     return-void
 
+    .line 366
     :cond_0
     iget-object v0, p0, Landroid/webkit/AccessibilityInjector;->mWebView:Landroid/webkit/WebView;
 
@@ -367,14 +401,17 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->removeJavascriptInterface(Ljava/lang/String;)V
 
+    .line 367
     iget-object v0, p0, Landroid/webkit/AccessibilityInjector;->mTextToSpeech:Landroid/webkit/AccessibilityInjector$TextToSpeechWrapper;
 
     invoke-virtual {v0}, Landroid/webkit/AccessibilityInjector$TextToSpeechWrapper;->stop()I
 
+    .line 368
     iget-object v0, p0, Landroid/webkit/AccessibilityInjector;->mTextToSpeech:Landroid/webkit/AccessibilityInjector$TextToSpeechWrapper;
 
     invoke-virtual {v0}, Landroid/webkit/AccessibilityInjector$TextToSpeechWrapper;->shutdown()V
 
+    .line 369
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/webkit/AccessibilityInjector;->mTextToSpeech:Landroid/webkit/AccessibilityInjector$TextToSpeechWrapper;
@@ -390,16 +427,19 @@
     .prologue
     const/4 v6, 0x0
 
+    .line 467
     iget-object v7, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityJSONObject:Lorg/json/JSONObject;
 
     if-nez v7, :cond_2
 
+    .line 468
     new-instance v7, Lorg/json/JSONObject;
 
     invoke-direct {v7}, Lorg/json/JSONObject;-><init>()V
 
     iput-object v7, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityJSONObject:Lorg/json/JSONObject;
 
+    .line 479
     :cond_0
     :try_start_0
     iget-object v7, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityJSONObject:Lorg/json/JSONObject;
@@ -414,8 +454,10 @@
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 481
     sparse-switch p1, :sswitch_data_0
 
+    .line 503
     :cond_1
     :goto_0
     iget-object v7, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityJSONObject:Lorg/json/JSONObject;
@@ -424,6 +466,7 @@
 
     move-result-object v4
 
+    .line 504
     .local v4, jsonString:Ljava/lang/String;
     const-string v7, "cvox.AndroidVox.performAction(\'%1s\')"
 
@@ -437,16 +480,19 @@
 
     move-result-object v3
 
+    .line 505
     .local v3, jsCode:Ljava/lang/String;
     iget-object v7, p0, Landroid/webkit/AccessibilityInjector;->mCallback:Landroid/webkit/AccessibilityInjector$CallbackHandler;
 
     if-nez v7, :cond_3
 
+    .line 506
     .end local v3           #jsCode:Ljava/lang/String;
     .end local v4           #jsonString:Ljava/lang/String;
     :goto_1
     return v6
 
+    .line 471
     :cond_2
     iget-object v7, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityJSONObject:Lorg/json/JSONObject;
 
@@ -454,6 +500,7 @@
 
     move-result-object v5
 
+    .line 472
     .local v5, keys:Ljava/util/Iterator;,"Ljava/util/Iterator<*>;"
     :goto_2
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
@@ -462,16 +509,20 @@
 
     if-eqz v7, :cond_0
 
+    .line 473
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
+    .line 474
     invoke-interface {v5}, Ljava/util/Iterator;->remove()V
 
     goto :goto_2
 
+    .line 484
     .end local v5           #keys:Ljava/util/Iterator;,"Ljava/util/Iterator<*>;"
     :sswitch_0
     if-eqz p2, :cond_1
 
+    .line 485
     :try_start_1
     const-string v7, "ACTION_ARGUMENT_MOVEMENT_GRANULARITY_INT"
 
@@ -479,6 +530,7 @@
 
     move-result v2
 
+    .line 487
     .local v2, granularity:I
     iget-object v7, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityJSONObject:Lorg/json/JSONObject;
 
@@ -492,23 +544,28 @@
 
     goto :goto_0
 
+    .line 499
     .end local v2           #granularity:I
     :catch_0
     move-exception v0
 
+    .line 500
     .local v0, e:Lorg/json/JSONException;
     goto :goto_1
 
+    .line 492
     .end local v0           #e:Lorg/json/JSONException;
     :sswitch_1
     if-eqz p2, :cond_1
 
+    .line 493
     const-string v7, "ACTION_ARGUMENT_HTML_ELEMENT_STRING"
 
     invoke-virtual {p2, v7}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 495
     .local v1, element:Ljava/lang/String;
     iget-object v7, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityJSONObject:Lorg/json/JSONObject;
 
@@ -520,6 +577,7 @@
 
     goto :goto_0
 
+    .line 506
     .end local v1           #element:Ljava/lang/String;
     .restart local v3       #jsCode:Ljava/lang/String;
     .restart local v4       #jsonString:Ljava/lang/String;
@@ -535,6 +593,7 @@
 
     goto :goto_1
 
+    .line 481
     :sswitch_data_0
     .sparse-switch
         0x100 -> :sswitch_0
@@ -551,16 +610,19 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 318
     invoke-direct {p0}, Landroid/webkit/AccessibilityInjector;->isJavaScriptEnabled()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
+    .line 332
     :cond_0
     :goto_0
     return v0
 
+    .line 323
     :cond_1
     invoke-direct {p0, p1}, Landroid/webkit/AccessibilityInjector;->getAxsUrlParameterValue(Ljava/lang/String;)I
 
@@ -568,12 +630,14 @@
 
     if-eqz v1, :cond_0
 
+    .line 328
     invoke-direct {p0}, Landroid/webkit/AccessibilityInjector;->isScriptInjectionEnabled()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
+    .line 332
     const/4 v0, 0x1
 
     goto :goto_0
@@ -584,12 +648,14 @@
     .parameter "enabled"
 
     .prologue
+    .line 302
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityInjectorFallback:Landroid/webkit/AccessibilityInjectorFallback;
 
     if-nez v0, :cond_0
 
+    .line 303
     new-instance v0, Landroid/webkit/AccessibilityInjectorFallback;
 
     iget-object v1, p0, Landroid/webkit/AccessibilityInjector;->mWebViewClassic:Landroid/webkit/WebViewClassic;
@@ -598,9 +664,11 @@
 
     iput-object v0, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityInjectorFallback:Landroid/webkit/AccessibilityInjectorFallback;
 
+    .line 307
     :goto_0
     return-void
 
+    .line 305
     :cond_0
     const/4 v0, 0x0
 
@@ -614,6 +682,7 @@
     .parameter "value"
 
     .prologue
+    .line 420
     :try_start_0
     invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
     :try_end_0
@@ -621,9 +690,11 @@
 
     move-result v0
 
+    .line 422
     .local v0, parsed:I
     packed-switch v0, :pswitch_data_0
 
+    .line 432
     .end local v0           #parsed:I
     :goto_0
     const/4 v1, -0x1
@@ -631,23 +702,27 @@
     :goto_1
     return v1
 
+    .line 424
     .restart local v0       #parsed:I
     :pswitch_0
     const/4 v1, 0x0
 
     goto :goto_1
 
+    .line 426
     :pswitch_1
     const/4 v1, 0x1
 
     goto :goto_1
 
+    .line 428
     .end local v0           #parsed:I
     :catch_0
     move-exception v1
 
     goto :goto_0
 
+    .line 422
     nop
 
     :pswitch_data_0
@@ -663,6 +738,7 @@
     .locals 1
 
     .prologue
+    .line 114
     invoke-direct {p0}, Landroid/webkit/AccessibilityInjector;->isAccessibilityEnabled()Z
 
     move-result v0
@@ -675,13 +751,16 @@
 
     if-nez v0, :cond_1
 
+    .line 120
     :cond_0
     :goto_0
     return-void
 
+    .line 118
     :cond_1
     invoke-direct {p0}, Landroid/webkit/AccessibilityInjector;->addTtsApis()V
 
+    .line 119
     invoke-direct {p0}, Landroid/webkit/AccessibilityInjector;->addCallbackApis()V
 
     goto :goto_0
@@ -696,31 +775,38 @@
 
     const/4 v0, 0x0
 
+    .line 214
     invoke-direct {p0}, Landroid/webkit/AccessibilityInjector;->isAccessibilityEnabled()Z
 
     move-result v2
 
     if-nez v2, :cond_1
 
+    .line 215
     iput-boolean v0, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityScriptInjected:Z
 
+    .line 216
     invoke-direct {p0, v0}, Landroid/webkit/AccessibilityInjector;->toggleFallbackAccessibilityInjector(Z)V
 
+    .line 243
     :cond_0
     :goto_0
     return v0
 
+    .line 220
     :cond_1
     iget-boolean v2, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityScriptInjected:Z
 
     if-eqz v2, :cond_3
 
+    .line 225
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v2
 
     if-ne v2, v1, :cond_2
 
+    .line 226
     iget-object v2, p0, Landroid/webkit/AccessibilityInjector;->mWebViewClassic:Landroid/webkit/WebViewClassic;
 
     const/16 v3, 0x68
@@ -730,8 +816,10 @@
     :goto_1
     move v0, v1
 
+    .line 233
     goto :goto_0
 
+    .line 227
     :cond_2
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
 
@@ -739,6 +827,7 @@
 
     if-nez v2, :cond_0
 
+    .line 228
     iget-object v2, p0, Landroid/webkit/AccessibilityInjector;->mWebViewClassic:Landroid/webkit/WebViewClassic;
 
     const/16 v3, 0x67
@@ -747,11 +836,13 @@
 
     goto :goto_1
 
+    .line 236
     :cond_3
     iget-object v1, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityInjectorFallback:Landroid/webkit/AccessibilityInjectorFallback;
 
     if-eqz v1, :cond_0
 
+    .line 240
     iget-object v0, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityInjectorFallback:Landroid/webkit/AccessibilityInjectorFallback;
 
     invoke-virtual {v0, p1}, Landroid/webkit/AccessibilityInjectorFallback;->onKeyEvent(Landroid/view/KeyEvent;)Z
@@ -766,14 +857,17 @@
     .parameter "selectionString"
 
     .prologue
+    .line 253
     iget-object v0, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityInjectorFallback:Landroid/webkit/AccessibilityInjectorFallback;
 
     if-eqz v0, :cond_0
 
+    .line 254
     iget-object v0, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityInjectorFallback:Landroid/webkit/AccessibilityInjectorFallback;
 
     invoke-virtual {v0, p1}, Landroid/webkit/AccessibilityInjectorFallback;->onSelectionStringChange(Ljava/lang/String;)V
 
+    .line 256
     :cond_0
     return-void
 .end method
@@ -783,34 +877,42 @@
     .parameter "info"
 
     .prologue
+    .line 147
     const/16 v0, 0x1f
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setMovementGranularities(I)V
 
+    .line 152
     const/16 v0, 0x100
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
+    .line 153
     const/16 v0, 0x200
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
+    .line 154
     const/16 v0, 0x400
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
+    .line 155
     const/16 v0, 0x800
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
+    .line 156
     const/16 v0, 0x10
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
+    .line 157
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClickable(Z)V
 
+    .line 158
     return-void
 .end method
 
@@ -823,19 +925,24 @@
 
     const/4 v2, 0x0
 
+    .line 276
     invoke-direct {p0}, Landroid/webkit/AccessibilityInjector;->isAccessibilityEnabled()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
+    .line 277
     iput-boolean v2, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityScriptInjected:Z
 
+    .line 278
     invoke-direct {p0, v2}, Landroid/webkit/AccessibilityInjector;->toggleFallbackAccessibilityInjector(Z)V
 
+    .line 293
     :goto_0
     return-void
 
+    .line 282
     :cond_0
     invoke-direct {p0, p1}, Landroid/webkit/AccessibilityInjector;->shouldInjectJavaScript(Ljava/lang/String;)Z
 
@@ -843,22 +950,27 @@
 
     if-nez v1, :cond_1
 
+    .line 283
     invoke-direct {p0, v3}, Landroid/webkit/AccessibilityInjector;->toggleFallbackAccessibilityInjector(Z)V
 
     goto :goto_0
 
+    .line 287
     :cond_1
     invoke-direct {p0, v2}, Landroid/webkit/AccessibilityInjector;->toggleFallbackAccessibilityInjector(Z)V
 
+    .line 289
     invoke-direct {p0}, Landroid/webkit/AccessibilityInjector;->getScreenReaderInjectionUrl()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 290
     .local v0, injectionUrl:Ljava/lang/String;
     iget-object v1, p0, Landroid/webkit/AccessibilityInjector;->mWebView:Landroid/webkit/WebView;
 
     invoke-virtual {v1, v0}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
+    .line 292
     iput-boolean v3, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityScriptInjected:Z
 
     goto :goto_0
@@ -869,10 +981,12 @@
     .parameter "url"
 
     .prologue
+    .line 264
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityScriptInjected:Z
 
+    .line 265
     return-void
 .end method
 
@@ -884,36 +998,44 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 190
     invoke-direct {p0}, Landroid/webkit/AccessibilityInjector;->isAccessibilityEnabled()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
+    .line 191
     iput-boolean v0, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityScriptInjected:Z
 
+    .line 192
     invoke-direct {p0, v0}, Landroid/webkit/AccessibilityInjector;->toggleFallbackAccessibilityInjector(Z)V
 
+    .line 204
     :cond_0
     :goto_0
     return v0
 
+    .line 196
     :cond_1
     iget-boolean v1, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityScriptInjected:Z
 
     if-eqz v1, :cond_2
 
+    .line 197
     invoke-direct {p0, p1, p2}, Landroid/webkit/AccessibilityInjector;->sendActionToAndroidVox(ILandroid/os/Bundle;)Z
 
     move-result v0
 
     goto :goto_0
 
+    .line 200
     :cond_2
     iget-object v1, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityInjectorFallback:Landroid/webkit/AccessibilityInjectorFallback;
 
     if-eqz v1, :cond_0
 
+    .line 201
     iget-object v0, p0, Landroid/webkit/AccessibilityInjector;->mAccessibilityInjectorFallback:Landroid/webkit/AccessibilityInjectorFallback;
 
     invoke-virtual {v0, p1, p2}, Landroid/webkit/AccessibilityInjectorFallback;->performAccessibilityAction(ILandroid/os/Bundle;)Z
@@ -927,10 +1049,13 @@
     .locals 0
 
     .prologue
+    .line 129
     invoke-direct {p0}, Landroid/webkit/AccessibilityInjector;->removeTtsApis()V
 
+    .line 130
     invoke-direct {p0}, Landroid/webkit/AccessibilityInjector;->removeCallbackApis()V
 
+    .line 131
     return-void
 .end method
 
@@ -939,18 +1064,22 @@
     .parameter "action"
 
     .prologue
+    .line 169
     sparse-switch p1, :sswitch_data_0
 
+    .line 177
     const/4 v0, 0x0
 
     :goto_0
     return v0
 
+    .line 175
     :sswitch_0
     const/4 v0, 0x1
 
     goto :goto_0
 
+    .line 169
     nop
 
     :sswitch_data_0

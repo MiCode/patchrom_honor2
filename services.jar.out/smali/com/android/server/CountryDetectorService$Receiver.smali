@@ -32,18 +32,22 @@
     .parameter "listener"
 
     .prologue
+    .line 55
     iput-object p1, p0, Lcom/android/server/CountryDetectorService$Receiver;->this$0:Lcom/android/server/CountryDetectorService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 56
     iput-object p2, p0, Lcom/android/server/CountryDetectorService$Receiver;->mListener:Landroid/location/ICountryListener;
 
+    .line 57
     invoke-interface {p2}, Landroid/location/ICountryListener;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/CountryDetectorService$Receiver;->mKey:Landroid/os/IBinder;
 
+    .line 58
     return-void
 .end method
 
@@ -53,6 +57,7 @@
     .locals 2
 
     .prologue
+    .line 61
     iget-object v0, p0, Lcom/android/server/CountryDetectorService$Receiver;->this$0:Lcom/android/server/CountryDetectorService;
 
     iget-object v1, p0, Lcom/android/server/CountryDetectorService$Receiver;->mKey:Landroid/os/IBinder;
@@ -60,6 +65,7 @@
     #calls: Lcom/android/server/CountryDetectorService;->removeListener(Landroid/os/IBinder;)V
     invoke-static {v0, v1}, Lcom/android/server/CountryDetectorService;->access$000(Lcom/android/server/CountryDetectorService;Landroid/os/IBinder;)V
 
+    .line 62
     return-void
 .end method
 
@@ -68,10 +74,12 @@
     .parameter "otherObj"
 
     .prologue
+    .line 66
     instance-of v0, p1, Lcom/android/server/CountryDetectorService$Receiver;
 
     if-eqz v0, :cond_0
 
+    .line 67
     iget-object v0, p0, Lcom/android/server/CountryDetectorService$Receiver;->mKey:Landroid/os/IBinder;
 
     check-cast p1, Lcom/android/server/CountryDetectorService$Receiver;
@@ -83,6 +91,7 @@
 
     move-result v0
 
+    .line 69
     :goto_0
     return v0
 
@@ -97,6 +106,7 @@
     .locals 1
 
     .prologue
+    .line 78
     iget-object v0, p0, Lcom/android/server/CountryDetectorService$Receiver;->mListener:Landroid/location/ICountryListener;
 
     return-object v0
@@ -106,6 +116,7 @@
     .locals 1
 
     .prologue
+    .line 74
     iget-object v0, p0, Lcom/android/server/CountryDetectorService$Receiver;->mKey:Landroid/os/IBinder;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I

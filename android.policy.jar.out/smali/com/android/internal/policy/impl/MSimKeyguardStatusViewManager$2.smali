@@ -27,6 +27,7 @@
     .parameter
 
     .prologue
+    .line 262
     iput-object p1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager$2;->this$0:Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,6 +42,7 @@
     .parameter "simState"
 
     .prologue
+    .line 266
     return-void
 .end method
 
@@ -50,10 +52,12 @@
     .parameter "subscription"
 
     .prologue
+    .line 269
     iget-object v0, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager$2;->this$0:Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;
 
     #calls: Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->updateCarrierStateWithSimStatus(Lcom/android/internal/telephony/IccCard$State;I)V
     invoke-static {v0, p1, p2}, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->access$300(Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;Lcom/android/internal/telephony/IccCard$State;I)V
 
+    .line 270
     return-void
 .end method

@@ -32,16 +32,21 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 699
     iput-object p1, p0, Landroid/widget/VideoView$VideoViewEx;->this$0:Landroid/widget/VideoView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 700
     iput v0, p0, Landroid/widget/VideoView$VideoViewEx;->mRTSPVideoWidth:I
 
+    .line 701
     iput v0, p0, Landroid/widget/VideoView$VideoViewEx;->mRTSPVideoHeight:I
 
+    .line 702
     iput-boolean v0, p0, Landroid/widget/VideoView$VideoViewEx;->mIsRTSPStreamMedia:Z
 
+    .line 703
     return-void
 .end method
 
@@ -51,6 +56,7 @@
     .parameter "x1"
 
     .prologue
+    .line 694
     invoke-direct {p0, p1}, Landroid/widget/VideoView$VideoViewEx;->setIsRTSPStreamMedia(Landroid/net/Uri;)V
 
     return-void
@@ -63,6 +69,7 @@
     .parameter "x2"
 
     .prologue
+    .line 694
     invoke-direct {p0, p1, p2}, Landroid/widget/VideoView$VideoViewEx;->setRTSPVideoSize(II)V
 
     return-void
@@ -73,14 +80,17 @@
     .parameter "uri"
 
     .prologue
+    .line 706
     if-eqz p1, :cond_1
 
+    .line 707
     invoke-virtual {p1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 708
     .local v0, scheme:Ljava/lang/String;
-    const-string v1, "rtsp"
+    const-string/jumbo v1, "rtsp"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
@@ -104,16 +114,19 @@
 
     if-eqz v1, :cond_2
 
+    .line 709
     :cond_0
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Landroid/widget/VideoView$VideoViewEx;->mIsRTSPStreamMedia:Z
 
+    .line 714
     .end local v0           #scheme:Ljava/lang/String;
     :cond_1
     :goto_0
     return-void
 
+    .line 711
     .restart local v0       #scheme:Ljava/lang/String;
     :cond_2
     const/4 v1, 0x0
@@ -129,6 +142,7 @@
     .parameter "videoHeight"
 
     .prologue
+    .line 717
     iget-boolean v0, p0, Landroid/widget/VideoView$VideoViewEx;->mIsRTSPStreamMedia:Z
 
     if-eqz v0, :cond_0
@@ -137,10 +151,13 @@
 
     if-eqz p2, :cond_0
 
+    .line 718
     iput p1, p0, Landroid/widget/VideoView$VideoViewEx;->mRTSPVideoWidth:I
 
+    .line 719
     iput p2, p0, Landroid/widget/VideoView$VideoViewEx;->mRTSPVideoHeight:I
 
+    .line 721
     :cond_0
     return-void
 .end method
@@ -151,6 +168,7 @@
     .locals 2
 
     .prologue
+    .line 724
     iget-object v1, p0, Landroid/widget/VideoView$VideoViewEx;->this$0:Landroid/widget/VideoView;
 
     iget v0, p0, Landroid/widget/VideoView$VideoViewEx;->mRTSPVideoWidth:I
@@ -163,6 +181,7 @@
     #setter for: Landroid/widget/VideoView;->mVideoWidth:I
     invoke-static {v1, v0}, Landroid/widget/VideoView;->access$102(Landroid/widget/VideoView;I)I
 
+    .line 725
     iget-object v1, p0, Landroid/widget/VideoView$VideoViewEx;->this$0:Landroid/widget/VideoView;
 
     iget v0, p0, Landroid/widget/VideoView$VideoViewEx;->mRTSPVideoHeight:I
@@ -175,8 +194,10 @@
     #setter for: Landroid/widget/VideoView;->mVideoHeight:I
     invoke-static {v1, v0}, Landroid/widget/VideoView;->access$202(Landroid/widget/VideoView;I)I
 
+    .line 726
     return-void
 
+    .line 724
     :cond_0
     iget-object v0, p0, Landroid/widget/VideoView$VideoViewEx;->this$0:Landroid/widget/VideoView;
 
@@ -187,6 +208,7 @@
 
     goto :goto_0
 
+    .line 725
     :cond_1
     iget-object v0, p0, Landroid/widget/VideoView$VideoViewEx;->this$0:Landroid/widget/VideoView;
 

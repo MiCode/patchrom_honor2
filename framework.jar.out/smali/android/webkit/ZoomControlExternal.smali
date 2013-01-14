@@ -36,6 +36,7 @@
     .locals 2
 
     .prologue
+    .line 31
     invoke-static {}, Landroid/view/ViewConfiguration;->getZoomControlsTimeout()J
 
     move-result-wide v0
@@ -50,16 +51,20 @@
     .parameter "webView"
 
     .prologue
+    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 36
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Landroid/webkit/ZoomControlExternal;->mPrivateHandler:Landroid/os/Handler;
 
+    .line 41
     iput-object p1, p0, Landroid/webkit/ZoomControlExternal;->mWebView:Landroid/webkit/WebViewClassic;
 
+    .line 42
     return-void
 .end method
 
@@ -68,6 +73,7 @@
     .parameter "x0"
 
     .prologue
+    .line 28
     iget-object v0, p0, Landroid/webkit/ZoomControlExternal;->mZoomControls:Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;
 
     return-object v0
@@ -78,6 +84,7 @@
     .parameter "x0"
 
     .prologue
+    .line 28
     iget-object v0, p0, Landroid/webkit/ZoomControlExternal;->mZoomControlRunnable:Ljava/lang/Runnable;
 
     return-object v0
@@ -88,6 +95,7 @@
     .parameter "x0"
 
     .prologue
+    .line 28
     iget-object v0, p0, Landroid/webkit/ZoomControlExternal;->mPrivateHandler:Landroid/os/Handler;
 
     return-object v0
@@ -97,6 +105,7 @@
     .locals 2
 
     .prologue
+    .line 28
     sget-wide v0, Landroid/webkit/ZoomControlExternal;->ZOOM_CONTROLS_TIMEOUT:J
 
     return-wide v0
@@ -107,6 +116,7 @@
     .parameter "x0"
 
     .prologue
+    .line 28
     iget-object v0, p0, Landroid/webkit/ZoomControlExternal;->mWebView:Landroid/webkit/WebViewClassic;
 
     return-object v0
@@ -116,6 +126,7 @@
     .locals 2
 
     .prologue
+    .line 96
     new-instance v0, Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;
 
     iget-object v1, p0, Landroid/webkit/ZoomControlExternal;->mWebView:Landroid/webkit/WebViewClassic;
@@ -126,6 +137,7 @@
 
     invoke-direct {v0, v1}, Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;-><init>(Landroid/content/Context;)V
 
+    .line 97
     .local v0, zoomControls:Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;
     new-instance v1, Landroid/webkit/ZoomControlExternal$2;
 
@@ -133,12 +145,14 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;->setOnZoomInClickListener(Landroid/view/View$OnClickListener;)V
 
+    .line 105
     new-instance v1, Landroid/webkit/ZoomControlExternal$3;
 
     invoke-direct {v1, p0}, Landroid/webkit/ZoomControlExternal$3;-><init>(Landroid/webkit/ZoomControlExternal;)V
 
     invoke-virtual {v0, v1}, Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;->setOnZoomOutClickListener(Landroid/view/View$OnClickListener;)V
 
+    .line 113
     return-object v0
 .end method
 
@@ -148,28 +162,33 @@
     .locals 2
 
     .prologue
+    .line 68
     iget-object v0, p0, Landroid/webkit/ZoomControlExternal;->mZoomControls:Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;
 
     if-nez v0, :cond_0
 
+    .line 69
     invoke-direct {p0}, Landroid/webkit/ZoomControlExternal;->createZoomControls()Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/webkit/ZoomControlExternal;->mZoomControls:Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;
 
+    .line 76
     iget-object v0, p0, Landroid/webkit/ZoomControlExternal;->mZoomControls:Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;->setVisibility(I)V
 
+    .line 77
     new-instance v0, Landroid/webkit/ZoomControlExternal$1;
 
     invoke-direct {v0, p0}, Landroid/webkit/ZoomControlExternal$1;-><init>(Landroid/webkit/ZoomControlExternal;)V
 
     iput-object v0, p0, Landroid/webkit/ZoomControlExternal;->mZoomControlRunnable:Ljava/lang/Runnable;
 
+    .line 92
     :cond_0
     iget-object v0, p0, Landroid/webkit/ZoomControlExternal;->mZoomControls:Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;
 
@@ -180,25 +199,30 @@
     .locals 2
 
     .prologue
+    .line 53
     iget-object v0, p0, Landroid/webkit/ZoomControlExternal;->mZoomControlRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
+    .line 54
     iget-object v0, p0, Landroid/webkit/ZoomControlExternal;->mPrivateHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Landroid/webkit/ZoomControlExternal;->mZoomControlRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
+    .line 56
     :cond_0
     iget-object v0, p0, Landroid/webkit/ZoomControlExternal;->mZoomControls:Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;
 
     if-eqz v0, :cond_1
 
+    .line 57
     iget-object v0, p0, Landroid/webkit/ZoomControlExternal;->mZoomControls:Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;
 
     invoke-virtual {v0}, Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;->hide()V
 
+    .line 59
     :cond_1
     return-void
 .end method
@@ -207,6 +231,7 @@
     .locals 1
 
     .prologue
+    .line 62
     iget-object v0, p0, Landroid/webkit/ZoomControlExternal;->mZoomControls:Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;
 
     if-eqz v0, :cond_0
@@ -234,16 +259,19 @@
     .locals 4
 
     .prologue
+    .line 45
     iget-object v0, p0, Landroid/webkit/ZoomControlExternal;->mZoomControlRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
+    .line 46
     iget-object v0, p0, Landroid/webkit/ZoomControlExternal;->mPrivateHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Landroid/webkit/ZoomControlExternal;->mZoomControlRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
+    .line 48
     :cond_0
     invoke-virtual {p0}, Landroid/webkit/ZoomControlExternal;->getControls()Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;
 
@@ -253,6 +281,7 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;->show(Z)V
 
+    .line 49
     iget-object v0, p0, Landroid/webkit/ZoomControlExternal;->mPrivateHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Landroid/webkit/ZoomControlExternal;->mZoomControlRunnable:Ljava/lang/Runnable;
@@ -261,6 +290,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
+    .line 50
     return-void
 .end method
 
@@ -268,5 +298,6 @@
     .locals 0
 
     .prologue
+    .line 65
     return-void
 .end method

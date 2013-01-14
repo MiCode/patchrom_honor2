@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 144
+    .line 145
     iput-object p1, p0, Lcom/android/gallery3d/photoeditor/SaveCopyTask$1;->this$0:Lcom/android/gallery3d/photoeditor/SaveCopyTask;
 
     iput-object p2, p0, Lcom/android/gallery3d/photoeditor/SaveCopyTask$1;->val$dir:[Ljava/io/File;
@@ -49,7 +49,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 148
+    .line 149
     iget-object v0, p0, Lcom/android/gallery3d/photoeditor/SaveCopyTask$1;->val$dir:[Ljava/io/File;
 
     new-instance v1, Ljava/io/File;
@@ -66,6 +66,6 @@
 
     aput-object v1, v0, v3
 
-    .line 149
+    .line 150
     return-void
 .end method

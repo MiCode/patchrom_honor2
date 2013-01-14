@@ -41,6 +41,7 @@
 
     const/16 v3, 0xe
 
+    .line 4452
     new-array v0, v4, [[F
 
     const/4 v1, 0x0
@@ -133,12 +134,14 @@
 
     sput-object v0, Lcom/android/server/PowerManagerService$Interpolation;->envToLightSample:[[F
 
+    .line 4467
     new-array v0, v3, [F
 
     fill-array-data v0, :array_b
 
     sput-object v0, Lcom/android/server/PowerManagerService$Interpolation;->envLight:[F
 
+    .line 4470
     new-array v0, v4, [F
 
     fill-array-data v0, :array_c
@@ -147,6 +150,7 @@
 
     return-void
 
+    .line 4452
     :array_0
     .array-data 0x4
         0x0t 0x0t 0xa0t 0x40t
@@ -345,6 +349,7 @@
         0x0t 0x0t 0x7ft 0x43t
     .end array-data
 
+    .line 4467
     :array_b
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
@@ -363,6 +368,7 @@
         0x0t 0x40t 0x1ct 0x46t
     .end array-data
 
+    .line 4470
     :array_c
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
@@ -383,6 +389,7 @@
     .locals 0
 
     .prologue
+    .line 4437
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -395,8 +402,10 @@
     .parameter "h"
 
     .prologue
+    .line 4483
     array-length v1, p1
 
+    .line 4484
     .local v1, length:I
     const/4 v0, 0x0
 
@@ -406,6 +415,7 @@
 
     if-ge v0, v2, :cond_0
 
+    .line 4485
     add-int/lit8 v2, v0, 0x1
 
     aget v2, p1, v2
@@ -420,10 +430,12 @@
 
     aput v2, p0, v0
 
+    .line 4484
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    .line 4487
     :cond_0
     return-void
 .end method
@@ -436,8 +448,10 @@
     .parameter "f"
 
     .prologue
+    .line 4508
     array-length v1, p3
 
+    .line 4509
     .local v1, length:I
     const/4 v0, 0x1
 
@@ -447,6 +461,7 @@
 
     if-ge v0, v2, :cond_0
 
+    .line 4510
     const/high16 v2, 0x4040
 
     aget v3, p1, v0
@@ -469,10 +484,12 @@
 
     aput v2, p0, v0
 
+    .line 4509
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    .line 4512
     :cond_0
     return-void
 .end method
@@ -483,8 +500,10 @@
     .parameter "X"
 
     .prologue
+    .line 4475
     array-length v1, p1
 
+    .line 4476
     .local v1, length:I
     const/4 v0, 0x0
 
@@ -494,6 +513,7 @@
 
     if-ge v0, v2, :cond_0
 
+    .line 4477
     add-int/lit8 v2, v0, 0x1
 
     aget v2, p1, v2
@@ -504,10 +524,12 @@
 
     aput v2, p0, v0
 
+    .line 4476
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    .line 4479
     :cond_0
     return-void
 .end method
@@ -524,20 +546,24 @@
 
     const/high16 v7, 0x4000
 
+    .line 4517
     array-length v4, p3
 
     add-int/lit8 v2, v4, -0x2
 
+    .line 4518
     .local v2, n:I
     add-int/lit8 v4, v2, 0x1
 
     new-array v0, v4, [F
 
+    .line 4519
     .local v0, beta:[F
     add-int/lit8 v4, v2, 0x1
 
     new-array v3, v4, [F
 
+    .line 4521
     .local v3, y:[F
     aget v4, p2, v8
 
@@ -545,12 +571,14 @@
 
     aput v4, v0, v8
 
+    .line 4522
     const/4 v1, 0x2
 
     .local v1, i:I
     :goto_0
     if-ge v1, v2, :cond_0
 
+    .line 4523
     aget v4, p2, v1
 
     aget v5, p1, v1
@@ -567,10 +595,12 @@
 
     aput v4, v0, v1
 
+    .line 4522
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 4526
     :cond_0
     aget v4, p3, v8
 
@@ -578,6 +608,7 @@
 
     aput v4, v3, v8
 
+    .line 4527
     const/4 v1, 0x2
 
     :goto_1
@@ -585,6 +616,7 @@
 
     if-ge v1, v4, :cond_1
 
+    .line 4528
     aget v4, p3, v1
 
     aget v5, p1, v1
@@ -611,20 +643,24 @@
 
     aput v4, v3, v1
 
+    .line 4527
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
+    .line 4531
     :cond_1
     aget v4, v3, v2
 
     aput v4, p0, v2
 
+    .line 4532
     add-int/lit8 v1, v2, -0x1
 
     :goto_2
     if-lez v1, :cond_2
 
+    .line 4533
     aget v4, v3, v1
 
     aget v5, v0, v1
@@ -639,10 +675,12 @@
 
     aput v4, p0, v1
 
+    .line 4532
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_2
 
+    .line 4535
     :cond_2
     return-void
 .end method
@@ -655,11 +693,14 @@
     .prologue
     const/16 v5, 0xb
 
+    .line 4600
     const/4 v2, 0x0
 
+    .line 4601
     .local v2, brightness:F
     new-array v1, v5, [F
 
+    .line 4603
     .local v1, brightAtEnvLight:[F
     const/4 v3, 0x0
 
@@ -667,10 +708,12 @@
     :goto_0
     if-ge v3, v5, :cond_0
 
+    .line 4604
     sget-object v4, Lcom/android/server/PowerManagerService$Interpolation;->envToLightSample:[[F
 
     aget-object v0, v4, v3
 
+    .line 4605
     .local v0, backLights:[F
     sget-object v4, Lcom/android/server/PowerManagerService$Interpolation;->envLight:[F
 
@@ -680,10 +723,12 @@
 
     aput v4, v1, v3
 
+    .line 4603
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 4607
     .end local v0           #backLights:[F
     :cond_0
     sget-object v4, Lcom/android/server/PowerManagerService$Interpolation;->backLightLevel:[F
@@ -692,6 +737,7 @@
 
     move-result v2
 
+    .line 4609
     return v2
 .end method
 
@@ -701,8 +747,10 @@
     .parameter "h"
 
     .prologue
+    .line 4491
     array-length v1, p1
 
+    .line 4492
     .local v1, length:I
     const/4 v0, 0x1
 
@@ -712,6 +760,7 @@
 
     if-ge v0, v2, :cond_0
 
+    .line 4493
     aget v2, p1, v0
 
     add-int/lit8 v3, v0, -0x1
@@ -726,10 +775,12 @@
 
     aput v2, p0, v0
 
+    .line 4492
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    .line 4495
     :cond_0
     return-void
 .end method
@@ -740,8 +791,10 @@
     .parameter "h"
 
     .prologue
+    .line 4499
     array-length v1, p1
 
+    .line 4500
     .local v1, length:I
     const/4 v0, 0x1
 
@@ -751,6 +804,7 @@
 
     if-ge v0, v2, :cond_0
 
+    .line 4501
     add-int/lit8 v2, v0, -0x1
 
     aget v2, p1, v2
@@ -767,10 +821,12 @@
 
     aput v2, p0, v0
 
+    .line 4500
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    .line 4503
     :cond_0
     return-void
 .end method
@@ -782,53 +838,66 @@
     .parameter "inputX"
 
     .prologue
+    .line 4542
     move-object/from16 v0, p0
 
     array-length v10, v0
 
+    .line 4544
     .local v10, sampleLength:I
     new-array v3, v10, [F
 
+    .line 4547
     .local v3, h:[F
     new-array v1, v10, [F
 
+    .line 4550
     .local v1, f:[F
     new-array v5, v10, [F
 
+    .line 4553
     .local v5, lambda:[F
     new-array v7, v10, [F
 
+    .line 4556
     .local v7, mu:[F
     new-array v2, v10, [F
 
+    .line 4559
     .local v2, g:[F
     new-array v6, v10, [F
 
+    .line 4561
     .local v6, m:[F
     const/4 v4, 0x0
 
+    .line 4562
     .local v4, index:I
     :goto_0
     add-int/lit8 v11, v10, -0x1
 
     if-ge v4, v11, :cond_1
 
+    .line 4563
     aget v11, p0, v4
 
     cmpg-float v11, p2, v11
 
     if-gtz v11, :cond_0
 
+    .line 4564
     aget v8, p1, v4
 
     .local v8, resultY:F
     move v9, v8
 
+    .line 4596
     .end local v8           #resultY:F
     .local v9, resultY:F
     :goto_1
     return v9
 
+    .line 4568
     .end local v9           #resultY:F
     :cond_0
     aget v11, p0, v4
@@ -845,27 +914,32 @@
 
     if-gez v11, :cond_2
 
+    .line 4573
     :cond_1
     add-int/lit8 v11, v10, -0x1
 
     if-ne v4, v11, :cond_3
 
+    .line 4574
     aget v8, p1, v4
 
     .restart local v8       #resultY:F
     :goto_2
     move v9, v8
 
+    .line 4596
     .end local v8           #resultY:F
     .restart local v9       #resultY:F
     goto :goto_1
 
+    .line 4562
     .end local v9           #resultY:F
     :cond_2
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
+    .line 4577
     :cond_3
     const/4 v11, 0x0
 
@@ -877,6 +951,7 @@
 
     aput v13, v6, v11
 
+    .line 4579
     const/4 v11, 0x1
 
     const/4 v12, 0x1
@@ -897,6 +972,7 @@
 
     aput v12, v2, v11
 
+    .line 4580
     add-int/lit8 v11, v10, -0x2
 
     add-int/lit8 v12, v10, -0x2
@@ -917,22 +993,29 @@
 
     aput v12, v2, v11
 
+    .line 4582
     move-object/from16 v0, p0
 
     invoke-static {v3, v0}, Lcom/android/server/PowerManagerService$Interpolation;->getCoefH([F[F)V
 
+    .line 4583
     move-object/from16 v0, p1
 
     invoke-static {v1, v0, v3}, Lcom/android/server/PowerManagerService$Interpolation;->getCoefF([F[F[F)V
 
+    .line 4584
     invoke-static {v5, v3}, Lcom/android/server/PowerManagerService$Interpolation;->getLambda([F[F)V
 
+    .line 4585
     invoke-static {v7, v3}, Lcom/android/server/PowerManagerService$Interpolation;->getMu([F[F)V
 
+    .line 4586
     invoke-static {v2, v5, v7, v1}, Lcom/android/server/PowerManagerService$Interpolation;->getCoefG([F[F[F[F)V
 
+    .line 4587
     invoke-static {v6, v5, v7, v2}, Lcom/android/server/PowerManagerService$Interpolation;->getCoefM([F[F[F[F)V
 
+    .line 4589
     add-int/lit8 v11, v4, 0x1
 
     aget v11, p0, v11

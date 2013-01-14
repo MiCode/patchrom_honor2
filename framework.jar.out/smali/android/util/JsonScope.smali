@@ -49,6 +49,7 @@
 
     const/4 v3, 0x0
 
+    .line 28
     new-instance v0, Landroid/util/JsonScope;
 
     const-string v1, "EMPTY_ARRAY"
@@ -57,6 +58,7 @@
 
     sput-object v0, Landroid/util/JsonScope;->EMPTY_ARRAY:Landroid/util/JsonScope;
 
+    .line 34
     new-instance v0, Landroid/util/JsonScope;
 
     const-string v1, "NONEMPTY_ARRAY"
@@ -65,6 +67,7 @@
 
     sput-object v0, Landroid/util/JsonScope;->NONEMPTY_ARRAY:Landroid/util/JsonScope;
 
+    .line 40
     new-instance v0, Landroid/util/JsonScope;
 
     const-string v1, "EMPTY_OBJECT"
@@ -73,6 +76,7 @@
 
     sput-object v0, Landroid/util/JsonScope;->EMPTY_OBJECT:Landroid/util/JsonScope;
 
+    .line 46
     new-instance v0, Landroid/util/JsonScope;
 
     const-string v1, "DANGLING_NAME"
@@ -81,6 +85,7 @@
 
     sput-object v0, Landroid/util/JsonScope;->DANGLING_NAME:Landroid/util/JsonScope;
 
+    .line 52
     new-instance v0, Landroid/util/JsonScope;
 
     const-string v1, "NONEMPTY_OBJECT"
@@ -89,6 +94,7 @@
 
     sput-object v0, Landroid/util/JsonScope;->NONEMPTY_OBJECT:Landroid/util/JsonScope;
 
+    .line 57
     new-instance v0, Landroid/util/JsonScope;
 
     const-string v1, "EMPTY_DOCUMENT"
@@ -99,6 +105,7 @@
 
     sput-object v0, Landroid/util/JsonScope;->EMPTY_DOCUMENT:Landroid/util/JsonScope;
 
+    .line 62
     new-instance v0, Landroid/util/JsonScope;
 
     const-string v1, "NONEMPTY_DOCUMENT"
@@ -109,6 +116,7 @@
 
     sput-object v0, Landroid/util/JsonScope;->NONEMPTY_DOCUMENT:Landroid/util/JsonScope;
 
+    .line 67
     new-instance v0, Landroid/util/JsonScope;
 
     const-string v1, "CLOSED"
@@ -119,6 +127,7 @@
 
     sput-object v0, Landroid/util/JsonScope;->CLOSED:Landroid/util/JsonScope;
 
+    .line 22
     const/16 v0, 0x8
 
     new-array v0, v0, [Landroid/util/JsonScope;
@@ -177,6 +186,7 @@
     .end annotation
 
     .prologue
+    .line 22
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -187,6 +197,7 @@
     .parameter "name"
 
     .prologue
+    .line 22
     const-class v0, Landroid/util/JsonScope;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -202,6 +213,7 @@
     .locals 1
 
     .prologue
+    .line 22
     sget-object v0, Landroid/util/JsonScope;->$VALUES:[Landroid/util/JsonScope;
 
     invoke-virtual {v0}, [Landroid/util/JsonScope;->clone()Ljava/lang/Object;

@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 52
+    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,7 +46,7 @@
     .parameter "set2"
 
     .prologue
-    .line 54
+    .line 56
     invoke-virtual {p1}, Lcom/android/gallery3d/data/MediaSet;->getName()Ljava/lang/String;
 
     move-result-object v1
@@ -59,11 +59,11 @@
 
     move-result v0
 
-    .line 55
+    .line 57
     .local v0, result:I
     if-eqz v0, :cond_0
 
-    .line 56
+    .line 58
     .end local v0           #result:I
     :goto_0
     return v0
@@ -99,7 +99,7 @@
     .parameter "x1"
 
     .prologue
-    .line 52
+    .line 54
     check-cast p1, Lcom/android/gallery3d/data/MediaSet;
 
     .end local p1

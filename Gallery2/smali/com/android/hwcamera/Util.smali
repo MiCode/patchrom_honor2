@@ -873,6 +873,25 @@
     throw v0
 .end method
 
+.method public static dpToPixel(I)I
+    .locals 2
+    .parameter "dp"
+
+    .prologue
+    .line 377
+    sget v0, Lcom/android/hwcamera/Util;->sPixelDensity:F
+
+    int-to-float v1, p0
+
+    mul-float/2addr v0, v1
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public static equals(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 1
     .parameter "a"
@@ -4371,6 +4390,32 @@
     goto :goto_1
 .end method
 
+.method public static isEmptyRect(Landroid/graphics/Rect;)Z
+    .locals 1
+    .parameter "rect"
+
+    .prologue
+    .line 3093
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Landroid/graphics/Rect;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public static isIntentAvailable(Landroid/content/Context;Landroid/content/Intent;)Z
     .locals 4
     .parameter "context"
@@ -4403,6 +4448,74 @@
 
     :cond_0
     const/4 v2, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static isNullArea(Ljava/util/List;)Z
+    .locals 2
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Landroid/hardware/Camera$Area;",
+            ">;)Z"
+        }
+    .end annotation
+
+    .prologue
+    .local p0, area:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Area;>;"
+    const/4 v1, 0x0
+
+    .line 3088
+    if-eqz p0, :cond_0
+
+    invoke-interface {p0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/hardware/Camera$Area;
+
+    iget-object v0, v0, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/hardware/Camera$Area;
+
+    iget-object v0, v0, Landroid/hardware/Camera$Area;->rect:Landroid/graphics/Rect;
+
+    invoke-virtual {v0}, Landroid/graphics/Rect;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_1
+    move v0, v1
 
     goto :goto_0
 .end method
@@ -7301,153 +7414,6 @@
     move-exception v0
 
     .line 1543
-    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
-
-    goto :goto_0
-.end method
-
-.method public static setTouchPosition(II)V
-    .locals 7
-    .parameter "x"
-    .parameter "y"
-
-    .prologue
-    .line 1346
-    :try_start_0
-    sget-object v2, Lcom/android/hwcamera/Util;->HwExtCameraClass:Ljava/lang/Class;
-
-    if-eqz v2, :cond_1
-
-    .line 1347
-    sget-object v2, Lcom/android/hwcamera/Util;->HwExtCameraClass:Ljava/lang/Class;
-
-    const-string v3, "setTouchFocusPosition"
-
-    const/4 v4, 0x2
-
-    new-array v4, v4, [Ljava/lang/Class;
-
-    const/4 v5, 0x0
-
-    sget-object v6, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    aput-object v6, v4, v5
-
-    const/4 v5, 0x1
-
-    sget-object v6, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    aput-object v6, v4, v5
-
-    invoke-virtual {v2, v3, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v1
-
-    .line 1349
-    .local v1, invodeMethod:Ljava/lang/reflect/Method;
-    if-eqz v1, :cond_0
-
-    .line 1350
-    sget-object v2, Lcom/android/hwcamera/Util;->HwExtCameraInstance:Ljava/lang/Object;
-
-    const/4 v3, 0x2
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    aput-object v5, v3, v4
-
-    const/4 v4, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    aput-object v5, v3, v4
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 1365
-    .end local v1           #invodeMethod:Ljava/lang/reflect/Method;
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 1354
-    :cond_1
-    sget-object v2, Lcom/android/hwcamera/Util;->ParameterClass:Ljava/lang/Class;
-
-    const-string v3, "setTouchIndexAf"
-
-    const/4 v4, 0x2
-
-    new-array v4, v4, [Ljava/lang/Class;
-
-    const/4 v5, 0x0
-
-    sget-object v6, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    aput-object v6, v4, v5
-
-    const/4 v5, 0x1
-
-    sget-object v6, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    aput-object v6, v4, v5
-
-    invoke-virtual {v2, v3, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v1
-
-    .line 1357
-    .restart local v1       #invodeMethod:Ljava/lang/reflect/Method;
-    if-eqz v1, :cond_0
-
-    .line 1358
-    sget-object v2, Lcom/android/hwcamera/Util;->mCameraDevice:Lcom/android/hwcamera/HwCamera;
-
-    invoke-virtual {v2}, Lcom/android/hwcamera/HwCamera;->getParameters()Landroid/hardware/Camera$Parameters;
-
-    move-result-object v2
-
-    const/4 v3, 0x2
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
-
-    new-instance v5, Ljava/lang/Integer;
-
-    invoke-direct {v5, p0}, Ljava/lang/Integer;-><init>(I)V
-
-    aput-object v5, v3, v4
-
-    const/4 v4, 0x1
-
-    new-instance v5, Ljava/lang/Integer;
-
-    invoke-direct {v5, p1}, Ljava/lang/Integer;-><init>(I)V
-
-    aput-object v5, v3, v4
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    .line 1362
-    .end local v1           #invodeMethod:Ljava/lang/reflect/Method;
-    :catch_0
-    move-exception v0
-
-    .line 1363
-    .local v0, ex:Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_0

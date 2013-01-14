@@ -89,15 +89,38 @@
 
     .line 48
     .local v6, cache:Lcom/android/gallery3d/common/BlobCache;
-    if-nez v6, :cond_1
+    if-nez v6, :cond_2
 
     .line 49
     invoke-static {}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getCacheStorage()Ljava/io/File;
 
     move-result-object v7
 
-    .line 50
+    .line 51
     .local v7, cacheDir:Ljava/io/File;
+    if-nez v7, :cond_1
+
+    .line 52
+    const/4 v0, 0x0
+
+    monitor-exit v9
+
+    move-object v2, v0
+
+    move-object v0, v6
+
+    .line 64
+    .end local v6           #cache:Lcom/android/gallery3d/common/BlobCache;
+    .end local v7           #cacheDir:Ljava/io/File;
+    .local v0, cache:Lcom/android/gallery3d/common/BlobCache;
+    :goto_0
+    return-object v2
+
+    .line 55
+    .end local v0           #cache:Lcom/android/gallery3d/common/BlobCache;
+    .restart local v6       #cache:Lcom/android/gallery3d/common/BlobCache;
+    .restart local v7       #cacheDir:Ljava/io/File;
+    :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -126,7 +149,7 @@
 
     move-result-object v1
 
-    .line 52
+    .line 57
     .local v1, path:Ljava/lang/String;
     :try_start_1
     new-instance v0, Lcom/android/gallery3d/common/BlobCache;
@@ -144,9 +167,9 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 54
+    .line 59
     .end local v6           #cache:Lcom/android/gallery3d/common/BlobCache;
-    .local v0, cache:Lcom/android/gallery3d/common/BlobCache;
+    .restart local v0       #cache:Lcom/android/gallery3d/common/BlobCache;
     :try_start_2
     sget-object v2, Lcom/android/gallery3d/util/CacheManager;->sCacheMap:Ljava/util/HashMap;
 
@@ -155,16 +178,18 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 59
+    .line 64
     .end local v1           #path:Ljava/lang/String;
     .end local v7           #cacheDir:Ljava/io/File;
-    :goto_0
+    :goto_1
     :try_start_3
     monitor-exit v9
 
-    return-object v0
+    move-object v2, v0
 
-    .line 55
+    goto :goto_0
+
+    .line 60
     .end local v0           #cache:Lcom/android/gallery3d/common/BlobCache;
     .restart local v1       #path:Ljava/lang/String;
     .restart local v6       #cache:Lcom/android/gallery3d/common/BlobCache;
@@ -174,20 +199,20 @@
 
     move-object v0, v6
 
-    .line 56
+    .line 61
     .end local v6           #cache:Lcom/android/gallery3d/common/BlobCache;
     .restart local v0       #cache:Lcom/android/gallery3d/common/BlobCache;
     .local v8, e:Ljava/io/IOException;
-    :goto_1
+    :goto_2
     const-string v2, "CacheManager"
 
     const-string v3, "Cannot instantiate cache!"
 
     invoke-static {v2, v3, v8}, Lcom/android/gallery3d/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 60
+    .line 65
     .end local v0           #cache:Lcom/android/gallery3d/common/BlobCache;
     .end local v1           #path:Ljava/lang/String;
     .end local v7           #cacheDir:Ljava/io/File;
@@ -201,25 +226,25 @@
 
     throw v2
 
-    .line 55
+    .line 60
     .restart local v0       #cache:Lcom/android/gallery3d/common/BlobCache;
     .restart local v1       #path:Ljava/lang/String;
     .restart local v7       #cacheDir:Ljava/io/File;
     :catch_1
     move-exception v8
 
-    goto :goto_1
+    goto :goto_2
 
     .end local v0           #cache:Lcom/android/gallery3d/common/BlobCache;
     .end local v1           #path:Ljava/lang/String;
     .end local v7           #cacheDir:Ljava/io/File;
     .restart local v6       #cache:Lcom/android/gallery3d/common/BlobCache;
-    :cond_1
+    :cond_2
     move-object v0, v6
 
     .end local v6           #cache:Lcom/android/gallery3d/common/BlobCache;
     .restart local v0       #cache:Lcom/android/gallery3d/common/BlobCache;
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method private static removeOldFilesIfNecessary(Landroid/content/Context;)V
@@ -227,16 +252,16 @@
     .parameter "context"
 
     .prologue
-    .line 65
+    .line 70
     invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v2
 
-    .line 67
+    .line 72
     .local v2, pref:Landroid/content/SharedPreferences;
     const/4 v1, 0x0
 
-    .line 69
+    .line 74
     .local v1, n:I
     :try_start_0
     const-string v4, "cache-up-to-date"
@@ -249,15 +274,15 @@
 
     move-result v1
 
-    .line 73
+    .line 78
     :goto_0
     if-eqz v1, :cond_0
 
-    .line 82
+    .line 87
     :goto_1
     return-void
 
-    .line 74
+    .line 79
     :cond_0
     invoke-interface {v2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -273,12 +298,12 @@
 
     invoke-interface {v4}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 76
+    .line 81
     invoke-static {}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getCacheStorage()Ljava/io/File;
 
     move-result-object v0
 
-    .line 77
+    .line 82
     .local v0, cacheDir:Ljava/io/File;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -302,7 +327,7 @@
 
     move-result-object v3
 
-    .line 79
+    .line 84
     .local v3, prefix:Ljava/lang/String;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -324,7 +349,7 @@
 
     invoke-static {v4}, Lcom/android/gallery3d/common/BlobCache;->deleteFiles(Ljava/lang/String;)V
 
-    .line 80
+    .line 85
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -345,7 +370,7 @@
 
     invoke-static {v4}, Lcom/android/gallery3d/common/BlobCache;->deleteFiles(Ljava/lang/String;)V
 
-    .line 81
+    .line 86
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -368,7 +393,7 @@
 
     goto :goto_1
 
-    .line 70
+    .line 75
     .end local v0           #cacheDir:Ljava/io/File;
     .end local v3           #prefix:Ljava/lang/String;
     :catch_0

@@ -27,6 +27,7 @@
     .parameter
 
     .prologue
+    .line 706
     iput-object p1, p0, Landroid/net/wifi/WifiConfigStore$DelayedDiskWrite$1;->val$networks:Ljava/util/List;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,10 +41,12 @@
     .locals 1
 
     .prologue
+    .line 709
     iget-object v0, p0, Landroid/net/wifi/WifiConfigStore$DelayedDiskWrite$1;->val$networks:Ljava/util/List;
 
     #calls: Landroid/net/wifi/WifiConfigStore$DelayedDiskWrite;->onWriteCalled(Ljava/util/List;)V
     invoke-static {v0}, Landroid/net/wifi/WifiConfigStore$DelayedDiskWrite;->access$000(Ljava/util/List;)V
 
+    .line 710
     return-void
 .end method

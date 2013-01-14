@@ -24,6 +24,7 @@
     .parameter
 
     .prologue
+    .line 533
     iput-object p1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pDisablingState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -38,15 +39,19 @@
     .parameter "message"
 
     .prologue
+    .line 537
     iget v0, p1, Landroid/os/Message;->what:I
 
     sparse-switch v0, :sswitch_data_0
 
+    .line 547
     const/4 v0, 0x0
 
+    .line 549
     :goto_0
     return v0
 
+    .line 540
     :sswitch_0
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pDisablingState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
@@ -60,11 +65,13 @@
     #calls: Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->transitionTo(Lcom/android/internal/util/IState;)V
     invoke-static {v0, v1}, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->access$1300(Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;Lcom/android/internal/util/IState;)V
 
+    .line 549
     :goto_1
     const/4 v0, 0x1
 
     goto :goto_0
 
+    .line 544
     :sswitch_1
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pDisablingState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
@@ -73,6 +80,7 @@
 
     goto :goto_1
 
+    .line 537
     :sswitch_data_0
     .sparse-switch
         0x20083 -> :sswitch_1

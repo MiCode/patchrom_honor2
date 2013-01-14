@@ -30,14 +30,18 @@
     .parameter "pin"
 
     .prologue
+    .line 186
     iput-object p1, p0, Lcom/android/internal/policy/impl/SimPukUnlockScreen$CheckSimPuk;->this$0:Lcom/android/internal/policy/impl/SimPukUnlockScreen;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
+    .line 187
     iput-object p2, p0, Lcom/android/internal/policy/impl/SimPukUnlockScreen$CheckSimPuk;->mPuk:Ljava/lang/String;
 
+    .line 188
     iput-object p3, p0, Lcom/android/internal/policy/impl/SimPukUnlockScreen$CheckSimPuk;->mPin:Ljava/lang/String;
 
+    .line 189
     return-void
 .end method
 
@@ -50,6 +54,7 @@
     .locals 6
 
     .prologue
+    .line 197
     :try_start_0
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
@@ -61,6 +66,7 @@
 
     if-eqz v2, :cond_0
 
+    .line 198
     const-string v2, "phone_msim"
 
     invoke-static {v2}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -86,6 +92,7 @@
 
     move-result v1
 
+    .line 205
     .local v1, result:Z
     :goto_0
     iget-object v2, p0, Lcom/android/internal/policy/impl/SimPukUnlockScreen$CheckSimPuk;->this$0:Lcom/android/internal/policy/impl/SimPukUnlockScreen;
@@ -96,10 +103,12 @@
 
     invoke-virtual {v2, v3}, Lcom/android/internal/policy/impl/SimPukUnlockScreen;->post(Ljava/lang/Runnable;)Z
 
+    .line 217
     .end local v1           #result:Z
     :goto_1
     return-void
 
+    .line 201
     :cond_0
     const-string v2, "phone"
 
@@ -124,10 +133,12 @@
     .restart local v1       #result:Z
     goto :goto_0
 
+    .line 210
     .end local v1           #result:Z
     :catch_0
     move-exception v0
 
+    .line 211
     .local v0, e:Landroid/os/RemoteException;
     iget-object v2, p0, Lcom/android/internal/policy/impl/SimPukUnlockScreen$CheckSimPuk;->this$0:Lcom/android/internal/policy/impl/SimPukUnlockScreen;
 

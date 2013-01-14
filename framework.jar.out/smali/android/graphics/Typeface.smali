@@ -87,6 +87,7 @@
 
     const/4 v3, 0x0
 
+    .line 62
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0, v5}, Landroid/util/SparseArray;-><init>(I)V
@@ -95,6 +96,7 @@
 
     move-object v0, v1
 
+    .line 198
     check-cast v0, Ljava/lang/String;
 
     invoke-static {v0, v3}, Landroid/graphics/Typeface;->create(Ljava/lang/String;I)Landroid/graphics/Typeface;
@@ -105,6 +107,7 @@
 
     move-object v0, v1
 
+    .line 199
     check-cast v0, Ljava/lang/String;
 
     invoke-static {v0, v2}, Landroid/graphics/Typeface;->create(Ljava/lang/String;I)Landroid/graphics/Typeface;
@@ -115,6 +118,7 @@
 
     move-object v0, v1
 
+    .line 200
     check-cast v0, Ljava/lang/String;
 
     invoke-static {v0, v4}, Landroid/graphics/Typeface;->create(Ljava/lang/String;I)Landroid/graphics/Typeface;
@@ -123,6 +127,7 @@
 
     sput-object v0, Landroid/graphics/Typeface;->DEFAULT_ITALIC:Landroid/graphics/Typeface;
 
+    .line 201
     check-cast v1, Ljava/lang/String;
 
     invoke-static {v1, v5}, Landroid/graphics/Typeface;->create(Ljava/lang/String;I)Landroid/graphics/Typeface;
@@ -131,7 +136,8 @@
 
     sput-object v0, Landroid/graphics/Typeface;->DEFAULT_BOLD_ITALIC:Landroid/graphics/Typeface;
 
-    const-string v0, "sans-serif"
+    .line 202
+    const-string/jumbo v0, "sans-serif"
 
     invoke-static {v0, v3}, Landroid/graphics/Typeface;->create(Ljava/lang/String;I)Landroid/graphics/Typeface;
 
@@ -139,7 +145,8 @@
 
     sput-object v0, Landroid/graphics/Typeface;->SANS_SERIF:Landroid/graphics/Typeface;
 
-    const-string v0, "serif"
+    .line 203
+    const-string/jumbo v0, "serif"
 
     invoke-static {v0, v3}, Landroid/graphics/Typeface;->create(Ljava/lang/String;I)Landroid/graphics/Typeface;
 
@@ -147,7 +154,8 @@
 
     sput-object v0, Landroid/graphics/Typeface;->SERIF:Landroid/graphics/Typeface;
 
-    const-string v0, "monospace"
+    .line 204
+    const-string/jumbo v0, "monospace"
 
     invoke-static {v0, v3}, Landroid/graphics/Typeface;->create(Ljava/lang/String;I)Landroid/graphics/Typeface;
 
@@ -155,6 +163,7 @@
 
     sput-object v0, Landroid/graphics/Typeface;->MONOSPACE:Landroid/graphics/Typeface;
 
+    .line 206
     const/4 v0, 0x4
 
     new-array v0, v0, [Landroid/graphics/Typeface;
@@ -177,14 +186,17 @@
 
     sput-object v0, Landroid/graphics/Typeface;->sDefaults:[Landroid/graphics/Typeface;
 
+    .line 242
     const-string v0, ""
 
     sput-object v0, Landroid/graphics/Typeface;->THEME_FONT_PATH:Ljava/lang/String;
 
+    .line 243
     const-string v0, ""
 
     sput-object v0, Landroid/graphics/Typeface;->THEME_FONT_PATH_BOLD:Ljava/lang/String;
 
+    .line 249
     sget-object v0, Ljava/util/Locale;->CHINESE:Ljava/util/Locale;
 
     invoke-virtual {v0}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
@@ -197,6 +209,7 @@
 
     sput-object v0, Landroid/graphics/Typeface;->CHINESE_LANGUAGE:Ljava/lang/String;
 
+    .line 250
     sget-object v0, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
     invoke-virtual {v0}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
@@ -209,7 +222,8 @@
 
     sput-object v0, Landroid/graphics/Typeface;->ENGLISH_LANGUAGE:Ljava/lang/String;
 
-    const-string v0, "ro.config.hwtheme"
+    .line 410
+    const-string/jumbo v0, "ro.config.hwtheme"
 
     invoke-static {v0, v3}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
 
@@ -235,31 +249,38 @@
     .parameter "ni"
 
     .prologue
+    .line 187
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 73
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/graphics/Typeface;->mStyle:I
 
+    .line 188
     if-nez p1, :cond_0
 
+    .line 189
     new-instance v0, Ljava/lang/RuntimeException;
 
-    const-string v1, "native typeface cannot be made"
+    const-string/jumbo v1, "native typeface cannot be made"
 
     invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
+    .line 192
     :cond_0
     iput p1, p0, Landroid/graphics/Typeface;->native_instance:I
 
+    .line 193
     invoke-static {p1}, Landroid/graphics/Typeface;->nativeGetStyle(I)I
 
     move-result v0
 
     iput v0, p0, Landroid/graphics/Typeface;->mStyle:I
 
+    .line 194
     return-void
 .end method
 
@@ -269,24 +290,30 @@
     .parameter "style"
 
     .prologue
+    .line 117
     const/4 v0, 0x0
 
+    .line 118
     .local v0, ni:I
     if-eqz p0, :cond_2
 
+    .line 120
     iget v3, p0, Landroid/graphics/Typeface;->mStyle:I
 
     if-ne v3, p1, :cond_1
 
     move-object v2, p0
 
+    .line 144
     :cond_0
     :goto_0
     return-object v2
 
+    .line 124
     :cond_1
     iget v0, p0, Landroid/graphics/Typeface;->native_instance:I
 
+    .line 128
     :cond_2
     sget-object v3, Landroid/graphics/Typeface;->sTypefaceCache:Landroid/util/SparseArray;
 
@@ -296,18 +323,22 @@
 
     check-cast v1, Landroid/util/SparseArray;
 
+    .line 130
     .local v1, styles:Landroid/util/SparseArray;,"Landroid/util/SparseArray<Landroid/graphics/Typeface;>;"
     if-eqz v1, :cond_3
 
+    .line 131
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/graphics/Typeface;
 
+    .line 132
     .local v2, typeface:Landroid/graphics/Typeface;
     if-nez v2, :cond_0
 
+    .line 137
     .end local v2           #typeface:Landroid/graphics/Typeface;
     :cond_3
     new-instance v2, Landroid/graphics/Typeface;
@@ -318,9 +349,11 @@
 
     invoke-direct {v2, v3}, Landroid/graphics/Typeface;-><init>(I)V
 
+    .line 138
     .restart local v2       #typeface:Landroid/graphics/Typeface;
     if-nez v1, :cond_4
 
+    .line 139
     new-instance v1, Landroid/util/SparseArray;
 
     .end local v1           #styles:Landroid/util/SparseArray;,"Landroid/util/SparseArray<Landroid/graphics/Typeface;>;"
@@ -328,11 +361,13 @@
 
     invoke-direct {v1, v3}, Landroid/util/SparseArray;-><init>(I)V
 
+    .line 140
     .restart local v1       #styles:Landroid/util/SparseArray;,"Landroid/util/SparseArray<Landroid/graphics/Typeface;>;"
     sget-object v3, Landroid/graphics/Typeface;->sTypefaceCache:Landroid/util/SparseArray;
 
     invoke-virtual {v3, v0, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
+    .line 142
     :cond_4
     invoke-virtual {v1, p1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -345,6 +380,7 @@
     .parameter "style"
 
     .prologue
+    .line 102
     new-instance v0, Landroid/graphics/Typeface;
 
     invoke-static {p0, p1}, Landroid/graphics/Typeface;->nativeCreate(Ljava/lang/String;I)I
@@ -362,6 +398,7 @@
     .parameter "path"
 
     .prologue
+    .line 163
     new-instance v0, Landroid/graphics/Typeface;
 
     invoke-static {p0, p1}, Landroid/graphics/Typeface;->nativeCreateFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)I
@@ -378,6 +415,7 @@
     .parameter "path"
 
     .prologue
+    .line 173
     new-instance v0, Landroid/graphics/Typeface;
 
     invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
@@ -398,6 +436,7 @@
     .parameter "path"
 
     .prologue
+    .line 183
     new-instance v0, Landroid/graphics/Typeface;
 
     invoke-static {p0}, Landroid/graphics/Typeface;->nativeCreateFromFile(Ljava/lang/String;)I
@@ -414,6 +453,7 @@
     .parameter "style"
 
     .prologue
+    .line 153
     sget-object v0, Landroid/graphics/Typeface;->sDefaults:[Landroid/graphics/Typeface;
 
     aget-object v0, v0, p0
@@ -427,16 +467,19 @@
     .prologue
     const/4 v10, 0x0
 
+    .line 278
     const-string v8, "/data/skin/fonts/"
 
     sput-object v8, Landroid/graphics/Typeface;->THEME_FONT_PATH:Ljava/lang/String;
 
+    .line 279
     new-instance v3, Ljava/io/File;
 
     sget-object v8, Landroid/graphics/Typeface;->THEME_FONT_PATH:Ljava/lang/String;
 
     invoke-direct {v3, v8}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
+    .line 281
     .local v3, fontBaseDir:Ljava/io/File;
     invoke-virtual {v3}, Ljava/io/File;->exists()Z
 
@@ -444,6 +487,7 @@
 
     if-eqz v8, :cond_1
 
+    .line 282
     new-instance v8, Landroid/graphics/Typeface$1;
 
     invoke-direct {v8}, Landroid/graphics/Typeface$1;-><init>()V
@@ -452,6 +496,7 @@
 
     move-result-object v4
 
+    .line 288
     .local v4, fontFiles:[Ljava/io/File;
     if-eqz v4, :cond_0
 
@@ -459,20 +504,24 @@
 
     if-gtz v8, :cond_2
 
+    .line 290
     :cond_0
     const-string v8, ""
 
     sput-object v8, Landroid/graphics/Typeface;->THEME_FONT_PATH:Ljava/lang/String;
 
+    .line 291
     const-string v8, ""
 
     sput-object v8, Landroid/graphics/Typeface;->THEME_FONT_PATH_BOLD:Ljava/lang/String;
 
+    .line 323
     .end local v4           #fontFiles:[Ljava/io/File;
     :cond_1
     :goto_0
     return-void
 
+    .line 295
     .restart local v4       #fontFiles:[Ljava/io/File;
     :cond_2
     new-instance v8, Landroid/graphics/Typeface$2;
@@ -481,11 +530,14 @@
 
     invoke-static {v4, v8}, Ljava/util/Arrays;->sort([Ljava/lang/Object;Ljava/util/Comparator;)V
 
+    .line 305
     const/4 v2, 0x0
 
+    .line 306
     .local v2, fileName:Ljava/lang/String;
     const/4 v5, 0x0
 
+    .line 307
     .local v5, fontPrefixName:Ljava/lang/String;
     move-object v0, v4
 
@@ -501,11 +553,13 @@
 
     aget-object v1, v0, v6
 
+    .line 308
     .local v1, file:Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v2
 
+    .line 309
     const-string v8, ".ttf"
 
     invoke-virtual {v2, v8}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
@@ -547,6 +601,7 @@
 
     if-nez v8, :cond_6
 
+    .line 312
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -567,6 +622,7 @@
 
     sput-object v8, Landroid/graphics/Typeface;->THEME_FONT_PATH:Ljava/lang/String;
 
+    .line 313
     const-string v8, "-Regular.ttf"
 
     invoke-virtual {v2, v8}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
@@ -575,6 +631,7 @@
 
     if-eqz v8, :cond_5
 
+    .line 314
     const-string v8, "-Regular.ttf"
 
     invoke-virtual {v2, v8}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
@@ -585,6 +642,7 @@
 
     move-result-object v5
 
+    .line 321
     .end local v1           #file:Ljava/io/File;
     :cond_4
     :goto_2
@@ -616,6 +674,7 @@
 
     goto :goto_0
 
+    .line 316
     .restart local v1       #file:Ljava/io/File;
     :cond_5
     const-string v8, ".ttf"
@@ -628,8 +687,10 @@
 
     move-result-object v5
 
+    .line 318
     goto :goto_2
 
+    .line 307
     :cond_6
     add-int/lit8 v6, v6, 0x1
 
@@ -642,6 +703,7 @@
     .prologue
     const/4 v1, 0x1
 
+    .line 253
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v2
@@ -654,6 +716,7 @@
 
     move-result-object v0
 
+    .line 255
     .local v0, lang:Ljava/lang/String;
     sget-object v2, Landroid/graphics/Typeface;->CHINESE_LANGUAGE:Ljava/lang/String;
 
@@ -663,10 +726,12 @@
 
     if-eqz v2, :cond_1
 
+    .line 260
     :cond_0
     :goto_0
     return v1
 
+    .line 257
     :cond_1
     sget-object v2, Landroid/graphics/Typeface;->ENGLISH_LANGUAGE:Ljava/lang/String;
 
@@ -676,6 +741,7 @@
 
     if-nez v2, :cond_0
 
+    .line 260
     const/4 v1, 0x0
 
     goto :goto_0
@@ -707,6 +773,7 @@
     .parameter "sAppName"
 
     .prologue
+    .line 265
     sget-boolean v0, Landroid/graphics/Typeface;->sHwTFlipFontOn:Z
 
     if-eqz v0, :cond_0
@@ -717,8 +784,10 @@
 
     if-eqz v0, :cond_0
 
+    .line 266
     invoke-static {}, Landroid/graphics/Typeface;->setThemeFontTypeface()V
 
+    .line 268
     :cond_0
     return-void
 .end method
@@ -731,17 +800,22 @@
 
     const/4 v6, 0x0
 
+    .line 326
     const/4 v2, 0x0
 
+    .line 327
     .local v2, typefaceNative:I
     const/4 v0, 0x0
 
+    .line 328
     .local v0, fontFile:Ljava/io/File;
     const/4 v1, 0x0
 
+    .line 330
     .local v1, fontFileBold:Ljava/io/File;
     invoke-static {}, Landroid/graphics/Typeface;->getThemeFontPath()V
 
+    .line 334
     new-instance v0, Ljava/io/File;
 
     .end local v0           #fontFile:Ljava/io/File;
@@ -749,6 +823,7 @@
 
     invoke-direct {v0, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
+    .line 335
     .restart local v0       #fontFile:Ljava/io/File;
     new-instance v1, Ljava/io/File;
 
@@ -757,17 +832,20 @@
 
     invoke-direct {v1, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
+    .line 337
     .restart local v1       #fontFileBold:Ljava/io/File;
     sget-object v3, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
 
     iget v2, v3, Landroid/graphics/Typeface;->native_instance:I
 
+    .line 339
     invoke-virtual {v0}, Ljava/io/File;->isFile()Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
+    .line 340
     sget-object v3, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
 
     sget-object v5, Landroid/graphics/Typeface;->THEME_FONT_PATH:Ljava/lang/String;
@@ -778,19 +856,23 @@
 
     iput v5, v3, Landroid/graphics/Typeface;->native_instance:I
 
+    .line 344
     :goto_0
     invoke-static {v2}, Landroid/graphics/Typeface;->nativeUnref(I)V
 
+    .line 347
     sget-object v3, Landroid/graphics/Typeface;->DEFAULT_BOLD:Landroid/graphics/Typeface;
 
     iget v2, v3, Landroid/graphics/Typeface;->native_instance:I
 
+    .line 348
     invoke-virtual {v1}, Ljava/io/File;->isFile()Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
+    .line 349
     sget-object v3, Landroid/graphics/Typeface;->DEFAULT_BOLD:Landroid/graphics/Typeface;
 
     sget-object v4, Landroid/graphics/Typeface;->THEME_FONT_PATH_BOLD:Ljava/lang/String;
@@ -801,13 +883,16 @@
 
     iput v4, v3, Landroid/graphics/Typeface;->native_instance:I
 
+    .line 357
     :goto_1
     invoke-static {v2}, Landroid/graphics/Typeface;->nativeUnref(I)V
 
+    .line 361
     sget-object v3, Landroid/graphics/Typeface;->DEFAULT_ITALIC:Landroid/graphics/Typeface;
 
     iget v2, v3, Landroid/graphics/Typeface;->native_instance:I
 
+    .line 362
     sget-object v3, Landroid/graphics/Typeface;->DEFAULT_ITALIC:Landroid/graphics/Typeface;
 
     sget-object v4, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
@@ -822,12 +907,15 @@
 
     iput v4, v3, Landroid/graphics/Typeface;->native_instance:I
 
+    .line 363
     invoke-static {v2}, Landroid/graphics/Typeface;->nativeUnref(I)V
 
+    .line 366
     sget-object v3, Landroid/graphics/Typeface;->DEFAULT_BOLD_ITALIC:Landroid/graphics/Typeface;
 
     iget v2, v3, Landroid/graphics/Typeface;->native_instance:I
 
+    .line 367
     sget-object v3, Landroid/graphics/Typeface;->DEFAULT_BOLD_ITALIC:Landroid/graphics/Typeface;
 
     sget-object v4, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
@@ -842,12 +930,15 @@
 
     iput v4, v3, Landroid/graphics/Typeface;->native_instance:I
 
+    .line 368
     invoke-static {v2}, Landroid/graphics/Typeface;->nativeUnref(I)V
 
+    .line 371
     sget-object v3, Landroid/graphics/Typeface;->SANS_SERIF:Landroid/graphics/Typeface;
 
     iget v2, v3, Landroid/graphics/Typeface;->native_instance:I
 
+    .line 372
     sget-object v3, Landroid/graphics/Typeface;->SANS_SERIF:Landroid/graphics/Typeface;
 
     sget-object v4, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
@@ -860,10 +951,13 @@
 
     iput v4, v3, Landroid/graphics/Typeface;->native_instance:I
 
+    .line 373
     invoke-static {v2}, Landroid/graphics/Typeface;->nativeUnref(I)V
 
+    .line 385
     return-void
 
+    .line 342
     :cond_0
     sget-object v5, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
 
@@ -879,6 +973,7 @@
 
     goto :goto_0
 
+    .line 351
     :cond_1
     invoke-virtual {v0}, Ljava/io/File;->isFile()Z
 
@@ -886,6 +981,7 @@
 
     if-eqz v3, :cond_2
 
+    .line 352
     sget-object v3, Landroid/graphics/Typeface;->DEFAULT_BOLD:Landroid/graphics/Typeface;
 
     sget-object v4, Landroid/graphics/Typeface;->THEME_FONT_PATH:Ljava/lang/String;
@@ -898,6 +994,7 @@
 
     goto :goto_1
 
+    .line 354
     :cond_2
     sget-object v3, Landroid/graphics/Typeface;->DEFAULT_BOLD:Landroid/graphics/Typeface;
 
@@ -919,6 +1016,7 @@
     .parameter "appName"
 
     .prologue
+    .line 274
     invoke-static {}, Landroid/graphics/Typeface;->isTargetLangs()Z
 
     move-result v0
@@ -937,12 +1035,15 @@
 
     const/4 v2, 0x0
 
+    .line 225
     if-ne p0, p1, :cond_1
 
+    .line 230
     :cond_0
     :goto_0
     return v1
 
+    .line 226
     :cond_1
     if-eqz p1, :cond_2
 
@@ -964,8 +1065,10 @@
     :cond_3
     move-object v0, p1
 
+    .line 228
     check-cast v0, Landroid/graphics/Typeface;
 
+    .line 230
     .local v0, typeface:Landroid/graphics/Typeface;
     iget v3, p0, Landroid/graphics/Typeface;->mStyle:I
 
@@ -994,6 +1097,7 @@
     .end annotation
 
     .prologue
+    .line 217
     :try_start_0
     iget v0, p0, Landroid/graphics/Typeface;->native_instance:I
 
@@ -1001,10 +1105,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 219
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
+    .line 221
     return-void
 
+    .line 219
     :catchall_0
     move-exception v0
 
@@ -1017,6 +1124,7 @@
     .locals 1
 
     .prologue
+    .line 77
     iget v0, p0, Landroid/graphics/Typeface;->mStyle:I
 
     return v0
@@ -1026,8 +1134,10 @@
     .locals 3
 
     .prologue
+    .line 235
     iget v0, p0, Landroid/graphics/Typeface;->native_instance:I
 
+    .line 236
     .local v0, result:I
     mul-int/lit8 v1, v0, 0x1f
 
@@ -1035,6 +1145,7 @@
 
     add-int v0, v1, v2
 
+    .line 237
     return v0
 .end method
 
@@ -1042,6 +1153,7 @@
     .locals 1
 
     .prologue
+    .line 82
     iget v0, p0, Landroid/graphics/Typeface;->mStyle:I
 
     and-int/lit8 v0, v0, 0x1
@@ -1063,6 +1175,7 @@
     .locals 1
 
     .prologue
+    .line 87
     iget v0, p0, Landroid/graphics/Typeface;->mStyle:I
 
     and-int/lit8 v0, v0, 0x2

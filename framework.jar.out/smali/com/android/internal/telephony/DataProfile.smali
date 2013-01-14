@@ -60,51 +60,69 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 66
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 43
     iput-boolean v0, p0, Lcom/android/internal/telephony/DataProfile;->mInPartialRetry:Z
 
+    .line 61
     iput-boolean v0, p0, Lcom/android/internal/telephony/DataProfile;->mTetheredCallOn:Z
 
+    .line 63
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/internal/telephony/DataProfile;->mDc:Lcom/android/internal/telephony/DataConnection;
 
+    .line 67
     iput p1, p0, Lcom/android/internal/telephony/DataProfile;->id:I
 
+    .line 68
     iput-object p2, p0, Lcom/android/internal/telephony/DataProfile;->numeric:Ljava/lang/String;
 
+    .line 69
     iput-object p3, p0, Lcom/android/internal/telephony/DataProfile;->apn:Ljava/lang/String;
 
+    .line 70
     iput-object p7, p0, Lcom/android/internal/telephony/DataProfile;->types:[Ljava/lang/String;
 
+    .line 71
     iput-object p4, p0, Lcom/android/internal/telephony/DataProfile;->user:Ljava/lang/String;
 
+    .line 72
     iput-object p5, p0, Lcom/android/internal/telephony/DataProfile;->password:Ljava/lang/String;
 
+    .line 73
     iput-object p8, p0, Lcom/android/internal/telephony/DataProfile;->protocol:Ljava/lang/String;
 
+    .line 74
     iput-object p9, p0, Lcom/android/internal/telephony/DataProfile;->roamingProtocol:Ljava/lang/String;
 
+    .line 75
     iput p10, p0, Lcom/android/internal/telephony/DataProfile;->bearer:I
 
+    .line 77
     const/4 v1, -0x1
 
     if-ne p6, v1, :cond_0
 
+    .line 78
     if-eqz p4, :cond_1
 
     const/4 p6, 0x3
 
+    .line 81
     :cond_0
     :goto_0
     iput p6, p0, Lcom/android/internal/telephony/DataProfile;->authType:I
 
+    .line 82
     return-void
 
     :cond_1
     move p6, v0
 
+    .line 78
     goto :goto_0
 .end method
 
@@ -123,6 +141,7 @@
     .locals 1
 
     .prologue
+    .line 97
     iget-object v0, p0, Lcom/android/internal/telephony/DataProfile;->types:[Ljava/lang/String;
 
     return-object v0
@@ -132,6 +151,7 @@
     .locals 1
 
     .prologue
+    .line 135
     iget-boolean v0, p0, Lcom/android/internal/telephony/DataProfile;->mTetheredCallOn:Z
 
     return v0
@@ -141,6 +161,7 @@
     .locals 1
 
     .prologue
+    .line 85
     iget-object v0, p0, Lcom/android/internal/telephony/DataProfile;->mDc:Lcom/android/internal/telephony/DataConnection;
 
     if-eqz v0, :cond_0
@@ -160,6 +181,7 @@
     .locals 1
 
     .prologue
+    .line 143
     iget-boolean v0, p0, Lcom/android/internal/telephony/DataProfile;->mInPartialRetry:Z
 
     return v0
@@ -170,8 +192,10 @@
     .parameter "dc"
 
     .prologue
+    .line 89
     iput-object p1, p0, Lcom/android/internal/telephony/DataProfile;->mDc:Lcom/android/internal/telephony/DataConnection;
 
+    .line 90
     return-void
 .end method
 
@@ -179,10 +203,12 @@
     .locals 1
 
     .prologue
+    .line 93
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/DataProfile;->mDc:Lcom/android/internal/telephony/DataConnection;
 
+    .line 94
     return-void
 .end method
 
@@ -191,8 +217,10 @@
     .parameter "partialRetry"
 
     .prologue
+    .line 139
     iput-boolean p1, p0, Lcom/android/internal/telephony/DataProfile;->mInPartialRetry:Z
 
+    .line 140
     return-void
 .end method
 
@@ -201,6 +229,7 @@
     .parameter "profileId"
 
     .prologue
+    .line 128
     return-void
 .end method
 
@@ -209,8 +238,10 @@
     .parameter "tetheredCallOn"
 
     .prologue
+    .line 131
     iput-boolean p1, p0, Lcom/android/internal/telephony/DataProfile;->mTetheredCallOn:Z
 
+    .line 132
     return-void
 .end method
 
@@ -224,8 +255,10 @@
     .locals 7
 
     .prologue
+    .line 102
     const-string v3, ""
 
+    .line 103
     .local v3, serviceTypes:Ljava/lang/String;
     iget-object v0, p0, Lcom/android/internal/telephony/DataProfile;->types:[Ljava/lang/String;
 
@@ -241,6 +274,7 @@
 
     aget-object v4, v0, v1
 
+    .line 104
     .local v4, type:Ljava/lang/String;
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -264,10 +298,12 @@
 
     move-result-object v3
 
+    .line 103
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 107
     .end local v4           #type:Ljava/lang/String;
     :cond_0
     new-instance v5, Ljava/lang/StringBuilder;

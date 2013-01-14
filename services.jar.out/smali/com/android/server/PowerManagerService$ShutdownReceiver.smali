@@ -24,6 +24,7 @@
     .parameter
 
     .prologue
+    .line 511
     iput-object p1, p0, Lcom/android/server/PowerManagerService$ShutdownReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -37,6 +38,7 @@
     .parameter "x1"
 
     .prologue
+    .line 511
     invoke-direct {p0, p1}, Lcom/android/server/PowerManagerService$ShutdownReceiver;-><init>(Lcom/android/server/PowerManagerService;)V
 
     return-void
@@ -50,6 +52,7 @@
     .parameter "intent"
 
     .prologue
+    .line 514
     const-string v4, "android.intent.action.ACTION_POWER_CONNECTED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -76,6 +79,7 @@
 
     if-eqz v4, :cond_1
 
+    .line 516
     const-string v4, "persist.sys.quickpoweron"
 
     const-string v5, "0"
@@ -84,6 +88,7 @@
 
     move-result-object v3
 
+    .line 517
     .local v3, strPower:Ljava/lang/String;
     const-string v4, "shutdown"
 
@@ -93,6 +98,7 @@
 
     if-eqz v4, :cond_1
 
+    .line 518
     const-string v4, "persist.sys.quickpoweron"
 
     const-string v5, "false"
@@ -101,6 +107,7 @@
 
     move-result-object v2
 
+    .line 519
     .local v2, statePower:Ljava/lang/String;
     const-string v4, "startpoweron"
 
@@ -110,6 +117,7 @@
 
     if-nez v4, :cond_0
 
+    .line 520
     iget-object v4, p0, Lcom/android/server/PowerManagerService$ShutdownReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -118,9 +126,11 @@
 
     invoke-virtual {v4, v5, v6}, Lcom/android/server/PowerManagerService;->goToSleep(J)V
 
+    .line 522
     :cond_0
     const/4 v0, 0x0
 
+    .line 524
     .local v0, bBattery:Z
     :try_start_0
     iget-object v4, p0, Lcom/android/server/PowerManagerService$ShutdownReceiver;->this$0:Lcom/android/server/PowerManagerService;
@@ -136,21 +146,25 @@
 
     move-result v0
 
+    .line 529
     :goto_0
     if-nez v0, :cond_1
 
+    .line 531
     const-string v4, "PowerManagerService"
 
     const-string v5, "onReceive::Power.shutdown E"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 532
     sget-object v4, Lcom/android/server/pm/ShutdownThread;->mH:Landroid/os/Handler;
 
     sget-object v5, Lcom/android/internal/policy/Powerstate;->mScreenOffNatually:Ljava/lang/Runnable;
 
     invoke-virtual {v4, v5}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
+    .line 533
     sget-object v4, Lcom/android/server/pm/ShutdownThread;->mH:Landroid/os/Handler;
 
     sget-object v5, Lcom/android/internal/policy/Powerstate;->mScreenOffNatually:Ljava/lang/Runnable;
@@ -159,26 +173,31 @@
 
     invoke-virtual {v4, v5, v6, v7}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
+    .line 534
     invoke-static {}, Lcom/android/internal/policy/Powerstate;->showPowerOffCharge()V
 
+    .line 535
     const-string v4, "PowerManagerService"
 
     const-string v5, "onReceive::Power.shutdown X"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 539
     .end local v0           #bBattery:Z
     .end local v2           #statePower:Ljava/lang/String;
     .end local v3           #strPower:Ljava/lang/String;
     :cond_1
     return-void
 
+    .line 525
     .restart local v0       #bBattery:Z
     .restart local v2       #statePower:Ljava/lang/String;
     .restart local v3       #strPower:Ljava/lang/String;
     :catch_0
     move-exception v1
 
+    .line 526
     .local v1, e:Landroid/os/RemoteException;
     const-string v4, "PowerManagerService"
 
@@ -186,6 +205,7 @@
 
     invoke-static {v4, v5, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 527
     const/4 v0, 0x0
 
     goto :goto_0

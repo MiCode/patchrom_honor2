@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 7640
+    .line 7596
     iput-object p1, p0, Lcom/android/hwcamera/Camera$8;->this$0:Lcom/android/hwcamera/Camera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 7642
+    .line 7598
     iget-object v0, p0, Lcom/android/hwcamera/Camera$8;->this$0:Lcom/android/hwcamera/Camera;
 
     const/4 v1, 0x1
@@ -51,7 +51,7 @@
     #setter for: Lcom/android/hwcamera/Camera;->mRestartPreviewNeed:Z
     invoke-static {v0, v1}, Lcom/android/hwcamera/Camera;->access$12902(Lcom/android/hwcamera/Camera;Z)Z
 
-    .line 7643
+    .line 7599
     const-string v0, "Camera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -81,7 +81,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7644
+    .line 7600
     iget-object v0, p0, Lcom/android/hwcamera/Camera$8;->this$0:Lcom/android/hwcamera/Camera;
 
     iget-object v1, p0, Lcom/android/hwcamera/Camera$8;->this$0:Lcom/android/hwcamera/Camera;
@@ -100,25 +100,25 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/hwcamera/CameraSettings;->restorePreferences(Landroid/content/Context;Lcom/android/hwcamera/ComboPreferences;Landroid/hardware/Camera$Parameters;)V
 
-    .line 7645
+    .line 7601
     iget-object v0, p0, Lcom/android/hwcamera/Camera$8;->this$0:Lcom/android/hwcamera/Camera;
 
     #calls: Lcom/android/hwcamera/Camera;->restoreParameterToDefault()V
     invoke-static {v0}, Lcom/android/hwcamera/Camera;->access$13100(Lcom/android/hwcamera/Camera;)V
 
-    .line 7646
+    .line 7602
     iget-object v0, p0, Lcom/android/hwcamera/Camera$8;->this$0:Lcom/android/hwcamera/Camera;
 
     #calls: Lcom/android/hwcamera/Camera;->updateSuperPanel()V
     invoke-static {v0}, Lcom/android/hwcamera/Camera;->access$13200(Lcom/android/hwcamera/Camera;)V
 
-    .line 7648
+    .line 7604
     iget-object v0, p0, Lcom/android/hwcamera/Camera$8;->this$0:Lcom/android/hwcamera/Camera;
 
     #setter for: Lcom/android/hwcamera/Camera;->mIsMute:Z
     invoke-static {v0, v3}, Lcom/android/hwcamera/Camera;->access$6902(Lcom/android/hwcamera/Camera;Z)Z
 
-    .line 7649
+    .line 7605
     iget-object v0, p0, Lcom/android/hwcamera/Camera$8;->this$0:Lcom/android/hwcamera/Camera;
 
     #getter for: Lcom/android/hwcamera/Camera;->mFocusManager:Lcom/android/hwcamera/FocusManager;
@@ -135,7 +135,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/FocusManager;->setSoundState(Z)V
 
-    .line 7651
+    .line 7607
     iget-object v0, p0, Lcom/android/hwcamera/Camera$8;->this$0:Lcom/android/hwcamera/Camera;
 
     #getter for: Lcom/android/hwcamera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
@@ -149,13 +149,13 @@
 
     if-eqz v0, :cond_1
 
-    .line 7652
+    .line 7608
     iget-object v0, p0, Lcom/android/hwcamera/Camera$8;->this$0:Lcom/android/hwcamera/Camera;
 
     #setter for: Lcom/android/hwcamera/Camera;->mZoomValue:I
     invoke-static {v0, v3}, Lcom/android/hwcamera/Camera;->access$9502(Lcom/android/hwcamera/Camera;I)I
 
-    .line 7655
+    .line 7611
     iget-object v0, p0, Lcom/android/hwcamera/Camera$8;->this$0:Lcom/android/hwcamera/Camera;
 
     #getter for: Lcom/android/hwcamera/Camera;->mZoomControl:Lcom/android/hwcamera/hwui/ZoomControl;
@@ -165,7 +165,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 7656
+    .line 7612
     iget-object v0, p0, Lcom/android/hwcamera/Camera$8;->this$0:Lcom/android/hwcamera/Camera;
 
     #getter for: Lcom/android/hwcamera/Camera;->mZoomControl:Lcom/android/hwcamera/hwui/ZoomControl;
@@ -182,7 +182,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/hwcamera/hwui/ZoomControl;->setZoomIndex(I)V
 
-    .line 7659
+    .line 7615
     :cond_0
     iget-object v0, p0, Lcom/android/hwcamera/Camera$8;->this$0:Lcom/android/hwcamera/Camera;
 
@@ -191,13 +191,13 @@
     #calls: Lcom/android/hwcamera/Camera;->setCameraParametersWhenIdle(I)V
     invoke-static {v0, v1}, Lcom/android/hwcamera/Camera;->access$13300(Lcom/android/hwcamera/Camera;I)V
 
-    .line 7661
+    .line 7617
     :cond_1
     iget-object v0, p0, Lcom/android/hwcamera/Camera$8;->this$0:Lcom/android/hwcamera/Camera;
 
     #calls: Lcom/android/hwcamera/Camera;->onSharedPreferenceChanged()V
     invoke-static {v0}, Lcom/android/hwcamera/Camera;->access$13400(Lcom/android/hwcamera/Camera;)V
 
-    .line 7662
+    .line 7618
     return-void
 .end method

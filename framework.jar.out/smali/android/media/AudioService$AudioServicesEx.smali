@@ -46,22 +46,25 @@
     .parameter
 
     .prologue
+    .line 5490
     iput-object p1, p0, Landroid/media/AudioService$AudioServicesEx;->this$0:Landroid/media/AudioService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 5500
     new-instance v1, Landroid/media/AudioService$AudioServicesEx$1;
 
     invoke-direct {v1, p0}, Landroid/media/AudioService$AudioServicesEx$1;-><init>(Landroid/media/AudioService$AudioServicesEx;)V
 
     iput-object v1, p0, Landroid/media/AudioService$AudioServicesEx;->mHwThemeReceiver:Landroid/content/BroadcastReceiver;
 
+    .line 5491
     #getter for: Landroid/media/AudioService;->mContentResolver:Landroid/content/ContentResolver;
     invoke-static {p1}, Landroid/media/AudioService;->access$3400(Landroid/media/AudioService;)Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    const-string v2, "syskey_sound_hwt"
+    const-string/jumbo v2, "syskey_sound_hwt"
 
     invoke-static {v1, v2}, Landroid/provider/SettingsEx$Systemex;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
@@ -69,12 +72,14 @@
 
     iput-object v1, p0, Landroid/media/AudioService$AudioServicesEx;->mSysKeyEffectFile:Ljava/lang/String;
 
+    .line 5492
     new-instance v0, Landroid/content/IntentFilter;
 
     const-string v1, "android.intent.action.RINGTONE_CHANGE"
 
     invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
+    .line 5493
     .local v0, hwThemeFilter:Landroid/content/IntentFilter;
     #getter for: Landroid/media/AudioService;->mContext:Landroid/content/Context;
     invoke-static {p1}, Landroid/media/AudioService;->access$7100(Landroid/media/AudioService;)Landroid/content/Context;
@@ -85,6 +90,7 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
+    .line 5494
     return-void
 .end method
 
@@ -93,6 +99,7 @@
     .parameter "x0"
 
     .prologue
+    .line 5481
     invoke-direct {p0}, Landroid/media/AudioService$AudioServicesEx;->unloadHwThemeSoundEffects()V
 
     return-void
@@ -103,6 +110,7 @@
     .parameter "x0"
 
     .prologue
+    .line 5481
     iget-object v0, p0, Landroid/media/AudioService$AudioServicesEx;->mSysKeyEffectFile:Ljava/lang/String;
 
     return-object v0
@@ -114,6 +122,7 @@
     .parameter "x1"
 
     .prologue
+    .line 5481
     iput-object p1, p0, Landroid/media/AudioService$AudioServicesEx;->mSysKeyEffectFile:Ljava/lang/String;
 
     return-object p1
@@ -124,6 +133,7 @@
     .parameter "x0"
 
     .prologue
+    .line 5481
     iget-object v0, p0, Landroid/media/AudioService$AudioServicesEx;->mHwThemeHandler:Landroid/media/AudioService$AudioServicesEx$HwThemeHandler;
 
     return-object v0
@@ -133,12 +143,14 @@
     .locals 2
 
     .prologue
+    .line 5555
     iget-object v0, p0, Landroid/media/AudioService$AudioServicesEx;->mHwThemeHandler:Landroid/media/AudioService$AudioServicesEx$HwThemeHandler;
 
     const/16 v1, 0x63
 
     invoke-virtual {v0, v1}, Landroid/media/AudioService$AudioServicesEx$HwThemeHandler;->removeMessages(I)V
 
+    .line 5556
     return-void
 .end method
 
@@ -153,24 +165,31 @@
     .prologue
     const/4 v3, 0x1
 
+    .line 5530
     const/4 v1, 0x0
 
+    .line 5531
     .local v1, themeFilePath:Ljava/lang/String;
     const/4 v0, 0x0
 
+    .line 5533
     .local v0, sampleId:I
     if-nez p1, :cond_2
 
+    .line 5534
     iget-object v1, p0, Landroid/media/AudioService$AudioServicesEx;->mSysKeyEffectFile:Ljava/lang/String;
 
+    .line 5535
     if-eqz v1, :cond_1
 
+    .line 5537
     invoke-virtual {p0, v1}, Landroid/media/AudioService$AudioServicesEx;->isFileReady(Ljava/lang/String;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
+    .line 5538
     iget-object v2, p0, Landroid/media/AudioService$AudioServicesEx;->this$0:Landroid/media/AudioService;
 
     #getter for: Landroid/media/AudioService;->mSoundPool:Landroid/media/SoundPool;
@@ -182,8 +201,10 @@
 
     move-result v0
 
+    .line 5539
     if-lez v0, :cond_0
 
+    .line 5540
     iget-object v2, p0, Landroid/media/AudioService$AudioServicesEx;->this$0:Landroid/media/AudioService;
 
     #getter for: Landroid/media/AudioService;->mContentResolver:Landroid/content/ContentResolver;
@@ -191,14 +212,16 @@
 
     move-result-object v2
 
-    const-string v3, "syskey_sound_hwt"
+    const-string/jumbo v3, "syskey_sound_hwt"
 
     invoke-static {v2, v3, v1}, Landroid/provider/SettingsEx$Systemex;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
+    .line 5551
     :cond_0
     :goto_0
     return v0
 
+    .line 5545
     :cond_1
     iget-object v2, p0, Landroid/media/AudioService$AudioServicesEx;->this$0:Landroid/media/AudioService;
 
@@ -213,6 +236,7 @@
 
     if-lez v2, :cond_0
 
+    .line 5546
     iget-object v2, p0, Landroid/media/AudioService$AudioServicesEx;->this$0:Landroid/media/AudioService;
 
     #getter for: Landroid/media/AudioService;->SOUND_EFFECT_FILES_MAP:[[I
@@ -226,6 +250,7 @@
 
     goto :goto_0
 
+    .line 5549
     :cond_2
     iget-object v2, p0, Landroid/media/AudioService$AudioServicesEx;->this$0:Landroid/media/AudioService;
 
@@ -245,6 +270,7 @@
     .locals 2
 
     .prologue
+    .line 5497
     new-instance v0, Landroid/media/AudioService$AudioServicesEx$HwThemeHandler;
 
     const/4 v1, 0x0
@@ -253,6 +279,7 @@
 
     iput-object v0, p0, Landroid/media/AudioService$AudioServicesEx;->mHwThemeHandler:Landroid/media/AudioService$AudioServicesEx$HwThemeHandler;
 
+    .line 5498
     return-void
 .end method
 
@@ -261,17 +288,21 @@
     .parameter "filename"
 
     .prologue
+    .line 5559
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
+    .line 5560
     .local v0, f:Ljava/io/File;
     if-eqz v0, :cond_0
 
+    .line 5561
     invoke-virtual {v0}, Ljava/io/File;->canRead()Z
 
     move-result v1
 
+    .line 5563
     :goto_0
     return v1
 
@@ -285,13 +316,16 @@
     .locals 1
 
     .prologue
+    .line 5567
     iget-object v0, p0, Landroid/media/AudioService$AudioServicesEx;->this$0:Landroid/media/AudioService;
 
     invoke-virtual {v0}, Landroid/media/AudioService;->unloadSoundEffects()V
 
+    .line 5568
     iget-object v0, p0, Landroid/media/AudioService$AudioServicesEx;->this$0:Landroid/media/AudioService;
 
     invoke-virtual {v0}, Landroid/media/AudioService;->loadSoundEffects()Z
 
+    .line 5569
     return-void
 .end method

@@ -23,6 +23,7 @@
     .locals 0
 
     .prologue
+    .line 425
     invoke-direct {p0}, Landroid/graphics/Paint$FontMetricsInt;-><init>()V
 
     return-void
@@ -34,6 +35,7 @@
     .locals 2
 
     .prologue
+    .line 429
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

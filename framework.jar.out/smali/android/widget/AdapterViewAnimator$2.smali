@@ -27,6 +27,7 @@
     .parameter
 
     .prologue
+    .line 736
     iput-object p1, p0, Landroid/widget/AdapterViewAnimator$2;->this$0:Landroid/widget/AdapterViewAnimator;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,10 +43,12 @@
     .prologue
     const/4 v2, 0x0
 
+    .line 738
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator$2;->this$0:Landroid/widget/AdapterViewAnimator;
 
     invoke-virtual {v0}, Landroid/widget/AdapterViewAnimator;->handleDataChanged()V
 
+    .line 741
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator$2;->this$0:Landroid/widget/AdapterViewAnimator;
 
     iget v0, v0, Landroid/widget/AdapterViewAnimator;->mWhichChild:I
@@ -58,10 +61,12 @@
 
     if-lt v0, v1, :cond_1
 
+    .line 742
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator$2;->this$0:Landroid/widget/AdapterViewAnimator;
 
     iput v2, v0, Landroid/widget/AdapterViewAnimator;->mWhichChild:I
 
+    .line 744
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator$2;->this$0:Landroid/widget/AdapterViewAnimator;
 
     iget-object v1, p0, Landroid/widget/AdapterViewAnimator$2;->this$0:Landroid/widget/AdapterViewAnimator;
@@ -70,18 +75,22 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/AdapterViewAnimator;->showOnly(IZ)V
 
+    .line 748
     :cond_0
     :goto_0
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator$2;->this$0:Landroid/widget/AdapterViewAnimator;
 
     invoke-virtual {v0}, Landroid/widget/AdapterViewAnimator;->refreshChildren()V
 
+    .line 749
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator$2;->this$0:Landroid/widget/AdapterViewAnimator;
 
     invoke-virtual {v0}, Landroid/widget/AdapterViewAnimator;->requestLayout()V
 
+    .line 750
     return-void
 
+    .line 745
     :cond_1
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator$2;->this$0:Landroid/widget/AdapterViewAnimator;
 
@@ -95,6 +104,7 @@
 
     if-eq v0, v1, :cond_0
 
+    .line 746
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator$2;->this$0:Landroid/widget/AdapterViewAnimator;
 
     iget-object v1, p0, Landroid/widget/AdapterViewAnimator$2;->this$0:Landroid/widget/AdapterViewAnimator;

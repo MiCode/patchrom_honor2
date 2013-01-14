@@ -29,8 +29,10 @@
     .locals 1
 
     .prologue
+    .line 1475
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1476
     invoke-static {}, Lcom/android/server/AlarmManagerService$AlarmPolicy;->access$2600()I
 
     move-result v0
@@ -39,6 +41,7 @@
 
     iput v0, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->first_index:I
 
+    .line 1477
     invoke-static {}, Lcom/android/server/AlarmManagerService$AlarmPolicy;->access$2600()I
 
     move-result v0
@@ -47,10 +50,12 @@
 
     iput-object v0, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->timeout_list:[J
 
+    .line 1478
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->count:I
 
+    .line 1479
     return-void
 .end method
 
@@ -65,6 +70,7 @@
 
     const/4 v3, 0x1
 
+    .line 1482
     invoke-static {}, Lcom/android/server/AlarmManagerService;->access$2700()Z
 
     move-result v0
@@ -129,6 +135,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1483
     :cond_0
     iget v0, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->last_index:I
 
@@ -146,17 +153,22 @@
 
     if-ne v0, v1, :cond_1
 
+    .line 1484
     iput v4, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->first_index:I
 
+    .line 1485
     iget-object v0, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->timeout_list:[J
 
     aput-wide p1, v0, v4
 
+    .line 1486
     iput v3, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->count:I
 
+    .line 1504
     :goto_0
     return-void
 
+    .line 1488
     :cond_1
     iget v0, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->last_index:I
 
@@ -170,18 +182,22 @@
 
     if-nez v0, :cond_2
 
+    .line 1489
     iput v3, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->last_index:I
 
+    .line 1490
     iget-object v0, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->timeout_list:[J
 
     aput-wide p1, v0, v3
 
+    .line 1491
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->count:I
 
     goto :goto_0
 
+    .line 1493
     :cond_2
     iget v0, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->last_index:I
 
@@ -197,18 +213,21 @@
 
     if-nez v0, :cond_3
 
+    .line 1494
     iget v0, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->last_index:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->last_index:I
 
+    .line 1495
     iget-object v0, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->timeout_list:[J
 
     iget v1, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->last_index:I
 
     aput-wide p1, v0, v1
 
+    .line 1496
     iget v0, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->last_index:I
 
     add-int/lit8 v0, v0, 0x1
@@ -217,6 +236,7 @@
 
     goto :goto_0
 
+    .line 1499
     :cond_3
     iget v0, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->first_index:I
 
@@ -230,6 +250,7 @@
 
     iput v0, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->first_index:I
 
+    .line 1500
     iget v0, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->last_index:I
 
     add-int/lit8 v0, v0, 0x1
@@ -242,12 +263,14 @@
 
     iput v0, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->last_index:I
 
+    .line 1501
     iget-object v0, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->timeout_list:[J
 
     iget v1, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->last_index:I
 
     aput-wide p1, v0, v1
 
+    .line 1502
     invoke-static {}, Lcom/android/server/AlarmManagerService$AlarmPolicy;->access$2600()I
 
     move-result v0
@@ -261,6 +284,7 @@
     .locals 4
 
     .prologue
+    .line 1507
     iget v0, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;->count:I
 
     invoke-static {}, Lcom/android/server/AlarmManagerService$AlarmPolicy;->access$2600()I
@@ -293,8 +317,10 @@
 
     if-gtz v0, :cond_0
 
+    .line 1508
     const/4 v0, 0x1
 
+    .line 1510
     :goto_0
     return v0
 

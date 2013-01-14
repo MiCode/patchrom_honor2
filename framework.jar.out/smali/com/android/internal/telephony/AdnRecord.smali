@@ -42,7 +42,7 @@
 
 .field static final MAX_EXT_CALLED_PARTY_LENGTH:I = 0xa
 
-.field static final MAX_NUMBER_SIZE_BYTES:I = 0xff
+.field static final MAX_NUMBER_SIZE_BYTES:I = 0xb
 
 
 # instance fields
@@ -64,6 +64,7 @@
     .locals 1
 
     .prologue
+    .line 75
     new-instance v0, Lcom/android/internal/telephony/AdnRecord$1;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/AdnRecord$1;-><init>()V
@@ -83,26 +84,36 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 126
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 43
     iput-object v1, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
+    .line 44
     iput-object v1, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
+    .line 46
     const/16 v0, 0xff
 
     iput v0, p0, Lcom/android/internal/telephony/AdnRecord;->extRecord:I
 
+    .line 127
     iput p1, p0, Lcom/android/internal/telephony/AdnRecord;->efid:I
 
+    .line 128
     iput p2, p0, Lcom/android/internal/telephony/AdnRecord;->recordNumber:I
 
+    .line 129
     iput-object p3, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
+    .line 130
     iput-object p4, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
+    .line 131
     iput-object v1, p0, Lcom/android/internal/telephony/AdnRecord;->emails:[Ljava/lang/String;
 
+    .line 132
     return-void
 .end method
 
@@ -117,26 +128,36 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 118
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 43
     iput-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
+    .line 44
     iput-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
+    .line 46
     const/16 v0, 0xff
 
     iput v0, p0, Lcom/android/internal/telephony/AdnRecord;->extRecord:I
 
+    .line 119
     iput p1, p0, Lcom/android/internal/telephony/AdnRecord;->efid:I
 
+    .line 120
     iput p2, p0, Lcom/android/internal/telephony/AdnRecord;->recordNumber:I
 
+    .line 121
     iput-object p3, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
+    .line 122
     iput-object p4, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
+    .line 123
     iput-object p5, p0, Lcom/android/internal/telephony/AdnRecord;->emails:[Ljava/lang/String;
 
+    .line 124
     return-void
 .end method
 
@@ -149,22 +170,30 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 104
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 43
     iput-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
+    .line 44
     iput-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
+    .line 46
     const/16 v0, 0xff
 
     iput v0, p0, Lcom/android/internal/telephony/AdnRecord;->extRecord:I
 
+    .line 105
     iput p1, p0, Lcom/android/internal/telephony/AdnRecord;->efid:I
 
+    .line 106
     iput p2, p0, Lcom/android/internal/telephony/AdnRecord;->recordNumber:I
 
+    .line 107
     invoke-direct {p0, p3}, Lcom/android/internal/telephony/AdnRecord;->parseRecord([B)V
 
+    .line 108
     return-void
 .end method
 
@@ -176,8 +205,10 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 111
     invoke-direct {p0, v0, v0, p1, p2}, Lcom/android/internal/telephony/AdnRecord;-><init>(IILjava/lang/String;Ljava/lang/String;)V
 
+    .line 112
     return-void
 .end method
 
@@ -190,6 +221,7 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 115
     move-object v0, p0
 
     move v2, v1
@@ -202,6 +234,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/internal/telephony/AdnRecord;-><init>(IILjava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
 
+    .line 116
     return-void
 .end method
 
@@ -212,8 +245,10 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 101
     invoke-direct {p0, v0, v0, p1}, Lcom/android/internal/telephony/AdnRecord;-><init>(II[B)V
 
+    .line 102
     return-void
 .end method
 
@@ -224,6 +259,7 @@
     .prologue
     const/4 v5, 0x0
 
+    .line 512
     const/4 v3, 0x0
 
     :try_start_0
@@ -237,29 +273,35 @@
 
     iput-object v3, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
+    .line 515
     array-length v3, p1
 
     add-int/lit8 v1, v3, -0xe
 
+    .line 517
     .local v1, footerOffset:I
     aget-byte v3, p1, v1
 
     and-int/lit16 v2, v3, 0xff
 
+    .line 519
     .local v2, numberLength:I
-    const/16 v3, 0xff
+    const/16 v3, 0xb
 
     if-le v2, v3, :cond_0
 
+    .line 521
     const-string v3, ""
 
     iput-object v3, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
+    .line 546
     .end local v1           #footerOffset:I
     .end local v2           #numberLength:I
     :goto_0
     return-void
 
+    .line 532
     .restart local v1       #footerOffset:I
     .restart local v2       #numberLength:I
     :cond_0
@@ -271,6 +313,7 @@
 
     iput-object v3, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
+    .line 536
     array-length v3, p1
 
     add-int/lit8 v3, v3, -0x1
@@ -281,6 +324,7 @@
 
     iput v3, p0, Lcom/android/internal/telephony/AdnRecord;->extRecord:I
 
+    .line 538
     const/4 v3, 0x0
 
     iput-object v3, p0, Lcom/android/internal/telephony/AdnRecord;->emails:[Ljava/lang/String;
@@ -289,30 +333,31 @@
 
     goto :goto_0
 
+    .line 540
     .end local v1           #footerOffset:I
     .end local v2           #numberLength:I
     :catch_0
     move-exception v0
 
+    .line 541
     .local v0, ex:Ljava/lang/RuntimeException;
     const-string v3, "GSM"
 
     const-string v4, "Error parsing AdnRecord"
 
-    invoke-static {p0, v4}, Lcom/android/internal/telephony/AdnRecord$Injector;->adnRecordError(Lcom/android/internal/telephony/AdnRecord;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
     invoke-static {v3, v4, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 542
     const-string v3, ""
 
     iput-object v3, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
+    .line 543
     const-string v3, ""
 
     iput-object v3, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
+    .line 544
     iput-object v5, p0, Lcom/android/internal/telephony/AdnRecord;->emails:[Ljava/lang/String;
 
     goto :goto_0
@@ -324,23 +369,31 @@
     .parameter "s2"
 
     .prologue
+    .line 199
     if-ne p0, p1, :cond_0
 
+    .line 200
     const/4 v0, 0x1
 
+    .line 208
     :goto_0
     return v0
 
+    .line 202
     :cond_0
     if-nez p0, :cond_1
 
+    .line 203
     const-string p0, ""
 
+    .line 205
     :cond_1
     if-nez p1, :cond_2
 
+    .line 206
     const-string p1, ""
 
+    .line 208
     :cond_2
     invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -358,6 +411,7 @@
     .prologue
     const/4 v3, 0x2
 
+    .line 480
     :try_start_0
     array-length v1, p1
 
@@ -365,10 +419,12 @@
 
     if-eq v1, v2, :cond_1
 
+    .line 502
     :cond_0
     :goto_0
     return-void
 
+    .line 484
     :cond_1
     const/4 v1, 0x0
 
@@ -378,6 +434,7 @@
 
     if-ne v1, v3, :cond_0
 
+    .line 489
     const/4 v1, 0x1
 
     aget-byte v1, p1, v1
@@ -388,6 +445,7 @@
 
     if-gt v1, v2, :cond_0
 
+    .line 494
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -424,9 +482,11 @@
 
     goto :goto_0
 
+    .line 499
     :catch_0
     move-exception v0
 
+    .line 500
     .local v0, ex:Ljava/lang/RuntimeException;
     const-string v1, "GSM"
 
@@ -442,68 +502,90 @@
     .parameter "recordSize"
 
     .prologue
+    .line 255
     add-int/lit8 v21, p1, -0xe
 
+    .line 257
     .local v21, footerOffset:I
     const/16 v23, 0x0
 
+    .line 258
     .local v23, gsm7Len:I
     const/16 v22, 0x0
 
+    .line 259
     .local v22, gsm7Converts:I
     const/16 v30, 0x1
 
+    .line 260
     .local v30, ucs80Len:I
     const/16 v29, 0x0
 
+    .line 261
     .local v29, ucs80Converts:I
     const/16 v32, 0x3
 
+    .line 262
     .local v32, ucs81Len:I
     const/16 v31, 0x0
 
+    .line 263
     .local v31, ucs81Converts:I
     const/16 v34, 0x4
 
+    .line 264
     .local v34, ucs82Len:I
     const/16 v33, 0x0
 
+    .line 273
     .local v33, ucs82Converts:I
     const/16 v10, 0x20
 
+    .line 274
     .local v10, baser81:C
     const/16 v12, 0x20
 
+    .line 275
     .local v12, baser82Low:C
     const/16 v11, 0x20
 
+    .line 276
     .local v11, baser82High:C
     const/16 v35, 0x1
 
+    .line 277
     .local v35, useGsm7:Z
     const/16 v36, 0x1
 
+    .line 278
     .local v36, usePattern81:Z
     const/16 v27, 0x0
 
+    .line 279
     .local v27, setPattern81:Z
     const/16 v37, 0x1
 
+    .line 280
     .local v37, usePattern82:Z
     const/16 v28, 0x0
 
+    .line 282
     .local v28, setPattern82:Z
     const/4 v4, 0x0
 
+    .line 283
     .local v4, SIM_CODING_GSM7:I
     const/16 v5, 0x80
 
+    .line 284
     .local v5, SIM_CODING_PURE_UCS2:I
     const/16 v6, 0x81
 
+    .line 285
     .local v6, SIM_CODING_UCS2_HALF_PAGE_1:I
     const/16 v7, 0x82
 
+    .line 287
     .local v7, SIM_CODING_UCS2_HALF_PAGE_2:I
     move-object/from16 v0, p0
 
@@ -521,6 +603,7 @@
 
     if-nez v38, :cond_2
 
+    .line 288
     :cond_0
     const-string v38, "GSM"
 
@@ -528,10 +611,12 @@
 
     invoke-static/range {v38 .. v39}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 289
     move/from16 v0, p1
 
     new-array v8, v0, [B
 
+    .line 290
     .local v8, adnString:[B
     const/16 v24, 0x0
 
@@ -543,10 +628,12 @@
 
     if-ge v0, v1, :cond_1
 
+    .line 291
     const/16 v38, -0x1
 
     aput-byte v38, v8, v24
 
+    .line 290
     add-int/lit8 v24, v24, 0x1
 
     goto :goto_0
@@ -554,11 +641,13 @@
     :cond_1
     move-object v9, v8
 
+    .line 471
     .end local v8           #adnString:[B
     .local v9, adnString:[B
     :goto_1
     return-object v9
 
+    .line 295
     .end local v9           #adnString:[B
     .end local v24           #i:I
     :cond_2
@@ -580,12 +669,14 @@
 
     if-le v0, v1, :cond_3
 
+    .line 297
     const-string v38, "GSM"
 
     const-string v39, "[buildAdnString] Max length of dialing number is 20"
 
     invoke-static/range {v38 .. v39}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 299
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
@@ -606,6 +697,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
+    .line 303
     :cond_3
     move-object/from16 v0, p0
 
@@ -617,9 +709,11 @@
 
     move-result v26
 
+    .line 304
     .local v26, lenTag:I
     const/16 v25, 0x0
 
+    .line 305
     .local v25, index:I
     :goto_2
     move/from16 v0, v25
@@ -640,6 +734,7 @@
 
     if-gt v0, v1, :cond_b
 
+    .line 307
     :cond_4
     move-object/from16 v0, p0
 
@@ -655,11 +750,13 @@
 
     move-result v18
 
+    .line 308
     .local v18, c:C
     invoke-static/range {v18 .. v18}, Lcom/android/internal/telephony/GsmAlphabet;->UCStoGsm7(C)I
 
     move-result v19
 
+    .line 309
     .local v19, currGsm7Length:I
     const/16 v38, -0x1
 
@@ -669,12 +766,16 @@
 
     if-eq v0, v1, :cond_10
 
+    .line 310
     if-eqz v35, :cond_5
 
+    .line 311
     add-int v23, v23, v19
 
+    .line 312
     add-int/lit8 v22, v22, 0x1
 
+    .line 318
     :cond_5
     :goto_3
     if-eqz v36, :cond_7
@@ -685,6 +786,7 @@
 
     if-ge v0, v1, :cond_7
 
+    .line 319
     const/16 v38, -0x1
 
     move/from16 v0, v38
@@ -693,6 +795,7 @@
 
     if-ne v0, v1, :cond_6
 
+    .line 320
     const v38, 0x8000
 
     and-int v38, v38, v18
@@ -705,14 +808,18 @@
 
     if-ne v0, v1, :cond_11
 
+    .line 321
     const/16 v36, 0x0
 
+    .line 333
     :cond_6
     :goto_4
     if-eqz v36, :cond_7
 
+    .line 334
     add-int/lit8 v31, v31, 0x1
 
+    .line 335
     const/16 v38, -0x1
 
     move/from16 v0, v38
@@ -721,8 +828,10 @@
 
     if-ne v0, v1, :cond_13
 
+    .line 336
     add-int/lit8 v32, v32, 0x1
 
+    .line 343
     :cond_7
     :goto_5
     if-eqz v37, :cond_9
@@ -733,6 +842,7 @@
 
     if-ge v0, v1, :cond_9
 
+    .line 344
     const/16 v38, -0x1
 
     move/from16 v0, v38
@@ -741,20 +851,27 @@
 
     if-ne v0, v1, :cond_8
 
+    .line 345
     if-nez v28, :cond_14
 
+    .line 346
     const/16 v28, 0x1
 
+    .line 347
     move/from16 v12, v18
 
+    .line 348
     move/from16 v11, v18
 
+    .line 361
     :cond_8
     :goto_6
     if-eqz v37, :cond_9
 
+    .line 362
     add-int/lit8 v33, v33, 0x1
 
+    .line 363
     const/16 v38, -0x1
 
     move/from16 v0, v38
@@ -763,8 +880,10 @@
 
     if-ne v0, v1, :cond_17
 
+    .line 364
     add-int/lit8 v34, v34, 0x1
 
+    .line 371
     :cond_9
     :goto_7
     move/from16 v0, v30
@@ -773,64 +892,84 @@
 
     if-ge v0, v1, :cond_a
 
+    .line 372
     add-int/lit8 v30, v30, 0x2
 
+    .line 373
     add-int/lit8 v29, v29, 0x1
 
+    .line 376
     :cond_a
     if-eqz v35, :cond_18
 
+    .line 377
     move/from16 v0, v23
 
     move/from16 v1, v21
 
     if-lt v0, v1, :cond_19
 
+    .line 394
     .end local v18           #c:C
     .end local v19           #currGsm7Length:I
     :cond_b
     :goto_8
     move/from16 v14, v22
 
+    .line 395
     .local v14, bestConverts:I
     const/16 v16, 0x0
 
+    .line 396
     .local v16, bestMode:I
     move/from16 v15, v23
 
+    .line 397
     .local v15, bestLen:I
     move/from16 v0, v31
 
     if-ge v14, v0, :cond_c
 
+    .line 398
     move/from16 v14, v31
 
+    .line 399
     const/16 v16, 0x81
 
+    .line 400
     move/from16 v15, v32
 
+    .line 402
     :cond_c
     move/from16 v0, v33
 
     if-ge v14, v0, :cond_d
 
+    .line 403
     move/from16 v14, v33
 
+    .line 404
     const/16 v16, 0x82
 
+    .line 405
     move/from16 v15, v34
 
+    .line 407
     :cond_d
     move/from16 v0, v29
 
     if-ge v14, v0, :cond_e
 
+    .line 408
     move/from16 v14, v29
 
+    .line 409
     const/16 v16, 0x80
 
+    .line 410
     move/from16 v15, v30
 
+    .line 414
     :cond_e
     move-object/from16 v0, p0
 
@@ -854,10 +993,12 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
+    .line 415
     move/from16 v0, v21
 
     if-le v15, v0, :cond_f
 
+    .line 416
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
@@ -878,13 +1019,16 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
+    .line 417
     add-int/lit8 v15, v15, -0x2
 
+    .line 419
     :cond_f
     move/from16 v0, p1
 
     new-array v8, v0, [B
 
+    .line 420
     .restart local v8       #adnString:[B
     const/16 v24, 0x0
 
@@ -896,14 +1040,17 @@
 
     if-ge v0, v1, :cond_1c
 
+    .line 421
     const/16 v38, -0x1
 
     aput-byte v38, v8, v24
 
+    .line 420
     add-int/lit8 v24, v24, 0x1
 
     goto :goto_9
 
+    .line 315
     .end local v8           #adnString:[B
     .end local v14           #bestConverts:I
     .end local v15           #bestLen:I
@@ -916,11 +1063,14 @@
 
     goto/16 :goto_3
 
+    .line 323
     :cond_11
     if-nez v27, :cond_12
 
+    .line 324
     const/16 v27, 0x1
 
+    .line 325
     move/from16 v0, v18
 
     and-int/lit16 v0, v0, 0x7f80
@@ -933,6 +1083,7 @@
 
     goto/16 :goto_4
 
+    .line 327
     :cond_12
     move/from16 v0, v18
 
@@ -950,22 +1101,27 @@
 
     if-eq v10, v0, :cond_6
 
+    .line 328
     const/16 v36, 0x0
 
     goto/16 :goto_4
 
+    .line 338
     :cond_13
     add-int v32, v32, v19
 
     goto/16 :goto_5
 
+    .line 350
     :cond_14
     move/from16 v0, v18
 
     if-le v12, v0, :cond_16
 
+    .line 351
     move/from16 v12, v18
 
+    .line 355
     :cond_15
     :goto_a
     sub-int v38, v11, v12
@@ -978,41 +1134,50 @@
 
     if-le v0, v1, :cond_8
 
+    .line 356
     const/16 v37, 0x0
 
     goto/16 :goto_6
 
+    .line 352
     :cond_16
     move/from16 v0, v18
 
     if-ge v11, v0, :cond_15
 
+    .line 353
     move/from16 v11, v18
 
     goto :goto_a
 
+    .line 366
     :cond_17
     add-int v34, v34, v19
 
     goto/16 :goto_7
 
+    .line 380
     :cond_18
     if-eqz v36, :cond_1a
 
+    .line 381
     move/from16 v0, v32
 
     move/from16 v1, v21
 
     if-ge v0, v1, :cond_b
 
+    .line 306
     :cond_19
     add-int/lit8 v25, v25, 0x1
 
     goto/16 :goto_2
 
+    .line 384
     :cond_1a
     if-eqz v37, :cond_1b
 
+    .line 385
     move/from16 v0, v34
 
     move/from16 v1, v21
@@ -1021,6 +1186,7 @@
 
     goto/16 :goto_8
 
+    .line 388
     :cond_1b
     move/from16 v0, v30
 
@@ -1030,6 +1196,7 @@
 
     goto/16 :goto_8
 
+    .line 423
     .end local v18           #c:C
     .end local v19           #currGsm7Length:I
     .restart local v8       #adnString:[B
@@ -1050,6 +1217,7 @@
 
     if-lez v38, :cond_1d
 
+    .line 424
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
@@ -1060,6 +1228,7 @@
 
     move-result-object v13
 
+    .line 425
     .local v13, bcdNumber:[B
     const-string v38, "AdnRecord"
 
@@ -1087,6 +1256,7 @@
 
     invoke-static/range {v38 .. v39}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 426
     const/16 v38, 0x0
 
     add-int/lit8 v39, v21, 0x1
@@ -1103,6 +1273,7 @@
 
     invoke-static {v13, v0, v8, v1, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
+    .line 429
     add-int/lit8 v38, v21, 0x0
 
     array-length v0, v13
@@ -1117,6 +1288,7 @@
 
     aput-byte v39, v8, v38
 
+    .line 432
     .end local v13           #bcdNumber:[B
     :cond_1d
     add-int/lit8 v38, v21, 0xc
@@ -1125,21 +1297,25 @@
 
     aput-byte v39, v8, v38
 
+    .line 434
     add-int/lit8 v38, v21, 0xd
 
     const/16 v39, -0x1
 
     aput-byte v39, v8, v38
 
+    .line 437
     sparse-switch v16, :sswitch_data_0
 
     :goto_b
     move-object v9, v8
 
+    .line 471
     .end local v8           #adnString:[B
     .restart local v9       #adnString:[B
     goto/16 :goto_1
 
+    .line 439
     .end local v9           #adnString:[B
     .restart local v8       #adnString:[B
     :sswitch_0
@@ -1153,6 +1329,7 @@
 
     move-result-object v17
 
+    .line 440
     .local v17, byteTag:[B
     const/16 v38, 0x0
 
@@ -1176,6 +1353,7 @@
 
     goto :goto_b
 
+    .line 445
     .end local v17           #byteTag:[B
     :sswitch_1
     :try_start_0
@@ -1193,6 +1371,7 @@
 
     move-result-object v17
 
+    .line 449
     .restart local v17       #byteTag:[B
     :goto_c
     const/16 v38, 0x0
@@ -1201,6 +1380,7 @@
 
     aput-byte v39, v8, v38
 
+    .line 450
     const/16 v38, 0x0
 
     const/16 v39, 0x1
@@ -1223,10 +1403,12 @@
 
     goto :goto_b
 
+    .line 446
     .end local v17           #byteTag:[B
     :catch_0
     move-exception v20
 
+    .line 447
     .local v20, e:Ljava/io/UnsupportedEncodingException;
     const/16 v38, 0x0
 
@@ -1239,6 +1421,7 @@
     .restart local v17       #byteTag:[B
     goto :goto_c
 
+    .line 454
     .end local v17           #byteTag:[B
     .end local v20           #e:Ljava/io/UnsupportedEncodingException;
     :sswitch_2
@@ -1258,6 +1441,7 @@
 
     move-result-object v17
 
+    .line 455
     .restart local v17       #byteTag:[B
     const/16 v38, 0x0
 
@@ -1265,6 +1449,7 @@
 
     aput-byte v39, v8, v38
 
+    .line 456
     const/16 v38, 0x1
 
     add-int/lit8 v39, v15, -0x3
@@ -1277,6 +1462,7 @@
 
     aput-byte v39, v8, v38
 
+    .line 457
     const/16 v38, 0x0
 
     const/16 v39, 0x2
@@ -1299,6 +1485,7 @@
 
     goto/16 :goto_b
 
+    .line 461
     .end local v17           #byteTag:[B
     :sswitch_3
     move-object/from16 v0, p0
@@ -1317,6 +1504,7 @@
 
     move-result-object v17
 
+    .line 462
     .restart local v17       #byteTag:[B
     const/16 v38, 0x0
 
@@ -1324,6 +1512,7 @@
 
     aput-byte v39, v8, v38
 
+    .line 463
     const/16 v38, 0x1
 
     add-int/lit8 v39, v15, -0x4
@@ -1336,6 +1525,7 @@
 
     aput-byte v39, v8, v38
 
+    .line 464
     const/16 v38, 0x0
 
     const/16 v39, 0x2
@@ -1358,6 +1548,7 @@
 
     goto/16 :goto_b
 
+    .line 437
     nop
 
     :sswitch_data_0
@@ -1373,6 +1564,7 @@
     .locals 1
 
     .prologue
+    .line 232
     const/4 v0, 0x0
 
     return v0
@@ -1383,6 +1575,7 @@
     .parameter "adn"
 
     .prologue
+    .line 226
     iget v0, p0, Lcom/android/internal/telephony/AdnRecord;->efid:I
 
     invoke-virtual {p1}, Lcom/android/internal/telephony/AdnRecord;->getEfid()I
@@ -1414,6 +1607,7 @@
     .locals 1
 
     .prologue
+    .line 170
     iget-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
     return-object v0
@@ -1423,6 +1617,7 @@
     .locals 1
 
     .prologue
+    .line 140
     iget v0, p0, Lcom/android/internal/telephony/AdnRecord;->efid:I
 
     return v0
@@ -1432,6 +1627,7 @@
     .locals 1
 
     .prologue
+    .line 178
     iget-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->emails:[Ljava/lang/String;
 
     return-object v0
@@ -1441,6 +1637,7 @@
     .locals 1
 
     .prologue
+    .line 174
     iget-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
     return-object v0
@@ -1450,6 +1647,7 @@
     .locals 1
 
     .prologue
+    .line 147
     iget v0, p0, Lcom/android/internal/telephony/AdnRecord;->recordNumber:I
 
     return v0
@@ -1459,6 +1657,7 @@
     .locals 2
 
     .prologue
+    .line 194
     iget v0, p0, Lcom/android/internal/telephony/AdnRecord;->extRecord:I
 
     if-eqz v0, :cond_0
@@ -1484,6 +1683,7 @@
     .locals 1
 
     .prologue
+    .line 190
     iget-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1520,6 +1720,7 @@
     .parameter "adn"
 
     .prologue
+    .line 212
     iget-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
     iget-object v1, p1, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
@@ -1566,8 +1767,10 @@
     .parameter "efid"
 
     .prologue
+    .line 156
     iput p1, p0, Lcom/android/internal/telephony/AdnRecord;->efid:I
 
+    .line 157
     return-void
 .end method
 
@@ -1576,8 +1779,10 @@
     .parameter "emails"
 
     .prologue
+    .line 182
     iput-object p1, p0, Lcom/android/internal/telephony/AdnRecord;->emails:[Ljava/lang/String;
 
+    .line 183
     return-void
 .end method
 
@@ -1586,8 +1791,10 @@
     .parameter "RecordNumber"
 
     .prologue
+    .line 165
     iput p1, p0, Lcom/android/internal/telephony/AdnRecord;->recordNumber:I
 
+    .line 166
     return-void
 .end method
 
@@ -1595,6 +1802,7 @@
     .locals 2
 
     .prologue
+    .line 186
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1654,25 +1862,31 @@
     .parameter "flags"
 
     .prologue
+    .line 236
     iget v0, p0, Lcom/android/internal/telephony/AdnRecord;->efid:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 237
     iget v0, p0, Lcom/android/internal/telephony/AdnRecord;->recordNumber:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 238
     iget-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 239
     iget-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 240
     iget-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->emails:[Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
+    .line 241
     return-void
 .end method

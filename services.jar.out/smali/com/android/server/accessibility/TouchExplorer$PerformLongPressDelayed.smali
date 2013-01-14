@@ -31,6 +31,7 @@
     .parameter
 
     .prologue
+    .line 1300
     iput-object p1, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->this$0:Lcom/android/server/accessibility/TouchExplorer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,6 +45,7 @@
     .parameter "x1"
 
     .prologue
+    .line 1300
     invoke-direct {p0, p1}, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;-><init>(Lcom/android/server/accessibility/TouchExplorer;)V
 
     return-void
@@ -53,24 +55,29 @@
     .locals 1
 
     .prologue
+    .line 1380
     invoke-direct {p0}, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->isPenidng()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
+    .line 1386
     :goto_0
     return-void
 
+    .line 1383
     :cond_0
     iget-object v0, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->mEvent:Landroid/view/MotionEvent;
 
     invoke-virtual {v0}, Landroid/view/MotionEvent;->recycle()V
 
+    .line 1384
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->mEvent:Landroid/view/MotionEvent;
 
+    .line 1385
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->mPolicyFlags:I
@@ -82,6 +89,7 @@
     .locals 1
 
     .prologue
+    .line 1318
     iget-object v0, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->mEvent:Landroid/view/MotionEvent;
 
     if-eqz v0, :cond_0
@@ -105,14 +113,17 @@
     .parameter "policyFlags"
 
     .prologue
+    .line 1305
     invoke-static {p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->mEvent:Landroid/view/MotionEvent;
 
+    .line 1306
     iput p2, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->mPolicyFlags:I
 
+    .line 1307
     iget-object v0, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->this$0:Lcom/android/server/accessibility/TouchExplorer;
 
     #getter for: Lcom/android/server/accessibility/TouchExplorer;->mHandler:Landroid/os/Handler;
@@ -128,6 +139,7 @@
 
     invoke-virtual {v0, p0, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
+    .line 1308
     return-void
 .end method
 
@@ -135,12 +147,14 @@
     .locals 1
 
     .prologue
+    .line 1311
     invoke-direct {p0}, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->isPenidng()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 1312
     iget-object v0, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->this$0:Lcom/android/server/accessibility/TouchExplorer;
 
     #getter for: Lcom/android/server/accessibility/TouchExplorer;->mHandler:Landroid/os/Handler;
@@ -150,8 +164,10 @@
 
     invoke-virtual {v0, p0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
+    .line 1313
     invoke-direct {p0}, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->clear()V
 
+    .line 1315
     :cond_0
     return-void
 .end method
@@ -160,6 +176,7 @@
     .locals 11
 
     .prologue
+    .line 1324
     iget-object v8, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->this$0:Lcom/android/server/accessibility/TouchExplorer;
 
     #getter for: Lcom/android/server/accessibility/TouchExplorer;->mReceivedPointerTracker:Lcom/android/server/accessibility/TouchExplorer$ReceivedPointerTracker;
@@ -173,10 +190,12 @@
 
     if-nez v8, :cond_1
 
+    .line 1377
     :cond_0
     :goto_0
     return-void
 
+    .line 1331
     :cond_1
     iget-object v8, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->mEvent:Landroid/view/MotionEvent;
 
@@ -190,6 +209,7 @@
 
     move-result v6
 
+    .line 1332
     .local v6, pointerId:I
     iget-object v8, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->mEvent:Landroid/view/MotionEvent;
 
@@ -197,6 +217,7 @@
 
     move-result v7
 
+    .line 1334
     .local v7, pointerIndex:I
     iget-object v8, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->this$0:Lcom/android/server/accessibility/TouchExplorer;
 
@@ -209,9 +230,11 @@
 
     move-result-object v4
 
+    .line 1336
     .local v4, lastExploreEvent:Landroid/view/MotionEvent;
     if-nez v4, :cond_3
 
+    .line 1339
     iget-object v8, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->this$0:Lcom/android/server/accessibility/TouchExplorer;
 
     #getter for: Lcom/android/server/accessibility/TouchExplorer;->mTempRect:Landroid/graphics/Rect;
@@ -219,6 +242,7 @@
 
     move-result-object v3
 
+    .line 1340
     .local v3, focusBounds:Landroid/graphics/Rect;
     iget-object v8, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->this$0:Lcom/android/server/accessibility/TouchExplorer;
 
@@ -233,15 +257,18 @@
 
     if-eqz v8, :cond_0
 
+    .line 1341
     invoke-virtual {v3}, Landroid/graphics/Rect;->centerX()I
 
     move-result v1
 
+    .line 1342
     .local v1, clickLocationX:I
     invoke-virtual {v3}, Landroid/graphics/Rect;->centerY()I
 
     move-result v2
 
+    .line 1368
     .end local v3           #focusBounds:Landroid/graphics/Rect;
     .local v2, clickLocationY:I
     :cond_2
@@ -251,6 +278,7 @@
     #setter for: Lcom/android/server/accessibility/TouchExplorer;->mLongPressingPointerId:I
     invoke-static {v8, v6}, Lcom/android/server/accessibility/TouchExplorer;->access$2002(Lcom/android/server/accessibility/TouchExplorer;I)I
 
+    .line 1369
     iget-object v8, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->this$0:Lcom/android/server/accessibility/TouchExplorer;
 
     iget-object v9, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->mEvent:Landroid/view/MotionEvent;
@@ -266,6 +294,7 @@
     #setter for: Lcom/android/server/accessibility/TouchExplorer;->mLongPressingPointerDeltaX:I
     invoke-static {v8, v9}, Lcom/android/server/accessibility/TouchExplorer;->access$2102(Lcom/android/server/accessibility/TouchExplorer;I)I
 
+    .line 1370
     iget-object v8, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->this$0:Lcom/android/server/accessibility/TouchExplorer;
 
     iget-object v9, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->mEvent:Landroid/view/MotionEvent;
@@ -281,6 +310,7 @@
     #setter for: Lcom/android/server/accessibility/TouchExplorer;->mLongPressingPointerDeltaY:I
     invoke-static {v8, v9}, Lcom/android/server/accessibility/TouchExplorer;->access$2202(Lcom/android/server/accessibility/TouchExplorer;I)I
 
+    .line 1372
     iget-object v8, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->this$0:Lcom/android/server/accessibility/TouchExplorer;
 
     iget v9, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->mPolicyFlags:I
@@ -288,6 +318,7 @@
     #calls: Lcom/android/server/accessibility/TouchExplorer;->sendExitEventsIfNeeded(I)V
     invoke-static {v8, v9}, Lcom/android/server/accessibility/TouchExplorer;->access$900(Lcom/android/server/accessibility/TouchExplorer;I)V
 
+    .line 1374
     iget-object v8, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->this$0:Lcom/android/server/accessibility/TouchExplorer;
 
     const/4 v9, 0x4
@@ -295,6 +326,7 @@
     #setter for: Lcom/android/server/accessibility/TouchExplorer;->mCurrentState:I
     invoke-static {v8, v9}, Lcom/android/server/accessibility/TouchExplorer;->access$2302(Lcom/android/server/accessibility/TouchExplorer;I)I
 
+    .line 1375
     iget-object v8, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->this$0:Lcom/android/server/accessibility/TouchExplorer;
 
     iget-object v9, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->mEvent:Landroid/view/MotionEvent;
@@ -304,10 +336,12 @@
     #calls: Lcom/android/server/accessibility/TouchExplorer;->sendDownForAllActiveNotInjectedPointers(Landroid/view/MotionEvent;I)V
     invoke-static {v8, v9, v10}, Lcom/android/server/accessibility/TouchExplorer;->access$2400(Lcom/android/server/accessibility/TouchExplorer;Landroid/view/MotionEvent;I)V
 
+    .line 1376
     invoke-direct {p0}, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->clear()V
 
     goto :goto_0
 
+    .line 1350
     .end local v1           #clickLocationX:I
     .end local v2           #clickLocationY:I
     :cond_3
@@ -315,6 +349,7 @@
 
     move-result v5
 
+    .line 1351
     .local v5, lastExplorePointerIndex:I
     invoke-virtual {v4, v5}, Landroid/view/MotionEvent;->getX(I)F
 
@@ -322,6 +357,7 @@
 
     float-to-int v1, v8
 
+    .line 1352
     .restart local v1       #clickLocationX:I
     invoke-virtual {v4, v5}, Landroid/view/MotionEvent;->getY(I)F
 
@@ -329,6 +365,7 @@
 
     float-to-int v2, v8
 
+    .line 1353
     .restart local v2       #clickLocationY:I
     iget-object v8, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->this$0:Lcom/android/server/accessibility/TouchExplorer;
 
@@ -337,6 +374,7 @@
 
     move-result-object v0
 
+    .line 1354
     .local v0, activeWindowBounds:Landroid/graphics/Rect;
     iget-object v8, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->this$0:Lcom/android/server/accessibility/TouchExplorer;
 
@@ -358,6 +396,7 @@
 
     if-ne v8, v9, :cond_2
 
+    .line 1355
     iget-object v8, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->this$0:Lcom/android/server/accessibility/TouchExplorer;
 
     #getter for: Lcom/android/server/accessibility/TouchExplorer;->mAms:Lcom/android/server/accessibility/AccessibilityManagerService;
@@ -367,12 +406,14 @@
 
     invoke-virtual {v8, v0}, Lcom/android/server/accessibility/AccessibilityManagerService;->getActiveWindowBounds(Landroid/graphics/Rect;)V
 
+    .line 1356
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Rect;->contains(II)Z
 
     move-result v8
 
     if-eqz v8, :cond_2
 
+    .line 1357
     iget-object v8, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->this$0:Lcom/android/server/accessibility/TouchExplorer;
 
     #getter for: Lcom/android/server/accessibility/TouchExplorer;->mTempRect:Landroid/graphics/Rect;
@@ -380,6 +421,7 @@
 
     move-result-object v3
 
+    .line 1358
     .restart local v3       #focusBounds:Landroid/graphics/Rect;
     iget-object v8, p0, Lcom/android/server/accessibility/TouchExplorer$PerformLongPressDelayed;->this$0:Lcom/android/server/accessibility/TouchExplorer;
 
@@ -394,16 +436,19 @@
 
     if-eqz v8, :cond_2
 
+    .line 1359
     invoke-virtual {v3, v1, v2}, Landroid/graphics/Rect;->contains(II)Z
 
     move-result v8
 
     if-nez v8, :cond_2
 
+    .line 1360
     invoke-virtual {v3}, Landroid/graphics/Rect;->centerX()I
 
     move-result v1
 
+    .line 1361
     invoke-virtual {v3}, Landroid/graphics/Rect;->centerY()I
 
     move-result v2

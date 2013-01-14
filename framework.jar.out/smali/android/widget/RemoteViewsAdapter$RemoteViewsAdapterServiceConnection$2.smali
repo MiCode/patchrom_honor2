@@ -30,6 +30,7 @@
     .parameter
 
     .prologue
+    .line 243
     iput-object p1, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection$2;->this$0:Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection;
 
     iput-object p2, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection$2;->val$adapter:Landroid/widget/RemoteViewsAdapter;
@@ -45,6 +46,7 @@
     .locals 3
 
     .prologue
+    .line 247
     iget-object v1, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection$2;->val$adapter:Landroid/widget/RemoteViewsAdapter;
 
     #getter for: Landroid/widget/RemoteViewsAdapter;->mMainQueue:Landroid/os/Handler;
@@ -56,6 +58,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->removeMessages(I)V
 
+    .line 249
     iget-object v1, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection$2;->val$adapter:Landroid/widget/RemoteViewsAdapter;
 
     #getter for: Landroid/widget/RemoteViewsAdapter;->mCallback:Ljava/lang/ref/WeakReference;
@@ -69,11 +72,14 @@
 
     check-cast v0, Landroid/widget/RemoteViewsAdapter$RemoteAdapterConnectionCallback;
 
+    .line 250
     .local v0, callback:Landroid/widget/RemoteViewsAdapter$RemoteAdapterConnectionCallback;
     if-eqz v0, :cond_0
 
+    .line 251
     invoke-interface {v0}, Landroid/widget/RemoteViewsAdapter$RemoteAdapterConnectionCallback;->onRemoteAdapterDisconnected()V
 
+    .line 253
     :cond_0
     return-void
 .end method

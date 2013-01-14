@@ -21,8 +21,10 @@
     .parameter "event"
 
     .prologue
+    .line 439
     invoke-direct {p0, p1, p2}, Lcom/android/server/NativeDaemonConnectorException;-><init>(Ljava/lang/String;Lcom/android/server/NativeDaemonEvent;)V
 
+    .line 440
     return-void
 .end method
 
@@ -32,6 +34,7 @@
     .locals 2
 
     .prologue
+    .line 444
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-virtual {p0}, Lcom/android/server/NativeDaemonConnector$NativeDaemonArgumentException;->getMessage()Ljava/lang/String;

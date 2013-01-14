@@ -19,21 +19,26 @@
     .parameter "service"
 
     .prologue
+    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 55
     if-nez p1, :cond_0
 
+    .line 56
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "service is null"
+    const-string/jumbo v1, "service is null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
+    .line 58
     :cond_0
     iput-object p1, p0, Lcom/broadcom/bt/service/framework/PowerManager;->mService:Lcom/broadcom/bt/service/framework/IPowerManager;
 
+    .line 59
     return-void
 .end method
 
@@ -41,6 +46,7 @@
     .locals 4
 
     .prologue
+    .line 44
     const-class v3, Lcom/broadcom/bt/service/framework/PowerManager;
 
     monitor-enter v3
@@ -50,19 +56,23 @@
 
     if-nez v2, :cond_0
 
+    .line 45
     const-string v2, "fm_radio"
 
     invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 46
     .local v0, b:Landroid/os/IBinder;
     if-eqz v0, :cond_0
 
+    .line 47
     invoke-static {v0}, Lcom/broadcom/bt/service/framework/IPowerManager$Stub;->asInterface(Landroid/os/IBinder;)Lcom/broadcom/bt/service/framework/IPowerManager;
 
     move-result-object v1
 
+    .line 48
     .local v1, service:Lcom/broadcom/bt/service/framework/IPowerManager;
     new-instance v2, Lcom/broadcom/bt/service/framework/PowerManager;
 
@@ -70,6 +80,7 @@
 
     sput-object v2, Lcom/broadcom/bt/service/framework/PowerManager;->mProxy:Lcom/broadcom/bt/service/framework/PowerManager;
 
+    .line 51
     .end local v1           #service:Lcom/broadcom/bt/service/framework/IPowerManager;
     :cond_0
     sget-object v2, Lcom/broadcom/bt/service/framework/PowerManager;->mProxy:Lcom/broadcom/bt/service/framework/PowerManager;
@@ -80,6 +91,7 @@
 
     return-object v2
 
+    .line 44
     :catchall_0
     move-exception v2
 
@@ -95,6 +107,7 @@
     .parameter "enable"
 
     .prologue
+    .line 63
     :try_start_0
     iget-object v1, p0, Lcom/broadcom/bt/service/framework/PowerManager;->mService:Lcom/broadcom/bt/service/framework/IPowerManager;
 
@@ -104,12 +117,15 @@
 
     move-result v1
 
+    .line 67
     :goto_0
     return v1
 
+    .line 64
     :catch_0
     move-exception v0
 
+    .line 65
     .local v0, t:Ljava/lang/Throwable;
     const-string v1, "PowerManager"
 
@@ -117,6 +133,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 67
     const/4 v1, 0x0
 
     goto :goto_0

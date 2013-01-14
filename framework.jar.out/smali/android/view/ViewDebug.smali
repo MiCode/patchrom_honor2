@@ -166,15 +166,18 @@
 
     const/4 v3, 0x0
 
+    .line 268
     const/4 v0, 0x0
 
     sput-object v0, Landroid/view/ViewDebug;->mCapturedViewMethodsForClasses:Ljava/util/HashMap;
 
+    .line 269
     const/4 v0, 0x0
 
     sput-object v0, Landroid/view/ViewDebug;->mCapturedViewFieldsForClasses:Ljava/util/HashMap;
 
-    const-string v0, "ro.config.autotestdump"
+    .line 286
+    const-string/jumbo v0, "ro.config.autotestdump"
 
     const-string v1, "DUMPC"
 
@@ -184,10 +187,13 @@
 
     sput-object v0, Landroid/view/ViewDebug;->REMOTE_COMMAND_DUMP_CUST:Ljava/lang/String;
 
+    .line 294
     sput-boolean v3, Landroid/view/ViewDebug;->mCustomizedDump:Z
 
+    .line 296
     sput-boolean v3, Landroid/view/ViewDebug;->mInited:Z
 
+    .line 308
     const/16 v0, 0xa
 
     new-array v0, v0, [Ljava/lang/String;
@@ -244,11 +250,12 @@
 
     sput-object v0, Landroid/view/ViewDebug;->mMethodsList:[Ljava/lang/String;
 
+    .line 324
     const/16 v0, 0xa
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const-string v1, "mText"
+    const-string/jumbo v1, "mText"
 
     aput-object v1, v0, v3
 
@@ -260,41 +267,41 @@
 
     aput-object v1, v0, v5
 
-    const-string v1, "mID"
+    const-string/jumbo v1, "mID"
 
     aput-object v1, v0, v6
 
-    const-string v1, "mLeft"
+    const-string/jumbo v1, "mLeft"
 
     aput-object v1, v0, v7
 
     const/4 v1, 0x5
 
-    const-string v2, "mTop"
+    const-string/jumbo v2, "mTop"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x6
 
-    const-string v2, "mScrollX"
+    const-string/jumbo v2, "mScrollX"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x7
 
-    const-string v2, "mScrollY"
+    const-string/jumbo v2, "mScrollY"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x8
 
-    const-string v2, "x"
+    const-string/jumbo v2, "x"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x9
 
-    const-string v2, "y"
+    const-string/jumbo v2, "y"
 
     aput-object v2, v0, v1
 
@@ -307,8 +314,10 @@
     .locals 0
 
     .prologue
+    .line 62
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 633
     return-void
 .end method
 
@@ -318,6 +327,7 @@
     .parameter "value"
 
     .prologue
+    .line 1488
     move-object v0, p0
 
     .local v0, arr$:[Ljava/lang/String;
@@ -332,6 +342,7 @@
 
     aget-object v3, v0, v1
 
+    .line 1489
     .local v3, s:Ljava/lang/String;
     invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -339,18 +350,22 @@
 
     if-eqz v4, :cond_0
 
+    .line 1490
     const/4 v4, 0x1
 
+    .line 1493
     .end local v3           #s:Ljava/lang/String;
     :goto_1
     return v4
 
+    .line 1488
     .restart local v3       #s:Ljava/lang/String;
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 1493
     .end local v3           #s:Ljava/lang/String;
     :cond_1
     const/4 v4, 0x0
@@ -372,10 +387,12 @@
     .prologue
     const/4 v6, 0x1
 
+    .line 748
     invoke-static {p0, p2}, Landroid/view/ViewDebug;->findView(Landroid/view/View;Ljava/lang/String;)Landroid/view/View;
 
     move-result-object v1
 
+    .line 749
     .local v1, captureView:Landroid/view/View;
     const/4 v4, 0x0
 
@@ -383,24 +400,29 @@
 
     move-result-object v0
 
+    .line 751
     .local v0, b:Landroid/graphics/Bitmap;
     if-nez v0, :cond_0
 
+    .line 752
     const-string v4, "View"
 
     const-string v5, "Failed to create capture bitmap!"
 
     invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 755
     sget-object v4, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v6, v6, v4}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
+    .line 758
     :cond_0
     const/4 v2, 0x0
 
+    .line 760
     .local v2, out:Ljava/io/BufferedOutputStream;
     :try_start_0
     new-instance v3, Ljava/io/BufferedOutputStream;
@@ -411,6 +433,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 761
     .end local v2           #out:Ljava/io/BufferedOutputStream;
     .local v3, out:Ljava/io/BufferedOutputStream;
     :try_start_1
@@ -420,19 +443,25 @@
 
     invoke-virtual {v0, v4, v5, v3}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
+    .line 762
     invoke-virtual {v3}, Ljava/io/BufferedOutputStream;->flush()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
+    .line 764
     if-eqz v3, :cond_1
 
+    .line 765
     invoke-virtual {v3}, Ljava/io/BufferedOutputStream;->close()V
 
+    .line 767
     :cond_1
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
+    .line 769
     return-void
 
+    .line 764
     .end local v3           #out:Ljava/io/BufferedOutputStream;
     .restart local v2       #out:Ljava/io/BufferedOutputStream;
     :catchall_0
@@ -441,13 +470,16 @@
     :goto_0
     if-eqz v2, :cond_2
 
+    .line 765
     invoke-virtual {v2}, Ljava/io/BufferedOutputStream;->close()V
 
+    .line 767
     :cond_2
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
     throw v4
 
+    .line 764
     .end local v2           #out:Ljava/io/BufferedOutputStream;
     .restart local v3       #out:Ljava/io/BufferedOutputStream;
     :catchall_1
@@ -471,6 +503,7 @@
     .end annotation
 
     .prologue
+    .line 677
     :try_start_0
     new-instance v0, Landroid/graphics/Rect;
 
@@ -478,6 +511,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 679
     .local v0, outRect:Landroid/graphics/Rect;
     :try_start_1
     iget-object v1, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
@@ -493,6 +527,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
+    .line 684
     :goto_0
     :try_start_2
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
@@ -501,26 +536,32 @@
 
     invoke-virtual {p1, v1}, Ljava/io/DataOutputStream;->writeInt(I)V
 
+    .line 685
     invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
 
     move-result v1
 
     invoke-virtual {p1, v1}, Ljava/io/DataOutputStream;->writeInt(I)V
 
+    .line 687
     const/4 v1, 0x1
 
     invoke-static {p0, p1, v1}, Landroid/view/ViewDebug;->captureViewLayer(Landroid/view/View;Ljava/io/DataOutputStream;Z)V
 
+    .line 689
     const/4 v1, 0x2
 
     invoke-virtual {p1, v1}, Ljava/io/DataOutputStream;->write(I)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
+    .line 691
     invoke-virtual {p1}, Ljava/io/DataOutputStream;->close()V
 
+    .line 693
     return-void
 
+    .line 691
     .end local v0           #outRect:Landroid/graphics/Rect;
     :catchall_0
     move-exception v1
@@ -529,6 +570,7 @@
 
     throw v1
 
+    .line 680
     .restart local v0       #outRect:Landroid/graphics/Rect;
     :catch_0
     move-exception v1
@@ -552,6 +594,7 @@
 
     const/4 v9, 0x1
 
+    .line 698
     invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
     move-result v11
@@ -562,6 +605,7 @@
 
     move v6, v9
 
+    .line 700
     .local v6, localVisible:Z
     :goto_0
     iget v11, p0, Landroid/view/View;->mPrivateFlags:I
@@ -572,10 +616,12 @@
 
     if-eq v11, v12, :cond_2
 
+    .line 701
     invoke-virtual {p0}, Landroid/view/View;->getId()I
 
     move-result v5
 
+    .line 702
     .local v5, id:I
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -585,11 +631,13 @@
 
     move-result-object v7
 
+    .line 703
     .local v7, name:Ljava/lang/String;
     const/4 v11, -0x1
 
     if-eq v5, v11, :cond_0
 
+    .line 704
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v11
@@ -602,11 +650,14 @@
 
     move-result-object v7
 
+    .line 707
     :cond_0
     invoke-virtual {p1, v9}, Ljava/io/DataOutputStream;->write(I)V
 
+    .line 708
     invoke-virtual {p1, v7}, Ljava/io/DataOutputStream;->writeUTF(Ljava/lang/String;)V
 
+    .line 709
     if-eqz v6, :cond_4
 
     move v11, v9
@@ -614,30 +665,38 @@
     :goto_1
     invoke-virtual {p1, v11}, Ljava/io/DataOutputStream;->writeByte(I)V
 
+    .line 711
     const/4 v11, 0x2
 
     new-array v8, v11, [I
 
+    .line 713
     .local v8, position:[I
     invoke-virtual {p0, v8}, Landroid/view/View;->getLocationInWindow([I)V
 
+    .line 715
     aget v10, v8, v10
 
     invoke-virtual {p1, v10}, Ljava/io/DataOutputStream;->writeInt(I)V
 
+    .line 716
     aget v10, v8, v9
 
     invoke-virtual {p1, v10}, Ljava/io/DataOutputStream;->writeInt(I)V
 
+    .line 717
     invoke-virtual {p1}, Ljava/io/DataOutputStream;->flush()V
 
+    .line 719
     invoke-static {p0, v9}, Landroid/view/ViewDebug;->performViewCapture(Landroid/view/View;Z)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
+    .line 720
     .local v1, b:Landroid/graphics/Bitmap;
     if-eqz v1, :cond_1
 
+    .line 721
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
@@ -654,6 +713,7 @@
 
     invoke-direct {v0, v9}, Ljava/io/ByteArrayOutputStream;-><init>(I)V
 
+    .line 723
     .local v0, arrayOut:Ljava/io/ByteArrayOutputStream;
     sget-object v9, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
 
@@ -661,18 +721,22 @@
 
     invoke-virtual {v1, v9, v10, v0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
+    .line 724
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->size()I
 
     move-result v9
 
     invoke-virtual {p1, v9}, Ljava/io/DataOutputStream;->writeInt(I)V
 
+    .line 725
     invoke-virtual {v0, p1}, Ljava/io/ByteArrayOutputStream;->writeTo(Ljava/io/OutputStream;)V
 
+    .line 727
     .end local v0           #arrayOut:Ljava/io/ByteArrayOutputStream;
     :cond_1
     invoke-virtual {p1}, Ljava/io/DataOutputStream;->flush()V
 
+    .line 730
     .end local v1           #b:Landroid/graphics/Bitmap;
     .end local v5           #id:I
     .end local v7           #name:Ljava/lang/String;
@@ -684,13 +748,16 @@
 
     move-object v3, p0
 
+    .line 731
     check-cast v3, Landroid/view/ViewGroup;
 
+    .line 732
     .local v3, group:Landroid/view/ViewGroup;
     invoke-virtual {v3}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v2
 
+    .line 734
     .local v2, count:I
     const/4 v4, 0x0
 
@@ -698,12 +765,14 @@
     :goto_2
     if-ge v4, v2, :cond_5
 
+    .line 735
     invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v9
 
     invoke-static {v9, p1, v6}, Landroid/view/ViewDebug;->captureViewLayer(Landroid/view/View;Ljava/io/DataOutputStream;Z)V
 
+    .line 734
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_2
@@ -715,6 +784,7 @@
     :cond_3
     move v6, v10
 
+    .line 698
     goto/16 :goto_0
 
     .restart local v5       #id:I
@@ -723,8 +793,10 @@
     :cond_4
     move v11, v10
 
+    .line 709
     goto :goto_1
 
+    .line 738
     .end local v5           #id:I
     .end local v7           #name:Ljava/lang/String;
     :cond_5
@@ -749,27 +821,34 @@
     .end annotation
 
     .prologue
+    .line 1340
     .local p1, klass:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     if-nez p0, :cond_0
 
-    const-string v7, "null"
+    .line 1341
+    const-string/jumbo v7, "null"
 
+    .line 1369
     :goto_0
     return-object v7
 
+    .line 1344
     :cond_0
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
+    .line 1345
     .local v5, sb:Ljava/lang/StringBuilder;
     invoke-static {p1}, Landroid/view/ViewDebug;->capturedViewGetPropertyFields(Ljava/lang/Class;)[Ljava/lang/reflect/Field;
 
     move-result-object v3
 
+    .line 1347
     .local v3, fields:[Ljava/lang/reflect/Field;
     array-length v0, v3
 
+    .line 1348
     .local v0, count:I
     const/4 v4, 0x0
 
@@ -777,29 +856,36 @@
     :goto_1
     if-ge v4, v0, :cond_2
 
+    .line 1349
     aget-object v1, v3, v4
 
+    .line 1351
     .local v1, field:Ljava/lang/reflect/Field;
     :try_start_0
     invoke-virtual {v1, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
+    .line 1353
     .local v2, fieldValue:Ljava/lang/Object;
     invoke-virtual {v5, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 1354
     invoke-virtual {v1}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
 
     move-result-object v7
 
     invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 1355
     const-string v7, "="
 
     invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 1357
     if-eqz v2, :cond_1
 
+    .line 1358
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v7
@@ -812,24 +898,28 @@
 
     move-result-object v6
 
+    .line 1359
     .local v6, value:Ljava/lang/String;
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 1363
     .end local v6           #value:Ljava/lang/String;
     :goto_2
     const/16 v7, 0x20
 
     invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
+    .line 1348
     .end local v2           #fieldValue:Ljava/lang/Object;
     :goto_3
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
+    .line 1361
     .restart local v2       #fieldValue:Ljava/lang/Object;
     :cond_1
-    const-string v7, "null"
+    const-string/jumbo v7, "null"
 
     invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     :try_end_0
@@ -837,12 +927,14 @@
 
     goto :goto_2
 
+    .line 1364
     .end local v2           #fieldValue:Ljava/lang/Object;
     :catch_0
     move-exception v7
 
     goto :goto_3
 
+    .line 1369
     .end local v1           #field:Ljava/lang/reflect/Field;
     :cond_2
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -870,27 +962,34 @@
     .end annotation
 
     .prologue
+    .line 1297
     .local p1, klass:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     if-nez p0, :cond_0
 
-    const-string v9, "null"
+    .line 1298
+    const-string/jumbo v9, "null"
 
+    .line 1336
     :goto_0
     return-object v9
 
+    .line 1301
     :cond_0
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
+    .line 1302
     .local v7, sb:Ljava/lang/StringBuilder;
     invoke-static {p1}, Landroid/view/ViewDebug;->capturedViewGetPropertyMethods(Ljava/lang/Class;)[Ljava/lang/reflect/Method;
 
     move-result-object v4
 
+    .line 1304
     .local v4, methods:[Ljava/lang/reflect/Method;
     array-length v0, v4
 
+    .line 1305
     .local v0, count:I
     const/4 v1, 0x0
 
@@ -898,8 +997,10 @@
     :goto_1
     if-ge v1, v0, :cond_3
 
+    .line 1306
     aget-object v2, v4, v1
 
+    .line 1308
     .local v2, method:Ljava/lang/reflect/Method;
     const/4 v9, 0x0
 
@@ -910,11 +1011,13 @@
 
     move-result-object v3
 
+    .line 1309
     .local v3, methodValue:Ljava/lang/Object;
     invoke-virtual {v2}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
 
     move-result-object v6
 
+    .line 1311
     .local v6, returnType:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     const-class v9, Landroid/view/ViewDebug$CapturedViewProperty;
 
@@ -924,6 +1027,7 @@
 
     check-cast v5, Landroid/view/ViewDebug$CapturedViewProperty;
 
+    .line 1312
     .local v5, property:Landroid/view/ViewDebug$CapturedViewProperty;
     invoke-interface {v5}, Landroid/view/ViewDebug$CapturedViewProperty;->retrieveReturn()Z
 
@@ -931,6 +1035,7 @@
 
     if-eqz v9, :cond_1
 
+    .line 1314
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -959,6 +1064,7 @@
 
     invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 1305
     .end local v3           #methodValue:Ljava/lang/Object;
     .end local v5           #property:Landroid/view/ViewDebug$CapturedViewProperty;
     .end local v6           #returnType:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
@@ -967,24 +1073,29 @@
 
     goto :goto_1
 
+    .line 1316
     .restart local v3       #methodValue:Ljava/lang/Object;
     .restart local v5       #property:Landroid/view/ViewDebug$CapturedViewProperty;
     .restart local v6       #returnType:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     :cond_1
     invoke-virtual {v7, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 1317
     invoke-virtual {v2}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
     move-result-object v9
 
     invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 1318
     const-string v9, "()="
 
     invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 1320
     if-eqz v3, :cond_2
 
+    .line 1321
     invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v9
@@ -997,9 +1108,11 @@
 
     move-result-object v8
 
+    .line 1322
     .local v8, value:Ljava/lang/String;
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 1326
     .end local v8           #value:Ljava/lang/String;
     :goto_3
     const-string v9, "; "
@@ -1008,6 +1121,7 @@
 
     goto :goto_2
 
+    .line 1328
     .end local v3           #methodValue:Ljava/lang/Object;
     .end local v5           #property:Landroid/view/ViewDebug$CapturedViewProperty;
     .end local v6           #returnType:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
@@ -1016,11 +1130,12 @@
 
     goto :goto_2
 
+    .line 1324
     .restart local v3       #methodValue:Ljava/lang/Object;
     .restart local v5       #property:Landroid/view/ViewDebug$CapturedViewProperty;
     .restart local v6       #returnType:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     :cond_2
-    const-string v9, "null"
+    const-string/jumbo v9, "null"
 
     invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     :try_end_0
@@ -1029,6 +1144,7 @@
 
     goto :goto_3
 
+    .line 1331
     .end local v3           #methodValue:Ljava/lang/Object;
     .end local v5           #property:Landroid/view/ViewDebug$CapturedViewProperty;
     .end local v6           #returnType:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
@@ -1037,6 +1153,7 @@
 
     goto :goto_2
 
+    .line 1336
     .end local v2           #method:Ljava/lang/reflect/Method;
     :cond_3
     invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -1059,20 +1176,24 @@
     .end annotation
 
     .prologue
+    .line 1235
     .local p0, klass:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     sget-object v7, Landroid/view/ViewDebug;->mCapturedViewFieldsForClasses:Ljava/util/HashMap;
 
     if-nez v7, :cond_0
 
+    .line 1236
     new-instance v7, Ljava/util/HashMap;
 
     invoke-direct {v7}, Ljava/util/HashMap;-><init>()V
 
     sput-object v7, Landroid/view/ViewDebug;->mCapturedViewFieldsForClasses:Ljava/util/HashMap;
 
+    .line 1238
     :cond_0
     sget-object v6, Landroid/view/ViewDebug;->mCapturedViewFieldsForClasses:Ljava/util/HashMap;
 
+    .line 1240
     .local v6, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Class<*>;[Ljava/lang/reflect/Field;>;"
     invoke-virtual {v6, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1080,16 +1201,19 @@
 
     check-cast v2, [Ljava/lang/reflect/Field;
 
+    .line 1241
     .local v2, fields:[Ljava/lang/reflect/Field;
     if-eqz v2, :cond_1
 
     move-object v3, v2
 
+    .line 1260
     .end local v2           #fields:[Ljava/lang/reflect/Field;
     .local v3, fields:[Ljava/lang/reflect/Field;
     :goto_0
     return-object v3
 
+    .line 1245
     .end local v3           #fields:[Ljava/lang/reflect/Field;
     .restart local v2       #fields:[Ljava/lang/reflect/Field;
     :cond_1
@@ -1097,13 +1221,16 @@
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
+    .line 1246
     .local v4, foundFields:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/reflect/Field;>;"
     invoke-virtual {p0}, Ljava/lang/Class;->getFields()[Ljava/lang/reflect/Field;
 
     move-result-object v2
 
+    .line 1248
     array-length v0, v2
 
+    .line 1249
     .local v0, count:I
     const/4 v5, 0x0
 
@@ -1111,8 +1238,10 @@
     :goto_1
     if-ge v5, v0, :cond_3
 
+    .line 1250
     aget-object v1, v2, v5
 
+    .line 1251
     .local v1, field:Ljava/lang/reflect/Field;
     const-class v7, Landroid/view/ViewDebug$CapturedViewProperty;
 
@@ -1122,17 +1251,21 @@
 
     if-eqz v7, :cond_2
 
+    .line 1252
     const/4 v7, 0x1
 
     invoke-virtual {v1, v7}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
+    .line 1253
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 1249
     :cond_2
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
+    .line 1257
     .end local v1           #field:Ljava/lang/reflect/Field;
     :cond_3
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -1148,11 +1281,13 @@
     .end local v2           #fields:[Ljava/lang/reflect/Field;
     check-cast v2, [Ljava/lang/reflect/Field;
 
+    .line 1258
     .restart local v2       #fields:[Ljava/lang/reflect/Field;
     invoke-virtual {v6, p0, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-object v3, v2
 
+    .line 1260
     .end local v2           #fields:[Ljava/lang/reflect/Field;
     .restart local v3       #fields:[Ljava/lang/reflect/Field;
     goto :goto_0
@@ -1171,20 +1306,24 @@
     .end annotation
 
     .prologue
+    .line 1264
     .local p0, klass:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     sget-object v7, Landroid/view/ViewDebug;->mCapturedViewMethodsForClasses:Ljava/util/HashMap;
 
     if-nez v7, :cond_0
 
+    .line 1265
     new-instance v7, Ljava/util/HashMap;
 
     invoke-direct {v7}, Ljava/util/HashMap;-><init>()V
 
     sput-object v7, Landroid/view/ViewDebug;->mCapturedViewMethodsForClasses:Ljava/util/HashMap;
 
+    .line 1267
     :cond_0
     sget-object v3, Landroid/view/ViewDebug;->mCapturedViewMethodsForClasses:Ljava/util/HashMap;
 
+    .line 1269
     .local v3, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Class<*>;[Ljava/lang/reflect/Method;>;"
     invoke-virtual {v3, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1192,16 +1331,19 @@
 
     check-cast v5, [Ljava/lang/reflect/Method;
 
+    .line 1270
     .local v5, methods:[Ljava/lang/reflect/Method;
     if-eqz v5, :cond_1
 
     move-object v6, v5
 
+    .line 1291
     .end local v5           #methods:[Ljava/lang/reflect/Method;
     .local v6, methods:[Ljava/lang/reflect/Method;
     :goto_0
     return-object v6
 
+    .line 1274
     .end local v6           #methods:[Ljava/lang/reflect/Method;
     .restart local v5       #methods:[Ljava/lang/reflect/Method;
     :cond_1
@@ -1209,13 +1351,16 @@
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
+    .line 1275
     .local v1, foundMethods:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/reflect/Method;>;"
     invoke-virtual {p0}, Ljava/lang/Class;->getMethods()[Ljava/lang/reflect/Method;
 
     move-result-object v5
 
+    .line 1277
     array-length v0, v5
 
+    .line 1278
     .local v0, count:I
     const/4 v2, 0x0
 
@@ -1223,8 +1368,10 @@
     :goto_1
     if-ge v2, v0, :cond_3
 
+    .line 1279
     aget-object v4, v5, v2
 
+    .line 1280
     .local v4, method:Ljava/lang/reflect/Method;
     invoke-virtual {v4}, Ljava/lang/reflect/Method;->getParameterTypes()[Ljava/lang/Class;
 
@@ -1250,17 +1397,21 @@
 
     if-eq v7, v8, :cond_2
 
+    .line 1283
     const/4 v7, 0x1
 
     invoke-virtual {v4, v7}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
+    .line 1284
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 1278
     :cond_2
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
+    .line 1288
     .end local v4           #method:Ljava/lang/reflect/Method;
     :cond_3
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1276,11 +1427,13 @@
     .end local v5           #methods:[Ljava/lang/reflect/Method;
     check-cast v5, [Ljava/lang/reflect/Method;
 
+    .line 1289
     .restart local v5       #methods:[Ljava/lang/reflect/Method;
     invoke-virtual {v3, p0, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-object v6, v5
 
+    .line 1291
     .end local v5           #methods:[Ljava/lang/reflect/Method;
     .restart local v6       #methods:[Ljava/lang/reflect/Method;
     goto :goto_0
@@ -1299,35 +1452,43 @@
     .prologue
     const/4 v2, 0x0
 
+    .line 1428
     const/4 v1, 0x1
 
     sput-boolean v1, Landroid/view/ViewDebug;->mCustomizedDump:Z
 
+    .line 1429
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
     invoke-static {v1}, Landroid/view/ViewDebug;->initCustomizedList(Landroid/content/Context;)V
 
+    .line 1431
     :try_start_0
     invoke-static {p0, p1}, Landroid/view/ViewDebug;->dump(Landroid/view/View;Ljava/io/OutputStream;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 1435
     sput-boolean v2, Landroid/view/ViewDebug;->mCustomizedDump:Z
 
+    .line 1437
     return-void
 
+    .line 1432
     :catch_0
     move-exception v0
 
+    .line 1433
     .local v0, e:Ljava/io/IOException;
     :try_start_1
     throw v0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 1435
     .end local v0           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v1
@@ -1352,10 +1513,12 @@
     .prologue
     const/4 v2, 0x0
 
+    .line 449
     invoke-virtual {p0}, Landroid/view/View;->getRootView()Landroid/view/View;
 
     move-result-object p0
 
+    .line 451
     sget-object v1, Landroid/view/ViewDebug;->REMOTE_COMMAND_DUMP_CUST:Ljava/lang/String;
 
     invoke-virtual {v1, p1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -1364,6 +1527,7 @@
 
     if-eqz v1, :cond_1
 
+    .line 452
     const-string v1, "ViewDebug"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1388,12 +1552,15 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 453
     invoke-static {p0, p3}, Landroid/view/ViewDebug;->customizedDump(Landroid/view/View;Ljava/io/OutputStream;)V
 
+    .line 472
     :cond_0
     :goto_0
     return-void
 
+    .line 454
     :cond_1
     const-string v1, "DUMP"
 
@@ -1403,10 +1570,12 @@
 
     if-eqz v1, :cond_2
 
+    .line 455
     invoke-static {p0, p3}, Landroid/view/ViewDebug;->dump(Landroid/view/View;Ljava/io/OutputStream;)V
 
     goto :goto_0
 
+    .line 456
     :cond_2
     const-string v1, "CAPTURE_LAYERS"
 
@@ -1416,6 +1585,7 @@
 
     if-eqz v1, :cond_3
 
+    .line 457
     new-instance v1, Ljava/io/DataOutputStream;
 
     invoke-direct {v1, p3}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
@@ -1424,6 +1594,7 @@
 
     goto :goto_0
 
+    .line 459
     :cond_3
     const-string v1, " "
 
@@ -1431,6 +1602,7 @@
 
     move-result-object v0
 
+    .line 460
     .local v0, params:[Ljava/lang/String;
     const-string v1, "CAPTURE"
 
@@ -1440,12 +1612,14 @@
 
     if-eqz v1, :cond_4
 
+    .line 461
     aget-object v1, v0, v2
 
     invoke-static {p0, p3, v1}, Landroid/view/ViewDebug;->capture(Landroid/view/View;Ljava/io/OutputStream;Ljava/lang/String;)V
 
     goto :goto_0
 
+    .line 462
     :cond_4
     const-string v1, "OUTPUT_DISPLAYLIST"
 
@@ -1455,12 +1629,14 @@
 
     if-eqz v1, :cond_5
 
+    .line 463
     aget-object v1, v0, v2
 
     invoke-static {p0, v1}, Landroid/view/ViewDebug;->outputDisplayList(Landroid/view/View;Ljava/lang/String;)V
 
     goto :goto_0
 
+    .line 464
     :cond_5
     const-string v1, "INVALIDATE"
 
@@ -1470,12 +1646,14 @@
 
     if-eqz v1, :cond_6
 
+    .line 465
     aget-object v1, v0, v2
 
     invoke-static {p0, v1}, Landroid/view/ViewDebug;->invalidate(Landroid/view/View;Ljava/lang/String;)V
 
     goto :goto_0
 
+    .line 466
     :cond_6
     const-string v1, "REQUEST_LAYOUT"
 
@@ -1485,12 +1663,14 @@
 
     if-eqz v1, :cond_7
 
+    .line 467
     aget-object v1, v0, v2
 
     invoke-static {p0, v1}, Landroid/view/ViewDebug;->requestLayout(Landroid/view/View;Ljava/lang/String;)V
 
     goto :goto_0
 
+    .line 468
     :cond_7
     const-string v1, "PROFILE"
 
@@ -1500,6 +1680,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 469
     aget-object v1, v0, v2
 
     invoke-static {p0, p3, v1}, Landroid/view/ViewDebug;->profile(Landroid/view/View;Ljava/io/OutputStream;Ljava/lang/String;)V
@@ -1518,15 +1699,17 @@
     .end annotation
 
     .prologue
+    .line 802
     const/4 v3, 0x0
 
+    .line 804
     .local v3, out:Ljava/io/BufferedWriter;
     :try_start_0
     new-instance v4, Ljava/io/BufferedWriter;
 
     new-instance v6, Ljava/io/OutputStreamWriter;
 
-    const-string v7, "utf-8"
+    const-string/jumbo v7, "utf-8"
 
     invoke-direct {v6, p1, v7}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/lang/String;)V
 
@@ -1537,6 +1720,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 805
     .end local v3           #out:Ljava/io/BufferedWriter;
     .local v4, out:Ljava/io/BufferedWriter;
     :try_start_1
@@ -1544,17 +1728,20 @@
 
     move-result-object v5
 
+    .line 806
     .local v5, view:Landroid/view/View;
     instance-of v6, v5, Landroid/view/ViewGroup;
 
     if-eqz v6, :cond_0
 
+    .line 807
     move-object v0, v5
 
     check-cast v0, Landroid/view/ViewGroup;
 
     move-object v2, v0
 
+    .line 808
     .local v2, group:Landroid/view/ViewGroup;
     invoke-virtual {v2}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
@@ -1564,23 +1751,28 @@
 
     invoke-static {v6, v2, v4, v7}, Landroid/view/ViewDebug;->dumpViewHierarchyWithProperties(Landroid/content/Context;Landroid/view/ViewGroup;Ljava/io/BufferedWriter;I)V
 
+    .line 810
     .end local v2           #group:Landroid/view/ViewGroup;
     :cond_0
     const-string v6, "DONE."
 
     invoke-virtual {v4, v6}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
+    .line 811
     invoke-virtual {v4}, Ljava/io/BufferedWriter;->newLine()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
+    .line 815
     if-eqz v4, :cond_3
 
+    .line 816
     invoke-virtual {v4}, Ljava/io/BufferedWriter;->close()V
 
     move-object v3, v4
 
+    .line 819
     .end local v4           #out:Ljava/io/BufferedWriter;
     .end local v5           #view:Landroid/view/View;
     .restart local v3       #out:Ljava/io/BufferedWriter;
@@ -1588,9 +1780,11 @@
     :goto_0
     return-void
 
+    .line 812
     :catch_0
     move-exception v1
 
+    .line 813
     .local v1, e:Ljava/lang/Exception;
     :goto_1
     :try_start_2
@@ -1602,12 +1796,15 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
+    .line 815
     if-eqz v3, :cond_1
 
+    .line 816
     invoke-virtual {v3}, Ljava/io/BufferedWriter;->close()V
 
     goto :goto_0
 
+    .line 815
     .end local v1           #e:Ljava/lang/Exception;
     :catchall_0
     move-exception v6
@@ -1615,11 +1812,13 @@
     :goto_2
     if-eqz v3, :cond_2
 
+    .line 816
     invoke-virtual {v3}, Ljava/io/BufferedWriter;->close()V
 
     :cond_2
     throw v6
 
+    .line 815
     .end local v3           #out:Ljava/io/BufferedWriter;
     .restart local v4       #out:Ljava/io/BufferedWriter;
     :catchall_1
@@ -1631,6 +1830,7 @@
     .restart local v3       #out:Ljava/io/BufferedWriter;
     goto :goto_2
 
+    .line 812
     .end local v3           #out:Ljava/io/BufferedWriter;
     .restart local v4       #out:Ljava/io/BufferedWriter;
     :catch_1
@@ -1659,10 +1859,12 @@
     .parameter "view"
 
     .prologue
+    .line 1380
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
 
+    .line 1381
     .local v0, klass:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1690,6 +1892,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
+    .line 1382
     .local v1, sb:Ljava/lang/StringBuilder;
     const-string v2, ""
 
@@ -1699,6 +1902,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 1383
     const-string v2, ""
 
     invoke-static {p1, v0, v2}, Landroid/view/ViewDebug;->capturedViewExportMethods(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/String;
@@ -1707,12 +1911,14 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 1384
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-static {p0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1385
     return-void
 .end method
 
@@ -1724,20 +1930,24 @@
     .parameter "level"
 
     .prologue
+    .line 848
     invoke-static {p0, p1, p2, p3}, Landroid/view/ViewDebug;->dumpViewWithProperties(Landroid/content/Context;Landroid/view/View;Ljava/io/BufferedWriter;I)Z
 
     move-result v3
 
     if-nez v3, :cond_1
 
+    .line 861
     :cond_0
     return-void
 
+    .line 852
     :cond_1
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
+    .line 853
     .local v0, count:I
     const/4 v1, 0x0
 
@@ -1745,15 +1955,18 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
+    .line 854
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
+    .line 855
     .local v2, view:Landroid/view/View;
     instance-of v3, v2, Landroid/view/ViewGroup;
 
     if-eqz v3, :cond_2
 
+    .line 856
     check-cast v2, Landroid/view/ViewGroup;
 
     .end local v2           #view:Landroid/view/View;
@@ -1761,11 +1974,13 @@
 
     invoke-static {p0, v2, p2, v3}, Landroid/view/ViewDebug;->dumpViewHierarchyWithProperties(Landroid/content/Context;Landroid/view/ViewGroup;Ljava/io/BufferedWriter;I)V
 
+    .line 853
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 858
     .restart local v2       #view:Landroid/view/View;
     :cond_2
     add-int/lit8 v3, p3, 0x1
@@ -1787,10 +2002,12 @@
     .end annotation
 
     .prologue
+    .line 964
     const-string v0, ""
 
     invoke-static {p0, p1, p2, v0}, Landroid/view/ViewDebug;->dumpViewProperties(Landroid/content/Context;Ljava/lang/Object;Ljava/io/BufferedWriter;Ljava/lang/String;)V
 
+    .line 965
     return-void
 .end method
 
@@ -1807,24 +2024,30 @@
     .end annotation
 
     .prologue
+    .line 970
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
 
+    .line 973
     .local v0, klass:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     :cond_0
     invoke-static {p0, p1, p2, v0, p3}, Landroid/view/ViewDebug;->exportFields(Landroid/content/Context;Ljava/lang/Object;Ljava/io/BufferedWriter;Ljava/lang/Class;Ljava/lang/String;)V
 
+    .line 974
     invoke-static {p0, p1, p2, v0, p3}, Landroid/view/ViewDebug;->exportMethods(Landroid/content/Context;Ljava/lang/Object;Ljava/io/BufferedWriter;Ljava/lang/Class;Ljava/lang/String;)V
 
+    .line 975
     invoke-virtual {v0}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
 
     move-result-object v0
 
+    .line 976
     const-class v1, Ljava/lang/Object;
 
     if-ne v0, v1, :cond_0
 
+    .line 977
     return-void
 .end method
 
@@ -1836,21 +2059,25 @@
     .parameter "level"
 
     .prologue
+    .line 867
     const/4 v1, 0x0
 
     .local v1, i:I
     :goto_0
     if-ge v1, p3, :cond_0
 
+    .line 868
     const/16 v2, 0x20
 
     :try_start_0
     invoke-virtual {p2, v2}, Ljava/io/BufferedWriter;->write(I)V
 
+    .line 867
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 870
     :cond_0
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -1862,10 +2089,12 @@
 
     invoke-virtual {p2, v2}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
+    .line 871
     const/16 v2, 0x40
 
     invoke-virtual {p2, v2}, Ljava/io/BufferedWriter;->write(I)V
 
+    .line 872
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
@@ -1876,24 +2105,30 @@
 
     invoke-virtual {p2, v2}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
+    .line 873
     const/16 v2, 0x20
 
     invoke-virtual {p2, v2}, Ljava/io/BufferedWriter;->write(I)V
 
+    .line 874
     invoke-static {p0, p1, p2}, Landroid/view/ViewDebug;->dumpViewProperties(Landroid/content/Context;Ljava/lang/Object;Ljava/io/BufferedWriter;)V
 
+    .line 875
     invoke-virtual {p2}, Ljava/io/BufferedWriter;->newLine()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 880
     const/4 v2, 0x1
 
     :goto_1
     return v2
 
+    .line 876
     :catch_0
     move-exception v0
 
+    .line 877
     .local v0, e:Ljava/io/IOException;
     const-string v2, "View"
 
@@ -1901,6 +2136,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 878
     const/4 v2, 0x0
 
     goto :goto_1
@@ -1933,14 +2169,17 @@
     .end annotation
 
     .prologue
+    .line 1055
     .local p3, klass:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     invoke-static/range {p3 .. p3}, Landroid/view/ViewDebug;->getExportedPropertyFields(Ljava/lang/Class;)[Ljava/lang/reflect/Field;
 
     move-result-object v12
 
+    .line 1057
     .local v12, fields:[Ljava/lang/reflect/Field;
     array-length v9, v12
 
+    .line 1058
     .local v9, count:I
     const/4 v14, 0x0
 
@@ -1948,17 +2187,21 @@
     :goto_0
     if-ge v14, v9, :cond_8
 
+    .line 1059
     aget-object v10, v12, v14
 
+    .line 1063
     .local v10, field:Ljava/lang/reflect/Field;
     const/4 v11, 0x0
 
+    .line 1064
     .local v11, fieldValue:Ljava/lang/Object;
     :try_start_0
     invoke-virtual {v10}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
 
     move-result-object v22
 
+    .line 1065
     .local v22, type:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     sget-object v2, Landroid/view/ViewDebug;->sAnnotations:Ljava/util/HashMap;
 
@@ -1968,6 +2211,7 @@
 
     check-cast v4, Landroid/view/ViewDebug$ExportedProperty;
 
+    .line 1066
     .local v4, property:Landroid/view/ViewDebug$ExportedProperty;
     invoke-interface {v4}, Landroid/view/ViewDebug$ExportedProperty;->category()Ljava/lang/String;
 
@@ -2001,6 +2245,7 @@
 
     move-result-object v8
 
+    .line 1069
     .local v8, categoryPrefix:Ljava/lang/String;
     :goto_1
     sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -2009,6 +2254,7 @@
 
     if-ne v0, v2, :cond_7
 
+    .line 1071
     invoke-interface {v4}, Landroid/view/ViewDebug$ExportedProperty;->resolveId()Z
 
     move-result v2
@@ -2017,12 +2263,14 @@
 
     if-eqz p0, :cond_3
 
+    .line 1072
     move-object/from16 v0, p1
 
     invoke-virtual {v10, v0}, Ljava/lang/reflect/Field;->getInt(Ljava/lang/Object;)I
 
     move-result v15
 
+    .line 1073
     .local v15, id:I
     move-object/from16 v0, p0
 
@@ -2030,18 +2278,21 @@
 
     move-result-object v11
 
+    .line 1117
     .end local v11           #fieldValue:Ljava/lang/Object;
     .end local v15           #id:I
     :cond_0
     :goto_2
     if-nez v11, :cond_1
 
+    .line 1118
     move-object/from16 v0, p1
 
     invoke-virtual {v10, v0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v11
 
+    .line 1121
     :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -2071,6 +2322,7 @@
 
     invoke-static {v0, v2, v3, v7, v11}, Landroid/view/ViewDebug;->writeEntry(Ljava/io/BufferedWriter;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1058
     .end local v4           #property:Landroid/view/ViewDebug$ExportedProperty;
     .end local v8           #categoryPrefix:Ljava/lang/String;
     .end local v22           #type:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
@@ -2079,6 +2331,7 @@
 
     goto :goto_0
 
+    .line 1066
     .restart local v4       #property:Landroid/view/ViewDebug$ExportedProperty;
     .restart local v11       #fieldValue:Ljava/lang/Object;
     .restart local v22       #type:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
@@ -2087,23 +2340,27 @@
 
     goto :goto_1
 
+    .line 1075
     .restart local v8       #categoryPrefix:Ljava/lang/String;
     :cond_3
     invoke-interface {v4}, Landroid/view/ViewDebug$ExportedProperty;->flagMapping()[Landroid/view/ViewDebug$FlagToString;
 
     move-result-object v13
 
+    .line 1076
     .local v13, flagsMapping:[Landroid/view/ViewDebug$FlagToString;
     array-length v2, v13
 
     if-lez v2, :cond_4
 
+    .line 1077
     move-object/from16 v0, p1
 
     invoke-virtual {v10, v0}, Ljava/lang/reflect/Field;->getInt(Ljava/lang/Object;)I
 
     move-result v16
 
+    .line 1078
     .local v16, intValue:I
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -2137,6 +2394,7 @@
 
     move-result-object v6
 
+    .line 1080
     .local v6, valuePrefix:Ljava/lang/String;
     move-object/from16 v0, p2
 
@@ -2144,6 +2402,7 @@
 
     invoke-static {v0, v13, v1, v6}, Landroid/view/ViewDebug;->exportUnrolledFlags(Ljava/io/BufferedWriter;[Landroid/view/ViewDebug$FlagToString;ILjava/lang/String;)V
 
+    .line 1083
     .end local v6           #valuePrefix:Ljava/lang/String;
     .end local v16           #intValue:I
     :cond_4
@@ -2151,6 +2410,7 @@
 
     move-result-object v19
 
+    .line 1084
     .local v19, mapping:[Landroid/view/ViewDebug$IntToString;
     move-object/from16 v0, v19
 
@@ -2158,12 +2418,14 @@
 
     if-lez v2, :cond_0
 
+    .line 1085
     move-object/from16 v0, p1
 
     invoke-virtual {v10, v0}, Ljava/lang/reflect/Field;->getInt(Ljava/lang/Object;)I
 
     move-result v16
 
+    .line 1086
     .restart local v16       #intValue:I
     move-object/from16 v0, v19
 
@@ -2171,6 +2433,7 @@
 
     move/from16 v20, v0
 
+    .line 1087
     .local v20, mappingCount:I
     const/16 v17, 0x0
 
@@ -2182,8 +2445,10 @@
 
     if-ge v0, v1, :cond_5
 
+    .line 1088
     aget-object v18, v19, v17
 
+    .line 1089
     .local v18, mapped:Landroid/view/ViewDebug$IntToString;
     invoke-interface/range {v18 .. v18}, Landroid/view/ViewDebug$IntToString;->from()I
 
@@ -2193,15 +2458,18 @@
 
     if-ne v2, v0, :cond_6
 
+    .line 1090
     invoke-interface/range {v18 .. v18}, Landroid/view/ViewDebug$IntToString;->to()Ljava/lang/String;
 
     move-result-object v11
 
+    .line 1095
     .end local v11           #fieldValue:Ljava/lang/Object;
     .end local v18           #mapped:Landroid/view/ViewDebug$IntToString;
     :cond_5
     if-nez v11, :cond_0
 
+    .line 1096
     invoke-static/range {v16 .. v16}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v11
@@ -2209,6 +2477,7 @@
     .local v11, fieldValue:Ljava/lang/Integer;
     goto/16 :goto_2
 
+    .line 1087
     .local v11, fieldValue:Ljava/lang/Object;
     .restart local v18       #mapped:Landroid/view/ViewDebug$IntToString;
     :cond_6
@@ -2216,6 +2485,7 @@
 
     goto :goto_4
 
+    .line 1100
     .end local v13           #flagsMapping:[Landroid/view/ViewDebug$FlagToString;
     .end local v16           #intValue:I
     .end local v17           #j:I
@@ -2229,6 +2499,7 @@
 
     if-ne v0, v2, :cond_9
 
+    .line 1101
     move-object/from16 v0, p1
 
     invoke-virtual {v10, v0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2243,6 +2514,7 @@
 
     move-object v5, v0
 
+    .line 1102
     .local v5, array:[I
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -2276,9 +2548,11 @@
 
     move-result-object v6
 
+    .line 1103
     .restart local v6       #valuePrefix:Ljava/lang/String;
     const-string v21, ""
 
+    .line 1105
     .local v21, suffix:Ljava/lang/String;
     const-string v7, ""
 
@@ -2288,6 +2562,7 @@
 
     invoke-static/range {v2 .. v7}, Landroid/view/ViewDebug;->exportUnrolledArray(Landroid/content/Context;Ljava/io/BufferedWriter;Landroid/view/ViewDebug$ExportedProperty;[ILjava/lang/String;Ljava/lang/String;)V
 
+    .line 1125
     .end local v4           #property:Landroid/view/ViewDebug$ExportedProperty;
     .end local v5           #array:[I
     .end local v6           #valuePrefix:Ljava/lang/String;
@@ -2299,6 +2574,7 @@
     :cond_8
     return-void
 
+    .line 1109
     .restart local v4       #property:Landroid/view/ViewDebug$ExportedProperty;
     .restart local v8       #categoryPrefix:Ljava/lang/String;
     .restart local v10       #field:Ljava/lang/reflect/Field;
@@ -2311,12 +2587,14 @@
 
     if-nez v2, :cond_0
 
+    .line 1110
     invoke-interface {v4}, Landroid/view/ViewDebug$ExportedProperty;->deepExport()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
+    .line 1111
     move-object/from16 v0, p1
 
     invoke-virtual {v10, v0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2355,6 +2633,7 @@
 
     goto/16 :goto_3
 
+    .line 1122
     .end local v4           #property:Landroid/view/ViewDebug$ExportedProperty;
     .end local v8           #categoryPrefix:Ljava/lang/String;
     .end local v11           #fieldValue:Ljava/lang/Object;
@@ -2392,16 +2671,19 @@
     .end annotation
 
     .prologue
+    .line 982
     .local p3, klass:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     invoke-static/range {p3 .. p3}, Landroid/view/ViewDebug;->getExportedPropertyMethods(Ljava/lang/Class;)[Ljava/lang/reflect/Method;
 
     move-result-object v22
 
+    .line 984
     .local v22, methods:[Ljava/lang/reflect/Method;
     move-object/from16 v0, v22
 
     array-length v10, v0
 
+    .line 985
     .local v10, count:I
     const/4 v12, 0x0
 
@@ -2409,8 +2691,10 @@
     :goto_0
     if-ge v12, v10, :cond_7
 
+    .line 986
     aget-object v20, v22, v12
 
+    .line 990
     .local v20, method:Ljava/lang/reflect/Method;
     const/4 v3, 0x0
 
@@ -2425,11 +2709,13 @@
 
     move-result-object v21
 
+    .line 991
     .local v21, methodValue:Ljava/lang/Object;
     invoke-virtual/range {v20 .. v20}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
 
     move-result-object v23
 
+    .line 992
     .local v23, returnType:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     sget-object v3, Landroid/view/ViewDebug;->sAnnotations:Ljava/util/HashMap;
 
@@ -2441,6 +2727,7 @@
 
     check-cast v5, Landroid/view/ViewDebug$ExportedProperty;
 
+    .line 993
     .local v5, property:Landroid/view/ViewDebug$ExportedProperty;
     invoke-interface {v5}, Landroid/view/ViewDebug$ExportedProperty;->category()Ljava/lang/String;
 
@@ -2474,6 +2761,7 @@
 
     move-result-object v9
 
+    .line 996
     .local v9, categoryPrefix:Ljava/lang/String;
     :goto_1
     sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -2482,6 +2770,7 @@
 
     if-ne v0, v3, :cond_6
 
+    .line 998
     invoke-interface {v5}, Landroid/view/ViewDebug$ExportedProperty;->resolveId()Z
 
     move-result v3
@@ -2490,6 +2779,7 @@
 
     if-eqz p0, :cond_2
 
+    .line 999
     check-cast v21, Ljava/lang/Integer;
 
     .end local v21           #methodValue:Ljava/lang/Object;
@@ -2497,6 +2787,7 @@
 
     move-result v13
 
+    .line 1000
     .local v13, id:I
     move-object/from16 v0, p0
 
@@ -2504,6 +2795,7 @@
 
     move-result-object v21
 
+    .line 1045
     .end local v13           #id:I
     :cond_0
     :goto_2
@@ -2537,6 +2829,7 @@
 
     invoke-static {v0, v3, v4, v8, v1}, Landroid/view/ViewDebug;->writeEntry(Ljava/io/BufferedWriter;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 985
     .end local v5           #property:Landroid/view/ViewDebug$ExportedProperty;
     .end local v9           #categoryPrefix:Ljava/lang/String;
     .end local v23           #returnType:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
@@ -2545,6 +2838,7 @@
 
     goto :goto_0
 
+    .line 993
     .restart local v5       #property:Landroid/view/ViewDebug$ExportedProperty;
     .restart local v21       #methodValue:Ljava/lang/Object;
     .restart local v23       #returnType:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
@@ -2553,17 +2847,20 @@
 
     goto :goto_1
 
+    .line 1002
     .restart local v9       #categoryPrefix:Ljava/lang/String;
     :cond_2
     invoke-interface {v5}, Landroid/view/ViewDebug$ExportedProperty;->flagMapping()[Landroid/view/ViewDebug$FlagToString;
 
     move-result-object v11
 
+    .line 1003
     .local v11, flagsMapping:[Landroid/view/ViewDebug$FlagToString;
     array-length v3, v11
 
     if-lez v3, :cond_3
 
+    .line 1004
     move-object/from16 v0, v21
 
     check-cast v0, Ljava/lang/Integer;
@@ -2574,6 +2871,7 @@
 
     move-result v14
 
+    .line 1005
     .local v14, intValue:I
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -2607,11 +2905,13 @@
 
     move-result-object v7
 
+    .line 1007
     .local v7, valuePrefix:Ljava/lang/String;
     move-object/from16 v0, p2
 
     invoke-static {v0, v11, v14, v7}, Landroid/view/ViewDebug;->exportUnrolledFlags(Ljava/io/BufferedWriter;[Landroid/view/ViewDebug$FlagToString;ILjava/lang/String;)V
 
+    .line 1010
     .end local v7           #valuePrefix:Ljava/lang/String;
     .end local v14           #intValue:I
     :cond_3
@@ -2619,6 +2919,7 @@
 
     move-result-object v18
 
+    .line 1011
     .local v18, mapping:[Landroid/view/ViewDebug$IntToString;
     move-object/from16 v0, v18
 
@@ -2626,6 +2927,7 @@
 
     if-lez v3, :cond_0
 
+    .line 1012
     move-object/from16 v0, v21
 
     check-cast v0, Ljava/lang/Integer;
@@ -2636,9 +2938,11 @@
 
     move-result v14
 
+    .line 1013
     .restart local v14       #intValue:I
     const/16 v16, 0x0
 
+    .line 1014
     .local v16, mapped:Z
     move-object/from16 v0, v18
 
@@ -2646,6 +2950,7 @@
 
     move/from16 v19, v0
 
+    .line 1015
     .local v19, mappingCount:I
     const/4 v15, 0x0
 
@@ -2655,8 +2960,10 @@
 
     if-ge v15, v0, :cond_4
 
+    .line 1016
     aget-object v17, v18, v15
 
+    .line 1017
     .local v17, mapper:Landroid/view/ViewDebug$IntToString;
     invoke-interface/range {v17 .. v17}, Landroid/view/ViewDebug$IntToString;->from()I
 
@@ -2664,18 +2971,22 @@
 
     if-ne v3, v14, :cond_5
 
+    .line 1018
     invoke-interface/range {v17 .. v17}, Landroid/view/ViewDebug$IntToString;->to()Ljava/lang/String;
 
     move-result-object v21
 
+    .line 1019
     .local v21, methodValue:Ljava/lang/String;
     const/16 v16, 0x1
 
+    .line 1024
     .end local v17           #mapper:Landroid/view/ViewDebug$IntToString;
     .end local v21           #methodValue:Ljava/lang/String;
     :cond_4
     if-nez v16, :cond_0
 
+    .line 1025
     invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v21
@@ -2683,6 +2994,7 @@
     .local v21, methodValue:Ljava/lang/Integer;
     goto/16 :goto_2
 
+    .line 1015
     .restart local v17       #mapper:Landroid/view/ViewDebug$IntToString;
     .local v21, methodValue:Ljava/lang/Object;
     :cond_5
@@ -2690,6 +3002,7 @@
 
     goto :goto_4
 
+    .line 1029
     .end local v11           #flagsMapping:[Landroid/view/ViewDebug$FlagToString;
     .end local v14           #intValue:I
     .end local v15           #j:I
@@ -2704,6 +3017,7 @@
 
     if-ne v0, v3, :cond_8
 
+    .line 1030
     check-cast v21, [I
 
     .end local v21           #methodValue:Ljava/lang/Object;
@@ -2713,6 +3027,7 @@
 
     move-object v6, v0
 
+    .line 1031
     .local v6, array:[I
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -2746,9 +3061,11 @@
 
     move-result-object v7
 
+    .line 1032
     .restart local v7       #valuePrefix:Ljava/lang/String;
     const-string v24, "()"
 
+    .line 1034
     .local v24, suffix:Ljava/lang/String;
     const-string v8, "()"
 
@@ -2758,6 +3075,7 @@
 
     invoke-static/range {v3 .. v8}, Landroid/view/ViewDebug;->exportUnrolledArray(Landroid/content/Context;Ljava/io/BufferedWriter;Landroid/view/ViewDebug$ExportedProperty;[ILjava/lang/String;Ljava/lang/String;)V
 
+    .line 1050
     .end local v5           #property:Landroid/view/ViewDebug$ExportedProperty;
     .end local v6           #array:[I
     .end local v7           #valuePrefix:Ljava/lang/String;
@@ -2768,6 +3086,7 @@
     :cond_7
     return-void
 
+    .line 1038
     .restart local v5       #property:Landroid/view/ViewDebug$ExportedProperty;
     .restart local v9       #categoryPrefix:Ljava/lang/String;
     .restart local v20       #method:Ljava/lang/reflect/Method;
@@ -2780,12 +3099,14 @@
 
     if-nez v3, :cond_0
 
+    .line 1039
     invoke-interface {v5}, Landroid/view/ViewDebug$ExportedProperty;->deepExport()Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
+    .line 1040
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -2821,6 +3142,7 @@
 
     goto/16 :goto_3
 
+    .line 1046
     .end local v5           #property:Landroid/view/ViewDebug$ExportedProperty;
     .end local v9           #categoryPrefix:Ljava/lang/String;
     .end local v21           #methodValue:Ljava/lang/Object;
@@ -2830,6 +3152,7 @@
 
     goto/16 :goto_3
 
+    .line 1047
     :catch_1
     move-exception v3
 
@@ -2851,10 +3174,12 @@
     .end annotation
 
     .prologue
+    .line 1159
     invoke-interface/range {p2 .. p2}, Landroid/view/ViewDebug$ExportedProperty;->indexMapping()[Landroid/view/ViewDebug$IntToString;
 
     move-result-object v5
 
+    .line 1160
     .local v5, indexMapping:[Landroid/view/ViewDebug$IntToString;
     array-length v0, v5
 
@@ -2864,12 +3189,14 @@
 
     const/4 v3, 0x1
 
+    .line 1162
     .local v3, hasIndexMapping:Z
     :goto_0
     invoke-interface/range {p2 .. p2}, Landroid/view/ViewDebug$ExportedProperty;->mapping()[Landroid/view/ViewDebug$IntToString;
 
     move-result-object v10
 
+    .line 1163
     .local v10, mapping:[Landroid/view/ViewDebug$IntToString;
     array-length v0, v10
 
@@ -2879,6 +3206,7 @@
 
     const/4 v4, 0x1
 
+    .line 1165
     .local v4, hasMapping:Z
     :goto_1
     invoke-interface/range {p2 .. p2}, Landroid/view/ViewDebug$ExportedProperty;->resolveId()Z
@@ -2891,12 +3219,14 @@
 
     const/4 v13, 0x1
 
+    .line 1166
     .local v13, resolveId:Z
     :goto_2
     move-object/from16 v0, p3
 
     array-length v15, v0
 
+    .line 1168
     .local v15, valuesCount:I
     const/4 v7, 0x0
 
@@ -2904,21 +3234,27 @@
     :goto_3
     if-ge v7, v15, :cond_9
 
+    .line 1170
     const/4 v14, 0x0
 
+    .line 1172
     .local v14, value:Ljava/lang/String;
     aget v6, p3, v7
 
+    .line 1174
     .local v6, intValue:I
     invoke-static {v7}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v12
 
+    .line 1175
     .local v12, name:Ljava/lang/String;
     if-eqz v3, :cond_0
 
+    .line 1176
     array-length v11, v5
 
+    .line 1177
     .local v11, mappingCount:I
     const/4 v8, 0x0
 
@@ -2926,8 +3262,10 @@
     :goto_4
     if-ge v8, v11, :cond_0
 
+    .line 1178
     aget-object v9, v5, v8
 
+    .line 1179
     .local v9, mapped:Landroid/view/ViewDebug$IntToString;
     invoke-interface {v9}, Landroid/view/ViewDebug$IntToString;->from()I
 
@@ -2937,18 +3275,22 @@
 
     if-ne v0, v7, :cond_6
 
+    .line 1180
     invoke-interface {v9}, Landroid/view/ViewDebug$IntToString;->to()Ljava/lang/String;
 
     move-result-object v12
 
+    .line 1186
     .end local v8           #k:I
     .end local v9           #mapped:Landroid/view/ViewDebug$IntToString;
     .end local v11           #mappingCount:I
     :cond_0
     if-eqz v4, :cond_1
 
+    .line 1187
     array-length v11, v10
 
+    .line 1188
     .restart local v11       #mappingCount:I
     const/4 v8, 0x0
 
@@ -2956,8 +3298,10 @@
     :goto_5
     if-ge v8, v11, :cond_1
 
+    .line 1189
     aget-object v9, v10, v8
 
+    .line 1190
     .restart local v9       #mapped:Landroid/view/ViewDebug$IntToString;
     invoke-interface {v9}, Landroid/view/ViewDebug$IntToString;->from()I
 
@@ -2967,16 +3311,19 @@
 
     if-ne v0, v6, :cond_7
 
+    .line 1191
     invoke-interface {v9}, Landroid/view/ViewDebug$IntToString;->to()Ljava/lang/String;
 
     move-result-object v14
 
+    .line 1197
     .end local v8           #k:I
     .end local v9           #mapped:Landroid/view/ViewDebug$IntToString;
     .end local v11           #mappingCount:I
     :cond_1
     if-eqz v13, :cond_8
 
+    .line 1198
     if-nez v14, :cond_2
 
     move-object/from16 v0, p0
@@ -2988,6 +3335,7 @@
     .end local v14           #value:Ljava/lang/String;
     check-cast v14, Ljava/lang/String;
 
+    .line 1203
     .restart local v14       #value:Ljava/lang/String;
     :cond_2
     :goto_6
@@ -2999,10 +3347,12 @@
 
     invoke-static {v0, v1, v12, v2, v14}, Landroid/view/ViewDebug;->writeEntry(Ljava/io/BufferedWriter;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1168
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_3
 
+    .line 1160
     .end local v3           #hasIndexMapping:Z
     .end local v4           #hasMapping:Z
     .end local v6           #intValue:I
@@ -3017,6 +3367,7 @@
 
     goto :goto_0
 
+    .line 1163
     .restart local v3       #hasIndexMapping:Z
     .restart local v10       #mapping:[Landroid/view/ViewDebug$IntToString;
     :cond_4
@@ -3024,12 +3375,14 @@
 
     goto :goto_1
 
+    .line 1165
     .restart local v4       #hasMapping:Z
     :cond_5
     const/4 v13, 0x0
 
     goto :goto_2
 
+    .line 1177
     .restart local v6       #intValue:I
     .restart local v7       #j:I
     .restart local v8       #k:I
@@ -3044,11 +3397,13 @@
 
     goto :goto_4
 
+    .line 1188
     :cond_7
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_5
 
+    .line 1200
     .end local v8           #k:I
     .end local v9           #mapped:Landroid/view/ViewDebug$IntToString;
     .end local v11           #mappingCount:I
@@ -3059,6 +3414,7 @@
 
     goto :goto_6
 
+    .line 1205
     .end local v6           #intValue:I
     .end local v12           #name:Ljava/lang/String;
     .end local v14           #value:Ljava/lang/String;
@@ -3079,8 +3435,10 @@
     .end annotation
 
     .prologue
+    .line 1141
     array-length v0, p1
 
+    .line 1142
     .local v0, count:I
     const/4 v3, 0x0
 
@@ -3088,13 +3446,16 @@
     :goto_0
     if-ge v3, v0, :cond_4
 
+    .line 1143
     aget-object v1, p1, v3
 
+    .line 1144
     .local v1, flagMapping:Landroid/view/ViewDebug$FlagToString;
     invoke-interface {v1}, Landroid/view/ViewDebug$FlagToString;->outputIf()Z
 
     move-result v2
 
+    .line 1145
     .local v2, ifTrue:Z
     invoke-interface {v1}, Landroid/view/ViewDebug$FlagToString;->mask()I
 
@@ -3102,6 +3463,7 @@
 
     and-int v4, p2, v8
 
+    .line 1146
     .local v4, maskResult:I
     invoke-interface {v1}, Landroid/view/ViewDebug$FlagToString;->equals()I
 
@@ -3111,6 +3473,7 @@
 
     const/4 v6, 0x1
 
+    .line 1147
     .local v6, test:Z
     :goto_1
     if-eqz v6, :cond_0
@@ -3122,11 +3485,13 @@
 
     if-nez v2, :cond_2
 
+    .line 1148
     :cond_1
     invoke-interface {v1}, Landroid/view/ViewDebug$FlagToString;->name()Ljava/lang/String;
 
     move-result-object v5
 
+    .line 1149
     .local v5, name:Ljava/lang/String;
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -3150,11 +3515,13 @@
 
     move-result-object v7
 
+    .line 1150
     .local v7, value:Ljava/lang/String;
     const-string v8, ""
 
     invoke-static {p0, p3, v5, v8, v7}, Landroid/view/ViewDebug;->writeEntry(Ljava/io/BufferedWriter;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 1142
     .end local v5           #name:Ljava/lang/String;
     .end local v7           #value:Ljava/lang/String;
     :cond_2
@@ -3162,12 +3529,14 @@
 
     goto :goto_0
 
+    .line 1146
     .end local v6           #test:Z
     :cond_3
     const/4 v6, 0x0
 
     goto :goto_1
 
+    .line 1153
     .end local v1           #flagMapping:Landroid/view/ViewDebug$FlagToString;
     .end local v2           #ifTrue:Z
     .end local v4           #maskResult:I
@@ -3181,13 +3550,16 @@
     .parameter "customizedList"
 
     .prologue
+    .line 1448
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
+    .line 1449
     .local v5, result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/reflect/Field;>;"
     const/4 v4, 0x0
 
+    .line 1450
     .local v4, name:Ljava/lang/String;
     move-object v0, p0
 
@@ -3203,24 +3575,29 @@
 
     aget-object v2, v0, v1
 
+    .line 1451
     .local v2, item:Ljava/lang/reflect/Field;
     invoke-virtual {v2}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
 
     move-result-object v4
 
+    .line 1452
     invoke-static {p1, v4}, Landroid/view/ViewDebug;->arrayContains([Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v6
 
     if-eqz v6, :cond_0
 
+    .line 1453
     invoke-virtual {v5, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 1450
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 1456
     .end local v2           #item:Ljava/lang/reflect/Field;
     :cond_1
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
@@ -3244,13 +3621,16 @@
     .parameter "customizedList"
 
     .prologue
+    .line 1468
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
+    .line 1469
     .local v5, result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/reflect/Method;>;"
     const/4 v4, 0x0
 
+    .line 1470
     .local v4, name:Ljava/lang/String;
     move-object v0, p0
 
@@ -3266,24 +3646,29 @@
 
     aget-object v2, v0, v1
 
+    .line 1471
     .local v2, item:Ljava/lang/reflect/Method;
     invoke-virtual {v2}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
     move-result-object v4
 
+    .line 1472
     invoke-static {p1, v4}, Landroid/view/ViewDebug;->arrayContains([Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v6
 
     if-eqz v6, :cond_0
 
+    .line 1473
     invoke-virtual {v5, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 1470
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 1476
     .end local v2           #item:Ljava/lang/reflect/Method;
     :cond_1
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
@@ -3309,6 +3694,7 @@
     .prologue
     const/4 v5, 0x0
 
+    .line 476
     const/16 v6, 0x40
 
     invoke-virtual {p1, v6}, Ljava/lang/String;->indexOf(I)I
@@ -3319,17 +3705,20 @@
 
     if-eq v6, v7, :cond_1
 
+    .line 477
     const-string v6, "@"
 
     invoke-virtual {p1, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v3
 
+    .line 478
     .local v3, ids:[Ljava/lang/String;
     const/4 v6, 0x0
 
     aget-object v0, v3, v6
 
+    .line 479
     .local v0, className:Ljava/lang/String;
     const/4 v6, 0x1
 
@@ -3343,16 +3732,19 @@
 
     long-to-int v1, v6
 
+    .line 481
     .local v1, hashCode:I
     invoke-virtual {p0}, Landroid/view/View;->getRootView()Landroid/view/View;
 
     move-result-object v4
 
+    .line 482
     .local v4, view:Landroid/view/View;
     instance-of v6, v4, Landroid/view/ViewGroup;
 
     if-eqz v6, :cond_0
 
+    .line 483
     check-cast v4, Landroid/view/ViewGroup;
 
     .end local v4           #view:Landroid/view/View;
@@ -3360,6 +3752,7 @@
 
     move-result-object v5
 
+    .line 491
     .end local v0           #className:Ljava/lang/String;
     .end local v1           #hashCode:I
     .end local v3           #ids:[Ljava/lang/String;
@@ -3367,6 +3760,7 @@
     :goto_0
     return-object v5
 
+    .line 487
     :cond_1
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
@@ -3376,6 +3770,7 @@
 
     move-result v2
 
+    .line 488
     .local v2, id:I
     invoke-virtual {p0}, Landroid/view/View;->getRootView()Landroid/view/View;
 
@@ -3395,22 +3790,26 @@
     .parameter "hashCode"
 
     .prologue
+    .line 822
     invoke-static {p0, p1, p2}, Landroid/view/ViewDebug;->isRequestedView(Landroid/view/View;Ljava/lang/String;I)Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
+    .line 839
     .end local p0
     :goto_0
     return-object p0
 
+    .line 826
     .restart local p0
     :cond_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
+    .line 827
     .local v0, count:I
     const/4 v2, 0x0
 
@@ -3418,15 +3817,18 @@
     :goto_1
     if-ge v2, v0, :cond_3
 
+    .line 828
     invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
+    .line 829
     .local v3, view:Landroid/view/View;
     instance-of v4, v3, Landroid/view/ViewGroup;
 
     if-eqz v4, :cond_1
 
+    .line 830
     check-cast v3, Landroid/view/ViewGroup;
 
     .end local v3           #view:Landroid/view/View;
@@ -3434,13 +3836,16 @@
 
     move-result-object v1
 
+    .line 831
     .local v1, found:Landroid/view/View;
     if-eqz v1, :cond_2
 
     move-object p0, v1
 
+    .line 832
     goto :goto_0
 
+    .line 834
     .end local v1           #found:Landroid/view/View;
     .restart local v3       #view:Landroid/view/View;
     :cond_1
@@ -3452,14 +3857,17 @@
 
     move-object p0, v3
 
+    .line 835
     goto :goto_0
 
+    .line 827
     .end local v3           #view:Landroid/view/View;
     :cond_2
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
+    .line 839
     :cond_3
     const/4 p0, 0x0
 
@@ -3479,22 +3887,26 @@
     .end annotation
 
     .prologue
+    .line 884
     .local p0, klass:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     sget-object v7, Landroid/view/ViewDebug;->sFieldsForClasses:Ljava/util/HashMap;
 
     if-nez v7, :cond_0
 
+    .line 885
     new-instance v7, Ljava/util/HashMap;
 
     invoke-direct {v7}, Ljava/util/HashMap;-><init>()V
 
     sput-object v7, Landroid/view/ViewDebug;->sFieldsForClasses:Ljava/util/HashMap;
 
+    .line 887
     :cond_0
     sget-object v7, Landroid/view/ViewDebug;->sAnnotations:Ljava/util/HashMap;
 
     if-nez v7, :cond_1
 
+    .line 888
     new-instance v7, Ljava/util/HashMap;
 
     const/16 v8, 0x200
@@ -3503,17 +3915,20 @@
 
     sput-object v7, Landroid/view/ViewDebug;->sAnnotations:Ljava/util/HashMap;
 
+    .line 890
     :cond_1
     sget-object v7, Landroid/view/ViewDebug;->sCustFieldsForClasses:Ljava/util/HashMap;
 
     if-nez v7, :cond_2
 
+    .line 891
     new-instance v7, Ljava/util/HashMap;
 
     invoke-direct {v7}, Ljava/util/HashMap;-><init>()V
 
     sput-object v7, Landroid/view/ViewDebug;->sCustFieldsForClasses:Ljava/util/HashMap;
 
+    .line 894
     :cond_2
     sget-boolean v7, Landroid/view/ViewDebug;->mCustomizedDump:Z
 
@@ -3521,6 +3936,7 @@
 
     sget-object v6, Landroid/view/ViewDebug;->sCustFieldsForClasses:Ljava/util/HashMap;
 
+    .line 895
     .local v6, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Class<*>;[Ljava/lang/reflect/Field;>;"
     :goto_0
     invoke-virtual {v6, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3529,16 +3945,19 @@
 
     check-cast v2, [Ljava/lang/reflect/Field;
 
+    .line 896
     .local v2, fields:[Ljava/lang/reflect/Field;
     if-eqz v2, :cond_4
 
     move-object v3, v2
 
+    .line 918
     .end local v2           #fields:[Ljava/lang/reflect/Field;
     .local v3, fields:[Ljava/lang/reflect/Field;
     :goto_1
     return-object v3
 
+    .line 894
     .end local v3           #fields:[Ljava/lang/reflect/Field;
     .end local v6           #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Class<*>;[Ljava/lang/reflect/Field;>;"
     :cond_3
@@ -3548,6 +3967,7 @@
 
     goto :goto_0
 
+    .line 900
     .restart local v2       #fields:[Ljava/lang/reflect/Field;
     .restart local v6       #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Class<*>;[Ljava/lang/reflect/Field;>;"
     :cond_4
@@ -3555,24 +3975,29 @@
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
+    .line 901
     .local v4, foundFields:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/reflect/Field;>;"
     invoke-static {p0}, Landroid/view/ViewDebug;->getFields(Ljava/lang/Class;)[Ljava/lang/reflect/Field;
 
     move-result-object v2
 
+    .line 902
     sget-boolean v7, Landroid/view/ViewDebug;->mCustomizedDump:Z
 
     if-eqz v7, :cond_5
 
+    .line 903
     sget-object v7, Landroid/view/ViewDebug;->mFieldsList:[Ljava/lang/String;
 
     invoke-static {v2, v7}, Landroid/view/ViewDebug;->filterFieldsProperties([Ljava/lang/reflect/Field;[Ljava/lang/String;)[Ljava/lang/reflect/Field;
 
     move-result-object v2
 
+    .line 905
     :cond_5
     array-length v0, v2
 
+    .line 906
     .local v0, count:I
     const/4 v5, 0x0
 
@@ -3580,8 +4005,10 @@
     :goto_2
     if-ge v5, v0, :cond_7
 
+    .line 907
     aget-object v1, v2, v5
 
+    .line 908
     .local v1, field:Ljava/lang/reflect/Field;
     const-class v7, Landroid/view/ViewDebug$ExportedProperty;
 
@@ -3591,12 +4018,15 @@
 
     if-eqz v7, :cond_6
 
+    .line 909
     const/4 v7, 0x1
 
     invoke-virtual {v1, v7}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
+    .line 910
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 911
     sget-object v7, Landroid/view/ViewDebug;->sAnnotations:Ljava/util/HashMap;
 
     const-class v8, Landroid/view/ViewDebug$ExportedProperty;
@@ -3607,11 +4037,13 @@
 
     invoke-virtual {v7, v1, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 906
     :cond_6
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_2
 
+    .line 915
     .end local v1           #field:Ljava/lang/reflect/Field;
     :cond_7
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -3627,11 +4059,13 @@
     .end local v2           #fields:[Ljava/lang/reflect/Field;
     check-cast v2, [Ljava/lang/reflect/Field;
 
+    .line 916
     .restart local v2       #fields:[Ljava/lang/reflect/Field;
     invoke-virtual {v6, p0, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-object v3, v2
 
+    .line 918
     .end local v2           #fields:[Ljava/lang/reflect/Field;
     .restart local v3       #fields:[Ljava/lang/reflect/Field;
     goto :goto_1
@@ -3650,11 +4084,13 @@
     .end annotation
 
     .prologue
+    .line 922
     .local p0, klass:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     sget-object v7, Landroid/view/ViewDebug;->sMethodsForClasses:Ljava/util/HashMap;
 
     if-nez v7, :cond_0
 
+    .line 923
     new-instance v7, Ljava/util/HashMap;
 
     const/16 v8, 0x64
@@ -3663,11 +4099,13 @@
 
     sput-object v7, Landroid/view/ViewDebug;->sMethodsForClasses:Ljava/util/HashMap;
 
+    .line 925
     :cond_0
     sget-object v7, Landroid/view/ViewDebug;->sAnnotations:Ljava/util/HashMap;
 
     if-nez v7, :cond_1
 
+    .line 926
     new-instance v7, Ljava/util/HashMap;
 
     const/16 v8, 0x200
@@ -3676,17 +4114,20 @@
 
     sput-object v7, Landroid/view/ViewDebug;->sAnnotations:Ljava/util/HashMap;
 
+    .line 928
     :cond_1
     sget-object v7, Landroid/view/ViewDebug;->sCustMethodsForClasses:Ljava/util/HashMap;
 
     if-nez v7, :cond_2
 
+    .line 929
     new-instance v7, Ljava/util/HashMap;
 
     invoke-direct {v7}, Ljava/util/HashMap;-><init>()V
 
     sput-object v7, Landroid/view/ViewDebug;->sCustMethodsForClasses:Ljava/util/HashMap;
 
+    .line 931
     :cond_2
     sget-boolean v7, Landroid/view/ViewDebug;->mCustomizedDump:Z
 
@@ -3694,6 +4135,7 @@
 
     sget-object v3, Landroid/view/ViewDebug;->sCustMethodsForClasses:Ljava/util/HashMap;
 
+    .line 933
     .local v3, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Class<*>;[Ljava/lang/reflect/Method;>;"
     :goto_0
     invoke-virtual {v3, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3702,16 +4144,19 @@
 
     check-cast v5, [Ljava/lang/reflect/Method;
 
+    .line 934
     .local v5, methods:[Ljava/lang/reflect/Method;
     if-eqz v5, :cond_4
 
     move-object v6, v5
 
+    .line 958
     .end local v5           #methods:[Ljava/lang/reflect/Method;
     .local v6, methods:[Ljava/lang/reflect/Method;
     :goto_1
     return-object v6
 
+    .line 931
     .end local v3           #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Class<*>;[Ljava/lang/reflect/Method;>;"
     .end local v6           #methods:[Ljava/lang/reflect/Method;
     :cond_3
@@ -3721,6 +4166,7 @@
 
     goto :goto_0
 
+    .line 938
     .restart local v3       #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Class<*>;[Ljava/lang/reflect/Method;>;"
     .restart local v5       #methods:[Ljava/lang/reflect/Method;
     :cond_4
@@ -3728,24 +4174,29 @@
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
+    .line 939
     .local v1, foundMethods:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/reflect/Method;>;"
     invoke-static {p0}, Landroid/view/ViewDebug;->getMethod(Ljava/lang/Class;)[Ljava/lang/reflect/Method;
 
     move-result-object v5
 
+    .line 940
     sget-boolean v7, Landroid/view/ViewDebug;->mCustomizedDump:Z
 
     if-eqz v7, :cond_5
 
+    .line 941
     sget-object v7, Landroid/view/ViewDebug;->mMethodsList:[Ljava/lang/String;
 
     invoke-static {v5, v7}, Landroid/view/ViewDebug;->filterMethodsProperties([Ljava/lang/reflect/Method;[Ljava/lang/String;)[Ljava/lang/reflect/Method;
 
     move-result-object v5
 
+    .line 943
     :cond_5
     array-length v0, v5
 
+    .line 944
     .local v0, count:I
     const/4 v2, 0x0
 
@@ -3753,8 +4204,10 @@
     :goto_2
     if-ge v2, v0, :cond_7
 
+    .line 945
     aget-object v4, v5, v2
 
+    .line 946
     .local v4, method:Ljava/lang/reflect/Method;
     invoke-virtual {v4}, Ljava/lang/reflect/Method;->getParameterTypes()[Ljava/lang/Class;
 
@@ -3780,12 +4233,15 @@
 
     if-eq v7, v8, :cond_6
 
+    .line 949
     const/4 v7, 0x1
 
     invoke-virtual {v4, v7}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
+    .line 950
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 951
     sget-object v7, Landroid/view/ViewDebug;->sAnnotations:Ljava/util/HashMap;
 
     const-class v8, Landroid/view/ViewDebug$ExportedProperty;
@@ -3796,11 +4252,13 @@
 
     invoke-virtual {v7, v4, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 944
     :cond_6
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_2
 
+    .line 955
     .end local v4           #method:Ljava/lang/reflect/Method;
     :cond_7
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -3816,11 +4274,13 @@
     .end local v5           #methods:[Ljava/lang/reflect/Method;
     check-cast v5, [Ljava/lang/reflect/Method;
 
+    .line 956
     .restart local v5       #methods:[Ljava/lang/reflect/Method;
     invoke-virtual {v3, p0, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-object v6, v5
 
+    .line 958
     .end local v5           #methods:[Ljava/lang/reflect/Method;
     .restart local v6       #methods:[Ljava/lang/reflect/Method;
     goto :goto_1
@@ -3839,22 +4299,26 @@
     .end annotation
 
     .prologue
+    .line 1535
     .local p0, klass:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     invoke-virtual {p0}, Ljava/lang/Class;->getDeclaredFields()[Ljava/lang/reflect/Field;
 
     move-result-object v0
 
+    .line 1536
     .local v0, fields:[Ljava/lang/reflect/Field;
     sget-boolean v1, Landroid/view/ViewDebug;->mCustomizedDump:Z
 
     if-eqz v1, :cond_0
 
+    .line 1537
     sget-object v1, Landroid/view/ViewDebug;->mFieldsList:[Ljava/lang/String;
 
     invoke-static {v0, v1}, Landroid/view/ViewDebug;->filterFieldsProperties([Ljava/lang/reflect/Field;[Ljava/lang/String;)[Ljava/lang/reflect/Field;
 
     move-result-object v0
 
+    .line 1539
     :cond_0
     return-object v0
 .end method
@@ -3874,16 +4338,19 @@
     .end annotation
 
     .prologue
+    .line 1505
     sget-object v0, Landroid/view/ViewDebug;->sCustFieldsForClasses:Ljava/util/HashMap;
 
     if-nez v0, :cond_0
 
+    .line 1506
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Landroid/view/ViewDebug;->sCustFieldsForClasses:Ljava/util/HashMap;
 
+    .line 1508
     :cond_0
     sget-boolean v0, Landroid/view/ViewDebug;->mCustomizedDump:Z
 
@@ -3913,22 +4380,26 @@
     .end annotation
 
     .prologue
+    .line 1551
     .local p0, klass:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     invoke-virtual {p0}, Ljava/lang/Class;->getDeclaredMethods()[Ljava/lang/reflect/Method;
 
     move-result-object v0
 
+    .line 1552
     .local v0, methods:[Ljava/lang/reflect/Method;
     sget-boolean v1, Landroid/view/ViewDebug;->mCustomizedDump:Z
 
     if-eqz v1, :cond_0
 
+    .line 1553
     sget-object v1, Landroid/view/ViewDebug;->mMethodsList:[Ljava/lang/String;
 
     invoke-static {v0, v1}, Landroid/view/ViewDebug;->filterMethodsProperties([Ljava/lang/reflect/Method;[Ljava/lang/String;)[Ljava/lang/reflect/Method;
 
     move-result-object v0
 
+    .line 1555
     :cond_0
     return-object v0
 .end method
@@ -3948,16 +4419,19 @@
     .end annotation
 
     .prologue
+    .line 1520
     sget-object v0, Landroid/view/ViewDebug;->sCustMethodsForClasses:Ljava/util/HashMap;
 
     if-nez v0, :cond_0
 
+    .line 1521
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Landroid/view/ViewDebug;->sCustMethodsForClasses:Ljava/util/HashMap;
 
+    .line 1523
     :cond_0
     sget-boolean v0, Landroid/view/ViewDebug;->mCustomizedDump:Z
 
@@ -3978,6 +4452,7 @@
     .locals 2
 
     .prologue
+    .line 384
     const-class v0, Landroid/view/View;
 
     invoke-static {v0}, Landroid/os/Debug;->countInstancesOfClass(Ljava/lang/Class;)J
@@ -3991,6 +4466,7 @@
     .locals 2
 
     .prologue
+    .line 395
     const-class v0, Landroid/view/ViewRootImpl;
 
     invoke-static {v0}, Landroid/os/Debug;->countInstancesOfClass(Ljava/lang/Class;)J
@@ -4005,11 +4481,14 @@
     .parameter "context"
 
     .prologue
+    .line 1397
     const/4 v1, 0x0
 
+    .line 1398
     .local v1, fields:Ljava/lang/String;
     const/4 v2, 0x0
 
+    .line 1399
     .local v2, methods:Ljava/lang/String;
     sget-boolean v3, Landroid/view/ViewDebug;->mInited:Z
 
@@ -4017,10 +4496,12 @@
 
     if-eqz p0, :cond_0
 
+    .line 1400
     const/4 v3, 0x1
 
     sput-boolean v3, Landroid/view/ViewDebug;->mInited:Z
 
+    .line 1407
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -4032,6 +4513,7 @@
 
     move-result-object v1
 
+    .line 1408
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v3
@@ -4042,6 +4524,7 @@
 
     move-result-object v2
 
+    .line 1409
     const-string v3, "ViewServer"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -4086,6 +4569,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1410
     if-eqz v1, :cond_1
 
     const-string v3, ","
@@ -4097,6 +4581,7 @@
     :goto_0
     sput-object v3, Landroid/view/ViewDebug;->mFieldsList:[Ljava/lang/String;
 
+    .line 1411
     if-eqz v2, :cond_2
 
     const-string v3, ","
@@ -4108,15 +4593,18 @@
     :goto_1
     sput-object v3, Landroid/view/ViewDebug;->mMethodsList:[Ljava/lang/String;
 
+    .line 1416
     :cond_0
     :goto_2
     return-void
 
+    .line 1410
     :cond_1
     sget-object v3, Landroid/view/ViewDebug;->mFieldsList:[Ljava/lang/String;
 
     goto :goto_0
 
+    .line 1411
     :cond_2
     sget-object v3, Landroid/view/ViewDebug;->mMethodsList:[Ljava/lang/String;
     :try_end_0
@@ -4124,9 +4612,11 @@
 
     goto :goto_1
 
+    .line 1412
     :catch_0
     move-exception v0
 
+    .line 1413
     .local v0, e:Ljava/lang/Exception;
     const-string v3, "ViewDebug"
 
@@ -4143,15 +4633,19 @@
     .parameter "parameter"
 
     .prologue
+    .line 495
     invoke-static {p0, p1}, Landroid/view/ViewDebug;->findView(Landroid/view/View;Ljava/lang/String;)Landroid/view/View;
 
     move-result-object v0
 
+    .line 496
     .local v0, view:Landroid/view/View;
     if-eqz v0, :cond_0
 
+    .line 497
     invoke-virtual {v0}, Landroid/view/View;->postInvalidate()V
 
+    .line 499
     :cond_0
     return-void
 .end method
@@ -4163,6 +4657,7 @@
     .parameter "hashCode"
 
     .prologue
+    .line 843
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -4205,10 +4700,12 @@
     .end annotation
 
     .prologue
+    .line 741
     invoke-static {p0, p1}, Landroid/view/ViewDebug;->findView(Landroid/view/View;Ljava/lang/String;)Landroid/view/View;
 
     move-result-object v0
 
+    .line 742
     .local v0, view:Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getViewRootImpl()Landroid/view/ViewRootImpl;
 
@@ -4216,6 +4713,7 @@
 
     invoke-virtual {v1, v0}, Landroid/view/ViewRootImpl;->outputDisplayList(Landroid/view/View;)V
 
+    .line 743
     return-void
 .end method
 
@@ -4227,15 +4725,19 @@
     .prologue
     const/4 v3, 0x1
 
+    .line 772
     if-eqz p0, :cond_0
 
+    .line 773
     new-instance v2, Ljava/util/concurrent/CountDownLatch;
 
     invoke-direct {v2, v3}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
 
+    .line 774
     .local v2, latch:Ljava/util/concurrent/CountDownLatch;
     new-array v0, v3, [Landroid/graphics/Bitmap;
 
+    .line 776
     .local v0, cache:[Landroid/graphics/Bitmap;
     new-instance v3, Landroid/view/ViewDebug$6;
 
@@ -4243,6 +4745,7 @@
 
     invoke-virtual {p0, v3}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
+    .line 790
     const-wide/16 v3, 0xfa0
 
     :try_start_0
@@ -4250,22 +4753,26 @@
 
     invoke-virtual {v2, v3, v4, v5}, Ljava/util/concurrent/CountDownLatch;->await(JLjava/util/concurrent/TimeUnit;)Z
 
+    .line 791
     const/4 v3, 0x0
 
     aget-object v3, v0, v3
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 798
     .end local v0           #cache:[Landroid/graphics/Bitmap;
     .end local v2           #latch:Ljava/util/concurrent/CountDownLatch;
     :goto_0
     return-object v3
 
+    .line 792
     .restart local v0       #cache:[Landroid/graphics/Bitmap;
     .restart local v2       #latch:Ljava/util/concurrent/CountDownLatch;
     :catch_0
     move-exception v1
 
+    .line 793
     .local v1, e:Ljava/lang/InterruptedException;
     const-string v3, "View"
 
@@ -4289,12 +4796,14 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 794
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v3
 
     invoke-virtual {v3}, Ljava/lang/Thread;->interrupt()V
 
+    .line 798
     .end local v0           #cache:[Landroid/graphics/Bitmap;
     .end local v1           #e:Ljava/lang/InterruptedException;
     .end local v2           #latch:Ljava/util/concurrent/CountDownLatch;
@@ -4316,13 +4825,16 @@
     .end annotation
 
     .prologue
+    .line 515
     invoke-static {p0, p2}, Landroid/view/ViewDebug;->findView(Landroid/view/View;Ljava/lang/String;)Landroid/view/View;
 
     move-result-object v3
 
+    .line 516
     .local v3, view:Landroid/view/View;
     const/4 v1, 0x0
 
+    .line 518
     .local v1, out:Ljava/io/BufferedWriter;
     :try_start_0
     new-instance v2, Ljava/io/BufferedWriter;
@@ -4338,35 +4850,43 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
+    .line 520
     .end local v1           #out:Ljava/io/BufferedWriter;
     .local v2, out:Ljava/io/BufferedWriter;
     if-eqz v3, :cond_1
 
+    .line 521
     :try_start_1
     invoke-static {v3, v2}, Landroid/view/ViewDebug;->profileViewAndChildren(Landroid/view/View;Ljava/io/BufferedWriter;)V
 
+    .line 526
     :goto_0
     const-string v4, "DONE."
 
     invoke-virtual {v2, v4}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
+    .line 527
     invoke-virtual {v2}, Ljava/io/BufferedWriter;->newLine()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
+    .line 531
     if-eqz v2, :cond_3
 
+    .line 532
     invoke-virtual {v2}, Ljava/io/BufferedWriter;->close()V
 
     move-object v1, v2
 
+    .line 535
     .end local v2           #out:Ljava/io/BufferedWriter;
     .restart local v1       #out:Ljava/io/BufferedWriter;
     :cond_0
     :goto_1
     return-void
 
+    .line 523
     .end local v1           #out:Ljava/io/BufferedWriter;
     .restart local v2       #out:Ljava/io/BufferedWriter;
     :cond_1
@@ -4375,6 +4895,7 @@
 
     invoke-virtual {v2, v4}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
+    .line 524
     invoke-virtual {v2}, Ljava/io/BufferedWriter;->newLine()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
@@ -4382,11 +4903,13 @@
 
     goto :goto_0
 
+    .line 528
     :catch_0
     move-exception v0
 
     move-object v1, v2
 
+    .line 529
     .end local v2           #out:Ljava/io/BufferedWriter;
     .local v0, e:Ljava/lang/Exception;
     .restart local v1       #out:Ljava/io/BufferedWriter;
@@ -4400,12 +4923,15 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
+    .line 531
     if-eqz v1, :cond_0
 
+    .line 532
     invoke-virtual {v1}, Ljava/io/BufferedWriter;->close()V
 
     goto :goto_1
 
+    .line 531
     .end local v0           #e:Ljava/lang/Exception;
     :catchall_0
     move-exception v4
@@ -4413,11 +4939,13 @@
     :goto_3
     if-eqz v1, :cond_2
 
+    .line 532
     invoke-virtual {v1}, Ljava/io/BufferedWriter;->close()V
 
     :cond_2
     throw v4
 
+    .line 531
     .end local v1           #out:Ljava/io/BufferedWriter;
     .restart local v2       #out:Ljava/io/BufferedWriter;
     :catchall_1
@@ -4429,6 +4957,7 @@
     .restart local v1       #out:Ljava/io/BufferedWriter;
     goto :goto_3
 
+    .line 528
     :catch_1
     move-exception v0
 
@@ -4455,10 +4984,12 @@
     .end annotation
 
     .prologue
+    .line 539
     const/4 v0, 0x1
 
     invoke-static {p0, p1, v0}, Landroid/view/ViewDebug;->profileViewAndChildren(Landroid/view/View;Ljava/io/BufferedWriter;Z)V
 
+    .line 540
     return-void
 .end method
 
@@ -4478,6 +5009,7 @@
 
     const-wide/16 v1, 0x0
 
+    .line 545
     if-nez p2, :cond_0
 
     iget v9, p0, Landroid/view/View;->mPrivateFlags:I
@@ -4495,6 +5027,7 @@
 
     move-result-wide v5
 
+    .line 572
     .local v5, durationMeasure:J
     :goto_0
     if-nez p2, :cond_1
@@ -4514,6 +5047,7 @@
 
     move-result-wide v3
 
+    .line 586
     .local v3, durationLayout:J
     :goto_1
     if-nez p2, :cond_2
@@ -4539,6 +5073,7 @@
 
     move-result-wide v1
 
+    .line 618
     .local v1, durationDraw:J
     :cond_3
     invoke-static {v5, v6}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
@@ -4547,37 +5082,46 @@
 
     invoke-virtual {p1, v9}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
+    .line 619
     invoke-virtual {p1, v10}, Ljava/io/BufferedWriter;->write(I)V
 
+    .line 620
     invoke-static {v3, v4}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v9
 
     invoke-virtual {p1, v9}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
+    .line 621
     invoke-virtual {p1, v10}, Ljava/io/BufferedWriter;->write(I)V
 
+    .line 622
     invoke-static {v1, v2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v9
 
     invoke-virtual {p1, v9}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
+    .line 623
     invoke-virtual {p1}, Ljava/io/BufferedWriter;->newLine()V
 
+    .line 624
     instance-of v9, p0, Landroid/view/ViewGroup;
 
     if-eqz v9, :cond_6
 
     move-object v7, p0
 
+    .line 625
     check-cast v7, Landroid/view/ViewGroup;
 
+    .line 626
     .local v7, group:Landroid/view/ViewGroup;
     invoke-virtual {v7}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
+    .line 627
     .local v0, count:I
     const/4 v8, 0x0
 
@@ -4585,6 +5129,7 @@
     :goto_2
     if-ge v8, v0, :cond_6
 
+    .line 628
     invoke-virtual {v7, v8}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v9
@@ -4593,6 +5138,7 @@
 
     invoke-static {v9, p1, v10}, Landroid/view/ViewDebug;->profileViewAndChildren(Landroid/view/View;Ljava/io/BufferedWriter;Z)V
 
+    .line 627
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_2
@@ -4606,14 +5152,17 @@
     :cond_4
     move-wide v5, v1
 
+    .line 545
     goto :goto_0
 
     .restart local v5       #durationMeasure:J
     :cond_5
     move-wide v3, v1
 
+    .line 572
     goto :goto_1
 
+    .line 631
     .restart local v1       #durationDraw:J
     .restart local v3       #durationLayout:J
     :cond_6
@@ -4641,13 +5190,16 @@
 
     const/4 v5, 0x1
 
+    .line 640
     new-instance v2, Ljava/util/concurrent/CountDownLatch;
 
     invoke-direct {v2, v5}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
 
+    .line 641
     .local v2, latch:Ljava/util/concurrent/CountDownLatch;
     new-array v0, v5, [J
 
+    .line 643
     .local v0, duration:[J
     new-instance v5, Landroid/view/ViewDebug$5;
 
@@ -4655,6 +5207,7 @@
 
     invoke-virtual {p0, v5}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
+    .line 660
     const-wide/16 v5, 0xfa0
 
     :try_start_0
@@ -4666,6 +5219,7 @@
 
     if-nez v5, :cond_0
 
+    .line 661
     const-string v5, "View"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -4690,12 +5244,15 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 670
     :goto_0
     return-wide v3
 
+    .line 664
     :catch_0
     move-exception v1
 
+    .line 665
     .local v1, e:Ljava/lang/InterruptedException;
     const-string v5, "View"
 
@@ -4719,6 +5276,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 666
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v5
@@ -4727,6 +5285,7 @@
 
     goto :goto_0
 
+    .line 670
     .end local v1           #e:Ljava/lang/InterruptedException;
     :cond_0
     const/4 v3, 0x0
@@ -4742,19 +5301,23 @@
     .parameter "parameter"
 
     .prologue
+    .line 502
     invoke-static {p0, p1}, Landroid/view/ViewDebug;->findView(Landroid/view/View;Ljava/lang/String;)Landroid/view/View;
 
     move-result-object v0
 
+    .line 503
     .local v0, view:Landroid/view/View;
     if-eqz v0, :cond_0
 
+    .line 504
     new-instance v1, Landroid/view/ViewDebug$1;
 
     invoke-direct {v1, v0}, Landroid/view/ViewDebug$1;-><init>(Landroid/view/View;)V
 
     invoke-virtual {p0, v1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
+    .line 510
     :cond_0
     return-void
 .end method
@@ -4765,13 +5328,16 @@
     .parameter "id"
 
     .prologue
+    .line 1209
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
+    .line 1210
     .local v2, resources:Landroid/content/res/Resources;
     if-ltz p1, :cond_0
 
+    .line 1212
     :try_start_0
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -4805,14 +5371,17 @@
 
     move-result-object v1
 
+    .line 1220
     .local v1, fieldValue:Ljava/lang/String;
     :goto_0
     return-object v1
 
+    .line 1214
     .end local v1           #fieldValue:Ljava/lang/String;
     :catch_0
     move-exception v0
 
+    .line 1215
     .local v0, e:Landroid/content/res/Resources$NotFoundException;
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -4836,9 +5405,11 @@
 
     move-result-object v1
 
+    .line 1216
     .restart local v1       #fieldValue:Ljava/lang/String;
     goto :goto_0
 
+    .line 1218
     .end local v0           #e:Landroid/content/res/Resources$NotFoundException;
     .end local v1           #fieldValue:Ljava/lang/String;
     :cond_0
@@ -4856,6 +5427,7 @@
     .end annotation
 
     .prologue
+    .line 436
     return-void
 .end method
 
@@ -4867,6 +5439,7 @@
     .end annotation
 
     .prologue
+    .line 412
     return-void
 .end method
 
@@ -4876,6 +5449,7 @@
     .end annotation
 
     .prologue
+    .line 443
     return-void
 .end method
 
@@ -4885,6 +5459,7 @@
     .end annotation
 
     .prologue
+    .line 420
     return-void
 .end method
 
@@ -4896,6 +5471,7 @@
     .end annotation
 
     .prologue
+    .line 428
     return-void
 .end method
 
@@ -4908,6 +5484,7 @@
     .end annotation
 
     .prologue
+    .line 404
     return-void
 .end method
 
@@ -4925,22 +5502,29 @@
     .end annotation
 
     .prologue
+    .line 1130
     invoke-virtual {p0, p1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
+    .line 1131
     invoke-virtual {p0, p2}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
+    .line 1132
     invoke-virtual {p0, p3}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
+    .line 1133
     const-string v0, "="
 
     invoke-virtual {p0, v0}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
+    .line 1134
     invoke-static {p0, p4}, Landroid/view/ViewDebug;->writeValue(Ljava/io/BufferedWriter;Ljava/lang/Object;)V
 
+    .line 1135
     const/16 v0, 0x20
 
     invoke-virtual {p0, v0}, Ljava/io/BufferedWriter;->write(I)V
 
+    .line 1136
     return-void
 .end method
 
@@ -4955,8 +5539,10 @@
     .end annotation
 
     .prologue
+    .line 1224
     if-eqz p1, :cond_0
 
+    .line 1225
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -4969,6 +5555,7 @@
 
     move-result-object v0
 
+    .line 1226
     .local v0, output:Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
@@ -4980,16 +5567,20 @@
 
     invoke-virtual {p0, v1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
+    .line 1227
     const-string v1, ","
 
     invoke-virtual {p0, v1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
+    .line 1228
     invoke-virtual {p0, v0}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
+    .line 1232
     .end local v0           #output:Ljava/lang/String;
     :goto_0
     return-void
 
+    .line 1230
     :cond_0
     const-string v1, "4,null"
 

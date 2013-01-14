@@ -33,8 +33,10 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 794
     sput-object v1, Landroid/provider/Settings$Alarm;->sNameValueCache:Landroid/provider/Settings$NameValueCache;
 
+    .line 798
     const-string v0, "content://settings/alarm"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -43,6 +45,7 @@
 
     sput-object v0, Landroid/provider/Settings$Alarm;->CONTENT_URI:Landroid/net/Uri;
 
+    .line 801
     sput-object v1, Landroid/provider/Settings$Alarm;->mContentProvider:Landroid/content/IContentProvider;
 
     return-void
@@ -52,6 +55,7 @@
     .locals 0
 
     .prologue
+    .line 790
     invoke-direct {p0}, Landroid/provider/Settings$NameValueTable;-><init>()V
 
     return-void
@@ -67,6 +71,7 @@
 
     const/4 v5, 0x0
 
+    .line 808
     const-class v6, Landroid/provider/Settings$Alarm;
 
     monitor-enter v6
@@ -74,9 +79,11 @@
     :try_start_0
     sget-object v2, Landroid/provider/Settings$Alarm;->mContentProvider:Landroid/content/IContentProvider;
 
+    .line 809
     .local v2, cp:Landroid/content/IContentProvider;
     if-nez v2, :cond_0
 
+    .line 810
     sget-object v7, Landroid/provider/Settings$Alarm;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v7}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
@@ -90,15 +97,18 @@
     .end local v2           #cp:Landroid/content/IContentProvider;
     sput-object v2, Landroid/provider/Settings$Alarm;->mContentProvider:Landroid/content/IContentProvider;
 
+    .line 812
     .restart local v2       #cp:Landroid/content/IContentProvider;
     :cond_0
-    const-string v0, "name=?"
+    const-string/jumbo v0, "name=?"
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 813
     .local v0, NAME_EQ:Ljava/lang/String;
     const/4 v1, 0x0
 
+    .line 815
     .local v1, count:I
     :try_start_1
     sget-object v7, Landroid/provider/Settings$Alarm;->CONTENT_URI:Landroid/net/Uri;
@@ -118,6 +128,7 @@
 
     move-result v1
 
+    .line 819
     :goto_0
     :try_start_2
     const-string v7, "Alarm"
@@ -126,7 +137,7 @@
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "setting delString count="
+    const-string/jumbo v9, "setting delString count="
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -144,16 +155,20 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
+    .line 820
     if-lez v1, :cond_1
 
+    .line 823
     :goto_1
     monitor-exit v6
 
     return v4
 
+    .line 816
     :catch_0
     move-exception v3
 
+    .line 817
     .local v3, e:Landroid/os/RemoteException;
     :try_start_3
     const-string v7, "Alarm"
@@ -166,6 +181,7 @@
 
     goto :goto_0
 
+    .line 808
     .end local v0           #NAME_EQ:Ljava/lang/String;
     .end local v1           #count:I
     .end local v2           #cp:Landroid/content/IContentProvider;
@@ -183,6 +199,7 @@
     :cond_1
     move v4, v5
 
+    .line 823
     goto :goto_1
 .end method
 
@@ -192,6 +209,7 @@
     .parameter "name"
 
     .prologue
+    .line 827
     const-class v1, Landroid/provider/Settings$Alarm;
 
     monitor-enter v1
@@ -201,9 +219,10 @@
 
     if-nez v0, :cond_0
 
+    .line 828
     new-instance v0, Landroid/provider/Settings$NameValueCache;
 
-    const-string v2, "sys.settings_alarm_version"
+    const-string/jumbo v2, "sys.settings_alarm_version"
 
     sget-object v3, Landroid/provider/Settings$Alarm;->CONTENT_URI:Landroid/net/Uri;
 
@@ -213,6 +232,7 @@
 
     sput-object v0, Landroid/provider/Settings$Alarm;->sNameValueCache:Landroid/provider/Settings$NameValueCache;
 
+    .line 831
     :cond_0
     sget-object v0, Landroid/provider/Settings$Alarm;->sNameValueCache:Landroid/provider/Settings$NameValueCache;
 
@@ -226,6 +246,7 @@
 
     return-object v0
 
+    .line 827
     :catchall_0
     move-exception v0
 
@@ -241,6 +262,7 @@
     .parameter "value"
 
     .prologue
+    .line 804
     sget-object v0, Landroid/provider/Settings$Alarm;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;

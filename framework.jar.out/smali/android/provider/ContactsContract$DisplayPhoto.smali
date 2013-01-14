@@ -29,6 +29,7 @@
     .locals 2
 
     .prologue
+    .line 7801
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "display_photo"
@@ -39,9 +40,10 @@
 
     sput-object v0, Landroid/provider/ContactsContract$DisplayPhoto;->CONTENT_URI:Landroid/net/Uri;
 
+    .line 7808
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
-    const-string v1, "photo_dimensions"
+    const-string/jumbo v1, "photo_dimensions"
 
     invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
@@ -56,6 +58,7 @@
     .locals 0
 
     .prologue
+    .line 7795
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

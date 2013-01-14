@@ -27,6 +27,7 @@
     .parameter
 
     .prologue
+    .line 351
     iput-object p1, p0, Landroid/content/SyncManager$7;->this$0:Landroid/content/SyncManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,6 +45,7 @@
     .parameter "extras"
 
     .prologue
+    .line 354
     iget-object v0, p0, Landroid/content/SyncManager$7;->this$0:Landroid/content/SyncManager;
 
     const-wide/16 v5, 0x0
@@ -60,5 +62,6 @@
 
     invoke-virtual/range {v0 .. v7}, Landroid/content/SyncManager;->scheduleSync(Landroid/accounts/Account;ILjava/lang/String;Landroid/os/Bundle;JZ)V
 
+    .line 355
     return-void
 .end method

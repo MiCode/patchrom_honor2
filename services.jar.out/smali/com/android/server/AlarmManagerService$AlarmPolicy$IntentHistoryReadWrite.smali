@@ -35,18 +35,22 @@
     .parameter "fs"
 
     .prologue
+    .line 1519
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1516
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentHistoryReadWrite;->intentStats:Ljava/util/HashMap;
 
+    .line 1520
     iget-object v0, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentHistoryReadWrite;->intentStats:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1521
     return-void
 .end method
 
@@ -55,16 +59,20 @@
     .parameter "in"
 
     .prologue
+    .line 1544
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1516
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentHistoryReadWrite;->intentStats:Ljava/util/HashMap;
 
+    .line 1545
     invoke-virtual {p0, p1}, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentHistoryReadWrite;->readFromParcel(Landroid/os/Parcel;)V
 
+    .line 1546
     return-void
 .end method
 
@@ -75,14 +83,17 @@
     .parameter "in"
 
     .prologue
+    .line 1548
     iget-object v5, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentHistoryReadWrite;->intentStats:Ljava/util/HashMap;
 
     invoke-virtual {v5}, Ljava/util/HashMap;->clear()V
 
+    .line 1549
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 1550
     .local v0, N:I
     const/4 v3, 0x0
 
@@ -90,6 +101,7 @@
     :goto_0
     if-ge v3, v0, :cond_1
 
+    .line 1551
     new-instance v1, Landroid/content/Intent$FilterComparison;
 
     sget-object v5, Landroid/content/Intent;->CREATOR:Landroid/os/Parcelable$Creator;
@@ -102,11 +114,13 @@
 
     invoke-direct {v1, v5}, Landroid/content/Intent$FilterComparison;-><init>(Landroid/content/Intent;)V
 
+    .line 1552
     .local v1, fc:Landroid/content/Intent$FilterComparison;
     new-instance v2, Lcom/android/server/AlarmManagerService$FilterStats;
 
     invoke-direct {v2}, Lcom/android/server/AlarmManagerService$FilterStats;-><init>()V
 
+    .line 1553
     .local v2, fs:Lcom/android/server/AlarmManagerService$FilterStats;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -114,41 +128,49 @@
 
     iput v5, v2, Lcom/android/server/AlarmManagerService$FilterStats;->count:I
 
+    .line 1554
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
     iput v5, v2, Lcom/android/server/AlarmManagerService$FilterStats;->mAdjust:I
 
+    .line 1555
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v5
 
     iput-wide v5, v2, Lcom/android/server/AlarmManagerService$FilterStats;->mRecordRTCTime:J
 
+    .line 1556
     const/4 v5, 0x1
 
     iput-boolean v5, v2, Lcom/android/server/AlarmManagerService$FilterStats;->isPeriodic:Z
 
+    .line 1557
     iget-object v5, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentHistoryReadWrite;->intentStats:Ljava/util/HashMap;
 
     invoke-virtual {v5, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1558
     invoke-static {}, Lcom/android/server/AlarmManagerService;->access$2700()Z
 
     move-result v5
 
     if-eqz v5, :cond_0
 
+    .line 1559
     new-instance v4, Landroid/text/format/Time;
 
     invoke-direct {v4}, Landroid/text/format/Time;-><init>()V
 
+    .line 1560
     .local v4, time:Landroid/text/format/Time;
     iget-wide v5, v2, Lcom/android/server/AlarmManagerService$FilterStats;->mRecordRTCTime:J
 
     invoke-virtual {v4, v5, v6}, Landroid/text/format/Time;->set(J)V
 
+    .line 1561
     const-string v5, "AlarmManager"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -213,12 +235,14 @@
 
     invoke-static {v5, v6}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1550
     .end local v4           #time:Landroid/text/format/Time;
     :cond_0
     add-int/lit8 v3, v3, 0x1
 
     goto/16 :goto_0
 
+    .line 1565
     .end local v1           #fc:Landroid/content/Intent$FilterComparison;
     .end local v2           #fs:Lcom/android/server/AlarmManagerService$FilterStats;
     :cond_1
@@ -231,15 +255,18 @@
     .parameter "flags"
 
     .prologue
+    .line 1524
     iget-object v5, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentHistoryReadWrite;->intentStats:Ljava/util/HashMap;
 
     invoke-virtual {v5}, Ljava/util/HashMap;->size()I
 
     move-result v0
 
+    .line 1525
     .local v0, N:I
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1527
     iget-object v5, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentHistoryReadWrite;->intentStats:Ljava/util/HashMap;
 
     invoke-virtual {v5}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -265,6 +292,7 @@
 
     check-cast v3, Landroid/content/Intent$FilterComparison;
 
+    .line 1528
     .local v3, intent:Landroid/content/Intent$FilterComparison;
     iget-object v5, p0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentHistoryReadWrite;->intentStats:Ljava/util/HashMap;
 
@@ -274,42 +302,51 @@
 
     check-cast v1, Lcom/android/server/AlarmManagerService$FilterStats;
 
+    .line 1529
     .local v1, fs:Lcom/android/server/AlarmManagerService$FilterStats;
     if-eqz v1, :cond_0
 
+    .line 1530
     invoke-virtual {v3}, Landroid/content/Intent$FilterComparison;->getIntent()Landroid/content/Intent;
 
     move-result-object v5
 
     invoke-virtual {v5, p1, p2}, Landroid/content/Intent;->writeToParcel(Landroid/os/Parcel;I)V
 
+    .line 1531
     iget v5, v1, Lcom/android/server/AlarmManagerService$FilterStats;->count:I
 
     invoke-virtual {p1, v5}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1532
     iget v5, v1, Lcom/android/server/AlarmManagerService$FilterStats;->mAdjust:I
 
     invoke-virtual {p1, v5}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1533
     iget-wide v5, v1, Lcom/android/server/AlarmManagerService$FilterStats;->mRecordRTCTime:J
 
     invoke-virtual {p1, v5, v6}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 1534
     invoke-static {}, Lcom/android/server/AlarmManagerService;->access$2700()Z
 
     move-result v5
 
     if-eqz v5, :cond_0
 
+    .line 1535
     new-instance v4, Landroid/text/format/Time;
 
     invoke-direct {v4}, Landroid/text/format/Time;-><init>()V
 
+    .line 1536
     .local v4, time:Landroid/text/format/Time;
     iget-wide v5, v1, Lcom/android/server/AlarmManagerService$FilterStats;->mRecordRTCTime:J
 
     invoke-virtual {v4, v5, v6}, Landroid/text/format/Time;->set(J)V
 
+    .line 1537
     const-string v5, "AlarmManager"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -376,6 +413,7 @@
 
     goto :goto_0
 
+    .line 1542
     .end local v1           #fs:Lcom/android/server/AlarmManagerService$FilterStats;
     .end local v3           #intent:Landroid/content/Intent$FilterComparison;
     .end local v4           #time:Landroid/text/format/Time;

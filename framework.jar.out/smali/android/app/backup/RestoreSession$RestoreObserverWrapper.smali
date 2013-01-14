@@ -40,10 +40,12 @@
     .parameter "appObserver"
 
     .prologue
+    .line 193
     iput-object p1, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper;->this$0:Landroid/app/backup/RestoreSession;
 
     invoke-direct {p0}, Landroid/app/backup/IRestoreObserver$Stub;-><init>()V
 
+    .line 194
     new-instance v0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper$1;
 
     invoke-virtual {p2}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
@@ -54,8 +56,10 @@
 
     iput-object v0, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper;->mHandler:Landroid/os/Handler;
 
+    .line 213
     iput-object p3, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper;->mAppObserver:Landroid/app/backup/RestoreObserver;
 
+    .line 214
     return-void
 .end method
 
@@ -67,6 +71,7 @@
     .parameter "currentPackage"
 
     .prologue
+    .line 228
     iget-object v0, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper;->mHandler:Landroid/os/Handler;
@@ -81,6 +86,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
+    .line 230
     return-void
 .end method
 
@@ -89,6 +95,7 @@
     .parameter "error"
 
     .prologue
+    .line 233
     iget-object v0, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper;->mHandler:Landroid/os/Handler;
@@ -103,6 +110,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
+    .line 235
     return-void
 .end method
 
@@ -111,6 +119,7 @@
     .parameter "result"
 
     .prologue
+    .line 218
     iget-object v0, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper;->mHandler:Landroid/os/Handler;
@@ -123,6 +132,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
+    .line 220
     return-void
 .end method
 
@@ -131,6 +141,7 @@
     .parameter "numPackages"
 
     .prologue
+    .line 223
     iget-object v0, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Landroid/app/backup/RestoreSession$RestoreObserverWrapper;->mHandler:Landroid/os/Handler;
@@ -145,5 +156,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
+    .line 225
     return-void
 .end method

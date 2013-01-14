@@ -29,12 +29,15 @@
     .parameter "frameManager"
 
     .prologue
+    .line 170
     invoke-direct {p0, p1, p2}, Landroid/filterfw/core/Frame;-><init>(Landroid/filterfw/core/FrameFormat;Landroid/filterfw/core/FrameManager;)V
 
+    .line 171
     const/4 v1, 0x0
 
     invoke-virtual {p0, v1}, Landroid/filterfw/core/SerializedFrame;->setReusable(Z)V
 
+    .line 175
     :try_start_0
     new-instance v1, Landroid/filterfw/core/SerializedFrame$DirectByteOutputStream;
 
@@ -44,6 +47,7 @@
 
     iput-object v1, p0, Landroid/filterfw/core/SerializedFrame;->mByteOutputStream:Landroid/filterfw/core/SerializedFrame$DirectByteOutputStream;
 
+    .line 176
     new-instance v1, Ljava/io/ObjectOutputStream;
 
     iget-object v2, p0, Landroid/filterfw/core/SerializedFrame;->mByteOutputStream:Landroid/filterfw/core/SerializedFrame$DirectByteOutputStream;
@@ -52,17 +56,21 @@
 
     iput-object v1, p0, Landroid/filterfw/core/SerializedFrame;->mObjectOut:Ljava/io/ObjectOutputStream;
 
+    .line 177
     iget-object v1, p0, Landroid/filterfw/core/SerializedFrame;->mByteOutputStream:Landroid/filterfw/core/SerializedFrame$DirectByteOutputStream;
 
     invoke-virtual {v1}, Landroid/filterfw/core/SerializedFrame$DirectByteOutputStream;->markHeaderEnd()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 182
     return-void
 
+    .line 178
     :catch_0
     move-exception v0
 
+    .line 179
     .local v0, e:Ljava/io/IOException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -77,6 +85,7 @@
     .locals 6
 
     .prologue
+    .line 272
     :try_start_0
     iget-object v3, p0, Landroid/filterfw/core/SerializedFrame;->mByteOutputStream:Landroid/filterfw/core/SerializedFrame$DirectByteOutputStream;
 
@@ -84,11 +93,13 @@
 
     move-result-object v1
 
+    .line 273
     .local v1, inputStream:Ljava/io/InputStream;
     new-instance v2, Ljava/io/ObjectInputStream;
 
     invoke-direct {v2, v1}, Ljava/io/ObjectInputStream;-><init>(Ljava/io/InputStream;)V
 
+    .line 274
     .local v2, objectStream:Ljava/io/ObjectInputStream;
     invoke-virtual {v2}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
     :try_end_0
@@ -99,11 +110,13 @@
 
     return-object v3
 
+    .line 275
     .end local v1           #inputStream:Ljava/io/InputStream;
     .end local v2           #objectStream:Ljava/io/ObjectInputStream;
     :catch_0
     move-exception v0
 
+    .line 276
     .local v0, e:Ljava/io/IOException;
     new-instance v3, Ljava/lang/RuntimeException;
 
@@ -135,10 +148,12 @@
 
     throw v3
 
+    .line 277
     .end local v0           #e:Ljava/io/IOException;
     :catch_1
     move-exception v0
 
+    .line 278
     .local v0, e:Ljava/lang/ClassNotFoundException;
     new-instance v3, Ljava/lang/RuntimeException;
 
@@ -176,30 +191,37 @@
     .parameter "object"
 
     .prologue
+    .line 260
     :try_start_0
     iget-object v1, p0, Landroid/filterfw/core/SerializedFrame;->mByteOutputStream:Landroid/filterfw/core/SerializedFrame$DirectByteOutputStream;
 
     invoke-virtual {v1}, Landroid/filterfw/core/SerializedFrame$DirectByteOutputStream;->reset()V
 
+    .line 261
     iget-object v1, p0, Landroid/filterfw/core/SerializedFrame;->mObjectOut:Ljava/io/ObjectOutputStream;
 
     invoke-virtual {v1, p1}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
+    .line 262
     iget-object v1, p0, Landroid/filterfw/core/SerializedFrame;->mObjectOut:Ljava/io/ObjectOutputStream;
 
     invoke-virtual {v1}, Ljava/io/ObjectOutputStream;->flush()V
 
+    .line 263
     iget-object v1, p0, Landroid/filterfw/core/SerializedFrame;->mObjectOut:Ljava/io/ObjectOutputStream;
 
     invoke-virtual {v1}, Ljava/io/ObjectOutputStream;->close()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 268
     return-void
 
+    .line 264
     :catch_0
     move-exception v0
 
+    .line 265
     .local v0, e:Ljava/io/IOException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -248,20 +270,24 @@
     .parameter "frameManager"
 
     .prologue
+    .line 185
     const/4 v2, 0x1
 
     invoke-static {p0, v2}, Landroid/filterfw/format/ObjectFormat;->fromObject(Ljava/lang/Object;I)Landroid/filterfw/core/MutableFrameFormat;
 
     move-result-object v0
 
+    .line 186
     .local v0, format:Landroid/filterfw/core/FrameFormat;
     new-instance v1, Landroid/filterfw/core/SerializedFrame;
 
     invoke-direct {v1, v0, p1}, Landroid/filterfw/core/SerializedFrame;-><init>(Landroid/filterfw/core/FrameFormat;Landroid/filterfw/core/FrameManager;)V
 
+    .line 187
     .local v1, result:Landroid/filterfw/core/SerializedFrame;
     invoke-virtual {v1, p0}, Landroid/filterfw/core/SerializedFrame;->setObjectValue(Ljava/lang/Object;)V
 
+    .line 188
     return-object v1
 .end method
 
@@ -271,10 +297,12 @@
     .locals 2
 
     .prologue
+    .line 249
     invoke-direct {p0}, Landroid/filterfw/core/SerializedFrame;->deserializeObjectValue()Ljava/lang/Object;
 
     move-result-object v0
 
+    .line 250
     .local v0, result:Ljava/lang/Object;
     instance-of v1, v0, Landroid/graphics/Bitmap;
 
@@ -297,10 +325,12 @@
     .locals 2
 
     .prologue
+    .line 237
     invoke-direct {p0}, Landroid/filterfw/core/SerializedFrame;->deserializeObjectValue()Ljava/lang/Object;
 
     move-result-object v0
 
+    .line 238
     .local v0, result:Ljava/lang/Object;
     instance-of v1, v0, Ljava/nio/ByteBuffer;
 
@@ -323,10 +353,12 @@
     .locals 2
 
     .prologue
+    .line 225
     invoke-direct {p0}, Landroid/filterfw/core/SerializedFrame;->deserializeObjectValue()Ljava/lang/Object;
 
     move-result-object v0
 
+    .line 226
     .local v0, result:Ljava/lang/Object;
     instance-of v1, v0, [F
 
@@ -351,10 +383,12 @@
     .locals 2
 
     .prologue
+    .line 213
     invoke-direct {p0}, Landroid/filterfw/core/SerializedFrame;->deserializeObjectValue()Ljava/lang/Object;
 
     move-result-object v0
 
+    .line 214
     .local v0, result:Ljava/lang/Object;
     instance-of v1, v0, [I
 
@@ -379,6 +413,7 @@
     .locals 1
 
     .prologue
+    .line 202
     invoke-direct {p0}, Landroid/filterfw/core/SerializedFrame;->deserializeObjectValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -390,6 +425,7 @@
     .locals 1
 
     .prologue
+    .line 193
     const/4 v0, 0x0
 
     return v0
@@ -399,6 +435,7 @@
     .locals 0
 
     .prologue
+    .line 198
     return-void
 .end method
 
@@ -407,10 +444,13 @@
     .parameter "bitmap"
 
     .prologue
+    .line 243
     invoke-virtual {p0}, Landroid/filterfw/core/SerializedFrame;->assertFrameMutable()V
 
+    .line 244
     invoke-virtual {p0, p1}, Landroid/filterfw/core/SerializedFrame;->setGenericObjectValue(Ljava/lang/Object;)V
 
+    .line 245
     return-void
 .end method
 
@@ -421,8 +461,10 @@
     .parameter "length"
 
     .prologue
+    .line 231
     invoke-virtual {p0}, Landroid/filterfw/core/SerializedFrame;->assertFrameMutable()V
 
+    .line 232
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object v0
@@ -433,6 +475,7 @@
 
     invoke-virtual {p0, v0}, Landroid/filterfw/core/SerializedFrame;->setGenericObjectValue(Ljava/lang/Object;)V
 
+    .line 233
     return-void
 .end method
 
@@ -441,10 +484,13 @@
     .parameter "floats"
 
     .prologue
+    .line 219
     invoke-virtual {p0}, Landroid/filterfw/core/SerializedFrame;->assertFrameMutable()V
 
+    .line 220
     invoke-virtual {p0, p1}, Landroid/filterfw/core/SerializedFrame;->setGenericObjectValue(Ljava/lang/Object;)V
 
+    .line 221
     return-void
 .end method
 
@@ -453,8 +499,10 @@
     .parameter "object"
 
     .prologue
+    .line 255
     invoke-direct {p0, p1}, Landroid/filterfw/core/SerializedFrame;->serializeObjectValue(Ljava/lang/Object;)V
 
+    .line 256
     return-void
 .end method
 
@@ -463,10 +511,13 @@
     .parameter "ints"
 
     .prologue
+    .line 207
     invoke-virtual {p0}, Landroid/filterfw/core/SerializedFrame;->assertFrameMutable()V
 
+    .line 208
     invoke-virtual {p0, p1}, Landroid/filterfw/core/SerializedFrame;->setGenericObjectValue(Ljava/lang/Object;)V
 
+    .line 209
     return-void
 .end method
 
@@ -474,6 +525,7 @@
     .locals 2
 
     .prologue
+    .line 285
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

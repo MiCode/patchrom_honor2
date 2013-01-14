@@ -23,6 +23,7 @@
     .locals 3
 
     .prologue
+    .line 286
     invoke-static {}, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$ExtendedDisplayTag;->values()[Lcom/android/internal/telephony/cdma/CdmaInformationRecords$ExtendedDisplayTag;
 
     move-result-object v0

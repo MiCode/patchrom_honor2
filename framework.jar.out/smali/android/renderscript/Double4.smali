@@ -18,8 +18,10 @@
     .locals 0
 
     .prologue
+    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 30
     return-void
 .end method
 
@@ -31,15 +33,21 @@
     .parameter "initW"
 
     .prologue
+    .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 33
     iput-wide p1, p0, Landroid/renderscript/Double4;->x:D
 
+    .line 34
     iput-wide p3, p0, Landroid/renderscript/Double4;->y:D
 
+    .line 35
     iput-wide p5, p0, Landroid/renderscript/Double4;->z:D
 
+    .line 36
     iput-wide p7, p0, Landroid/renderscript/Double4;->w:D
 
+    .line 37
     return-void
 .end method

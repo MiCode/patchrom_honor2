@@ -24,6 +24,7 @@
     .parameter
 
     .prologue
+    .line 3905
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$13;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -41,6 +42,7 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 3907
     const-string v1, "android.intent.action.BATTERY_CHANGED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -53,6 +55,7 @@
 
     if-eqz v1, :cond_1
 
+    .line 3908
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$13;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     const-string v2, "plugged"
@@ -68,6 +71,7 @@
     :cond_0
     iput-boolean v0, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mPluggedIn:Z
 
+    .line 3911
     :cond_1
     return-void
 .end method

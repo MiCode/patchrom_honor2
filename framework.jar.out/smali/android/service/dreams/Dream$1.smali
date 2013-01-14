@@ -27,6 +27,7 @@
     .parameter
 
     .prologue
+    .line 350
     iput-object p1, p0, Landroid/service/dreams/Dream$1;->this$0:Landroid/service/dreams/Dream;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,6 +41,7 @@
     .locals 4
 
     .prologue
+    .line 353
     const-string v0, "Dream"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -70,6 +72,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 355
     iget-object v0, p0, Landroid/service/dreams/Dream$1;->this$0:Landroid/service/dreams/Dream;
 
     invoke-virtual {v0}, Landroid/service/dreams/Dream;->getWindowManager()Landroid/view/WindowManager;
@@ -100,5 +103,6 @@
 
     invoke-interface {v0, v1, v2}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
+    .line 356
     return-void
 .end method

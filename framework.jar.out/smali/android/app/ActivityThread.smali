@@ -338,11 +338,13 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 137
     sget-object v1, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
     sput-object v1, Landroid/app/ActivityThread;->THUMBNAIL_FORMAT:Landroid/graphics/Bitmap$Config;
 
-    const-string v1, "ro.config.hwtheme"
+    .line 141
+    const-string/jumbo v1, "ro.config.hwtheme"
 
     invoke-static {v1, v0}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
 
@@ -355,6 +357,7 @@
     :cond_0
     sput-boolean v0, Landroid/app/ActivityThread;->sIsHwTheme:Z
 
+    .line 152
     const-string v0, ";"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -363,16 +366,19 @@
 
     sput-object v0, Landroid/app/ActivityThread;->PATTERN_SEMICOLON:Ljava/util/regex/Pattern;
 
+    .line 157
     const/4 v0, 0x0
 
     sput-object v0, Landroid/app/ActivityThread;->mSystemContext:Landroid/app/ContextImpl;
 
+    .line 184
     new-instance v0, Ljava/lang/ThreadLocal;
 
     invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
 
     sput-object v0, Landroid/app/ActivityThread;->sThreadLocal:Ljava/lang/ThreadLocal;
 
+    .line 2187
     new-instance v0, Ljava/lang/ThreadLocal;
 
     invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
@@ -392,154 +398,191 @@
 
     const/4 v1, 0x0
 
+    .line 1751
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 161
     new-instance v0, Landroid/app/ActivityThread$ApplicationThread;
 
     invoke-direct {v0, p0, v1}, Landroid/app/ActivityThread$ApplicationThread;-><init>(Landroid/app/ActivityThread;Landroid/app/ActivityThread$1;)V
 
     iput-object v0, p0, Landroid/app/ActivityThread;->mAppThread:Landroid/app/ActivityThread$ApplicationThread;
 
+    .line 162
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/ActivityThread;->mLooper:Landroid/os/Looper;
 
+    .line 163
     new-instance v0, Landroid/app/ActivityThread$H;
 
     invoke-direct {v0, p0, v1}, Landroid/app/ActivityThread$H;-><init>(Landroid/app/ActivityThread;Landroid/app/ActivityThread$1;)V
 
     iput-object v0, p0, Landroid/app/ActivityThread;->mH:Landroid/app/ActivityThread$H;
 
+    .line 164
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/app/ActivityThread;->mActivities:Ljava/util/HashMap;
 
+    .line 168
     iput-object v1, p0, Landroid/app/ActivityThread;->mNewActivities:Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 170
     iput v2, p0, Landroid/app/ActivityThread;->mNumVisibleActivities:I
 
+    .line 171
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/app/ActivityThread;->mServices:Ljava/util/HashMap;
 
+    .line 180
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/app/ActivityThread;->mAllApplications:Ljava/util/ArrayList;
 
+    .line 183
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/app/ActivityThread;->mBackupAgents:Ljava/util/HashMap;
 
+    .line 186
     iput-object v1, p0, Landroid/app/ActivityThread;->mInstrumentationAppDir:Ljava/lang/String;
 
+    .line 187
     iput-object v1, p0, Landroid/app/ActivityThread;->mInstrumentationAppLibraryDir:Ljava/lang/String;
 
+    .line 188
     iput-object v1, p0, Landroid/app/ActivityThread;->mInstrumentationAppPackage:Ljava/lang/String;
 
+    .line 189
     iput-object v1, p0, Landroid/app/ActivityThread;->mInstrumentedAppDir:Ljava/lang/String;
 
+    .line 190
     iput-object v1, p0, Landroid/app/ActivityThread;->mInstrumentedAppLibraryDir:Ljava/lang/String;
 
+    .line 191
     iput-boolean v2, p0, Landroid/app/ActivityThread;->mSystemThread:Z
 
+    .line 192
     iput-boolean v2, p0, Landroid/app/ActivityThread;->mJitEnabled:Z
 
+    .line 202
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;
 
+    .line 204
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/app/ActivityThread;->mResourcePackages:Ljava/util/HashMap;
 
+    .line 206
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/app/ActivityThread;->mDisplayMetrics:Ljava/util/HashMap;
 
+    .line 208
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/app/ActivityThread;->mActiveResources:Ljava/util/HashMap;
 
+    .line 210
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/app/ActivityThread;->mRelaunchingActivities:Ljava/util/ArrayList;
 
+    .line 212
     iput-object v1, p0, Landroid/app/ActivityThread;->mPendingConfiguration:Landroid/content/res/Configuration;
 
+    .line 215
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/app/ActivityThread;->mProviderMap:Ljava/util/HashMap;
 
+    .line 217
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/app/ActivityThread;->mProviderRefCountMap:Ljava/util/HashMap;
 
+    .line 219
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/app/ActivityThread;->mLocalProviders:Ljava/util/HashMap;
 
+    .line 221
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/app/ActivityThread;->mLocalProvidersByName:Ljava/util/HashMap;
 
+    .line 224
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/app/ActivityThread;->mOnPauseListeners:Ljava/util/HashMap;
 
+    .line 227
     new-instance v0, Landroid/app/ActivityThread$GcIdler;
 
     invoke-direct {v0, p0}, Landroid/app/ActivityThread$GcIdler;-><init>(Landroid/app/ActivityThread;)V
 
     iput-object v0, p0, Landroid/app/ActivityThread;->mGcIdler:Landroid/app/ActivityThread$GcIdler;
 
+    .line 228
     iput-boolean v2, p0, Landroid/app/ActivityThread;->mGcIdlerScheduled:Z
 
+    .line 232
     iput-object v1, p0, Landroid/app/ActivityThread;->mCoreSettings:Landroid/os/Bundle;
 
+    .line 1545
     new-instance v0, Landroid/content/res/Configuration;
 
     invoke-direct {v0}, Landroid/content/res/Configuration;-><init>()V
 
     iput-object v0, p0, Landroid/app/ActivityThread;->mMainThreadConfig:Landroid/content/res/Configuration;
 
+    .line 2732
     iput v3, p0, Landroid/app/ActivityThread;->mThumbnailWidth:I
 
+    .line 2733
     iput v3, p0, Landroid/app/ActivityThread;->mThumbnailHeight:I
 
+    .line 2734
     iput-object v1, p0, Landroid/app/ActivityThread;->mAvailThumbnailBitmap:Landroid/graphics/Bitmap;
 
+    .line 2735
     iput-object v1, p0, Landroid/app/ActivityThread;->mThumbnailCanvas:Landroid/graphics/Canvas;
 
+    .line 1752
     return-void
 .end method
 
@@ -550,6 +593,7 @@
     .parameter "x2"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1, p2}, Landroid/app/ActivityThread;->handleWindowVisibility(Landroid/os/IBinder;Z)V
 
     return-void
@@ -561,6 +605,7 @@
     .parameter "x1"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1}, Landroid/app/ActivityThread;->handleSendResult(Landroid/app/ActivityThread$ResultData;)V
 
     return-void
@@ -575,6 +620,7 @@
     .parameter "x4"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/app/ActivityThread;->handleDestroyActivity(Landroid/os/IBinder;ZIZ)V
 
     return-void
@@ -586,6 +632,7 @@
     .parameter "x1"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1}, Landroid/app/ActivityThread;->handleBindApplication(Landroid/app/ActivityThread$AppBindData;)V
 
     return-void
@@ -597,6 +644,7 @@
     .parameter "x1"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1}, Landroid/app/ActivityThread;->handleNewIntent(Landroid/app/ActivityThread$NewIntentData;)V
 
     return-void
@@ -608,6 +656,7 @@
     .parameter "x1"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1}, Landroid/app/ActivityThread;->handleReceiver(Landroid/app/ActivityThread$ReceiverData;)V
 
     return-void
@@ -619,6 +668,7 @@
     .parameter "x1"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1}, Landroid/app/ActivityThread;->handleCreateService(Landroid/app/ActivityThread$CreateServiceData;)V
 
     return-void
@@ -630,6 +680,7 @@
     .parameter "x1"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1}, Landroid/app/ActivityThread;->handleBindService(Landroid/app/ActivityThread$BindServiceData;)V
 
     return-void
@@ -641,6 +692,7 @@
     .parameter "x1"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1}, Landroid/app/ActivityThread;->handleUnbindService(Landroid/app/ActivityThread$BindServiceData;)V
 
     return-void
@@ -652,6 +704,7 @@
     .parameter "x1"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1}, Landroid/app/ActivityThread;->handleServiceArgs(Landroid/app/ActivityThread$ServiceArgsData;)V
 
     return-void
@@ -666,6 +719,7 @@
     .parameter "x4"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/app/ActivityThread;->queueOrSendMessage(ILjava/lang/Object;II)V
 
     return-void
@@ -677,6 +731,7 @@
     .parameter "x1"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1}, Landroid/app/ActivityThread;->handleStopService(Landroid/os/IBinder;)V
 
     return-void
@@ -688,6 +743,7 @@
     .parameter "x1"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1}, Landroid/app/ActivityThread;->handleRequestThumbnail(Landroid/os/IBinder;)V
 
     return-void
@@ -699,6 +755,7 @@
     .parameter "x1"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1}, Landroid/app/ActivityThread;->handleDumpService(Landroid/app/ActivityThread$DumpComponentInfo;)V
 
     return-void
@@ -710,6 +767,7 @@
     .parameter "x1"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1}, Landroid/app/ActivityThread;->handleCreateBackupAgent(Landroid/app/ActivityThread$CreateBackupAgentData;)V
 
     return-void
@@ -721,6 +779,7 @@
     .parameter "x1"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1}, Landroid/app/ActivityThread;->handleDestroyBackupAgent(Landroid/app/ActivityThread$CreateBackupAgentData;)V
 
     return-void
@@ -732,6 +791,7 @@
     .parameter "x1"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1}, Landroid/app/ActivityThread;->handleDumpActivity(Landroid/app/ActivityThread$DumpComponentInfo;)V
 
     return-void
@@ -743,6 +803,7 @@
     .parameter "x1"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1}, Landroid/app/ActivityThread;->handleDumpProvider(Landroid/app/ActivityThread$DumpComponentInfo;)V
 
     return-void
@@ -755,6 +816,7 @@
     .parameter "x2"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1, p2}, Landroid/app/ActivityThread;->handleSleeping(Landroid/os/IBinder;Z)V
 
     return-void
@@ -766,6 +828,7 @@
     .parameter "x1"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1}, Landroid/app/ActivityThread;->handleSetCoreSettings(Landroid/os/Bundle;)V
 
     return-void
@@ -777,6 +840,7 @@
     .parameter "x1"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1}, Landroid/app/ActivityThread;->handleUpdatePackageCompatibilityInfo(Landroid/app/ActivityThread$UpdateCompatibilityData;)V
 
     return-void
@@ -789,6 +853,7 @@
     .parameter "x2"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1, p2}, Landroid/app/ActivityThread;->queueOrSendMessage(ILjava/lang/Object;)V
 
     return-void
@@ -802,6 +867,7 @@
     .parameter "x3"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1, p2, p3}, Landroid/app/ActivityThread;->queueOrSendMessage(ILjava/lang/Object;I)V
 
     return-void
@@ -813,6 +879,7 @@
     .parameter "x1"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1}, Landroid/app/ActivityThread;->dumpGraphicsInfo(Ljava/io/FileDescriptor;)V
 
     return-void
@@ -825,6 +892,7 @@
     .parameter "x2"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1, p2}, Landroid/app/ActivityThread;->handleLaunchActivity(Landroid/app/ActivityThread$ActivityClientRecord;Landroid/content/Intent;)V
 
     return-void
@@ -836,6 +904,7 @@
     .parameter "x1"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1}, Landroid/app/ActivityThread;->handleRelaunchActivity(Landroid/app/ActivityThread$ActivityClientRecord;)V
 
     return-void
@@ -850,6 +919,7 @@
     .parameter "x4"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/app/ActivityThread;->handlePauseActivity(Landroid/os/IBinder;ZZI)V
 
     return-void
@@ -863,6 +933,7 @@
     .parameter "x3"
 
     .prologue
+    .line 134
     invoke-direct {p0, p1, p2, p3}, Landroid/app/ActivityThread;->handleStopActivity(Landroid/os/IBinder;ZI)V
 
     return-void
@@ -873,24 +944,30 @@
     .parameter "system"
 
     .prologue
+    .line 4670
     sget-object v4, Landroid/app/ActivityThread;->sThreadLocal:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v4, p0}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
+    .line 4671
     iput-boolean p1, p0, Landroid/app/ActivityThread;->mSystemThread:Z
 
+    .line 4672
     if-nez p1, :cond_0
 
+    .line 4673
     new-instance v4, Landroid/app/ActivityThread$1;
 
     invoke-direct {v4, p0}, Landroid/app/ActivityThread$1;-><init>(Landroid/app/ActivityThread;)V
 
     invoke-static {v4}, Landroid/view/ViewRootImpl;->addFirstDrawHandler(Ljava/lang/Runnable;)V
 
+    .line 4678
     const-string v4, "<pre-initialized>"
 
     invoke-static {v4}, Landroid/ddm/DdmHandleAppName;->setAppName(Ljava/lang/String;)V
 
+    .line 4679
     iget-object v4, p0, Landroid/app/ActivityThread;->mAppThread:Landroid/app/ActivityThread$ApplicationThread;
 
     invoke-virtual {v4}, Landroid/app/ActivityThread$ApplicationThread;->asBinder()Landroid/os/IBinder;
@@ -899,10 +976,12 @@
 
     invoke-static {v4}, Lcom/android/internal/os/RuntimeInit;->setApplicationObject(Landroid/os/IBinder;)V
 
+    .line 4680
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v3
 
+    .line 4682
     .local v3, mgr:Landroid/app/IActivityManager;
     :try_start_0
     iget-object v4, p0, Landroid/app/ActivityThread;->mAppThread:Landroid/app/ActivityThread$ApplicationThread;
@@ -911,6 +990,7 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
 
+    .line 4704
     .end local v3           #mgr:Landroid/app/IActivityManager;
     :goto_0
     new-instance v4, Landroid/app/ActivityThread$2;
@@ -919,13 +999,16 @@
 
     invoke-static {v4}, Landroid/view/ViewRootImpl;->addConfigCallback(Landroid/content/ComponentCallbacks;)V
 
+    .line 4727
     return-void
 
+    .line 4689
     :cond_0
-    const-string v4, "system_process"
+    const-string/jumbo v4, "system_process"
 
     invoke-static {v4}, Landroid/ddm/DdmHandleAppName;->setAppName(Ljava/lang/String;)V
 
+    .line 4691
     :try_start_1
     new-instance v4, Landroid/app/Instrumentation;
 
@@ -933,10 +1016,12 @@
 
     iput-object v4, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
+    .line 4692
     new-instance v1, Landroid/app/ContextImpl;
 
     invoke-direct {v1}, Landroid/app/ContextImpl;-><init>()V
 
+    .line 4693
     .local v1, context:Landroid/app/ContextImpl;
     invoke-virtual {p0}, Landroid/app/ActivityThread;->getSystemContext()Landroid/app/ContextImpl;
 
@@ -948,30 +1033,36 @@
 
     invoke-virtual {v1, v4, v5, p0}, Landroid/app/ContextImpl;->init(Landroid/app/LoadedApk;Landroid/os/IBinder;Landroid/app/ActivityThread;)V
 
+    .line 4694
     const-class v4, Landroid/app/Application;
 
     invoke-static {v4, v1}, Landroid/app/Instrumentation;->newApplication(Ljava/lang/Class;Landroid/content/Context;)Landroid/app/Application;
 
     move-result-object v0
 
+    .line 4695
     .local v0, app:Landroid/app/Application;
     iget-object v4, p0, Landroid/app/ActivityThread;->mAllApplications:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 4696
     iput-object v0, p0, Landroid/app/ActivityThread;->mInitialApplication:Landroid/app/Application;
 
+    .line 4697
     invoke-virtual {v0}, Landroid/app/Application;->onCreate()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_0
 
+    .line 4698
     .end local v0           #app:Landroid/app/Application;
     .end local v1           #context:Landroid/app/ContextImpl;
     :catch_0
     move-exception v2
 
+    .line 4699
     .local v2, e:Ljava/lang/Exception;
     new-instance v4, Ljava/lang/RuntimeException;
 
@@ -1001,6 +1092,7 @@
 
     throw v4
 
+    .line 4683
     .end local v2           #e:Ljava/lang/Exception;
     .restart local v3       #mgr:Landroid/app/IActivityManager;
     :catch_1
@@ -1016,25 +1108,30 @@
     .prologue
     const/4 v4, 0x0
 
+    .line 2606
     iget-object v1, p0, Landroid/app/ActivityThread$ActivityClientRecord;->mPendingRemoveWindow:Landroid/view/View;
 
     if-eqz v1, :cond_0
 
+    .line 2607
     iget-object v1, p0, Landroid/app/ActivityThread$ActivityClientRecord;->mPendingRemoveWindowManager:Landroid/view/WindowManager;
 
     iget-object v2, p0, Landroid/app/ActivityThread$ActivityClientRecord;->mPendingRemoveWindow:Landroid/view/View;
 
     invoke-interface {v1, v2}, Landroid/view/WindowManager;->removeViewImmediate(Landroid/view/View;)V
 
+    .line 2608
     iget-object v1, p0, Landroid/app/ActivityThread$ActivityClientRecord;->mPendingRemoveWindow:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 2609
     .local v0, wtoken:Landroid/os/IBinder;
     if-eqz v0, :cond_0
 
+    .line 2610
     invoke-static {}, Landroid/view/WindowManagerImpl;->getDefault()Landroid/view/WindowManagerImpl;
 
     move-result-object v1
@@ -1053,12 +1150,15 @@
 
     invoke-virtual {v1, v0, v2, v3}, Landroid/view/WindowManagerImpl;->closeAll(Landroid/os/IBinder;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 2614
     .end local v0           #wtoken:Landroid/os/IBinder;
     :cond_0
     iput-object v4, p0, Landroid/app/ActivityThread$ActivityClientRecord;->mPendingRemoveWindow:Landroid/view/View;
 
+    .line 2615
     iput-object v4, p0, Landroid/app/ActivityThread$ActivityClientRecord;->mPendingRemoveWindowManager:Landroid/view/WindowManager;
 
+    .line 2616
     return-void
 .end method
 
@@ -1067,23 +1167,29 @@
     .parameter "r"
 
     .prologue
+    .line 2738
     iget-object v4, p0, Landroid/app/ActivityThread;->mAvailThumbnailBitmap:Landroid/graphics/Bitmap;
 
+    .line 2740
     .local v4, thumbnail:Landroid/graphics/Bitmap;
     if-nez v4, :cond_0
 
+    .line 2741
     :try_start_0
     iget v5, p0, Landroid/app/ActivityThread;->mThumbnailWidth:I
 
+    .line 2743
     .local v5, w:I
     if-gez v5, :cond_4
 
+    .line 2744
     iget-object v6, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v6}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
+    .line 2745
     .local v3, res:Landroid/content/res/Resources;
     const v6, 0x1050001
 
@@ -1094,6 +1200,7 @@
     .local v2, h:I
     iput v2, p0, Landroid/app/ActivityThread;->mThumbnailHeight:I
 
+    .line 2748
     const v6, 0x1050002
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1102,32 +1209,39 @@
 
     iput v5, p0, Landroid/app/ActivityThread;->mThumbnailWidth:I
 
+    .line 2755
     .end local v3           #res:Landroid/content/res/Resources;
     :goto_0
     if-lez v5, :cond_0
 
     if-lez v2, :cond_0
 
+    .line 2756
     sget-object v6, Landroid/app/ActivityThread;->THUMBNAIL_FORMAT:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v5, v2, v6}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v4
 
+    .line 2757
     const/4 v6, 0x0
 
     invoke-virtual {v4, v6}, Landroid/graphics/Bitmap;->eraseColor(I)V
 
+    .line 2761
     .end local v2           #h:I
     .end local v5           #w:I
     :cond_0
     if-eqz v4, :cond_3
 
+    .line 2762
     iget-object v0, p0, Landroid/app/ActivityThread;->mThumbnailCanvas:Landroid/graphics/Canvas;
 
+    .line 2763
     .local v0, cv:Landroid/graphics/Canvas;
     if-nez v0, :cond_1
 
+    .line 2764
     new-instance v0, Landroid/graphics/Canvas;
 
     .end local v0           #cv:Landroid/graphics/Canvas;
@@ -1136,9 +1250,11 @@
     .restart local v0       #cv:Landroid/graphics/Canvas;
     iput-object v0, p0, Landroid/app/ActivityThread;->mThumbnailCanvas:Landroid/graphics/Canvas;
 
+    .line 2767
     :cond_1
     invoke-virtual {v0, v4}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
+    .line 2768
     iget-object v6, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v6, v4, v0}, Landroid/app/Activity;->onCreateThumbnail(Landroid/graphics/Bitmap;Landroid/graphics/Canvas;)Z
@@ -1147,20 +1263,25 @@
 
     if-nez v6, :cond_2
 
+    .line 2769
     iput-object v4, p0, Landroid/app/ActivityThread;->mAvailThumbnailBitmap:Landroid/graphics/Bitmap;
 
+    .line 2770
     const/4 v4, 0x0
 
+    .line 2772
     :cond_2
     const/4 v6, 0x0
 
     invoke-virtual {v0, v6}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
+    .line 2785
     .end local v0           #cv:Landroid/graphics/Canvas;
     :cond_3
     :goto_1
     return-object v4
 
+    .line 2751
     .restart local v5       #w:I
     :cond_4
     iget v2, p0, Landroid/app/ActivityThread;->mThumbnailHeight:I
@@ -1170,11 +1291,13 @@
     .restart local v2       #h:I
     goto :goto_0
 
+    .line 2775
     .end local v2           #h:I
     .end local v5           #w:I
     :catch_0
     move-exception v1
 
+    .line 2776
     .local v1, e:Ljava/lang/Exception;
     iget-object v6, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
@@ -1186,6 +1309,7 @@
 
     if-nez v6, :cond_5
 
+    .line 2777
     new-instance v6, Ljava/lang/RuntimeException;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1234,6 +1358,7 @@
 
     throw v6
 
+    .line 2782
     :cond_5
     const/4 v4, 0x0
 
@@ -1244,6 +1369,7 @@
     .locals 1
 
     .prologue
+    .line 1502
     sget-object v0, Landroid/app/ActivityThread;->sThreadLocal:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -1259,10 +1385,12 @@
     .locals 2
 
     .prologue
+    .line 1512
     invoke-static {}, Landroid/app/ActivityThread;->currentActivityThread()Landroid/app/ActivityThread;
 
     move-result-object v0
 
+    .line 1513
     .local v0, am:Landroid/app/ActivityThread;
     if-eqz v0, :cond_0
 
@@ -1281,10 +1409,12 @@
     .locals 2
 
     .prologue
+    .line 1506
     invoke-static {}, Landroid/app/ActivityThread;->currentActivityThread()Landroid/app/ActivityThread;
 
     move-result-object v0
 
+    .line 1507
     .local v0, am:Landroid/app/ActivityThread;
     if-eqz v0, :cond_0
 
@@ -1321,11 +1451,13 @@
     .end annotation
 
     .prologue
+    .line 2157
     .local p2, intents:Ljava/util/List;,"Ljava/util/List<Landroid/content/Intent;>;"
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result v0
 
+    .line 2158
     .local v0, N:I
     const/4 v1, 0x0
 
@@ -1333,12 +1465,14 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
+    .line 2159
     invoke-interface {p2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/content/Intent;
 
+    .line 2160
     .local v2, intent:Landroid/content/Intent;
     iget-object v3, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
@@ -1348,22 +1482,26 @@
 
     invoke-virtual {v2, v3}, Landroid/content/Intent;->setExtrasClassLoader(Ljava/lang/ClassLoader;)V
 
+    .line 2161
     iget-object v3, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget-object v3, v3, Landroid/app/Activity;->mFragments:Landroid/app/FragmentManagerImpl;
 
     invoke-virtual {v3}, Landroid/app/FragmentManagerImpl;->noteStateNotSaved()V
 
+    .line 2162
     iget-object v3, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
     iget-object v4, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v3, v4, v2}, Landroid/app/Instrumentation;->callActivityOnNewIntent(Landroid/app/Activity;Landroid/content/Intent;)V
 
+    .line 2158
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 2164
     .end local v2           #intent:Landroid/content/Intent;
     :cond_0
     return-void
@@ -1385,11 +1523,13 @@
     .end annotation
 
     .prologue
+    .line 3160
     .local p2, results:Ljava/util/List;,"Ljava/util/List<Landroid/app/ResultInfo;>;"
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result v0
 
+    .line 3161
     .local v0, N:I
     const/4 v2, 0x0
 
@@ -1397,18 +1537,21 @@
     :goto_0
     if-ge v2, v0, :cond_2
 
+    .line 3162
     invoke-interface {p2, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Landroid/app/ResultInfo;
 
+    .line 3164
     .local v3, ri:Landroid/app/ResultInfo;
     :try_start_0
     iget-object v4, v3, Landroid/app/ResultInfo;->mData:Landroid/content/Intent;
 
     if-eqz v4, :cond_0
 
+    .line 3165
     iget-object v4, v3, Landroid/app/ResultInfo;->mData:Landroid/content/Intent;
 
     iget-object v5, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
@@ -1419,6 +1562,7 @@
 
     invoke-virtual {v4, v5}, Landroid/content/Intent;->setExtrasClassLoader(Ljava/lang/ClassLoader;)V
 
+    .line 3169
     :cond_0
     iget-object v4, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
@@ -1434,14 +1578,17 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 3161
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 3171
     :catch_0
     move-exception v1
 
+    .line 3172
     .local v1, e:Ljava/lang/Exception;
     iget-object v4, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
@@ -1453,6 +1600,7 @@
 
     if-nez v4, :cond_1
 
+    .line 3173
     new-instance v4, Ljava/lang/RuntimeException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1511,6 +1659,7 @@
 
     throw v4
 
+    .line 3180
     .end local v1           #e:Ljava/lang/Exception;
     .end local v3           #ri:Landroid/app/ResultInfo;
     :cond_2
@@ -1524,6 +1673,7 @@
     .locals 1
 
     .prologue
+    .line 2195
     sget-object v0, Landroid/app/ActivityThread;->sCurrentBroadcastIntent:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -1544,12 +1694,15 @@
     .parameter "includeCode"
 
     .prologue
+    .line 1720
     iget-object v9, p0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;
 
     monitor-enter v9
 
+    .line 1722
     if-eqz p5, :cond_2
 
+    .line 1723
     :try_start_0
     iget-object v1, p0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;
 
@@ -1561,6 +1714,7 @@
 
     check-cast v8, Ljava/lang/ref/WeakReference;
 
+    .line 1727
     .local v8, ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/app/LoadedApk;>;"
     :goto_0
     if-eqz v8, :cond_3
@@ -1573,6 +1727,7 @@
 
     move-object v0, v1
 
+    .line 1728
     .local v0, packageInfo:Landroid/app/LoadedApk;
     :goto_1
     if-eqz v0, :cond_0
@@ -1593,6 +1748,7 @@
 
     if-nez v1, :cond_1
 
+    .line 1735
     :cond_0
     new-instance v0, Landroid/app/LoadedApk;
 
@@ -1622,9 +1778,11 @@
 
     invoke-direct/range {v0 .. v7}, Landroid/app/LoadedApk;-><init>(Landroid/app/ActivityThread;Landroid/content/pm/ApplicationInfo;Landroid/content/res/CompatibilityInfo;Landroid/app/ActivityThread;Ljava/lang/ClassLoader;ZZ)V
 
+    .line 1739
     .restart local v0       #packageInfo:Landroid/app/LoadedApk;
     if-eqz p5, :cond_5
 
+    .line 1740
     iget-object v1, p0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;
 
     iget-object v2, p1, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
@@ -1635,12 +1793,14 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1747
     :cond_1
     :goto_3
     monitor-exit v9
 
     return-object v0
 
+    .line 1725
     .end local v0           #packageInfo:Landroid/app/LoadedApk;
     .end local v8           #ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/app/LoadedApk;>;"
     :cond_2
@@ -1657,16 +1817,19 @@
     .restart local v8       #ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/app/LoadedApk;>;"
     goto :goto_0
 
+    .line 1727
     :cond_3
     const/4 v0, 0x0
 
     goto :goto_1
 
+    .line 1735
     :cond_4
     const/4 v7, 0x0
 
     goto :goto_2
 
+    .line 1743
     .restart local v0       #packageInfo:Landroid/app/LoadedApk;
     :cond_5
     iget-object v1, p0, Landroid/app/ActivityThread;->mResourcePackages:Ljava/util/HashMap;
@@ -1681,6 +1844,7 @@
 
     goto :goto_3
 
+    .line 1748
     .end local v0           #packageInfo:Landroid/app/LoadedApk;
     .end local v8           #ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/app/LoadedApk;>;"
     :catchall_0
@@ -1697,24 +1861,29 @@
     .locals 2
 
     .prologue
+    .line 1517
     sget-object v1, Landroid/app/ActivityThread;->sPackageManager:Landroid/content/pm/IPackageManager;
 
     if-eqz v1, :cond_0
 
+    .line 1519
     sget-object v1, Landroid/app/ActivityThread;->sPackageManager:Landroid/content/pm/IPackageManager;
 
+    .line 1525
     .local v0, b:Landroid/os/IBinder;
     :goto_0
     return-object v1
 
+    .line 1521
     .end local v0           #b:Landroid/os/IBinder;
     :cond_0
-    const-string v1, "package"
+    const-string/jumbo v1, "package"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 1523
     .restart local v0       #b:Landroid/os/IBinder;
     invoke-static {v0}, Landroid/content/pm/IPackageManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/content/pm/IPackageManager;
 
@@ -1722,6 +1891,7 @@
 
     sput-object v1, Landroid/app/ActivityThread;->sPackageManager:Landroid/content/pm/IPackageManager;
 
+    .line 1525
     sget-object v1, Landroid/app/ActivityThread;->sPackageManager:Landroid/content/pm/IPackageManager;
 
     goto :goto_0
@@ -1732,12 +1902,14 @@
     .parameter "data"
 
     .prologue
+    .line 3948
     move-object/from16 v0, p1
 
     move-object/from16 v1, p0
 
     iput-object v0, v1, Landroid/app/ActivityThread;->mBoundApplication:Landroid/app/ActivityThread$AppBindData;
 
+    .line 3949
     new-instance v2, Landroid/content/res/Configuration;
 
     move-object/from16 v0, p1
@@ -1750,6 +1922,7 @@
 
     iput-object v2, v0, Landroid/app/ActivityThread;->mConfiguration:Landroid/content/res/Configuration;
 
+    .line 3950
     new-instance v2, Landroid/content/res/Configuration;
 
     move-object/from16 v0, p1
@@ -1762,6 +1935,7 @@
 
     iput-object v2, v0, Landroid/app/ActivityThread;->mCompatConfiguration:Landroid/content/res/Configuration;
 
+    .line 3952
     new-instance v2, Landroid/app/ActivityThread$Profiler;
 
     invoke-direct {v2}, Landroid/app/ActivityThread$Profiler;-><init>()V
@@ -1770,6 +1944,7 @@
 
     iput-object v2, v0, Landroid/app/ActivityThread;->mProfiler:Landroid/app/ActivityThread$Profiler;
 
+    .line 3953
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/app/ActivityThread;->mProfiler:Landroid/app/ActivityThread$Profiler;
@@ -1780,6 +1955,7 @@
 
     iput-object v4, v2, Landroid/app/ActivityThread$Profiler;->profileFile:Ljava/lang/String;
 
+    .line 3954
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/app/ActivityThread;->mProfiler:Landroid/app/ActivityThread$Profiler;
@@ -1790,6 +1966,7 @@
 
     iput-object v4, v2, Landroid/app/ActivityThread$Profiler;->profileFd:Landroid/os/ParcelFileDescriptor;
 
+    .line 3955
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/app/ActivityThread;->mProfiler:Landroid/app/ActivityThread$Profiler;
@@ -1800,24 +1977,28 @@
 
     iput-boolean v4, v2, Landroid/app/ActivityThread$Profiler;->autoStopProfiler:Z
 
+    .line 3958
     move-object/from16 v0, p1
 
     iget-object v2, v0, Landroid/app/ActivityThread$AppBindData;->processName:Ljava/lang/String;
 
     invoke-static {v2}, Landroid/os/Process;->setArgV0(Ljava/lang/String;)V
 
+    .line 3959
     move-object/from16 v0, p1
 
     iget-object v2, v0, Landroid/app/ActivityThread$AppBindData;->processName:Ljava/lang/String;
 
     invoke-static {v2}, Landroid/ddm/DdmHandleAppName;->setAppName(Ljava/lang/String;)V
 
+    .line 3961
     move-object/from16 v0, p1
 
     iget-boolean v2, v0, Landroid/app/ActivityThread$AppBindData;->persistent:Z
 
     if-eqz v2, :cond_0
 
+    .line 3965
     invoke-static {}, Landroid/view/WindowManagerImpl;->getDefault()Landroid/view/WindowManagerImpl;
 
     move-result-object v2
@@ -1826,6 +2007,7 @@
 
     move-result-object v15
 
+    .line 3966
     .local v15, display:Landroid/view/Display;
     invoke-static {v15}, Landroid/app/ActivityManager;->isHighEndGfx(Landroid/view/Display;)Z
 
@@ -1833,10 +2015,12 @@
 
     if-nez v2, :cond_0
 
+    .line 3967
     const/4 v2, 0x0
 
     invoke-static {v2}, Landroid/view/HardwareRenderer;->disable(Z)V
 
+    .line 3971
     .end local v15           #display:Landroid/view/Display;
     :cond_0
     move-object/from16 v0, p0
@@ -1847,12 +2031,14 @@
 
     if-eqz v2, :cond_1
 
+    .line 3972
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/app/ActivityThread;->mProfiler:Landroid/app/ActivityThread$Profiler;
 
     invoke-virtual {v2}, Landroid/app/ActivityThread$Profiler;->startProfiling()V
 
+    .line 3979
     :cond_1
     move-object/from16 v0, p1
 
@@ -1864,15 +2050,18 @@
 
     if-gt v2, v4, :cond_2
 
+    .line 3980
     sget-object v2, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     invoke-static {v2}, Landroid/os/AsyncTask;->setDefaultExecutor(Ljava/util/concurrent/Executor;)V
 
+    .line 3989
     :cond_2
     const/4 v2, 0x0
 
     invoke-static {v2}, Ljava/util/TimeZone;->setDefault(Ljava/util/TimeZone;)V
 
+    .line 3994
     move-object/from16 v0, p1
 
     iget-object v2, v0, Landroid/app/ActivityThread$AppBindData;->config:Landroid/content/res/Configuration;
@@ -1881,6 +2070,7 @@
 
     invoke-static {v2}, Ljava/util/Locale;->setDefault(Ljava/util/Locale;)V
 
+    .line 4001
     move-object/from16 v0, p1
 
     iget-object v2, v0, Landroid/app/ActivityThread$AppBindData;->config:Landroid/content/res/Configuration;
@@ -1893,8 +2083,10 @@
 
     invoke-virtual {v0, v2, v4}, Landroid/app/ActivityThread;->applyConfigurationToResourcesLocked(Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)Z
 
+    .line 4002
     invoke-virtual/range {p0 .. p0}, Landroid/app/ActivityThread;->applyCompatConfiguration()Landroid/content/res/Configuration;
 
+    .line 4004
     move-object/from16 v0, p1
 
     iget-object v2, v0, Landroid/app/ActivityThread$AppBindData;->appInfo:Landroid/content/pm/ApplicationInfo;
@@ -1913,10 +2105,12 @@
 
     iput-object v2, v0, Landroid/app/ActivityThread$AppBindData;->info:Landroid/app/LoadedApk;
 
+    .line 4006
     new-instance v11, Landroid/app/ContextImpl;
 
     invoke-direct {v11}, Landroid/app/ContextImpl;-><init>()V
 
+    .line 4007
     .local v11, appContext:Landroid/app/ContextImpl;
     move-object/from16 v0, p1
 
@@ -1928,10 +2122,12 @@
 
     invoke-virtual {v11, v2, v4, v0}, Landroid/app/ContextImpl;->init(Landroid/app/LoadedApk;Landroid/os/IBinder;Landroid/app/ActivityThread;)V
 
+    .line 4008
     invoke-virtual {v11}, Landroid/app/ContextImpl;->getCacheDir()Ljava/io/File;
 
     move-result-object v13
 
+    .line 4011
     .local v13, cacheDir:Ljava/io/File;
     const-string v2, "java.io.tmpdir"
 
@@ -1941,6 +2137,7 @@
 
     invoke-static {v2, v4}, Ljava/lang/System;->setProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
+    .line 4013
     move-object/from16 v0, p1
 
     iget-object v2, v0, Landroid/app/ActivityThread$AppBindData;->info:Landroid/app/LoadedApk;
@@ -1949,6 +2146,7 @@
 
     invoke-direct {v0, v2, v13}, Landroid/app/ActivityThread;->setupGraphicsSupport(Landroid/app/LoadedApk;Ljava/io/File;)V
 
+    .line 4019
     move-object/from16 v0, p1
 
     iget-object v2, v0, Landroid/app/ActivityThread$AppBindData;->appInfo:Landroid/content/pm/ApplicationInfo;
@@ -1959,8 +2157,10 @@
 
     if-eqz v2, :cond_3
 
+    .line 4022
     invoke-static {}, Landroid/os/StrictMode;->conditionallyEnableDebugLogging()Z
 
+    .line 4032
     :cond_3
     move-object/from16 v0, p1
 
@@ -1972,8 +2172,10 @@
 
     if-le v2, v4, :cond_4
 
+    .line 4033
     invoke-static {}, Landroid/os/StrictMode;->enableDeathOnNetwork()V
 
+    .line 4039
     :cond_4
     move-object/from16 v0, p1
 
@@ -1985,10 +2187,12 @@
 
     if-nez v2, :cond_5
 
+    .line 4041
     const/16 v2, 0xa0
 
     invoke-static {v2}, Landroid/graphics/Bitmap;->setDefaultDensity(I)V
 
+    .line 4044
     :cond_5
     move-object/from16 v0, p1
 
@@ -1996,10 +2200,12 @@
 
     if-eqz v2, :cond_6
 
+    .line 4046
     const/16 v2, 0x1fa4
 
     invoke-static {v2}, Landroid/os/Debug;->changeDebugPort(I)V
 
+    .line 4047
     move-object/from16 v0, p1
 
     iget v2, v0, Landroid/app/ActivityThread$AppBindData;->debugMode:I
@@ -2008,6 +2214,7 @@
 
     if-ne v2, v4, :cond_9
 
+    .line 4048
     const-string v2, "ActivityThread"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2044,10 +2251,12 @@
 
     invoke-static {v2, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 4051
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v19
 
+    .line 4053
     .local v19, mgr:Landroid/app/IActivityManager;
     :try_start_0
     move-object/from16 v0, p0
@@ -2062,9 +2271,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_6
 
+    .line 4057
     :goto_0
     invoke-static {}, Landroid/os/Debug;->waitForDebugger()V
 
+    .line 4060
     :try_start_1
     move-object/from16 v0, p0
 
@@ -2078,6 +2289,7 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_5
 
+    .line 4071
     .end local v19           #mgr:Landroid/app/IActivityManager;
     :cond_6
     :goto_1
@@ -2087,8 +2299,10 @@
 
     if-eqz v2, :cond_7
 
+    .line 4072
     invoke-static {}, Landroid/opengl/GLUtils;->enableTracing()V
 
+    .line 4078
     :cond_7
     const-string v2, "connectivity"
 
@@ -2096,24 +2310,29 @@
 
     move-result-object v12
 
+    .line 4079
     .local v12, b:Landroid/os/IBinder;
     if-eqz v12, :cond_8
 
+    .line 4083
     invoke-static {v12}, Landroid/net/IConnectivityManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/net/IConnectivityManager;
 
     move-result-object v24
 
+    .line 4085
     .local v24, service:Landroid/net/IConnectivityManager;
     :try_start_2
     invoke-interface/range {v24 .. v24}, Landroid/net/IConnectivityManager;->getProxy()Landroid/net/ProxyProperties;
 
     move-result-object v22
 
+    .line 4086
     .local v22, proxyProperties:Landroid/net/ProxyProperties;
     invoke-static/range {v22 .. v22}, Landroid/net/Proxy;->setHttpProxySystemProperty(Landroid/net/ProxyProperties;)V
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_4
 
+    .line 4090
     .end local v22           #proxyProperties:Landroid/net/ProxyProperties;
     .end local v24           #service:Landroid/net/IConnectivityManager;
     :cond_8
@@ -2124,8 +2343,10 @@
 
     if-eqz v2, :cond_f
 
+    .line 4091
     const/16 v18, 0x0
 
+    .line 4093
     .local v18, ii:Landroid/content/pm/InstrumentationInfo;
     :try_start_3
     invoke-virtual {v11}, Landroid/app/ContextImpl;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -2144,9 +2365,11 @@
 
     move-result-object v18
 
+    .line 4097
     :goto_3
     if-nez v18, :cond_a
 
+    .line 4098
     new-instance v2, Ljava/lang/RuntimeException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2175,6 +2398,7 @@
 
     throw v2
 
+    .line 4065
     .end local v12           #b:Landroid/os/IBinder;
     .end local v18           #ii:Landroid/content/pm/InstrumentationInfo;
     :cond_9
@@ -2216,6 +2440,7 @@
 
     goto :goto_1
 
+    .line 4103
     .restart local v12       #b:Landroid/os/IBinder;
     .restart local v18       #ii:Landroid/content/pm/InstrumentationInfo;
     :cond_a
@@ -2227,6 +2452,7 @@
 
     iput-object v2, v0, Landroid/app/ActivityThread;->mInstrumentationAppDir:Ljava/lang/String;
 
+    .line 4104
     move-object/from16 v0, v18
 
     iget-object v2, v0, Landroid/content/pm/InstrumentationInfo;->nativeLibraryDir:Ljava/lang/String;
@@ -2235,6 +2461,7 @@
 
     iput-object v2, v0, Landroid/app/ActivityThread;->mInstrumentationAppLibraryDir:Ljava/lang/String;
 
+    .line 4105
     move-object/from16 v0, v18
 
     iget-object v2, v0, Landroid/content/pm/InstrumentationInfo;->packageName:Ljava/lang/String;
@@ -2243,6 +2470,7 @@
 
     iput-object v2, v0, Landroid/app/ActivityThread;->mInstrumentationAppPackage:Ljava/lang/String;
 
+    .line 4106
     move-object/from16 v0, p1
 
     iget-object v2, v0, Landroid/app/ActivityThread$AppBindData;->info:Landroid/app/LoadedApk;
@@ -2255,6 +2483,7 @@
 
     iput-object v2, v0, Landroid/app/ActivityThread;->mInstrumentedAppDir:Ljava/lang/String;
 
+    .line 4107
     move-object/from16 v0, p1
 
     iget-object v2, v0, Landroid/app/ActivityThread$AppBindData;->info:Landroid/app/LoadedApk;
@@ -2267,10 +2496,12 @@
 
     iput-object v2, v0, Landroid/app/ActivityThread;->mInstrumentedAppLibraryDir:Ljava/lang/String;
 
+    .line 4109
     new-instance v3, Landroid/content/pm/ApplicationInfo;
 
     invoke-direct {v3}, Landroid/content/pm/ApplicationInfo;-><init>()V
 
+    .line 4110
     .local v3, instrApp:Landroid/content/pm/ApplicationInfo;
     move-object/from16 v0, v18
 
@@ -2278,30 +2509,35 @@
 
     iput-object v2, v3, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
+    .line 4111
     move-object/from16 v0, v18
 
     iget-object v2, v0, Landroid/content/pm/InstrumentationInfo;->sourceDir:Ljava/lang/String;
 
     iput-object v2, v3, Landroid/content/pm/ApplicationInfo;->sourceDir:Ljava/lang/String;
 
+    .line 4112
     move-object/from16 v0, v18
 
     iget-object v2, v0, Landroid/content/pm/InstrumentationInfo;->publicSourceDir:Ljava/lang/String;
 
     iput-object v2, v3, Landroid/content/pm/ApplicationInfo;->publicSourceDir:Ljava/lang/String;
 
+    .line 4113
     move-object/from16 v0, v18
 
     iget-object v2, v0, Landroid/content/pm/InstrumentationInfo;->dataDir:Ljava/lang/String;
 
     iput-object v2, v3, Landroid/content/pm/ApplicationInfo;->dataDir:Ljava/lang/String;
 
+    .line 4114
     move-object/from16 v0, v18
 
     iget-object v2, v0, Landroid/content/pm/InstrumentationInfo;->nativeLibraryDir:Ljava/lang/String;
 
     iput-object v2, v3, Landroid/content/pm/ApplicationInfo;->nativeLibraryDir:Ljava/lang/String;
 
+    .line 4115
     move-object/from16 v0, p1
 
     iget-object v4, v0, Landroid/app/ActivityThread$AppBindData;->compatInfo:Landroid/content/res/CompatibilityInfo;
@@ -2320,11 +2556,13 @@
 
     move-result-object v20
 
+    .line 4117
     .local v20, pi:Landroid/app/LoadedApk;
     new-instance v6, Landroid/app/ContextImpl;
 
     invoke-direct {v6}, Landroid/app/ContextImpl;-><init>()V
 
+    .line 4118
     .local v6, instrContext:Landroid/app/ContextImpl;
     const/4 v2, 0x0
 
@@ -2334,11 +2572,13 @@
 
     invoke-virtual {v6, v0, v2, v1}, Landroid/app/ContextImpl;->init(Landroid/app/LoadedApk;Landroid/os/IBinder;Landroid/app/ActivityThread;)V
 
+    .line 4121
     :try_start_4
     invoke-virtual {v6}, Landroid/app/ContextImpl;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v14
 
+    .line 4122
     .local v14, cl:Ljava/lang/ClassLoader;
     move-object/from16 v0, p1
 
@@ -2364,6 +2604,7 @@
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
 
+    .line 4130
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
@@ -2390,6 +2631,7 @@
 
     invoke-virtual/range {v4 .. v9}, Landroid/app/Instrumentation;->init(Landroid/app/ActivityThread;Landroid/content/Context;Landroid/content/Context;Landroid/content/ComponentName;Landroid/app/IInstrumentationWatcher;)V
 
+    .line 4133
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/app/ActivityThread;->mProfiler:Landroid/app/ActivityThread$Profiler;
@@ -2412,6 +2654,7 @@
 
     if-nez v2, :cond_b
 
+    .line 4135
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/app/ActivityThread;->mProfiler:Landroid/app/ActivityThread$Profiler;
@@ -2420,6 +2663,7 @@
 
     iput-boolean v4, v2, Landroid/app/ActivityThread$Profiler;->handlingProfiling:Z
 
+    .line 4136
     new-instance v17, Ljava/io/File;
 
     move-object/from16 v0, p0
@@ -2432,6 +2676,7 @@
 
     invoke-direct {v0, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
+    .line 4137
     .local v17, file:Ljava/io/File;
     invoke-virtual/range {v17 .. v17}, Ljava/io/File;->getParentFile()Ljava/io/File;
 
@@ -2439,6 +2684,7 @@
 
     invoke-virtual {v2}, Ljava/io/File;->mkdirs()Z
 
+    .line 4138
     invoke-virtual/range {v17 .. v17}, Ljava/io/File;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -2447,6 +2693,7 @@
 
     invoke-static {v2, v4}, Landroid/os/Debug;->startMethodTracing(Ljava/lang/String;I)V
 
+    .line 4145
     .end local v3           #instrApp:Landroid/content/pm/ApplicationInfo;
     .end local v6           #instrContext:Landroid/app/ContextImpl;
     .end local v14           #cl:Ljava/lang/ClassLoader;
@@ -2467,17 +2714,20 @@
 
     if-eqz v2, :cond_c
 
+    .line 4146
     invoke-static {}, Ldalvik/system/VMRuntime;->getRuntime()Ldalvik/system/VMRuntime;
 
     move-result-object v2
 
     invoke-virtual {v2}, Ldalvik/system/VMRuntime;->clearGrowthLimit()V
 
+    .line 4152
     :cond_c
     invoke-static {}, Landroid/os/StrictMode;->allowThreadDiskWrites()Landroid/os/StrictMode$ThreadPolicy;
 
     move-result-object v23
 
+    .line 4156
     .local v23, savedPolicy:Landroid/os/StrictMode$ThreadPolicy;
     :try_start_5
     move-object/from16 v0, p1
@@ -2494,32 +2744,38 @@
 
     move-result-object v10
 
+    .line 4157
     .local v10, app:Landroid/app/Application;
     move-object/from16 v0, p0
 
     iput-object v10, v0, Landroid/app/ActivityThread;->mInitialApplication:Landroid/app/Application;
 
+    .line 4161
     move-object/from16 v0, p1
 
     iget-boolean v2, v0, Landroid/app/ActivityThread$AppBindData;->restrictedBackupMode:Z
 
     if-nez v2, :cond_d
 
+    .line 4162
     move-object/from16 v0, p1
 
     iget-object v0, v0, Landroid/app/ActivityThread$AppBindData;->providers:Ljava/util/List;
 
     move-object/from16 v21, v0
 
+    .line 4163
     .local v21, providers:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ProviderInfo;>;"
     if-eqz v21, :cond_d
 
+    .line 4164
     move-object/from16 v0, p0
 
     move-object/from16 v1, v21
 
     invoke-direct {v0, v10, v1}, Landroid/app/ActivityThread;->installContentProviders(Landroid/content/Context;Ljava/util/List;)V
 
+    .line 4167
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/app/ActivityThread;->mH:Landroid/app/ActivityThread$H;
@@ -2532,6 +2788,7 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
+    .line 4174
     .end local v21           #providers:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ProviderInfo;>;"
     :cond_d
     :try_start_6
@@ -2548,6 +2805,7 @@
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_1
 
+    .line 4183
     :try_start_7
     move-object/from16 v0, p0
 
@@ -2558,11 +2816,14 @@
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_2
 
+    .line 4192
     :cond_e
     invoke-static/range {v23 .. v23}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
 
+    .line 4194
     return-void
 
+    .line 4124
     .end local v10           #app:Landroid/app/Application;
     .end local v23           #savedPolicy:Landroid/os/StrictMode$ThreadPolicy;
     .restart local v3       #instrApp:Landroid/content/pm/ApplicationInfo;
@@ -2572,6 +2833,7 @@
     :catch_0
     move-exception v16
 
+    .line 4125
     .local v16, e:Ljava/lang/Exception;
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -2617,6 +2879,7 @@
 
     throw v2
 
+    .line 4142
     .end local v3           #instrApp:Landroid/content/pm/ApplicationInfo;
     .end local v6           #instrContext:Landroid/app/ContextImpl;
     .end local v16           #e:Ljava/lang/Exception;
@@ -2633,11 +2896,13 @@
 
     goto/16 :goto_4
 
+    .line 4176
     .restart local v10       #app:Landroid/app/Application;
     .restart local v23       #savedPolicy:Landroid/os/StrictMode$ThreadPolicy;
     :catch_1
     move-exception v16
 
+    .line 4177
     .restart local v16       #e:Ljava/lang/Exception;
     :try_start_8
     new-instance v2, Ljava/lang/RuntimeException;
@@ -2686,6 +2951,7 @@
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
+    .line 4192
     .end local v10           #app:Landroid/app/Application;
     .end local v16           #e:Ljava/lang/Exception;
     :catchall_0
@@ -2695,10 +2961,12 @@
 
     throw v2
 
+    .line 4184
     .restart local v10       #app:Landroid/app/Application;
     :catch_2
     move-exception v16
 
+    .line 4185
     .restart local v16       #e:Ljava/lang/Exception;
     :try_start_9
     move-object/from16 v0, p0
@@ -2713,6 +2981,7 @@
 
     if-nez v2, :cond_e
 
+    .line 4186
     new-instance v2, Ljava/lang/RuntimeException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2763,6 +3032,7 @@
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_0
 
+    .line 4095
     .end local v10           #app:Landroid/app/Application;
     .end local v16           #e:Ljava/lang/Exception;
     .end local v23           #savedPolicy:Landroid/os/StrictMode$ThreadPolicy;
@@ -2772,6 +3042,7 @@
 
     goto/16 :goto_3
 
+    .line 4087
     .end local v18           #ii:Landroid/content/pm/InstrumentationInfo;
     .restart local v24       #service:Landroid/net/IConnectivityManager;
     :catch_4
@@ -2779,6 +3050,7 @@
 
     goto/16 :goto_2
 
+    .line 4061
     .end local v12           #b:Landroid/os/IBinder;
     .end local v24           #service:Landroid/net/IConnectivityManager;
     .restart local v19       #mgr:Landroid/app/IActivityManager;
@@ -2787,6 +3059,7 @@
 
     goto/16 :goto_1
 
+    .line 4054
     :catch_6
     move-exception v2
 
@@ -2798,6 +3071,7 @@
     .parameter "data"
 
     .prologue
+    .line 2391
     iget-object v3, p0, Landroid/app/ActivityThread;->mServices:Ljava/util/HashMap;
 
     iget-object v4, p1, Landroid/app/ActivityThread$BindServiceData;->token:Landroid/os/IBinder;
@@ -2808,9 +3082,11 @@
 
     check-cast v2, Landroid/app/Service;
 
+    .line 2394
     .local v2, s:Landroid/app/Service;
     if-eqz v2, :cond_0
 
+    .line 2396
     :try_start_0
     iget-object v3, p1, Landroid/app/ActivityThread$BindServiceData;->intent:Landroid/content/Intent;
 
@@ -2822,17 +3098,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
+    .line 2398
     :try_start_1
     iget-boolean v3, p1, Landroid/app/ActivityThread$BindServiceData;->rebind:Z
 
     if-nez v3, :cond_1
 
+    .line 2399
     iget-object v3, p1, Landroid/app/ActivityThread$BindServiceData;->intent:Landroid/content/Intent;
 
     invoke-virtual {v2, v3}, Landroid/app/Service;->onBind(Landroid/content/Intent;)Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 2400
     .local v0, binder:Landroid/os/IBinder;
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -2844,19 +3123,23 @@
 
     invoke-interface {v3, v4, v5, v0}, Landroid/app/IActivityManager;->publishService(Landroid/os/IBinder;Landroid/content/Intent;Landroid/os/IBinder;)V
 
+    .line 2407
     .end local v0           #binder:Landroid/os/IBinder;
     :goto_0
     invoke-virtual {p0}, Landroid/app/ActivityThread;->ensureJitEnabled()V
 
+    .line 2418
     :cond_0
     :goto_1
     return-void
 
+    .line 2403
     :cond_1
     iget-object v3, p1, Landroid/app/ActivityThread$BindServiceData;->intent:Landroid/content/Intent;
 
     invoke-virtual {v2, v3}, Landroid/app/Service;->onRebind(Landroid/content/Intent;)V
 
+    .line 2404
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v3
@@ -2876,14 +3159,17 @@
 
     goto :goto_0
 
+    .line 2408
     :catch_0
     move-exception v3
 
     goto :goto_1
 
+    .line 2410
     :catch_1
     move-exception v1
 
+    .line 2411
     .local v1, e:Ljava/lang/Exception;
     iget-object v3, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
@@ -2893,6 +3179,7 @@
 
     if-nez v3, :cond_0
 
+    .line 2412
     new-instance v3, Ljava/lang/RuntimeException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2951,8 +3238,10 @@
     .prologue
     const/4 v12, 0x3
 
+    .line 2264
     invoke-virtual {p0}, Landroid/app/ActivityThread;->unscheduleGcIdler()V
 
+    .line 2267
     iget-object v9, p1, Landroid/app/ActivityThread$CreateBackupAgentData;->appInfo:Landroid/content/pm/ApplicationInfo;
 
     iget-object v10, p1, Landroid/app/ActivityThread$CreateBackupAgentData;->compatInfo:Landroid/content/res/CompatibilityInfo;
@@ -2961,9 +3250,11 @@
 
     move-result-object v7
 
+    .line 2268
     .local v7, packageInfo:Landroid/app/LoadedApk;
     iget-object v8, v7, Landroid/app/LoadedApk;->mPackageName:Ljava/lang/String;
 
+    .line 2269
     .local v8, packageName:Ljava/lang/String;
     iget-object v9, p0, Landroid/app/ActivityThread;->mBackupAgents:Ljava/util/HashMap;
 
@@ -2973,6 +3264,7 @@
 
     if-eqz v9, :cond_0
 
+    .line 2270
     const-string v9, "ActivityThread"
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -3001,17 +3293,21 @@
 
     invoke-static {v9, v10}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2322
     :goto_0
     return-void
 
+    .line 2275
     :cond_0
     const/4 v1, 0x0
 
+    .line 2276
     .local v1, agent:Landroid/app/backup/BackupAgent;
     iget-object v9, p1, Landroid/app/ActivityThread$CreateBackupAgentData;->appInfo:Landroid/content/pm/ApplicationInfo;
 
     iget-object v4, v9, Landroid/content/pm/ApplicationInfo;->backupAgentName:Ljava/lang/String;
 
+    .line 2279
     .local v4, classname:Ljava/lang/String;
     if-nez v4, :cond_2
 
@@ -3025,18 +3321,22 @@
 
     if-ne v9, v12, :cond_2
 
+    .line 2281
     :cond_1
     const-string v4, "android.app.backup.FullBackupAgent"
 
+    .line 2285
     :cond_2
     const/4 v2, 0x0
 
+    .line 2289
     .local v2, binder:Landroid/os/IBinder;
     :try_start_0
     invoke-virtual {v7}, Landroid/app/LoadedApk;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v3
 
+    .line 2290
     .local v3, cl:Ljava/lang/ClassLoader;
     invoke-virtual {v3, v4}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
@@ -3052,31 +3352,39 @@
 
     move-object v1, v0
 
+    .line 2293
     new-instance v5, Landroid/app/ContextImpl;
 
     invoke-direct {v5}, Landroid/app/ContextImpl;-><init>()V
 
+    .line 2294
     .local v5, context:Landroid/app/ContextImpl;
     const/4 v9, 0x0
 
     invoke-virtual {v5, v7, v9, p0}, Landroid/app/ContextImpl;->init(Landroid/app/LoadedApk;Landroid/os/IBinder;Landroid/app/ActivityThread;)V
 
+    .line 2295
     invoke-virtual {v5, v1}, Landroid/app/ContextImpl;->setOuterContext(Landroid/content/Context;)V
 
+    .line 2296
     invoke-virtual {v1, v5}, Landroid/app/backup/BackupAgent;->attach(Landroid/content/Context;)V
 
+    .line 2298
     invoke-virtual {v1}, Landroid/app/backup/BackupAgent;->onCreate()V
 
+    .line 2299
     invoke-virtual {v1}, Landroid/app/backup/BackupAgent;->onBind()Landroid/os/IBinder;
 
     move-result-object v2
 
+    .line 2300
     iget-object v9, p0, Landroid/app/ActivityThread;->mBackupAgents:Ljava/util/HashMap;
 
     invoke-virtual {v9, v8, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
+    .line 2314
     .end local v3           #cl:Ljava/lang/ClassLoader;
     .end local v5           #context:Landroid/app/ContextImpl;
     :cond_3
@@ -3092,14 +3400,17 @@
 
     goto :goto_0
 
+    .line 2315
     :catch_0
     move-exception v9
 
     goto :goto_0
 
+    .line 2301
     :catch_1
     move-exception v6
 
+    .line 2304
     .local v6, e:Ljava/lang/Exception;
     :try_start_2
     const-string v9, "ActivityThread"
@@ -3124,6 +3435,7 @@
 
     invoke-static {v9, v10}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2305
     iget v9, p1, Landroid/app/ActivityThread$CreateBackupAgentData;->backupMode:I
 
     const/4 v10, 0x2
@@ -3134,14 +3446,17 @@
 
     if-eq v9, v12, :cond_3
 
+    .line 2307
     throw v6
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
+    .line 2318
     .end local v6           #e:Ljava/lang/Exception;
     :catch_2
     move-exception v6
 
+    .line 2319
     .restart local v6       #e:Ljava/lang/Exception;
     new-instance v9, Ljava/lang/RuntimeException;
 
@@ -3187,8 +3502,10 @@
     .parameter "data"
 
     .prologue
+    .line 2347
     invoke-virtual {p0}, Landroid/app/ActivityThread;->unscheduleGcIdler()V
 
+    .line 2349
     iget-object v3, p1, Landroid/app/ActivityThread$CreateServiceData;->info:Landroid/content/pm/ServiceInfo;
 
     iget-object v3, v3, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
@@ -3199,15 +3516,18 @@
 
     move-result-object v10
 
+    .line 2351
     .local v10, packageInfo:Landroid/app/LoadedApk;
     const/4 v1, 0x0
 
+    .line 2353
     .local v1, service:Landroid/app/Service;
     :try_start_0
     invoke-virtual {v10}, Landroid/app/LoadedApk;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v8
 
+    .line 2354
     .local v8, cl:Ljava/lang/ClassLoader;
     iget-object v3, p1, Landroid/app/ActivityThread$CreateServiceData;->info:Landroid/content/pm/ServiceInfo;
 
@@ -3229,6 +3549,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2366
     .end local v8           #cl:Ljava/lang/ClassLoader;
     :cond_0
     :try_start_1
@@ -3236,11 +3557,13 @@
 
     invoke-direct {v2}, Landroid/app/ContextImpl;-><init>()V
 
+    .line 2367
     .local v2, context:Landroid/app/ContextImpl;
     const/4 v3, 0x0
 
     invoke-virtual {v2, v10, v3, p0}, Landroid/app/ContextImpl;->init(Landroid/app/LoadedApk;Landroid/os/IBinder;Landroid/app/ActivityThread;)V
 
+    .line 2369
     const/4 v3, 0x0
 
     iget-object v4, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
@@ -3249,9 +3572,11 @@
 
     move-result-object v6
 
+    .line 2370
     .local v6, app:Landroid/app/Application;
     invoke-virtual {v2, v1}, Landroid/app/ContextImpl;->setOuterContext(Landroid/content/Context;)V
 
+    .line 2371
     iget-object v3, p1, Landroid/app/ActivityThread$CreateServiceData;->info:Landroid/content/pm/ServiceInfo;
 
     iget-object v4, v3, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
@@ -3266,8 +3591,10 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/app/Service;->attach(Landroid/content/Context;Landroid/app/ActivityThread;Ljava/lang/String;Landroid/os/IBinder;Landroid/app/Application;Ljava/lang/Object;)V
 
+    .line 2373
     invoke-virtual {v1}, Landroid/app/Service;->onCreate()V
 
+    .line 2374
     iget-object v3, p0, Landroid/app/ActivityThread;->mServices:Ljava/util/HashMap;
 
     iget-object v4, p1, Landroid/app/ActivityThread$CreateServiceData;->token:Landroid/os/IBinder;
@@ -3276,6 +3603,7 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
+    .line 2376
     :try_start_2
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -3294,15 +3622,18 @@
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
+    .line 2388
     .end local v2           #context:Landroid/app/ContextImpl;
     .end local v6           #app:Landroid/app/Application;
     :cond_1
     :goto_0
     return-void
 
+    .line 2355
     :catch_0
     move-exception v9
 
+    .line 2356
     .local v9, e:Ljava/lang/Exception;
     iget-object v3, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
@@ -3312,6 +3643,7 @@
 
     if-nez v3, :cond_0
 
+    .line 2357
     new-instance v3, Ljava/lang/RuntimeException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -3354,10 +3686,12 @@
 
     throw v3
 
+    .line 2381
     .end local v9           #e:Ljava/lang/Exception;
     :catch_1
     move-exception v9
 
+    .line 2382
     .restart local v9       #e:Ljava/lang/Exception;
     iget-object v3, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
@@ -3367,6 +3701,7 @@
 
     if-nez v3, :cond_1
 
+    .line 2383
     new-instance v3, Ljava/lang/RuntimeException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -3409,6 +3744,7 @@
 
     throw v3
 
+    .line 2378
     .end local v9           #e:Ljava/lang/Exception;
     .restart local v2       #context:Landroid/app/ContextImpl;
     .restart local v6       #app:Landroid/app/Application;
@@ -3426,46 +3762,56 @@
     .parameter "getNonConfigInstance"
 
     .prologue
+    .line 3323
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/app/ActivityThread;->performDestroyActivity(Landroid/os/IBinder;ZIZ)Landroid/app/ActivityThread$ActivityClientRecord;
 
     move-result-object v1
 
+    .line 3325
     .local v1, r:Landroid/app/ActivityThread$ActivityClientRecord;
     if-eqz v1, :cond_5
 
+    .line 3326
     invoke-static {v1}, Landroid/app/ActivityThread;->cleanUpPendingRemoveWindows(Landroid/app/ActivityThread$ActivityClientRecord;)V
 
+    .line 3327
     iget-object v5, v1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v5}, Landroid/app/Activity;->getWindowManager()Landroid/view/WindowManager;
 
     move-result-object v3
 
+    .line 3328
     .local v3, wm:Landroid/view/WindowManager;
     iget-object v5, v1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget-object v2, v5, Landroid/app/Activity;->mDecor:Landroid/view/View;
 
+    .line 3329
     .local v2, v:Landroid/view/View;
     if-eqz v2, :cond_3
 
+    .line 3330
     iget-object v5, v1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget-boolean v5, v5, Landroid/app/Activity;->mVisibleFromServer:Z
 
     if-eqz v5, :cond_0
 
+    .line 3331
     iget v5, p0, Landroid/app/ActivityThread;->mNumVisibleActivities:I
 
     add-int/lit8 v5, v5, -0x1
 
     iput v5, p0, Landroid/app/ActivityThread;->mNumVisibleActivities:I
 
+    .line 3333
     :cond_0
     invoke-virtual {v2}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
 
     move-result-object v4
 
+    .line 3334
     .local v4, wtoken:Landroid/os/IBinder;
     iget-object v5, v1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
@@ -3473,14 +3819,18 @@
 
     if-eqz v5, :cond_1
 
+    .line 3335
     iget-boolean v5, v1, Landroid/app/ActivityThread$ActivityClientRecord;->onlyLocalRequest:Z
 
     if-eqz v5, :cond_7
 
+    .line 3338
     iput-object v2, v1, Landroid/app/ActivityThread$ActivityClientRecord;->mPendingRemoveWindow:Landroid/view/View;
 
+    .line 3339
     iput-object v3, v1, Landroid/app/ActivityThread$ActivityClientRecord;->mPendingRemoveWindowManager:Landroid/view/WindowManager;
 
+    .line 3344
     :cond_1
     :goto_0
     if-eqz v4, :cond_2
@@ -3489,6 +3839,7 @@
 
     if-nez v5, :cond_2
 
+    .line 3345
     invoke-static {}, Landroid/view/WindowManagerImpl;->getDefault()Landroid/view/WindowManagerImpl;
 
     move-result-object v5
@@ -3507,6 +3858,7 @@
 
     invoke-virtual {v5, v4, v6, v7}, Landroid/view/WindowManagerImpl;->closeAll(Landroid/os/IBinder;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 3348
     :cond_2
     iget-object v5, v1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
@@ -3514,12 +3866,14 @@
 
     iput-object v6, v5, Landroid/app/Activity;->mDecor:Landroid/view/View;
 
+    .line 3350
     .end local v4           #wtoken:Landroid/os/IBinder;
     :cond_3
     iget-object v5, v1, Landroid/app/ActivityThread$ActivityClientRecord;->mPendingRemoveWindow:Landroid/view/View;
 
     if-nez v5, :cond_4
 
+    .line 3357
     invoke-static {}, Landroid/view/WindowManagerImpl;->getDefault()Landroid/view/WindowManagerImpl;
 
     move-result-object v5
@@ -3538,6 +3892,7 @@
 
     invoke-virtual {v5, p1, v6, v7}, Landroid/view/WindowManagerImpl;->closeAll(Landroid/os/IBinder;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 3365
     :cond_4
     iget-object v5, v1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
@@ -3545,11 +3900,13 @@
 
     move-result-object v0
 
+    .line 3366
     .local v0, c:Landroid/content/Context;
     instance-of v5, v0, Landroid/app/ContextImpl;
 
     if-eqz v5, :cond_5
 
+    .line 3367
     check-cast v0, Landroid/app/ContextImpl;
 
     .end local v0           #c:Landroid/content/Context;
@@ -3567,11 +3924,13 @@
 
     invoke-virtual {v0, v5, v6}, Landroid/app/ContextImpl;->scheduleFinalCleanup(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 3371
     .end local v2           #v:Landroid/view/View;
     .end local v3           #wm:Landroid/view/WindowManager;
     :cond_5
     if-eqz p2, :cond_6
 
+    .line 3373
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -3581,10 +3940,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 3378
     :cond_6
     :goto_1
     return-void
 
+    .line 3341
     .restart local v2       #v:Landroid/view/View;
     .restart local v3       #wm:Landroid/view/WindowManager;
     .restart local v4       #wtoken:Landroid/os/IBinder;
@@ -3593,6 +3954,7 @@
 
     goto :goto_0
 
+    .line 3374
     .end local v2           #v:Landroid/view/View;
     .end local v3           #wm:Landroid/view/WindowManager;
     .end local v4           #wtoken:Landroid/os/IBinder;
@@ -3607,6 +3969,7 @@
     .parameter "data"
 
     .prologue
+    .line 2328
     iget-object v4, p1, Landroid/app/ActivityThread$CreateBackupAgentData;->appInfo:Landroid/content/pm/ApplicationInfo;
 
     iget-object v5, p1, Landroid/app/ActivityThread$CreateBackupAgentData;->compatInfo:Landroid/content/res/CompatibilityInfo;
@@ -3615,9 +3978,11 @@
 
     move-result-object v2
 
+    .line 2329
     .local v2, packageInfo:Landroid/app/LoadedApk;
     iget-object v3, v2, Landroid/app/LoadedApk;->mPackageName:Ljava/lang/String;
 
+    .line 2330
     .local v3, packageName:Ljava/lang/String;
     iget-object v4, p0, Landroid/app/ActivityThread;->mBackupAgents:Ljava/util/HashMap;
 
@@ -3627,25 +3992,31 @@
 
     check-cast v0, Landroid/app/backup/BackupAgent;
 
+    .line 2331
     .local v0, agent:Landroid/app/backup/BackupAgent;
     if-eqz v0, :cond_0
 
+    .line 2333
     :try_start_0
     invoke-virtual {v0}, Landroid/app/backup/BackupAgent;->onDestroy()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2338
     :goto_0
     iget-object v4, p0, Landroid/app/ActivityThread;->mBackupAgents:Ljava/util/HashMap;
 
     invoke-virtual {v4, v3}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 2342
     :goto_1
     return-void
 
+    .line 2334
     :catch_0
     move-exception v1
 
+    .line 2335
     .local v1, e:Ljava/lang/Exception;
     const-string v4, "ActivityThread"
 
@@ -3671,10 +4042,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 2336
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_0
 
+    .line 2340
     .end local v1           #e:Ljava/lang/Exception;
     :cond_0
     const-string v4, "ActivityThread"
@@ -3707,10 +4080,12 @@
     .parameter "info"
 
     .prologue
+    .line 2462
     invoke-static {}, Landroid/os/StrictMode;->allowThreadDiskWrites()Landroid/os/StrictMode$ThreadPolicy;
 
     move-result-object v0
 
+    .line 2464
     .local v0, oldPolicy:Landroid/os/StrictMode$ThreadPolicy;
     :try_start_0
     iget-object v3, p0, Landroid/app/ActivityThread;->mActivities:Ljava/util/HashMap;
@@ -3723,6 +4098,7 @@
 
     check-cast v2, Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 2465
     .local v2, r:Landroid/app/ActivityThread$ActivityClientRecord;
     if-eqz v2, :cond_0
 
@@ -3730,6 +4106,7 @@
 
     if-eqz v3, :cond_0
 
+    .line 2466
     new-instance v1, Ljava/io/PrintWriter;
 
     new-instance v3, Ljava/io/FileOutputStream;
@@ -3744,6 +4121,7 @@
 
     invoke-direct {v1, v3}, Ljava/io/PrintWriter;-><init>(Ljava/io/OutputStream;)V
 
+    .line 2467
     .local v1, pw:Ljava/io/PrintWriter;
     iget-object v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
@@ -3759,20 +4137,25 @@
 
     invoke-virtual {v3, v4, v5, v1, v6}, Landroid/app/Activity;->dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
+    .line 2468
     invoke-virtual {v1}, Ljava/io/PrintWriter;->flush()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 2471
     .end local v1           #pw:Ljava/io/PrintWriter;
     :cond_0
     iget-object v3, p1, Landroid/app/ActivityThread$DumpComponentInfo;->fd:Landroid/os/ParcelFileDescriptor;
 
     invoke-static {v3}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
+    .line 2472
     invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
 
+    .line 2474
     return-void
 
+    .line 2471
     .end local v2           #r:Landroid/app/ActivityThread$ActivityClientRecord;
     :catchall_0
     move-exception v3
@@ -3781,8 +4164,10 @@
 
     invoke-static {v4}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
+    .line 2472
     invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
 
+    .line 2471
     throw v3
 .end method
 
@@ -3792,8 +4177,10 @@
     .parameter "dhd"
 
     .prologue
+    .line 3838
     if-eqz p0, :cond_0
 
+    .line 3840
     :try_start_0
     iget-object v1, p1, Landroid/app/ActivityThread$DumpHeapData;->path:Ljava/lang/String;
 
@@ -3808,6 +4195,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 3846
     :try_start_1
     iget-object v1, p1, Landroid/app/ActivityThread$DumpHeapData;->fd:Landroid/os/ParcelFileDescriptor;
 
@@ -3815,12 +4203,15 @@
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_3
 
+    .line 3854
     :goto_0
     return-void
 
+    .line 3841
     :catch_0
     move-exception v0
 
+    .line 3842
     .local v0, e:Ljava/io/IOException;
     :try_start_2
     const-string v1, "ActivityThread"
@@ -3855,6 +4246,7 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
+    .line 3846
     :try_start_3
     iget-object v1, p1, Landroid/app/ActivityThread$DumpHeapData;->fd:Landroid/os/ParcelFileDescriptor;
 
@@ -3864,9 +4256,11 @@
 
     goto :goto_0
 
+    .line 3847
     :catch_1
     move-exception v0
 
+    .line 3848
     const-string v1, "ActivityThread"
 
     const-string v2, "Failure closing profile fd"
@@ -3876,10 +4270,12 @@
 
     goto :goto_0
 
+    .line 3845
     .end local v0           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v1
 
+    .line 3846
     :try_start_4
     iget-object v2, p1, Landroid/app/ActivityThread$DumpHeapData;->fd:Landroid/os/ParcelFileDescriptor;
 
@@ -3887,9 +4283,11 @@
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
 
+    .line 3845
     :goto_2
     throw v1
 
+    .line 3852
     :cond_0
     iget-object v1, p1, Landroid/app/ActivityThread$DumpHeapData;->fd:Landroid/os/ParcelFileDescriptor;
 
@@ -3901,9 +4299,11 @@
 
     goto :goto_0
 
+    .line 3847
     :catch_2
     move-exception v0
 
+    .line 3848
     .restart local v0       #e:Ljava/io/IOException;
     const-string v2, "ActivityThread"
 
@@ -3913,10 +4313,12 @@
 
     goto :goto_2
 
+    .line 3847
     .end local v0           #e:Ljava/io/IOException;
     :catch_3
     move-exception v0
 
+    .line 3848
     .restart local v0       #e:Ljava/io/IOException;
     const-string v1, "ActivityThread"
 
@@ -3930,10 +4332,12 @@
     .parameter "info"
 
     .prologue
+    .line 2477
     invoke-static {}, Landroid/os/StrictMode;->allowThreadDiskWrites()Landroid/os/StrictMode$ThreadPolicy;
 
     move-result-object v0
 
+    .line 2479
     .local v0, oldPolicy:Landroid/os/StrictMode$ThreadPolicy;
     :try_start_0
     iget-object v3, p0, Landroid/app/ActivityThread;->mLocalProviders:Ljava/util/HashMap;
@@ -3946,6 +4350,7 @@
 
     check-cast v2, Landroid/app/ActivityThread$ProviderClientRecord;
 
+    .line 2480
     .local v2, r:Landroid/app/ActivityThread$ProviderClientRecord;
     if-eqz v2, :cond_0
 
@@ -3953,6 +4358,7 @@
 
     if-eqz v3, :cond_0
 
+    .line 2481
     new-instance v1, Ljava/io/PrintWriter;
 
     new-instance v3, Ljava/io/FileOutputStream;
@@ -3967,6 +4373,7 @@
 
     invoke-direct {v1, v3}, Ljava/io/PrintWriter;-><init>(Ljava/io/OutputStream;)V
 
+    .line 2482
     .local v1, pw:Ljava/io/PrintWriter;
     iget-object v3, v2, Landroid/app/ActivityThread$ProviderClientRecord;->mLocalProvider:Landroid/content/ContentProvider;
 
@@ -3980,20 +4387,25 @@
 
     invoke-virtual {v3, v4, v1, v5}, Landroid/content/ContentProvider;->dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
+    .line 2483
     invoke-virtual {v1}, Ljava/io/PrintWriter;->flush()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 2486
     .end local v1           #pw:Ljava/io/PrintWriter;
     :cond_0
     iget-object v3, p1, Landroid/app/ActivityThread$DumpComponentInfo;->fd:Landroid/os/ParcelFileDescriptor;
 
     invoke-static {v3}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
+    .line 2487
     invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
 
+    .line 2489
     return-void
 
+    .line 2486
     .end local v2           #r:Landroid/app/ActivityThread$ProviderClientRecord;
     :catchall_0
     move-exception v3
@@ -4002,8 +4414,10 @@
 
     invoke-static {v4}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
+    .line 2487
     invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
 
+    .line 2486
     throw v3
 .end method
 
@@ -4012,10 +4426,12 @@
     .parameter "info"
 
     .prologue
+    .line 2447
     invoke-static {}, Landroid/os/StrictMode;->allowThreadDiskWrites()Landroid/os/StrictMode$ThreadPolicy;
 
     move-result-object v0
 
+    .line 2449
     .local v0, oldPolicy:Landroid/os/StrictMode$ThreadPolicy;
     :try_start_0
     iget-object v3, p0, Landroid/app/ActivityThread;->mServices:Ljava/util/HashMap;
@@ -4028,9 +4444,11 @@
 
     check-cast v2, Landroid/app/Service;
 
+    .line 2450
     .local v2, s:Landroid/app/Service;
     if-eqz v2, :cond_0
 
+    .line 2451
     new-instance v1, Ljava/io/PrintWriter;
 
     new-instance v3, Ljava/io/FileOutputStream;
@@ -4045,6 +4463,7 @@
 
     invoke-direct {v1, v3}, Ljava/io/PrintWriter;-><init>(Ljava/io/OutputStream;)V
 
+    .line 2452
     .local v1, pw:Ljava/io/PrintWriter;
     iget-object v3, p1, Landroid/app/ActivityThread$DumpComponentInfo;->fd:Landroid/os/ParcelFileDescriptor;
 
@@ -4056,20 +4475,25 @@
 
     invoke-virtual {v2, v3, v1, v4}, Landroid/app/Service;->dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
+    .line 2453
     invoke-virtual {v1}, Ljava/io/PrintWriter;->flush()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 2456
     .end local v1           #pw:Ljava/io/PrintWriter;
     :cond_0
     iget-object v3, p1, Landroid/app/ActivityThread$DumpComponentInfo;->fd:Landroid/os/ParcelFileDescriptor;
 
     invoke-static {v3}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
+    .line 2457
     invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
 
+    .line 2459
     return-void
 
+    .line 2456
     .end local v2           #s:Landroid/app/Service;
     :catchall_0
     move-exception v3
@@ -4078,8 +4502,10 @@
 
     invoke-static {v4}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
+    .line 2457
     invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
 
+    .line 2456
     throw v3
 .end method
 
@@ -4093,12 +4519,15 @@
 
     const/4 v6, 0x0
 
+    .line 2081
     invoke-virtual {p0}, Landroid/app/ActivityThread;->unscheduleGcIdler()V
 
+    .line 2083
     iget-object v3, p1, Landroid/app/ActivityThread$ActivityClientRecord;->profileFd:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v3, :cond_0
 
+    .line 2084
     iget-object v3, p0, Landroid/app/ActivityThread;->mProfiler:Landroid/app/ActivityThread$Profiler;
 
     iget-object v4, p1, Landroid/app/ActivityThread$ActivityClientRecord;->profileFile:Ljava/lang/String;
@@ -4107,26 +4536,32 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/app/ActivityThread$Profiler;->setProfiler(Ljava/lang/String;Landroid/os/ParcelFileDescriptor;)V
 
+    .line 2085
     iget-object v3, p0, Landroid/app/ActivityThread;->mProfiler:Landroid/app/ActivityThread$Profiler;
 
     invoke-virtual {v3}, Landroid/app/ActivityThread$Profiler;->startProfiling()V
 
+    .line 2086
     iget-object v3, p0, Landroid/app/ActivityThread;->mProfiler:Landroid/app/ActivityThread$Profiler;
 
     iget-boolean v4, p1, Landroid/app/ActivityThread$ActivityClientRecord;->autoStopProfiler:Z
 
     iput-boolean v4, v3, Landroid/app/ActivityThread$Profiler;->autoStopProfiler:Z
 
+    .line 2090
     :cond_0
     invoke-virtual {p0, v7, v7}, Landroid/app/ActivityThread;->handleConfigurationChanged(Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)V
 
+    .line 2094
     invoke-direct {p0, p1, p2}, Landroid/app/ActivityThread;->performLaunchActivity(Landroid/app/ActivityThread$ActivityClientRecord;Landroid/content/Intent;)Landroid/app/Activity;
 
     move-result-object v0
 
+    .line 2096
     .local v0, a:Landroid/app/Activity;
     if-eqz v0, :cond_4
 
+    .line 2097
     new-instance v3, Landroid/content/res/Configuration;
 
     iget-object v4, p0, Landroid/app/ActivityThread;->mConfiguration:Landroid/content/res/Configuration;
@@ -4135,8 +4570,10 @@
 
     iput-object v3, p1, Landroid/app/ActivityThread$ActivityClientRecord;->createdConfig:Landroid/content/res/Configuration;
 
+    .line 2098
     iget-object v2, p1, Landroid/app/ActivityThread$ActivityClientRecord;->state:Landroid/os/Bundle;
 
+    .line 2099
     .local v2, oldState:Landroid/os/Bundle;
     iget-object v3, p1, Landroid/app/ActivityThread$ActivityClientRecord;->token:Landroid/os/IBinder;
 
@@ -4144,6 +4581,7 @@
 
     invoke-virtual {p0, v3, v6, v4}, Landroid/app/ActivityThread;->handleResumeActivity(Landroid/os/IBinder;ZZ)V
 
+    .line 2101
     iget-object v3, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget-boolean v3, v3, Landroid/app/Activity;->mFinished:Z
@@ -4154,6 +4592,7 @@
 
     if-eqz v3, :cond_3
 
+    .line 2112
     :try_start_0
     iget-object v3, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
@@ -4161,20 +4600,24 @@
 
     iput-boolean v4, v3, Landroid/app/Activity;->mCalled:Z
 
+    .line 2113
     iget-object v3, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
     iget-object v4, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v3, v4}, Landroid/app/Instrumentation;->callActivityOnPause(Landroid/app/Activity;)V
 
+    .line 2121
     invoke-virtual {p1}, Landroid/app/ActivityThread$ActivityClientRecord;->isPreHoneycomb()Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
+    .line 2122
     iput-object v2, p1, Landroid/app/ActivityThread$ActivityClientRecord;->state:Landroid/os/Bundle;
 
+    .line 2124
     :cond_1
     iget-object v3, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
@@ -4182,6 +4625,7 @@
 
     if-nez v3, :cond_2
 
+    .line 2125
     new-instance v3, Landroid/app/SuperNotCalledException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -4225,16 +4669,20 @@
     .catch Landroid/app/SuperNotCalledException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
+    .line 2130
     :catch_0
     move-exception v1
 
+    .line 2131
     .local v1, e:Landroid/app/SuperNotCalledException;
     throw v1
 
+    .line 2133
     .end local v1           #e:Landroid/app/SuperNotCalledException;
     :catch_1
     move-exception v1
 
+    .line 2134
     .local v1, e:Ljava/lang/Exception;
     iget-object v3, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
@@ -4246,6 +4694,7 @@
 
     if-nez v3, :cond_2
 
+    .line 2135
     new-instance v3, Ljava/lang/RuntimeException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -4294,17 +4743,20 @@
 
     throw v3
 
+    .line 2141
     .end local v1           #e:Ljava/lang/Exception;
     :cond_2
     const/4 v3, 0x1
 
     iput-boolean v3, p1, Landroid/app/ActivityThread$ActivityClientRecord;->paused:Z
 
+    .line 2153
     .end local v2           #oldState:Landroid/os/Bundle;
     :cond_3
     :goto_0
     return-void
 
+    .line 2147
     :cond_4
     :try_start_1
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
@@ -4323,6 +4775,7 @@
 
     goto :goto_0
 
+    .line 2149
     :catch_2
     move-exception v3
 
@@ -4334,12 +4787,14 @@
     .parameter "data"
 
     .prologue
+    .line 2184
     iget-object v0, p1, Landroid/app/ActivityThread$NewIntentData;->token:Landroid/os/IBinder;
 
     iget-object v1, p1, Landroid/app/ActivityThread$NewIntentData;->intents:Ljava/util/List;
 
     invoke-virtual {p0, v0, v1}, Landroid/app/ActivityThread;->performNewIntents(Landroid/os/IBinder;Ljava/util/List;)V
 
+    .line 2185
     return-void
 .end method
 
@@ -4351,6 +4806,7 @@
     .parameter "configChanges"
 
     .prologue
+    .line 2790
     iget-object v1, p0, Landroid/app/ActivityThread;->mActivities:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -4359,13 +4815,17 @@
 
     check-cast v0, Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 2791
     .local v0, r:Landroid/app/ActivityThread$ActivityClientRecord;
     if-eqz v0, :cond_2
 
+    .line 2793
     if-eqz p3, :cond_0
 
+    .line 2794
     invoke-virtual {p0, v0}, Landroid/app/ActivityThread;->performUserLeavingActivity(Landroid/app/ActivityThread$ActivityClientRecord;)V
 
+    .line 2797
     :cond_0
     iget-object v1, v0, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
@@ -4375,20 +4835,24 @@
 
     iput v2, v1, Landroid/app/Activity;->mConfigChangeFlags:I
 
+    .line 2798
     invoke-virtual {v0}, Landroid/app/ActivityThread$ActivityClientRecord;->isPreHoneycomb()Z
 
     move-result v1
 
     invoke-virtual {p0, p1, p2, v1}, Landroid/app/ActivityThread;->performPauseActivity(Landroid/os/IBinder;ZZ)Landroid/os/Bundle;
 
+    .line 2801
     invoke-virtual {v0}, Landroid/app/ActivityThread$ActivityClientRecord;->isPreHoneycomb()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
+    .line 2802
     invoke-static {}, Landroid/app/QueuedWork;->waitToFinish()V
 
+    .line 2807
     :cond_1
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
@@ -4399,10 +4863,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2811
     :cond_2
     :goto_0
     return-void
 
+    .line 2808
     :catch_0
     move-exception v1
 
@@ -4416,8 +4882,10 @@
     .prologue
     const/4 v11, 0x0
 
+    .line 2201
     invoke-virtual {p0}, Landroid/app/ActivityThread;->unscheduleGcIdler()V
 
+    .line 2203
     iget-object v8, p1, Landroid/app/ActivityThread$ReceiverData;->intent:Landroid/content/Intent;
 
     invoke-virtual {v8}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
@@ -4428,6 +4896,7 @@
 
     move-result-object v2
 
+    .line 2205
     .local v2, component:Ljava/lang/String;
     iget-object v8, p1, Landroid/app/ActivityThread$ReceiverData;->info:Landroid/content/pm/ActivityInfo;
 
@@ -4439,24 +4908,29 @@
 
     move-result-object v6
 
+    .line 2208
     .local v6, packageInfo:Landroid/app/LoadedApk;
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v5
 
+    .line 2212
     .local v5, mgr:Landroid/app/IActivityManager;
     :try_start_0
     invoke-virtual {v6}, Landroid/app/LoadedApk;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v1
 
+    .line 2213
     .local v1, cl:Ljava/lang/ClassLoader;
     iget-object v8, p1, Landroid/app/ActivityThread$ReceiverData;->intent:Landroid/content/Intent;
 
     invoke-virtual {v8, v1}, Landroid/content/Intent;->setExtrasClassLoader(Ljava/lang/ClassLoader;)V
 
+    .line 2214
     invoke-virtual {p1, v1}, Landroid/app/ActivityThread$ReceiverData;->setExtrasClassLoader(Ljava/lang/ClassLoader;)V
 
+    .line 2215
     invoke-virtual {v1, v2}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v8
@@ -4469,6 +4943,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2226
     .local v7, receiver:Landroid/content/BroadcastReceiver;
     const/4 v8, 0x0
 
@@ -4479,6 +4954,7 @@
 
     move-result-object v0
 
+    .line 2236
     .local v0, app:Landroid/app/Application;
     invoke-virtual {v0}, Landroid/app/Application;->getBaseContext()Landroid/content/Context;
 
@@ -4486,6 +4962,7 @@
 
     check-cast v3, Landroid/app/ContextImpl;
 
+    .line 2237
     .local v3, context:Landroid/app/ContextImpl;
     sget-object v8, Landroid/app/ActivityThread;->sCurrentBroadcastIntent:Ljava/lang/ThreadLocal;
 
@@ -4493,8 +4970,10 @@
 
     invoke-virtual {v8, v9}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
+    .line 2238
     invoke-virtual {v7, p1}, Landroid/content/BroadcastReceiver;->setPendingResult(Landroid/content/BroadcastReceiver$PendingResult;)V
 
+    .line 2239
     invoke-virtual {v3}, Landroid/app/ContextImpl;->getReceiverRestrictedContext()Landroid/content/Context;
 
     move-result-object v8
@@ -4506,6 +4985,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
+    .line 2251
     sget-object v8, Landroid/app/ActivityThread;->sCurrentBroadcastIntent:Ljava/lang/ThreadLocal;
 
     .end local v0           #app:Landroid/app/Application;
@@ -4513,25 +4993,31 @@
     :goto_0
     invoke-virtual {v8, v11}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
+    .line 2254
     invoke-virtual {v7}, Landroid/content/BroadcastReceiver;->getPendingResult()Landroid/content/BroadcastReceiver$PendingResult;
 
     move-result-object v8
 
     if-eqz v8, :cond_0
 
+    .line 2255
     invoke-virtual {p1}, Landroid/app/ActivityThread$ReceiverData;->finish()V
 
+    .line 2257
     :cond_0
     return-void
 
+    .line 2216
     .end local v1           #cl:Ljava/lang/ClassLoader;
     .end local v7           #receiver:Landroid/content/BroadcastReceiver;
     :catch_0
     move-exception v4
 
+    .line 2219
     .local v4, e:Ljava/lang/Exception;
     invoke-virtual {p1, v5}, Landroid/app/ActivityThread$ReceiverData;->sendFinished(Landroid/app/IActivityManager;)V
 
+    .line 2220
     new-instance v8, Ljava/lang/RuntimeException;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -4570,16 +5056,19 @@
 
     throw v8
 
+    .line 2241
     .end local v4           #e:Ljava/lang/Exception;
     .restart local v1       #cl:Ljava/lang/ClassLoader;
     .restart local v7       #receiver:Landroid/content/BroadcastReceiver;
     :catch_1
     move-exception v4
 
+    .line 2244
     .restart local v4       #e:Ljava/lang/Exception;
     :try_start_2
     invoke-virtual {p1, v5}, Landroid/app/ActivityThread$ReceiverData;->sendFinished(Landroid/app/IActivityManager;)V
 
+    .line 2245
     iget-object v8, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
     invoke-virtual {v8, v7, v4}, Landroid/app/Instrumentation;->onException(Ljava/lang/Object;Ljava/lang/Throwable;)Z
@@ -4588,6 +5077,7 @@
 
     if-nez v8, :cond_1
 
+    .line 2246
     new-instance v8, Ljava/lang/RuntimeException;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -4628,6 +5118,7 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
+    .line 2251
     .end local v4           #e:Ljava/lang/Exception;
     :catchall_0
     move-exception v8
@@ -4656,18 +5147,23 @@
 
     const/4 v10, 0x0
 
+    .line 3439
     invoke-virtual {p0}, Landroid/app/ActivityThread;->unscheduleGcIdler()V
 
+    .line 3441
     const/4 v1, 0x0
 
+    .line 3442
     .local v1, changedConfig:Landroid/content/res/Configuration;
     const/4 v2, 0x0
 
+    .line 3447
     .local v2, configChanges:I
     iget-object v8, p0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;
 
     monitor-enter v8
 
+    .line 3448
     :try_start_0
     iget-object v7, p0, Landroid/app/ActivityThread;->mRelaunchingActivities:Ljava/util/ArrayList;
 
@@ -4675,18 +5171,22 @@
 
     move-result v0
 
+    .line 3449
     .local v0, N:I
     iget-object v6, p1, Landroid/app/ActivityThread$ActivityClientRecord;->token:Landroid/os/IBinder;
 
+    .line 3450
     .local v6, token:Landroid/os/IBinder;
     const/4 p1, 0x0
 
+    .line 3451
     const/4 v4, 0x0
 
     .local v4, i:I
     :goto_0
     if-ge v4, v0, :cond_1
 
+    .line 3452
     iget-object v7, p0, Landroid/app/ActivityThread;->mRelaunchingActivities:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4695,60 +5195,76 @@
 
     check-cast v5, Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 3453
     .local v5, r:Landroid/app/ActivityThread$ActivityClientRecord;
     iget-object v7, v5, Landroid/app/ActivityThread$ActivityClientRecord;->token:Landroid/os/IBinder;
 
     if-ne v7, v6, :cond_0
 
+    .line 3454
     move-object p1, v5
 
+    .line 3455
     iget v7, p1, Landroid/app/ActivityThread$ActivityClientRecord;->pendingConfigChanges:I
 
     or-int/2addr v2, v7
 
+    .line 3456
     iget-object v7, p0, Landroid/app/ActivityThread;->mRelaunchingActivities:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v4}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
+    .line 3457
     add-int/lit8 v4, v4, -0x1
 
+    .line 3458
     add-int/lit8 v0, v0, -0x1
 
+    .line 3451
     :cond_0
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
+    .line 3462
     .end local v5           #r:Landroid/app/ActivityThread$ActivityClientRecord;
     :cond_1
     if-nez p1, :cond_3
 
+    .line 3464
     monitor-exit v8
 
+    .line 3545
     :cond_2
     :goto_1
     return-void
 
+    .line 3471
     :cond_3
     iget-object v7, p0, Landroid/app/ActivityThread;->mPendingConfiguration:Landroid/content/res/Configuration;
 
     if-eqz v7, :cond_4
 
+    .line 3472
     iget-object v1, p0, Landroid/app/ActivityThread;->mPendingConfiguration:Landroid/content/res/Configuration;
 
+    .line 3473
     const/4 v7, 0x0
 
     iput-object v7, p0, Landroid/app/ActivityThread;->mPendingConfiguration:Landroid/content/res/Configuration;
 
+    .line 3475
     :cond_4
     monitor-exit v8
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 3477
     iget-object v7, p1, Landroid/app/ActivityThread$ActivityClientRecord;->createdConfig:Landroid/content/res/Configuration;
 
     if-eqz v7, :cond_7
 
+    .line 3481
     iget-object v7, p0, Landroid/app/ActivityThread;->mConfiguration:Landroid/content/res/Configuration;
 
     if-eqz v7, :cond_5
@@ -4773,6 +5289,7 @@
 
     if-eqz v7, :cond_7
 
+    .line 3484
     :cond_5
     if-eqz v1, :cond_6
 
@@ -4784,14 +5301,18 @@
 
     if-eqz v7, :cond_7
 
+    .line 3486
     :cond_6
     iget-object v1, p1, Landroid/app/ActivityThread$ActivityClientRecord;->createdConfig:Landroid/content/res/Configuration;
 
+    .line 3495
     :cond_7
     if-eqz v1, :cond_8
 
+    .line 3496
     invoke-virtual {p0, v1, v10}, Landroid/app/ActivityThread;->handleConfigurationChanged(Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)V
 
+    .line 3499
     :cond_8
     iget-object v7, p0, Landroid/app/ActivityThread;->mActivities:Ljava/util/HashMap;
 
@@ -4803,9 +5324,11 @@
 
     check-cast v5, Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 3501
     .restart local v5       #r:Landroid/app/ActivityThread$ActivityClientRecord;
     if-eqz v5, :cond_2
 
+    .line 3505
     iget-object v7, v5, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget v8, v7, Landroid/app/Activity;->mConfigChangeFlags:I
@@ -4814,23 +5337,28 @@
 
     iput v8, v7, Landroid/app/Activity;->mConfigChangeFlags:I
 
+    .line 3506
     iget-boolean v7, p1, Landroid/app/ActivityThread$ActivityClientRecord;->onlyLocalRequest:Z
 
     iput-boolean v7, v5, Landroid/app/ActivityThread$ActivityClientRecord;->onlyLocalRequest:Z
 
+    .line 3507
     iget-object v7, v5, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget-object v3, v7, Landroid/app/Activity;->mIntent:Landroid/content/Intent;
 
+    .line 3509
     .local v3, currentIntent:Landroid/content/Intent;
     iget-object v7, v5, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iput-boolean v12, v7, Landroid/app/Activity;->mChangingConfigurations:Z
 
+    .line 3512
     iget-boolean v7, v5, Landroid/app/ActivityThread$ActivityClientRecord;->paused:Z
 
     if-nez v7, :cond_9
 
+    .line 3513
     iget-object v7, v5, Landroid/app/ActivityThread$ActivityClientRecord;->token:Landroid/os/IBinder;
 
     invoke-virtual {v5}, Landroid/app/ActivityThread$ActivityClientRecord;->isPreHoneycomb()Z
@@ -4839,6 +5367,7 @@
 
     invoke-virtual {p0, v7, v11, v8}, Landroid/app/ActivityThread;->performPauseActivity(Landroid/os/IBinder;ZZ)Landroid/os/Bundle;
 
+    .line 3515
     :cond_9
     iget-object v7, v5, Landroid/app/ActivityThread$ActivityClientRecord;->state:Landroid/os/Bundle;
 
@@ -4854,16 +5383,19 @@
 
     if-nez v7, :cond_a
 
+    .line 3516
     new-instance v7, Landroid/os/Bundle;
 
     invoke-direct {v7}, Landroid/os/Bundle;-><init>()V
 
     iput-object v7, v5, Landroid/app/ActivityThread$ActivityClientRecord;->state:Landroid/os/Bundle;
 
+    .line 3517
     iget-object v7, v5, Landroid/app/ActivityThread$ActivityClientRecord;->state:Landroid/os/Bundle;
 
     invoke-virtual {v7, v11}, Landroid/os/Bundle;->setAllowFds(Z)Z
 
+    .line 3518
     iget-object v7, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
     iget-object v8, v5, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
@@ -4872,55 +5404,69 @@
 
     invoke-virtual {v7, v8, v9}, Landroid/app/Instrumentation;->callActivityOnSaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V
 
+    .line 3521
     :cond_a
     iget-object v7, v5, Landroid/app/ActivityThread$ActivityClientRecord;->token:Landroid/os/IBinder;
 
     invoke-direct {p0, v7, v11, v2, v12}, Landroid/app/ActivityThread;->handleDestroyActivity(Landroid/os/IBinder;ZIZ)V
 
+    .line 3523
     iput-object v10, v5, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
+    .line 3524
     iput-object v10, v5, Landroid/app/ActivityThread$ActivityClientRecord;->window:Landroid/view/Window;
 
+    .line 3525
     iput-boolean v11, v5, Landroid/app/ActivityThread$ActivityClientRecord;->hideForNow:Z
 
+    .line 3526
     iput-object v10, v5, Landroid/app/ActivityThread$ActivityClientRecord;->nextIdle:Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 3528
     iget-object v7, p1, Landroid/app/ActivityThread$ActivityClientRecord;->pendingResults:Ljava/util/List;
 
     if-eqz v7, :cond_b
 
+    .line 3529
     iget-object v7, v5, Landroid/app/ActivityThread$ActivityClientRecord;->pendingResults:Ljava/util/List;
 
     if-nez v7, :cond_d
 
+    .line 3530
     iget-object v7, p1, Landroid/app/ActivityThread$ActivityClientRecord;->pendingResults:Ljava/util/List;
 
     iput-object v7, v5, Landroid/app/ActivityThread$ActivityClientRecord;->pendingResults:Ljava/util/List;
 
+    .line 3535
     :cond_b
     :goto_2
     iget-object v7, p1, Landroid/app/ActivityThread$ActivityClientRecord;->pendingIntents:Ljava/util/List;
 
     if-eqz v7, :cond_c
 
+    .line 3536
     iget-object v7, v5, Landroid/app/ActivityThread$ActivityClientRecord;->pendingIntents:Ljava/util/List;
 
     if-nez v7, :cond_e
 
+    .line 3537
     iget-object v7, p1, Landroid/app/ActivityThread$ActivityClientRecord;->pendingIntents:Ljava/util/List;
 
     iput-object v7, v5, Landroid/app/ActivityThread$ActivityClientRecord;->pendingIntents:Ljava/util/List;
 
+    .line 3542
     :cond_c
     :goto_3
     iget-boolean v7, p1, Landroid/app/ActivityThread$ActivityClientRecord;->startsNotResumed:Z
 
     iput-boolean v7, v5, Landroid/app/ActivityThread$ActivityClientRecord;->startsNotResumed:Z
 
+    .line 3544
     invoke-direct {p0, v5, v3}, Landroid/app/ActivityThread;->handleLaunchActivity(Landroid/app/ActivityThread$ActivityClientRecord;Landroid/content/Intent;)V
 
     goto/16 :goto_1
 
+    .line 3475
     .end local v0           #N:I
     .end local v3           #currentIntent:Landroid/content/Intent;
     .end local v4           #i:I
@@ -4936,6 +5482,7 @@
 
     throw v7
 
+    .line 3532
     .restart local v0       #N:I
     .restart local v3       #currentIntent:Landroid/content/Intent;
     .restart local v4       #i:I
@@ -4950,6 +5497,7 @@
 
     goto :goto_2
 
+    .line 3539
     :cond_e
     iget-object v7, v5, Landroid/app/ActivityThread$ActivityClientRecord;->pendingIntents:Ljava/util/List;
 
@@ -4965,6 +5513,7 @@
     .parameter "token"
 
     .prologue
+    .line 3548
     iget-object v4, p0, Landroid/app/ActivityThread;->mActivities:Ljava/util/HashMap;
 
     invoke-virtual {v4, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -4973,14 +5522,17 @@
 
     check-cast v2, Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 3549
     .local v2, r:Landroid/app/ActivityThread$ActivityClientRecord;
     invoke-direct {p0, v2}, Landroid/app/ActivityThread;->createThumbnailBitmap(Landroid/app/ActivityThread$ActivityClientRecord;)Landroid/graphics/Bitmap;
 
     move-result-object v3
 
+    .line 3550
     .local v3, thumbnail:Landroid/graphics/Bitmap;
     const/4 v0, 0x0
 
+    .line 3552
     .local v0, description:Ljava/lang/CharSequence;
     :try_start_0
     iget-object v4, v2, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
@@ -4991,6 +5543,7 @@
 
     move-result-object v0
 
+    .line 3563
     :cond_0
     :try_start_1
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
@@ -5001,12 +5554,15 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
 
+    .line 3567
     :goto_0
     return-void
 
+    .line 3553
     :catch_0
     move-exception v1
 
+    .line 3554
     .local v1, e:Ljava/lang/Exception;
     iget-object v4, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
@@ -5018,6 +5574,7 @@
 
     if-nez v4, :cond_0
 
+    .line 3555
     new-instance v4, Ljava/lang/RuntimeException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -5066,6 +5623,7 @@
 
     throw v4
 
+    .line 3565
     .end local v1           #e:Ljava/lang/Exception;
     :catch_1
     move-exception v4
@@ -5082,6 +5640,7 @@
 
     const/4 v4, 0x0
 
+    .line 3183
     iget-object v5, p0, Landroid/app/ActivityThread;->mActivities:Ljava/util/HashMap;
 
     iget-object v6, p1, Landroid/app/ActivityThread$ResultData;->token:Landroid/os/IBinder;
@@ -5092,15 +5651,18 @@
 
     check-cast v1, Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 3185
     .local v1, r:Landroid/app/ActivityThread$ActivityClientRecord;
     if-eqz v1, :cond_3
 
+    .line 3186
     iget-boolean v5, v1, Landroid/app/ActivityThread$ActivityClientRecord;->paused:Z
 
     if-nez v5, :cond_1
 
     move v2, v3
 
+    .line 3187
     .local v2, resumed:Z
     :goto_0
     iget-object v5, v1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
@@ -5121,11 +5683,14 @@
 
     if-eqz v2, :cond_0
 
+    .line 3192
     invoke-direct {p0, v1, v3}, Landroid/app/ActivityThread;->updateVisibility(Landroid/app/ActivityThread$ActivityClientRecord;Z)V
 
+    .line 3194
     :cond_0
     if-eqz v2, :cond_2
 
+    .line 3197
     :try_start_0
     iget-object v3, v1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
@@ -5133,24 +5698,28 @@
 
     iput-boolean v5, v3, Landroid/app/Activity;->mCalled:Z
 
+    .line 3198
     iget-object v3, v1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     const/4 v5, 0x1
 
     iput-boolean v5, v3, Landroid/app/Activity;->mTemporaryPause:Z
 
+    .line 3199
     iget-object v3, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
     iget-object v5, v1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v3, v5}, Landroid/app/Instrumentation;->callActivityOnPause(Landroid/app/Activity;)V
 
+    .line 3200
     iget-object v3, v1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget-boolean v3, v3, Landroid/app/Activity;->mCalled:Z
 
     if-nez v3, :cond_2
 
+    .line 3201
     new-instance v3, Landroid/app/SuperNotCalledException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -5194,9 +5763,11 @@
     .catch Landroid/app/SuperNotCalledException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
+    .line 3205
     :catch_0
     move-exception v0
 
+    .line 3206
     .local v0, e:Landroid/app/SuperNotCalledException;
     throw v0
 
@@ -5205,12 +5776,15 @@
     :cond_1
     move v2, v4
 
+    .line 3186
     goto :goto_0
 
+    .line 3207
     .restart local v2       #resumed:Z
     :catch_1
     move-exception v0
 
+    .line 3208
     .local v0, e:Ljava/lang/Exception;
     iget-object v3, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
@@ -5222,6 +5796,7 @@
 
     if-nez v3, :cond_2
 
+    .line 3209
     new-instance v3, Ljava/lang/RuntimeException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -5270,22 +5845,27 @@
 
     throw v3
 
+    .line 3216
     .end local v0           #e:Ljava/lang/Exception;
     :cond_2
     iget-object v3, p1, Landroid/app/ActivityThread$ResultData;->results:Ljava/util/List;
 
     invoke-direct {p0, v1, v3}, Landroid/app/ActivityThread;->deliverResults(Landroid/app/ActivityThread$ActivityClientRecord;Ljava/util/List;)V
 
+    .line 3217
     if-eqz v2, :cond_3
 
+    .line 3218
     iget-object v3, v1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v3}, Landroid/app/Activity;->performResume()V
 
+    .line 3219
     iget-object v3, v1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iput-boolean v4, v3, Landroid/app/Activity;->mTemporaryPause:Z
 
+    .line 3222
     .end local v2           #resumed:Z
     :cond_3
     return-void
@@ -5296,6 +5876,7 @@
     .parameter "data"
 
     .prologue
+    .line 2492
     iget-object v3, p0, Landroid/app/ActivityThread;->mServices:Ljava/util/HashMap;
 
     iget-object v4, p1, Landroid/app/ActivityThread$ServiceArgsData;->token:Landroid/os/IBinder;
@@ -5306,14 +5887,17 @@
 
     check-cast v2, Landroid/app/Service;
 
+    .line 2493
     .local v2, s:Landroid/app/Service;
     if-eqz v2, :cond_1
 
+    .line 2495
     :try_start_0
     iget-object v3, p1, Landroid/app/ActivityThread$ServiceArgsData;->args:Landroid/content/Intent;
 
     if-eqz v3, :cond_0
 
+    .line 2496
     iget-object v3, p1, Landroid/app/ActivityThread$ServiceArgsData;->args:Landroid/content/Intent;
 
     invoke-virtual {v2}, Landroid/app/Service;->getClassLoader()Ljava/lang/ClassLoader;
@@ -5322,11 +5906,13 @@
 
     invoke-virtual {v3, v4}, Landroid/content/Intent;->setExtrasClassLoader(Ljava/lang/ClassLoader;)V
 
+    .line 2499
     :cond_0
     iget-boolean v3, p1, Landroid/app/ActivityThread$ServiceArgsData;->taskRemoved:Z
 
     if-nez v3, :cond_2
 
+    .line 2500
     iget-object v3, p1, Landroid/app/ActivityThread$ServiceArgsData;->args:Landroid/content/Intent;
 
     iget v4, p1, Landroid/app/ActivityThread$ServiceArgsData;->flags:I
@@ -5337,12 +5923,14 @@
 
     move-result v1
 
+    .line 2506
     .local v1, res:I
     :goto_0
     invoke-static {}, Landroid/app/QueuedWork;->waitToFinish()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2509
     :try_start_1
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -5359,14 +5947,17 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
+    .line 2514
     :goto_1
     :try_start_2
     invoke-virtual {p0}, Landroid/app/ActivityThread;->ensureJitEnabled()V
 
+    .line 2523
     .end local v1           #res:I
     :cond_1
     return-void
 
+    .line 2502
     :cond_2
     iget-object v3, p1, Landroid/app/ActivityThread$ServiceArgsData;->args:Landroid/content/Intent;
 
@@ -5374,15 +5965,18 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
+    .line 2503
     const/16 v1, 0x3e8
 
     .restart local v1       #res:I
     goto :goto_0
 
+    .line 2515
     .end local v1           #res:I
     :catch_0
     move-exception v0
 
+    .line 2516
     .local v0, e:Ljava/lang/Exception;
     iget-object v3, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
@@ -5392,6 +5986,7 @@
 
     if-nez v3, :cond_1
 
+    .line 2517
     new-instance v3, Ljava/lang/RuntimeException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -5442,6 +6037,7 @@
 
     throw v3
 
+    .line 2511
     .end local v0           #e:Ljava/lang/Exception;
     .restart local v1       #res:I
     :catch_1
@@ -5455,17 +6051,22 @@
     .parameter "coreSettings"
 
     .prologue
+    .line 3141
     iget-object v1, p0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;
 
     monitor-enter v1
 
+    .line 3142
     :try_start_0
     iput-object p1, p0, Landroid/app/ActivityThread;->mCoreSettings:Landroid/os/Bundle;
 
+    .line 3143
     monitor-exit v1
 
+    .line 3144
     return-void
 
+    .line 3143
     :catchall_0
     move-exception v0
 
@@ -5482,6 +6083,7 @@
     .parameter "sleeping"
 
     .prologue
+    .line 3099
     iget-object v2, p0, Landroid/app/ActivityThread;->mActivities:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -5490,9 +6092,11 @@
 
     check-cast v1, Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 3101
     .local v1, r:Landroid/app/ActivityThread$ActivityClientRecord;
     if-nez v1, :cond_1
 
+    .line 3102
     const-string v2, "ActivityThread"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -5515,13 +6119,16 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 3138
     :cond_0
     :goto_0
     return-void
 
+    .line 3106
     :cond_1
     if-eqz p2, :cond_5
 
+    .line 3107
     iget-boolean v2, v1, Landroid/app/ActivityThread$ActivityClientRecord;->stopped:Z
 
     if-nez v2, :cond_3
@@ -5532,6 +6139,7 @@
 
     if-nez v2, :cond_3
 
+    .line 3110
     :try_start_0
     iget-object v2, v1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
@@ -5539,11 +6147,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
+    .line 3119
     :cond_2
     const/4 v2, 0x1
 
     iput-boolean v2, v1, Landroid/app/ActivityThread$ActivityClientRecord;->stopped:Z
 
+    .line 3123
     :cond_3
     invoke-virtual {v1}, Landroid/app/ActivityThread$ActivityClientRecord;->isPreHoneycomb()Z
 
@@ -5551,8 +6161,10 @@
 
     if-nez v2, :cond_4
 
+    .line 3124
     invoke-static {}, Landroid/app/QueuedWork;->waitToFinish()V
 
+    .line 3129
     :cond_4
     :try_start_1
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
@@ -5567,14 +6179,17 @@
 
     goto :goto_0
 
+    .line 3130
     :catch_0
     move-exception v2
 
     goto :goto_0
 
+    .line 3111
     :catch_1
     move-exception v0
 
+    .line 3112
     .local v0, e:Ljava/lang/Exception;
     iget-object v2, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
@@ -5586,6 +6201,7 @@
 
     if-nez v2, :cond_2
 
+    .line 3113
     new-instance v2, Ljava/lang/RuntimeException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -5634,6 +6250,7 @@
 
     throw v2
 
+    .line 3133
     .end local v0           #e:Ljava/lang/Exception;
     :cond_5
     iget-boolean v2, v1, Landroid/app/ActivityThread$ActivityClientRecord;->stopped:Z
@@ -5646,10 +6263,12 @@
 
     if-eqz v2, :cond_0
 
+    .line 3134
     iget-object v2, v1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v2}, Landroid/app/Activity;->performRestart()V
 
+    .line 3135
     const/4 v2, 0x0
 
     iput-boolean v2, v1, Landroid/app/ActivityThread$ActivityClientRecord;->stopped:Z
@@ -5664,6 +6283,7 @@
     .parameter "configChanges"
 
     .prologue
+    .line 3038
     iget-object v2, p0, Landroid/app/ActivityThread;->mActivities:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -5672,6 +6292,7 @@
 
     check-cast v1, Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 3039
     .local v1, r:Landroid/app/ActivityThread$ActivityClientRecord;
     iget-object v2, v1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
@@ -5681,38 +6302,47 @@
 
     iput v3, v2, Landroid/app/Activity;->mConfigChangeFlags:I
 
+    .line 3041
     new-instance v0, Landroid/app/ActivityThread$StopInfo;
 
     const/4 v2, 0x0
 
     invoke-direct {v0, v2}, Landroid/app/ActivityThread$StopInfo;-><init>(Landroid/app/ActivityThread$1;)V
 
+    .line 3042
     .local v0, info:Landroid/app/ActivityThread$StopInfo;
     const/4 v2, 0x1
 
     invoke-direct {p0, v1, v0, p2, v2}, Landroid/app/ActivityThread;->performStopActivityInner(Landroid/app/ActivityThread$ActivityClientRecord;Landroid/app/ActivityThread$StopInfo;ZZ)V
 
+    .line 3048
     invoke-direct {p0, v1, p2}, Landroid/app/ActivityThread;->updateVisibility(Landroid/app/ActivityThread$ActivityClientRecord;Z)V
 
+    .line 3051
     invoke-virtual {v1}, Landroid/app/ActivityThread$ActivityClientRecord;->isPreHoneycomb()Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
+    .line 3052
     invoke-static {}, Landroid/app/QueuedWork;->waitToFinish()V
 
+    .line 3060
     :cond_0
     iput-object v1, v0, Landroid/app/ActivityThread$StopInfo;->activity:Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 3061
     iget-object v2, v1, Landroid/app/ActivityThread$ActivityClientRecord;->state:Landroid/os/Bundle;
 
     iput-object v2, v0, Landroid/app/ActivityThread$StopInfo;->state:Landroid/os/Bundle;
 
+    .line 3062
     iget-object v2, p0, Landroid/app/ActivityThread;->mH:Landroid/app/ActivityThread$H;
 
     invoke-virtual {v2, v0}, Landroid/app/ActivityThread$H;->post(Ljava/lang/Runnable;)Z
 
+    .line 3063
     return-void
 .end method
 
@@ -5721,6 +6351,7 @@
     .parameter "token"
 
     .prologue
+    .line 2526
     iget-object v4, p0, Landroid/app/ActivityThread;->mServices:Ljava/util/HashMap;
 
     invoke-virtual {v4, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -5729,25 +6360,31 @@
 
     check-cast v2, Landroid/app/Service;
 
+    .line 2527
     .local v2, s:Landroid/app/Service;
     if-eqz v2, :cond_1
 
+    .line 2530
     :try_start_0
     invoke-virtual {v2}, Landroid/app/Service;->onDestroy()V
 
+    .line 2531
     invoke-virtual {v2}, Landroid/app/Service;->getBaseContext()Landroid/content/Context;
 
     move-result-object v0
 
+    .line 2532
     .local v0, context:Landroid/content/Context;
     instance-of v4, v0, Landroid/app/ContextImpl;
 
     if-eqz v4, :cond_0
 
+    .line 2533
     invoke-virtual {v2}, Landroid/app/Service;->getClassName()Ljava/lang/String;
 
     move-result-object v3
 
+    .line 2534
     .local v3, who:Ljava/lang/String;
     check-cast v0, Landroid/app/ContextImpl;
 
@@ -5756,12 +6393,14 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/app/ContextImpl;->scheduleFinalCleanup(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 2537
     .end local v3           #who:Ljava/lang/String;
     :cond_0
     invoke-static {}, Landroid/app/QueuedWork;->waitToFinish()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2540
     :try_start_1
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -5778,13 +6417,16 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
+    .line 2554
     :cond_1
     :goto_0
     return-void
 
+    .line 2545
     :catch_0
     move-exception v1
 
+    .line 2546
     .local v1, e:Ljava/lang/Exception;
     iget-object v4, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
@@ -5794,6 +6436,7 @@
 
     if-nez v4, :cond_1
 
+    .line 2547
     new-instance v4, Ljava/lang/RuntimeException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -5832,6 +6475,7 @@
 
     throw v4
 
+    .line 2542
     .end local v1           #e:Ljava/lang/Exception;
     :catch_1
     move-exception v4
@@ -5844,6 +6488,7 @@
     .parameter "data"
 
     .prologue
+    .line 2421
     iget-object v3, p0, Landroid/app/ActivityThread;->mServices:Ljava/util/HashMap;
 
     iget-object v4, p1, Landroid/app/ActivityThread$BindServiceData;->token:Landroid/os/IBinder;
@@ -5854,9 +6499,11 @@
 
     check-cast v2, Landroid/app/Service;
 
+    .line 2422
     .local v2, s:Landroid/app/Service;
     if-eqz v2, :cond_0
 
+    .line 2424
     :try_start_0
     iget-object v3, p1, Landroid/app/ActivityThread$BindServiceData;->intent:Landroid/content/Intent;
 
@@ -5866,6 +6513,7 @@
 
     invoke-virtual {v3, v4}, Landroid/content/Intent;->setExtrasClassLoader(Ljava/lang/ClassLoader;)V
 
+    .line 2425
     iget-object v3, p1, Landroid/app/ActivityThread$BindServiceData;->intent:Landroid/content/Intent;
 
     invoke-virtual {v2, v3}, Landroid/app/Service;->onUnbind(Landroid/content/Intent;)Z
@@ -5874,9 +6522,11 @@
 
     move-result v0
 
+    .line 2427
     .local v0, doRebind:Z
     if-eqz v0, :cond_1
 
+    .line 2428
     :try_start_1
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -5888,11 +6538,13 @@
 
     invoke-interface {v3, v4, v5, v0}, Landroid/app/IActivityManager;->unbindFinished(Landroid/os/IBinder;Landroid/content/Intent;Z)V
 
+    .line 2444
     .end local v0           #doRebind:Z
     :cond_0
     :goto_0
     return-void
 
+    .line 2431
     .restart local v0       #doRebind:Z
     :cond_1
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
@@ -5914,15 +6566,18 @@
 
     goto :goto_0
 
+    .line 2434
     :catch_0
     move-exception v3
 
     goto :goto_0
 
+    .line 2436
     .end local v0           #doRebind:Z
     :catch_1
     move-exception v1
 
+    .line 2437
     .local v1, e:Ljava/lang/Exception;
     iget-object v3, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
@@ -5932,6 +6587,7 @@
 
     if-nez v3, :cond_0
 
+    .line 2438
     new-instance v3, Ljava/lang/RuntimeException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -5988,6 +6644,7 @@
     .parameter "data"
 
     .prologue
+    .line 3147
     iget-object v1, p1, Landroid/app/ActivityThread$UpdateCompatibilityData;->pkg:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -5996,15 +6653,18 @@
 
     move-result-object v0
 
+    .line 3148
     .local v0, apk:Landroid/app/LoadedApk;
     if-eqz v0, :cond_0
 
+    .line 3149
     iget-object v1, v0, Landroid/app/LoadedApk;->mCompatibilityInfo:Landroid/view/CompatibilityInfoHolder;
 
     iget-object v2, p1, Landroid/app/ActivityThread$UpdateCompatibilityData;->info:Landroid/content/res/CompatibilityInfo;
 
     invoke-virtual {v1, v2}, Landroid/view/CompatibilityInfoHolder;->set(Landroid/content/res/CompatibilityInfo;)V
 
+    .line 3151
     :cond_0
     iget-object v1, p1, Landroid/app/ActivityThread$UpdateCompatibilityData;->pkg:Ljava/lang/String;
 
@@ -6014,14 +6674,17 @@
 
     move-result-object v0
 
+    .line 3152
     if-eqz v0, :cond_1
 
+    .line 3153
     iget-object v1, v0, Landroid/app/LoadedApk;->mCompatibilityInfo:Landroid/view/CompatibilityInfoHolder;
 
     iget-object v2, p1, Landroid/app/ActivityThread$UpdateCompatibilityData;->info:Landroid/content/res/CompatibilityInfo;
 
     invoke-virtual {v1, v2}, Landroid/view/CompatibilityInfoHolder;->set(Landroid/content/res/CompatibilityInfo;)V
 
+    .line 3155
     :cond_1
     iget-object v1, p0, Landroid/app/ActivityThread;->mConfiguration:Landroid/content/res/Configuration;
 
@@ -6029,6 +6692,7 @@
 
     invoke-virtual {p0, v1, v2}, Landroid/app/ActivityThread;->handleConfigurationChanged(Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)V
 
+    .line 3156
     invoke-static {}, Landroid/view/WindowManagerImpl;->getDefault()Landroid/view/WindowManagerImpl;
 
     move-result-object v1
@@ -6037,6 +6701,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/WindowManagerImpl;->reportNewConfiguration(Landroid/content/res/Configuration;)V
 
+    .line 3157
     return-void
 .end method
 
@@ -6048,6 +6713,7 @@
     .prologue
     const/4 v2, 0x0
 
+    .line 3074
     iget-object v1, p0, Landroid/app/ActivityThread;->mActivities:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -6056,9 +6722,11 @@
 
     check-cast v0, Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 3076
     .local v0, r:Landroid/app/ActivityThread$ActivityClientRecord;
     if-nez v0, :cond_1
 
+    .line 3077
     const-string v1, "ActivityThread"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -6081,10 +6749,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 3096
     :cond_0
     :goto_0
     return-void
 
+    .line 3081
     :cond_1
     if-nez p2, :cond_3
 
@@ -6092,10 +6762,12 @@
 
     if-nez v1, :cond_3
 
+    .line 3082
     const/4 v1, 0x0
 
     invoke-direct {p0, v0, v1, p2, v2}, Landroid/app/ActivityThread;->performStopActivityInner(Landroid/app/ActivityThread$ActivityClientRecord;Landroid/app/ActivityThread$StopInfo;ZZ)V
 
+    .line 3091
     :cond_2
     :goto_1
     iget-object v1, v0, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
@@ -6104,10 +6776,12 @@
 
     if-eqz v1, :cond_0
 
+    .line 3094
     invoke-direct {p0, v0, p2}, Landroid/app/ActivityThread;->updateVisibility(Landroid/app/ActivityThread$ActivityClientRecord;Z)V
 
     goto :goto_0
 
+    .line 3083
     :cond_3
     if-eqz p2, :cond_2
 
@@ -6115,12 +6789,15 @@
 
     if-eqz v1, :cond_2
 
+    .line 3086
     invoke-virtual {p0}, Landroid/app/ActivityThread;->unscheduleGcIdler()V
 
+    .line 3088
     iget-object v1, v0, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v1}, Landroid/app/Activity;->performRestart()V
 
+    .line 3089
     iput-boolean v2, v0, Landroid/app/ActivityThread$ActivityClientRecord;->stopped:Z
 
     goto :goto_1
@@ -6138,31 +6815,39 @@
 
     const/4 v2, 0x1
 
+    .line 4268
     if-eqz p2, :cond_2
 
+    .line 4269
     iget v1, p1, Landroid/app/ActivityThread$ProviderRefCount;->stableCount:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p1, Landroid/app/ActivityThread$ProviderRefCount;->stableCount:I
 
+    .line 4270
     iget v1, p1, Landroid/app/ActivityThread$ProviderRefCount;->stableCount:I
 
     if-ne v1, v2, :cond_0
 
+    .line 4273
     iget-boolean v1, p1, Landroid/app/ActivityThread$ProviderRefCount;->removePending:Z
 
     if-eqz v1, :cond_1
 
+    .line 4277
     const/4 v0, -0x1
 
+    .line 4283
     .local v0, unstableDelta:I
     iput-boolean v3, p1, Landroid/app/ActivityThread$ProviderRefCount;->removePending:Z
 
+    .line 4284
     iget-object v1, p0, Landroid/app/ActivityThread;->mH:Landroid/app/ActivityThread$H;
 
     invoke-virtual {v1, v4, p1}, Landroid/app/ActivityThread$H;->removeMessages(ILjava/lang/Object;)V
 
+    .line 4294
     :goto_0
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
@@ -6179,17 +6864,20 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
 
+    .line 4331
     .end local v0           #unstableDelta:I
     :cond_0
     :goto_1
     return-void
 
+    .line 4286
     :cond_1
     const/4 v0, 0x0
 
     .restart local v0       #unstableDelta:I
     goto :goto_0
 
+    .line 4301
     .end local v0           #unstableDelta:I
     :cond_2
     iget v1, p1, Landroid/app/ActivityThread$ProviderRefCount;->unstableCount:I
@@ -6198,22 +6886,27 @@
 
     iput v1, p1, Landroid/app/ActivityThread$ProviderRefCount;->unstableCount:I
 
+    .line 4302
     iget v1, p1, Landroid/app/ActivityThread$ProviderRefCount;->unstableCount:I
 
     if-ne v1, v2, :cond_0
 
+    .line 4304
     iget-boolean v1, p1, Landroid/app/ActivityThread$ProviderRefCount;->removePending:Z
 
     if-eqz v1, :cond_3
 
+    .line 4313
     iput-boolean v3, p1, Landroid/app/ActivityThread$ProviderRefCount;->removePending:Z
 
+    .line 4314
     iget-object v1, p0, Landroid/app/ActivityThread;->mH:Landroid/app/ActivityThread$H;
 
     invoke-virtual {v1, v4, p1}, Landroid/app/ActivityThread$H;->removeMessages(ILjava/lang/Object;)V
 
     goto :goto_1
 
+    .line 4323
     :cond_3
     :try_start_1
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
@@ -6234,11 +6927,13 @@
 
     goto :goto_1
 
+    .line 4325
     :catch_0
     move-exception v1
 
     goto :goto_1
 
+    .line 4296
     .restart local v0       #unstableDelta:I
     :catch_1
     move-exception v1
@@ -6265,10 +6960,12 @@
     .local p2, providers:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ProviderInfo;>;"
     const/4 v5, 0x1
 
+    .line 4212
     new-instance v10, Ljava/util/ArrayList;
 
     invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
 
+    .line 4215
     .local v10, results:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/IActivityManager$ContentProviderHolder;>;"
     invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -6289,6 +6986,7 @@
 
     check-cast v3, Landroid/content/pm/ProviderInfo;
 
+    .line 4216
     .local v3, cpi:Landroid/content/pm/ProviderInfo;
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -6296,23 +6994,28 @@
 
     invoke-direct {v7, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
+    .line 4217
     .local v7, buf:Ljava/lang/StringBuilder;
     const-string v0, "Pub "
 
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 4218
     iget-object v0, v3, Landroid/content/pm/ProviderInfo;->authority:Ljava/lang/String;
 
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 4219
     const-string v0, ": "
 
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 4220
     iget-object v0, v3, Landroid/content/pm/ProviderInfo;->name:Ljava/lang/String;
 
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 4221
     const-string v0, "ActivityThread"
 
     invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -6321,6 +7024,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 4222
     const/4 v2, 0x0
 
     const/4 v4, 0x0
@@ -6335,15 +7039,19 @@
 
     move-result-object v8
 
+    .line 4224
     .local v8, cph:Landroid/app/IActivityManager$ContentProviderHolder;
     if-eqz v8, :cond_0
 
+    .line 4225
     iput-boolean v5, v8, Landroid/app/IActivityManager$ContentProviderHolder;->noReleaseNeeded:Z
 
+    .line 4226
     invoke-virtual {v10, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    .line 4231
     .end local v3           #cpi:Landroid/content/pm/ProviderInfo;
     .end local v7           #buf:Ljava/lang/StringBuilder;
     .end local v8           #cph:Landroid/app/IActivityManager$ContentProviderHolder;
@@ -6361,9 +7069,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 4235
     :goto_1
     return-void
 
+    .line 4233
     :catch_0
     move-exception v0
 
@@ -6380,8 +7090,10 @@
     .parameter "stable"
 
     .prologue
+    .line 4549
     const/4 v10, 0x0
 
+    .line 4551
     .local v10, localProvider:Landroid/content/ContentProvider;
     if-eqz p2, :cond_0
 
@@ -6391,9 +7103,11 @@
 
     if-nez v15, :cond_7
 
+    .line 4552
     :cond_0
     if-eqz p4, :cond_1
 
+    .line 4553
     const-string v15, "ActivityThread"
 
     new-instance v16, Ljava/lang/StringBuilder;
@@ -6438,14 +7152,17 @@
 
     invoke-static/range {v15 .. v16}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 4556
     :cond_1
     const/4 v3, 0x0
 
+    .line 4557
     .local v3, c:Landroid/content/Context;
     move-object/from16 v0, p3
 
     iget-object v2, v0, Landroid/content/pm/ProviderInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
+    .line 4558
     .local v2, ai:Landroid/content/pm/ApplicationInfo;
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
@@ -6461,11 +7178,14 @@
 
     if-eqz v15, :cond_2
 
+    .line 4559
     move-object/from16 v3, p1
 
+    .line 4571
     :goto_0
     if-nez v3, :cond_4
 
+    .line 4572
     const-string v15, "ActivityThread"
 
     new-instance v16, Ljava/lang/StringBuilder;
@@ -6508,13 +7228,16 @@
 
     invoke-static/range {v15 .. v16}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 4576
     const/4 v14, 0x0
 
+    .line 4666
     .end local v2           #ai:Landroid/content/pm/ApplicationInfo;
     .end local v3           #c:Landroid/content/Context;
     :goto_1
     return-object v14
 
+    .line 4560
     .restart local v2       #ai:Landroid/content/pm/ApplicationInfo;
     .restart local v3       #c:Landroid/content/Context;
     :cond_2
@@ -6542,12 +7265,14 @@
 
     if-eqz v15, :cond_3
 
+    .line 4562
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/app/ActivityThread;->mInitialApplication:Landroid/app/Application;
 
     goto :goto_0
 
+    .line 4565
     :cond_3
     :try_start_0
     iget-object v15, v2, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
@@ -6566,12 +7291,14 @@
 
     goto :goto_0
 
+    .line 4579
     :cond_4
     :try_start_1
     invoke-virtual {v3}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v4
 
+    .line 4580
     .local v4, cl:Ljava/lang/ClassLoader;
     move-object/from16 v0, p3
 
@@ -6591,13 +7318,16 @@
 
     move-object v10, v0
 
+    .line 4582
     invoke-virtual {v10}, Landroid/content/ContentProvider;->getIContentProvider()Landroid/content/IContentProvider;
 
     move-result-object v13
 
+    .line 4583
     .local v13, provider:Landroid/content/IContentProvider;
     if-nez v13, :cond_5
 
+    .line 4584
     const-string v15, "ActivityThread"
 
     new-instance v16, Ljava/lang/StringBuilder;
@@ -6648,10 +7378,12 @@
 
     invoke-static/range {v15 .. v16}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 4587
     const/4 v14, 0x0
 
     goto :goto_1
 
+    .line 4592
     :cond_5
     move-object/from16 v0, p3
 
@@ -6659,6 +7391,7 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
+    .line 4609
     .end local v2           #ai:Landroid/content/pm/ApplicationInfo;
     .end local v3           #c:Landroid/content/Context;
     .end local v4           #cl:Ljava/lang/ClassLoader;
@@ -6671,14 +7404,17 @@
 
     monitor-enter v16
 
+    .line 4612
     :try_start_2
     invoke-interface {v13}, Landroid/content/IContentProvider;->asBinder()Landroid/os/IBinder;
 
     move-result-object v9
 
+    .line 4613
     .local v9, jBinder:Landroid/os/IBinder;
     if-eqz v10, :cond_9
 
+    .line 4614
     new-instance v6, Landroid/content/ComponentName;
 
     move-object/from16 v0, p3
@@ -6695,6 +7431,7 @@
 
     invoke-direct {v6, v15, v0}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 4615
     .local v6, cname:Landroid/content/ComponentName;
     move-object/from16 v0, p0
 
@@ -6706,14 +7443,18 @@
 
     check-cast v11, Landroid/app/ActivityThread$ProviderClientRecord;
 
+    .line 4616
     .local v11, pr:Landroid/app/ActivityThread$ProviderClientRecord;
     if-eqz v11, :cond_8
 
+    .line 4621
     iget-object v13, v11, Landroid/app/ActivityThread$ProviderClientRecord;->mProvider:Landroid/content/IContentProvider;
 
+    .line 4630
     :goto_3
     iget-object v14, v11, Landroid/app/ActivityThread$ProviderClientRecord;->mHolder:Landroid/app/IActivityManager$ContentProviderHolder;
 
+    .line 4664
     .end local v6           #cname:Landroid/content/ComponentName;
     .end local v11           #pr:Landroid/app/ActivityThread$ProviderClientRecord;
     .local v14, retHolder:Landroid/app/IActivityManager$ContentProviderHolder;
@@ -6734,12 +7475,14 @@
 
     throw v15
 
+    .line 4593
     .end local v13           #provider:Landroid/content/IContentProvider;
     .restart local v2       #ai:Landroid/content/pm/ApplicationInfo;
     .restart local v3       #c:Landroid/content/Context;
     :catch_0
     move-exception v7
 
+    .line 4594
     .local v7, e:Ljava/lang/Exception;
     move-object/from16 v0, p0
 
@@ -6755,6 +7498,7 @@
 
     if-nez v15, :cond_6
 
+    .line 4595
     new-instance v15, Ljava/lang/RuntimeException;
 
     new-instance v16, Ljava/lang/StringBuilder;
@@ -6801,11 +7545,13 @@
 
     throw v15
 
+    .line 4599
     :cond_6
     const/4 v14, 0x0
 
     goto/16 :goto_1
 
+    .line 4602
     .end local v2           #ai:Landroid/content/pm/ApplicationInfo;
     .end local v3           #c:Landroid/content/Context;
     .end local v7           #e:Ljava/lang/Exception;
@@ -6817,6 +7563,7 @@
     .restart local v13       #provider:Landroid/content/IContentProvider;
     goto :goto_2
 
+    .line 4623
     .restart local v6       #cname:Landroid/content/ComponentName;
     .restart local v9       #jBinder:Landroid/os/IBinder;
     .restart local v11       #pr:Landroid/app/ActivityThread$ProviderClientRecord;
@@ -6830,27 +7577,32 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
+    .line 4624
     .end local p2
     .local v8, holder:Landroid/app/IActivityManager$ContentProviderHolder;
     :try_start_4
     iput-object v13, v8, Landroid/app/IActivityManager$ContentProviderHolder;->provider:Landroid/content/IContentProvider;
 
+    .line 4625
     const/4 v15, 0x1
 
     iput-boolean v15, v8, Landroid/app/IActivityManager$ContentProviderHolder;->noReleaseNeeded:Z
 
+    .line 4626
     move-object/from16 v0, p0
 
     invoke-direct {v0, v13, v10, v8}, Landroid/app/ActivityThread;->installProviderAuthoritiesLocked(Landroid/content/IContentProvider;Landroid/content/ContentProvider;Landroid/app/IActivityManager$ContentProviderHolder;)Landroid/app/ActivityThread$ProviderClientRecord;
 
     move-result-object v11
 
+    .line 4627
     move-object/from16 v0, p0
 
     iget-object v15, v0, Landroid/app/ActivityThread;->mLocalProviders:Ljava/util/HashMap;
 
     invoke-virtual {v15, v9, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 4628
     move-object/from16 v0, p0
 
     iget-object v15, v0, Landroid/app/ActivityThread;->mLocalProvidersByName:Ljava/util/HashMap;
@@ -6865,6 +7617,7 @@
     .restart local p2
     goto :goto_3
 
+    .line 4632
     .end local v6           #cname:Landroid/content/ComponentName;
     .end local v11           #pr:Landroid/app/ActivityThread$ProviderClientRecord;
     :cond_9
@@ -6879,11 +7632,14 @@
 
     check-cast v12, Landroid/app/ActivityThread$ProviderRefCount;
 
+    .line 4633
     .local v12, prc:Landroid/app/ActivityThread$ProviderRefCount;
     if-eqz v12, :cond_b
 
+    .line 4641
     if-nez p5, :cond_a
 
+    .line 4642
     move-object/from16 v0, p0
 
     move/from16 v1, p6
@@ -6892,6 +7648,7 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
+    .line 4644
     :try_start_6
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -6912,6 +7669,7 @@
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_6 .. :try_end_6} :catch_1
 
+    .line 4662
     :cond_a
     :goto_6
     :try_start_7
@@ -6920,6 +7678,7 @@
     .restart local v14       #retHolder:Landroid/app/IActivityManager$ContentProviderHolder;
     goto/16 :goto_4
 
+    .line 4651
     .end local v14           #retHolder:Landroid/app/IActivityManager$ContentProviderHolder;
     :cond_b
     move-object/from16 v0, p0
@@ -6930,9 +7689,11 @@
 
     move-result-object v5
 
+    .line 4653
     .local v5, client:Landroid/app/ActivityThread$ProviderClientRecord;
     if-eqz p5, :cond_c
 
+    .line 4654
     new-instance v12, Landroid/app/ActivityThread$ProviderRefCount;
 
     .end local v12           #prc:Landroid/app/ActivityThread$ProviderRefCount;
@@ -6946,6 +7707,7 @@
 
     invoke-direct {v12, v0, v5, v15, v1}, Landroid/app/ActivityThread$ProviderRefCount;-><init>(Landroid/app/IActivityManager$ContentProviderHolder;Landroid/app/ActivityThread$ProviderClientRecord;II)V
 
+    .line 4660
     .restart local v12       #prc:Landroid/app/ActivityThread$ProviderRefCount;
     :goto_7
     move-object/from16 v0, p0
@@ -6956,6 +7718,7 @@
 
     goto :goto_6
 
+    .line 4656
     :cond_c
     if-eqz p6, :cond_d
 
@@ -6994,6 +7757,7 @@
 
     goto :goto_8
 
+    .line 4664
     .end local v5           #client:Landroid/app/ActivityThread$ProviderClientRecord;
     .end local p2
     .restart local v6       #cname:Landroid/content/ComponentName;
@@ -7008,6 +7772,7 @@
     .restart local p2
     goto/16 :goto_5
 
+    .line 4646
     .end local v6           #cname:Landroid/content/ComponentName;
     .end local v11           #pr:Landroid/app/ActivityThread$ProviderClientRecord;
     .restart local v12       #prc:Landroid/app/ActivityThread$ProviderRefCount;
@@ -7016,6 +7781,7 @@
 
     goto :goto_6
 
+    .line 4567
     .end local v9           #jBinder:Landroid/os/IBinder;
     .end local v12           #prc:Landroid/app/ActivityThread$ProviderRefCount;
     .end local v13           #provider:Landroid/content/IContentProvider;
@@ -7034,6 +7800,7 @@
     .parameter "holder"
 
     .prologue
+    .line 4517
     sget-object v1, Landroid/app/ActivityThread;->PATTERN_SEMICOLON:Ljava/util/regex/Pattern;
 
     iget-object v3, p3, Landroid/app/IActivityManager$ContentProviderHolder;->info:Landroid/content/pm/ProviderInfo;
@@ -7044,6 +7811,7 @@
 
     move-result-object v2
 
+    .line 4518
     .local v2, names:[Ljava/lang/String;
     new-instance v0, Landroid/app/ActivityThread$ProviderClientRecord;
 
@@ -7057,6 +7825,7 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/app/ActivityThread$ProviderClientRecord;-><init>(Landroid/app/ActivityThread;[Ljava/lang/String;Landroid/content/IContentProvider;Landroid/content/ContentProvider;Landroid/app/IActivityManager$ContentProviderHolder;)V
 
+    .line 4520
     .local v0, pcr:Landroid/app/ActivityThread$ProviderClientRecord;
     const/4 v7, 0x0
 
@@ -7066,6 +7835,7 @@
 
     if-ge v7, v1, :cond_1
 
+    .line 4521
     iget-object v1, p0, Landroid/app/ActivityThread;->mProviderMap:Ljava/util/HashMap;
 
     aget-object v3, v2, v7
@@ -7076,9 +7846,11 @@
 
     check-cast v6, Landroid/app/ActivityThread$ProviderClientRecord;
 
+    .line 4522
     .local v6, existing:Landroid/app/ActivityThread$ProviderClientRecord;
     if-eqz v6, :cond_0
 
+    .line 4523
     const-string v1, "ActivityThread"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -7119,11 +7891,13 @@
 
     invoke-static {v1, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 4520
     :goto_1
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_0
 
+    .line 4526
     :cond_0
     iget-object v1, p0, Landroid/app/ActivityThread;->mProviderMap:Ljava/util/HashMap;
 
@@ -7133,6 +7907,7 @@
 
     goto :goto_1
 
+    .line 4529
     .end local v6           #existing:Landroid/app/ActivityThread$ProviderClientRecord;
     :cond_1
     return-object v0
@@ -7145,38 +7920,49 @@
     .prologue
     const/4 v2, 0x0
 
+    .line 4753
     invoke-static {}, Lcom/android/internal/os/SamplingProfilerIntegration;->start()V
 
+    .line 4758
     invoke-static {v2}, Ldalvik/system/CloseGuard;->setEnabled(Z)V
 
+    .line 4760
     const-string v1, "<pre-initialized>"
 
     invoke-static {v1}, Landroid/os/Process;->setArgV0(Ljava/lang/String;)V
 
+    .line 4762
     invoke-static {}, Landroid/os/Looper;->prepareMainLooper()V
 
+    .line 4763
     sget-object v1, Landroid/app/ActivityThread;->sMainThreadHandler:Landroid/os/Handler;
 
     if-nez v1, :cond_0
 
+    .line 4764
     new-instance v1, Landroid/os/Handler;
 
     invoke-direct {v1}, Landroid/os/Handler;-><init>()V
 
     sput-object v1, Landroid/app/ActivityThread;->sMainThreadHandler:Landroid/os/Handler;
 
+    .line 4767
     :cond_0
     new-instance v0, Landroid/app/ActivityThread;
 
     invoke-direct {v0}, Landroid/app/ActivityThread;-><init>()V
 
+    .line 4768
     .local v0, thread:Landroid/app/ActivityThread;
     invoke-direct {v0, v2}, Landroid/app/ActivityThread;->attach(Z)V
 
+    .line 4770
     invoke-static {}, Landroid/os/AsyncTask;->init()V
 
+    .line 4777
     invoke-static {}, Landroid/os/Looper;->loop()V
 
+    .line 4779
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Main thread loop unexpectedly exited"
@@ -7194,6 +7980,7 @@
     .prologue
     const/4 v4, 0x0
 
+    .line 3623
     instance-of v3, p0, Landroid/app/Activity;
 
     if-eqz v3, :cond_3
@@ -7204,15 +7991,19 @@
 
     move-object v0, v3
 
+    .line 3624
     .local v0, activity:Landroid/app/Activity;
     :goto_0
     if-eqz v0, :cond_0
 
+    .line 3625
     iput-boolean v4, v0, Landroid/app/Activity;->mCalled:Z
 
+    .line 3628
     :cond_0
     const/4 v2, 0x0
 
+    .line 3629
     .local v2, shouldChangeConfig:Z
     if-eqz v0, :cond_1
 
@@ -7220,21 +8011,27 @@
 
     if-nez v3, :cond_4
 
+    .line 3630
     :cond_1
     const/4 v2, 0x1
 
+    .line 3649
     :cond_2
     :goto_1
     if-eqz v2, :cond_6
 
+    .line 3650
     invoke-interface {p0, p1}, Landroid/content/ComponentCallbacks2;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
+    .line 3652
     if-eqz v0, :cond_6
 
+    .line 3653
     iget-boolean v3, v0, Landroid/app/Activity;->mCalled:Z
 
     if-nez v3, :cond_5
 
+    .line 3654
     new-instance v3, Landroid/app/SuperNotCalledException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -7269,6 +8066,7 @@
 
     throw v3
 
+    .line 3623
     .end local v0           #activity:Landroid/app/Activity;
     .end local v2           #shouldChangeConfig:Z
     :cond_3
@@ -7276,6 +8074,7 @@
 
     goto :goto_0
 
+    .line 3636
     .restart local v0       #activity:Landroid/app/Activity;
     .restart local v2       #shouldChangeConfig:Z
     :cond_4
@@ -7285,9 +8084,11 @@
 
     move-result v1
 
+    .line 3637
     .local v1, diff:I
     if-eqz v1, :cond_2
 
+    .line 3641
     iget-object v3, v0, Landroid/app/Activity;->mActivityInfo:Landroid/content/pm/ActivityInfo;
 
     invoke-virtual {v3}, Landroid/content/pm/ActivityInfo;->getRealConfigChanged()I
@@ -7300,20 +8101,24 @@
 
     if-nez v3, :cond_2
 
+    .line 3642
     const/4 v2, 0x1
 
     goto :goto_1
 
+    .line 3658
     .end local v1           #diff:I
     :cond_5
     iput v4, v0, Landroid/app/Activity;->mConfigChangeFlags:I
 
+    .line 3659
     new-instance v3, Landroid/content/res/Configuration;
 
     invoke-direct {v3, p1}, Landroid/content/res/Configuration;-><init>(Landroid/content/res/Configuration;)V
 
     iput-object v3, v0, Landroid/app/Activity;->mCurrentConfig:Landroid/content/res/Configuration;
 
+    .line 3662
     :cond_6
     return-void
 .end method
@@ -7328,6 +8133,7 @@
     .prologue
     const/4 v6, 0x1
 
+    .line 3230
     iget-object v3, p0, Landroid/app/ActivityThread;->mActivities:Ljava/util/HashMap;
 
     invoke-virtual {v3, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -7336,18 +8142,22 @@
 
     check-cast v2, Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 3231
     .local v2, r:Landroid/app/ActivityThread$ActivityClientRecord;
     const/4 v0, 0x0
 
+    .line 3233
     .local v0, activityClass:Ljava/lang/Class;
     if-eqz v2, :cond_7
 
+    .line 3234
     iget-object v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
 
+    .line 3235
     iget-object v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget v4, v3, Landroid/app/Activity;->mConfigChangeFlags:I
@@ -7356,17 +8166,21 @@
 
     iput v4, v3, Landroid/app/Activity;->mConfigChangeFlags:I
 
+    .line 3236
     if-eqz p2, :cond_0
 
+    .line 3237
     iget-object v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iput-boolean v6, v3, Landroid/app/Activity;->mFinished:Z
 
+    .line 3239
     :cond_0
     iget-boolean v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->paused:Z
 
     if-nez v3, :cond_2
 
+    .line 3241
     :try_start_0
     iget-object v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
@@ -7374,12 +8188,14 @@
 
     iput-boolean v4, v3, Landroid/app/Activity;->mCalled:Z
 
+    .line 3242
     iget-object v3, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
     iget-object v4, v2, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v3, v4}, Landroid/app/Instrumentation;->callActivityOnPause(Landroid/app/Activity;)V
 
+    .line 3243
     const/16 v3, 0x7545
 
     iget-object v4, v2, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
@@ -7394,12 +8210,14 @@
 
     invoke-static {v3, v4}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
 
+    .line 3245
     iget-object v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget-boolean v3, v3, Landroid/app/Activity;->mCalled:Z
 
     if-nez v3, :cond_1
 
+    .line 3246
     new-instance v3, Landroid/app/SuperNotCalledException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -7439,16 +8257,20 @@
     .catch Landroid/app/SuperNotCalledException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
+    .line 3250
     :catch_0
     move-exception v1
 
+    .line 3251
     .local v1, e:Landroid/app/SuperNotCalledException;
     throw v1
 
+    .line 3252
     .end local v1           #e:Landroid/app/SuperNotCalledException;
     :catch_1
     move-exception v1
 
+    .line 3253
     .local v1, e:Ljava/lang/Exception;
     iget-object v3, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
@@ -7460,6 +8282,7 @@
 
     if-nez v3, :cond_1
 
+    .line 3254
     new-instance v3, Ljava/lang/RuntimeException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -7504,15 +8327,18 @@
 
     throw v3
 
+    .line 3260
     .end local v1           #e:Ljava/lang/Exception;
     :cond_1
     iput-boolean v6, v2, Landroid/app/ActivityThread$ActivityClientRecord;->paused:Z
 
+    .line 3262
     :cond_2
     iget-boolean v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->stopped:Z
 
     if-nez v3, :cond_4
 
+    .line 3264
     :try_start_1
     iget-object v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
@@ -7521,12 +8347,15 @@
     .catch Landroid/app/SuperNotCalledException; {:try_start_1 .. :try_end_1} :catch_3
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_4
 
+    .line 3275
     :cond_3
     iput-boolean v6, v2, Landroid/app/ActivityThread$ActivityClientRecord;->stopped:Z
 
+    .line 3277
     :cond_4
     if-eqz p4, :cond_5
 
+    .line 3279
     :try_start_2
     iget-object v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
@@ -7538,6 +8367,7 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_5
 
+    .line 3291
     :cond_5
     :try_start_3
     iget-object v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
@@ -7546,18 +8376,21 @@
 
     iput-boolean v4, v3, Landroid/app/Activity;->mCalled:Z
 
+    .line 3292
     iget-object v3, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
     iget-object v4, v2, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v3, v4}, Landroid/app/Instrumentation;->callActivityOnDestroy(Landroid/app/Activity;)V
 
+    .line 3293
     iget-object v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget-boolean v3, v3, Landroid/app/Activity;->mCalled:Z
 
     if-nez v3, :cond_6
 
+    .line 3294
     new-instance v3, Landroid/app/SuperNotCalledException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -7597,23 +8430,29 @@
     .catch Landroid/app/SuperNotCalledException; {:try_start_3 .. :try_end_3} :catch_2
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_6
 
+    .line 3301
     :catch_2
     move-exception v1
 
+    .line 3302
     .local v1, e:Landroid/app/SuperNotCalledException;
     throw v1
 
+    .line 3265
     .end local v1           #e:Landroid/app/SuperNotCalledException;
     :catch_3
     move-exception v1
 
+    .line 3266
     .restart local v1       #e:Landroid/app/SuperNotCalledException;
     throw v1
 
+    .line 3267
     .end local v1           #e:Landroid/app/SuperNotCalledException;
     :catch_4
     move-exception v1
 
+    .line 3268
     .local v1, e:Ljava/lang/Exception;
     iget-object v3, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
@@ -7625,6 +8464,7 @@
 
     if-nez v3, :cond_3
 
+    .line 3269
     new-instance v3, Ljava/lang/RuntimeException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -7669,10 +8509,12 @@
 
     throw v3
 
+    .line 3281
     .end local v1           #e:Ljava/lang/Exception;
     :catch_5
     move-exception v1
 
+    .line 3282
     .restart local v1       #e:Ljava/lang/Exception;
     iget-object v3, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
@@ -7684,6 +8526,7 @@
 
     if-nez v3, :cond_5
 
+    .line 3283
     new-instance v3, Ljava/lang/RuntimeException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -7732,6 +8575,7 @@
 
     throw v3
 
+    .line 3298
     .end local v1           #e:Ljava/lang/Exception;
     :cond_6
     :try_start_4
@@ -7739,6 +8583,7 @@
 
     if-eqz v3, :cond_7
 
+    .line 3299
     iget-object v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->window:Landroid/view/Window;
 
     invoke-virtual {v3}, Landroid/view/Window;->closeAllPanels()V
@@ -7746,18 +8591,23 @@
     .catch Landroid/app/SuperNotCalledException; {:try_start_4 .. :try_end_4} :catch_2
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_6
 
+    .line 3311
     :cond_7
     iget-object v3, p0, Landroid/app/ActivityThread;->mActivities:Ljava/util/HashMap;
 
     invoke-virtual {v3, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 3312
     invoke-static {v0}, Landroid/os/StrictMode;->decrementExpectedActivityCount(Ljava/lang/Class;)V
 
+    .line 3313
     return-object v2
 
+    .line 3303
     :catch_6
     move-exception v1
 
+    .line 3304
     .restart local v1       #e:Ljava/lang/Exception;
     iget-object v3, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
@@ -7769,6 +8619,7 @@
 
     if-nez v3, :cond_7
 
+    .line 3305
     new-instance v3, Ljava/lang/RuntimeException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -7820,10 +8671,12 @@
     .parameter "customIntent"
 
     .prologue
+    .line 1963
     move-object/from16 v0, p1
 
     iget-object v15, v0, Landroid/app/ActivityThread$ActivityClientRecord;->activityInfo:Landroid/content/pm/ActivityInfo;
 
+    .line 1964
     .local v15, aInfo:Landroid/content/pm/ActivityInfo;
     move-object/from16 v0, p1
 
@@ -7831,6 +8684,7 @@
 
     if-nez v3, :cond_0
 
+    .line 1965
     iget-object v3, v15, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     move-object/from16 v0, p1
@@ -7849,6 +8703,7 @@
 
     iput-object v3, v0, Landroid/app/ActivityThread$ActivityClientRecord;->packageInfo:Landroid/app/LoadedApk;
 
+    .line 1969
     :cond_0
     move-object/from16 v0, p1
 
@@ -7858,9 +8713,11 @@
 
     move-result-object v17
 
+    .line 1970
     .local v17, component:Landroid/content/ComponentName;
     if-nez v17, :cond_1
 
+    .line 1971
     move-object/from16 v0, p1
 
     iget-object v3, v0, Landroid/app/ActivityThread$ActivityClientRecord;->intent:Landroid/content/Intent;
@@ -7877,6 +8734,7 @@
 
     move-result-object v17
 
+    .line 1973
     move-object/from16 v0, p1
 
     iget-object v3, v0, Landroid/app/ActivityThread$ActivityClientRecord;->intent:Landroid/content/Intent;
@@ -7885,6 +8743,7 @@
 
     invoke-virtual {v3, v0}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
+    .line 1976
     :cond_1
     move-object/from16 v0, p1
 
@@ -7894,6 +8753,7 @@
 
     if-eqz v3, :cond_2
 
+    .line 1977
     new-instance v17, Landroid/content/ComponentName;
 
     .end local v17           #component:Landroid/content/ComponentName;
@@ -7913,10 +8773,12 @@
 
     invoke-direct {v0, v3, v4}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 1981
     .restart local v17       #component:Landroid/content/ComponentName;
     :cond_2
     const/4 v1, 0x0
 
+    .line 1983
     .local v1, activity:Landroid/app/Activity;
     :try_start_0
     move-object/from16 v0, p1
@@ -7927,6 +8789,7 @@
 
     move-result-object v16
 
+    .line 1984
     .local v16, cl:Ljava/lang/ClassLoader;
     move-object/from16 v0, p0
 
@@ -7946,12 +8809,14 @@
 
     move-result-object v1
 
+    .line 1986
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v3
 
     invoke-static {v3}, Landroid/os/StrictMode;->incrementExpectedActivityCount(Ljava/lang/Class;)V
 
+    .line 1987
     move-object/from16 v0, p1
 
     iget-object v3, v0, Landroid/app/ActivityThread$ActivityClientRecord;->intent:Landroid/content/Intent;
@@ -7960,12 +8825,14 @@
 
     invoke-virtual {v3, v0}, Landroid/content/Intent;->setExtrasClassLoader(Ljava/lang/ClassLoader;)V
 
+    .line 1988
     move-object/from16 v0, p1
 
     iget-object v3, v0, Landroid/app/ActivityThread$ActivityClientRecord;->state:Landroid/os/Bundle;
 
     if-eqz v3, :cond_3
 
+    .line 1989
     move-object/from16 v0, p1
 
     iget-object v3, v0, Landroid/app/ActivityThread$ActivityClientRecord;->state:Landroid/os/Bundle;
@@ -7976,6 +8843,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
+    .line 2000
     .end local v16           #cl:Ljava/lang/ClassLoader;
     :cond_3
     :try_start_1
@@ -7993,13 +8861,16 @@
 
     move-result-object v7
 
+    .line 2010
     .local v7, app:Landroid/app/Application;
     if-eqz v1, :cond_9
 
+    .line 2011
     new-instance v2, Landroid/app/ContextImpl;
 
     invoke-direct {v2}, Landroid/app/ContextImpl;-><init>()V
 
+    .line 2012
     .local v2, appContext:Landroid/app/ContextImpl;
     move-object/from16 v0, p1
 
@@ -8013,8 +8884,10 @@
 
     invoke-virtual {v2, v3, v4, v0}, Landroid/app/ContextImpl;->init(Landroid/app/LoadedApk;Landroid/os/IBinder;Landroid/app/ActivityThread;)V
 
+    .line 2013
     invoke-virtual {v2, v1}, Landroid/app/ContextImpl;->setOuterContext(Landroid/content/Context;)V
 
+    .line 2014
     move-object/from16 v0, p1
 
     iget-object v3, v0, Landroid/app/ActivityThread$ActivityClientRecord;->activityInfo:Landroid/content/pm/ActivityInfo;
@@ -8027,6 +8900,7 @@
 
     move-result-object v10
 
+    .line 2015
     .local v10, title:Ljava/lang/CharSequence;
     new-instance v14, Landroid/content/res/Configuration;
 
@@ -8036,6 +8910,7 @@
 
     invoke-direct {v14, v3}, Landroid/content/res/Configuration;-><init>(Landroid/content/res/Configuration;)V
 
+    .line 2018
     .local v14, config:Landroid/content/res/Configuration;
     invoke-virtual/range {p0 .. p0}, Landroid/app/ActivityThread;->getInstrumentation()Landroid/app/Instrumentation;
 
@@ -8073,12 +8948,15 @@
 
     invoke-virtual/range {v1 .. v14}, Landroid/app/Activity;->attach(Landroid/content/Context;Landroid/app/ActivityThread;Landroid/app/Instrumentation;Landroid/os/IBinder;ILandroid/app/Application;Landroid/content/Intent;Landroid/content/pm/ActivityInfo;Ljava/lang/CharSequence;Landroid/app/Activity;Ljava/lang/String;Landroid/app/Activity$NonConfigurationInstances;Landroid/content/res/Configuration;)V
 
+    .line 2022
     if-eqz p2, :cond_4
 
+    .line 2023
     move-object/from16 v0, p2
 
     iput-object v0, v1, Landroid/app/Activity;->mIntent:Landroid/content/Intent;
 
+    .line 2025
     :cond_4
     const/4 v3, 0x0
 
@@ -8086,10 +8964,12 @@
 
     iput-object v3, v0, Landroid/app/ActivityThread$ActivityClientRecord;->lastNonConfigurationInstances:Landroid/app/Activity$NonConfigurationInstances;
 
+    .line 2026
     const/4 v3, 0x0
 
     iput-boolean v3, v1, Landroid/app/Activity;->mStartedActivity:Z
 
+    .line 2027
     move-object/from16 v0, p1
 
     iget-object v3, v0, Landroid/app/ActivityThread$ActivityClientRecord;->activityInfo:Landroid/content/pm/ActivityInfo;
@@ -8098,18 +8978,22 @@
 
     move-result v19
 
+    .line 2028
     .local v19, theme:I
     if-eqz v19, :cond_5
 
+    .line 2029
     move/from16 v0, v19
 
     invoke-virtual {v1, v0}, Landroid/app/Activity;->setTheme(I)V
 
+    .line 2032
     :cond_5
     const/4 v3, 0x0
 
     iput-boolean v3, v1, Landroid/app/Activity;->mCalled:Z
 
+    .line 2033
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
@@ -8120,10 +9004,12 @@
 
     invoke-virtual {v3, v1, v4}, Landroid/app/Instrumentation;->callActivityOnCreate(Landroid/app/Activity;Landroid/os/Bundle;)V
 
+    .line 2034
     iget-boolean v3, v1, Landroid/app/Activity;->mCalled:Z
 
     if-nez v3, :cond_6
 
+    .line 2035
     new-instance v3, Landroid/app/SuperNotCalledException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -8169,6 +9055,7 @@
     .catch Landroid/app/SuperNotCalledException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
 
+    .line 2064
     .end local v2           #appContext:Landroid/app/ContextImpl;
     .end local v7           #app:Landroid/app/Application;
     .end local v10           #title:Ljava/lang/CharSequence;
@@ -8177,13 +9064,16 @@
     :catch_0
     move-exception v18
 
+    .line 2065
     .local v18, e:Landroid/app/SuperNotCalledException;
     throw v18
 
+    .line 1991
     .end local v18           #e:Landroid/app/SuperNotCalledException;
     :catch_1
     move-exception v18
 
+    .line 1992
     .local v18, e:Ljava/lang/Exception;
     move-object/from16 v0, p0
 
@@ -8197,6 +9087,7 @@
 
     if-nez v3, :cond_3
 
+    .line 1993
     new-instance v3, Ljava/lang/RuntimeException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -8239,6 +9130,7 @@
 
     throw v3
 
+    .line 2039
     .end local v18           #e:Ljava/lang/Exception;
     .restart local v2       #appContext:Landroid/app/ContextImpl;
     .restart local v7       #app:Landroid/app/Application;
@@ -8251,12 +9143,14 @@
 
     iput-object v1, v0, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
+    .line 2040
     const/4 v3, 0x1
 
     move-object/from16 v0, p1
 
     iput-boolean v3, v0, Landroid/app/ActivityThread$ActivityClientRecord;->stopped:Z
 
+    .line 2041
     move-object/from16 v0, p1
 
     iget-object v3, v0, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
@@ -8265,14 +9159,17 @@
 
     if-nez v3, :cond_7
 
+    .line 2042
     invoke-virtual {v1}, Landroid/app/Activity;->performStart()V
 
+    .line 2043
     const/4 v3, 0x0
 
     move-object/from16 v0, p1
 
     iput-boolean v3, v0, Landroid/app/ActivityThread$ActivityClientRecord;->stopped:Z
 
+    .line 2045
     :cond_7
     move-object/from16 v0, p1
 
@@ -8282,12 +9179,14 @@
 
     if-nez v3, :cond_8
 
+    .line 2046
     move-object/from16 v0, p1
 
     iget-object v3, v0, Landroid/app/ActivityThread$ActivityClientRecord;->state:Landroid/os/Bundle;
 
     if-eqz v3, :cond_8
 
+    .line 2047
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
@@ -8298,6 +9197,7 @@
 
     invoke-virtual {v3, v1, v4}, Landroid/app/Instrumentation;->callActivityOnRestoreInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V
 
+    .line 2050
     :cond_8
     move-object/from16 v0, p1
 
@@ -8307,10 +9207,12 @@
 
     if-nez v3, :cond_9
 
+    .line 2051
     const/4 v3, 0x0
 
     iput-boolean v3, v1, Landroid/app/Activity;->mCalled:Z
 
+    .line 2052
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
@@ -8321,10 +9223,12 @@
 
     invoke-virtual {v3, v1, v4}, Landroid/app/Instrumentation;->callActivityOnPostCreate(Landroid/app/Activity;Landroid/os/Bundle;)V
 
+    .line 2053
     iget-boolean v3, v1, Landroid/app/Activity;->mCalled:Z
 
     if-nez v3, :cond_9
 
+    .line 2054
     new-instance v3, Landroid/app/SuperNotCalledException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -8370,6 +9274,7 @@
     .catch Landroid/app/SuperNotCalledException; {:try_start_2 .. :try_end_2} :catch_0
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
+    .line 2067
     .end local v2           #appContext:Landroid/app/ContextImpl;
     .end local v7           #app:Landroid/app/Application;
     .end local v10           #title:Ljava/lang/CharSequence;
@@ -8378,6 +9283,7 @@
     :catch_2
     move-exception v18
 
+    .line 2068
     .restart local v18       #e:Ljava/lang/Exception;
     move-object/from16 v0, p0
 
@@ -8391,6 +9297,7 @@
 
     if-nez v3, :cond_a
 
+    .line 2069
     new-instance v3, Ljava/lang/RuntimeException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -8433,6 +9340,7 @@
 
     throw v3
 
+    .line 2060
     .end local v18           #e:Ljava/lang/Exception;
     .restart local v7       #app:Landroid/app/Application;
     :cond_9
@@ -8443,6 +9351,7 @@
 
     iput-boolean v3, v0, Landroid/app/ActivityThread$ActivityClientRecord;->paused:Z
 
+    .line 2062
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/app/ActivityThread;->mActivities:Ljava/util/HashMap;
@@ -8458,6 +9367,7 @@
     .catch Landroid/app/SuperNotCalledException; {:try_start_3 .. :try_end_3} :catch_0
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
 
+    .line 2075
     .end local v7           #app:Landroid/app/Application;
     :cond_a
     return-object v1
@@ -8473,27 +9383,33 @@
     .prologue
     const/4 v4, 0x1
 
+    .line 2946
     const/4 v1, 0x0
 
+    .line 2947
     .local v1, state:Landroid/os/Bundle;
     if-eqz p1, :cond_0
 
+    .line 2948
     if-nez p3, :cond_2
 
     iget-boolean v2, p1, Landroid/app/ActivityThread$ActivityClientRecord;->stopped:Z
 
     if-eqz v2, :cond_2
 
+    .line 2949
     iget-object v2, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget-boolean v2, v2, Landroid/app/Activity;->mFinished:Z
 
     if-eqz v2, :cond_1
 
+    .line 3007
     :cond_0
     :goto_0
     return-void
 
+    .line 2955
     :cond_1
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -8527,6 +9443,7 @@
 
     invoke-direct {v0, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
+    .line 2958
     .local v0, e:Ljava/lang/RuntimeException;
     const-string v2, "ActivityThread"
 
@@ -8536,15 +9453,18 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 2961
     .end local v0           #e:Ljava/lang/RuntimeException;
     :cond_2
     if-eqz p2, :cond_3
 
+    .line 2966
     const/4 v2, 0x0
 
     :try_start_0
     iput-object v2, p2, Landroid/app/ActivityThread$StopInfo;->thumbnail:Landroid/graphics/Bitmap;
 
+    .line 2967
     iget-object v2, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v2}, Landroid/app/Activity;->onCreateDescription()Ljava/lang/CharSequence;
@@ -8555,6 +9475,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2979
     :cond_3
     iget-object v2, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
@@ -8564,32 +9485,39 @@
 
     if-eqz p4, :cond_4
 
+    .line 2980
     iget-object v2, p1, Landroid/app/ActivityThread$ActivityClientRecord;->state:Landroid/os/Bundle;
 
     if-nez v2, :cond_7
 
+    .line 2981
     new-instance v1, Landroid/os/Bundle;
 
     .end local v1           #state:Landroid/os/Bundle;
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
+    .line 2982
     .restart local v1       #state:Landroid/os/Bundle;
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/os/Bundle;->setAllowFds(Z)Z
 
+    .line 2983
     iget-object v2, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
     iget-object v3, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v2, v3, v1}, Landroid/app/Instrumentation;->callActivityOnSaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V
 
+    .line 2984
     iput-object v1, p1, Landroid/app/ActivityThread$ActivityClientRecord;->state:Landroid/os/Bundle;
 
+    .line 2990
     :cond_4
     :goto_1
     if-nez p3, :cond_6
 
+    .line 2993
     :try_start_1
     iget-object v2, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
@@ -8597,17 +9525,21 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
+    .line 3002
     :cond_5
     iput-boolean v4, p1, Landroid/app/ActivityThread$ActivityClientRecord;->stopped:Z
 
+    .line 3005
     :cond_6
     iput-boolean v4, p1, Landroid/app/ActivityThread$ActivityClientRecord;->paused:Z
 
     goto :goto_0
 
+    .line 2968
     :catch_0
     move-exception v0
 
+    .line 2969
     .local v0, e:Ljava/lang/Exception;
     iget-object v2, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
@@ -8619,6 +9551,7 @@
 
     if-nez v2, :cond_3
 
+    .line 2970
     new-instance v2, Ljava/lang/RuntimeException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -8667,15 +9600,18 @@
 
     throw v2
 
+    .line 2986
     .end local v0           #e:Ljava/lang/Exception;
     :cond_7
     iget-object v1, p1, Landroid/app/ActivityThread$ActivityClientRecord;->state:Landroid/os/Bundle;
 
     goto :goto_1
 
+    .line 2994
     :catch_1
     move-exception v0
 
+    .line 2995
     .restart local v0       #e:Ljava/lang/Exception;
     iget-object v2, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
@@ -8687,6 +9623,7 @@
 
     if-nez v2, :cond_5
 
+    .line 2996
     new-instance v2, Ljava/lang/RuntimeException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -8744,8 +9681,10 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 1930
     invoke-direct {p0, p1, p2, v0, v0}, Landroid/app/ActivityThread;->queueOrSendMessage(ILjava/lang/Object;II)V
 
+    .line 1931
     return-void
 .end method
 
@@ -8756,10 +9695,12 @@
     .parameter "arg1"
 
     .prologue
+    .line 1934
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, p3, v0}, Landroid/app/ActivityThread;->queueOrSendMessage(ILjava/lang/Object;II)V
 
+    .line 1935
     return-void
 .end method
 
@@ -8771,30 +9712,40 @@
     .parameter "arg2"
 
     .prologue
+    .line 1938
     monitor-enter p0
 
+    .line 1942
     :try_start_0
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
+    .line 1943
     .local v0, msg:Landroid/os/Message;
     iput p1, v0, Landroid/os/Message;->what:I
 
+    .line 1944
     iput-object p2, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
+    .line 1945
     iput p3, v0, Landroid/os/Message;->arg1:I
 
+    .line 1946
     iput p4, v0, Landroid/os/Message;->arg2:I
 
+    .line 1947
     iget-object v1, p0, Landroid/app/ActivityThread;->mH:Landroid/app/ActivityThread$H;
 
     invoke-virtual {v1, v0}, Landroid/app/ActivityThread$H;->sendMessage(Landroid/os/Message;)Z
 
+    .line 1948
     monitor-exit p0
 
+    .line 1949
     return-void
 
+    .line 1948
     .end local v0           #msg:Landroid/os/Message;
     :catchall_0
     move-exception v1
@@ -8811,10 +9762,12 @@
     .parameter "intent"
 
     .prologue
+    .line 3317
     invoke-virtual {p0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v0
 
+    .line 3318
     .local v0, component:Landroid/content/ComponentName;
     if-nez v0, :cond_0
 
@@ -8837,22 +9790,26 @@
     .parameter "cacheDir"
 
     .prologue
+    .line 3928
     invoke-static {}, Landroid/os/Process;->isIsolated()Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
+    .line 3945
     :cond_0
     :goto_0
     return-void
 
+    .line 3933
     :cond_1
     :try_start_0
     invoke-static {}, Landroid/os/Process;->myUid()I
 
     move-result v1
 
+    .line 3934
     .local v1, uid:I
     invoke-static {}, Landroid/app/ActivityThread;->getPackageManager()Landroid/content/pm/IPackageManager;
 
@@ -8862,6 +9819,7 @@
 
     move-result-object v0
 
+    .line 3938
     .local v0, packages:[Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -8871,14 +9829,17 @@
 
     if-ne v2, v3, :cond_0
 
+    .line 3939
     invoke-static {p2}, Landroid/view/HardwareRenderer;->setupDiskCache(Ljava/io/File;)V
 
+    .line 3940
     invoke-static {p2}, Landroid/renderscript/RenderScript;->setupDiskCache(Ljava/io/File;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
+    .line 3942
     .end local v0           #packages:[Ljava/lang/String;
     .end local v1           #uid:I
     :catch_0
@@ -8893,15 +9854,19 @@
     .prologue
     const/4 v1, 0x1
 
+    .line 4730
     invoke-static {v1}, Landroid/view/HardwareRenderer;->disable(Z)V
 
+    .line 4731
     new-instance v0, Landroid/app/ActivityThread;
 
     invoke-direct {v0}, Landroid/app/ActivityThread;-><init>()V
 
+    .line 4732
     .local v0, thread:Landroid/app/ActivityThread;
     invoke-direct {v0, v1}, Landroid/app/ActivityThread;->attach(Z)V
 
+    .line 4733
     return-object v0
 .end method
 
@@ -8911,54 +9876,65 @@
     .parameter "show"
 
     .prologue
+    .line 3010
     iget-object v1, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget-object v0, v1, Landroid/app/Activity;->mDecor:Landroid/view/View;
 
+    .line 3011
     .local v0, v:Landroid/view/View;
     if-eqz v0, :cond_1
 
+    .line 3012
     if-eqz p2, :cond_2
 
+    .line 3013
     iget-object v1, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget-boolean v1, v1, Landroid/app/Activity;->mVisibleFromServer:Z
 
     if-nez v1, :cond_0
 
+    .line 3014
     iget-object v1, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     const/4 v2, 0x1
 
     iput-boolean v2, v1, Landroid/app/Activity;->mVisibleFromServer:Z
 
+    .line 3015
     iget v1, p0, Landroid/app/ActivityThread;->mNumVisibleActivities:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Landroid/app/ActivityThread;->mNumVisibleActivities:I
 
+    .line 3016
     iget-object v1, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget-boolean v1, v1, Landroid/app/Activity;->mVisibleFromClient:Z
 
     if-eqz v1, :cond_0
 
+    .line 3017
     iget-object v1, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v1}, Landroid/app/Activity;->makeVisible()V
 
+    .line 3020
     :cond_0
     iget-object v1, p1, Landroid/app/ActivityThread$ActivityClientRecord;->newConfig:Landroid/content/res/Configuration;
 
     if-eqz v1, :cond_1
 
+    .line 3023
     iget-object v1, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget-object v2, p1, Landroid/app/ActivityThread$ActivityClientRecord;->newConfig:Landroid/content/res/Configuration;
 
     invoke-static {v1, v2}, Landroid/app/ActivityThread;->performConfigurationChanged(Landroid/content/ComponentCallbacks2;Landroid/content/res/Configuration;)V
 
+    .line 3024
     iget-object v1, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget-object v1, v1, Landroid/app/Activity;->mCurrentConfig:Landroid/content/res/Configuration;
@@ -8971,14 +9947,17 @@
 
     invoke-virtual {p0, v1}, Landroid/app/ActivityThread;->freeTextLayoutCachesIfNeeded(I)V
 
+    .line 3025
     const/4 v1, 0x0
 
     iput-object v1, p1, Landroid/app/ActivityThread$ActivityClientRecord;->newConfig:Landroid/content/res/Configuration;
 
+    .line 3035
     :cond_1
     :goto_0
     return-void
 
+    .line 3028
     :cond_2
     iget-object v1, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
@@ -8986,18 +9965,21 @@
 
     if-eqz v1, :cond_1
 
+    .line 3029
     iget-object v1, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     const/4 v2, 0x0
 
     iput-boolean v2, v1, Landroid/app/Activity;->mVisibleFromServer:Z
 
+    .line 3030
     iget v1, p0, Landroid/app/ActivityThread;->mNumVisibleActivities:I
 
     add-int/lit8 v1, v1, -0x1
 
     iput v1, p0, Landroid/app/ActivityThread;->mNumVisibleActivities:I
 
+    .line 3031
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
@@ -9014,10 +9996,12 @@
     .parameter "stable"
 
     .prologue
+    .line 4335
     iget-object v5, p0, Landroid/app/ActivityThread;->mProviderMap:Ljava/util/HashMap;
 
     monitor-enter v5
 
+    .line 4336
     :try_start_0
     iget-object v4, p0, Landroid/app/ActivityThread;->mProviderMap:Ljava/util/HashMap;
 
@@ -9027,24 +10011,30 @@
 
     check-cast v1, Landroid/app/ActivityThread$ProviderClientRecord;
 
+    .line 4337
     .local v1, pr:Landroid/app/ActivityThread$ProviderClientRecord;
     if-nez v1, :cond_0
 
+    .line 4338
     const/4 v3, 0x0
 
     monitor-exit v5
 
+    .line 4350
     :goto_0
     return-object v3
 
+    .line 4341
     :cond_0
     iget-object v3, v1, Landroid/app/ActivityThread$ProviderClientRecord;->mProvider:Landroid/content/IContentProvider;
 
+    .line 4342
     .local v3, provider:Landroid/content/IContentProvider;
     invoke-interface {v3}, Landroid/content/IContentProvider;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 4346
     .local v0, jBinder:Landroid/os/IBinder;
     iget-object v4, p0, Landroid/app/ActivityThread;->mProviderRefCountMap:Ljava/util/HashMap;
 
@@ -9054,16 +10044,20 @@
 
     check-cast v2, Landroid/app/ActivityThread$ProviderRefCount;
 
+    .line 4347
     .local v2, prc:Landroid/app/ActivityThread$ProviderRefCount;
     if-eqz v2, :cond_1
 
+    .line 4348
     invoke-direct {p0, v2, p3}, Landroid/app/ActivityThread;->incProviderRefLocked(Landroid/app/ActivityThread$ProviderRefCount;Z)V
 
+    .line 4350
     :cond_1
     monitor-exit v5
 
     goto :goto_0
 
+    .line 4351
     .end local v0           #jBinder:Landroid/os/IBinder;
     .end local v1           #pr:Landroid/app/ActivityThread$ProviderClientRecord;
     .end local v2           #prc:Landroid/app/ActivityThread$ProviderRefCount;
@@ -9085,21 +10079,26 @@
     .parameter "stable"
 
     .prologue
+    .line 4238
     invoke-virtual {p0, p1, p2, p3}, Landroid/app/ActivityThread;->acquireExistingProvider(Landroid/content/Context;Ljava/lang/String;Z)Landroid/content/IContentProvider;
 
     move-result-object v7
 
+    .line 4239
     .local v7, provider:Landroid/content/IContentProvider;
     if-eqz v7, :cond_0
 
+    .line 4264
     .end local v7           #provider:Landroid/content/IContentProvider;
     :goto_0
     return-object v7
 
+    .line 4249
     .restart local v7       #provider:Landroid/content/IContentProvider;
     :cond_0
     const/4 v2, 0x0
 
+    .line 4251
     .local v2, holder:Landroid/app/IActivityManager$ContentProviderHolder;
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
@@ -9116,9 +10115,11 @@
 
     move-result-object v2
 
+    .line 4255
     :goto_1
     if-nez v2, :cond_1
 
+    .line 4256
     const-string v0, "ActivityThread"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -9141,10 +10142,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 4257
     const/4 v7, 0x0
 
     goto :goto_0
 
+    .line 4262
     :cond_1
     iget-object v3, v2, Landroid/app/IActivityManager$ContentProviderHolder;->info:Landroid/content/pm/ProviderInfo;
 
@@ -9162,10 +10165,12 @@
 
     move-result-object v2
 
+    .line 4264
     iget-object v7, v2, Landroid/app/IActivityManager$ContentProviderHolder;->provider:Landroid/content/IContentProvider;
 
     goto :goto_0
 
+    .line 4253
     :catch_0
     move-exception v0
 
@@ -9176,19 +10181,23 @@
     .locals 3
 
     .prologue
+    .line 3724
     iget-object v0, p0, Landroid/app/ActivityThread;->mConfiguration:Landroid/content/res/Configuration;
 
+    .line 3725
     .local v0, config:Landroid/content/res/Configuration;
     iget-object v1, p0, Landroid/app/ActivityThread;->mCompatConfiguration:Landroid/content/res/Configuration;
 
     if-nez v1, :cond_0
 
+    .line 3726
     new-instance v1, Landroid/content/res/Configuration;
 
     invoke-direct {v1}, Landroid/content/res/Configuration;-><init>()V
 
     iput-object v1, p0, Landroid/app/ActivityThread;->mCompatConfiguration:Landroid/content/res/Configuration;
 
+    .line 3728
     :cond_0
     iget-object v1, p0, Landroid/app/ActivityThread;->mCompatConfiguration:Landroid/content/res/Configuration;
 
@@ -9196,6 +10205,7 @@
 
     invoke-virtual {v1, v2}, Landroid/content/res/Configuration;->setTo(Landroid/content/res/Configuration;)V
 
+    .line 3729
     iget-object v1, p0, Landroid/app/ActivityThread;->mResCompatibilityInfo:Landroid/content/res/CompatibilityInfo;
 
     if-eqz v1, :cond_1
@@ -9208,14 +10218,17 @@
 
     if-nez v1, :cond_1
 
+    .line 3730
     iget-object v1, p0, Landroid/app/ActivityThread;->mResCompatibilityInfo:Landroid/content/res/CompatibilityInfo;
 
     iget-object v2, p0, Landroid/app/ActivityThread;->mCompatConfiguration:Landroid/content/res/Configuration;
 
     invoke-virtual {v1, v2}, Landroid/content/res/CompatibilityInfo;->applyToConfiguration(Landroid/content/res/Configuration;)V
 
+    .line 3731
     iget-object v0, p0, Landroid/app/ActivityThread;->mCompatConfiguration:Landroid/content/res/Configuration;
 
+    .line 3733
     :cond_1
     return-object v0
 .end method
@@ -9226,13 +10239,17 @@
     .parameter "compat"
 
     .prologue
+    .line 1547
     if-nez p1, :cond_0
 
+    .line 1548
     const/4 v0, 0x0
 
+    .line 1555
     :goto_0
     return-object v0
 
+    .line 1550
     :cond_0
     if-eqz p2, :cond_1
 
@@ -9242,17 +10259,21 @@
 
     if-nez v0, :cond_1
 
+    .line 1551
     iget-object v0, p0, Landroid/app/ActivityThread;->mMainThreadConfig:Landroid/content/res/Configuration;
 
     invoke-virtual {v0, p1}, Landroid/content/res/Configuration;->setTo(Landroid/content/res/Configuration;)V
 
+    .line 1552
     iget-object p1, p0, Landroid/app/ActivityThread;->mMainThreadConfig:Landroid/content/res/Configuration;
 
+    .line 1553
     invoke-virtual {p2, p1}, Landroid/content/res/CompatibilityInfo;->applyToConfiguration(Landroid/content/res/Configuration;)V
 
     :cond_1
     move-object v0, p1
 
+    .line 1555
     goto :goto_0
 .end method
 
@@ -9261,19 +10282,24 @@
     .parameter "config"
 
     .prologue
+    .line 3665
     iget-object v1, p0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;
 
     monitor-enter v1
 
+    .line 3666
     const/4 v0, 0x0
 
     :try_start_0
     invoke-virtual {p0, p1, v0}, Landroid/app/ActivityThread;->applyConfigurationToResourcesLocked(Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)Z
 
+    .line 3667
     monitor-exit v1
 
+    .line 3668
     return-void
 
+    .line 3667
     :catchall_0
     move-exception v0
 
@@ -9294,16 +10320,19 @@
 
     const/4 v6, 0x0
 
+    .line 3672
     iget-object v7, p0, Landroid/app/ActivityThread;->mResConfiguration:Landroid/content/res/Configuration;
 
     if-nez v7, :cond_0
 
+    .line 3673
     new-instance v7, Landroid/content/res/Configuration;
 
     invoke-direct {v7}, Landroid/content/res/Configuration;-><init>()V
 
     iput-object v7, p0, Landroid/app/ActivityThread;->mResConfiguration:Landroid/content/res/Configuration;
 
+    .line 3675
     :cond_0
     iget-object v7, p0, Landroid/app/ActivityThread;->mResConfiguration:Landroid/content/res/Configuration;
 
@@ -9315,9 +10344,11 @@
 
     if-nez p2, :cond_1
 
+    .line 3720
     :goto_0
     return v6
 
+    .line 3680
     :cond_1
     iget-object v7, p0, Landroid/app/ActivityThread;->mResConfiguration:Landroid/content/res/Configuration;
 
@@ -9325,6 +10356,7 @@
 
     move-result v0
 
+    .line 3681
     .local v0, changes:I
     const/4 v7, 0x0
 
@@ -9332,6 +10364,7 @@
 
     move-result-object v1
 
+    .line 3683
     .local v1, dm:Landroid/util/DisplayMetrics;
     if-eqz p2, :cond_3
 
@@ -9347,27 +10380,32 @@
 
     if-nez v7, :cond_3
 
+    .line 3685
     :cond_2
     iput-object p2, p0, Landroid/app/ActivityThread;->mResCompatibilityInfo:Landroid/content/res/CompatibilityInfo;
 
+    .line 3686
     or-int/lit16 v0, v0, 0xd00
 
+    .line 3692
     :cond_3
-    invoke-static {v0}, Landroid/app/MiuiThemeHelper;->handleExtraConfigurationChanges(I)V
-
     iget-object v7, p1, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
     if-eqz v7, :cond_4
 
+    .line 3693
     iget-object v7, p1, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
     invoke-static {v7}, Ljava/util/Locale;->setDefault(Ljava/util/Locale;)V
 
+    .line 3696
     :cond_4
     invoke-static {p1, v1, p2}, Landroid/content/res/Resources;->updateSystemConfiguration(Landroid/content/res/Configuration;Landroid/util/DisplayMetrics;Landroid/content/res/CompatibilityInfo;)V
 
+    .line 3698
     invoke-static {}, Landroid/app/ApplicationPackageManager;->configurationChanged()V
 
+    .line 3701
     iget-object v7, p0, Landroid/app/ActivityThread;->mActiveResources:Ljava/util/HashMap;
 
     invoke-virtual {v7}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -9378,6 +10416,7 @@
 
     move-result-object v2
 
+    .line 3705
     .local v2, it:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/lang/ref/WeakReference<Landroid/content/res/Resources;>;>;"
     :goto_1
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
@@ -9386,12 +10425,14 @@
 
     if-eqz v7, :cond_6
 
+    .line 3706
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Ljava/lang/ref/WeakReference;
 
+    .line 3707
     .local v4, v:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/content/res/Resources;>;"
     invoke-virtual {v4}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -9399,18 +10440,22 @@
 
     check-cast v3, Landroid/content/res/Resources;
 
+    .line 3708
     .local v3, r:Landroid/content/res/Resources;
     if-eqz v3, :cond_5
 
+    .line 3711
     invoke-virtual {v3, p1, v1, p2}, Landroid/content/res/Resources;->updateConfiguration(Landroid/content/res/Configuration;Landroid/util/DisplayMetrics;Landroid/content/res/CompatibilityInfo;)V
 
     goto :goto_1
 
+    .line 3716
     :cond_5
     invoke-interface {v2}, Ljava/util/Iterator;->remove()V
 
     goto :goto_1
 
+    .line 3720
     .end local v3           #r:Landroid/content/res/Resources;
     .end local v4           #v:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/content/res/Resources;>;"
     :cond_6
@@ -9444,10 +10489,12 @@
     .end annotation
 
     .prologue
+    .line 3571
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
+    .line 3574
     .local v3, callbacks:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ComponentCallbacks2;>;"
     iget-object v9, p0, Landroid/app/ActivityThread;->mActivities:Ljava/util/HashMap;
 
@@ -9457,6 +10504,7 @@
 
     if-lez v9, :cond_3
 
+    .line 3575
     iget-object v9, p0, Landroid/app/ActivityThread;->mActivities:Ljava/util/HashMap;
 
     invoke-virtual {v9}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -9482,12 +10530,15 @@
 
     check-cast v2, Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 3576
     .local v2, ar:Landroid/app/ActivityThread$ActivityClientRecord;
     iget-object v1, v2, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
+    .line 3577
     .local v1, a:Landroid/app/Activity;
     if-eqz v1, :cond_0
 
+    .line 3578
     iget-object v9, v2, Landroid/app/ActivityThread$ActivityClientRecord;->packageInfo:Landroid/app/LoadedApk;
 
     iget-object v9, v9, Landroid/app/LoadedApk;->mCompatibilityInfo:Landroid/view/CompatibilityInfoHolder;
@@ -9500,6 +10551,7 @@
 
     move-result-object v8
 
+    .line 3580
     .local v8, thisConfig:Landroid/content/res/Configuration;
     iget-object v9, v2, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
@@ -9513,18 +10565,22 @@
 
     if-nez v9, :cond_2
 
+    .line 3583
     :cond_1
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    .line 3584
     :cond_2
     if-eqz v8, :cond_0
 
+    .line 3594
     iput-object v8, v2, Landroid/app/ActivityThread$ActivityClientRecord;->newConfig:Landroid/content/res/Configuration;
 
     goto :goto_0
 
+    .line 3599
     .end local v1           #a:Landroid/app/Activity;
     .end local v2           #ar:Landroid/app/ActivityThread$ActivityClientRecord;
     .end local v5           #i$:Ljava/util/Iterator;
@@ -9538,6 +10594,7 @@
 
     if-lez v9, :cond_4
 
+    .line 3600
     iget-object v9, p0, Landroid/app/ActivityThread;->mServices:Ljava/util/HashMap;
 
     invoke-virtual {v9}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -9562,11 +10619,13 @@
 
     check-cast v7, Landroid/app/Service;
 
+    .line 3601
     .local v7, service:Landroid/app/Service;
     invoke-virtual {v3, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
+    .line 3604
     .end local v5           #i$:Ljava/util/Iterator;
     .end local v7           #service:Landroid/app/Service;
     :cond_4
@@ -9574,6 +10633,7 @@
 
     monitor-enter v10
 
+    .line 3605
     :try_start_0
     iget-object v9, p0, Landroid/app/ActivityThread;->mLocalProviders:Ljava/util/HashMap;
 
@@ -9583,6 +10643,7 @@
 
     if-lez v9, :cond_5
 
+    .line 3606
     iget-object v9, p0, Landroid/app/ActivityThread;->mLocalProviders:Ljava/util/HashMap;
 
     invoke-virtual {v9}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -9607,6 +10668,7 @@
 
     check-cast v6, Landroid/app/ActivityThread$ProviderClientRecord;
 
+    .line 3607
     .local v6, providerClientRecord:Landroid/app/ActivityThread$ProviderClientRecord;
     iget-object v9, v6, Landroid/app/ActivityThread$ProviderClientRecord;->mLocalProvider:Landroid/content/ContentProvider;
 
@@ -9614,6 +10676,7 @@
 
     goto :goto_2
 
+    .line 3610
     .end local v5           #i$:Ljava/util/Iterator;
     .end local v6           #providerClientRecord:Landroid/app/ActivityThread$ProviderClientRecord;
     :catchall_0
@@ -9631,12 +10694,14 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 3611
     iget-object v9, p0, Landroid/app/ActivityThread;->mAllApplications:Ljava/util/ArrayList;
 
     invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
+    .line 3612
     .local v0, N:I
     const/4 v4, 0x0
 
@@ -9644,6 +10709,7 @@
     :goto_3
     if-ge v4, v0, :cond_6
 
+    .line 3613
     iget-object v9, p0, Landroid/app/ActivityThread;->mAllApplications:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -9652,10 +10718,12 @@
 
     invoke-virtual {v3, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 3612
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_3
 
+    .line 3616
     :cond_6
     return-object v3
 .end method
@@ -9665,20 +10733,25 @@
     .parameter "prc"
 
     .prologue
+    .line 4444
     iget-object v6, p0, Landroid/app/ActivityThread;->mProviderMap:Ljava/util/HashMap;
 
     monitor-enter v6
 
+    .line 4445
     :try_start_0
     iget-boolean v5, p1, Landroid/app/ActivityThread$ProviderRefCount;->removePending:Z
 
     if-nez v5, :cond_0
 
+    .line 4451
     monitor-exit v6
 
+    .line 4480
     :goto_0
     return-void
 
+    .line 4454
     :cond_0
     iget-object v5, p1, Landroid/app/ActivityThread$ProviderRefCount;->holder:Landroid/app/IActivityManager$ContentProviderHolder;
 
@@ -9688,6 +10761,7 @@
 
     move-result-object v2
 
+    .line 4455
     .local v2, jBinder:Landroid/os/IBinder;
     iget-object v5, p0, Landroid/app/ActivityThread;->mProviderRefCountMap:Ljava/util/HashMap;
 
@@ -9697,13 +10771,16 @@
 
     check-cast v0, Landroid/app/ActivityThread$ProviderRefCount;
 
+    .line 4456
     .local v0, existingPrc:Landroid/app/ActivityThread$ProviderRefCount;
     if-ne v0, p1, :cond_1
 
+    .line 4457
     iget-object v5, p0, Landroid/app/ActivityThread;->mProviderRefCountMap:Ljava/util/HashMap;
 
     invoke-virtual {v5, v2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 4460
     :cond_1
     iget-object v5, p0, Landroid/app/ActivityThread;->mProviderMap:Ljava/util/HashMap;
 
@@ -9715,6 +10792,7 @@
 
     move-result-object v1
 
+    .line 4461
     .local v1, iter:Ljava/util/Iterator;,"Ljava/util/Iterator<Landroid/app/ActivityThread$ProviderClientRecord;>;"
     :cond_2
     :goto_1
@@ -9724,12 +10802,14 @@
 
     if-eqz v5, :cond_3
 
+    .line 4462
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Landroid/app/ActivityThread$ProviderClientRecord;
 
+    .line 4463
     .local v4, pr:Landroid/app/ActivityThread$ProviderClientRecord;
     iget-object v5, v4, Landroid/app/ActivityThread$ProviderClientRecord;->mProvider:Landroid/content/IContentProvider;
 
@@ -9737,13 +10817,16 @@
 
     move-result-object v3
 
+    .line 4464
     .local v3, myBinder:Landroid/os/IBinder;
     if-ne v3, v2, :cond_2
 
+    .line 4465
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
 
     goto :goto_1
 
+    .line 4468
     .end local v0           #existingPrc:Landroid/app/ActivityThread$ProviderRefCount;
     .end local v1           #iter:Ljava/util/Iterator;,"Ljava/util/Iterator<Landroid/app/ActivityThread$ProviderClientRecord;>;"
     .end local v2           #jBinder:Landroid/os/IBinder;
@@ -9767,6 +10850,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 4475
     :try_start_2
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -9784,6 +10868,7 @@
 
     goto :goto_0
 
+    .line 4477
     :catch_0
     move-exception v5
 
@@ -9794,14 +10879,17 @@
     .locals 6
 
     .prologue
+    .line 1843
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Landroid/app/ActivityThread;->mGcIdlerScheduled:Z
 
+    .line 1844
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
+    .line 1847
     .local v0, now:J
     invoke-static {}, Lcom/android/internal/os/BinderInternal;->getLastGcTime()J
 
@@ -9815,10 +10903,12 @@
 
     if-gez v2, :cond_0
 
+    .line 1849
     const-string v2, "bg"
 
     invoke-static {v2}, Lcom/android/internal/os/BinderInternal;->forceGc(Ljava/lang/String;)V
 
+    .line 1851
     :cond_0
     return-void
 .end method
@@ -9827,20 +10917,24 @@
     .locals 1
 
     .prologue
+    .line 1820
     iget-boolean v0, p0, Landroid/app/ActivityThread;->mJitEnabled:Z
 
     if-nez v0, :cond_0
 
+    .line 1821
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/app/ActivityThread;->mJitEnabled:Z
 
+    .line 1822
     invoke-static {}, Ldalvik/system/VMRuntime;->getRuntime()Ldalvik/system/VMRuntime;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ldalvik/system/VMRuntime;->startJitCompilation()V
 
+    .line 1824
     :cond_0
     return-void
 .end method
@@ -9851,10 +10945,12 @@
     .parameter "results"
 
     .prologue
+    .line 4197
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v0
 
+    .line 4198
     .local v0, am:Landroid/app/IActivityManager;
     iget-object v1, p0, Landroid/app/ActivityThread;->mProfiler:Landroid/app/ActivityThread$Profiler;
 
@@ -9874,8 +10970,10 @@
 
     if-nez v1, :cond_0
 
+    .line 4200
     invoke-static {}, Landroid/os/Debug;->stopMethodTracing()V
 
+    .line 4205
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/app/ActivityThread;->mAppThread:Landroid/app/ActivityThread$ApplicationThread;
@@ -9884,9 +10982,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 4208
     :goto_0
     return-void
 
+    .line 4206
     :catch_0
     move-exception v1
 
@@ -9898,24 +10998,30 @@
     .parameter "configDiff"
 
     .prologue
+    .line 3784
     if-eqz p1, :cond_0
 
+    .line 3786
     and-int/lit8 v1, p1, 0x4
 
     if-eqz v1, :cond_1
 
     const/4 v0, 0x1
 
+    .line 3787
     .local v0, hasLocaleConfigChange:Z
     :goto_0
     if-eqz v0, :cond_0
 
+    .line 3788
     invoke-static {}, Landroid/graphics/Canvas;->freeTextLayoutCaches()V
 
+    .line 3792
     .end local v0           #hasLocaleConfigChange:Z
     :cond_0
     return-void
 
+    .line 3786
     :cond_1
     const/4 v0, 0x0
 
@@ -9927,6 +11033,7 @@
     .parameter "token"
 
     .prologue
+    .line 1914
     iget-object v0, p0, Landroid/app/ActivityThread;->mActivities:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -9944,6 +11051,7 @@
     .locals 1
 
     .prologue
+    .line 1782
     iget-object v0, p0, Landroid/app/ActivityThread;->mInitialApplication:Landroid/app/Application;
 
     return-object v0
@@ -9953,6 +11061,7 @@
     .locals 1
 
     .prologue
+    .line 1756
     iget-object v0, p0, Landroid/app/ActivityThread;->mAppThread:Landroid/app/ActivityThread$ApplicationThread;
 
     return-object v0
@@ -9962,6 +11071,7 @@
     .locals 1
 
     .prologue
+    .line 1765
     iget-object v0, p0, Landroid/app/ActivityThread;->mResConfiguration:Landroid/content/res/Configuration;
 
     return-object v0
@@ -9973,6 +11083,7 @@
     .parameter "forceUpdate"
 
     .prologue
+    .line 1529
     iget-object v3, p0, Landroid/app/ActivityThread;->mDisplayMetrics:Ljava/util/HashMap;
 
     invoke-virtual {v3, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -9981,6 +11092,7 @@
 
     check-cast v1, Landroid/util/DisplayMetrics;
 
+    .line 1530
     .local v1, dm:Landroid/util/DisplayMetrics;
     if-eqz v1, :cond_0
 
@@ -9988,26 +11100,31 @@
 
     move-object v2, v1
 
+    .line 1542
     .end local v1           #dm:Landroid/util/DisplayMetrics;
     .local v2, dm:Landroid/util/DisplayMetrics;
     :goto_0
     return-object v2
 
+    .line 1533
     .end local v2           #dm:Landroid/util/DisplayMetrics;
     .restart local v1       #dm:Landroid/util/DisplayMetrics;
     :cond_0
     if-nez v1, :cond_1
 
+    .line 1534
     new-instance v1, Landroid/util/DisplayMetrics;
 
     .end local v1           #dm:Landroid/util/DisplayMetrics;
     invoke-direct {v1}, Landroid/util/DisplayMetrics;-><init>()V
 
+    .line 1535
     .restart local v1       #dm:Landroid/util/DisplayMetrics;
     iget-object v3, p0, Landroid/app/ActivityThread;->mDisplayMetrics:Ljava/util/HashMap;
 
     invoke-virtual {v3, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1537
     :cond_1
     invoke-static {p1}, Landroid/view/WindowManagerImpl;->getDefault(Landroid/content/res/CompatibilityInfo;)Landroid/view/WindowManager;
 
@@ -10017,11 +11134,13 @@
 
     move-result-object v0
 
+    .line 1538
     .local v0, d:Landroid/view/Display;
     invoke-virtual {v0, v1}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
 
     move-object v2, v1
 
+    .line 1542
     .end local v1           #dm:Landroid/util/DisplayMetrics;
     .restart local v2       #dm:Landroid/util/DisplayMetrics;
     goto :goto_0
@@ -10031,6 +11150,7 @@
     .locals 1
 
     .prologue
+    .line 1632
     iget-object v0, p0, Landroid/app/ActivityThread;->mH:Landroid/app/ActivityThread$H;
 
     return-object v0
@@ -10040,6 +11160,7 @@
     .locals 1
 
     .prologue
+    .line 1761
     iget-object v0, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
     return-object v0
@@ -10051,15 +11172,18 @@
     .parameter "defaultValue"
 
     .prologue
+    .line 4743
     iget-object v1, p0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;
 
     monitor-enter v1
 
+    .line 4744
     :try_start_0
     iget-object v0, p0, Landroid/app/ActivityThread;->mCoreSettings:Landroid/os/Bundle;
 
     if-eqz v0, :cond_0
 
+    .line 4745
     iget-object v0, p0, Landroid/app/ActivityThread;->mCoreSettings:Landroid/os/Bundle;
 
     invoke-virtual {v0, p1, p2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
@@ -10069,6 +11193,7 @@
     .end local p2
     monitor-exit v1
 
+    .line 4747
     :goto_0
     return p2
 
@@ -10078,6 +11203,7 @@
 
     goto :goto_0
 
+    .line 4749
     .end local p2
     :catchall_0
     move-exception v0
@@ -10093,6 +11219,7 @@
     .locals 1
 
     .prologue
+    .line 1778
     iget-object v0, p0, Landroid/app/ActivityThread;->mLooper:Landroid/os/Looper;
 
     return-object v0
@@ -10109,12 +11236,14 @@
 
     const/4 v0, 0x1
 
+    .line 1679
     and-int/lit8 v1, p3, 0x1
 
     if-eqz v1, :cond_3
 
     move v5, v0
 
+    .line 1680
     .local v5, includeCode:Z
     :goto_0
     if-eqz v5, :cond_1
@@ -10150,14 +11279,17 @@
     :cond_0
     move v4, v0
 
+    .line 1684
     .local v4, securityViolation:Z
     :cond_1
     and-int/lit8 v1, p3, 0x3
 
     if-ne v1, v0, :cond_4
 
+    .line 1687
     if-eqz v4, :cond_4
 
+    .line 1688
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10196,11 +11328,13 @@
 
     move-result-object v6
 
+    .line 1690
     .local v6, msg:Ljava/lang/String;
     iget-object v0, p0, Landroid/app/ActivityThread;->mBoundApplication:Landroid/app/ActivityThread$AppBindData;
 
     if-eqz v0, :cond_2
 
+    .line 1691
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10249,6 +11383,7 @@
 
     move-result-object v6
 
+    .line 1695
     :cond_2
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -10262,8 +11397,10 @@
     :cond_3
     move v5, v4
 
+    .line 1679
     goto/16 :goto_0
 
+    .line 1698
     .restart local v4       #securityViolation:Z
     .restart local v5       #includeCode:Z
     :cond_4
@@ -10291,14 +11428,17 @@
     .prologue
     const/4 v4, 0x0
 
+    .line 1637
     iget-object v5, p0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;
 
     monitor-enter v5
 
+    .line 1639
     and-int/lit8 v3, p3, 0x1
 
     if-eqz v3, :cond_1
 
+    .line 1640
     :try_start_0
     iget-object v3, p0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;
 
@@ -10308,6 +11448,7 @@
 
     check-cast v2, Ljava/lang/ref/WeakReference;
 
+    .line 1644
     .local v2, ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/app/LoadedApk;>;"
     :goto_0
     if-eqz v2, :cond_2
@@ -10320,6 +11461,7 @@
 
     move-object v1, v3
 
+    .line 1648
     .local v1, packageInfo:Landroid/app/LoadedApk;
     :goto_1
     if-eqz v1, :cond_4
@@ -10340,6 +11482,7 @@
 
     if-eqz v3, :cond_4
 
+    .line 1650
     :cond_0
     invoke-virtual {v1}, Landroid/app/LoadedApk;->isSecurityViolation()Z
 
@@ -10351,6 +11494,7 @@
 
     if-nez v3, :cond_3
 
+    .line 1652
     new-instance v3, Ljava/lang/SecurityException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -10405,6 +11549,7 @@
 
     throw v3
 
+    .line 1660
     .end local v1           #packageInfo:Landroid/app/LoadedApk;
     .end local v2           #ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/app/LoadedApk;>;"
     :catchall_0
@@ -10416,6 +11561,7 @@
 
     throw v3
 
+    .line 1642
     :cond_1
     :try_start_1
     iget-object v3, p0, Landroid/app/ActivityThread;->mResourcePackages:Ljava/util/HashMap;
@@ -10432,24 +11578,30 @@
     :cond_2
     move-object v1, v4
 
+    .line 1644
     goto :goto_1
 
+    .line 1658
     .restart local v1       #packageInfo:Landroid/app/LoadedApk;
     :cond_3
     monitor-exit v5
 
+    .line 1674
     .end local v1           #packageInfo:Landroid/app/LoadedApk;
     :goto_2
     return-object v1
 
+    .line 1660
     .restart local v1       #packageInfo:Landroid/app/LoadedApk;
     :cond_4
     monitor-exit v5
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 1662
     const/4 v0, 0x0
 
+    .line 1664
     .local v0, ai:Landroid/content/pm/ApplicationInfo;
     :try_start_2
     invoke-static {}, Landroid/app/ActivityThread;->getPackageManager()Landroid/content/pm/IPackageManager;
@@ -10468,9 +11620,11 @@
 
     move-result-object v0
 
+    .line 1670
     :goto_3
     if-eqz v0, :cond_5
 
+    .line 1671
     invoke-virtual {p0, v0, p2, p3}, Landroid/app/ActivityThread;->getPackageInfo(Landroid/content/pm/ApplicationInfo;Landroid/content/res/CompatibilityInfo;I)Landroid/app/LoadedApk;
 
     move-result-object v1
@@ -10480,8 +11634,10 @@
     :cond_5
     move-object v1, v4
 
+    .line 1674
     goto :goto_2
 
+    .line 1666
     :catch_0
     move-exception v3
 
@@ -10494,6 +11650,7 @@
     .parameter "compatInfo"
 
     .prologue
+    .line 1703
     const/4 v3, 0x0
 
     const/4 v4, 0x0
@@ -10517,6 +11674,7 @@
     .locals 1
 
     .prologue
+    .line 1786
     iget-object v0, p0, Landroid/app/ActivityThread;->mBoundApplication:Landroid/app/ActivityThread$AppBindData;
 
     iget-object v0, v0, Landroid/app/ActivityThread$AppBindData;->processName:Ljava/lang/String;
@@ -10528,6 +11686,7 @@
     .locals 1
 
     .prologue
+    .line 1774
     iget-object v0, p0, Landroid/app/ActivityThread;->mProfiler:Landroid/app/ActivityThread$Profiler;
 
     iget-object v0, v0, Landroid/app/ActivityThread$Profiler;->profileFile:Ljava/lang/String;
@@ -10539,17 +11698,21 @@
     .locals 6
 
     .prologue
+    .line 1790
     monitor-enter p0
 
+    .line 1791
     :try_start_0
     sget-object v1, Landroid/app/ActivityThread;->mSystemContext:Landroid/app/ContextImpl;
 
     if-nez v1, :cond_0
 
+    .line 1792
     invoke-static {p0}, Landroid/app/ContextImpl;->createSystemContext(Landroid/app/ActivityThread;)Landroid/app/ContextImpl;
 
     move-result-object v3
 
+    .line 1794
     .local v3, context:Landroid/app/ContextImpl;
     new-instance v0, Landroid/app/LoadedApk;
 
@@ -10563,11 +11726,13 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/app/LoadedApk;-><init>(Landroid/app/ActivityThread;Ljava/lang/String;Landroid/content/Context;Landroid/content/pm/ApplicationInfo;Landroid/content/res/CompatibilityInfo;)V
 
+    .line 1796
     .local v0, info:Landroid/app/LoadedApk;
     const/4 v1, 0x0
 
     invoke-virtual {v3, v0, v1, p0}, Landroid/app/ContextImpl;->init(Landroid/app/LoadedApk;Landroid/os/IBinder;Landroid/app/ActivityThread;)V
 
+    .line 1797
     invoke-virtual {v3}, Landroid/app/ContextImpl;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -10586,8 +11751,10 @@
 
     invoke-virtual {v1, v2, v4}, Landroid/content/res/Resources;->updateConfiguration(Landroid/content/res/Configuration;Landroid/util/DisplayMetrics;)V
 
+    .line 1800
     sput-object v3, Landroid/app/ActivityThread;->mSystemContext:Landroid/app/ContextImpl;
 
+    .line 1804
     .end local v0           #info:Landroid/app/LoadedApk;
     .end local v3           #context:Landroid/app/ContextImpl;
     :cond_0
@@ -10595,10 +11762,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 1805
     sget-object v1, Landroid/app/ActivityThread;->mSystemContext:Landroid/app/ContextImpl;
 
     return-object v1
 
+    .line 1804
     :catchall_0
     move-exception v1
 
@@ -10616,6 +11785,7 @@
     .parameter "pkgInfo"
 
     .prologue
+    .line 1628
     iget-object v0, p2, Landroid/app/LoadedApk;->mCompatibilityInfo:Landroid/view/CompatibilityInfoHolder;
 
     invoke-virtual {v0}, Landroid/view/CompatibilityInfoHolder;->get()Landroid/content/res/CompatibilityInfo;
@@ -10637,17 +11807,20 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 1566
     new-instance v2, Landroid/app/ActivityThread$ResourcesKey;
 
     iget v6, p2, Landroid/content/res/CompatibilityInfo;->applicationScale:F
 
     invoke-direct {v2, p1, v6}, Landroid/app/ActivityThread$ResourcesKey;-><init>(Ljava/lang/String;F)V
 
+    .line 1568
     .local v2, key:Landroid/app/ActivityThread$ResourcesKey;
     iget-object v7, p0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;
 
     monitor-enter v7
 
+    .line 1574
     :try_start_0
     iget-object v6, p0, Landroid/app/ActivityThread;->mActiveResources:Ljava/util/HashMap;
 
@@ -10657,6 +11830,7 @@
 
     check-cast v5, Ljava/lang/ref/WeakReference;
 
+    .line 1575
     .local v5, wr:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/content/res/Resources;>;"
     if-eqz v5, :cond_1
 
@@ -10668,6 +11842,7 @@
 
     move-object v4, v6
 
+    .line 1577
     .local v4, r:Landroid/content/res/Resources;
     :goto_0
     if-eqz v4, :cond_2
@@ -10682,10 +11857,12 @@
 
     if-eqz v6, :cond_2
 
+    .line 1582
     monitor-exit v7
 
     move-object v1, v4
 
+    .line 1620
     :cond_0
     :goto_1
     return-object v1
@@ -10694,18 +11871,22 @@
     :cond_1
     move-object v4, v1
 
+    .line 1575
     goto :goto_0
 
+    .line 1584
     .restart local v4       #r:Landroid/content/res/Resources;
     :cond_2
     monitor-exit v7
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
+    .line 1591
     new-instance v0, Landroid/content/res/AssetManager;
 
     invoke-direct {v0}, Landroid/content/res/AssetManager;-><init>()V
 
+    .line 1592
     .local v0, assets:Landroid/content/res/AssetManager;
     invoke-virtual {v0, p1}, Landroid/content/res/AssetManager;->addAssetPath(Ljava/lang/String;)I
 
@@ -10713,32 +11894,36 @@
 
     if-eqz v6, :cond_0
 
+    .line 1597
     const/4 v6, 0x0
 
     invoke-virtual {p0, v1, v6}, Landroid/app/ActivityThread;->getDisplayMetricsLocked(Landroid/content/res/CompatibilityInfo;Z)Landroid/util/DisplayMetrics;
 
     move-result-object v3
 
+    .line 1599
     .local v3, metrics:Landroid/util/DisplayMetrics;
-    #sget-boolean v6, Landroid/app/ActivityThread;->sIsHwTheme:Z
+    sget-boolean v6, Landroid/app/ActivityThread;->sIsHwTheme:Z
 
-    #if-eqz v6, :cond_4
+    if-eqz v6, :cond_4
 
-    new-instance v4, Landroid/content/res/MiuiResources;
+    new-instance v4, Landroid/content/res/ResourcesEx;
 
     .end local v4           #r:Landroid/content/res/Resources;
     invoke-virtual {p0}, Landroid/app/ActivityThread;->getConfiguration()Landroid/content/res/Configuration;
 
     move-result-object v6
 
-    invoke-direct {v4, v0, v3, v6, p2}, Landroid/content/res/MiuiResources;-><init>(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)V
+    invoke-direct {v4, v0, v3, v6, p2}, Landroid/content/res/ResourcesEx;-><init>(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)V
 
+    .line 1608
     .restart local v4       #r:Landroid/content/res/Resources;
     :goto_2
     iget-object v7, p0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;
 
     monitor-enter v7
 
+    .line 1609
     :try_start_1
     iget-object v6, p0, Landroid/app/ActivityThread;->mActiveResources:Ljava/util/HashMap;
 
@@ -10749,6 +11934,7 @@
     .end local v5           #wr:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/content/res/Resources;>;"
     check-cast v5, Ljava/lang/ref/WeakReference;
 
+    .line 1610
     .restart local v5       #wr:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/content/res/Resources;>;"
     if-eqz v5, :cond_3
 
@@ -10760,6 +11946,7 @@
 
     move-object v1, v6
 
+    .line 1611
     .local v1, existing:Landroid/content/res/Resources;
     :cond_3
     if-eqz v1, :cond_5
@@ -10774,16 +11961,19 @@
 
     if-eqz v6, :cond_5
 
+    .line 1614
     invoke-virtual {v4}, Landroid/content/res/Resources;->getAssets()Landroid/content/res/AssetManager;
 
     move-result-object v6
 
     invoke-virtual {v6}, Landroid/content/res/AssetManager;->close()V
 
+    .line 1615
     monitor-exit v7
 
     goto :goto_1
 
+    .line 1621
     .end local v1           #existing:Landroid/content/res/Resources;
     .end local v5           #wr:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/content/res/Resources;>;"
     :catchall_0
@@ -10795,6 +11985,7 @@
 
     throw v6
 
+    .line 1584
     .end local v0           #assets:Landroid/content/res/AssetManager;
     .end local v3           #metrics:Landroid/util/DisplayMetrics;
     .end local v4           #r:Landroid/content/res/Resources;
@@ -10808,6 +11999,7 @@
 
     throw v6
 
+    .line 1599
     .restart local v0       #assets:Landroid/content/res/AssetManager;
     .restart local v3       #metrics:Landroid/util/DisplayMetrics;
     .restart local v4       #r:Landroid/content/res/Resources;
@@ -10824,6 +12016,7 @@
 
     goto :goto_2
 
+    .line 1619
     .restart local v1       #existing:Landroid/content/res/Resources;
     .restart local v4       #r:Landroid/content/res/Resources;
     :cond_5
@@ -10836,6 +12029,7 @@
 
     invoke-virtual {v6, v2, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1620
     monitor-exit v7
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
@@ -10850,6 +12044,7 @@
     .parameter "token"
 
     .prologue
+    .line 3795
     iget-object v1, p0, Landroid/app/ActivityThread;->mActivities:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -10858,6 +12053,7 @@
 
     check-cast v0, Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 3796
     .local v0, r:Landroid/app/ActivityThread$ActivityClientRecord;
     if-eqz v0, :cond_0
 
@@ -10865,10 +12061,12 @@
 
     if-nez v1, :cond_1
 
+    .line 3806
     :cond_0
     :goto_0
     return-void
 
+    .line 3803
     :cond_1
     iget-object v1, v0, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
@@ -10876,6 +12074,7 @@
 
     invoke-static {v1, v2}, Landroid/app/ActivityThread;->performConfigurationChanged(Landroid/content/ComponentCallbacks2;Landroid/content/res/Configuration;)V
 
+    .line 3805
     iget-object v1, v0, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget-object v1, v1, Landroid/app/Activity;->mCurrentConfig:Landroid/content/res/Configuration;
@@ -10897,21 +12096,26 @@
     .parameter "compat"
 
     .prologue
+    .line 3738
     const/4 v1, 0x0
 
+    .line 3739
     .local v1, callbacks:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ComponentCallbacks2;>;"
     const/4 v2, 0x0
 
+    .line 3741
     .local v2, configDiff:I
     iget-object v5, p0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;
 
     monitor-enter v5
 
+    .line 3742
     :try_start_0
     iget-object v4, p0, Landroid/app/ActivityThread;->mPendingConfiguration:Landroid/content/res/Configuration;
 
     if-eqz v4, :cond_1
 
+    .line 3743
     iget-object v4, p0, Landroid/app/ActivityThread;->mPendingConfiguration:Landroid/content/res/Configuration;
 
     invoke-virtual {v4, p1}, Landroid/content/res/Configuration;->isOtherSeqNewer(Landroid/content/res/Configuration;)Z
@@ -10920,35 +12124,44 @@
 
     if-nez v4, :cond_0
 
+    .line 3744
     iget-object p1, p0, Landroid/app/ActivityThread;->mPendingConfiguration:Landroid/content/res/Configuration;
 
+    .line 3746
     :cond_0
     const/4 v4, 0x0
 
     iput-object v4, p0, Landroid/app/ActivityThread;->mPendingConfiguration:Landroid/content/res/Configuration;
 
+    .line 3749
     :cond_1
     if-nez p1, :cond_3
 
+    .line 3750
     monitor-exit v5
 
+    .line 3781
     :cond_2
     :goto_0
     return-void
 
+    .line 3756
     :cond_3
     invoke-virtual {p0, p1, p2}, Landroid/app/ActivityThread;->applyConfigurationToResourcesLocked(Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)Z
 
+    .line 3758
     iget-object v4, p0, Landroid/app/ActivityThread;->mConfiguration:Landroid/content/res/Configuration;
 
     if-nez v4, :cond_4
 
+    .line 3759
     new-instance v4, Landroid/content/res/Configuration;
 
     invoke-direct {v4}, Landroid/content/res/Configuration;-><init>()V
 
     iput-object v4, p0, Landroid/app/ActivityThread;->mConfiguration:Landroid/content/res/Configuration;
 
+    .line 3761
     :cond_4
     iget-object v4, p0, Landroid/app/ActivityThread;->mConfiguration:Landroid/content/res/Configuration;
 
@@ -10960,10 +12173,12 @@
 
     if-nez p2, :cond_5
 
+    .line 3762
     monitor-exit v5
 
     goto :goto_0
 
+    .line 3768
     :catchall_0
     move-exception v4
 
@@ -10973,6 +12188,7 @@
 
     throw v4
 
+    .line 3764
     :cond_5
     :try_start_1
     iget-object v4, p0, Landroid/app/ActivityThread;->mConfiguration:Landroid/content/res/Configuration;
@@ -10981,38 +12197,47 @@
 
     move-result v2
 
+    .line 3765
     iget-object v4, p0, Landroid/app/ActivityThread;->mConfiguration:Landroid/content/res/Configuration;
 
     invoke-virtual {v4, p1}, Landroid/content/res/Configuration;->updateFrom(Landroid/content/res/Configuration;)I
 
+    .line 3766
     invoke-virtual {p0}, Landroid/app/ActivityThread;->applyCompatConfiguration()Landroid/content/res/Configuration;
 
     move-result-object p1
 
+    .line 3767
     const/4 v4, 0x0
 
     invoke-virtual {p0, v4, p1}, Landroid/app/ActivityThread;->collectComponentCallbacksLocked(ZLandroid/content/res/Configuration;)Ljava/util/ArrayList;
 
     move-result-object v1
 
+    .line 3768
     monitor-exit v5
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 3771
     invoke-static {}, Landroid/view/WindowManagerImpl;->getDefault()Landroid/view/WindowManagerImpl;
 
     move-result-object v4
 
     invoke-virtual {v4}, Landroid/view/WindowManagerImpl;->trimLocalMemory()V
 
+    .line 3773
     invoke-virtual {p0, v2}, Landroid/app/ActivityThread;->freeTextLayoutCachesIfNeeded(I)V
 
+    .line 3775
     if-eqz v1, :cond_2
 
+    .line 3776
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
+    .line 3777
     .local v0, N:I
     const/4 v3, 0x0
 
@@ -11020,6 +12245,7 @@
     :goto_1
     if-ge v3, v0, :cond_2
 
+    .line 3778
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -11028,6 +12254,7 @@
 
     invoke-static {v4, p1}, Landroid/app/ActivityThread;->performConfigurationChanged(Landroid/content/ComponentCallbacks2;Landroid/content/res/Configuration;)V
 
+    .line 3777
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
@@ -11039,11 +12266,14 @@
     .parameter "packages"
 
     .prologue
+    .line 3857
     const/4 v0, 0x0
 
+    .line 3858
     .local v0, hasPkgInfo:Z
     if-eqz p2, :cond_2
 
+    .line 3859
     array-length v3, p2
 
     add-int/lit8 v1, v3, -0x1
@@ -11052,8 +12282,10 @@
     :goto_0
     if-ltz v1, :cond_2
 
+    .line 3861
     if-nez v0, :cond_0
 
+    .line 3863
     iget-object v3, p0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;
 
     aget-object v4, p2, v1
@@ -11064,6 +12296,7 @@
 
     check-cast v2, Ljava/lang/ref/WeakReference;
 
+    .line 3864
     .local v2, ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/app/LoadedApk;>;"
     if-eqz v2, :cond_1
 
@@ -11073,8 +12306,10 @@
 
     if-eqz v3, :cond_1
 
+    .line 3865
     const/4 v0, 0x1
 
+    .line 3873
     .end local v2           #ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/app/LoadedApk;>;"
     :cond_0
     :goto_1
@@ -11084,16 +12319,19 @@
 
     invoke-virtual {v3, v4}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 3874
     iget-object v3, p0, Landroid/app/ActivityThread;->mResourcePackages:Ljava/util/HashMap;
 
     aget-object v4, p2, v1
 
     invoke-virtual {v3, v4}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 3859
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_0
 
+    .line 3867
     .restart local v2       #ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/app/LoadedApk;>;"
     :cond_1
     iget-object v3, p0, Landroid/app/ActivityThread;->mResourcePackages:Ljava/util/HashMap;
@@ -11107,6 +12345,7 @@
     .end local v2           #ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/app/LoadedApk;>;"
     check-cast v2, Ljava/lang/ref/WeakReference;
 
+    .line 3868
     .restart local v2       #ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/app/LoadedApk;>;"
     if-eqz v2, :cond_0
 
@@ -11116,15 +12355,18 @@
 
     if-eqz v3, :cond_0
 
+    .line 3869
     const/4 v0, 0x1
 
     goto :goto_1
 
+    .line 3877
     .end local v1           #i:I
     .end local v2           #ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/app/LoadedApk;>;"
     :cond_2
     invoke-static {p1, p2, v0}, Landroid/app/ApplicationPackageManager;->handlePackageBroadcast(I[Ljava/lang/String;Z)V
 
+    .line 3879
     return-void
 .end method
 
@@ -11132,10 +12374,12 @@
     .locals 7
 
     .prologue
+    .line 3884
     iget-object v5, p0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;
 
     monitor-enter v5
 
+    .line 3885
     const/4 v4, 0x1
 
     const/4 v6, 0x0
@@ -11145,15 +12389,18 @@
 
     move-result-object v1
 
+    .line 3886
     .local v1, callbacks:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ComponentCallbacks2;>;"
     monitor-exit v5
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 3888
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
+    .line 3889
     .local v0, N:I
     const/4 v2, 0x0
 
@@ -11161,6 +12408,7 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
+    .line 3890
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -11169,10 +12417,12 @@
 
     invoke-interface {v4}, Landroid/content/ComponentCallbacks2;->onLowMemory()V
 
+    .line 3889
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 3886
     .end local v0           #N:I
     .end local v1           #callbacks:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ComponentCallbacks2;>;"
     .end local v2           #i:I
@@ -11186,6 +12436,7 @@
 
     throw v4
 
+    .line 3894
     .restart local v0       #N:I
     .restart local v1       #callbacks:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ComponentCallbacks2;>;"
     .restart local v2       #i:I
@@ -11198,25 +12449,31 @@
 
     if-eq v4, v5, :cond_1
 
+    .line 3895
     invoke-static {}, Landroid/database/sqlite/SQLiteDatabase;->releaseMemory()I
 
     move-result v3
 
+    .line 3896
     .local v3, sqliteReleased:I
     const v4, 0x124fb
 
     invoke-static {v4, v3}, Landroid/util/EventLog;->writeEvent(II)I
 
+    .line 3900
     .end local v3           #sqliteReleased:I
     :cond_1
     invoke-static {}, Landroid/graphics/Canvas;->freeCaches()V
 
+    .line 3903
     invoke-static {}, Landroid/graphics/Canvas;->freeTextLayoutCaches()V
 
-    const-string v4, "mem"
+    .line 3905
+    const-string/jumbo v4, "mem"
 
     invoke-static {v4}, Lcom/android/internal/os/BinderInternal;->forceGc(Ljava/lang/String;)V
 
+    .line 3906
     return-void
 .end method
 
@@ -11227,8 +12484,10 @@
     .parameter "profileType"
 
     .prologue
+    .line 3809
     if-eqz p1, :cond_0
 
+    .line 3813
     :try_start_0
     iget-object v1, p0, Landroid/app/ActivityThread;->mProfiler:Landroid/app/ActivityThread$Profiler;
 
@@ -11238,12 +12497,14 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/app/ActivityThread$Profiler;->setProfiler(Ljava/lang/String;Landroid/os/ParcelFileDescriptor;)V
 
+    .line 3814
     iget-object v1, p0, Landroid/app/ActivityThread;->mProfiler:Landroid/app/ActivityThread$Profiler;
 
     const/4 v2, 0x0
 
     iput-boolean v2, v1, Landroid/app/ActivityThread$Profiler;->autoStopProfiler:Z
 
+    .line 3815
     iget-object v1, p0, Landroid/app/ActivityThread;->mProfiler:Landroid/app/ActivityThread$Profiler;
 
     invoke-virtual {v1}, Landroid/app/ActivityThread$Profiler;->startProfiling()V
@@ -11251,6 +12512,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 3823
     :try_start_1
     iget-object v1, p2, Landroid/app/ActivityThread$ProfilerControlData;->fd:Landroid/os/ParcelFileDescriptor;
 
@@ -11258,12 +12520,15 @@
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_3
 
+    .line 3835
     :goto_0
     return-void
 
+    .line 3818
     :catch_0
     move-exception v0
 
+    .line 3819
     .local v0, e:Ljava/lang/RuntimeException;
     :try_start_2
     const-string v1, "ActivityThread"
@@ -11298,6 +12563,7 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
+    .line 3823
     :try_start_3
     iget-object v1, p2, Landroid/app/ActivityThread$ProfilerControlData;->fd:Landroid/os/ParcelFileDescriptor;
 
@@ -11307,9 +12573,11 @@
 
     goto :goto_0
 
+    .line 3824
     :catch_1
     move-exception v0
 
+    .line 3825
     .local v0, e:Ljava/io/IOException;
     const-string v1, "ActivityThread"
 
@@ -11320,10 +12588,12 @@
 
     goto :goto_0
 
+    .line 3822
     .end local v0           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v1
 
+    .line 3823
     :try_start_4
     iget-object v2, p2, Landroid/app/ActivityThread$ProfilerControlData;->fd:Landroid/os/ParcelFileDescriptor;
 
@@ -11331,9 +12601,11 @@
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
 
+    .line 3822
     :goto_2
     throw v1
 
+    .line 3831
     :cond_0
     iget-object v1, p0, Landroid/app/ActivityThread;->mProfiler:Landroid/app/ActivityThread$Profiler;
 
@@ -11341,9 +12613,11 @@
 
     goto :goto_0
 
+    .line 3824
     :catch_2
     move-exception v0
 
+    .line 3825
     .restart local v0       #e:Ljava/io/IOException;
     const-string v2, "ActivityThread"
 
@@ -11353,10 +12627,12 @@
 
     goto :goto_2
 
+    .line 3824
     .end local v0           #e:Ljava/io/IOException;
     :catch_3
     move-exception v0
 
+    .line 3825
     .restart local v0       #e:Ljava/io/IOException;
     const-string v1, "ActivityThread"
 
@@ -11378,22 +12654,28 @@
 
     const/4 v8, 0x1
 
+    .line 2621
     invoke-virtual {p0}, Landroid/app/ActivityThread;->unscheduleGcIdler()V
 
+    .line 2623
     invoke-virtual {p0, p1, p2}, Landroid/app/ActivityThread;->performResumeActivity(Landroid/os/IBinder;Z)Landroid/app/ActivityThread$ActivityClientRecord;
 
     move-result-object v4
 
+    .line 2625
     .local v4, r:Landroid/app/ActivityThread$ActivityClientRecord;
     if-eqz v4, :cond_a
 
+    .line 2626
     iget-object v0, v4, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
+    .line 2633
     .local v0, a:Landroid/app/Activity;
     if-eqz p3, :cond_7
 
     const/16 v2, 0x100
 
+    .line 2639
     .local v2, forwardBit:I
     :goto_0
     iget-boolean v9, v0, Landroid/app/Activity;->mStartedActivity:Z
@@ -11402,10 +12684,12 @@
 
     move v5, v8
 
+    .line 2640
     .local v5, willBeVisible:Z
     :goto_1
     if-nez v5, :cond_0
 
+    .line 2642
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -11421,6 +12705,7 @@
 
     move-result v5
 
+    .line 2647
     :cond_0
     :goto_2
     iget-object v9, v4, Landroid/app/ActivityThread$ActivityClientRecord;->window:Landroid/view/Window;
@@ -11433,6 +12718,7 @@
 
     if-eqz v5, :cond_9
 
+    .line 2648
     iget-object v9, v4, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v9}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
@@ -11441,21 +12727,25 @@
 
     iput-object v9, v4, Landroid/app/ActivityThread$ActivityClientRecord;->window:Landroid/view/Window;
 
+    .line 2649
     iget-object v9, v4, Landroid/app/ActivityThread$ActivityClientRecord;->window:Landroid/view/Window;
 
     invoke-virtual {v9}, Landroid/view/Window;->getDecorView()Landroid/view/View;
 
     move-result-object v1
 
+    .line 2650
     .local v1, decor:Landroid/view/View;
     const/4 v9, 0x4
 
     invoke-virtual {v1, v9}, Landroid/view/View;->setVisibility(I)V
 
+    .line 2651
     invoke-virtual {v0}, Landroid/app/Activity;->getWindowManager()Landroid/view/WindowManager;
 
     move-result-object v6
 
+    .line 2652
     .local v6, wm:Landroid/view/ViewManager;
     iget-object v9, v4, Landroid/app/ActivityThread$ActivityClientRecord;->window:Landroid/view/Window;
 
@@ -11463,23 +12753,29 @@
 
     move-result-object v3
 
+    .line 2653
     .local v3, l:Landroid/view/WindowManager$LayoutParams;
     iput-object v1, v0, Landroid/app/Activity;->mDecor:Landroid/view/View;
 
+    .line 2654
     iput v8, v3, Landroid/view/WindowManager$LayoutParams;->type:I
 
+    .line 2655
     iget v9, v3, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
 
     or-int/2addr v9, v2
 
     iput v9, v3, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
 
+    .line 2656
     iget-boolean v9, v0, Landroid/app/Activity;->mVisibleFromClient:Z
 
     if-eqz v9, :cond_2
 
+    .line 2657
     iput-boolean v8, v0, Landroid/app/Activity;->mWindowAdded:Z
 
+    .line 2659
     iget-object v9, v4, Landroid/app/ActivityThread$ActivityClientRecord;->window:Landroid/view/Window;
 
     invoke-virtual {v9}, Landroid/view/Window;->getContentViewType()I
@@ -11488,17 +12784,21 @@
 
     iput v9, v3, Landroid/view/WindowManager$LayoutParams;->contentViewType:I
 
+    .line 2660
     instance-of v9, v0, Landroid/app/NativeActivity;
 
     if-eqz v9, :cond_1
 
+    .line 2661
     const/16 v9, 0x8
 
     iput v9, v3, Landroid/view/WindowManager$LayoutParams;->contentViewType:I
 
+    .line 2663
     :cond_1
     invoke-interface {v6, v1, v3}, Landroid/view/ViewManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
+    .line 2677
     .end local v1           #decor:Landroid/view/View;
     .end local v3           #l:Landroid/view/WindowManager$LayoutParams;
     .end local v6           #wm:Landroid/view/ViewManager;
@@ -11506,6 +12806,7 @@
     :goto_3
     invoke-static {v4}, Landroid/app/ActivityThread;->cleanUpPendingRemoveWindows(Landroid/app/ActivityThread$ActivityClientRecord;)V
 
+    .line 2681
     iget-object v9, v4, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget-boolean v9, v9, Landroid/app/Activity;->mFinished:Z
@@ -11524,16 +12825,19 @@
 
     if-nez v9, :cond_5
 
+    .line 2683
     iget-object v9, v4, Landroid/app/ActivityThread$ActivityClientRecord;->newConfig:Landroid/content/res/Configuration;
 
     if-eqz v9, :cond_3
 
+    .line 2686
     iget-object v9, v4, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget-object v10, v4, Landroid/app/ActivityThread$ActivityClientRecord;->newConfig:Landroid/content/res/Configuration;
 
     invoke-static {v9, v10}, Landroid/app/ActivityThread;->performConfigurationChanged(Landroid/content/ComponentCallbacks2;Landroid/content/res/Configuration;)V
 
+    .line 2687
     iget-object v9, v4, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget-object v9, v9, Landroid/app/Activity;->mCurrentConfig:Landroid/content/res/Configuration;
@@ -11546,8 +12850,10 @@
 
     invoke-virtual {p0, v9}, Landroid/app/ActivityThread;->freeTextLayoutCachesIfNeeded(I)V
 
+    .line 2688
     iput-object v11, v4, Landroid/app/ActivityThread$ActivityClientRecord;->newConfig:Landroid/content/res/Configuration;
 
+    .line 2692
     :cond_3
     iget-object v9, v4, Landroid/app/ActivityThread$ActivityClientRecord;->window:Landroid/view/Window;
 
@@ -11555,6 +12861,7 @@
 
     move-result-object v3
 
+    .line 2693
     .restart local v3       #l:Landroid/view/WindowManager$LayoutParams;
     iget v9, v3, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
 
@@ -11562,6 +12869,7 @@
 
     if-eq v9, v2, :cond_4
 
+    .line 2696
     iget v9, v3, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
 
     and-int/lit16 v9, v9, -0x101
@@ -11570,16 +12878,19 @@
 
     iput v9, v3, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
 
+    .line 2699
     iget-object v9, v4, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget-boolean v9, v9, Landroid/app/Activity;->mVisibleFromClient:Z
 
     if-eqz v9, :cond_4
 
+    .line 2700
     invoke-virtual {v0}, Landroid/app/Activity;->getWindowManager()Landroid/view/WindowManager;
 
     move-result-object v6
 
+    .line 2701
     .restart local v6       #wm:Landroid/view/ViewManager;
     iget-object v9, v4, Landroid/app/ActivityThread$ActivityClientRecord;->window:Landroid/view/Window;
 
@@ -11587,9 +12898,11 @@
 
     move-result-object v1
 
+    .line 2702
     .restart local v1       #decor:Landroid/view/View;
     invoke-interface {v6, v1, v3}, Landroid/view/ViewManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
+    .line 2705
     .end local v1           #decor:Landroid/view/View;
     .end local v6           #wm:Landroid/view/ViewManager;
     :cond_4
@@ -11597,34 +12910,41 @@
 
     iput-boolean v8, v9, Landroid/app/Activity;->mVisibleFromServer:Z
 
+    .line 2706
     iget v8, p0, Landroid/app/ActivityThread;->mNumVisibleActivities:I
 
     add-int/lit8 v8, v8, 0x1
 
     iput v8, p0, Landroid/app/ActivityThread;->mNumVisibleActivities:I
 
+    .line 2707
     iget-object v8, v4, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget-boolean v8, v8, Landroid/app/Activity;->mVisibleFromClient:Z
 
     if-eqz v8, :cond_5
 
+    .line 2708
     iget-object v8, v4, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v8}, Landroid/app/Activity;->makeVisible()V
 
+    .line 2712
     .end local v3           #l:Landroid/view/WindowManager$LayoutParams;
     :cond_5
     iget-boolean v8, v4, Landroid/app/ActivityThread$ActivityClientRecord;->onlyLocalRequest:Z
 
     if-nez v8, :cond_6
 
+    .line 2713
     iget-object v8, p0, Landroid/app/ActivityThread;->mNewActivities:Landroid/app/ActivityThread$ActivityClientRecord;
 
     iput-object v8, v4, Landroid/app/ActivityThread$ActivityClientRecord;->nextIdle:Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 2714
     iput-object v4, p0, Landroid/app/ActivityThread;->mNewActivities:Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 2717
     invoke-static {}, Landroid/os/Looper;->myQueue()Landroid/os/MessageQueue;
 
     move-result-object v8
@@ -11635,9 +12955,11 @@
 
     invoke-virtual {v8, v9}, Landroid/os/MessageQueue;->addIdleHandler(Landroid/os/MessageQueue$IdleHandler;)V
 
+    .line 2719
     :cond_6
     iput-boolean v7, v4, Landroid/app/ActivityThread$ActivityClientRecord;->onlyLocalRequest:Z
 
+    .line 2730
     .end local v0           #a:Landroid/app/Activity;
     .end local v2           #forwardBit:I
     .end local v5           #willBeVisible:Z
@@ -11648,22 +12970,27 @@
     :cond_7
     move v2, v7
 
+    .line 2633
     goto/16 :goto_0
 
     .restart local v2       #forwardBit:I
     :cond_8
     move v5, v7
 
+    .line 2639
     goto/16 :goto_1
 
+    .line 2670
     .restart local v5       #willBeVisible:Z
     :cond_9
     if-nez v5, :cond_2
 
+    .line 2673
     iput-boolean v8, v4, Landroid/app/ActivityThread$ActivityClientRecord;->hideForNow:Z
 
     goto/16 :goto_3
 
+    .line 2725
     .end local v0           #a:Landroid/app/Activity;
     .end local v2           #forwardBit:I
     .end local v5           #willBeVisible:Z
@@ -11683,11 +13010,13 @@
 
     goto :goto_4
 
+    .line 2727
     :catch_0
     move-exception v7
 
     goto :goto_4
 
+    .line 2644
     .restart local v0       #a:Landroid/app/Activity;
     .restart local v2       #forwardBit:I
     .restart local v5       #willBeVisible:Z
@@ -11702,17 +13031,21 @@
     .parameter "level"
 
     .prologue
+    .line 3911
     invoke-static {}, Landroid/view/WindowManagerImpl;->getDefault()Landroid/view/WindowManagerImpl;
 
     move-result-object v3
 
+    .line 3912
     .local v3, windowManager:Landroid/view/WindowManagerImpl;
     invoke-virtual {v3, p1}, Landroid/view/WindowManagerImpl;->startTrimMemory(I)V
 
+    .line 3915
     iget-object v5, p0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;
 
     monitor-enter v5
 
+    .line 3916
     const/4 v4, 0x1
 
     const/4 v6, 0x0
@@ -11722,15 +13055,18 @@
 
     move-result-object v1
 
+    .line 3917
     .local v1, callbacks:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ComponentCallbacks2;>;"
     monitor-exit v5
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 3919
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
+    .line 3920
     .local v0, N:I
     const/4 v2, 0x0
 
@@ -11738,6 +13074,7 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
+    .line 3921
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -11746,10 +13083,12 @@
 
     invoke-interface {v4, p1}, Landroid/content/ComponentCallbacks2;->onTrimMemory(I)V
 
+    .line 3920
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 3917
     .end local v0           #N:I
     .end local v1           #callbacks:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ComponentCallbacks2;>;"
     .end local v2           #i:I
@@ -11763,12 +13102,14 @@
 
     throw v4
 
+    .line 3924
     .restart local v0       #N:I
     .restart local v1       #callbacks:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ComponentCallbacks2;>;"
     .restart local v2       #i:I
     :cond_0
     invoke-virtual {v3}, Landroid/view/WindowManagerImpl;->endTrimMemory()V
 
+    .line 3925
     return-void
 .end method
 
@@ -11778,10 +13119,12 @@
     .parameter "fromClient"
 
     .prologue
+    .line 4483
     iget-object v7, p0, Landroid/app/ActivityThread;->mProviderMap:Ljava/util/HashMap;
 
     monitor-enter v7
 
+    .line 4484
     :try_start_0
     iget-object v6, p0, Landroid/app/ActivityThread;->mProviderRefCountMap:Ljava/util/HashMap;
 
@@ -11791,13 +13134,16 @@
 
     check-cast v5, Landroid/app/ActivityThread$ProviderRefCount;
 
+    .line 4485
     .local v5, prc:Landroid/app/ActivityThread$ProviderRefCount;
     if-eqz v5, :cond_2
 
+    .line 4488
     iget-object v6, p0, Landroid/app/ActivityThread;->mProviderRefCountMap:Ljava/util/HashMap;
 
     invoke-virtual {v6, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 4489
     iget-object v6, v5, Landroid/app/ActivityThread$ProviderRefCount;->client:Landroid/app/ActivityThread$ProviderClientRecord;
 
     if-eqz v6, :cond_1
@@ -11808,6 +13154,7 @@
 
     if-eqz v6, :cond_1
 
+    .line 4490
     iget-object v6, v5, Landroid/app/ActivityThread$ProviderRefCount;->client:Landroid/app/ActivityThread$ProviderClientRecord;
 
     iget-object v0, v6, Landroid/app/ActivityThread$ProviderClientRecord;->mNames:[Ljava/lang/String;
@@ -11824,6 +13171,7 @@
 
     aget-object v3, v0, v1
 
+    .line 4491
     .local v3, name:Ljava/lang/String;
     iget-object v6, p0, Landroid/app/ActivityThread;->mProviderMap:Ljava/util/HashMap;
 
@@ -11833,6 +13181,7 @@
 
     check-cast v4, Landroid/app/ActivityThread$ProviderClientRecord;
 
+    .line 4492
     .local v4, pr:Landroid/app/ActivityThread$ProviderClientRecord;
     if-eqz v4, :cond_0
 
@@ -11844,6 +13193,7 @@
 
     if-ne v6, p1, :cond_0
 
+    .line 4493
     const-string v6, "ActivityThread"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -11866,17 +13216,20 @@
 
     invoke-static {v6, v8}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 4494
     iget-object v6, p0, Landroid/app/ActivityThread;->mProviderMap:Ljava/util/HashMap;
 
     invoke-virtual {v6, v3}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 4490
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 4498
     .end local v0           #arr$:[Ljava/lang/String;
     .end local v1           #i$:I
     .end local v2           #len$:I
@@ -11885,6 +13238,7 @@
     :cond_1
     if-eqz p2, :cond_2
 
+    .line 4505
     :try_start_1
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -11899,13 +13253,16 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
+    .line 4512
     :cond_2
     :goto_1
     :try_start_2
     monitor-exit v7
 
+    .line 4513
     return-void
 
+    .line 4512
     .end local v5           #prc:Landroid/app/ActivityThread$ProviderRefCount;
     :catchall_0
     move-exception v6
@@ -11916,6 +13273,7 @@
 
     throw v6
 
+    .line 4507
     .restart local v5       #prc:Landroid/app/ActivityThread$ProviderRefCount;
     :catch_0
     move-exception v6
@@ -11928,13 +13286,16 @@
     .parameter "info"
 
     .prologue
+    .line 1809
     monitor-enter p0
 
+    .line 1810
     :try_start_0
     invoke-virtual {p0}, Landroid/app/ActivityThread;->getSystemContext()Landroid/app/ContextImpl;
 
     move-result-object v3
 
+    .line 1811
     .local v3, context:Landroid/app/ContextImpl;
     new-instance v0, Landroid/app/LoadedApk;
 
@@ -11952,16 +13313,20 @@
 
     invoke-virtual {v3, v0, v1, p0}, Landroid/app/ContextImpl;->init(Landroid/app/LoadedApk;Landroid/os/IBinder;Landroid/app/ActivityThread;)V
 
+    .line 1815
     new-instance v0, Landroid/app/ActivityThread$Profiler;
 
     invoke-direct {v0}, Landroid/app/ActivityThread$Profiler;-><init>()V
 
     iput-object v0, p0, Landroid/app/ActivityThread;->mProfiler:Landroid/app/ActivityThread$Profiler;
 
+    .line 1816
     monitor-exit p0
 
+    .line 1817
     return-void
 
+    .line 1816
     .end local v3           #context:Landroid/app/ContextImpl;
     :catchall_0
     move-exception v0
@@ -11987,13 +13352,16 @@
     .end annotation
 
     .prologue
+    .line 4737
     .local p1, providers:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ProviderInfo;>;"
     if-eqz p1, :cond_0
 
+    .line 4738
     iget-object v0, p0, Landroid/app/ActivityThread;->mInitialApplication:Landroid/app/Application;
 
     invoke-direct {p0, v0, p1}, Landroid/app/ActivityThread;->installContentProviders(Landroid/content/Context;Ljava/util/List;)V
 
+    .line 4740
     :cond_0
     return-void
 .end method
@@ -12002,6 +13370,7 @@
     .locals 1
 
     .prologue
+    .line 1769
     iget-object v0, p0, Landroid/app/ActivityThread;->mProfiler:Landroid/app/ActivityThread$Profiler;
 
     if-eqz v0, :cond_0
@@ -12035,12 +13404,15 @@
     .parameter "includeCode"
 
     .prologue
+    .line 1707
     iget-object v2, p0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;
 
     monitor-enter v2
 
+    .line 1709
     if-eqz p2, :cond_0
 
+    .line 1710
     :try_start_0
     iget-object v1, p0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;
 
@@ -12050,6 +13422,7 @@
 
     check-cast v0, Ljava/lang/ref/WeakReference;
 
+    .line 1714
     .local v0, ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/app/LoadedApk;>;"
     :goto_0
     if-eqz v0, :cond_1
@@ -12065,6 +13438,7 @@
 
     return-object v1
 
+    .line 1712
     .end local v0           #ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/app/LoadedApk;>;"
     :cond_0
     iget-object v1, p0, Landroid/app/ActivityThread;->mResourcePackages:Ljava/util/HashMap;
@@ -12078,11 +13452,13 @@
     .restart local v0       #ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/app/LoadedApk;>;"
     goto :goto_0
 
+    .line 1714
     :cond_1
     const/4 v1, 0x0
 
     goto :goto_1
 
+    .line 1715
     .end local v0           #ref:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/app/LoadedApk;>;"
     :catchall_0
     move-exception v1
@@ -12102,6 +13478,7 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 3225
     invoke-direct {p0, p1, p2, v0, v0}, Landroid/app/ActivityThread;->performDestroyActivity(Landroid/os/IBinder;ZIZ)Landroid/app/ActivityThread$ActivityClientRecord;
 
     move-result-object v0
@@ -12130,6 +13507,7 @@
 
     const/4 v3, 0x0
 
+    .line 2168
     iget-object v4, p0, Landroid/app/ActivityThread;->mActivities:Ljava/util/HashMap;
 
     invoke-virtual {v4, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -12138,42 +13516,52 @@
 
     check-cast v0, Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 2169
     .local v0, r:Landroid/app/ActivityThread$ActivityClientRecord;
     if-eqz v0, :cond_1
 
+    .line 2170
     iget-boolean v4, v0, Landroid/app/ActivityThread$ActivityClientRecord;->paused:Z
 
     if-nez v4, :cond_2
 
     move v1, v2
 
+    .line 2171
     .local v1, resumed:Z
     :goto_0
     if-eqz v1, :cond_0
 
+    .line 2172
     iget-object v4, v0, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iput-boolean v2, v4, Landroid/app/Activity;->mTemporaryPause:Z
 
+    .line 2173
     iget-object v2, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
     iget-object v4, v0, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v2, v4}, Landroid/app/Instrumentation;->callActivityOnPause(Landroid/app/Activity;)V
 
+    .line 2175
     :cond_0
     invoke-direct {p0, v0, p2}, Landroid/app/ActivityThread;->deliverNewIntents(Landroid/app/ActivityThread$ActivityClientRecord;Ljava/util/List;)V
 
+    .line 2176
     if-eqz v1, :cond_1
 
+    .line 2177
     iget-object v2, v0, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v2}, Landroid/app/Activity;->performResume()V
 
+    .line 2178
     iget-object v2, v0, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iput-boolean v3, v2, Landroid/app/Activity;->mTemporaryPause:Z
 
+    .line 2181
     .end local v1           #resumed:Z
     :cond_1
     return-void
@@ -12181,6 +13569,7 @@
     :cond_2
     move v1, v3
 
+    .line 2170
     goto :goto_0
 .end method
 
@@ -12195,21 +13584,26 @@
 
     const/4 v4, 0x0
 
+    .line 2825
     iget-boolean v7, p1, Landroid/app/ActivityThread$ActivityClientRecord;->paused:Z
 
     if-eqz v7, :cond_2
 
+    .line 2826
     iget-object v7, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget-boolean v7, v7, Landroid/app/Activity;->mFinished:Z
 
     if-eqz v7, :cond_1
 
+    .line 2830
     const/4 v5, 0x0
 
+    .line 2888
     :cond_0
     return-object v5
 
+    .line 2832
     :cond_1
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -12243,6 +13637,7 @@
 
     invoke-direct {v0, v7}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
+    .line 2835
     .local v0, e:Ljava/lang/RuntimeException;
     const-string v7, "ActivityThread"
 
@@ -12252,17 +13647,21 @@
 
     invoke-static {v7, v8, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 2837
     .end local v0           #e:Ljava/lang/RuntimeException;
     :cond_2
     const/4 v5, 0x0
 
+    .line 2838
     .local v5, state:Landroid/os/Bundle;
     if-eqz p2, :cond_3
 
+    .line 2839
     iget-object v7, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iput-boolean v10, v7, Landroid/app/Activity;->mFinished:Z
 
+    .line 2843
     :cond_3
     :try_start_0
     iget-object v7, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
@@ -12273,6 +13672,7 @@
 
     if-eqz p3, :cond_4
 
+    .line 2844
     new-instance v6, Landroid/os/Bundle;
 
     invoke-direct {v6}, Landroid/os/Bundle;-><init>()V
@@ -12280,6 +13680,7 @@
     .catch Landroid/app/SuperNotCalledException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
+    .line 2845
     .end local v5           #state:Landroid/os/Bundle;
     .local v6, state:Landroid/os/Bundle;
     const/4 v7, 0x0
@@ -12287,12 +13688,14 @@
     :try_start_1
     invoke-virtual {v6, v7}, Landroid/os/Bundle;->setAllowFds(Z)Z
 
+    .line 2846
     iget-object v7, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
     iget-object v8, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v7, v8, v6}, Landroid/app/Instrumentation;->callActivityOnSaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V
 
+    .line 2847
     iput-object v6, p1, Landroid/app/ActivityThread$ActivityClientRecord;->state:Landroid/os/Bundle;
     :try_end_1
     .catch Landroid/app/SuperNotCalledException; {:try_start_1 .. :try_end_1} :catch_3
@@ -12300,6 +13703,7 @@
 
     move-object v5, v6
 
+    .line 2850
     .end local v6           #state:Landroid/os/Bundle;
     .restart local v5       #state:Landroid/os/Bundle;
     :cond_4
@@ -12310,25 +13714,29 @@
 
     iput-boolean v8, v7, Landroid/app/Activity;->mCalled:Z
 
+    .line 2851
     iget-object v7, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
     iget-object v8, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v7, v8}, Landroid/app/Instrumentation;->callActivityOnPause(Landroid/app/Activity;)V
 
+    .line 2852
     new-instance v2, Landroid/content/Intent;
 
     const-string v7, "android.ActivityState.CHANGE"
 
     invoke-direct {v2, v7}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
+    .line 2853
     .local v2, intent:Landroid/content/Intent;
-    const-string v7, "motion"
+    const-string/jumbo v7, "motion"
 
     const-string v8, "ActivityThread"
 
     invoke-virtual {v2, v7, v8}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 2854
     const-string v7, "currentProcess"
 
     iget-object v8, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activityInfo:Landroid/content/pm/ActivityInfo;
@@ -12337,12 +13745,14 @@
 
     invoke-virtual {v2, v7, v8}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 2855
     const-string v7, "activityState"
 
-    const-string v8, "pause"
+    const-string/jumbo v8, "pause"
 
     invoke-virtual {v2, v7, v8}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 2856
     const-string v7, "currentClass"
 
     iget-object v8, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
@@ -12357,10 +13767,12 @@
 
     invoke-virtual {v2, v7, v8}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 2857
     iget-object v7, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v7, v2}, Landroid/app/Activity;->sendBroadcast(Landroid/content/Intent;)V
 
+    .line 2858
     const/16 v7, 0x7545
 
     iget-object v8, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
@@ -12375,12 +13787,14 @@
 
     invoke-static {v7, v8}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
 
+    .line 2859
     iget-object v7, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iget-boolean v7, v7, Landroid/app/Activity;->mCalled:Z
 
     if-nez v7, :cond_5
 
+    .line 2860
     new-instance v7, Landroid/app/SuperNotCalledException;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -12424,18 +13838,22 @@
     .catch Landroid/app/SuperNotCalledException; {:try_start_2 .. :try_end_2} :catch_0
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
+    .line 2865
     .end local v2           #intent:Landroid/content/Intent;
     :catch_0
     move-exception v0
 
+    .line 2866
     .local v0, e:Landroid/app/SuperNotCalledException;
     :goto_0
     throw v0
 
+    .line 2868
     .end local v0           #e:Landroid/app/SuperNotCalledException;
     :catch_1
     move-exception v0
 
+    .line 2869
     .local v0, e:Ljava/lang/Exception;
     :goto_1
     iget-object v7, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
@@ -12448,6 +13866,7 @@
 
     if-nez v7, :cond_5
 
+    .line 2870
     new-instance v7, Ljava/lang/RuntimeException;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -12496,14 +13915,17 @@
 
     throw v7
 
+    .line 2876
     .end local v0           #e:Ljava/lang/Exception;
     :cond_5
     iput-boolean v10, p1, Landroid/app/ActivityThread$ActivityClientRecord;->paused:Z
 
+    .line 2880
     iget-object v8, p0, Landroid/app/ActivityThread;->mOnPauseListeners:Ljava/util/HashMap;
 
     monitor-enter v8
 
+    .line 2881
     :try_start_3
     iget-object v7, p0, Landroid/app/ActivityThread;->mOnPauseListeners:Ljava/util/HashMap;
 
@@ -12515,17 +13937,20 @@
 
     check-cast v3, Ljava/util/ArrayList;
 
+    .line 2882
     .local v3, listeners:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/OnActivityPausedListener;>;"
     monitor-exit v8
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
+    .line 2883
     if-eqz v3, :cond_6
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
+    .line 2884
     .local v4, size:I
     :cond_6
     const/4 v1, 0x0
@@ -12534,6 +13959,7 @@
     :goto_2
     if-ge v1, v4, :cond_0
 
+    .line 2885
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
@@ -12544,10 +13970,12 @@
 
     invoke-interface {v7, v8}, Landroid/app/OnActivityPausedListener;->onPaused(Landroid/app/Activity;)V
 
+    .line 2884
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
+    .line 2882
     .end local v1           #i:I
     .end local v3           #listeners:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/OnActivityPausedListener;>;"
     .end local v4           #size:I
@@ -12561,6 +13989,7 @@
 
     throw v7
 
+    .line 2868
     .end local v5           #state:Landroid/os/Bundle;
     .restart local v6       #state:Landroid/os/Bundle;
     :catch_2
@@ -12572,6 +14001,7 @@
     .restart local v5       #state:Landroid/os/Bundle;
     goto :goto_1
 
+    .line 2865
     .end local v5           #state:Landroid/os/Bundle;
     .restart local v6       #state:Landroid/os/Bundle;
     :catch_3
@@ -12591,6 +14021,7 @@
     .parameter "saveState"
 
     .prologue
+    .line 2819
     iget-object v1, p0, Landroid/app/ActivityThread;->mActivities:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -12599,6 +14030,7 @@
 
     check-cast v0, Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 2820
     .local v0, r:Landroid/app/ActivityThread$ActivityClientRecord;
     if-eqz v0, :cond_0
 
@@ -12620,6 +14052,7 @@
     .parameter "token"
 
     .prologue
+    .line 3066
     iget-object v1, p0, Landroid/app/ActivityThread;->mActivities:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -12628,19 +14061,23 @@
 
     check-cast v0, Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 3067
     .local v0, r:Landroid/app/ActivityThread$ActivityClientRecord;
     iget-boolean v1, v0, Landroid/app/ActivityThread$ActivityClientRecord;->stopped:Z
 
     if-eqz v1, :cond_0
 
+    .line 3068
     iget-object v1, v0, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v1}, Landroid/app/Activity;->performRestart()V
 
+    .line 3069
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Landroid/app/ActivityThread$ActivityClientRecord;->stopped:Z
 
+    .line 3071
     :cond_0
     return-void
 .end method
@@ -12653,6 +14090,7 @@
     .prologue
     const/4 v4, 0x0
 
+    .line 2559
     iget-object v3, p0, Landroid/app/ActivityThread;->mActivities:Ljava/util/HashMap;
 
     invoke-virtual {v3, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -12661,6 +14099,7 @@
 
     check-cast v2, Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 2562
     .local v2, r:Landroid/app/ActivityThread$ActivityClientRecord;
     if-eqz v2, :cond_3
 
@@ -12670,41 +14109,51 @@
 
     if-nez v3, :cond_3
 
+    .line 2563
     if-eqz p2, :cond_0
 
+    .line 2564
     iput-boolean v4, v2, Landroid/app/ActivityThread$ActivityClientRecord;->hideForNow:Z
 
+    .line 2565
     iget-object v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     iput-boolean v4, v3, Landroid/app/Activity;->mStartedActivity:Z
 
+    .line 2568
     :cond_0
     :try_start_0
     iget-object v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->pendingIntents:Ljava/util/List;
 
     if-eqz v3, :cond_1
 
+    .line 2569
     iget-object v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->pendingIntents:Ljava/util/List;
 
     invoke-direct {p0, v2, v3}, Landroid/app/ActivityThread;->deliverNewIntents(Landroid/app/ActivityThread$ActivityClientRecord;Ljava/util/List;)V
 
+    .line 2570
     const/4 v3, 0x0
 
     iput-object v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->pendingIntents:Ljava/util/List;
 
+    .line 2572
     :cond_1
     iget-object v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->pendingResults:Ljava/util/List;
 
     if-eqz v3, :cond_2
 
+    .line 2573
     iget-object v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->pendingResults:Ljava/util/List;
 
     invoke-direct {p0, v2, v3}, Landroid/app/ActivityThread;->deliverResults(Landroid/app/ActivityThread$ActivityClientRecord;Ljava/util/List;)V
 
+    .line 2574
     const/4 v3, 0x0
 
     iput-object v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->pendingResults:Ljava/util/List;
 
+    .line 2576
     :cond_2
     iget-object v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
@@ -12712,6 +14161,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
+    .line 2578
     :try_start_1
     new-instance v1, Landroid/content/Intent;
 
@@ -12719,13 +14169,15 @@
 
     invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
+    .line 2579
     .local v1, intent:Landroid/content/Intent;
-    const-string v3, "motion"
+    const-string/jumbo v3, "motion"
 
     const-string v4, "ActivityThread"
 
     invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 2580
     const-string v3, "currentProcess"
 
     iget-object v4, v2, Landroid/app/ActivityThread$ActivityClientRecord;->activityInfo:Landroid/content/pm/ActivityInfo;
@@ -12734,12 +14186,14 @@
 
     invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 2581
     const-string v3, "activityState"
 
-    const-string v4, "resume"
+    const-string/jumbo v4, "resume"
 
     invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 2582
     const-string v3, "currentClass"
 
     iget-object v4, v2, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
@@ -12754,6 +14208,7 @@
 
     invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 2583
     iget-object v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v3, v1}, Landroid/app/Activity;->sendBroadcast(Landroid/content/Intent;)V
@@ -12761,6 +14216,7 @@
     .catch Ljava/lang/IllegalStateException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
+    .line 2587
     .end local v1           #intent:Landroid/content/Intent;
     :goto_0
     const/16 v3, 0x7546
@@ -12778,24 +14234,30 @@
 
     invoke-static {v3, v4}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
 
+    .line 2590
     const/4 v3, 0x0
 
     iput-boolean v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->paused:Z
 
+    .line 2591
     const/4 v3, 0x0
 
     iput-boolean v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->stopped:Z
 
+    .line 2592
     const/4 v3, 0x0
 
     iput-object v3, v2, Landroid/app/ActivityThread$ActivityClientRecord;->state:Landroid/os/Bundle;
 
+    .line 2602
     :cond_3
     return-object v2
 
+    .line 2584
     :catch_0
     move-exception v0
 
+    .line 2585
     .local v0, e:Ljava/lang/IllegalStateException;
     const-string v3, "ActivityThread"
 
@@ -12807,10 +14269,12 @@
 
     goto :goto_0
 
+    .line 2593
     .end local v0           #e:Ljava/lang/IllegalStateException;
     :catch_1
     move-exception v0
 
+    .line 2594
     .local v0, e:Ljava/lang/Exception;
     iget-object v3, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
@@ -12822,6 +14286,7 @@
 
     if-nez v3, :cond_3
 
+    .line 2595
     new-instance v3, Ljava/lang/RuntimeException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -12877,6 +14342,7 @@
     .parameter "saveState"
 
     .prologue
+    .line 2892
     iget-object v1, p0, Landroid/app/ActivityThread;->mActivities:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -12885,6 +14351,7 @@
 
     check-cast v0, Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 2893
     .local v0, r:Landroid/app/ActivityThread$ActivityClientRecord;
     const/4 v1, 0x0
 
@@ -12892,6 +14359,7 @@
 
     invoke-direct {p0, v0, v1, v2, p2}, Landroid/app/ActivityThread;->performStopActivityInner(Landroid/app/ActivityThread$ActivityClientRecord;Landroid/app/ActivityThread$StopInfo;ZZ)V
 
+    .line 2894
     return-void
 .end method
 
@@ -12900,12 +14368,14 @@
     .parameter "r"
 
     .prologue
+    .line 2814
     iget-object v0, p0, Landroid/app/ActivityThread;->mInstrumentation:Landroid/app/Instrumentation;
 
     iget-object v1, p1, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v0, v1}, Landroid/app/Instrumentation;->callActivityOnUserLeaving(Landroid/app/Activity;)V
 
+    .line 2815
     return-void
 .end method
 
@@ -12915,10 +14385,12 @@
     .parameter "listener"
 
     .prologue
+    .line 1855
     iget-object v2, p0, Landroid/app/ActivityThread;->mOnPauseListeners:Ljava/util/HashMap;
 
     monitor-enter v2
 
+    .line 1856
     :try_start_0
     iget-object v1, p0, Landroid/app/ActivityThread;->mOnPauseListeners:Ljava/util/HashMap;
 
@@ -12928,26 +14400,33 @@
 
     check-cast v0, Ljava/util/ArrayList;
 
+    .line 1857
     .local v0, list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/OnActivityPausedListener;>;"
     if-nez v0, :cond_0
 
+    .line 1858
     new-instance v0, Ljava/util/ArrayList;
 
     .end local v0           #list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/OnActivityPausedListener;>;"
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
+    .line 1859
     .restart local v0       #list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/OnActivityPausedListener;>;"
     iget-object v1, p0, Landroid/app/ActivityThread;->mOnPauseListeners:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 1861
     :cond_0
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 1862
     monitor-exit v2
 
+    .line 1863
     return-void
 
+    .line 1862
     .end local v0           #list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/OnActivityPausedListener;>;"
     :catchall_0
     move-exception v1
@@ -12969,21 +14448,26 @@
 
     const/4 v5, 0x0
 
+    .line 4355
     if-nez p1, :cond_0
 
+    .line 4439
     :goto_0
     return v5
 
+    .line 4359
     :cond_0
     invoke-interface {p1}, Landroid/content/IContentProvider;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
+    .line 4360
     .local v0, jBinder:Landroid/os/IBinder;
     iget-object v6, p0, Landroid/app/ActivityThread;->mProviderMap:Ljava/util/HashMap;
 
     monitor-enter v6
 
+    .line 4361
     :try_start_0
     iget-object v7, p0, Landroid/app/ActivityThread;->mProviderRefCountMap:Ljava/util/HashMap;
 
@@ -12993,13 +14477,16 @@
 
     check-cast v3, Landroid/app/ActivityThread$ProviderRefCount;
 
+    .line 4362
     .local v3, prc:Landroid/app/ActivityThread$ProviderRefCount;
     if-nez v3, :cond_1
 
+    .line 4364
     monitor-exit v6
 
     goto :goto_0
 
+    .line 4440
     .end local v3           #prc:Landroid/app/ActivityThread$ProviderRefCount;
     :catchall_0
     move-exception v4
@@ -13010,22 +14497,27 @@
 
     throw v4
 
+    .line 4367
     .restart local v3       #prc:Landroid/app/ActivityThread$ProviderRefCount;
     :cond_1
     const/4 v1, 0x0
 
+    .line 4368
     .local v1, lastRef:Z
     if-eqz p2, :cond_7
 
+    .line 4369
     :try_start_1
     iget v7, v3, Landroid/app/ActivityThread$ProviderRefCount;->stableCount:I
 
     if-nez v7, :cond_2
 
+    .line 4372
     monitor-exit v6
 
     goto :goto_0
 
+    .line 4374
     :cond_2
     iget v7, v3, Landroid/app/ActivityThread$ProviderRefCount;->stableCount:I
 
@@ -13033,10 +14525,12 @@
 
     iput v7, v3, Landroid/app/ActivityThread$ProviderRefCount;->stableCount:I
 
+    .line 4375
     iget v7, v3, Landroid/app/ActivityThread$ProviderRefCount;->stableCount:I
 
     if-nez v7, :cond_4
 
+    .line 4382
     iget v7, v3, Landroid/app/ActivityThread$ProviderRefCount;->unstableCount:I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -13045,6 +14539,7 @@
 
     move v1, v4
 
+    .line 4388
     :goto_1
     :try_start_2
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
@@ -13067,19 +14562,23 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_1
 
+    .line 4421
     :cond_4
     :goto_2
     if-eqz v1, :cond_5
 
+    .line 4422
     :try_start_3
     iget-boolean v5, v3, Landroid/app/ActivityThread$ProviderRefCount;->removePending:Z
 
     if-nez v5, :cond_a
 
+    .line 4432
     const/4 v5, 0x1
 
     iput-boolean v5, v3, Landroid/app/ActivityThread$ProviderRefCount;->removePending:Z
 
+    .line 4433
     iget-object v5, p0, Landroid/app/ActivityThread;->mH:Landroid/app/ActivityThread$H;
 
     const/16 v7, 0x83
@@ -13088,11 +14587,13 @@
 
     move-result-object v2
 
+    .line 4434
     .local v2, msg:Landroid/os/Message;
     iget-object v5, p0, Landroid/app/ActivityThread;->mH:Landroid/app/ActivityThread$H;
 
     invoke-virtual {v5, v2}, Landroid/app/ActivityThread$H;->sendMessage(Landroid/os/Message;)Z
 
+    .line 4439
     .end local v2           #msg:Landroid/os/Message;
     :cond_5
     :goto_3
@@ -13105,17 +14606,21 @@
     :cond_6
     move v1, v5
 
+    .line 4382
     goto :goto_1
 
+    .line 4395
     :cond_7
     iget v7, v3, Landroid/app/ActivityThread$ProviderRefCount;->unstableCount:I
 
     if-nez v7, :cond_8
 
+    .line 4398
     monitor-exit v6
 
     goto :goto_0
 
+    .line 4400
     :cond_8
     iget v7, v3, Landroid/app/ActivityThread$ProviderRefCount;->unstableCount:I
 
@@ -13123,10 +14628,12 @@
 
     iput v7, v3, Landroid/app/ActivityThread$ProviderRefCount;->unstableCount:I
 
+    .line 4401
     iget v7, v3, Landroid/app/ActivityThread$ProviderRefCount;->unstableCount:I
 
     if-nez v7, :cond_4
 
+    .line 4405
     iget v7, v3, Landroid/app/ActivityThread$ProviderRefCount;->stableCount:I
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
@@ -13135,9 +14642,11 @@
 
     move v1, v4
 
+    .line 4406
     :goto_4
     if-nez v1, :cond_4
 
+    .line 4412
     :try_start_4
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -13158,6 +14667,7 @@
 
     goto :goto_2
 
+    .line 4414
     :catch_0
     move-exception v5
 
@@ -13166,8 +14676,10 @@
     :cond_9
     move v1, v5
 
+    .line 4405
     goto :goto_4
 
+    .line 4436
     :cond_a
     :try_start_5
     const-string v5, "ActivityThread"
@@ -13202,6 +14714,7 @@
 
     goto :goto_3
 
+    .line 4390
     :catch_1
     move-exception v5
 
@@ -13235,15 +14748,18 @@
     .end annotation
 
     .prologue
+    .line 3384
     .local p2, pendingResults:Ljava/util/List;,"Ljava/util/List<Landroid/app/ResultInfo;>;"
     .local p3, pendingNewIntents:Ljava/util/List;,"Ljava/util/List<Landroid/content/Intent;>;"
     const/4 v3, 0x0
 
+    .line 3386
     .local v3, target:Landroid/app/ActivityThread$ActivityClientRecord;
     iget-object v6, p0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;
 
     monitor-enter v6
 
+    .line 3387
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -13257,6 +14773,7 @@
 
     if-ge v1, v5, :cond_9
 
+    .line 3388
     iget-object v5, p0, Landroid/app/ActivityThread;->mRelaunchingActivities:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -13265,31 +14782,39 @@
 
     check-cast v2, Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 3389
     .local v2, r:Landroid/app/ActivityThread$ActivityClientRecord;
     iget-object v5, v2, Landroid/app/ActivityThread$ActivityClientRecord;->token:Landroid/os/IBinder;
 
     if-ne v5, p1, :cond_7
 
+    .line 3390
     move-object v3, v2
 
+    .line 3391
     if-eqz p2, :cond_0
 
+    .line 3392
     iget-object v5, v2, Landroid/app/ActivityThread$ActivityClientRecord;->pendingResults:Ljava/util/List;
 
     if-eqz v5, :cond_5
 
+    .line 3393
     iget-object v5, v2, Landroid/app/ActivityThread$ActivityClientRecord;->pendingResults:Ljava/util/List;
 
     invoke-interface {v5, p2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
+    .line 3398
     :cond_0
     :goto_1
     if-eqz p3, :cond_9
 
+    .line 3399
     iget-object v5, v2, Landroid/app/ActivityThread$ActivityClientRecord;->pendingIntents:Ljava/util/List;
 
     if-eqz v5, :cond_6
 
+    .line 3400
     iget-object v5, v2, Landroid/app/ActivityThread$ActivityClientRecord;->pendingIntents:Ljava/util/List;
 
     invoke-interface {v5, p3}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
@@ -13298,12 +14823,14 @@
 
     move-object v4, v3
 
+    .line 3409
     .end local v2           #r:Landroid/app/ActivityThread$ActivityClientRecord;
     .end local v3           #target:Landroid/app/ActivityThread$ActivityClientRecord;
     .local v4, target:Landroid/app/ActivityThread$ActivityClientRecord;
     :goto_2
     if-nez v4, :cond_8
 
+    .line 3410
     :try_start_1
     new-instance v3, Landroid/app/ActivityThread$ActivityClientRecord;
 
@@ -13311,17 +14838,22 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
+    .line 3411
     .end local v4           #target:Landroid/app/ActivityThread$ActivityClientRecord;
     .restart local v3       #target:Landroid/app/ActivityThread$ActivityClientRecord;
     :try_start_2
     iput-object p1, v3, Landroid/app/ActivityThread$ActivityClientRecord;->token:Landroid/os/IBinder;
 
+    .line 3412
     iput-object p2, v3, Landroid/app/ActivityThread$ActivityClientRecord;->pendingResults:Ljava/util/List;
 
+    .line 3413
     iput-object p3, v3, Landroid/app/ActivityThread$ActivityClientRecord;->pendingIntents:Ljava/util/List;
 
+    .line 3414
     if-nez p7, :cond_2
 
+    .line 3415
     iget-object v5, p0, Landroid/app/ActivityThread;->mActivities:Ljava/util/HashMap;
 
     invoke-virtual {v5, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -13330,42 +14862,53 @@
 
     check-cast v0, Landroid/app/ActivityThread$ActivityClientRecord;
 
+    .line 3416
     .local v0, existing:Landroid/app/ActivityThread$ActivityClientRecord;
     if-eqz v0, :cond_1
 
+    .line 3417
     iget-boolean v5, v0, Landroid/app/ActivityThread$ActivityClientRecord;->paused:Z
 
     iput-boolean v5, v3, Landroid/app/ActivityThread$ActivityClientRecord;->startsNotResumed:Z
 
+    .line 3419
     :cond_1
     const/4 v5, 0x1
 
     iput-boolean v5, v3, Landroid/app/ActivityThread$ActivityClientRecord;->onlyLocalRequest:Z
 
+    .line 3421
     .end local v0           #existing:Landroid/app/ActivityThread$ActivityClientRecord;
     :cond_2
     iget-object v5, p0, Landroid/app/ActivityThread;->mRelaunchingActivities:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 3422
     const/16 v5, 0x7e
 
     invoke-direct {p0, v5, v3}, Landroid/app/ActivityThread;->queueOrSendMessage(ILjava/lang/Object;)V
 
+    .line 3425
     :goto_3
     if-eqz p7, :cond_3
 
+    .line 3426
     iput-boolean p5, v3, Landroid/app/ActivityThread$ActivityClientRecord;->startsNotResumed:Z
 
+    .line 3427
     const/4 v5, 0x0
 
     iput-boolean v5, v3, Landroid/app/ActivityThread$ActivityClientRecord;->onlyLocalRequest:Z
 
+    .line 3429
     :cond_3
     if-eqz p6, :cond_4
 
+    .line 3430
     iput-object p6, v3, Landroid/app/ActivityThread$ActivityClientRecord;->createdConfig:Landroid/content/res/Configuration;
 
+    .line 3432
     :cond_4
     iget v5, v3, Landroid/app/ActivityThread$ActivityClientRecord;->pendingConfigChanges:I
 
@@ -13373,16 +14916,20 @@
 
     iput v5, v3, Landroid/app/ActivityThread$ActivityClientRecord;->pendingConfigChanges:I
 
+    .line 3433
     monitor-exit v6
 
+    .line 3434
     return-void
 
+    .line 3395
     .restart local v2       #r:Landroid/app/ActivityThread$ActivityClientRecord;
     :cond_5
     iput-object p2, v2, Landroid/app/ActivityThread$ActivityClientRecord;->pendingResults:Ljava/util/List;
 
     goto :goto_1
 
+    .line 3433
     .end local v2           #r:Landroid/app/ActivityThread$ActivityClientRecord;
     :catchall_0
     move-exception v5
@@ -13394,6 +14941,7 @@
 
     throw v5
 
+    .line 3402
     .restart local v2       #r:Landroid/app/ActivityThread$ActivityClientRecord;
     :cond_6
     :try_start_3
@@ -13407,6 +14955,7 @@
     .restart local v4       #target:Landroid/app/ActivityThread$ActivityClientRecord;
     goto :goto_2
 
+    .line 3387
     .end local v4           #target:Landroid/app/ActivityThread$ActivityClientRecord;
     .restart local v3       #target:Landroid/app/ActivityThread$ActivityClientRecord;
     :cond_7
@@ -13414,6 +14963,7 @@
 
     goto :goto_0
 
+    .line 3433
     .end local v2           #r:Landroid/app/ActivityThread$ActivityClientRecord;
     .end local v3           #target:Landroid/app/ActivityThread$ActivityClientRecord;
     .restart local v4       #target:Landroid/app/ActivityThread$ActivityClientRecord;
@@ -13448,6 +14998,7 @@
     .parameter "intent"
 
     .prologue
+    .line 1876
     iget-object v1, p0, Landroid/app/ActivityThread;->mInitialApplication:Landroid/app/Application;
 
     invoke-virtual {v1}, Landroid/app/Application;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -13460,13 +15011,16 @@
 
     move-result-object v0
 
+    .line 1878
     .local v0, aInfo:Landroid/content/pm/ActivityInfo;
     if-nez v0, :cond_0
 
+    .line 1880
     const/4 v1, -0x2
 
     invoke-static {v1, p1}, Landroid/app/Instrumentation;->checkStartActivityResult(ILjava/lang/Object;)V
 
+    .line 1883
     :cond_0
     return-object v0
 .end method
@@ -13478,21 +15032,27 @@
     .parameter "what"
 
     .prologue
+    .line 1953
     new-instance v0, Landroid/app/ActivityThread$ContextCleanupInfo;
 
     invoke-direct {v0}, Landroid/app/ActivityThread$ContextCleanupInfo;-><init>()V
 
+    .line 1954
     .local v0, cci:Landroid/app/ActivityThread$ContextCleanupInfo;
     iput-object p1, v0, Landroid/app/ActivityThread$ContextCleanupInfo;->context:Landroid/app/ContextImpl;
 
+    .line 1955
     iput-object p2, v0, Landroid/app/ActivityThread$ContextCleanupInfo;->who:Ljava/lang/String;
 
+    .line 1956
     iput-object p3, v0, Landroid/app/ActivityThread$ContextCleanupInfo;->what:Ljava/lang/String;
 
+    .line 1957
     const/16 v1, 0x77
 
     invoke-direct {p0, v1, v0}, Landroid/app/ActivityThread;->queueOrSendMessage(ILjava/lang/Object;)V
 
+    .line 1958
     return-void
 .end method
 
@@ -13500,14 +15060,17 @@
     .locals 2
 
     .prologue
+    .line 1827
     iget-boolean v0, p0, Landroid/app/ActivityThread;->mGcIdlerScheduled:Z
 
     if-nez v0, :cond_0
 
+    .line 1828
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/app/ActivityThread;->mGcIdlerScheduled:Z
 
+    .line 1829
     invoke-static {}, Landroid/os/Looper;->myQueue()Landroid/os/MessageQueue;
 
     move-result-object v0
@@ -13516,6 +15079,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/MessageQueue;->addIdleHandler(Landroid/os/MessageQueue$IdleHandler;)V
 
+    .line 1831
     :cond_0
     iget-object v0, p0, Landroid/app/ActivityThread;->mH:Landroid/app/ActivityThread$H;
 
@@ -13523,6 +15087,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ActivityThread$H;->removeMessages(I)V
 
+    .line 1832
     return-void
 .end method
 
@@ -13535,10 +15100,12 @@
     .parameter "data"
 
     .prologue
+    .line 1922
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
+    .line 1923
     .local v0, list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/ResultInfo;>;"
     new-instance v1, Landroid/app/ResultInfo;
 
@@ -13546,10 +15113,12 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 1924
     iget-object v1, p0, Landroid/app/ActivityThread;->mAppThread:Landroid/app/ActivityThread$ApplicationThread;
 
     invoke-virtual {v1, p1, v0}, Landroid/app/ActivityThread$ApplicationThread;->scheduleSendResult(Landroid/os/IBinder;Ljava/util/List;)V
 
+    .line 1925
     return-void
 .end method
 
@@ -13564,29 +15133,39 @@
     .parameter "lastNonConfigurationInstances"
 
     .prologue
+    .line 1889
     new-instance v0, Landroid/app/ActivityThread$ActivityClientRecord;
 
     invoke-direct {v0}, Landroid/app/ActivityThread$ActivityClientRecord;-><init>()V
 
+    .line 1890
     .local v0, r:Landroid/app/ActivityThread$ActivityClientRecord;
     iput-object p5, v0, Landroid/app/ActivityThread$ActivityClientRecord;->token:Landroid/os/IBinder;
 
+    .line 1891
     const/4 v1, 0x0
 
     iput v1, v0, Landroid/app/ActivityThread$ActivityClientRecord;->ident:I
 
+    .line 1892
     iput-object p3, v0, Landroid/app/ActivityThread$ActivityClientRecord;->intent:Landroid/content/Intent;
 
+    .line 1893
     iput-object p6, v0, Landroid/app/ActivityThread$ActivityClientRecord;->state:Landroid/os/Bundle;
 
+    .line 1894
     iput-object p1, v0, Landroid/app/ActivityThread$ActivityClientRecord;->parent:Landroid/app/Activity;
 
+    .line 1895
     iput-object p2, v0, Landroid/app/ActivityThread$ActivityClientRecord;->embeddedID:Ljava/lang/String;
 
+    .line 1896
     iput-object p4, v0, Landroid/app/ActivityThread$ActivityClientRecord;->activityInfo:Landroid/content/pm/ActivityInfo;
 
+    .line 1897
     iput-object p7, v0, Landroid/app/ActivityThread$ActivityClientRecord;->lastNonConfigurationInstances:Landroid/app/Activity$NonConfigurationInstances;
 
+    .line 1910
     const/4 v1, 0x0
 
     invoke-direct {p0, v0, v1}, Landroid/app/ActivityThread;->performLaunchActivity(Landroid/app/ActivityThread$ActivityClientRecord;Landroid/content/Intent;)Landroid/app/Activity;
@@ -13602,10 +15181,12 @@
     .parameter "listener"
 
     .prologue
+    .line 1867
     iget-object v2, p0, Landroid/app/ActivityThread;->mOnPauseListeners:Ljava/util/HashMap;
 
     monitor-enter v2
 
+    .line 1868
     :try_start_0
     iget-object v1, p0, Landroid/app/ActivityThread;->mOnPauseListeners:Ljava/util/HashMap;
 
@@ -13615,16 +15196,21 @@
 
     check-cast v0, Ljava/util/ArrayList;
 
+    .line 1869
     .local v0, list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/OnActivityPausedListener;>;"
     if-eqz v0, :cond_0
 
+    .line 1870
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
+    .line 1872
     :cond_0
     monitor-exit v2
 
+    .line 1873
     return-void
 
+    .line 1872
     .end local v0           #list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/OnActivityPausedListener;>;"
     :catchall_0
     move-exception v1
@@ -13640,14 +15226,17 @@
     .locals 2
 
     .prologue
+    .line 1835
     iget-boolean v0, p0, Landroid/app/ActivityThread;->mGcIdlerScheduled:Z
 
     if-eqz v0, :cond_0
 
+    .line 1836
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/app/ActivityThread;->mGcIdlerScheduled:Z
 
+    .line 1837
     invoke-static {}, Landroid/os/Looper;->myQueue()Landroid/os/MessageQueue;
 
     move-result-object v0
@@ -13656,6 +15245,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/MessageQueue;->removeIdleHandler(Landroid/os/MessageQueue$IdleHandler;)V
 
+    .line 1839
     :cond_0
     iget-object v0, p0, Landroid/app/ActivityThread;->mH:Landroid/app/ActivityThread$H;
 
@@ -13663,55 +15253,6 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ActivityThread$H;->removeMessages(I)V
 
+    .line 1840
     return-void
-.end method
-
-.method getTopLevelResources(Ljava/lang/String;Ljava/lang/String;Landroid/app/LoadedApk;)Landroid/content/res/Resources;
-    .locals 1
-    .parameter "packageName"
-    .parameter "resDir"
-    .parameter "pkgInfo"
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-
-    .prologue
-    iget-object v0, p3, Landroid/app/LoadedApk;->mCompatibilityInfo:Landroid/view/CompatibilityInfoHolder;
-
-    invoke-virtual {v0}, Landroid/view/CompatibilityInfoHolder;->get()Landroid/content/res/CompatibilityInfo;
-
-    move-result-object v0
-
-    invoke-virtual {p0, p1, p2, v0}, Landroid/app/ActivityThread;->getTopLevelResources(Ljava/lang/String;Ljava/lang/String;Landroid/content/res/CompatibilityInfo;)Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method getTopLevelResources(Ljava/lang/String;Ljava/lang/String;Landroid/content/res/CompatibilityInfo;)Landroid/content/res/Resources;
-    .locals 2
-    .parameter "packageName"
-    .parameter "resDir"
-    .parameter "compInfo"
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-
-    .prologue
-    invoke-virtual {p0, p2, p3}, Landroid/app/ActivityThread;->getTopLevelResources(Ljava/lang/String;Landroid/content/res/CompatibilityInfo;)Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    .local v0, r:Landroid/content/res/Resources;
-    if-eqz v0, :cond_miui_0
-
-    move-object v1, v0
-
-    check-cast v1, Landroid/content/res/MiuiResources;
-
-    invoke-virtual {v1, p1}, Landroid/content/res/MiuiResources;->init(Ljava/lang/String;)V
-
-    :cond_miui_0
-    return-object v0
 .end method

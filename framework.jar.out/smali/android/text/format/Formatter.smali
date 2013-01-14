@@ -8,6 +8,7 @@
     .locals 0
 
     .prologue
+    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,6 +20,7 @@
     .parameter "number"
 
     .prologue
+    .line 36
     const/4 v0, 0x0
 
     invoke-static {p0, p1, p2, v0}, Landroid/text/format/Formatter;->formatFileSize(Landroid/content/Context;JZ)Ljava/lang/String;
@@ -43,64 +45,85 @@
 
     const/4 v6, 0x0
 
+    .line 48
     if-nez p0, :cond_0
 
+    .line 49
     const-string v3, ""
 
+    .line 92
     :goto_0
     return-object v3
 
+    .line 52
     :cond_0
     long-to-float v0, p1
 
+    .line 53
     .local v0, result:F
     const v1, 0x10400bd
 
+    .line 54
     .local v1, suffix:I
     cmpl-float v3, v0, v4
 
     if-lez v3, :cond_1
 
+    .line 55
     const v1, 0x10400be
 
+    .line 56
     div-float/2addr v0, v5
 
+    .line 58
     :cond_1
     cmpl-float v3, v0, v4
 
     if-lez v3, :cond_2
 
+    .line 59
     const v1, 0x10400bf
 
+    .line 60
     div-float/2addr v0, v5
 
+    .line 62
     :cond_2
     cmpl-float v3, v0, v4
 
     if-lez v3, :cond_3
 
+    .line 63
     const v1, 0x10400c0
 
+    .line 64
     div-float/2addr v0, v5
 
+    .line 66
     :cond_3
     cmpl-float v3, v0, v4
 
     if-lez v3, :cond_4
 
+    .line 67
     const v1, 0x10400c1
 
+    .line 68
     div-float/2addr v0, v5
 
+    .line 70
     :cond_4
     cmpl-float v3, v0, v4
 
     if-lez v3, :cond_5
 
+    .line 71
     const v1, 0x10400c2
 
+    .line 72
     div-float/2addr v0, v5
 
+    .line 75
     :cond_5
     const/high16 v3, 0x3f80
 
@@ -108,6 +131,7 @@
 
     if-gez v3, :cond_6
 
+    .line 76
     const-string v3, "%.2f"
 
     new-array v4, v7, [Ljava/lang/Object;
@@ -122,6 +146,7 @@
 
     move-result-object v2
 
+    .line 92
     .local v2, value:Ljava/lang/String;
     :goto_1
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -148,6 +173,7 @@
 
     goto :goto_0
 
+    .line 77
     .end local v2           #value:Ljava/lang/String;
     :cond_6
     const/high16 v3, 0x4120
@@ -156,8 +182,10 @@
 
     if-gez v3, :cond_8
 
+    .line 78
     if-eqz p3, :cond_7
 
+    .line 79
     const-string v3, "%.1f"
 
     new-array v4, v7, [Ljava/lang/Object;
@@ -175,6 +203,7 @@
     .restart local v2       #value:Ljava/lang/String;
     goto :goto_1
 
+    .line 81
     .end local v2           #value:Ljava/lang/String;
     :cond_7
     const-string v3, "%.2f"
@@ -194,6 +223,7 @@
     .restart local v2       #value:Ljava/lang/String;
     goto :goto_1
 
+    .line 83
     .end local v2           #value:Ljava/lang/String;
     :cond_8
     const/high16 v3, 0x42c8
@@ -202,8 +232,10 @@
 
     if-gez v3, :cond_a
 
+    .line 84
     if-eqz p3, :cond_9
 
+    .line 85
     const-string v3, "%.0f"
 
     new-array v4, v7, [Ljava/lang/Object;
@@ -221,6 +253,7 @@
     .restart local v2       #value:Ljava/lang/String;
     goto :goto_1
 
+    .line 87
     .end local v2           #value:Ljava/lang/String;
     :cond_9
     const-string v3, "%.2f"
@@ -240,6 +273,7 @@
     .restart local v2       #value:Ljava/lang/String;
     goto :goto_1
 
+    .line 90
     .end local v2           #value:Ljava/lang/String;
     :cond_a
     const-string v3, "%.0f"
@@ -267,6 +301,7 @@
     .end annotation
 
     .prologue
+    .line 111
     invoke-static {p0}, Landroid/net/NetworkUtils;->intToInetAddress(I)Ljava/net/InetAddress;
 
     move-result-object v0
@@ -284,6 +319,7 @@
     .parameter "number"
 
     .prologue
+    .line 44
     const/4 v0, 0x1
 
     invoke-static {p0, p1, p2, v0}, Landroid/text/format/Formatter;->formatFileSize(Landroid/content/Context;JZ)Ljava/lang/String;

@@ -18,8 +18,10 @@
     .parameter "ci"
 
     .prologue
+    .line 39
     invoke-direct {p0, p1, p2, p3}, Lcom/android/internal/telephony/IccFileHandler;-><init>(Lcom/android/internal/telephony/UiccCardApplication;Ljava/lang/String;Lcom/android/internal/telephony/CommandsInterface;)V
 
+    .line 40
     return-void
 .end method
 
@@ -29,12 +31,14 @@
     .locals 2
 
     .prologue
+    .line 43
     const-string v0, "GSM"
 
     const-string v1, "SIMFileHandler finalized"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 44
     return-void
 .end method
 
@@ -43,46 +47,56 @@
     .parameter "efid"
 
     .prologue
+    .line 56
     sparse-switch p1, :sswitch_data_0
 
+    .line 91
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/gsm/SIMFileHandler;->getCommonIccEFPath(I)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 92
     .local v0, path:Ljava/lang/String;
     if-nez v0, :cond_0
 
+    .line 93
     const-string v1, "GSM"
 
     const-string v2, "Error: EF Path being returned in null"
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 95
     .end local v0           #path:Ljava/lang/String;
     :cond_0
     :goto_0
     return-object v0
 
+    .line 60
     :sswitch_0
     const-string v0, "3F007F10"
 
     goto :goto_0
 
+    .line 76
     :sswitch_1
     const-string v0, "3F007F20"
 
     goto :goto_0
 
+    .line 85
     :sswitch_2
     const-string v0, "3F007F20"
 
     goto :goto_0
 
+    .line 89
     :sswitch_3
     const-string v0, "3F007F105F3A"
 
     goto :goto_0
 
+    .line 56
     nop
 
     :sswitch_data_0
@@ -118,8 +132,10 @@
     .parameter "msg"
 
     .prologue
+    .line 50
     invoke-super {p0, p1}, Lcom/android/internal/telephony/IccFileHandler;->handleMessage(Landroid/os/Message;)V
 
+    .line 51
     return-void
 .end method
 
@@ -128,6 +144,7 @@
     .parameter "msg"
 
     .prologue
+    .line 99
     const-string v0, "GSM"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -150,6 +167,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 100
     return-void
 .end method
 
@@ -158,6 +176,7 @@
     .parameter "msg"
 
     .prologue
+    .line 103
     const-string v0, "GSM"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -180,5 +199,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 104
     return-void
 .end method

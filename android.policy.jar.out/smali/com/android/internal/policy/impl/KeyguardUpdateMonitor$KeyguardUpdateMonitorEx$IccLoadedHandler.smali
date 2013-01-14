@@ -24,6 +24,7 @@
     .parameter
 
     .prologue
+    .line 1042
     iput-object p1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$KeyguardUpdateMonitorEx$IccLoadedHandler;->this$1:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$KeyguardUpdateMonitorEx;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -37,6 +38,7 @@
     .parameter "x1"
 
     .prologue
+    .line 1042
     invoke-direct {p0, p1}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$KeyguardUpdateMonitorEx$IccLoadedHandler;-><init>(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$KeyguardUpdateMonitorEx;)V
 
     return-void
@@ -49,17 +51,20 @@
     .parameter "msg"
 
     .prologue
+    .line 1045
     const/16 v0, 0x3e9
 
     iget v1, p1, Landroid/os/Message;->what:I
 
     if-ne v0, v1, :cond_0
 
+    .line 1046
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$KeyguardUpdateMonitorEx$IccLoadedHandler;->this$1:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$KeyguardUpdateMonitorEx;
 
     #calls: Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$KeyguardUpdateMonitorEx;->handleIccLocked()V
     invoke-static {v0}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$KeyguardUpdateMonitorEx;->access$1500(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$KeyguardUpdateMonitorEx;)V
 
+    .line 1048
     :cond_0
     return-void
 .end method

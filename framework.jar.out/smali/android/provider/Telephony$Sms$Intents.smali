@@ -47,6 +47,7 @@
     .locals 0
 
     .prologue
+    .line 749
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -57,7 +58,8 @@
     .parameter "intent"
 
     .prologue
-    const-string v8, "pdus"
+    .line 962
+    const-string/jumbo v8, "pdus"
 
     invoke-virtual {p0, v8}, Landroid/content/Intent;->getSerializableExtra(Ljava/lang/String;)Ljava/io/Serializable;
 
@@ -69,6 +71,7 @@
 
     check-cast v2, [Ljava/lang/Object;
 
+    .line 963
     .local v2, messages:[Ljava/lang/Object;
     const-string v8, "format"
 
@@ -76,13 +79,15 @@
 
     move-result-object v0
 
+    .line 964
     .local v0, format:Ljava/lang/String;
     array-length v8, v2
 
     new-array v5, v8, [[B
 
+    .line 965
     .local v5, pduObjs:[[B
-    const-string v8, "subscription"
+    const-string/jumbo v8, "subscription"
 
     const/4 v9, 0x0
 
@@ -90,6 +95,7 @@
 
     move-result v7
 
+    .line 967
     .local v7, subId:I
     const-string v8, "Telephony"
 
@@ -113,6 +119,7 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 969
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -121,6 +128,7 @@
 
     if-ge v1, v8, :cond_0
 
+    .line 970
     aget-object v8, v2, v1
 
     check-cast v8, [B
@@ -129,31 +137,38 @@
 
     aput-object v8, v5, v1
 
+    .line 969
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 972
     :cond_0
     array-length v8, v5
 
     new-array v6, v8, [[B
 
+    .line 973
     .local v6, pdus:[[B
     array-length v4, v6
 
+    .line 974
     .local v4, pduCount:I
     new-array v3, v4, [Landroid/telephony/SmsMessage;
 
+    .line 975
     .local v3, msgs:[Landroid/telephony/SmsMessage;
     const/4 v1, 0x0
 
     :goto_1
     if-ge v1, v4, :cond_1
 
+    .line 976
     aget-object v8, v5, v1
 
     aput-object v8, v6, v1
 
+    .line 977
     aget-object v8, v6, v1
 
     invoke-static {v8, v0}, Landroid/telephony/SmsMessage;->createFromPdu([BLjava/lang/String;)Landroid/telephony/SmsMessage;
@@ -162,14 +177,17 @@
 
     aput-object v8, v3, v1
 
+    .line 978
     aget-object v8, v3, v1
 
     invoke-virtual {v8, v7}, Landroid/telephony/SmsMessage;->setSubId(I)V
 
+    .line 975
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
+    .line 980
     :cond_1
     return-object v3
 .end method

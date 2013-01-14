@@ -44,6 +44,7 @@
 
     const/4 v2, 0x0
 
+    .line 29
     new-instance v0, Landroid/renderscript/Path$Primitive;
 
     const-string v1, "QUADRATIC_BEZIER"
@@ -52,6 +53,7 @@
 
     sput-object v0, Landroid/renderscript/Path$Primitive;->QUADRATIC_BEZIER:Landroid/renderscript/Path$Primitive;
 
+    .line 30
     new-instance v0, Landroid/renderscript/Path$Primitive;
 
     const-string v1, "CUBIC_BEZIER"
@@ -60,6 +62,7 @@
 
     sput-object v0, Landroid/renderscript/Path$Primitive;->CUBIC_BEZIER:Landroid/renderscript/Path$Primitive;
 
+    .line 28
     const/4 v0, 0x2
 
     new-array v0, v0, [Landroid/renderscript/Path$Primitive;
@@ -89,10 +92,13 @@
     .end annotation
 
     .prologue
+    .line 33
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 34
     iput p3, p0, Landroid/renderscript/Path$Primitive;->mID:I
 
+    .line 35
     return-void
 .end method
 
@@ -101,6 +107,7 @@
     .parameter "name"
 
     .prologue
+    .line 28
     const-class v0, Landroid/renderscript/Path$Primitive;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -116,6 +123,7 @@
     .locals 1
 
     .prologue
+    .line 28
     sget-object v0, Landroid/renderscript/Path$Primitive;->$VALUES:[Landroid/renderscript/Path$Primitive;
 
     invoke-virtual {v0}, [Landroid/renderscript/Path$Primitive;->clone()Ljava/lang/Object;

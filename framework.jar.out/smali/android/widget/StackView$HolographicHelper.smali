@@ -50,50 +50,59 @@
     .prologue
     const/4 v3, 0x1
 
+    .line 1383
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1370
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Landroid/widget/StackView$HolographicHelper;->mHolographicPaint:Landroid/graphics/Paint;
 
+    .line 1371
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Landroid/widget/StackView$HolographicHelper;->mErasePaint:Landroid/graphics/Paint;
 
+    .line 1372
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Landroid/widget/StackView$HolographicHelper;->mBlurPaint:Landroid/graphics/Paint;
 
+    .line 1378
     new-instance v0, Landroid/graphics/Canvas;
 
     invoke-direct {v0}, Landroid/graphics/Canvas;-><init>()V
 
     iput-object v0, p0, Landroid/widget/StackView$HolographicHelper;->mCanvas:Landroid/graphics/Canvas;
 
+    .line 1379
     new-instance v0, Landroid/graphics/Canvas;
 
     invoke-direct {v0}, Landroid/graphics/Canvas;-><init>()V
 
     iput-object v0, p0, Landroid/widget/StackView$HolographicHelper;->mMaskCanvas:Landroid/graphics/Canvas;
 
+    .line 1380
     const/4 v0, 0x2
 
     new-array v0, v0, [I
 
     iput-object v0, p0, Landroid/widget/StackView$HolographicHelper;->mTmpXY:[I
 
+    .line 1381
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v0, p0, Landroid/widget/StackView$HolographicHelper;->mIdentityMatrix:Landroid/graphics/Matrix;
 
+    .line 1384
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -106,10 +115,12 @@
 
     iput v0, p0, Landroid/widget/StackView$HolographicHelper;->mDensity:F
 
+    .line 1386
     iget-object v0, p0, Landroid/widget/StackView$HolographicHelper;->mHolographicPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setFilterBitmap(Z)V
 
+    .line 1387
     iget-object v0, p0, Landroid/widget/StackView$HolographicHelper;->mHolographicPaint:Landroid/graphics/Paint;
 
     const/4 v1, 0x0
@@ -122,6 +133,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setMaskFilter(Landroid/graphics/MaskFilter;)Landroid/graphics/MaskFilter;
 
+    .line 1388
     iget-object v0, p0, Landroid/widget/StackView$HolographicHelper;->mErasePaint:Landroid/graphics/Paint;
 
     new-instance v1, Landroid/graphics/PorterDuffXfermode;
@@ -132,10 +144,12 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
+    .line 1389
     iget-object v0, p0, Landroid/widget/StackView$HolographicHelper;->mErasePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setFilterBitmap(Z)V
 
+    .line 1391
     new-instance v0, Landroid/graphics/BlurMaskFilter;
 
     const/high16 v1, 0x4000
@@ -150,6 +164,7 @@
 
     iput-object v0, p0, Landroid/widget/StackView$HolographicHelper;->mSmallBlurMaskFilter:Landroid/graphics/BlurMaskFilter;
 
+    .line 1392
     new-instance v0, Landroid/graphics/BlurMaskFilter;
 
     const/high16 v1, 0x4080
@@ -164,6 +179,7 @@
 
     iput-object v0, p0, Landroid/widget/StackView$HolographicHelper;->mLargeBlurMaskFilter:Landroid/graphics/BlurMaskFilter;
 
+    .line 1393
     return-void
 .end method
 
@@ -175,6 +191,7 @@
     .parameter "color"
 
     .prologue
+    .line 1396
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, v0, p2}, Landroid/widget/StackView$HolographicHelper;->createOutline(Landroid/view/View;II)Landroid/graphics/Bitmap;
@@ -195,18 +212,22 @@
 
     const/4 v9, 0x0
 
+    .line 1404
     iget-object v6, p0, Landroid/widget/StackView$HolographicHelper;->mHolographicPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v6, p3}, Landroid/graphics/Paint;->setColor(I)V
 
+    .line 1405
     if-nez p2, :cond_2
 
+    .line 1406
     iget-object v6, p0, Landroid/widget/StackView$HolographicHelper;->mBlurPaint:Landroid/graphics/Paint;
 
     iget-object v7, p0, Landroid/widget/StackView$HolographicHelper;->mSmallBlurMaskFilter:Landroid/graphics/BlurMaskFilter;
 
     invoke-virtual {v6, v7}, Landroid/graphics/Paint;->setMaskFilter(Landroid/graphics/MaskFilter;)Landroid/graphics/MaskFilter;
 
+    .line 1411
     :cond_0
     :goto_0
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
@@ -224,14 +245,17 @@
     :cond_1
     move-object v0, v5
 
+    .line 1435
     :goto_1
     return-object v0
 
+    .line 1407
     :cond_2
     const/4 v6, 0x1
 
     if-ne p2, v6, :cond_0
 
+    .line 1408
     iget-object v6, p0, Landroid/widget/StackView$HolographicHelper;->mBlurPaint:Landroid/graphics/Paint;
 
     iget-object v7, p0, Landroid/widget/StackView$HolographicHelper;->mLargeBlurMaskFilter:Landroid/graphics/BlurMaskFilter;
@@ -240,6 +264,7 @@
 
     goto :goto_0
 
+    .line 1415
     :cond_3
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -255,55 +280,71 @@
 
     move-result-object v0
 
+    .line 1417
     .local v0, bitmap:Landroid/graphics/Bitmap;
     iget-object v6, p0, Landroid/widget/StackView$HolographicHelper;->mCanvas:Landroid/graphics/Canvas;
 
     invoke-virtual {v6, v0}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
+    .line 1419
     invoke-virtual {p1}, Landroid/view/View;->getRotationX()F
 
     move-result v2
 
+    .line 1420
     .local v2, rotationX:F
     invoke-virtual {p1}, Landroid/view/View;->getRotation()F
 
     move-result v1
 
+    .line 1421
     .local v1, rotation:F
     invoke-virtual {p1}, Landroid/view/View;->getTranslationY()F
 
     move-result v4
 
+    .line 1422
     .local v4, translationY:F
     invoke-virtual {p1}, Landroid/view/View;->getTranslationX()F
 
     move-result v3
 
+    .line 1423
     .local v3, translationX:F
     invoke-virtual {p1, v9}, Landroid/view/View;->setRotationX(F)V
 
+    .line 1424
     invoke-virtual {p1, v9}, Landroid/view/View;->setRotation(F)V
 
+    .line 1425
     invoke-virtual {p1, v9}, Landroid/view/View;->setTranslationY(F)V
 
+    .line 1426
     invoke-virtual {p1, v9}, Landroid/view/View;->setTranslationX(F)V
 
+    .line 1427
     iget-object v6, p0, Landroid/widget/StackView$HolographicHelper;->mCanvas:Landroid/graphics/Canvas;
 
     invoke-virtual {p1, v6}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
+    .line 1428
     invoke-virtual {p1, v2}, Landroid/view/View;->setRotationX(F)V
 
+    .line 1429
     invoke-virtual {p1, v1}, Landroid/view/View;->setRotation(F)V
 
+    .line 1430
     invoke-virtual {p1, v4}, Landroid/view/View;->setTranslationY(F)V
 
+    .line 1431
     invoke-virtual {p1, v3}, Landroid/view/View;->setTranslationX(F)V
 
+    .line 1433
     iget-object v6, p0, Landroid/widget/StackView$HolographicHelper;->mCanvas:Landroid/graphics/Canvas;
 
     invoke-virtual {p0, v6, v0}, Landroid/widget/StackView$HolographicHelper;->drawOutline(Landroid/graphics/Canvas;Landroid/graphics/Bitmap;)V
 
+    .line 1434
     iget-object v6, p0, Landroid/widget/StackView$HolographicHelper;->mCanvas:Landroid/graphics/Canvas;
 
     invoke-virtual {v6, v5}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
@@ -317,6 +358,7 @@
     .parameter "color"
 
     .prologue
+    .line 1400
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0, p2}, Landroid/widget/StackView$HolographicHelper;->createOutline(Landroid/view/View;II)Landroid/graphics/Bitmap;
@@ -336,8 +378,10 @@
 
     const/4 v6, 0x0
 
+    .line 1439
     iget-object v1, p0, Landroid/widget/StackView$HolographicHelper;->mTmpXY:[I
 
+    .line 1440
     .local v1, xy:[I
     iget-object v2, p0, Landroid/widget/StackView$HolographicHelper;->mBlurPaint:Landroid/graphics/Paint;
 
@@ -345,11 +389,13 @@
 
     move-result-object v0
 
+    .line 1441
     .local v0, mask:Landroid/graphics/Bitmap;
     iget-object v2, p0, Landroid/widget/StackView$HolographicHelper;->mMaskCanvas:Landroid/graphics/Canvas;
 
     invoke-virtual {v2, v0}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
+    .line 1442
     iget-object v2, p0, Landroid/widget/StackView$HolographicHelper;->mMaskCanvas:Landroid/graphics/Canvas;
 
     aget v3, v1, v6
@@ -368,14 +414,17 @@
 
     invoke-virtual {v2, p2, v3, v4, v5}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
+    .line 1443
     sget-object v2, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {p1, v6, v2}, Landroid/graphics/Canvas;->drawColor(ILandroid/graphics/PorterDuff$Mode;)V
 
+    .line 1444
     iget-object v2, p0, Landroid/widget/StackView$HolographicHelper;->mIdentityMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {p1, v2}, Landroid/graphics/Canvas;->setMatrix(Landroid/graphics/Matrix;)V
 
+    .line 1445
     aget v2, v1, v6
 
     int-to-float v2, v2
@@ -388,13 +437,16 @@
 
     invoke-virtual {p1, v0, v2, v3, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
+    .line 1446
     iget-object v2, p0, Landroid/widget/StackView$HolographicHelper;->mMaskCanvas:Landroid/graphics/Canvas;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
+    .line 1447
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
+    .line 1448
     return-void
 .end method

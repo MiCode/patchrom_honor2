@@ -27,6 +27,7 @@
     .parameter
 
     .prologue
+    .line 258
     iput-object p1, p0, Landroid/view/VolumePanel$1;->this$0:Landroid/view/VolumePanel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,11 +43,13 @@
     .parameter "event"
 
     .prologue
+    .line 260
     iget-object v0, p0, Landroid/view/VolumePanel$1;->this$0:Landroid/view/VolumePanel;
 
     #calls: Landroid/view/VolumePanel;->resetTimeout()V
     invoke-static {v0}, Landroid/view/VolumePanel;->access$000(Landroid/view/VolumePanel;)V
 
+    .line 261
     const/4 v0, 0x0
 
     return v0

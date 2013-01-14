@@ -19,6 +19,7 @@
     .locals 0
 
     .prologue
+    .line 41
     invoke-direct {p0}, Landroid/graphics/Matrix;-><init>()V
 
     return-void
@@ -30,6 +31,7 @@
     .locals 2
 
     .prologue
+    .line 43
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Matrix can not be modified"
@@ -44,8 +46,10 @@
     .parameter "other"
 
     .prologue
+    .line 199
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 200
     const/4 v0, 0x0
 
     return v0
@@ -56,8 +60,10 @@
     .parameter "degrees"
 
     .prologue
+    .line 181
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 182
     const/4 v0, 0x0
 
     return v0
@@ -70,8 +76,10 @@
     .parameter "py"
 
     .prologue
+    .line 175
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 176
     const/4 v0, 0x0
 
     return v0
@@ -83,8 +91,10 @@
     .parameter "sy"
 
     .prologue
+    .line 169
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 170
     const/4 v0, 0x0
 
     return v0
@@ -98,8 +108,10 @@
     .parameter "py"
 
     .prologue
+    .line 163
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 164
     const/4 v0, 0x0
 
     return v0
@@ -111,8 +123,10 @@
     .parameter "ky"
 
     .prologue
+    .line 193
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 194
     const/4 v0, 0x0
 
     return v0
@@ -126,8 +140,10 @@
     .parameter "py"
 
     .prologue
+    .line 187
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 188
     const/4 v0, 0x0
 
     return v0
@@ -139,8 +155,10 @@
     .parameter "dy"
 
     .prologue
+    .line 157
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 158
     const/4 v0, 0x0
 
     return v0
@@ -151,8 +169,10 @@
     .parameter "other"
 
     .prologue
+    .line 151
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 152
     const/4 v0, 0x0
 
     return v0
@@ -163,8 +183,10 @@
     .parameter "degrees"
 
     .prologue
+    .line 133
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 134
     const/4 v0, 0x0
 
     return v0
@@ -177,8 +199,10 @@
     .parameter "py"
 
     .prologue
+    .line 127
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 128
     const/4 v0, 0x0
 
     return v0
@@ -190,8 +214,10 @@
     .parameter "sy"
 
     .prologue
+    .line 121
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 122
     const/4 v0, 0x0
 
     return v0
@@ -205,8 +231,10 @@
     .parameter "py"
 
     .prologue
+    .line 115
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 116
     const/4 v0, 0x0
 
     return v0
@@ -218,8 +246,10 @@
     .parameter "ky"
 
     .prologue
+    .line 145
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 146
     const/4 v0, 0x0
 
     return v0
@@ -233,8 +263,10 @@
     .parameter "py"
 
     .prologue
+    .line 139
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 140
     const/4 v0, 0x0
 
     return v0
@@ -246,8 +278,10 @@
     .parameter "dy"
 
     .prologue
+    .line 109
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 110
     const/4 v0, 0x0
 
     return v0
@@ -257,8 +291,10 @@
     .locals 0
 
     .prologue
+    .line 53
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 54
     return-void
 .end method
 
@@ -267,8 +303,10 @@
     .parameter "src"
 
     .prologue
+    .line 48
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 49
     return-void
 .end method
 
@@ -278,8 +316,10 @@
     .parameter "b"
 
     .prologue
+    .line 103
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 104
     const/4 v0, 0x0
 
     return v0
@@ -294,8 +334,10 @@
     .parameter "pointCount"
 
     .prologue
+    .line 212
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 213
     const/4 v0, 0x0
 
     return v0
@@ -308,8 +350,10 @@
     .parameter "stf"
 
     .prologue
+    .line 205
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 206
     const/4 v0, 0x0
 
     return v0
@@ -320,8 +364,10 @@
     .parameter "degrees"
 
     .prologue
+    .line 78
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 79
     return-void
 .end method
 
@@ -332,8 +378,10 @@
     .parameter "py"
 
     .prologue
+    .line 73
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 74
     return-void
 .end method
 
@@ -343,8 +391,10 @@
     .parameter "sy"
 
     .prologue
+    .line 68
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 69
     return-void
 .end method
 
@@ -356,8 +406,10 @@
     .parameter "py"
 
     .prologue
+    .line 63
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 64
     return-void
 .end method
 
@@ -367,8 +419,10 @@
     .parameter "cosValue"
 
     .prologue
+    .line 88
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 89
     return-void
 .end method
 
@@ -380,8 +434,10 @@
     .parameter "py"
 
     .prologue
+    .line 83
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 84
     return-void
 .end method
 
@@ -391,8 +447,10 @@
     .parameter "ky"
 
     .prologue
+    .line 98
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 99
     return-void
 .end method
 
@@ -404,8 +462,10 @@
     .parameter "py"
 
     .prologue
+    .line 93
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 94
     return-void
 .end method
 
@@ -415,8 +475,10 @@
     .parameter "dy"
 
     .prologue
+    .line 58
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 59
     return-void
 .end method
 
@@ -425,7 +487,9 @@
     .parameter "values"
 
     .prologue
+    .line 218
     invoke-virtual {p0}, Landroid/graphics/Matrix$1;->oops()V
 
+    .line 219
     return-void
 .end method

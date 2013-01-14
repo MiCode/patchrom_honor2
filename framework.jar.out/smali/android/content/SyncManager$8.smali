@@ -37,6 +37,7 @@
     .parameter
 
     .prologue
+    .line 366
     iput-object p1, p0, Landroid/content/SyncManager$8;->this$0:Landroid/content/SyncManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,8 +55,10 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 368
     if-nez p2, :cond_0
 
+    .line 369
     iget-object v0, p0, Landroid/content/SyncManager$8;->this$0:Landroid/content/SyncManager;
 
     const/4 v2, -0x1
@@ -70,6 +73,7 @@
 
     invoke-virtual/range {v0 .. v7}, Landroid/content/SyncManager;->scheduleSync(Landroid/accounts/Account;ILjava/lang/String;Landroid/os/Bundle;JZ)V
 
+    .line 372
     :cond_0
     return-void
 .end method
@@ -80,6 +84,7 @@
     .parameter "x1"
 
     .prologue
+    .line 366
     check-cast p1, Landroid/content/SyncAdapterType;
 
     .end local p1

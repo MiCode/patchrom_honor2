@@ -19,6 +19,7 @@
     .locals 0
 
     .prologue
+    .line 501
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -31,6 +32,7 @@
     .parameter "ctx"
 
     .prologue
+    .line 503
     iget-object v0, p1, Landroid/app/ContextImpl;->mPackageInfo:Landroid/app/LoadedApk;
 
     iget-object v0, v0, Landroid/app/LoadedApk;->mCompatibilityInfo:Landroid/view/CompatibilityInfoHolder;

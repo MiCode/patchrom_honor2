@@ -19,10 +19,13 @@
     .parameter "context"
 
     .prologue
+    .line 37
     invoke-direct {p0}, Lcom/broadcom/bt/service/framework/IPowerManager$Stub;-><init>()V
 
+    .line 38
     iput-object p1, p0, Lcom/broadcom/bt/service/framework/PowerManagementService;->mContext:Landroid/content/Context;
 
+    .line 39
     return-void
 .end method
 
@@ -38,6 +41,7 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 43
     :try_start_0
     invoke-direct {p0, p1}, Lcom/broadcom/bt/service/framework/PowerManagementService;->enableFmNative(Z)I
     :try_end_0
@@ -49,17 +53,21 @@
 
     if-ne v2, v3, :cond_0
 
+    .line 46
     :goto_0
     return v1
 
+    .line 43
     :cond_0
     const/4 v1, 0x1
 
     goto :goto_0
 
+    .line 44
     :catch_0
     move-exception v0
 
+    .line 45
     .local v0, t:Ljava/lang/Throwable;
     const-string v2, "PowerManagmentService"
 

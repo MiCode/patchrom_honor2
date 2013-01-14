@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 136
+    .line 137
     iput-object p1, p0, Lcom/android/hwcamera/FocusManager$MainHandler;->this$0:Lcom/android/hwcamera/FocusManager;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 136
+    .line 137
     invoke-direct {p0, p1}, Lcom/android/hwcamera/FocusManager$MainHandler;-><init>(Lcom/android/hwcamera/FocusManager;)V
 
     return-void
@@ -47,20 +47,20 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 2
+    .locals 1
     .parameter "msg"
 
     .prologue
-    .line 139
+    .line 140
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 167
+    .line 168
     :goto_0
     return-void
 
-    .line 141
+    .line 142
     :pswitch_0
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager$MainHandler;->this$0:Lcom/android/hwcamera/FocusManager;
 
@@ -68,13 +68,13 @@
 
     goto :goto_0
 
-    .line 146
+    .line 147
     :pswitch_1
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager$MainHandler;->this$0:Lcom/android/hwcamera/FocusManager;
 
     invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->cancelAutoFocus()V
 
-    .line 147
+    .line 148
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager$MainHandler;->this$0:Lcom/android/hwcamera/FocusManager;
 
     #calls: Lcom/android/hwcamera/FocusManager;->resetFocusUIbyGsensor()V
@@ -82,7 +82,7 @@
 
     goto :goto_0
 
-    .line 151
+    .line 152
     :pswitch_2
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager$MainHandler;->this$0:Lcom/android/hwcamera/FocusManager;
 
@@ -90,7 +90,7 @@
 
     goto :goto_0
 
-    .line 155
+    .line 156
     :pswitch_3
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager$MainHandler;->this$0:Lcom/android/hwcamera/FocusManager;
 
@@ -99,17 +99,15 @@
 
     goto :goto_0
 
-    .line 159
+    .line 160
     :pswitch_4
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager$MainHandler;->this$0:Lcom/android/hwcamera/FocusManager;
 
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lcom/android/hwcamera/FocusManager;->resetTouchFocus(Z)V
+    invoke-virtual {v0}, Lcom/android/hwcamera/FocusManager;->resetTouchFocus()V
 
     goto :goto_0
 
-    .line 163
+    .line 164
     :pswitch_5
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager$MainHandler;->this$0:Lcom/android/hwcamera/FocusManager;
 
@@ -119,7 +117,9 @@
 
     goto :goto_0
 
-    .line 139
+    .line 140
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

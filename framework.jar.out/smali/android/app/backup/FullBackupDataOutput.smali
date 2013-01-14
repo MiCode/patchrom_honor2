@@ -13,8 +13,10 @@
     .parameter "fd"
 
     .prologue
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 16
     new-instance v0, Landroid/app/backup/BackupDataOutput;
 
     invoke-virtual {p1}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
@@ -25,6 +27,7 @@
 
     iput-object v0, p0, Landroid/app/backup/FullBackupDataOutput;->mData:Landroid/app/backup/BackupDataOutput;
 
+    .line 17
     return-void
 .end method
 
@@ -34,6 +37,7 @@
     .locals 1
 
     .prologue
+    .line 20
     iget-object v0, p0, Landroid/app/backup/FullBackupDataOutput;->mData:Landroid/app/backup/BackupDataOutput;
 
     return-object v0

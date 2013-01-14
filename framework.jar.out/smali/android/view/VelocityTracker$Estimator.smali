@@ -35,12 +35,15 @@
     .prologue
     const/4 v1, 0x5
 
+    .line 275
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 282
     new-array v0, v1, [F
 
     iput-object v0, p0, Landroid/view/VelocityTracker$Estimator;->xCoeff:[F
 
+    .line 287
     new-array v0, v1, [F
 
     iput-object v0, p0, Landroid/view/VelocityTracker$Estimator;->yCoeff:[F
@@ -54,11 +57,14 @@
     .parameter "c"
 
     .prologue
+    .line 336
     const/4 v0, 0x0
 
+    .line 337
     .local v0, a:F
     const/high16 v2, 0x3f80
 
+    .line 338
     .local v2, scale:F
     const/4 v1, 0x0
 
@@ -68,18 +74,22 @@
 
     if-gt v1, v3, :cond_0
 
+    .line 339
     aget v3, p2, v1
 
     mul-float/2addr v3, v2
 
     add-float/2addr v0, v3
 
+    .line 340
     mul-float/2addr v2, p1
 
+    .line 338
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 342
     :cond_0
     return v0
 .end method
@@ -91,6 +101,7 @@
     .parameter "time"
 
     .prologue
+    .line 305
     iget-object v0, p0, Landroid/view/VelocityTracker$Estimator;->xCoeff:[F
 
     invoke-direct {p0, p1, v0}, Landroid/view/VelocityTracker$Estimator;->estimate(F[F)F
@@ -105,6 +116,7 @@
     .parameter "time"
 
     .prologue
+    .line 314
     iget-object v0, p0, Landroid/view/VelocityTracker$Estimator;->yCoeff:[F
 
     invoke-direct {p0, p1, v0}, Landroid/view/VelocityTracker$Estimator;->estimate(F[F)F
@@ -119,6 +131,7 @@
     .parameter "index"
 
     .prologue
+    .line 323
     iget v0, p0, Landroid/view/VelocityTracker$Estimator;->degree:I
 
     if-gt p1, v0, :cond_0
@@ -141,6 +154,7 @@
     .parameter "index"
 
     .prologue
+    .line 332
     iget v0, p0, Landroid/view/VelocityTracker$Estimator;->degree:I
 
     if-gt p1, v0, :cond_0

@@ -24,6 +24,7 @@
     .parameter
 
     .prologue
+    .line 174
     iput-object p1, p0, Landroid/service/wallpaper/WallpaperService$Engine$1;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,6 +40,7 @@
     .parameter "intent"
 
     .prologue
+    .line 177
     const-string v0, "android.intent.action.SCREEN_ON"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -51,20 +53,24 @@
 
     if-eqz v0, :cond_1
 
+    .line 178
     iget-object v0, p0, Landroid/service/wallpaper/WallpaperService$Engine$1;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/service/wallpaper/WallpaperService$Engine;->mScreenOn:Z
 
+    .line 179
     iget-object v0, p0, Landroid/service/wallpaper/WallpaperService$Engine$1;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;
 
     invoke-virtual {v0}, Landroid/service/wallpaper/WallpaperService$Engine;->reportVisibility()V
 
+    .line 184
     :cond_0
     :goto_0
     return-void
 
+    .line 180
     :cond_1
     const-string v0, "android.intent.action.SCREEN_OFF"
 
@@ -78,12 +84,14 @@
 
     if-eqz v0, :cond_0
 
+    .line 181
     iget-object v0, p0, Landroid/service/wallpaper/WallpaperService$Engine$1;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Landroid/service/wallpaper/WallpaperService$Engine;->mScreenOn:Z
 
+    .line 182
     iget-object v0, p0, Landroid/service/wallpaper/WallpaperService$Engine$1;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;
 
     invoke-virtual {v0}, Landroid/service/wallpaper/WallpaperService$Engine;->reportVisibility()V

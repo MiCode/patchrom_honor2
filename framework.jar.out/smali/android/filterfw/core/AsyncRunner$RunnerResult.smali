@@ -28,10 +28,12 @@
     .parameter
 
     .prologue
+    .line 46
     iput-object p1, p0, Landroid/filterfw/core/AsyncRunner$RunnerResult;->this$0:Landroid/filterfw/core/AsyncRunner;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 47
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/filterfw/core/AsyncRunner$RunnerResult;->status:I
@@ -45,6 +47,7 @@
     .parameter "x1"
 
     .prologue
+    .line 46
     invoke-direct {p0, p1}, Landroid/filterfw/core/AsyncRunner$RunnerResult;-><init>(Landroid/filterfw/core/AsyncRunner;)V
 
     return-void

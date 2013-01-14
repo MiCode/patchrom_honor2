@@ -26,6 +26,7 @@
     .locals 1
 
     .prologue
+    .line 27
     const-string v0, "CdmaNai"
 
     sput-object v0, Lcom/android/internal/telephony/cdma/DataProfileCdma;->PROFILE_TYPE:Ljava/lang/String;
@@ -47,6 +48,7 @@
     .parameter "bearer"
 
     .prologue
+    .line 43
     if-nez p3, :cond_0
 
     sget-object v3, Lcom/android/internal/telephony/cdma/DataProfileCdma;->PROFILE_TYPE:Ljava/lang/String;
@@ -74,35 +76,43 @@
 
     invoke-direct/range {v0 .. v10}, Lcom/android/internal/telephony/DataProfile;-><init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
+    .line 29
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/telephony/cdma/DataProfileCdma;->mProfileId:I
 
+    .line 46
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/DataProfileCdma;->proxy:Ljava/lang/String;
 
+    .line 47
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/DataProfileCdma;->port:Ljava/lang/String;
 
+    .line 48
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/DataProfileCdma;->mmsc:Ljava/lang/String;
 
+    .line 49
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/DataProfileCdma;->mmsProxy:Ljava/lang/String;
 
+    .line 50
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/DataProfileCdma;->mmsPort:Ljava/lang/String;
 
+    .line 52
     return-void
 
     :cond_0
     move-object v3, p3
 
+    .line 43
     goto :goto_0
 .end method
 
@@ -125,6 +135,7 @@
     .parameter "mmsPort"
 
     .prologue
+    .line 58
     if-nez p3, :cond_0
 
     sget-object v4, Lcom/android/internal/telephony/cdma/DataProfileCdma;->PROFILE_TYPE:Ljava/lang/String;
@@ -152,35 +163,43 @@
 
     invoke-direct/range {v1 .. v11}, Lcom/android/internal/telephony/DataProfile;-><init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
+    .line 29
     const/4 v1, 0x0
 
     iput v1, p0, Lcom/android/internal/telephony/cdma/DataProfileCdma;->mProfileId:I
 
+    .line 60
     move-object/from16 v0, p11
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/DataProfileCdma;->proxy:Ljava/lang/String;
 
+    .line 61
     move-object/from16 v0, p12
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/DataProfileCdma;->port:Ljava/lang/String;
 
+    .line 62
     move-object/from16 v0, p13
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/DataProfileCdma;->mmsc:Ljava/lang/String;
 
+    .line 63
     move-object/from16 v0, p14
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/DataProfileCdma;->mmsProxy:Ljava/lang/String;
 
+    .line 64
     move-object/from16 v0, p15
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/DataProfileCdma;->mmsPort:Ljava/lang/String;
 
+    .line 65
     return-void
 
     :cond_0
     move-object v4, p3
 
+    .line 58
     goto :goto_0
 .end method
 
@@ -191,6 +210,7 @@
     .parameter "type"
 
     .prologue
+    .line 70
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/DataProfileCdma;->types:[Ljava/lang/String;
 
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -208,6 +228,7 @@
     .locals 1
 
     .prologue
+    .line 75
     sget-object v0, Lcom/android/internal/telephony/DataProfile$DataProfileType;->PROFILE_TYPE_CDMA:Lcom/android/internal/telephony/DataProfile$DataProfileType;
 
     return-object v0
@@ -217,6 +238,7 @@
     .locals 1
 
     .prologue
+    .line 80
     iget v0, p0, Lcom/android/internal/telephony/cdma/DataProfileCdma;->mProfileId:I
 
     return v0
@@ -227,8 +249,10 @@
     .parameter "profileId"
 
     .prologue
+    .line 85
     iput p1, p0, Lcom/android/internal/telephony/cdma/DataProfileCdma;->mProfileId:I
 
+    .line 86
     return-void
 .end method
 
@@ -236,6 +260,7 @@
     .locals 1
 
     .prologue
+    .line 103
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/DataProfileCdma;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -247,6 +272,7 @@
     .locals 1
 
     .prologue
+    .line 90
     const-string v0, "DataProfileCdma"
 
     return-object v0
@@ -256,10 +282,12 @@
     .locals 3
 
     .prologue
+    .line 96
     invoke-super {p0}, Lcom/android/internal/telephony/DataProfile;->toString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 97
     .local v0, str:Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 

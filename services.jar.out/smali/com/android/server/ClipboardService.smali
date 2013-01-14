@@ -42,30 +42,37 @@
     .parameter "context"
 
     .prologue
+    .line 79
     invoke-direct {p0}, Landroid/content/IClipboard$Stub;-><init>()V
 
+    .line 74
     new-instance v3, Landroid/util/SparseArray;
 
     invoke-direct {v3}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v3, p0, Lcom/android/server/ClipboardService;->mClipboards:Landroid/util/SparseArray;
 
+    .line 80
     iput-object p1, p0, Lcom/android/server/ClipboardService;->mContext:Landroid/content/Context;
 
+    .line 81
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/android/server/ClipboardService;->mAm:Landroid/app/IActivityManager;
 
+    .line 82
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/android/server/ClipboardService;->mPm:Landroid/content/pm/PackageManager;
 
+    .line 83
     const/4 v1, 0x0
 
+    .line 85
     .local v1, permOwner:Landroid/os/IBinder;
     :try_start_0
     iget-object v3, p0, Lcom/android/server/ClipboardService;->mAm:Landroid/app/IActivityManager;
@@ -78,18 +85,22 @@
 
     move-result-object v1
 
+    .line 89
     :goto_0
     iput-object v1, p0, Lcom/android/server/ClipboardService;->mPermissionOwner:Landroid/os/IBinder;
 
+    .line 92
     new-instance v2, Landroid/content/IntentFilter;
 
     invoke-direct {v2}, Landroid/content/IntentFilter;-><init>()V
 
+    .line 93
     .local v2, userFilter:Landroid/content/IntentFilter;
     const-string v3, "android.intent.action.USER_REMOVED"
 
     invoke-virtual {v2, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+    .line 94
     iget-object v3, p0, Lcom/android/server/ClipboardService;->mContext:Landroid/content/Context;
 
     new-instance v4, Lcom/android/server/ClipboardService$1;
@@ -98,12 +109,15 @@
 
     invoke-virtual {v3, v4, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
+    .line 103
     return-void
 
+    .line 86
     .end local v2           #userFilter:Landroid/content/IntentFilter;
     :catch_0
     move-exception v0
 
+    .line 87
     .local v0, e:Landroid/os/RemoteException;
     const-string v3, "clipboard"
 
@@ -120,6 +134,7 @@
     .parameter "x1"
 
     .prologue
+    .line 49
     invoke-direct {p0, p1}, Lcom/android/server/ClipboardService;->removeClipboard(I)V
 
     return-void
@@ -131,6 +146,7 @@
     .parameter "pkg"
 
     .prologue
+    .line 260
     :try_start_0
     iget-object v5, p0, Lcom/android/server/ClipboardService;->mPm:Landroid/content/pm/PackageManager;
 
@@ -140,6 +156,7 @@
 
     move-result-object v4
 
+    .line 261
     .local v4, pi:Landroid/content/pm/PackageInfo;
     iget-object v5, v4, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
@@ -151,6 +168,7 @@
 
     if-nez v5, :cond_0
 
+    .line 262
     new-instance v5, Ljava/lang/SecurityException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -187,10 +205,12 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 265
     .end local v4           #pi:Landroid/content/pm/PackageInfo;
     :catch_0
     move-exception v2
 
+    .line 266
     .local v2, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
@@ -216,6 +236,7 @@
 
     throw v5
 
+    .line 268
     .end local v2           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
     .restart local v4       #pi:Landroid/content/pm/PackageInfo;
     :cond_0
@@ -223,6 +244,7 @@
 
     move-result-object v1
 
+    .line 269
     .local v1, clipboard:Lcom/android/server/ClipboardService$PerUserClipboard;
     iget-object v5, v1, Lcom/android/server/ClipboardService$PerUserClipboard;->primaryClip:Landroid/content/ClipData;
 
@@ -236,12 +258,14 @@
 
     if-nez v5, :cond_2
 
+    .line 270
     iget-object v5, v1, Lcom/android/server/ClipboardService$PerUserClipboard;->primaryClip:Landroid/content/ClipData;
 
     invoke-virtual {v5}, Landroid/content/ClipData;->getItemCount()I
 
     move-result v0
 
+    .line 271
     .local v0, N:I
     const/4 v3, 0x0
 
@@ -249,6 +273,7 @@
     :goto_0
     if-ge v3, v0, :cond_1
 
+    .line 272
     iget-object v5, v1, Lcom/android/server/ClipboardService$PerUserClipboard;->primaryClip:Landroid/content/ClipData;
 
     invoke-virtual {v5, v3}, Landroid/content/ClipData;->getItemAt(I)Landroid/content/ClipData$Item;
@@ -257,15 +282,18 @@
 
     invoke-direct {p0, v5, p2}, Lcom/android/server/ClipboardService;->grantItemLocked(Landroid/content/ClipData$Item;Ljava/lang/String;)V
 
+    .line 271
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 274
     :cond_1
     iget-object v5, v1, Lcom/android/server/ClipboardService$PerUserClipboard;->activePermissionOwners:Ljava/util/HashSet;
 
     invoke-virtual {v5, p2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 276
     .end local v0           #N:I
     .end local v3           #i:I
     :cond_2
@@ -278,10 +306,12 @@
     .parameter "uid"
 
     .prologue
+    .line 230
     invoke-virtual {p1}, Landroid/content/ClipData;->getItemCount()I
 
     move-result v0
 
+    .line 231
     .local v0, N:I
     const/4 v1, 0x0
 
@@ -289,16 +319,19 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
+    .line 232
     invoke-virtual {p1, v1}, Landroid/content/ClipData;->getItemAt(I)Landroid/content/ClipData$Item;
 
     move-result-object v2
 
     invoke-direct {p0, v2, p2}, Lcom/android/server/ClipboardService;->checkItemOwnerLocked(Landroid/content/ClipData$Item;I)V
 
+    .line 231
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 234
     :cond_0
     return-void
 .end method
@@ -309,23 +342,27 @@
     .parameter "uid"
 
     .prologue
+    .line 220
     invoke-virtual {p1}, Landroid/content/ClipData$Item;->getUri()Landroid/net/Uri;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
+    .line 221
     invoke-virtual {p1}, Landroid/content/ClipData$Item;->getUri()Landroid/net/Uri;
 
     move-result-object v1
 
     invoke-direct {p0, v1, p2}, Lcom/android/server/ClipboardService;->checkUriOwnerLocked(Landroid/net/Uri;I)V
 
+    .line 223
     :cond_0
     invoke-virtual {p1}, Landroid/content/ClipData$Item;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
+    .line 224
     .local v0, intent:Landroid/content/Intent;
     if-eqz v0, :cond_1
 
@@ -335,12 +372,14 @@
 
     if-eqz v1, :cond_1
 
+    .line 225
     invoke-virtual {v0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v1
 
     invoke-direct {p0, v1, p2}, Lcom/android/server/ClipboardService;->checkUriOwnerLocked(Landroid/net/Uri;I)V
 
+    .line 227
     :cond_1
     return-void
 .end method
@@ -351,6 +390,7 @@
     .parameter "uid"
 
     .prologue
+    .line 206
     const-string v2, "content"
 
     invoke-virtual {p1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
@@ -363,14 +403,17 @@
 
     if-nez v2, :cond_0
 
+    .line 217
     :goto_0
     return-void
 
+    .line 209
     :cond_0
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
+    .line 212
     .local v0, ident:J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/ClipboardService;->mAm:Landroid/app/IActivityManager;
@@ -384,6 +427,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 215
     :goto_1
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
@@ -396,6 +440,7 @@
 
     throw v2
 
+    .line 213
     :catch_0
     move-exception v2
 
@@ -406,22 +451,27 @@
     .locals 4
 
     .prologue
+    .line 301
     invoke-direct {p0}, Lcom/android/server/ClipboardService;->getClipboard()Lcom/android/server/ClipboardService$PerUserClipboard;
 
     move-result-object v1
 
+    .line 302
     .local v1, clipboard:Lcom/android/server/ClipboardService$PerUserClipboard;
     iget-object v3, v1, Lcom/android/server/ClipboardService$PerUserClipboard;->activePermissionOwners:Ljava/util/HashSet;
 
     invoke-virtual {v3}, Ljava/util/HashSet;->clear()V
 
+    .line 303
     iget-object v3, v1, Lcom/android/server/ClipboardService$PerUserClipboard;->primaryClip:Landroid/content/ClipData;
 
     if-nez v3, :cond_1
 
+    .line 310
     :cond_0
     return-void
 
+    .line 306
     :cond_1
     iget-object v3, v1, Lcom/android/server/ClipboardService$PerUserClipboard;->primaryClip:Landroid/content/ClipData;
 
@@ -429,6 +479,7 @@
 
     move-result v0
 
+    .line 307
     .local v0, N:I
     const/4 v2, 0x0
 
@@ -436,6 +487,7 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
+    .line 308
     iget-object v3, v1, Lcom/android/server/ClipboardService$PerUserClipboard;->primaryClip:Landroid/content/ClipData;
 
     invoke-virtual {v3, v2}, Landroid/content/ClipData;->getItemAt(I)Landroid/content/ClipData$Item;
@@ -444,6 +496,7 @@
 
     invoke-direct {p0, v3}, Lcom/android/server/ClipboardService;->revokeItemLocked(Landroid/content/ClipData$Item;)V
 
+    .line 307
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
@@ -453,6 +506,7 @@
     .locals 1
 
     .prologue
+    .line 118
     invoke-static {}, Landroid/os/UserId;->getCallingUserId()I
 
     move-result v0
@@ -469,10 +523,12 @@
     .parameter "userId"
 
     .prologue
+    .line 122
     iget-object v2, p0, Lcom/android/server/ClipboardService;->mClipboards:Landroid/util/SparseArray;
 
     monitor-enter v2
 
+    .line 123
     :try_start_0
     const-string v1, "ClipboardService"
 
@@ -496,6 +552,7 @@
 
     invoke-static {v1, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 124
     iget-object v1, p0, Lcom/android/server/ClipboardService;->mClipboards:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -504,24 +561,29 @@
 
     check-cast v0, Lcom/android/server/ClipboardService$PerUserClipboard;
 
+    .line 125
     .local v0, puc:Lcom/android/server/ClipboardService$PerUserClipboard;
     if-nez v0, :cond_0
 
+    .line 126
     new-instance v0, Lcom/android/server/ClipboardService$PerUserClipboard;
 
     .end local v0           #puc:Lcom/android/server/ClipboardService$PerUserClipboard;
     invoke-direct {v0, p0, p1}, Lcom/android/server/ClipboardService$PerUserClipboard;-><init>(Lcom/android/server/ClipboardService;I)V
 
+    .line 127
     .restart local v0       #puc:Lcom/android/server/ClipboardService$PerUserClipboard;
     iget-object v1, p0, Lcom/android/server/ClipboardService;->mClipboards:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
+    .line 129
     :cond_0
     monitor-exit v2
 
     return-object v0
 
+    .line 130
     .end local v0           #puc:Lcom/android/server/ClipboardService$PerUserClipboard;
     :catchall_0
     move-exception v1
@@ -539,23 +601,27 @@
     .parameter "pkg"
 
     .prologue
+    .line 248
     invoke-virtual {p1}, Landroid/content/ClipData$Item;->getUri()Landroid/net/Uri;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
+    .line 249
     invoke-virtual {p1}, Landroid/content/ClipData$Item;->getUri()Landroid/net/Uri;
 
     move-result-object v1
 
     invoke-direct {p0, v1, p2}, Lcom/android/server/ClipboardService;->grantUriLocked(Landroid/net/Uri;Ljava/lang/String;)V
 
+    .line 251
     :cond_0
     invoke-virtual {p1}, Landroid/content/ClipData$Item;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
+    .line 252
     .local v0, intent:Landroid/content/Intent;
     if-eqz v0, :cond_1
 
@@ -565,12 +631,14 @@
 
     if-eqz v1, :cond_1
 
+    .line 253
     invoke-virtual {v0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v1
 
     invoke-direct {p0, v1, p2}, Lcom/android/server/ClipboardService;->grantUriLocked(Landroid/net/Uri;Ljava/lang/String;)V
 
+    .line 255
     :cond_1
     return-void
 .end method
@@ -581,10 +649,12 @@
     .parameter "pkg"
 
     .prologue
+    .line 237
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v6
 
+    .line 239
     .local v6, ident:J
     :try_start_0
     iget-object v0, p0, Lcom/android/server/ClipboardService;->mAm:Landroid/app/IActivityManager;
@@ -606,11 +676,14 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 243
     :goto_0
     invoke-static {v6, v7}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
+    .line 245
     return-void
 
+    .line 243
     :catchall_0
     move-exception v0
 
@@ -618,6 +691,7 @@
 
     throw v0
 
+    .line 241
     :catch_0
     move-exception v0
 
@@ -629,19 +703,24 @@
     .parameter "userId"
 
     .prologue
+    .line 134
     iget-object v1, p0, Lcom/android/server/ClipboardService;->mClipboards:Landroid/util/SparseArray;
 
     monitor-enter v1
 
+    .line 135
     :try_start_0
     iget-object v0, p0, Lcom/android/server/ClipboardService;->mClipboards:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->remove(I)V
 
+    .line 136
     monitor-exit v1
 
+    .line 137
     return-void
 
+    .line 136
     :catchall_0
     move-exception v0
 
@@ -657,23 +736,27 @@
     .parameter "item"
 
     .prologue
+    .line 291
     invoke-virtual {p1}, Landroid/content/ClipData$Item;->getUri()Landroid/net/Uri;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
+    .line 292
     invoke-virtual {p1}, Landroid/content/ClipData$Item;->getUri()Landroid/net/Uri;
 
     move-result-object v1
 
     invoke-direct {p0, v1}, Lcom/android/server/ClipboardService;->revokeUriLocked(Landroid/net/Uri;)V
 
+    .line 294
     :cond_0
     invoke-virtual {p1}, Landroid/content/ClipData$Item;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
+    .line 295
     .local v0, intent:Landroid/content/Intent;
     if-eqz v0, :cond_1
 
@@ -683,12 +766,14 @@
 
     if-eqz v1, :cond_1
 
+    .line 296
     invoke-virtual {v0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v1
 
     invoke-direct {p0, v1}, Lcom/android/server/ClipboardService;->revokeUriLocked(Landroid/net/Uri;)V
 
+    .line 298
     :cond_1
     return-void
 .end method
@@ -698,10 +783,12 @@
     .parameter "uri"
 
     .prologue
+    .line 279
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
+    .line 281
     .local v0, ident:J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/ClipboardService;->mAm:Landroid/app/IActivityManager;
@@ -715,11 +802,14 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 286
     :goto_0
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
+    .line 288
     return-void
 
+    .line 286
     :catchall_0
     move-exception v2
 
@@ -727,6 +817,7 @@
 
     throw v2
 
+    .line 284
     :catch_0
     move-exception v2
 
@@ -740,8 +831,10 @@
     .parameter "listener"
 
     .prologue
+    .line 183
     monitor-enter p0
 
+    .line 184
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/ClipboardService;->getClipboard()Lcom/android/server/ClipboardService$PerUserClipboard;
 
@@ -751,10 +844,13 @@
 
     invoke-virtual {v0, p1}, Landroid/os/RemoteCallbackList;->register(Landroid/os/IInterface;)Z
 
+    .line 185
     monitor-exit p0
 
+    .line 186
     return-void
 
+    .line 185
     :catchall_0
     move-exception v0
 
@@ -770,8 +866,10 @@
     .parameter "pkg"
 
     .prologue
+    .line 163
     monitor-enter p0
 
+    .line 164
     :try_start_0
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
@@ -779,6 +877,7 @@
 
     invoke-direct {p0, v0, p1}, Lcom/android/server/ClipboardService;->addActiveOwnerLocked(ILjava/lang/String;)V
 
+    .line 165
     invoke-direct {p0}, Lcom/android/server/ClipboardService;->getClipboard()Lcom/android/server/ClipboardService$PerUserClipboard;
 
     move-result-object v0
@@ -789,6 +888,7 @@
 
     return-object v0
 
+    .line 166
     :catchall_0
     move-exception v0
 
@@ -803,13 +903,16 @@
     .locals 2
 
     .prologue
+    .line 170
     monitor-enter p0
 
+    .line 171
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/ClipboardService;->getClipboard()Lcom/android/server/ClipboardService$PerUserClipboard;
 
     move-result-object v0
 
+    .line 172
     .local v0, clipboard:Lcom/android/server/ClipboardService$PerUserClipboard;
     iget-object v1, v0, Lcom/android/server/ClipboardService$PerUserClipboard;->primaryClip:Landroid/content/ClipData;
 
@@ -831,6 +934,7 @@
 
     goto :goto_0
 
+    .line 173
     .end local v0           #clipboard:Lcom/android/server/ClipboardService$PerUserClipboard;
     :catchall_0
     move-exception v1
@@ -848,18 +952,22 @@
     .prologue
     const/4 v2, 0x0
 
+    .line 195
     monitor-enter p0
 
+    .line 196
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/ClipboardService;->getClipboard()Lcom/android/server/ClipboardService$PerUserClipboard;
 
     move-result-object v0
 
+    .line 197
     .local v0, clipboard:Lcom/android/server/ClipboardService$PerUserClipboard;
     iget-object v3, v0, Lcom/android/server/ClipboardService$PerUserClipboard;->primaryClip:Landroid/content/ClipData;
 
     if-eqz v3, :cond_1
 
+    .line 198
     iget-object v3, v0, Lcom/android/server/ClipboardService$PerUserClipboard;->primaryClip:Landroid/content/ClipData;
 
     const/4 v4, 0x0
@@ -872,6 +980,7 @@
 
     move-result-object v1
 
+    .line 199
     .local v1, text:Ljava/lang/CharSequence;
     if-eqz v1, :cond_0
 
@@ -886,6 +995,7 @@
     :cond_0
     monitor-exit p0
 
+    .line 201
     .end local v1           #text:Ljava/lang/CharSequence;
     :goto_0
     return v2
@@ -895,6 +1005,7 @@
 
     goto :goto_0
 
+    .line 202
     .end local v0           #clipboard:Lcom/android/server/ClipboardService$PerUserClipboard;
     :catchall_0
     move-exception v2
@@ -910,8 +1021,10 @@
     .locals 1
 
     .prologue
+    .line 177
     monitor-enter p0
 
+    .line 178
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/ClipboardService;->getClipboard()Lcom/android/server/ClipboardService$PerUserClipboard;
 
@@ -933,6 +1046,7 @@
 
     goto :goto_0
 
+    .line 179
     :catchall_0
     move-exception v0
 
@@ -956,6 +1070,7 @@
     .end annotation
 
     .prologue
+    .line 109
     :try_start_0
     invoke-super {p0, p1, p2, p3, p4}, Landroid/content/IClipboard$Stub;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     :try_end_0
@@ -965,9 +1080,11 @@
 
     return v1
 
+    .line 110
     :catch_0
     move-exception v0
 
+    .line 111
     .local v0, e:Ljava/lang/RuntimeException;
     const-string v1, "clipboard"
 
@@ -975,6 +1092,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 112
     throw v0
 .end method
 
@@ -983,8 +1101,10 @@
     .parameter "listener"
 
     .prologue
+    .line 189
     monitor-enter p0
 
+    .line 190
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/ClipboardService;->getClipboard()Lcom/android/server/ClipboardService$PerUserClipboard;
 
@@ -994,10 +1114,13 @@
 
     invoke-virtual {v0, p1}, Landroid/os/RemoteCallbackList;->unregister(Landroid/os/IInterface;)Z
 
+    .line 191
     monitor-exit p0
 
+    .line 192
     return-void
 
+    .line 191
     :catchall_0
     move-exception v0
 
@@ -1013,8 +1136,10 @@
     .parameter "clip"
 
     .prologue
+    .line 140
     monitor-enter p0
 
+    .line 141
     if-eqz p1, :cond_0
 
     :try_start_0
@@ -1024,6 +1149,7 @@
 
     if-gtz v3, :cond_0
 
+    .line 142
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     const-string v4, "No items"
@@ -1032,6 +1158,7 @@
 
     throw v3
 
+    .line 159
     :catchall_0
     move-exception v3
 
@@ -1041,6 +1168,7 @@
 
     throw v3
 
+    .line 144
     :cond_0
     :try_start_1
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
@@ -1049,15 +1177,19 @@
 
     invoke-direct {p0, p1, v3}, Lcom/android/server/ClipboardService;->checkDataOwnerLocked(Landroid/content/ClipData;I)V
 
+    .line 145
     invoke-direct {p0}, Lcom/android/server/ClipboardService;->clearActiveOwnersLocked()V
 
+    .line 146
     invoke-direct {p0}, Lcom/android/server/ClipboardService;->getClipboard()Lcom/android/server/ClipboardService$PerUserClipboard;
 
     move-result-object v0
 
+    .line 147
     .local v0, clipboard:Lcom/android/server/ClipboardService$PerUserClipboard;
     iput-object p1, v0, Lcom/android/server/ClipboardService$PerUserClipboard;->primaryClip:Landroid/content/ClipData;
 
+    .line 148
     iget-object v3, v0, Lcom/android/server/ClipboardService$PerUserClipboard;->primaryClipListeners:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {v3}, Landroid/os/RemoteCallbackList;->beginBroadcast()I
@@ -1066,6 +1198,7 @@
 
     move-result v2
 
+    .line 149
     .local v2, n:I
     const/4 v1, 0x0
 
@@ -1073,6 +1206,7 @@
     :goto_0
     if-ge v1, v2, :cond_1
 
+    .line 151
     :try_start_2
     iget-object v3, v0, Lcom/android/server/ClipboardService$PerUserClipboard;->primaryClipListeners:Landroid/os/RemoteCallbackList;
 
@@ -1087,23 +1221,28 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
+    .line 149
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 158
     :cond_1
     :try_start_3
     iget-object v3, v0, Lcom/android/server/ClipboardService$PerUserClipboard;->primaryClipListeners:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {v3}, Landroid/os/RemoteCallbackList;->finishBroadcast()V
 
+    .line 159
     monitor-exit p0
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
+    .line 160
     return-void
 
+    .line 152
     :catch_0
     move-exception v3
 

@@ -66,6 +66,7 @@
     .locals 1
 
     .prologue
+    .line 63
     const/4 v0, 0x1
 
     sput-boolean v0, Lcom/android/server/LightsService;->SCENEBACKLIGHTSWITCHER:Z
@@ -80,44 +81,53 @@
     .prologue
     const/16 v4, 0x9
 
+    .line 240
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 61
     new-array v1, v4, [Lcom/android/server/LightsService$Light;
 
     iput-object v1, p0, Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
 
+    .line 205
     new-instance v1, Lcom/android/server/LightsService$1;
 
     invoke-direct {v1, p0}, Lcom/android/server/LightsService$1;-><init>(Lcom/android/server/LightsService;)V
 
     iput-object v1, p0, Lcom/android/server/LightsService;->mLegacyFlashlightHack:Landroid/os/IHardwareService$Stub;
 
+    .line 261
     new-instance v1, Lcom/android/server/LightsService$2;
 
     invoke-direct {v1, p0}, Lcom/android/server/LightsService$2;-><init>(Lcom/android/server/LightsService;)V
 
     iput-object v1, p0, Lcom/android/server/LightsService;->mH:Landroid/os/Handler;
 
+    .line 242
     invoke-static {}, Lcom/android/server/LightsService;->init_native()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/server/LightsService;->mNativePointer:I
 
+    .line 243
     iput-object p1, p0, Lcom/android/server/LightsService;->mContext:Landroid/content/Context;
 
+    .line 245
     const-string v1, "hardware"
 
     iget-object v2, p0, Lcom/android/server/LightsService;->mLegacyFlashlightHack:Landroid/os/IHardwareService$Stub;
 
     invoke-static {v1, v2}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
 
+    .line 247
     const/4 v0, 0x0
 
     .local v0, i:I
     :goto_0
     if-ge v0, v4, :cond_0
 
+    .line 248
     iget-object v1, p0, Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
 
     new-instance v2, Lcom/android/server/LightsService$Light;
@@ -128,10 +138,12 @@
 
     aput-object v2, v1, v0
 
+    .line 247
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    .line 250
     :cond_0
     return-void
 .end method
@@ -141,6 +153,7 @@
     .parameter "x0"
 
     .prologue
+    .line 30
     iget v0, p0, Lcom/android/server/LightsService;->mNativePointer:I
 
     return v0
@@ -157,6 +170,7 @@
     .parameter "x6"
 
     .prologue
+    .line 30
     invoke-static/range {p0 .. p6}, Lcom/android/server/LightsService;->setLight_native(IIIIIII)V
 
     return-void
@@ -167,6 +181,7 @@
     .parameter "x0"
 
     .prologue
+    .line 30
     iget-object v0, p0, Lcom/android/server/LightsService;->mH:Landroid/os/Handler;
 
     return-object v0
@@ -176,6 +191,7 @@
     .locals 1
 
     .prologue
+    .line 30
     sget-boolean v0, Lcom/android/server/LightsService;->SCENEBACKLIGHTSWITCHER:Z
 
     return v0
@@ -186,6 +202,7 @@
     .parameter "x0"
 
     .prologue
+    .line 30
     sput-boolean p0, Lcom/android/server/LightsService;->SCENEBACKLIGHTSWITCHER:Z
 
     return p0
@@ -196,6 +213,7 @@
     .parameter "x0"
 
     .prologue
+    .line 30
     iget-object v0, p0, Lcom/android/server/LightsService;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -221,12 +239,15 @@
     .end annotation
 
     .prologue
+    .line 253
     iget v0, p0, Lcom/android/server/LightsService;->mNativePointer:I
 
     invoke-static {v0}, Lcom/android/server/LightsService;->finalize_native(I)V
 
+    .line 254
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
+    .line 255
     return-void
 .end method
 
@@ -235,25 +256,10 @@
     .parameter "id"
 
     .prologue
+    .line 258
     iget-object v0, p0, Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
 
     aget-object v0, v0, p1
 
     return-object v0
-.end method
-
-.method setLight(ILcom/android/server/LightsService$Light;)V
-    .locals 1
-    .parameter "id"
-    .parameter "light"
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-
-    .prologue
-    iget-object v0, p0, Lcom/android/server/LightsService;->mLights:[Lcom/android/server/LightsService$Light;
-
-    aput-object p2, v0, p1
-
-    return-void
 .end method

@@ -16,14 +16,17 @@
     .locals 1
 
     .prologue
+    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 44
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     iput-object v0, p0, Landroid/webkit/SslCertLookupTable;->table:Landroid/os/Bundle;
 
+    .line 45
     return-void
 .end method
 
@@ -31,16 +34,19 @@
     .locals 1
 
     .prologue
+    .line 37
     sget-object v0, Landroid/webkit/SslCertLookupTable;->sTable:Landroid/webkit/SslCertLookupTable;
 
     if-nez v0, :cond_0
 
+    .line 38
     new-instance v0, Landroid/webkit/SslCertLookupTable;
 
     invoke-direct {v0}, Landroid/webkit/SslCertLookupTable;-><init>()V
 
     sput-object v0, Landroid/webkit/SslCertLookupTable;->sTable:Landroid/webkit/SslCertLookupTable;
 
+    .line 40
     :cond_0
     sget-object v0, Landroid/webkit/SslCertLookupTable;->sTable:Landroid/webkit/SslCertLookupTable;
 
@@ -53,10 +59,12 @@
     .locals 1
 
     .prologue
+    .line 70
     iget-object v0, p0, Landroid/webkit/SslCertLookupTable;->table:Landroid/os/Bundle;
 
     invoke-virtual {v0}, Landroid/os/Bundle;->clear()V
 
+    .line 71
     return-void
 .end method
 
@@ -67,6 +75,7 @@
     .prologue
     const/4 v2, 0x0
 
+    .line 62
     :try_start_0
     new-instance v3, Ljava/net/URL;
 
@@ -82,6 +91,7 @@
 
     move-result-object v1
 
+    .line 66
     .local v1, host:Ljava/lang/String;
     iget-object v3, p0, Landroid/webkit/SslCertLookupTable;->table:Landroid/os/Bundle;
 
@@ -110,9 +120,11 @@
     :goto_0
     return v2
 
+    .line 63
     :catch_0
     move-exception v0
 
+    .line 64
     .local v0, e:Ljava/net/MalformedURLException;
     goto :goto_0
 .end method
@@ -122,6 +134,7 @@
     .parameter "sslError"
 
     .prologue
+    .line 50
     :try_start_0
     new-instance v2, Ljava/net/URL;
 
@@ -137,6 +150,7 @@
 
     move-result-object v1
 
+    .line 54
     .local v1, host:Ljava/lang/String;
     iget-object v2, p0, Landroid/webkit/SslCertLookupTable;->table:Landroid/os/Bundle;
 
@@ -146,13 +160,16 @@
 
     invoke-virtual {v2, v1, v3}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
+    .line 55
     .end local v1           #host:Ljava/lang/String;
     :goto_0
     return-void
 
+    .line 51
     :catch_0
     move-exception v0
 
+    .line 52
     .local v0, e:Ljava/net/MalformedURLException;
     goto :goto_0
 .end method

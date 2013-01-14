@@ -24,6 +24,7 @@
     .parameter
 
     .prologue
+    .line 924
     iput-object p1, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager$IccSmsInterfaceManagerEx;->this$0:Lcom/android/internal/telephony/IccSmsInterfaceManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +38,7 @@
     .parameter "x1"
 
     .prologue
+    .line 924
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/IccSmsInterfaceManager$IccSmsInterfaceManagerEx;-><init>(Lcom/android/internal/telephony/IccSmsInterfaceManager;)V
 
     return-void
@@ -47,6 +49,7 @@
     .parameter "x0"
 
     .prologue
+    .line 924
     invoke-direct {p0}, Lcom/android/internal/telephony/IccSmsInterfaceManager$IccSmsInterfaceManagerEx;->getNewbyte()[B
 
     move-result-object v0
@@ -59,6 +62,7 @@
     .parameter "x0"
 
     .prologue
+    .line 924
     invoke-direct {p0}, Lcom/android/internal/telephony/IccSmsInterfaceManager$IccSmsInterfaceManagerEx;->getRecordLength()I
 
     move-result v0
@@ -70,6 +74,7 @@
     .locals 2
 
     .prologue
+    .line 926
     const/4 v0, 0x2
 
     iget-object v1, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager$IccSmsInterfaceManagerEx;->this$0:Lcom/android/internal/telephony/IccSmsInterfaceManager;
@@ -82,10 +87,12 @@
 
     if-ne v0, v1, :cond_0
 
+    .line 927
     const/16 v0, 0xff
 
     new-array v0, v0, [B
 
+    .line 929
     :goto_0
     return-object v0
 
@@ -101,6 +108,7 @@
     .locals 2
 
     .prologue
+    .line 934
     const/4 v0, 0x2
 
     iget-object v1, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager$IccSmsInterfaceManagerEx;->this$0:Lcom/android/internal/telephony/IccSmsInterfaceManager;
@@ -113,8 +121,10 @@
 
     if-ne v0, v1, :cond_0
 
+    .line 935
     const/16 v0, 0xff
 
+    .line 937
     :goto_0
     return v0
 

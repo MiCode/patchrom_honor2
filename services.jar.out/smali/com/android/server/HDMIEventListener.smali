@@ -58,16 +58,21 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 65
     iput-boolean v0, p0, Lcom/android/server/HDMIEventListener;->mHDMIConnected:Z
 
+    .line 66
     new-array v0, v0, [I
 
     iput-object v0, p0, Lcom/android/server/HDMIEventListener;->mHDMIEDIDs:[I
 
+    .line 69
     iput-object p1, p0, Lcom/android/server/HDMIEventListener;->mService:Lcom/android/server/HDMIConnectService;
 
+    .line 70
     return-void
 .end method
 
@@ -80,6 +85,7 @@
 
     const/4 v6, 0x0
 
+    .line 73
     const-string v3, "HDMIListener"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -108,6 +114,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 75
     const-string v3, "connected_hdmi"
 
     invoke-virtual {p1, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -116,6 +123,7 @@
 
     if-eqz v3, :cond_2
 
+    .line 76
     const-string v3, "connected_hdmi"
 
     invoke-virtual {v3}, Ljava/lang/String;->length()I
@@ -134,6 +142,7 @@
 
     move-result-object v2
 
+    .line 77
     .local v2, ids:[Ljava/lang/String;
     array-length v3, v2
 
@@ -141,6 +150,7 @@
 
     iput-object v3, p0, Lcom/android/server/HDMIEventListener;->mHDMIEDIDs:[I
 
+    .line 78
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -151,6 +161,7 @@
 
     if-ge v1, v3, :cond_0
 
+    .line 80
     :try_start_0
     iget-object v3, p0, Lcom/android/server/HDMIEventListener;->mHDMIEDIDs:[I
 
@@ -168,14 +179,17 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 78
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 81
     :catch_0
     move-exception v0
 
+    .line 82
     .local v0, ex:Ljava/lang/NumberFormatException;
     const-string v3, "HDMIListener"
 
@@ -185,28 +199,33 @@
 
     goto :goto_1
 
+    .line 85
     .end local v0           #ex:Ljava/lang/NumberFormatException;
     :cond_0
     iput-boolean v7, p0, Lcom/android/server/HDMIEventListener;->mHDMIConnected:Z
 
+    .line 86
     const-string v3, "HDMIListener"
 
     const-string v4, "mService.sendHDMIConnected(mHDMIEDIDs)"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 87
     iget-object v3, p0, Lcom/android/server/HDMIEventListener;->mService:Lcom/android/server/HDMIConnectService;
 
     iget-object v4, p0, Lcom/android/server/HDMIEventListener;->mHDMIEDIDs:[I
 
     invoke-virtual {v3, v4}, Lcom/android/server/HDMIConnectService;->sendHDMIConnected([I)V
 
+    .line 98
     .end local v1           #i:I
     .end local v2           #ids:[Ljava/lang/String;
     :cond_1
     :goto_2
     return-void
 
+    .line 88
     :cond_2
     const-string v3, "disconnected_hdmi"
 
@@ -216,14 +235,17 @@
 
     if-eqz v3, :cond_3
 
+    .line 89
     iput-boolean v6, p0, Lcom/android/server/HDMIEventListener;->mHDMIConnected:Z
 
+    .line 90
     iget-object v3, p0, Lcom/android/server/HDMIEventListener;->mService:Lcom/android/server/HDMIConnectService;
 
     invoke-virtual {v3}, Lcom/android/server/HDMIConnectService;->sendHDMIDisconnected()V
 
     goto :goto_2
 
+    .line 91
     :cond_3
     const-string v3, "hdcp_connected"
 
@@ -233,12 +255,14 @@
 
     if-eqz v3, :cond_4
 
+    .line 92
     iget-object v3, p0, Lcom/android/server/HDMIEventListener;->mService:Lcom/android/server/HDMIConnectService;
 
     invoke-virtual {v3, v7}, Lcom/android/server/HDMIConnectService;->sendHDCPconnected(Z)V
 
     goto :goto_2
 
+    .line 93
     :cond_4
     const-string v3, "hdcp_disconnected"
 
@@ -248,12 +272,14 @@
 
     if-eqz v3, :cond_5
 
+    .line 94
     iget-object v3, p0, Lcom/android/server/HDMIEventListener;->mService:Lcom/android/server/HDMIConnectService;
 
     invoke-virtual {v3, v6}, Lcom/android/server/HDMIConnectService;->sendHDCPconnected(Z)V
 
     goto :goto_2
 
+    .line 95
     :cond_5
     const-string v3, "CECCMD:"
 
@@ -263,6 +289,7 @@
 
     if-eqz v3, :cond_1
 
+    .line 96
     iget-object v3, p0, Lcom/android/server/HDMIEventListener;->mService:Lcom/android/server/HDMIConnectService;
 
     invoke-virtual {v3, p1}, Lcom/android/server/HDMIConnectService;->sendCecCmd(Ljava/lang/String;)V
@@ -274,8 +301,10 @@
     .locals 14
 
     .prologue
+    .line 125
     const/4 v8, 0x0
 
+    .line 128
     .local v8, socket:Landroid/net/LocalSocket;
     :try_start_0
     new-instance v9, Landroid/net/LocalSocket;
@@ -284,6 +313,7 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 129
     .end local v8           #socket:Landroid/net/LocalSocket;
     .local v9, socket:Landroid/net/LocalSocket;
     :try_start_1
@@ -295,13 +325,16 @@
 
     invoke-direct {v0, v11, v12}, Landroid/net/LocalSocketAddress;-><init>(Ljava/lang/String;Landroid/net/LocalSocketAddress$Namespace;)V
 
+    .line 132
     .local v0, address:Landroid/net/LocalSocketAddress;
     invoke-virtual {v9, v0}, Landroid/net/LocalSocket;->connect(Landroid/net/LocalSocketAddress;)V
 
+    .line 134
     invoke-virtual {v9}, Landroid/net/LocalSocket;->getInputStream()Ljava/io/InputStream;
 
     move-result-object v7
 
+    .line 135
     .local v7, inputStream:Ljava/io/InputStream;
     new-instance v11, Ljava/io/DataOutputStream;
 
@@ -313,10 +346,12 @@
 
     iput-object v11, p0, Lcom/android/server/HDMIEventListener;->mOutputStream:Ljava/io/DataOutputStream;
 
+    .line 144
     const/16 v11, 0x200
 
     new-array v1, v11, [B
 
+    .line 146
     .local v1, buffer:[B
     const-string v11, "hdmi_listner_started"
 
@@ -324,6 +359,7 @@
 
     invoke-direct {p0, v11, v12}, Lcom/android/server/HDMIEventListener;->writeHDMICommand(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 150
     iget-object v11, p0, Lcom/android/server/HDMIEventListener;->mService:Lcom/android/server/HDMIConnectService;
 
     invoke-virtual {v11}, Lcom/android/server/HDMIConnectService;->getHDMIUserConfig()Z
@@ -332,12 +368,14 @@
 
     if-nez v11, :cond_0
 
+    .line 151
     iget-object v11, p0, Lcom/android/server/HDMIEventListener;->mService:Lcom/android/server/HDMIConnectService;
 
     const/4 v12, 0x0
 
     invoke-virtual {v11, v12}, Lcom/android/server/HDMIConnectService;->setHDMIEnable(Z)V
 
+    .line 156
     :cond_0
     invoke-virtual {v7, v1}, Ljava/io/InputStream;->read([B)I
     :try_end_1
@@ -345,11 +383,13 @@
 
     move-result v2
 
+    .line 157
     .local v2, count:I
     if-gez v2, :cond_3
 
     move-object v8, v9
 
+    .line 174
     .end local v0           #address:Landroid/net/LocalSocketAddress;
     .end local v1           #buffer:[B
     .end local v2           #count:I
@@ -359,6 +399,7 @@
     :goto_0
     monitor-enter p0
 
+    .line 175
     :try_start_2
     iget-object v11, p0, Lcom/android/server/HDMIEventListener;->mOutputStream:Ljava/io/DataOutputStream;
     :try_end_2
@@ -366,6 +407,7 @@
 
     if-eqz v11, :cond_1
 
+    .line 177
     :try_start_3
     iget-object v11, p0, Lcom/android/server/HDMIEventListener;->mOutputStream:Ljava/io/DataOutputStream;
 
@@ -374,24 +416,29 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
 
+    .line 182
     :goto_1
     const/4 v11, 0x0
 
     :try_start_4
     iput-object v11, p0, Lcom/android/server/HDMIEventListener;->mOutputStream:Ljava/io/DataOutputStream;
 
+    .line 184
     :cond_1
     monitor-exit p0
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
+    .line 187
     if-eqz v8, :cond_2
 
+    .line 188
     :try_start_5
     invoke-virtual {v8}, Landroid/net/LocalSocket;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
 
+    .line 194
     :cond_2
     :goto_2
     const-string v11, "HDMIListener"
@@ -404,8 +451,10 @@
 
     invoke-static {v11, v12, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 195
     return-void
 
+    .line 161
     .end local v8           #socket:Landroid/net/LocalSocket;
     .restart local v0       #address:Landroid/net/LocalSocketAddress;
     .restart local v1       #buffer:[B
@@ -415,6 +464,7 @@
     :cond_3
     const/4 v10, 0x0
 
+    .line 162
     .local v10, start:I
     const/4 v6, 0x0
 
@@ -422,30 +472,36 @@
     :goto_3
     if-ge v6, v2, :cond_0
 
+    .line 163
     :try_start_6
     aget-byte v11, v1, v6
 
     if-nez v11, :cond_4
 
+    .line 164
     new-instance v4, Ljava/lang/String;
 
     sub-int v11, v6, v10
 
     invoke-direct {v4, v1, v10, v11}, Ljava/lang/String;-><init>([BII)V
 
+    .line 165
     .local v4, event:Ljava/lang/String;
     invoke-direct {p0, v4}, Lcom/android/server/HDMIEventListener;->handleHDMIEvent(Ljava/lang/String;)V
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_3
 
+    .line 166
     add-int/lit8 v10, v6, 0x1
 
+    .line 162
     .end local v4           #event:Ljava/lang/String;
     :cond_4
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_3
 
+    .line 170
     .end local v0           #address:Landroid/net/LocalSocketAddress;
     .end local v1           #buffer:[B
     .end local v2           #count:I
@@ -457,6 +513,7 @@
     :catch_0
     move-exception v5
 
+    .line 171
     .local v5, ex:Ljava/io/IOException;
     :goto_4
     const-string v11, "HDMIListener"
@@ -467,10 +524,12 @@
 
     goto :goto_0
 
+    .line 178
     .end local v5           #ex:Ljava/io/IOException;
     :catch_1
     move-exception v3
 
+    .line 179
     .local v3, e:Ljava/io/IOException;
     :try_start_7
     const-string v11, "HDMIListener"
@@ -481,6 +540,7 @@
 
     goto :goto_1
 
+    .line 184
     .end local v3           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v11
@@ -491,9 +551,11 @@
 
     throw v11
 
+    .line 190
     :catch_2
     move-exception v5
 
+    .line 191
     .restart local v5       #ex:Ljava/io/IOException;
     const-string v11, "HDMIListener"
 
@@ -503,6 +565,7 @@
 
     goto :goto_2
 
+    .line 170
     .end local v5           #ex:Ljava/io/IOException;
     .end local v8           #socket:Landroid/net/LocalSocket;
     .restart local v9       #socket:Landroid/net/LocalSocket;
@@ -522,39 +585,49 @@
     .parameter "argument"
 
     .prologue
+    .line 101
     monitor-enter p0
 
+    .line 102
     :try_start_0
     iget-object v2, p0, Lcom/android/server/HDMIEventListener;->mOutputStream:Ljava/io/DataOutputStream;
 
     if-nez v2, :cond_0
 
+    .line 103
     const-string v2, "HDMIListener"
 
     const-string v3, "No connection to hdmi daemon"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 120
     :goto_0
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 121
     invoke-static {}, Ljava/lang/Thread;->yield()V
 
+    .line 122
     return-void
 
+    .line 105
     :cond_0
     :try_start_1
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
+    .line 106
     .local v0, builder:Ljava/lang/StringBuilder;
     if-eqz p2, :cond_1
 
+    .line 107
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 109
     :cond_1
     const/4 v2, 0x0
 
@@ -562,6 +635,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 112
     :try_start_2
     iget-object v2, p0, Lcom/android/server/HDMIEventListener;->mOutputStream:Ljava/io/DataOutputStream;
 
@@ -575,10 +649,12 @@
 
     invoke-virtual {v2, v3}, Ljava/io/DataOutputStream;->write([B)V
 
+    .line 113
     iget-object v2, p0, Lcom/android/server/HDMIEventListener;->mOutputStream:Ljava/io/DataOutputStream;
 
     invoke-virtual {v2}, Ljava/io/DataOutputStream;->flush()V
 
+    .line 114
     const-string v2, "HDMIListener"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -628,9 +704,11 @@
 
     goto :goto_0
 
+    .line 116
     :catch_0
     move-exception v1
 
+    .line 117
     .local v1, ex:Ljava/io/IOException;
     :try_start_3
     const-string v2, "HDMIListener"
@@ -641,6 +719,7 @@
 
     goto :goto_0
 
+    .line 120
     .end local v0           #builder:Ljava/lang/StringBuilder;
     .end local v1           #ex:Ljava/io/IOException;
     :catchall_0
@@ -660,6 +739,7 @@
     .parameter "code"
 
     .prologue
+    .line 230
     const-string v0, "hdmi_change_code: "
 
     new-instance v1, Ljava/lang/Integer;
@@ -672,6 +752,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/server/HDMIEventListener;->writeHDMICommand(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 231
     return-void
 .end method
 
@@ -682,6 +763,7 @@
     .prologue
     const/4 v3, 0x0
 
+    .line 214
     const-string v0, "HDMIListener"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -704,21 +786,26 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 216
     if-eqz p1, :cond_0
 
+    .line 217
     const-string v0, "HDMIListener"
 
     const-string v1, "writeHDMICommand(HDMI_CMD_ENABLE, null);"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 218
     const-string v0, "hdmi_enable"
 
     invoke-direct {p0, v0, v3}, Lcom/android/server/HDMIEventListener;->writeHDMICommand(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 222
     :goto_0
     return-void
 
+    .line 220
     :cond_0
     const-string v0, "hdmi_disable"
 
@@ -731,6 +818,7 @@
     .locals 1
 
     .prologue
+    .line 210
     iget-boolean v0, p0, Lcom/android/server/HDMIEventListener;->mHDMIConnected:Z
 
     return v0
@@ -740,17 +828,21 @@
     .locals 4
 
     .prologue
+    .line 202
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/HDMIEventListener;->listenToHDMISocket()V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 207
     :goto_0
     return-void
 
+    .line 203
     :catch_0
     move-exception v0
 
+    .line 205
     .local v0, t:Ljava/lang/Throwable;
     const-string v1, "HDMIListener"
 
@@ -788,10 +880,12 @@
     .parameter "cecCmd"
 
     .prologue
+    .line 246
     const-string v0, "hdmi_cec: "
 
     invoke-direct {p0, v0, p1}, Lcom/android/server/HDMIEventListener;->writeHDMICommand(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 247
     return-void
 .end method
 
@@ -800,6 +894,7 @@
     .parameter "enable"
 
     .prologue
+    .line 226
     const-string v1, "hdmi_hdcp: "
 
     new-instance v2, Ljava/lang/Integer;
@@ -817,8 +912,10 @@
 
     invoke-direct {p0, v1, v0}, Lcom/android/server/HDMIEventListener;->writeHDMICommand(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 227
     return-void
 
+    .line 226
     :cond_0
     const/4 v0, 0x0
 
@@ -830,6 +927,7 @@
     .parameter "hpdOption"
 
     .prologue
+    .line 242
     const-string v1, "hdmi_hpd: "
 
     new-instance v2, Ljava/lang/Integer;
@@ -847,8 +945,10 @@
 
     invoke-direct {p0, v1, v0}, Lcom/android/server/HDMIEventListener;->writeHDMICommand(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 243
     return-void
 
+    .line 242
     :cond_0
     const/4 v0, 0x0
 
@@ -860,6 +960,7 @@
     .parameter "asHeightRatio"
 
     .prologue
+    .line 238
     const-string v0, "set_reproduction_height: "
 
     new-instance v1, Ljava/lang/Float;
@@ -872,6 +973,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/server/HDMIEventListener;->writeHDMICommand(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 239
     return-void
 .end method
 
@@ -880,6 +982,7 @@
     .parameter "asWidthRatio"
 
     .prologue
+    .line 234
     const-string v0, "set_reproduction_width: "
 
     new-instance v1, Ljava/lang/Float;
@@ -892,5 +995,6 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/server/HDMIEventListener;->writeHDMICommand(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 235
     return-void
 .end method

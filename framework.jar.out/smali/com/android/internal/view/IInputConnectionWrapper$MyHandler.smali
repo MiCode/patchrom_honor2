@@ -25,10 +25,13 @@
     .parameter "looper"
 
     .prologue
+    .line 77
     iput-object p1, p0, Lcom/android/internal/view/IInputConnectionWrapper$MyHandler;->this$0:Lcom/android/internal/view/IInputConnectionWrapper;
 
+    .line 78
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
+    .line 79
     return-void
 .end method
 
@@ -39,9 +42,11 @@
     .parameter "msg"
 
     .prologue
+    .line 83
     iget-object v0, p0, Lcom/android/internal/view/IInputConnectionWrapper$MyHandler;->this$0:Lcom/android/internal/view/IInputConnectionWrapper;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/view/IInputConnectionWrapper;->executeMessage(Landroid/os/Message;)V
 
+    .line 84
     return-void
 .end method

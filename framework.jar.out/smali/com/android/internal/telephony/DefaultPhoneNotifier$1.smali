@@ -27,6 +27,7 @@
     .locals 3
 
     .prologue
+    .line 248
     invoke-static {}, Lcom/android/internal/telephony/Phone$DataActivityState;->values()[Lcom/android/internal/telephony/Phone$DataActivityState;
 
     move-result-object v0
@@ -100,6 +101,7 @@
     :try_end_3
     .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_5
 
+    .line 214
     :goto_3
     invoke-static {}, Lcom/android/internal/telephony/Phone$DataState;->values()[Lcom/android/internal/telephony/Phone$DataState;
 
@@ -158,6 +160,7 @@
     :try_end_6
     .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_2
 
+    .line 184
     :goto_6
     invoke-static {}, Lcom/android/internal/telephony/Phone$State;->values()[Lcom/android/internal/telephony/Phone$State;
 
@@ -213,6 +216,7 @@
 
     goto :goto_7
 
+    .line 214
     :catch_2
     move-exception v0
 
@@ -228,6 +232,7 @@
 
     goto :goto_4
 
+    .line 248
     :catch_5
     move-exception v0
 

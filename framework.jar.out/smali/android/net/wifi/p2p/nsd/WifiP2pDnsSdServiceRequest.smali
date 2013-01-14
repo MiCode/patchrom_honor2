@@ -8,12 +8,14 @@
     .locals 2
 
     .prologue
+    .line 46
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
     invoke-direct {p0, v0, v1}, Landroid/net/wifi/p2p/nsd/WifiP2pServiceRequest;-><init>(ILjava/lang/String;)V
 
+    .line 47
     return-void
 .end method
 
@@ -22,10 +24,12 @@
     .parameter "query"
 
     .prologue
+    .line 38
     const/4 v0, 0x1
 
     invoke-direct {p0, v0, p1}, Landroid/net/wifi/p2p/nsd/WifiP2pServiceRequest;-><init>(ILjava/lang/String;)V
 
+    .line 39
     return-void
 .end method
 
@@ -36,6 +40,7 @@
     .parameter "version"
 
     .prologue
+    .line 50
     const/4 v0, 0x1
 
     invoke-static {p1, p2, p3}, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceInfo;->createRequest(Ljava/lang/String;II)Ljava/lang/String;
@@ -44,6 +49,7 @@
 
     invoke-direct {p0, v0, v1}, Landroid/net/wifi/p2p/nsd/WifiP2pServiceRequest;-><init>(ILjava/lang/String;)V
 
+    .line 54
     return-void
 .end method
 
@@ -51,6 +57,7 @@
     .locals 1
 
     .prologue
+    .line 62
     new-instance v0, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceRequest;
 
     invoke-direct {v0}, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceRequest;-><init>()V
@@ -63,16 +70,19 @@
     .parameter "serviceType"
 
     .prologue
+    .line 76
     if-nez p0, :cond_0
 
+    .line 77
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "service type cannot be null"
+    const-string/jumbo v1, "service type cannot be null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
+    .line 79
     :cond_0
     new-instance v0, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceRequest;
 
@@ -109,10 +119,12 @@
     .parameter "serviceType"
 
     .prologue
+    .line 98
     if-eqz p0, :cond_0
 
     if-nez p1, :cond_1
 
+    .line 99
     :cond_0
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -122,6 +134,7 @@
 
     throw v1
 
+    .line 102
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -151,6 +164,7 @@
 
     move-result-object v0
 
+    .line 103
     .local v0, fullDomainName:Ljava/lang/String;
     new-instance v1, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceRequest;
 

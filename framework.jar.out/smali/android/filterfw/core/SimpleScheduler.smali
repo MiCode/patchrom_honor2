@@ -9,8 +9,10 @@
     .parameter "graph"
 
     .prologue
+    .line 29
     invoke-direct {p0, p1}, Landroid/filterfw/core/Scheduler;-><init>(Landroid/filterfw/core/FilterGraph;)V
 
+    .line 30
     return-void
 .end method
 
@@ -20,6 +22,7 @@
     .locals 0
 
     .prologue
+    .line 34
     return-void
 .end method
 
@@ -27,6 +30,7 @@
     .locals 3
 
     .prologue
+    .line 38
     invoke-virtual {p0}, Landroid/filterfw/core/SimpleScheduler;->getGraph()Landroid/filterfw/core/FilterGraph;
 
     move-result-object v2
@@ -53,6 +57,7 @@
 
     check-cast v0, Landroid/filterfw/core/Filter;
 
+    .line 39
     .local v0, filter:Landroid/filterfw/core/Filter;
     invoke-virtual {v0}, Landroid/filterfw/core/Filter;->canProcess()Z
 
@@ -60,6 +65,7 @@
 
     if-eqz v2, :cond_0
 
+    .line 42
     .end local v0           #filter:Landroid/filterfw/core/Filter;
     :goto_0
     return-object v0

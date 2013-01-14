@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 8780
+    .line 8747
     iput-object p1, p0, Lcom/android/hwcamera/Camera$10;->this$0:Lcom/android/hwcamera/Camera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +41,12 @@
     .locals 1
 
     .prologue
-    .line 8783
+    .line 8750
     iget-object v0, p0, Lcom/android/hwcamera/Camera$10;->this$0:Lcom/android/hwcamera/Camera;
 
     #calls: Lcom/android/hwcamera/Camera;->updateThumbnailButton()V
     invoke-static {v0}, Lcom/android/hwcamera/Camera;->access$5200(Lcom/android/hwcamera/Camera;)V
 
-    .line 8784
+    .line 8751
     return-void
 .end method

@@ -32,8 +32,10 @@
     .locals 2
 
     .prologue
+    .line 15823
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 15824
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     const/4 v1, 0x0
@@ -42,6 +44,7 @@
 
     iput-object v0, p0, Landroid/view/View$DragShadowBuilder;->mView:Ljava/lang/ref/WeakReference;
 
+    .line 15825
     return-void
 .end method
 
@@ -50,14 +53,17 @@
     .parameter "view"
 
     .prologue
+    .line 15811
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 15812
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Landroid/view/View$DragShadowBuilder;->mView:Ljava/lang/ref/WeakReference;
 
+    .line 15813
     return-void
 .end method
 
@@ -67,6 +73,7 @@
     .locals 1
 
     .prologue
+    .line 15839
     iget-object v0, p0, Landroid/view/View$DragShadowBuilder;->mView:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -83,6 +90,7 @@
     .parameter "canvas"
 
     .prologue
+    .line 15880
     iget-object v1, p0, Landroid/view/View$DragShadowBuilder;->mView:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -91,14 +99,18 @@
 
     check-cast v0, Landroid/view/View;
 
+    .line 15881
     .local v0, view:Landroid/view/View;
     if-eqz v0, :cond_0
 
+    .line 15882
     invoke-virtual {v0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
+    .line 15886
     :goto_0
     return-void
 
+    .line 15884
     :cond_0
     const-string v1, "View"
 
@@ -115,6 +127,7 @@
     .parameter "shadowTouchPoint"
 
     .prologue
+    .line 15863
     iget-object v1, p0, Landroid/view/View$DragShadowBuilder;->mView:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -123,9 +136,11 @@
 
     check-cast v0, Landroid/view/View;
 
+    .line 15864
     .local v0, view:Landroid/view/View;
     if-eqz v0, :cond_0
 
+    .line 15865
     invoke-virtual {v0}, Landroid/view/View;->getWidth()I
 
     move-result v1
@@ -136,6 +151,7 @@
 
     invoke-virtual {p1, v1, v2}, Landroid/graphics/Point;->set(II)V
 
+    .line 15866
     iget v1, p1, Landroid/graphics/Point;->x:I
 
     div-int/lit8 v1, v1, 0x2
@@ -146,9 +162,11 @@
 
     invoke-virtual {p2, v1, v2}, Landroid/graphics/Point;->set(II)V
 
+    .line 15870
     :goto_0
     return-void
 
+    .line 15868
     :cond_0
     const-string v1, "View"
 

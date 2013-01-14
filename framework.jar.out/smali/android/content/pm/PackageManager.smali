@@ -16,15 +16,12 @@
 
 .field public static final ACTION_UNINSTALL_UPDATE:Ljava/lang/String; = "android.intent.action.UNINSTALL_UPDATE"
 
-.field public static final COMPONENT_ENABLED_STATE_ACCESS_CONTROL:I = -0x80000000
-
 .field public static final COMPONENT_ENABLED_STATE_DEFAULT:I = 0x0
 
 .field public static final COMPONENT_ENABLED_STATE_DISABLED:I = 0x2
 
 .field public static final COMPONENT_ENABLED_STATE_DISABLED_USER:I = 0x3
 
-.field public static final COMPONENT_ENABLED_STATE_DISABLE_AUTOSTART:I = 0x40000000
 .field public static final COMPONENT_ENABLED_STATE_ENABLED:I = 0x1
 
 .field public static final DELETE_FAILED_DEVICE_POLICY_MANAGER:I = -0x2
@@ -150,10 +147,6 @@
 .field public static final GET_UNINSTALLED_PACKAGES:I = 0x2000
 
 .field public static final GET_URI_PERMISSION_PATTERNS:I = 0x800
-
-.field public static final HAS_ACTIVITY:I = 0x20000
-
-.field public static final HAS_ACTIVITY_OR_SERVICES:I = 0x40000
 
 .field public static final INSTALL_ALLOW_TEST:I = 0x4
 
@@ -289,8 +282,10 @@
     .locals 0
 
     .prologue
+    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 49
     return-void
 .end method
 
@@ -300,6 +295,7 @@
     .parameter "packageName"
 
     .prologue
+    .line 2690
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -547,38 +543,47 @@
 
     const/4 v8, 0x0
 
+    .line 2161
     new-instance v11, Landroid/content/pm/PackageParser;
 
     invoke-direct {v11, p1}, Landroid/content/pm/PackageParser;-><init>(Ljava/lang/String;)V
 
+    .line 2162
     .local v11, packageParser:Landroid/content/pm/PackageParser;
     new-instance v10, Landroid/util/DisplayMetrics;
 
     invoke-direct {v10}, Landroid/util/DisplayMetrics;-><init>()V
 
+    .line 2163
     .local v10, metrics:Landroid/util/DisplayMetrics;
     invoke-virtual {v10}, Landroid/util/DisplayMetrics;->setToDefaults()V
 
+    .line 2164
     new-instance v12, Ljava/io/File;
 
     invoke-direct {v12, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
+    .line 2165
     .local v12, sourceFile:Ljava/io/File;
     invoke-virtual {v11, v12, p1, v10, v8}, Landroid/content/pm/PackageParser;->parsePackage(Ljava/io/File;Ljava/lang/String;Landroid/util/DisplayMetrics;I)Landroid/content/pm/PackageParser$Package;
 
     move-result-object v0
 
+    .line 2167
     .local v0, pkg:Landroid/content/pm/PackageParser$Package;
     if-nez v0, :cond_0
 
+    .line 2173
     :goto_0
     return-object v1
 
+    .line 2170
     :cond_0
     and-int/lit8 v2, p2, 0x40
 
     if-eqz v2, :cond_1
 
+    .line 2171
     invoke-virtual {v11, v0, v8}, Landroid/content/pm/PackageParser;->collectCertificates(Landroid/content/pm/PackageParser$Package;I)Z
 
     :cond_1
@@ -590,6 +595,7 @@
 
     move v9, v8
 
+    .line 2173
     invoke-static/range {v0 .. v9}, Landroid/content/pm/PackageParser;->generatePackageInfo(Landroid/content/pm/PackageParser$Package;[IIJJLjava/util/HashSet;ZI)Landroid/content/pm/PackageInfo;
 
     move-result-object v1

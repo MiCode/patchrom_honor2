@@ -24,8 +24,10 @@
     .locals 0
 
     .prologue
+    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 39
     return-void
 .end method
 
@@ -46,19 +48,23 @@
     .end annotation
 
     .prologue
+    .line 87
     :try_start_0
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 89
     iget v0, p0, Landroid/graphics/Shader;->native_instance:I
 
     iget v1, p0, Landroid/graphics/Shader;->native_shader:I
 
     invoke-static {v0, v1}, Landroid/graphics/Shader;->nativeDestructor(II)V
 
+    .line 91
     return-void
 
+    .line 89
     :catchall_0
     move-exception v0
 
@@ -78,14 +84,17 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 67
     iget-object v1, p0, Landroid/graphics/Shader;->mLocalMatrix:Landroid/graphics/Matrix;
 
     if-eqz v1, :cond_0
 
+    .line 68
     iget-object v1, p0, Landroid/graphics/Shader;->mLocalMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {p1, v1}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
 
+    .line 69
     iget-object v1, p0, Landroid/graphics/Shader;->mLocalMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v1}, Landroid/graphics/Matrix;->isIdentity()Z
@@ -96,6 +105,7 @@
 
     const/4 v0, 0x1
 
+    .line 71
     :cond_0
     return v0
 .end method
@@ -105,8 +115,10 @@
     .parameter "localM"
 
     .prologue
+    .line 80
     iput-object p1, p0, Landroid/graphics/Shader;->mLocalMatrix:Landroid/graphics/Matrix;
 
+    .line 81
     iget v1, p0, Landroid/graphics/Shader;->native_instance:I
 
     iget v2, p0, Landroid/graphics/Shader;->native_shader:I
@@ -118,8 +130,10 @@
     :goto_0
     invoke-static {v1, v2, v0}, Landroid/graphics/Shader;->nativeSetLocalMatrix(III)V
 
+    .line 83
     return-void
 
+    .line 81
     :cond_0
     iget v0, p1, Landroid/graphics/Matrix;->native_instance:I
 

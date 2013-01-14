@@ -86,34 +86,41 @@
     .parameter
 
     .prologue
+    .line 228
     iput-object p1, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->this$0:Lcom/android/internal/app/MediaRouteChooserDialogFragment;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
+    .line 216
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mSelectedItemPosition:I
 
+    .line 217
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mItems:Ljava/util/ArrayList;
 
+    .line 223
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mCatRouteList:Ljava/util/ArrayList;
 
+    .line 224
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mSortRouteList:Ljava/util/ArrayList;
 
+    .line 229
     invoke-virtual {p0}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->update()V
 
+    .line 230
     return-void
 .end method
 
@@ -122,6 +129,7 @@
     .parameter "x0"
 
     .prologue
+    .line 209
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mEditingGroup:Landroid/media/MediaRouter$RouteGroup;
 
     return-object v0
@@ -133,6 +141,7 @@
     .parameter "x1"
 
     .prologue
+    .line 209
     iput-object p1, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mEditingGroup:Landroid/media/MediaRouter$RouteGroup;
 
     return-object p1
@@ -144,6 +153,7 @@
     .parameter "x1"
 
     .prologue
+    .line 209
     iput-object p1, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mCategoryEditingGroups:Landroid/media/MediaRouter$RouteCategory;
 
     return-object p1
@@ -165,11 +175,13 @@
     .end annotation
 
     .prologue
+    .line 313
     .local p1, from:Ljava/util/List;,"Ljava/util/List<Landroid/media/MediaRouter$RouteInfo;>;"
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v6
 
+    .line 314
     .local v6, topCount:I
     const/4 v2, 0x0
 
@@ -177,24 +189,29 @@
     :goto_0
     if-ge v2, v6, :cond_2
 
+    .line 315
     invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Landroid/media/MediaRouter$RouteInfo;
 
+    .line 316
     .local v5, route:Landroid/media/MediaRouter$RouteInfo;
     invoke-virtual {v5}, Landroid/media/MediaRouter$RouteInfo;->getGroup()Landroid/media/MediaRouter$RouteGroup;
 
     move-result-object v0
 
+    .line 317
     .local v0, group:Landroid/media/MediaRouter$RouteGroup;
     if-ne v0, v5, :cond_0
 
+    .line 319
     invoke-virtual {v0}, Landroid/media/MediaRouter$RouteGroup;->getRouteCount()I
 
     move-result v1
 
+    .line 320
     .local v1, groupCount:I
     const/4 v4, 0x0
 
@@ -202,19 +219,23 @@
     :goto_1
     if-ge v4, v1, :cond_1
 
+    .line 321
     invoke-virtual {v0, v4}, Landroid/media/MediaRouter$RouteGroup;->getRouteAt(I)Landroid/media/MediaRouter$RouteInfo;
 
     move-result-object v3
 
+    .line 322
     .local v3, innerRoute:Landroid/media/MediaRouter$RouteInfo;
     iget-object v7, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mSortRouteList:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 320
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
+    .line 325
     .end local v1           #groupCount:I
     .end local v3           #innerRoute:Landroid/media/MediaRouter$RouteInfo;
     .end local v4           #j:I
@@ -223,11 +244,13 @@
 
     invoke-virtual {v7, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 314
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
+    .line 330
     .end local v0           #group:Landroid/media/MediaRouter$RouteGroup;
     .end local v5           #route:Landroid/media/MediaRouter$RouteInfo;
     :cond_2
@@ -239,22 +262,26 @@
 
     invoke-static {v7, v8}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
+    .line 332
     iget-object v7, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mItems:Ljava/util/ArrayList;
 
     iget-object v8, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mSortRouteList:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v8}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
+    .line 333
     iget-object v7, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mSortRouteList:Ljava/util/ArrayList;
 
     invoke-virtual {v7}, Ljava/util/ArrayList;->clear()V
 
+    .line 335
     iget-object v7, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mItems:Ljava/util/ArrayList;
 
     const/4 v8, 0x0
 
     invoke-virtual {v7, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 336
     return-void
 .end method
 
@@ -274,11 +301,13 @@
     .end annotation
 
     .prologue
+    .line 300
     .local p2, from:Ljava/util/List;,"Ljava/util/List<Landroid/media/MediaRouter$RouteInfo;>;"
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result v2
 
+    .line 301
     .local v2, routeCount:I
     const/4 v1, 0x0
 
@@ -286,15 +315,18 @@
     :goto_0
     if-ge v1, v2, :cond_1
 
+    .line 302
     invoke-interface {p2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/media/MediaRouter$RouteInfo;
 
+    .line 303
     .local v0, info:Landroid/media/MediaRouter$RouteInfo;
     if-ne v0, p1, :cond_0
 
+    .line 304
     iget-object v3, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
@@ -303,15 +335,18 @@
 
     iput v3, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mSelectedItemPosition:I
 
+    .line 306
     :cond_0
     iget-object v3, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 301
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 308
     .end local v0           #info:Landroid/media/MediaRouter$RouteInfo;
     :cond_1
     return-void
@@ -321,6 +356,7 @@
     .locals 1
 
     .prologue
+    .line 366
     const/4 v0, 0x0
 
     return v0
@@ -332,6 +368,7 @@
     .parameter "holder"
 
     .prologue
+    .line 482
     iget-object v1, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -340,6 +377,7 @@
 
     check-cast v0, Landroid/media/MediaRouter$RouteCategory;
 
+    .line 483
     .local v0, cat:Landroid/media/MediaRouter$RouteCategory;
     iget-object v1, p2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->text1:Landroid/widget/TextView;
 
@@ -355,6 +393,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
+    .line 484
     return-void
 .end method
 
@@ -372,6 +411,7 @@
 
     const/4 v7, 0x0
 
+    .line 442
     iget-object v6, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v6, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -380,6 +420,7 @@
 
     check-cast v4, Landroid/media/MediaRouter$RouteInfo;
 
+    .line 443
     .local v4, info:Landroid/media/MediaRouter$RouteInfo;
     iget-object v6, p2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->text1:Landroid/widget/TextView;
 
@@ -395,10 +436,12 @@
 
     invoke-virtual {v6, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
+    .line 444
     invoke-virtual {v4}, Landroid/media/MediaRouter$RouteInfo;->getStatus()Ljava/lang/CharSequence;
 
     move-result-object v5
 
+    .line 445
     .local v5, status:Ljava/lang/CharSequence;
     invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -406,18 +449,22 @@
 
     if-eqz v6, :cond_3
 
+    .line 446
     iget-object v6, p2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->text2:Landroid/widget/TextView;
 
     invoke-virtual {v6, v8}, Landroid/widget/TextView;->setVisibility(I)V
 
+    .line 451
     :goto_0
     invoke-virtual {v4}, Landroid/media/MediaRouter$RouteInfo;->getIconDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
+    .line 452
     .local v3, icon:Landroid/graphics/drawable/Drawable;
     if-eqz v3, :cond_0
 
+    .line 454
     invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
 
     move-result-object v6
@@ -432,11 +479,13 @@
 
     move-result-object v3
 
+    .line 456
     :cond_0
     iget-object v6, p2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->icon:Landroid/widget/ImageView;
 
     invoke-virtual {v6, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
+    .line 457
     iget-object v10, p2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->icon:Landroid/widget/ImageView;
 
     if-eqz v3, :cond_4
@@ -446,22 +495,27 @@
     :goto_1
     invoke-virtual {v10, v6}, Landroid/widget/ImageView;->setVisibility(I)V
 
+    .line 459
     invoke-virtual {v4}, Landroid/media/MediaRouter$RouteInfo;->getCategory()Landroid/media/MediaRouter$RouteCategory;
 
     move-result-object v1
 
+    .line 460
     .local v1, cat:Landroid/media/MediaRouter$RouteCategory;
     const/4 v0, 0x0
 
+    .line 461
     .local v0, canGroup:Z
     iget-object v6, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mCategoryEditingGroups:Landroid/media/MediaRouter$RouteCategory;
 
     if-ne v1, v6, :cond_7
 
+    .line 462
     invoke-virtual {v4}, Landroid/media/MediaRouter$RouteInfo;->getGroup()Landroid/media/MediaRouter$RouteGroup;
 
     move-result-object v2
 
+    .line 463
     .local v2, group:Landroid/media/MediaRouter$RouteGroup;
     iget-object v10, p2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->check:Landroid/widget/CheckBox;
 
@@ -476,6 +530,7 @@
     :goto_2
     invoke-virtual {v10, v6}, Landroid/widget/CheckBox;->setEnabled(Z)V
 
+    .line 464
     iget-object v6, p2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->check:Landroid/widget/CheckBox;
 
     iget-object v10, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mEditingGroup:Landroid/media/MediaRouter$RouteGroup;
@@ -485,6 +540,7 @@
     :goto_3
     invoke-virtual {v6, v9}, Landroid/widget/CheckBox;->setChecked(Z)V
 
+    .line 475
     .end local v2           #group:Landroid/media/MediaRouter$RouteGroup;
     :cond_1
     :goto_4
@@ -492,6 +548,7 @@
 
     if-eqz v6, :cond_2
 
+    .line 476
     iget-object v6, p2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->expandGroupButton:Landroid/widget/ImageButton;
 
     if-eqz v0, :cond_a
@@ -499,13 +556,16 @@
     :goto_5
     invoke-virtual {v6, v7}, Landroid/widget/ImageButton;->setVisibility(I)V
 
+    .line 477
     iget-object v6, p2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->expandGroupListener:Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$ExpandGroupListener;
 
     iput p1, v6, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$ExpandGroupListener;->position:I
 
+    .line 479
     :cond_2
     return-void
 
+    .line 448
     .end local v0           #canGroup:Z
     .end local v1           #cat:Landroid/media/MediaRouter$RouteCategory;
     .end local v3           #icon:Landroid/graphics/drawable/Drawable;
@@ -514,6 +574,7 @@
 
     invoke-virtual {v6, v7}, Landroid/widget/TextView;->setVisibility(I)V
 
+    .line 449
     iget-object v6, p2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->text2:Landroid/widget/TextView;
 
     invoke-virtual {v6, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
@@ -524,6 +585,7 @@
     :cond_4
     move v6, v8
 
+    .line 457
     goto :goto_1
 
     .restart local v0       #canGroup:Z
@@ -532,13 +594,16 @@
     :cond_5
     move v6, v7
 
+    .line 463
     goto :goto_2
 
     :cond_6
     move v9, v7
 
+    .line 464
     goto :goto_3
 
+    .line 466
     .end local v2           #group:Landroid/media/MediaRouter$RouteGroup;
     :cond_7
     invoke-virtual {v1}, Landroid/media/MediaRouter$RouteCategory;->isGroupable()Z
@@ -549,8 +614,10 @@
 
     move-object v2, v4
 
+    .line 467
     check-cast v2, Landroid/media/MediaRouter$RouteGroup;
 
+    .line 468
     .restart local v2       #group:Landroid/media/MediaRouter$RouteGroup;
     invoke-virtual {v2}, Landroid/media/MediaRouter$RouteGroup;->getRouteCount()I
 
@@ -597,6 +664,7 @@
     :cond_a
     move v7, v8
 
+    .line 476
     goto :goto_5
 .end method
 
@@ -606,10 +674,13 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 539
     iput-object v0, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mCategoryEditingGroups:Landroid/media/MediaRouter$RouteCategory;
 
+    .line 540
     iput-object v0, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mEditingGroup:Landroid/media/MediaRouter$RouteGroup;
 
+    .line 541
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->this$0:Lcom/android/internal/app/MediaRouteChooserDialogFragment;
 
     invoke-virtual {v0}, Lcom/android/internal/app/MediaRouteChooserDialogFragment;->getDialog()Landroid/app/Dialog;
@@ -620,10 +691,13 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
+    .line 542
     invoke-virtual {p0}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->update()V
 
+    .line 543
     invoke-virtual {p0}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->scrollToSelectedItem()V
 
+    .line 544
     return-void
 .end method
 
@@ -631,6 +705,7 @@
     .locals 1
 
     .prologue
+    .line 340
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -645,6 +720,7 @@
     .parameter "position"
 
     .prologue
+    .line 383
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -659,6 +735,7 @@
     .parameter "position"
 
     .prologue
+    .line 388
     int-to-long v0, p1
 
     return-wide v0
@@ -669,30 +746,37 @@
     .parameter "position"
 
     .prologue
+    .line 350
     invoke-virtual {p0, p1}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->getItem(I)Ljava/lang/Object;
 
     move-result-object v1
 
+    .line 351
     .local v1, item:Ljava/lang/Object;
     instance-of v2, v1, Landroid/media/MediaRouter$RouteCategory;
 
     if-eqz v2, :cond_1
 
+    .line 352
     if-nez p1, :cond_0
 
     const/4 v2, 0x0
 
+    .line 360
     :goto_0
     return v2
 
+    .line 352
     :cond_0
     const/4 v2, 0x1
 
     goto :goto_0
 
+    .line 353
     :cond_1
     if-nez v1, :cond_2
 
+    .line 354
     const/4 v2, 0x4
 
     goto :goto_0
@@ -700,8 +784,10 @@
     :cond_2
     move-object v0, v1
 
+    .line 356
     check-cast v0, Landroid/media/MediaRouter$RouteInfo;
 
+    .line 357
     .local v0, info:Landroid/media/MediaRouter$RouteInfo;
     invoke-virtual {v0}, Landroid/media/MediaRouter$RouteInfo;->getCategory()Landroid/media/MediaRouter$RouteCategory;
 
@@ -711,10 +797,12 @@
 
     if-ne v2, v3, :cond_3
 
+    .line 358
     const/4 v2, 0x3
 
     goto :goto_0
 
+    .line 360
     :cond_3
     const/4 v2, 0x2
 
@@ -730,13 +818,16 @@
     .prologue
     const/4 v6, 0x0
 
+    .line 393
     invoke-virtual {p0, p1}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->getItemViewType(I)I
 
     move-result v4
 
+    .line 396
     .local v4, viewType:I
     if-nez p2, :cond_1
 
+    .line 397
     iget-object v5, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->this$0:Lcom/android/internal/app/MediaRouteChooserDialogFragment;
 
     #getter for: Lcom/android/internal/app/MediaRouteChooserDialogFragment;->mInflater:Landroid/view/LayoutInflater;
@@ -754,15 +845,18 @@
 
     move-result-object p2
 
+    .line 398
     new-instance v2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;
 
     const/4 v5, 0x0
 
     invoke-direct {v2, v5}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;-><init>(Lcom/android/internal/app/MediaRouteChooserDialogFragment$1;)V
 
+    .line 399
     .local v2, holder:Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;
     iput p1, v2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->position:I
 
+    .line 400
     const v5, 0x1020014
 
     invoke-virtual {p2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -773,6 +867,7 @@
 
     iput-object v5, v2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->text1:Landroid/widget/TextView;
 
+    .line 401
     const v5, 0x1020015
 
     invoke-virtual {p2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -783,6 +878,7 @@
 
     iput-object v5, v2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->text2:Landroid/widget/TextView;
 
+    .line 402
     const v5, 0x1020006
 
     invoke-virtual {p2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -793,6 +889,7 @@
 
     iput-object v5, v2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->icon:Landroid/widget/ImageView;
 
+    .line 403
     const v5, 0x10202df
 
     invoke-virtual {p2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -803,6 +900,7 @@
 
     iput-object v5, v2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->check:Landroid/widget/CheckBox;
 
+    .line 404
     const v5, 0x10202de
 
     invoke-virtual {p2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -813,33 +911,40 @@
 
     iput-object v5, v2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->expandGroupButton:Landroid/widget/ImageButton;
 
+    .line 406
     iget-object v5, v2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->expandGroupButton:Landroid/widget/ImageButton;
 
     if-eqz v5, :cond_0
 
+    .line 407
     new-instance v5, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$ExpandGroupListener;
 
     invoke-direct {v5, p0}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$ExpandGroupListener;-><init>(Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;)V
 
     iput-object v5, v2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->expandGroupListener:Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$ExpandGroupListener;
 
+    .line 408
     iget-object v5, v2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->expandGroupButton:Landroid/widget/ImageButton;
 
     iget-object v7, v2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->expandGroupListener:Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$ExpandGroupListener;
 
     invoke-virtual {v5, v7}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
+    .line 411
     :cond_0
     move-object v1, p2
 
     .local v1, fview:Landroid/view/View;
     move-object v3, p3
 
+    .line 412
     check-cast v3, Landroid/widget/ListView;
 
+    .line 413
     .local v3, list:Landroid/widget/ListView;
     move-object v0, v2
 
+    .line 414
     .local v0, fholder:Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;
     new-instance v5, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$1;
 
@@ -847,14 +952,17 @@
 
     invoke-virtual {p2, v5}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
+    .line 419
     invoke-virtual {p2, v2}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
+    .line 425
     .end local v0           #fholder:Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;
     .end local v1           #fview:Landroid/view/View;
     .end local v3           #list:Landroid/widget/ListView;
     :goto_0
     packed-switch v4, :pswitch_data_0
 
+    .line 436
     :goto_1
     iget v5, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mSelectedItemPosition:I
 
@@ -865,8 +973,10 @@
     :goto_2
     invoke-virtual {p2, v5}, Landroid/view/View;->setActivated(Z)V
 
+    .line 438
     return-object p2
 
+    .line 421
     .end local v2           #holder:Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;
     :cond_1
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
@@ -875,16 +985,19 @@
 
     check-cast v2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;
 
+    .line 422
     .restart local v2       #holder:Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;
     iput p1, v2, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;->position:I
 
     goto :goto_0
 
+    .line 428
     :pswitch_0
     invoke-virtual {p0, p1, v2}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->bindItemView(ILcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;)V
 
     goto :goto_1
 
+    .line 432
     :pswitch_1
     invoke-virtual {p0, p1, v2}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->bindHeaderView(ILcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;)V
 
@@ -893,8 +1006,10 @@
     :cond_2
     move v5, v6
 
+    .line 436
     goto :goto_2
 
+    .line 425
     nop
 
     :pswitch_data_0
@@ -910,6 +1025,7 @@
     .locals 1
 
     .prologue
+    .line 345
     const/4 v0, 0x5
 
     return v0
@@ -920,22 +1036,26 @@
     .parameter "position"
 
     .prologue
+    .line 371
     invoke-virtual {p0, p1}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->getItemViewType(I)I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
+    .line 377
     const/4 v0, 0x0
 
     :goto_0
     return v0
 
+    .line 375
     :pswitch_0
     const/4 v0, 0x1
 
     goto :goto_0
 
+    .line 371
     nop
 
     :pswitch_data_0
@@ -950,6 +1070,7 @@
     .locals 1
 
     .prologue
+    .line 535
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mCategoryEditingGroups:Landroid/media/MediaRouter$RouteCategory;
 
     if-eqz v0, :cond_0
@@ -985,33 +1106,40 @@
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     const/4 v9, 0x1
 
+    .line 488
     invoke-virtual {p0, p3}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->getItemViewType(I)I
 
     move-result v4
 
+    .line 489
     .local v4, type:I
     if-eq v4, v9, :cond_0
 
     if-nez v4, :cond_1
 
+    .line 532
     :cond_0
     :goto_0
     return-void
 
+    .line 491
     :cond_1
     const/4 v6, 0x4
 
     if-ne v4, v6, :cond_2
 
+    .line 492
     invoke-virtual {p0}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->finishGrouping()V
 
     goto :goto_0
 
+    .line 495
     :cond_2
     invoke-virtual {p0, p3}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->getItem(I)Ljava/lang/Object;
 
     move-result-object v1
 
+    .line 496
     .local v1, item:Ljava/lang/Object;
     instance-of v6, v1, Landroid/media/MediaRouter$RouteInfo;
 
@@ -1019,13 +1147,16 @@
 
     move-object v3, v1
 
+    .line 501
     check-cast v3, Landroid/media/MediaRouter$RouteInfo;
 
+    .line 502
     .local v3, route:Landroid/media/MediaRouter$RouteInfo;
     const/4 v6, 0x2
 
     if-ne v4, v6, :cond_3
 
+    .line 503
     iget-object v6, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->this$0:Lcom/android/internal/app/MediaRouteChooserDialogFragment;
 
     iget-object v6, v6, Lcom/android/internal/app/MediaRouteChooserDialogFragment;->mRouter:Landroid/media/MediaRouter;
@@ -1039,12 +1170,14 @@
 
     invoke-virtual {v6, v7, v3}, Landroid/media/MediaRouter;->selectRouteInt(ILandroid/media/MediaRouter$RouteInfo;)V
 
+    .line 504
     iget-object v6, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->this$0:Lcom/android/internal/app/MediaRouteChooserDialogFragment;
 
     invoke-virtual {v6}, Lcom/android/internal/app/MediaRouteChooserDialogFragment;->dismiss()V
 
     goto :goto_0
 
+    .line 505
     :cond_3
     const/4 v6, 0x3
 
@@ -1052,20 +1185,25 @@
 
     move-object v0, p2
 
+    .line 506
     check-cast v0, Landroid/widget/Checkable;
 
+    .line 507
     .local v0, c:Landroid/widget/Checkable;
     invoke-interface {v0}, Landroid/widget/Checkable;->isChecked()Z
 
     move-result v5
 
+    .line 509
     .local v5, wasChecked:Z
     iput-boolean v9, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mIgnoreUpdates:Z
 
+    .line 510
     invoke-virtual {v3}, Landroid/media/MediaRouter$RouteInfo;->getGroup()Landroid/media/MediaRouter$RouteGroup;
 
     move-result-object v2
 
+    .line 511
     .local v2, oldGroup:Landroid/media/MediaRouter$RouteGroup;
     if-nez v5, :cond_6
 
@@ -1073,6 +1211,7 @@
 
     if-eq v2, v6, :cond_6
 
+    .line 513
     iget-object v6, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->this$0:Lcom/android/internal/app/MediaRouteChooserDialogFragment;
 
     iget-object v6, v6, Lcom/android/internal/app/MediaRouteChooserDialogFragment;->mRouter:Landroid/media/MediaRouter;
@@ -1090,6 +1229,7 @@
 
     if-ne v6, v2, :cond_4
 
+    .line 516
     iget-object v6, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->this$0:Lcom/android/internal/app/MediaRouteChooserDialogFragment;
 
     iget-object v6, v6, Lcom/android/internal/app/MediaRouteChooserDialogFragment;->mRouter:Landroid/media/MediaRouter;
@@ -1105,25 +1245,31 @@
 
     invoke-virtual {v6, v7, v8}, Landroid/media/MediaRouter;->selectRouteInt(ILandroid/media/MediaRouter$RouteInfo;)V
 
+    .line 518
     :cond_4
     invoke-virtual {v2, v3}, Landroid/media/MediaRouter$RouteGroup;->removeRoute(Landroid/media/MediaRouter$RouteInfo;)V
 
+    .line 519
     iget-object v6, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mEditingGroup:Landroid/media/MediaRouter$RouteGroup;
 
     invoke-virtual {v6, v3}, Landroid/media/MediaRouter$RouteGroup;->addRoute(Landroid/media/MediaRouter$RouteInfo;)V
 
+    .line 520
     invoke-interface {v0, v9}, Landroid/widget/Checkable;->setChecked(Z)V
 
+    .line 528
     :cond_5
     :goto_1
     const/4 v6, 0x0
 
     iput-boolean v6, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mIgnoreUpdates:Z
 
+    .line 529
     invoke-virtual {p0}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->update()V
 
     goto :goto_0
 
+    .line 521
     :cond_6
     if-eqz v5, :cond_5
 
@@ -1135,10 +1281,12 @@
 
     if-le v6, v9, :cond_5
 
+    .line 522
     iget-object v6, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mEditingGroup:Landroid/media/MediaRouter$RouteGroup;
 
     invoke-virtual {v6, v3}, Landroid/media/MediaRouter$RouteGroup;->removeRoute(Landroid/media/MediaRouter$RouteInfo;)V
 
+    .line 526
     iget-object v6, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->this$0:Lcom/android/internal/app/MediaRouteChooserDialogFragment;
 
     iget-object v6, v6, Lcom/android/internal/app/MediaRouteChooserDialogFragment;->mRouter:Landroid/media/MediaRouter;
@@ -1152,6 +1300,7 @@
     .locals 6
 
     .prologue
+    .line 274
     iget-object v5, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mCategoryEditingGroups:Landroid/media/MediaRouter$RouteCategory;
 
     if-eqz v5, :cond_0
@@ -1165,16 +1314,20 @@
 
     if-nez v5, :cond_1
 
+    .line 291
     :cond_0
     :goto_0
     return-void
 
+    .line 276
     :cond_1
     const/4 v4, 0x0
 
+    .line 277
     .local v4, pos:I
     const/4 v0, 0x0
 
+    .line 278
     .local v0, bound:I
     iget-object v5, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mItems:Ljava/util/ArrayList;
 
@@ -1182,6 +1335,7 @@
 
     move-result v3
 
+    .line 279
     .local v3, itemCount:I
     const/4 v1, 0x0
 
@@ -1189,12 +1343,14 @@
     :goto_1
     if-ge v1, v3, :cond_3
 
+    .line 280
     iget-object v5, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
+    .line 281
     .local v2, item:Ljava/lang/Object;
     if-eqz v2, :cond_2
 
@@ -1202,13 +1358,17 @@
 
     if-ne v2, v5, :cond_2
 
+    .line 282
     move v0, v1
 
+    .line 284
     :cond_2
     if-nez v2, :cond_4
 
+    .line 285
     move v4, v1
 
+    .line 290
     .end local v2           #item:Ljava/lang/Object;
     :cond_3
     iget-object v5, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->this$0:Lcom/android/internal/app/MediaRouteChooserDialogFragment;
@@ -1222,6 +1382,7 @@
 
     goto :goto_0
 
+    .line 279
     .restart local v2       #item:Ljava/lang/Object;
     :cond_4
     add-int/lit8 v1, v1, 0x1
@@ -1233,6 +1394,7 @@
     .locals 2
 
     .prologue
+    .line 294
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->this$0:Lcom/android/internal/app/MediaRouteChooserDialogFragment;
 
     #getter for: Lcom/android/internal/app/MediaRouteChooserDialogFragment;->mListView:Landroid/widget/ListView;
@@ -1246,10 +1408,12 @@
 
     if-gez v0, :cond_1
 
+    .line 297
     :cond_0
     :goto_0
     return-void
 
+    .line 296
     :cond_1
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->this$0:Lcom/android/internal/app/MediaRouteChooserDialogFragment;
 
@@ -1269,19 +1433,23 @@
     .locals 8
 
     .prologue
+    .line 243
     iget-boolean v5, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mIgnoreUpdates:Z
 
     if-eqz v5, :cond_1
 
+    .line 271
     :cond_0
     :goto_0
     return-void
 
+    .line 245
     :cond_1
     iget-object v5, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->clear()V
 
+    .line 247
     iget-object v5, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->this$0:Lcom/android/internal/app/MediaRouteChooserDialogFragment;
 
     iget-object v5, v5, Lcom/android/internal/app/MediaRouteChooserDialogFragment;->mRouter:Landroid/media/MediaRouter;
@@ -1297,11 +1465,13 @@
 
     move-result-object v4
 
+    .line 248
     .local v4, selectedRoute:Landroid/media/MediaRouter$RouteInfo;
     const/4 v5, -0x1
 
     iput v5, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mSelectedItemPosition:I
 
+    .line 251
     iget-object v5, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->this$0:Lcom/android/internal/app/MediaRouteChooserDialogFragment;
 
     iget-object v5, v5, Lcom/android/internal/app/MediaRouteChooserDialogFragment;->mRouter:Landroid/media/MediaRouter;
@@ -1310,6 +1480,7 @@
 
     move-result v1
 
+    .line 252
     .local v1, catCount:I
     const/4 v2, 0x0
 
@@ -1317,6 +1488,7 @@
     :goto_1
     if-ge v2, v1, :cond_3
 
+    .line 253
     iget-object v5, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->this$0:Lcom/android/internal/app/MediaRouteChooserDialogFragment;
 
     iget-object v5, v5, Lcom/android/internal/app/MediaRouteChooserDialogFragment;->mRouter:Landroid/media/MediaRouter;
@@ -1325,6 +1497,7 @@
 
     move-result-object v0
 
+    .line 254
     .local v0, cat:Landroid/media/MediaRouter$RouteCategory;
     iget-object v5, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mCatRouteList:Ljava/util/ArrayList;
 
@@ -1332,34 +1505,42 @@
 
     move-result-object v3
 
+    .line 256
     .local v3, routes:Ljava/util/List;,"Ljava/util/List<Landroid/media/MediaRouter$RouteInfo;>;"
     iget-object v5, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 258
     iget-object v5, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->mCategoryEditingGroups:Landroid/media/MediaRouter$RouteCategory;
 
     if-ne v0, v5, :cond_2
 
+    .line 259
     invoke-virtual {p0, v3}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->addGroupEditingCategoryRoutes(Ljava/util/List;)V
 
+    .line 264
     :goto_2
     invoke-interface {v3}, Ljava/util/List;->clear()V
 
+    .line 252
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
+    .line 261
     :cond_2
     invoke-virtual {p0, v4, v3}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->addSelectableRoutes(Landroid/media/MediaRouter$RouteInfo;Ljava/util/List;)V
 
     goto :goto_2
 
+    .line 267
     .end local v0           #cat:Landroid/media/MediaRouter$RouteCategory;
     .end local v3           #routes:Ljava/util/List;,"Ljava/util/List<Landroid/media/MediaRouter$RouteInfo;>;"
     :cond_3
     invoke-virtual {p0}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->notifyDataSetChanged()V
 
+    .line 268
     iget-object v5, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->this$0:Lcom/android/internal/app/MediaRouteChooserDialogFragment;
 
     #getter for: Lcom/android/internal/app/MediaRouteChooserDialogFragment;->mListView:Landroid/widget/ListView;
@@ -1373,6 +1554,7 @@
 
     if-ltz v5, :cond_0
 
+    .line 269
     iget-object v5, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;->this$0:Lcom/android/internal/app/MediaRouteChooserDialogFragment;
 
     #getter for: Lcom/android/internal/app/MediaRouteChooserDialogFragment;->mListView:Landroid/widget/ListView;

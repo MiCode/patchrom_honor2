@@ -24,8 +24,10 @@
     .locals 0
 
     .prologue
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 32
     return-void
 .end method
 
@@ -42,8 +44,10 @@
     .end annotation
 
     .prologue
+    .line 103
     invoke-static {p0}, Landroid/os/Power;->rebootNative(Ljava/lang/String;)V
 
+    .line 104
     return-void
 .end method
 

@@ -12,10 +12,12 @@
     .locals 1
 
     .prologue
+    .line 129
     const-string v0, "filterfw"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
+    .line 130
     return-void
 .end method
 
@@ -25,12 +27,15 @@
     .parameter "frameManager"
 
     .prologue
+    .line 35
     invoke-direct {p0, p1, p2}, Landroid/filterfw/core/Frame;-><init>(Landroid/filterfw/core/FrameFormat;Landroid/filterfw/core/FrameManager;)V
 
+    .line 32
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/filterfw/core/VertexFrame;->vertexFrameId:I
 
+    .line 36
     invoke-virtual {p0}, Landroid/filterfw/core/VertexFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v0
@@ -41,6 +46,7 @@
 
     if-gtz v0, :cond_0
 
+    .line 37
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Initializing vertex frame with zero size!"
@@ -49,6 +55,7 @@
 
     throw v0
 
+    .line 39
     :cond_0
     invoke-virtual {p0}, Landroid/filterfw/core/VertexFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
@@ -64,6 +71,7 @@
 
     if-nez v0, :cond_1
 
+    .line 40
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Could not allocate vertex frame!"
@@ -72,6 +80,7 @@
 
     throw v0
 
+    .line 43
     :cond_1
     return-void
 .end method
@@ -100,6 +109,7 @@
     .locals 2
 
     .prologue
+    .line 110
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Vertex frames do not support reading data!"
@@ -113,6 +123,7 @@
     .locals 2
 
     .prologue
+    .line 100
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Vertex frames do not support reading data!"
@@ -126,6 +137,7 @@
     .locals 2
 
     .prologue
+    .line 84
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Vertex frames do not support reading data!"
@@ -139,6 +151,7 @@
     .locals 2
 
     .prologue
+    .line 71
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Vertex frames do not support reading data!"
@@ -152,6 +165,7 @@
     .locals 2
 
     .prologue
+    .line 58
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Vertex frames do not support reading data!"
@@ -165,6 +179,7 @@
     .locals 1
 
     .prologue
+    .line 120
     invoke-direct {p0}, Landroid/filterfw/core/VertexFrame;->getNativeVboId()I
 
     move-result v0
@@ -176,6 +191,7 @@
     .locals 2
 
     .prologue
+    .line 47
     monitor-enter p0
 
     :try_start_0
@@ -211,21 +227,25 @@
     .locals 1
 
     .prologue
+    .line 52
     monitor-enter p0
 
     :try_start_0
     invoke-direct {p0}, Landroid/filterfw/core/VertexFrame;->nativeDeallocate()Z
 
+    .line 53
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/filterfw/core/VertexFrame;->vertexFrameId:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 54
     monitor-exit p0
 
     return-void
 
+    .line 52
     :catchall_0
     move-exception v0
 
@@ -239,6 +259,7 @@
     .parameter "bitmap"
 
     .prologue
+    .line 105
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Unsupported: Cannot set vertex frame bitmap value!"
@@ -255,12 +276,15 @@
     .parameter "length"
 
     .prologue
+    .line 89
     invoke-virtual {p0}, Landroid/filterfw/core/VertexFrame;->assertFrameMutable()V
 
+    .line 90
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object v0
 
+    .line 91
     .local v0, bytes:[B
     invoke-virtual {p0}, Landroid/filterfw/core/VertexFrame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
@@ -274,6 +298,7 @@
 
     if-eq v1, v2, :cond_0
 
+    .line 92
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Data size in setData does not match vertex frame size!"
@@ -282,6 +307,7 @@
 
     throw v1
 
+    .line 93
     :cond_0
     invoke-direct {p0, v0, p2, p3}, Landroid/filterfw/core/VertexFrame;->setNativeData([BII)Z
 
@@ -289,6 +315,7 @@
 
     if-nez v1, :cond_1
 
+    .line 94
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Could not set vertex frame data!"
@@ -297,6 +324,7 @@
 
     throw v1
 
+    .line 96
     :cond_1
     return-void
 .end method
@@ -306,8 +334,10 @@
     .parameter "frame"
 
     .prologue
+    .line 116
     invoke-super {p0, p1}, Landroid/filterfw/core/Frame;->setDataFromFrame(Landroid/filterfw/core/Frame;)V
 
+    .line 117
     return-void
 .end method
 
@@ -316,14 +346,17 @@
     .parameter "floats"
 
     .prologue
+    .line 76
     invoke-virtual {p0}, Landroid/filterfw/core/VertexFrame;->assertFrameMutable()V
 
+    .line 77
     invoke-direct {p0, p1}, Landroid/filterfw/core/VertexFrame;->setNativeFloats([F)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
+    .line 78
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Could not set int values for vertex frame!"
@@ -332,6 +365,7 @@
 
     throw v0
 
+    .line 80
     :cond_0
     return-void
 .end method
@@ -341,14 +375,17 @@
     .parameter "ints"
 
     .prologue
+    .line 63
     invoke-virtual {p0}, Landroid/filterfw/core/VertexFrame;->assertFrameMutable()V
 
+    .line 64
     invoke-direct {p0, p1}, Landroid/filterfw/core/VertexFrame;->setNativeInts([I)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
+    .line 65
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Could not set int values for vertex frame!"
@@ -357,6 +394,7 @@
 
     throw v0
 
+    .line 67
     :cond_0
     return-void
 .end method
@@ -365,6 +403,7 @@
     .locals 2
 
     .prologue
+    .line 125
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

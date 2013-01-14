@@ -66,40 +66,48 @@
 
     const/4 v2, 0x1
 
+    .line 118
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 33
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mPointCloud:Ljava/util/ArrayList;
 
+    .line 38
     const/high16 v0, 0x3f80
 
     iput v0, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mScale:F
 
+    .line 42
     new-instance v0, Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;
 
     invoke-direct {v0, p0}, Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;-><init>(Lcom/android/internal/widget/multiwaveview/PointCloud;)V
 
     iput-object v0, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->waveManager:Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;
 
+    .line 43
     new-instance v0, Lcom/android/internal/widget/multiwaveview/PointCloud$GlowManager;
 
     invoke-direct {v0, p0}, Lcom/android/internal/widget/multiwaveview/PointCloud$GlowManager;-><init>(Lcom/android/internal/widget/multiwaveview/PointCloud;)V
 
     iput-object v0, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->glowManager:Lcom/android/internal/widget/multiwaveview/PointCloud$GlowManager;
 
+    .line 119
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mPaint:Landroid/graphics/Paint;
 
+    .line 120
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setFilterBitmap(Z)V
 
+    .line 121
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mPaint:Landroid/graphics/Paint;
 
     invoke-static {v1, v1, v1}, Landroid/graphics/Color;->rgb(III)I
@@ -108,20 +116,25 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
+    .line 122
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
+    .line 123
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setDither(Z)V
 
+    .line 125
     iput-object p1, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mDrawable:Landroid/graphics/drawable/Drawable;
 
+    .line 126
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
+    .line 127
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v0
@@ -132,6 +145,7 @@
 
     invoke-virtual {p1, v3, v3, v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
+    .line 129
     :cond_0
     return-void
 .end method
@@ -142,6 +156,7 @@
     .parameter "y"
 
     .prologue
+    .line 171
     mul-float v0, p0, p0
 
     mul-float v1, p1, p1
@@ -162,6 +177,7 @@
     .parameter "f"
 
     .prologue
+    .line 200
     sub-float v0, p2, p1
 
     mul-float/2addr v0, p3
@@ -177,6 +193,7 @@
     .parameter "b"
 
     .prologue
+    .line 175
     cmpl-float v0, p0, p1
 
     if-lez v0, :cond_0
@@ -199,13 +216,16 @@
     .parameter "canvas"
 
     .prologue
+    .line 204
     iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mPointCloud:Ljava/util/ArrayList;
 
+    .line 205
     .local v6, points:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/widget/multiwaveview/PointCloud$Point;>;"
     const/4 v10, 0x1
 
     invoke-virtual {p1, v10}, Landroid/graphics/Canvas;->save(I)I
 
+    .line 206
     iget v10, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mScale:F
 
     iget v11, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mScale:F
@@ -216,6 +236,7 @@
 
     invoke-virtual {p1, v10, v11, v12, v13}, Landroid/graphics/Canvas;->scale(FFFF)V
 
+    .line 207
     const/4 v3, 0x0
 
     .local v3, i:I
@@ -226,12 +247,14 @@
 
     if-ge v3, v10, :cond_2
 
+    .line 208
     invoke-virtual {v6, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/android/internal/widget/multiwaveview/PointCloud$Point;
 
+    .line 209
     .local v4, point:Lcom/android/internal/widget/multiwaveview/PointCloud$Point;
     const/high16 v10, 0x4080
 
@@ -247,6 +270,7 @@
 
     move-result v5
 
+    .line 211
     .local v5, pointSize:F
     iget v10, v4, Lcom/android/internal/widget/multiwaveview/PointCloud$Point;->x:F
 
@@ -254,6 +278,7 @@
 
     add-float v7, v10, v11
 
+    .line 212
     .local v7, px:F
     iget v10, v4, Lcom/android/internal/widget/multiwaveview/PointCloud$Point;->y:F
 
@@ -261,28 +286,34 @@
 
     add-float v8, v10, v11
 
+    .line 213
     .local v8, py:F
     invoke-virtual {p0, v4}, Lcom/android/internal/widget/multiwaveview/PointCloud;->getAlphaForPoint(Lcom/android/internal/widget/multiwaveview/PointCloud$Point;)I
 
     move-result v0
 
+    .line 215
     .local v0, alpha:I
     if-nez v0, :cond_0
 
+    .line 207
     :goto_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 217
     :cond_0
     iget-object v10, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v10, :cond_1
 
+    .line 218
     const/4 v10, 0x1
 
     invoke-virtual {p1, v10}, Landroid/graphics/Canvas;->save(I)I
 
+    .line 219
     iget-object v10, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v10}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -295,6 +326,7 @@
 
     mul-float v1, v10, v11
 
+    .line 220
     .local v1, cx:F
     iget-object v10, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -308,32 +340,39 @@
 
     mul-float v2, v10, v11
 
+    .line 221
     .local v2, cy:F
     const/high16 v10, 0x4080
 
     div-float v9, v5, v10
 
+    .line 222
     .local v9, s:F
     invoke-virtual {p1, v9, v9, v7, v8}, Landroid/graphics/Canvas;->scale(FFFF)V
 
+    .line 223
     sub-float v10, v7, v1
 
     sub-float v11, v8, v2
 
     invoke-virtual {p1, v10, v11}, Landroid/graphics/Canvas;->translate(FF)V
 
+    .line 224
     iget-object v10, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v10, v0}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
+    .line 225
     iget-object v10, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v10, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
+    .line 226
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_1
 
+    .line 228
     .end local v1           #cx:F
     .end local v2           #cy:F
     .end local v9           #s:F
@@ -342,12 +381,14 @@
 
     invoke-virtual {v10, v0}, Landroid/graphics/Paint;->setAlpha(I)V
 
+    .line 229
     iget-object v10, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v7, v8, v5, v10}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     goto :goto_1
 
+    .line 232
     .end local v0           #alpha:I
     .end local v4           #point:Lcom/android/internal/widget/multiwaveview/PointCloud$Point;
     .end local v5           #pointSize:F
@@ -356,6 +397,7 @@
     :cond_2
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
+    .line 233
     return-void
 .end method
 
@@ -368,6 +410,7 @@
 
     const/4 v11, 0x0
 
+    .line 180
     iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->glowManager:Lcom/android/internal/widget/multiwaveview/PointCloud$GlowManager;
 
     #getter for: Lcom/android/internal/widget/multiwaveview/PointCloud$GlowManager;->x:F
@@ -394,9 +437,11 @@
 
     move-result v3
 
+    .line 181
     .local v3, glowDistance:F
     const/4 v2, 0x0
 
+    .line 182
     .local v2, glowAlpha:F
     iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->glowManager:Lcom/android/internal/widget/multiwaveview/PointCloud$GlowManager;
 
@@ -409,6 +454,7 @@
 
     if-gez v6, :cond_0
 
+    .line 183
     mul-float v6, v12, v3
 
     iget-object v7, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->glowManager:Lcom/android/internal/widget/multiwaveview/PointCloud$GlowManager;
@@ -424,6 +470,7 @@
 
     move-result v0
 
+    .line 184
     .local v0, cosf:F
     iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->glowManager:Lcom/android/internal/widget/multiwaveview/PointCloud$GlowManager;
 
@@ -448,6 +495,7 @@
 
     mul-float v2, v6, v7
 
+    .line 188
     .end local v0           #cosf:F
     :cond_0
     iget v6, p1, Lcom/android/internal/widget/multiwaveview/PointCloud$Point;->x:F
@@ -458,6 +506,7 @@
 
     move-result v4
 
+    .line 189
     .local v4, radius:F
     iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->waveManager:Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;
 
@@ -468,9 +517,11 @@
 
     sub-float v1, v4, v6
 
+    .line 190
     .local v1, distanceToWaveRing:F
     const/4 v5, 0x0
 
+    .line 191
     .local v5, waveAlpha:F
     iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->waveManager:Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;
 
@@ -491,6 +542,7 @@
 
     if-gez v6, :cond_1
 
+    .line 192
     mul-float v6, v12, v1
 
     iget-object v7, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->waveManager:Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;
@@ -506,6 +558,7 @@
 
     move-result v0
 
+    .line 193
     .restart local v0       #cosf:F
     iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->waveManager:Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;
 
@@ -530,6 +583,7 @@
 
     mul-float v5, v6, v7
 
+    .line 196
     .end local v0           #cosf:F
     :cond_1
     invoke-static {v2, v5}, Lcom/android/internal/widget/multiwaveview/PointCloud;->max(FF)F
@@ -549,6 +603,7 @@
     .locals 1
 
     .prologue
+    .line 167
     iget v0, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mScale:F
 
     return v0
@@ -560,21 +615,25 @@
     .parameter "outerRadius"
 
     .prologue
+    .line 137
     const/4 v15, 0x0
 
     cmpl-float v15, p1, v15
 
     if-nez v15, :cond_1
 
+    .line 138
     const-string v15, "PointCloud"
 
     const-string v16, "Must specify an inner radius"
 
     invoke-static/range {v15 .. v16}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 160
     :cond_0
     return-void
 
+    .line 141
     :cond_1
     move/from16 v0, p2
 
@@ -582,14 +641,17 @@
 
     iput v0, v1, Lcom/android/internal/widget/multiwaveview/PointCloud;->mOuterRadius:F
 
+    .line 142
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mPointCloud:Ljava/util/ArrayList;
 
     invoke-virtual {v15}, Ljava/util/ArrayList;->clear()V
 
+    .line 143
     sub-float v10, p2, p1
 
+    .line 144
     .local v10, pointAreaRadius:F
     const v15, 0x40c90fdb
 
@@ -599,6 +661,7 @@
 
     div-float v7, v15, v16
 
+    .line 145
     .local v7, ds:F
     div-float v15, v10, v7
 
@@ -606,14 +669,17 @@
 
     move-result v3
 
+    .line 146
     .local v3, bands:I
     int-to-float v15, v3
 
     div-float v6, v10, v15
 
+    .line 147
     .local v6, dr:F
     move/from16 v12, p1
 
+    .line 148
     .local v12, r:F
     const/4 v2, 0x0
 
@@ -621,18 +687,22 @@
     :goto_0
     if-gt v2, v3, :cond_0
 
+    .line 149
     const v15, 0x40c90fdb
 
     mul-float v4, v15, v12
 
+    .line 150
     .local v4, circumference:F
     div-float v15, v4, v7
 
     float-to-int v11, v15
 
+    .line 151
     .local v11, pointsInBand:I
     const v8, 0x3fc90fdb
 
+    .line 152
     .local v8, eta:F
     const v15, 0x40c90fdb
 
@@ -642,6 +712,7 @@
 
     div-float v5, v15, v16
 
+    .line 153
     .local v5, dEta:F
     const/4 v9, 0x0
 
@@ -649,12 +720,14 @@
     :goto_1
     if-ge v9, v11, :cond_2
 
+    .line 154
     invoke-static {v8}, Landroid/util/FloatMath;->cos(F)F
 
     move-result v15
 
     mul-float v13, v12, v15
 
+    .line 155
     .local v13, x:F
     invoke-static {v8}, Landroid/util/FloatMath;->sin(F)F
 
@@ -662,9 +735,11 @@
 
     mul-float v14, v12, v15
 
+    .line 156
     .local v14, y:F
     add-float/2addr v8, v5
 
+    .line 157
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mPointCloud:Ljava/util/ArrayList;
@@ -679,10 +754,12 @@
 
     invoke-virtual/range {v15 .. v16}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 153
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_1
 
+    .line 148
     .end local v13           #x:F
     .end local v14           #y:F
     :cond_2
@@ -699,10 +776,13 @@
     .parameter "y"
 
     .prologue
+    .line 132
     iput p1, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mCenterX:F
 
+    .line 133
     iput p2, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mCenterY:F
 
+    .line 134
     return-void
 .end method
 
@@ -711,7 +791,9 @@
     .parameter "scale"
 
     .prologue
+    .line 163
     iput p1, p0, Lcom/android/internal/widget/multiwaveview/PointCloud;->mScale:F
 
+    .line 164
     return-void
 .end method

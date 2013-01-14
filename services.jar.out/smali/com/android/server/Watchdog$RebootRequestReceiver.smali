@@ -24,6 +24,7 @@
     .parameter
 
     .prologue
+    .line 161
     iput-object p1, p0, Lcom/android/server/Watchdog$RebootRequestReceiver;->this$0:Lcom/android/server/Watchdog;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -45,6 +46,7 @@
 
     const/4 v4, -0x1
 
+    .line 164
     iget-object v3, p0, Lcom/android/server/Watchdog$RebootRequestReceiver;->this$0:Lcom/android/server/Watchdog;
 
     const-string v0, "nowait"
@@ -60,6 +62,7 @@
     :goto_0
     iput-boolean v0, v3, Lcom/android/server/Watchdog;->mReqRebootNoWait:Z
 
+    .line 165
     iget-object v0, p0, Lcom/android/server/Watchdog$RebootRequestReceiver;->this$0:Lcom/android/server/Watchdog;
 
     const-string v3, "interval"
@@ -70,6 +73,7 @@
 
     iput v3, v0, Lcom/android/server/Watchdog;->mReqRebootInterval:I
 
+    .line 166
     iget-object v0, p0, Lcom/android/server/Watchdog$RebootRequestReceiver;->this$0:Lcom/android/server/Watchdog;
 
     const-string v3, "startTime"
@@ -80,6 +84,7 @@
 
     iput v3, v0, Lcom/android/server/Watchdog;->mReqRebootStartTime:I
 
+    .line 167
     iget-object v0, p0, Lcom/android/server/Watchdog$RebootRequestReceiver;->this$0:Lcom/android/server/Watchdog;
 
     const-string v3, "window"
@@ -90,6 +95,7 @@
 
     iput v3, v0, Lcom/android/server/Watchdog;->mReqRebootWindow:I
 
+    .line 168
     iget-object v0, p0, Lcom/android/server/Watchdog$RebootRequestReceiver;->this$0:Lcom/android/server/Watchdog;
 
     const-string v3, "minScreenOff"
@@ -100,6 +106,7 @@
 
     iput v3, v0, Lcom/android/server/Watchdog;->mReqMinScreenOff:I
 
+    .line 169
     iget-object v0, p0, Lcom/android/server/Watchdog$RebootRequestReceiver;->this$0:Lcom/android/server/Watchdog;
 
     const-string v3, "minNextAlarm"
@@ -110,6 +117,7 @@
 
     iput v3, v0, Lcom/android/server/Watchdog;->mReqMinNextAlarm:I
 
+    .line 170
     iget-object v0, p0, Lcom/android/server/Watchdog$RebootRequestReceiver;->this$0:Lcom/android/server/Watchdog;
 
     const-string v3, "recheckInterval"
@@ -120,6 +128,7 @@
 
     iput v3, v0, Lcom/android/server/Watchdog;->mReqRecheckInterval:I
 
+    .line 171
     const/16 v3, 0xafb
 
     const/4 v0, 0x7
@@ -213,19 +222,23 @@
 
     invoke-static {v3, v4}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
+    .line 175
     iget-object v0, p0, Lcom/android/server/Watchdog$RebootRequestReceiver;->this$0:Lcom/android/server/Watchdog;
 
     invoke-virtual {v0, v1}, Lcom/android/server/Watchdog;->checkReboot(Z)V
 
+    .line 176
     return-void
 
     :cond_0
     move v0, v2
 
+    .line 164
     goto/16 :goto_0
 
     :cond_1
     move v0, v2
 
+    .line 171
     goto :goto_1
 .end method

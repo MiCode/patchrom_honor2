@@ -24,6 +24,7 @@
     .parameter
 
     .prologue
+    .line 109
     iput-object p1, p0, Landroid/os/CountDownTimer$1;->this$0:Landroid/os/CountDownTimer;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -40,10 +41,12 @@
     .prologue
     const-wide/16 v12, 0x0
 
+    .line 114
     iget-object v7, p0, Landroid/os/CountDownTimer$1;->this$0:Landroid/os/CountDownTimer;
 
     monitor-enter v7
 
+    .line 115
     :try_start_0
     iget-object v6, p0, Landroid/os/CountDownTimer$1;->this$0:Landroid/os/CountDownTimer;
 
@@ -58,20 +61,25 @@
 
     sub-long v4, v8, v10
 
+    .line 117
     .local v4, millisLeft:J
     cmp-long v6, v4, v12
 
     if-gtz v6, :cond_0
 
+    .line 118
     iget-object v6, p0, Landroid/os/CountDownTimer$1;->this$0:Landroid/os/CountDownTimer;
 
     invoke-virtual {v6}, Landroid/os/CountDownTimer;->onFinish()V
 
+    .line 135
     :goto_0
     monitor-exit v7
 
+    .line 136
     return-void
 
+    .line 119
     :cond_0
     iget-object v6, p0, Landroid/os/CountDownTimer$1;->this$0:Landroid/os/CountDownTimer;
 
@@ -84,6 +92,7 @@
 
     if-gez v6, :cond_1
 
+    .line 121
     const/4 v6, 0x1
 
     invoke-virtual {p0, v6}, Landroid/os/CountDownTimer$1;->obtainMessage(I)Landroid/os/Message;
@@ -94,6 +103,7 @@
 
     goto :goto_0
 
+    .line 135
     .end local v4           #millisLeft:J
     :catchall_0
     move-exception v6
@@ -104,6 +114,7 @@
 
     throw v6
 
+    .line 123
     .restart local v4       #millisLeft:J
     :cond_1
     :try_start_1
@@ -111,11 +122,13 @@
 
     move-result-wide v2
 
+    .line 124
     .local v2, lastTickStart:J
     iget-object v6, p0, Landroid/os/CountDownTimer$1;->this$0:Landroid/os/CountDownTimer;
 
     invoke-virtual {v6, v4, v5}, Landroid/os/CountDownTimer;->onTick(J)V
 
+    .line 127
     iget-object v6, p0, Landroid/os/CountDownTimer$1;->this$0:Landroid/os/CountDownTimer;
 
     #getter for: Landroid/os/CountDownTimer;->mCountdownInterval:J
@@ -131,6 +144,7 @@
 
     sub-long v0, v8, v10
 
+    .line 131
     .local v0, delay:J
     :goto_1
     cmp-long v6, v0, v12
@@ -148,6 +162,7 @@
 
     goto :goto_1
 
+    .line 133
     :cond_2
     const/4 v6, 0x1
 

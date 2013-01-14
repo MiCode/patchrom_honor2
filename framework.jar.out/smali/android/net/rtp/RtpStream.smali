@@ -32,10 +32,12 @@
     .locals 1
 
     .prologue
-    const-string v0, "rtp_jni"
+    .line 59
+    const-string/jumbo v0, "rtp_jni"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
+    .line 60
     return-void
 .end method
 
@@ -51,16 +53,21 @@
     .prologue
     const/4 v1, -0x1
 
+    .line 70
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 54
     iput v1, p0, Landroid/net/rtp/RtpStream;->mRemotePort:I
 
+    .line 55
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/net/rtp/RtpStream;->mMode:I
 
+    .line 57
     iput v1, p0, Landroid/net/rtp/RtpStream;->mSocket:I
 
+    .line 71
     invoke-virtual {p1}, Ljava/net/InetAddress;->getHostAddress()Ljava/lang/String;
 
     move-result-object v0
@@ -71,8 +78,10 @@
 
     iput v0, p0, Landroid/net/rtp/RtpStream;->mLocalPort:I
 
+    .line 72
     iput-object p1, p0, Landroid/net/rtp/RtpStream;->mLocalAddress:Ljava/net/InetAddress;
 
+    .line 73
     return-void
 .end method
 
@@ -95,12 +104,14 @@
     .parameter "port"
 
     .prologue
+    .line 154
     invoke-virtual {p0}, Landroid/net/rtp/RtpStream;->isBusy()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 155
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Busy"
@@ -109,6 +120,7 @@
 
     throw v0
 
+    .line 157
     :cond_0
     instance-of v0, p1, Ljava/net/Inet4Address;
 
@@ -131,6 +143,7 @@
 
     if-nez v0, :cond_3
 
+    .line 159
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -140,6 +153,7 @@
 
     throw v0
 
+    .line 161
     :cond_3
     if-ltz p2, :cond_4
 
@@ -147,6 +161,7 @@
 
     if-le p2, v0, :cond_5
 
+    .line 162
     :cond_4
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -156,11 +171,14 @@
 
     throw v0
 
+    .line 164
     :cond_5
     iput-object p1, p0, Landroid/net/rtp/RtpStream;->mRemoteAddress:Ljava/net/InetAddress;
 
+    .line 165
     iput p2, p0, Landroid/net/rtp/RtpStream;->mRemotePort:I
 
+    .line 166
     return-void
 .end method
 
@@ -173,10 +191,13 @@
     .end annotation
 
     .prologue
+    .line 192
     invoke-direct {p0}, Landroid/net/rtp/RtpStream;->close()V
 
+    .line 193
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
+    .line 194
     return-void
 .end method
 
@@ -184,6 +205,7 @@
     .locals 1
 
     .prologue
+    .line 81
     iget-object v0, p0, Landroid/net/rtp/RtpStream;->mLocalAddress:Ljava/net/InetAddress;
 
     return-object v0
@@ -193,6 +215,7 @@
     .locals 1
 
     .prologue
+    .line 88
     iget v0, p0, Landroid/net/rtp/RtpStream;->mLocalPort:I
 
     return v0
@@ -202,6 +225,7 @@
     .locals 1
 
     .prologue
+    .line 120
     iget v0, p0, Landroid/net/rtp/RtpStream;->mMode:I
 
     return v0
@@ -211,6 +235,7 @@
     .locals 1
 
     .prologue
+    .line 96
     iget-object v0, p0, Landroid/net/rtp/RtpStream;->mRemoteAddress:Ljava/net/InetAddress;
 
     return-object v0
@@ -220,6 +245,7 @@
     .locals 1
 
     .prologue
+    .line 104
     iget v0, p0, Landroid/net/rtp/RtpStream;->mRemotePort:I
 
     return v0
@@ -229,6 +255,7 @@
     .locals 1
 
     .prologue
+    .line 169
     iget v0, p0, Landroid/net/rtp/RtpStream;->mSocket:I
 
     return v0
@@ -238,6 +265,7 @@
     .locals 1
 
     .prologue
+    .line 113
     const/4 v0, 0x0
 
     return v0
@@ -247,8 +275,10 @@
     .locals 2
 
     .prologue
+    .line 180
     monitor-enter p0
 
+    .line 181
     :try_start_0
     invoke-virtual {p0}, Landroid/net/rtp/RtpStream;->isBusy()Z
 
@@ -256,6 +286,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 182
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Busy"
@@ -264,6 +295,7 @@
 
     throw v0
 
+    .line 185
     :catchall_0
     move-exception v0
 
@@ -273,14 +305,17 @@
 
     throw v0
 
+    .line 184
     :cond_0
     :try_start_1
     invoke-direct {p0}, Landroid/net/rtp/RtpStream;->close()V
 
+    .line 185
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 186
     return-void
 .end method
 
@@ -289,12 +324,14 @@
     .parameter "mode"
 
     .prologue
+    .line 133
     invoke-virtual {p0}, Landroid/net/rtp/RtpStream;->isBusy()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    .line 134
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Busy"
@@ -303,6 +340,7 @@
 
     throw v0
 
+    .line 136
     :cond_0
     if-ltz p1, :cond_1
 
@@ -310,6 +348,7 @@
 
     if-le p1, v0, :cond_2
 
+    .line 137
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -319,8 +358,10 @@
 
     throw v0
 
+    .line 139
     :cond_2
     iput p1, p0, Landroid/net/rtp/RtpStream;->mMode:I
 
+    .line 140
     return-void
 .end method

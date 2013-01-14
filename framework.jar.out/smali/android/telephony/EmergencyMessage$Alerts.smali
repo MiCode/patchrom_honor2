@@ -56,6 +56,7 @@
 
     const/4 v3, 0x0
 
+    .line 59
     new-instance v0, Landroid/telephony/EmergencyMessage$Alerts;
 
     const-string v1, "CMAS_PRESIDENTIAL"
@@ -64,6 +65,7 @@
 
     sput-object v0, Landroid/telephony/EmergencyMessage$Alerts;->CMAS_PRESIDENTIAL:Landroid/telephony/EmergencyMessage$Alerts;
 
+    .line 60
     new-instance v0, Landroid/telephony/EmergencyMessage$Alerts;
 
     const-string v1, "CMAS_EXTREME"
@@ -72,6 +74,7 @@
 
     sput-object v0, Landroid/telephony/EmergencyMessage$Alerts;->CMAS_EXTREME:Landroid/telephony/EmergencyMessage$Alerts;
 
+    .line 61
     new-instance v0, Landroid/telephony/EmergencyMessage$Alerts;
 
     const-string v1, "CMAS_SEVERE"
@@ -80,6 +83,7 @@
 
     sput-object v0, Landroid/telephony/EmergencyMessage$Alerts;->CMAS_SEVERE:Landroid/telephony/EmergencyMessage$Alerts;
 
+    .line 62
     new-instance v0, Landroid/telephony/EmergencyMessage$Alerts;
 
     const-string v1, "CMAS_AMBER"
@@ -88,6 +92,7 @@
 
     sput-object v0, Landroid/telephony/EmergencyMessage$Alerts;->CMAS_AMBER:Landroid/telephony/EmergencyMessage$Alerts;
 
+    .line 63
     new-instance v0, Landroid/telephony/EmergencyMessage$Alerts;
 
     const-string v1, "ETWS_EARTHQUAKE"
@@ -96,6 +101,7 @@
 
     sput-object v0, Landroid/telephony/EmergencyMessage$Alerts;->ETWS_EARTHQUAKE:Landroid/telephony/EmergencyMessage$Alerts;
 
+    .line 64
     new-instance v0, Landroid/telephony/EmergencyMessage$Alerts;
 
     const-string v1, "ETWS_TSUNAMI"
@@ -106,6 +112,7 @@
 
     sput-object v0, Landroid/telephony/EmergencyMessage$Alerts;->ETWS_TSUNAMI:Landroid/telephony/EmergencyMessage$Alerts;
 
+    .line 65
     new-instance v0, Landroid/telephony/EmergencyMessage$Alerts;
 
     const-string v1, "ETWS_EARTHQUAKE_AND_TSUNAMI"
@@ -116,6 +123,7 @@
 
     sput-object v0, Landroid/telephony/EmergencyMessage$Alerts;->ETWS_EARTHQUAKE_AND_TSUNAMI:Landroid/telephony/EmergencyMessage$Alerts;
 
+    .line 58
     const/4 v0, 0x7
 
     new-array v0, v0, [Landroid/telephony/EmergencyMessage$Alerts;
@@ -168,6 +176,7 @@
     .end annotation
 
     .prologue
+    .line 58
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -178,6 +187,7 @@
     .parameter "name"
 
     .prologue
+    .line 58
     const-class v0, Landroid/telephony/EmergencyMessage$Alerts;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -193,6 +203,7 @@
     .locals 1
 
     .prologue
+    .line 58
     sget-object v0, Landroid/telephony/EmergencyMessage$Alerts;->$VALUES:[Landroid/telephony/EmergencyMessage$Alerts;
 
     invoke-virtual {v0}, [Landroid/telephony/EmergencyMessage$Alerts;->clone()Ljava/lang/Object;

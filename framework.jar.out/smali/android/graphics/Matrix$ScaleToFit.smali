@@ -52,6 +52,7 @@
 
     const/4 v2, 0x0
 
+    .line 493
     new-instance v0, Landroid/graphics/Matrix$ScaleToFit;
 
     const-string v1, "FILL"
@@ -60,6 +61,7 @@
 
     sput-object v0, Landroid/graphics/Matrix$ScaleToFit;->FILL:Landroid/graphics/Matrix$ScaleToFit;
 
+    .line 500
     new-instance v0, Landroid/graphics/Matrix$ScaleToFit;
 
     const-string v1, "START"
@@ -68,6 +70,7 @@
 
     sput-object v0, Landroid/graphics/Matrix$ScaleToFit;->START:Landroid/graphics/Matrix$ScaleToFit;
 
+    .line 506
     new-instance v0, Landroid/graphics/Matrix$ScaleToFit;
 
     const-string v1, "CENTER"
@@ -76,6 +79,7 @@
 
     sput-object v0, Landroid/graphics/Matrix$ScaleToFit;->CENTER:Landroid/graphics/Matrix$ScaleToFit;
 
+    .line 513
     new-instance v0, Landroid/graphics/Matrix$ScaleToFit;
 
     const-string v1, "END"
@@ -84,6 +88,7 @@
 
     sput-object v0, Landroid/graphics/Matrix$ScaleToFit;->END:Landroid/graphics/Matrix$ScaleToFit;
 
+    .line 488
     const/4 v0, 0x4
 
     new-array v0, v0, [Landroid/graphics/Matrix$ScaleToFit;
@@ -121,10 +126,13 @@
     .end annotation
 
     .prologue
+    .line 516
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 517
     iput p3, p0, Landroid/graphics/Matrix$ScaleToFit;->nativeInt:I
 
+    .line 518
     return-void
 .end method
 
@@ -133,6 +141,7 @@
     .parameter "name"
 
     .prologue
+    .line 488
     const-class v0, Landroid/graphics/Matrix$ScaleToFit;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -148,6 +157,7 @@
     .locals 1
 
     .prologue
+    .line 488
     sget-object v0, Landroid/graphics/Matrix$ScaleToFit;->$VALUES:[Landroid/graphics/Matrix$ScaleToFit;
 
     invoke-virtual {v0}, [Landroid/graphics/Matrix$ScaleToFit;->clone()Ljava/lang/Object;

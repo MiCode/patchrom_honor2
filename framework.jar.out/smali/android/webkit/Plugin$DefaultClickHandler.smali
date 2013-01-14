@@ -33,6 +33,7 @@
     .parameter
 
     .prologue
+    .line 195
     iput-object p1, p0, Landroid/webkit/Plugin$DefaultClickHandler;->this$0:Landroid/webkit/Plugin;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,6 +47,7 @@
     .parameter "x1"
 
     .prologue
+    .line 195
     invoke-direct {p0, p1}, Landroid/webkit/Plugin$DefaultClickHandler;-><init>(Landroid/webkit/Plugin;)V
 
     return-void
@@ -60,10 +62,12 @@
     .end annotation
 
     .prologue
+    .line 202
     iget-object v0, p0, Landroid/webkit/Plugin$DefaultClickHandler;->mDialog:Landroid/app/AlertDialog;
 
     if-nez v0, :cond_0
 
+    .line 203
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -108,6 +112,7 @@
 
     iput-object v0, p0, Landroid/webkit/Plugin$DefaultClickHandler;->mDialog:Landroid/app/AlertDialog;
 
+    .line 210
     :cond_0
     return-void
 .end method
@@ -120,13 +125,16 @@
     .end annotation
 
     .prologue
+    .line 218
     iget-object v0, p0, Landroid/webkit/Plugin$DefaultClickHandler;->mDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
+    .line 219
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/webkit/Plugin$DefaultClickHandler;->mDialog:Landroid/app/AlertDialog;
 
+    .line 220
     return-void
 .end method

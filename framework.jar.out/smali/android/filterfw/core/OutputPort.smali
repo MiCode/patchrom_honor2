@@ -16,8 +16,10 @@
     .parameter "name"
 
     .prologue
+    .line 29
     invoke-direct {p0, p1, p2}, Landroid/filterfw/core/FilterPort;-><init>(Landroid/filterfw/core/Filter;Ljava/lang/String;)V
 
+    .line 30
     return-void
 .end method
 
@@ -27,14 +29,17 @@
     .locals 1
 
     .prologue
+    .line 84
     iget-object v0, p0, Landroid/filterfw/core/OutputPort;->mTargetPort:Landroid/filterfw/core/InputPort;
 
     if-eqz v0, :cond_0
 
+    .line 85
     iget-object v0, p0, Landroid/filterfw/core/OutputPort;->mTargetPort:Landroid/filterfw/core/InputPort;
 
     invoke-virtual {v0}, Landroid/filterfw/core/InputPort;->clear()V
 
+    .line 87
     :cond_0
     return-void
 .end method
@@ -43,8 +48,10 @@
     .locals 1
 
     .prologue
+    .line 52
     invoke-super {p0}, Landroid/filterfw/core/FilterPort;->close()V
 
+    .line 53
     iget-object v0, p0, Landroid/filterfw/core/OutputPort;->mTargetPort:Landroid/filterfw/core/InputPort;
 
     if-eqz v0, :cond_0
@@ -57,10 +64,12 @@
 
     if-eqz v0, :cond_0
 
+    .line 54
     iget-object v0, p0, Landroid/filterfw/core/OutputPort;->mTargetPort:Landroid/filterfw/core/InputPort;
 
     invoke-virtual {v0}, Landroid/filterfw/core/InputPort;->close()V
 
+    .line 56
     :cond_0
     return-void
 .end method
@@ -70,10 +79,12 @@
     .parameter "target"
 
     .prologue
+    .line 33
     iget-object v0, p0, Landroid/filterfw/core/OutputPort;->mTargetPort:Landroid/filterfw/core/InputPort;
 
     if-eqz v0, :cond_0
 
+    .line 34
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -110,13 +121,16 @@
 
     throw v0
 
+    .line 36
     :cond_0
     iput-object p1, p0, Landroid/filterfw/core/OutputPort;->mTargetPort:Landroid/filterfw/core/InputPort;
 
+    .line 37
     iget-object v0, p0, Landroid/filterfw/core/OutputPort;->mTargetPort:Landroid/filterfw/core/InputPort;
 
     invoke-virtual {v0, p0}, Landroid/filterfw/core/InputPort;->setSourcePort(Landroid/filterfw/core/OutputPort;)V
 
+    .line 38
     return-void
 .end method
 
@@ -124,6 +138,7 @@
     .locals 1
 
     .prologue
+    .line 75
     invoke-virtual {p0}, Landroid/filterfw/core/OutputPort;->isOpen()Z
 
     move-result v0
@@ -151,6 +166,7 @@
     .locals 1
 
     .prologue
+    .line 71
     iget-object v0, p0, Landroid/filterfw/core/OutputPort;->mBasePort:Landroid/filterfw/core/InputPort;
 
     return-object v0
@@ -160,6 +176,7 @@
     .locals 1
 
     .prologue
+    .line 63
     iget-object v0, p0, Landroid/filterfw/core/OutputPort;->mTargetPort:Landroid/filterfw/core/InputPort;
 
     if-nez v0, :cond_0
@@ -183,6 +200,7 @@
     .locals 1
 
     .prologue
+    .line 59
     iget-object v0, p0, Landroid/filterfw/core/OutputPort;->mTargetPort:Landroid/filterfw/core/InputPort;
 
     return-object v0
@@ -192,6 +210,7 @@
     .locals 1
 
     .prologue
+    .line 115
     iget-object v0, p0, Landroid/filterfw/core/OutputPort;->mTargetPort:Landroid/filterfw/core/InputPort;
 
     if-nez v0, :cond_0
@@ -215,6 +234,7 @@
     .locals 1
 
     .prologue
+    .line 41
     iget-object v0, p0, Landroid/filterfw/core/OutputPort;->mTargetPort:Landroid/filterfw/core/InputPort;
 
     if-eqz v0, :cond_0
@@ -234,6 +254,7 @@
     .locals 1
 
     .prologue
+    .line 79
     invoke-virtual {p0}, Landroid/filterfw/core/OutputPort;->isOpen()Z
 
     move-result v0
@@ -271,8 +292,10 @@
     .locals 1
 
     .prologue
+    .line 45
     invoke-super {p0}, Landroid/filterfw/core/FilterPort;->open()V
 
+    .line 46
     iget-object v0, p0, Landroid/filterfw/core/OutputPort;->mTargetPort:Landroid/filterfw/core/InputPort;
 
     if-eqz v0, :cond_0
@@ -285,10 +308,12 @@
 
     if-nez v0, :cond_0
 
+    .line 47
     iget-object v0, p0, Landroid/filterfw/core/OutputPort;->mTargetPort:Landroid/filterfw/core/InputPort;
 
     invoke-virtual {v0}, Landroid/filterfw/core/InputPort;->open()V
 
+    .line 49
     :cond_0
     return-void
 .end method
@@ -297,6 +322,7 @@
     .locals 3
 
     .prologue
+    .line 110
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -333,10 +359,12 @@
     .parameter "frame"
 
     .prologue
+    .line 91
     iget-object v0, p0, Landroid/filterfw/core/OutputPort;->mTargetPort:Landroid/filterfw/core/InputPort;
 
     if-nez v0, :cond_0
 
+    .line 92
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -367,11 +395,13 @@
 
     throw v0
 
+    .line 95
     :cond_0
     iget-object v0, p0, Landroid/filterfw/core/OutputPort;->mTargetPort:Landroid/filterfw/core/InputPort;
 
     invoke-virtual {v0, p1}, Landroid/filterfw/core/InputPort;->pushFrame(Landroid/filterfw/core/Frame;)V
 
+    .line 96
     return-void
 .end method
 
@@ -380,8 +410,10 @@
     .parameter "basePort"
 
     .prologue
+    .line 67
     iput-object p1, p0, Landroid/filterfw/core/OutputPort;->mBasePort:Landroid/filterfw/core/InputPort;
 
+    .line 68
     return-void
 .end method
 
@@ -390,12 +422,15 @@
     .parameter "frame"
 
     .prologue
+    .line 100
     invoke-virtual {p0}, Landroid/filterfw/core/OutputPort;->assertPortIsOpen()V
 
+    .line 101
     iget-object v0, p0, Landroid/filterfw/core/OutputPort;->mTargetPort:Landroid/filterfw/core/InputPort;
 
     if-nez v0, :cond_0
 
+    .line 102
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -426,11 +461,13 @@
 
     throw v0
 
+    .line 105
     :cond_0
     iget-object v0, p0, Landroid/filterfw/core/OutputPort;->mTargetPort:Landroid/filterfw/core/InputPort;
 
     invoke-virtual {v0, p1}, Landroid/filterfw/core/InputPort;->setFrame(Landroid/filterfw/core/Frame;)V
 
+    .line 106
     return-void
 .end method
 
@@ -438,11 +475,12 @@
     .locals 2
 
     .prologue
+    .line 120
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "output "
+    const-string/jumbo v1, "output "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

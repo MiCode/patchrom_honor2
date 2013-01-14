@@ -27,6 +27,7 @@
     .parameter
 
     .prologue
+    .line 69
     iput-object p1, p0, Landroid/webkit/ClientCertRequestHandler$1;->this$0:Landroid/webkit/ClientCertRequestHandler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,6 +41,7 @@
     .locals 4
 
     .prologue
+    .line 71
     iget-object v0, p0, Landroid/webkit/ClientCertRequestHandler$1;->this$0:Landroid/webkit/ClientCertRequestHandler;
 
     #getter for: Landroid/webkit/ClientCertRequestHandler;->mBrowserFrame:Landroid/webkit/BrowserFrame;
@@ -62,5 +64,6 @@
 
     invoke-virtual {v1, v2, v3, v0}, Landroid/webkit/BrowserFrame;->nativeSslClientCert(II[[B)V
 
+    .line 72
     return-void
 .end method

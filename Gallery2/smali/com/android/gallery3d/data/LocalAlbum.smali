@@ -159,7 +159,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, p3, p5}, Lcom/android/gallery3d/data/LocalAlbum;->getLocalizedName(Landroid/content/res/Resources;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p3, p5}, Lcom/android/gallery3d/util/MediaSetUtils;->getLocalizedName(Landroid/content/res/Resources;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -254,7 +254,7 @@
     .locals 2
 
     .prologue
-    .line 396
+    .line 380
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -320,78 +320,6 @@
     move-result-object v0
 
     return-object v0
-.end method
-
-.method private static getLocalizedName(Landroid/content/res/Resources;ILjava/lang/String;)Ljava/lang/String;
-    .locals 1
-    .parameter "res"
-    .parameter "bucketId"
-    .parameter "name"
-
-    .prologue
-    .line 326
-    sget v0, Lcom/android/gallery3d/util/MediaSetUtils;->CAMERA_BUCKET_ID:I
-
-    if-ne p1, v0, :cond_1
-
-    .line 327
-    const v0, 0x7f0e010d
-
-    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object p2
-
-    .line 335
-    .end local p2
-    :cond_0
-    :goto_0
-    return-object p2
-
-    .line 328
-    .restart local p2
-    :cond_1
-    sget v0, Lcom/android/gallery3d/util/MediaSetUtils;->DOWNLOAD_BUCKET_ID:I
-
-    if-ne p1, v0, :cond_2
-
-    .line 329
-    const v0, 0x7f0e010f
-
-    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object p2
-
-    goto :goto_0
-
-    .line 330
-    :cond_2
-    sget v0, Lcom/android/gallery3d/util/MediaSetUtils;->IMPORTED_BUCKET_ID:I
-
-    if-ne p1, v0, :cond_3
-
-    .line 331
-    const v0, 0x7f0e010e
-
-    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object p2
-
-    goto :goto_0
-
-    .line 332
-    :cond_3
-    sget v0, Lcom/android/gallery3d/util/MediaSetUtils;->SNAPSHOT_BUCKET_ID:I
-
-    if-ne p1, v0, :cond_0
-
-    .line 333
-    const v0, 0x7f0e0110
-
-    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object p2
-
-    goto :goto_0
 .end method
 
 .method public static getMediaItemById(Lcom/android/gallery3d/app/GalleryApp;ZLjava/util/ArrayList;)[Lcom/android/gallery3d/data/MediaItem;
@@ -1307,10 +1235,10 @@
     .locals 8
 
     .prologue
-    .line 342
+    .line 326
     invoke-static {}, Lcom/android/gallery3d/util/GalleryUtils;->assertNotInRenderThread()V
 
-    .line 344
+    .line 328
     new-instance v1, Ljava/io/File;
 
     iget-object v5, p0, Lcom/android/gallery3d/data/MediaSet;->mBucketPath:Ljava/lang/String;
@@ -1319,7 +1247,7 @@
 
     invoke-direct {v1, v5, v6}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 345
+    .line 329
     .local v1, hiddenFile:Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
@@ -1327,7 +1255,7 @@
 
     if-nez v5, :cond_1
 
-    .line 347
+    .line 331
     :try_start_0
     iget-object v5, p0, Lcom/android/gallery3d/data/LocalAlbum;->mBucketPath:Ljava/lang/String;
 
@@ -1349,16 +1277,16 @@
 
     if-eqz v5, :cond_2
 
-    .line 348
+    .line 332
     :cond_0
     invoke-virtual {v1}, Ljava/io/File;->createNewFile()Z
 
-    .line 349
+    .line 333
     new-instance v4, Landroid/content/ContentValues;
 
     invoke-direct {v4}, Landroid/content/ContentValues;-><init>()V
 
-    .line 350
+    .line 334
     .local v4, values:Landroid/content/ContentValues;
     const-string v5, "_data"
 
@@ -1368,7 +1296,7 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 351
+    .line 335
     const-string v5, "bucket_id"
 
     iget v6, p0, Lcom/android/gallery3d/data/LocalAlbum;->mBucketId:I
@@ -1379,7 +1307,7 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 352
+    .line 336
     const-string v5, "media_type"
 
     const/4 v6, 0x0
@@ -1390,7 +1318,7 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 353
+    .line 337
     iget-object v5, p0, Lcom/android/gallery3d/data/LocalAlbum;->mResolver:Landroid/content/ContentResolver;
 
     iget-object v6, p0, Lcom/android/gallery3d/data/LocalAlbum;->mBaseUri:Landroid/net/Uri;
@@ -1399,7 +1327,7 @@
 
     move-result-object v3
 
-    .line 354
+    .line 338
     .local v3, uri:Landroid/net/Uri;
     iget-object v5, p0, Lcom/android/gallery3d/data/LocalAlbum;->mResolver:Landroid/content/ContentResolver;
 
@@ -1411,7 +1339,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 365
+    .line 349
     .end local v3           #uri:Landroid/net/Uri;
     .end local v4           #values:Landroid/content/ContentValues;
     :goto_0
@@ -1423,7 +1351,7 @@
 
     invoke-virtual {v5}, Lcom/android/gallery3d/data/DataManager;->broadcastLocalDeletion()V
 
-    .line 366
+    .line 350
     iget-object v5, p0, Lcom/android/gallery3d/data/LocalAlbum;->mApplication:Lcom/android/gallery3d/app/GalleryApp;
 
     invoke-interface {v5}, Lcom/android/gallery3d/app/GalleryApp;->getDataManager()Lcom/android/gallery3d/data/DataManager;
@@ -1434,11 +1362,11 @@
 
     invoke-virtual {v5, v6}, Lcom/android/gallery3d/data/DataManager;->notifyChange(Landroid/net/Uri;)V
 
-    .line 368
+    .line 352
     :cond_1
     return-void
 
-    .line 356
+    .line 340
     :cond_2
     :try_start_1
     iget-object v5, p0, Lcom/android/gallery3d/data/LocalAlbum;->mApplication:Lcom/android/gallery3d/app/GalleryApp;
@@ -1459,7 +1387,7 @@
 
     move-result-object v2
 
-    .line 358
+    .line 342
     .local v2, hiddenPreferences:Landroid/content/SharedPreferences$Editor;
     iget-object v5, p0, Lcom/android/gallery3d/data/LocalAlbum;->mBucketPath:Ljava/lang/String;
 
@@ -1467,19 +1395,19 @@
 
     invoke-interface {v2, v5, v6}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 359
+    .line 343
     invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->commit()Z
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_0
 
-    .line 361
+    .line 345
     .end local v2           #hiddenPreferences:Landroid/content/SharedPreferences$Editor;
     :catch_0
     move-exception v0
 
-    .line 362
+    .line 346
     .local v0, e:Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
@@ -1542,17 +1470,17 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 372
+    .line 356
     invoke-static {}, Lcom/android/gallery3d/util/GalleryUtils;->assertNotInRenderThread()V
 
-    .line 374
+    .line 358
     const-string v4, "external"
 
     invoke-static {v4}, Landroid/provider/MediaStore$Files;->getContentUri(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v3
 
-    .line 375
+    .line 359
     .local v3, uri:Landroid/net/Uri;
     iget-object v4, p0, Lcom/android/gallery3d/data/LocalAlbum;->mResolver:Landroid/content/ContentResolver;
 
@@ -1570,7 +1498,7 @@
 
     invoke-virtual {v4, v3, v5, v6}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 377
+    .line 361
     new-instance v1, Ljava/io/File;
 
     iget-object v4, p0, Lcom/android/gallery3d/data/MediaSet;->mBucketPath:Ljava/lang/String;
@@ -1579,7 +1507,7 @@
 
     invoke-direct {v1, v4, v5}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 379
+    .line 363
     .local v1, hiddenFile:Ljava/io/File;
     :try_start_0
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
@@ -1588,12 +1516,12 @@
 
     if-eqz v4, :cond_1
 
-    .line 380
+    .line 364
     invoke-virtual {v1}, Ljava/io/File;->delete()Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 390
+    .line 374
     :cond_0
     :goto_0
     iget-object v4, p0, Lcom/android/gallery3d/data/LocalAlbum;->mApplication:Lcom/android/gallery3d/app/GalleryApp;
@@ -1606,7 +1534,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/gallery3d/data/DataManager;->notifyChange(Landroid/net/Uri;)V
 
-    .line 391
+    .line 375
     iget-object v4, p0, Lcom/android/gallery3d/data/LocalAlbum;->mApplication:Lcom/android/gallery3d/app/GalleryApp;
 
     invoke-interface {v4}, Lcom/android/gallery3d/app/GalleryApp;->getDataManager()Lcom/android/gallery3d/data/DataManager;
@@ -1615,10 +1543,10 @@
 
     invoke-virtual {v4}, Lcom/android/gallery3d/data/DataManager;->broadcastLocalDeletion()V
 
-    .line 392
+    .line 376
     return-void
 
-    .line 381
+    .line 365
     :cond_1
     :try_start_1
     iget-object v4, p0, Lcom/android/gallery3d/data/LocalAlbum;->mBucketPath:Ljava/lang/String;
@@ -1641,7 +1569,7 @@
 
     if-nez v4, :cond_0
 
-    .line 382
+    .line 366
     iget-object v4, p0, Lcom/android/gallery3d/data/LocalAlbum;->mApplication:Lcom/android/gallery3d/app/GalleryApp;
 
     invoke-interface {v4}, Lcom/android/gallery3d/app/GalleryApp;->getAndroidContext()Landroid/content/Context;
@@ -1660,7 +1588,7 @@
 
     move-result-object v2
 
-    .line 384
+    .line 368
     .local v2, hiddenPreferences:Landroid/content/SharedPreferences$Editor;
     iget-object v4, p0, Lcom/android/gallery3d/data/LocalAlbum;->mBucketPath:Ljava/lang/String;
 
@@ -1668,19 +1596,19 @@
 
     invoke-interface {v2, v4, v5}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 385
+    .line 369
     invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->commit()Z
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_0
 
-    .line 387
+    .line 371
     .end local v2           #hiddenPreferences:Landroid/content/SharedPreferences$Editor;
     :catch_0
     move-exception v0
 
-    .line 388
+    .line 372
     .local v0, e:Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 

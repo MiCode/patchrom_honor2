@@ -26,22 +26,27 @@
     .parameter "maxLines"
 
     .prologue
+    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 37
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v0, p0, Landroid/util/LocalLog;->mLog:Ljava/util/LinkedList;
 
+    .line 38
     iput p1, p0, Landroid/util/LocalLog;->mMaxLines:I
 
+    .line 39
     new-instance v0, Landroid/text/format/Time;
 
     invoke-direct {v0}, Landroid/text/format/Time;-><init>()V
 
     iput-object v0, p0, Landroid/util/LocalLog;->mNow:Landroid/text/format/Time;
 
+    .line 40
     return-void
 .end method
 
@@ -54,6 +59,7 @@
     .parameter "args"
 
     .prologue
+    .line 51
     monitor-enter p0
 
     :try_start_0
@@ -65,6 +71,7 @@
 
     move-result-object v0
 
+    .line 52
     .local v0, itr:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/lang/String;>;"
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -73,6 +80,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 53
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
@@ -85,6 +93,7 @@
 
     goto :goto_0
 
+    .line 51
     .end local v0           #itr:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/lang/String;>;"
     :catchall_0
     move-exception v1
@@ -93,6 +102,7 @@
 
     throw v1
 
+    .line 55
     .restart local v0       #itr:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/lang/String;>;"
     :cond_0
     monitor-exit p0
@@ -105,6 +115,7 @@
     .parameter "msg"
 
     .prologue
+    .line 43
     monitor-enter p0
 
     :try_start_0
@@ -112,10 +123,12 @@
 
     if-lez v0, :cond_0
 
+    .line 44
     iget-object v0, p0, Landroid/util/LocalLog;->mNow:Landroid/text/format/Time;
 
     invoke-virtual {v0}, Landroid/text/format/Time;->setToNow()V
 
+    .line 45
     iget-object v0, p0, Landroid/util/LocalLog;->mLog:Ljava/util/LinkedList;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -150,6 +163,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
+    .line 46
     :goto_0
     iget-object v0, p0, Landroid/util/LocalLog;->mLog:Ljava/util/LinkedList;
 
@@ -169,6 +183,7 @@
 
     goto :goto_0
 
+    .line 43
     :catchall_0
     move-exception v0
 
@@ -176,6 +191,7 @@
 
     throw v0
 
+    .line 48
     :cond_0
     monitor-exit p0
 

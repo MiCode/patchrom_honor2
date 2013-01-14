@@ -37,6 +37,7 @@
     .parameter
 
     .prologue
+    .line 1883
     iput-object p1, p0, Landroid/webkit/WebViewClassic$1;->this$0:Landroid/webkit/WebViewClassic;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -51,6 +52,7 @@
     .parameter "x0"
 
     .prologue
+    .line 1883
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -77,10 +79,12 @@
     .end annotation
 
     .prologue
+    .line 1887
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
+    .line 1888
     .local v1, installedPackages:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
     iget-object v4, p0, Landroid/webkit/WebViewClassic$1;->this$0:Landroid/webkit/WebViewClassic;
 
@@ -93,6 +97,7 @@
 
     move-result-object v3
 
+    .line 1889
     .local v3, pm:Landroid/content/pm/PackageManager;
     invoke-static {}, Landroid/webkit/WebViewClassic;->access$1500()Ljava/util/Set;
 
@@ -116,23 +121,27 @@
 
     check-cast v2, Ljava/lang/String;
 
+    .line 1891
     .local v2, name:Ljava/lang/String;
     const/4 v4, 0x5
 
     :try_start_0
     invoke-virtual {v3, v2, v4}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
 
+    .line 1893
     invoke-interface {v1, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
+    .line 1894
     :catch_0
     move-exception v4
 
     goto :goto_0
 
+    .line 1898
     .end local v2           #name:Ljava/lang/String;
     :cond_0
     return-object v1
@@ -143,6 +152,7 @@
     .parameter "x0"
 
     .prologue
+    .line 1883
     check-cast p1, Ljava/util/Set;
 
     .end local p1
@@ -165,6 +175,7 @@
     .end annotation
 
     .prologue
+    .line 1904
     .local p1, installedPackages:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
     iget-object v0, p0, Landroid/webkit/WebViewClassic$1;->this$0:Landroid/webkit/WebViewClassic;
 
@@ -175,6 +186,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 1905
     iget-object v0, p0, Landroid/webkit/WebViewClassic$1;->this$0:Landroid/webkit/WebViewClassic;
 
     #getter for: Landroid/webkit/WebViewClassic;->mWebViewCore:Landroid/webkit/WebViewCore;
@@ -186,6 +198,7 @@
 
     invoke-virtual {v0, v1, p1}, Landroid/webkit/WebViewCore;->sendMessage(ILjava/lang/Object;)V
 
+    .line 1907
     :cond_0
     return-void
 .end method

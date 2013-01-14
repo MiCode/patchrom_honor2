@@ -85,6 +85,7 @@
     .locals 2
 
     .prologue
+    .line 125
     const/16 v0, 0x10
 
     new-array v0, v0, [F
@@ -93,6 +94,7 @@
 
     sput-object v0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mSourceCoords:[F
 
+    .line 142
     const-string v0, "SurfaceTextureSource"
 
     const/4 v1, 0x2
@@ -105,6 +107,7 @@
 
     return-void
 
+    .line 125
     nop
 
     :array_0
@@ -135,44 +138,54 @@
     .prologue
     const/16 v1, 0x10
 
+    .line 145
     invoke-direct {p0, p1}, Landroid/filterfw/core/Filter;-><init>(Ljava/lang/String;)V
 
+    .line 98
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mWaitForNewFrame:Z
 
+    .line 104
     const/16 v0, 0x3e8
 
     iput v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mWaitTimeout:I
 
+    .line 110
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mCloseOnTimeout:Z
 
+    .line 130
     const-string v0, "#extension GL_OES_EGL_image_external : require\nprecision mediump float;\nuniform samplerExternalOES tex_sampler_0;\nvarying vec2 v_texcoord;\nvoid main() {\n  gl_FragColor = texture2D(tex_sampler_0, v_texcoord);\n}\n"
 
     iput-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mRenderShader:Ljava/lang/String;
 
+    .line 258
     new-instance v0, Landroid/filterpacks/videosrc/SurfaceTextureSource$1;
 
     invoke-direct {v0, p0}, Landroid/filterpacks/videosrc/SurfaceTextureSource$1;-><init>(Landroid/filterpacks/videosrc/SurfaceTextureSource;)V
 
     iput-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->onFrameAvailableListener:Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;
 
+    .line 146
     new-instance v0, Landroid/os/ConditionVariable;
 
     invoke-direct {v0}, Landroid/os/ConditionVariable;-><init>()V
 
     iput-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mNewFrameAvailable:Landroid/os/ConditionVariable;
 
+    .line 147
     new-array v0, v1, [F
 
     iput-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mFrameTransform:[F
 
+    .line 148
     new-array v0, v1, [F
 
     iput-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mMappedCoords:[F
 
+    .line 149
     return-void
 .end method
 
@@ -180,6 +193,7 @@
     .locals 1
 
     .prologue
+    .line 62
     sget-boolean v0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mLogVerbose:Z
 
     return v0
@@ -190,6 +204,7 @@
     .parameter "x0"
 
     .prologue
+    .line 62
     iget-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mNewFrameAvailable:Landroid/os/ConditionVariable;
 
     return-object v0
@@ -201,6 +216,7 @@
     .prologue
     const/4 v2, 0x3
 
+    .line 159
     iget v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mWidth:I
 
     iget v1, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mHeight:I
@@ -211,6 +227,7 @@
 
     iput-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mOutputFormat:Landroid/filterfw/core/MutableFrameFormat;
 
+    .line 162
     return-void
 .end method
 
@@ -223,6 +240,7 @@
     .prologue
     const/4 v2, 0x0
 
+    .line 238
     sget-boolean v0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mLogVerbose:Z
 
     if-eqz v0, :cond_0
@@ -233,17 +251,21 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 239
     :cond_0
     iget-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mSourceListener:Landroid/filterpacks/videosrc/SurfaceTextureSource$SurfaceTextureSourceListener;
 
     invoke-interface {v0, v2}, Landroid/filterpacks/videosrc/SurfaceTextureSource$SurfaceTextureSourceListener;->onSurfaceTextureSourceReady(Landroid/graphics/SurfaceTexture;)V
 
+    .line 240
     iget-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     invoke-virtual {v0}, Landroid/graphics/SurfaceTexture;->release()V
 
+    .line 241
     iput-object v2, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
+    .line 242
     return-void
 .end method
 
@@ -253,7 +275,8 @@
     .parameter "context"
 
     .prologue
-    const-string v0, "width"
+    .line 253
+    const-string/jumbo v0, "width"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -269,6 +292,7 @@
 
     if-eqz v0, :cond_1
 
+    .line 254
     :cond_0
     iget-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mOutputFormat:Landroid/filterfw/core/MutableFrameFormat;
 
@@ -278,6 +302,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/filterfw/core/MutableFrameFormat;->setDimensions(II)V
 
+    .line 256
     :cond_1
     return-void
 .end method
@@ -287,6 +312,7 @@
     .parameter "context"
 
     .prologue
+    .line 181
     sget-boolean v0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mLogVerbose:Z
 
     if-eqz v0, :cond_0
@@ -297,6 +323,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 183
     :cond_0
     new-instance v0, Landroid/graphics/SurfaceTexture;
 
@@ -310,22 +337,26 @@
 
     iput-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
+    .line 185
     iget-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     iget-object v1, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->onFrameAvailableListener:Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;
 
     invoke-virtual {v0, v1}, Landroid/graphics/SurfaceTexture;->setOnFrameAvailableListener(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V
 
+    .line 187
     iget-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mSourceListener:Landroid/filterpacks/videosrc/SurfaceTextureSource$SurfaceTextureSourceListener;
 
     iget-object v1, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     invoke-interface {v0, v1}, Landroid/filterpacks/videosrc/SurfaceTextureSource$SurfaceTextureSourceListener;->onSurfaceTextureSourceReady(Landroid/graphics/SurfaceTexture;)V
 
+    .line 188
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mFirstFrame:Z
 
+    .line 189
     return-void
 .end method
 
@@ -334,6 +365,7 @@
     .parameter "context"
 
     .prologue
+    .line 166
     sget-boolean v0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mLogVerbose:Z
 
     if-eqz v0, :cond_0
@@ -344,9 +376,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 168
     :cond_0
     invoke-direct {p0}, Landroid/filterpacks/videosrc/SurfaceTextureSource;->createFormats()V
 
+    .line 171
     invoke-virtual {p1}, Landroid/filterfw/core/FilterContext;->getFrameManager()Landroid/filterfw/core/FrameManager;
 
     move-result-object v0
@@ -365,6 +399,7 @@
 
     iput-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mMediaFrame:Landroid/filterfw/core/GLFrame;
 
+    .line 176
     new-instance v0, Landroid/filterfw/core/ShaderProgram;
 
     const-string v1, "#extension GL_OES_EGL_image_external : require\nprecision mediump float;\nuniform samplerExternalOES tex_sampler_0;\nvarying vec2 v_texcoord;\nvoid main() {\n  gl_FragColor = texture2D(tex_sampler_0, v_texcoord);\n}\n"
@@ -373,6 +408,7 @@
 
     iput-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mFrameExtractor:Landroid/filterfw/core/ShaderProgram;
 
+    .line 177
     return-void
 .end method
 
@@ -383,6 +419,7 @@
     .prologue
     const/4 v1, 0x0
 
+    .line 193
     sget-boolean v0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mLogVerbose:Z
 
     if-eqz v0, :cond_0
@@ -393,6 +430,7 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 196
     :cond_0
     iget-boolean v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mWaitForNewFrame:Z
 
@@ -402,11 +440,13 @@
 
     if-eqz v0, :cond_6
 
+    .line 198
     :cond_1
     iget v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mWaitTimeout:I
 
     if-eqz v0, :cond_4
 
+    .line 199
     iget-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mNewFrameAvailable:Landroid/os/ConditionVariable;
 
     iget v2, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mWaitTimeout:I
@@ -417,13 +457,16 @@
 
     move-result v9
 
+    .line 200
     .local v9, gotNewFrame:Z
     if-nez v9, :cond_5
 
+    .line 201
     iget-boolean v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mCloseOnTimeout:Z
 
     if-nez v0, :cond_2
 
+    .line 202
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Timeout waiting for new frame"
@@ -432,6 +475,7 @@
 
     throw v0
 
+    .line 204
     :cond_2
     sget-boolean v0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mLogVerbose:Z
 
@@ -443,38 +487,46 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 205
     :cond_3
-    const-string v0, "video"
+    const-string/jumbo v0, "video"
 
     invoke-virtual {p0, v0}, Landroid/filterpacks/videosrc/SurfaceTextureSource;->closeOutputPort(Ljava/lang/String;)V
 
+    .line 234
     .end local v9           #gotNewFrame:Z
     :goto_0
     return-void
 
+    .line 210
     :cond_4
     iget-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mNewFrameAvailable:Landroid/os/ConditionVariable;
 
     invoke-virtual {v0}, Landroid/os/ConditionVariable;->block()V
 
+    .line 212
     :cond_5
     iget-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mNewFrameAvailable:Landroid/os/ConditionVariable;
 
     invoke-virtual {v0}, Landroid/os/ConditionVariable;->close()V
 
+    .line 213
     iput-boolean v1, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mFirstFrame:Z
 
+    .line 216
     :cond_6
     iget-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     invoke-virtual {v0}, Landroid/graphics/SurfaceTexture;->updateTexImage()V
 
+    .line 218
     iget-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     iget-object v2, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mFrameTransform:[F
 
     invoke-virtual {v0, v2}, Landroid/graphics/SurfaceTexture;->getTransformMatrix([F)V
 
+    .line 219
     iget-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mMappedCoords:[F
 
     iget-object v2, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mFrameTransform:[F
@@ -487,6 +539,7 @@
 
     invoke-static/range {v0 .. v5}, Landroid/opengl/Matrix;->multiplyMM([FI[FI[FI)V
 
+    .line 222
     iget-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mFrameExtractor:Landroid/filterfw/core/ShaderProgram;
 
     iget-object v2, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mMappedCoords:[F
@@ -537,6 +590,7 @@
 
     invoke-virtual/range {v0 .. v8}, Landroid/filterfw/core/ShaderProgram;->setSourceRegion(FFFFFFFF)Z
 
+    .line 227
     invoke-virtual {p1}, Landroid/filterfw/core/FilterContext;->getFrameManager()Landroid/filterfw/core/FrameManager;
 
     move-result-object v0
@@ -547,6 +601,7 @@
 
     move-result-object v10
 
+    .line 228
     .local v10, output:Landroid/filterfw/core/Frame;
     iget-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mFrameExtractor:Landroid/filterfw/core/ShaderProgram;
 
@@ -554,6 +609,7 @@
 
     invoke-virtual {v0, v1, v10}, Landroid/filterfw/core/ShaderProgram;->process(Landroid/filterfw/core/Frame;Landroid/filterfw/core/Frame;)V
 
+    .line 230
     iget-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     invoke-virtual {v0}, Landroid/graphics/SurfaceTexture;->getTimestamp()J
@@ -562,10 +618,12 @@
 
     invoke-virtual {v10, v0, v1}, Landroid/filterfw/core/Frame;->setTimestamp(J)V
 
-    const-string v0, "video"
+    .line 232
+    const-string/jumbo v0, "video"
 
     invoke-virtual {p0, v0, v10}, Landroid/filterpacks/videosrc/SurfaceTextureSource;->pushOutput(Ljava/lang/String;Landroid/filterfw/core/Frame;)V
 
+    .line 233
     invoke-virtual {v10}, Landroid/filterfw/core/Frame;->release()Landroid/filterfw/core/Frame;
 
     goto :goto_0
@@ -577,7 +635,8 @@
     .prologue
     const/4 v1, 0x3
 
-    const-string v0, "video"
+    .line 154
+    const-string/jumbo v0, "video"
 
     invoke-static {v1, v1}, Landroid/filterfw/format/ImageFormat;->create(II)Landroid/filterfw/core/MutableFrameFormat;
 
@@ -585,6 +644,7 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/filterpacks/videosrc/SurfaceTextureSource;->addOutputPort(Ljava/lang/String;Landroid/filterfw/core/FrameFormat;)V
 
+    .line 156
     return-void
 .end method
 
@@ -593,14 +653,17 @@
     .parameter "context"
 
     .prologue
+    .line 246
     iget-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mMediaFrame:Landroid/filterfw/core/GLFrame;
 
     if-eqz v0, :cond_0
 
+    .line 247
     iget-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource;->mMediaFrame:Landroid/filterfw/core/GLFrame;
 
     invoke-virtual {v0}, Landroid/filterfw/core/GLFrame;->release()Landroid/filterfw/core/Frame;
 
+    .line 249
     :cond_0
     return-void
 .end method

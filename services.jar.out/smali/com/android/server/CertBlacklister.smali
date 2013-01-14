@@ -30,6 +30,7 @@
     .locals 2
 
     .prologue
+    .line 41
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -56,6 +57,7 @@
 
     sput-object v0, Lcom/android/server/CertBlacklister;->BLACKLIST_ROOT:Ljava/lang/String;
 
+    .line 43
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -78,6 +80,7 @@
 
     sput-object v0, Lcom/android/server/CertBlacklister;->PUBKEY_PATH:Ljava/lang/String;
 
+    .line 44
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -108,14 +111,17 @@
     .parameter "context"
 
     .prologue
+    .line 109
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
+    .line 110
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/android/server/CertBlacklister;->registerObservers(Landroid/content/ContentResolver;)V
 
+    .line 111
     return-void
 .end method
 
@@ -124,6 +130,7 @@
     .parameter "cr"
 
     .prologue
+    .line 114
     new-instance v0, Lcom/android/server/CertBlacklister$BlacklistObserver;
 
     const-string v1, "pubkey_blacklist"
@@ -142,6 +149,7 @@
     .parameter "cr"
 
     .prologue
+    .line 121
     new-instance v0, Lcom/android/server/CertBlacklister$BlacklistObserver;
 
     const-string v1, "serial_blacklist"
@@ -162,6 +170,7 @@
     .prologue
     const/4 v2, 0x1
 
+    .line 129
     const-string v0, "pubkey_blacklist"
 
     invoke-static {v0}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -174,6 +183,7 @@
 
     invoke-virtual {p1, v0, v2, v1}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
+    .line 136
     const-string v0, "serial_blacklist"
 
     invoke-static {v0}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -186,5 +196,6 @@
 
     invoke-virtual {p1, v0, v2, v1}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
+    .line 141
     return-void
 .end method

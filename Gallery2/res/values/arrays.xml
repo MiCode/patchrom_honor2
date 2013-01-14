@@ -55,7 +55,7 @@
         <item>@string/pref_camera_videosize_entry_320x240</item>
         <item>@string/pref_camera_videosize_entry_176x144</item>
     </array>
-    <string-array name="pref_video_quality_entryvalues">
+    <array name="pref_video_quality_entryvalues">
         <item>6</item>
         <item>@string/pref_video_quality_default</item>
         <item>100</item>
@@ -64,7 +64,7 @@
         <item>4</item>
         <item>7</item>
         <item>2</item>
-    </string-array>
+    </array>
     <array name="video_quality_largeicons">
         <item>@drawable/ic_btn_resolution_1920x1080</item>
         <item>@drawable/ic_btn_resolution_1280x720</item>

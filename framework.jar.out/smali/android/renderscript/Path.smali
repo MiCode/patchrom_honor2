@@ -34,16 +34,22 @@
     .parameter "q"
 
     .prologue
+    .line 45
     invoke-direct {p0, p1, p2}, Landroid/renderscript/BaseObj;-><init>(ILandroid/renderscript/RenderScript;)V
 
+    .line 46
     iput-object p4, p0, Landroid/renderscript/Path;->mVertexBuffer:Landroid/renderscript/Allocation;
 
+    .line 47
     iput-object p5, p0, Landroid/renderscript/Path;->mLoopBuffer:Landroid/renderscript/Allocation;
 
+    .line 48
     iput-object p3, p0, Landroid/renderscript/Path;->mPrimitive:Landroid/renderscript/Path$Primitive;
 
+    .line 49
     iput p6, p0, Landroid/renderscript/Path;->mQuality:F
 
+    .line 50
     return-void
 .end method
 
@@ -55,6 +61,7 @@
     .parameter "vtx"
 
     .prologue
+    .line 80
     const/4 v0, 0x0
 
     return-object v0
@@ -69,6 +76,7 @@
     .parameter "loops"
 
     .prologue
+    .line 84
     const/4 v0, 0x0
 
     return-object v0
@@ -86,6 +94,7 @@
 
     const/4 v2, 0x0
 
+    .line 70
     iget v1, p1, Landroid/renderscript/Path$Primitive;->mID:I
 
     invoke-virtual {p3, p0}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
@@ -102,6 +111,7 @@
 
     move-result v1
 
+    .line 71
     .local v1, id:I
     new-instance v0, Landroid/renderscript/Path;
 
@@ -117,6 +127,7 @@
 
     invoke-direct/range {v0 .. v6}, Landroid/renderscript/Path;-><init>(ILandroid/renderscript/RenderScript;Landroid/renderscript/Path$Primitive;Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;F)V
 
+    .line 72
     .local v0, newPath:Landroid/renderscript/Path;
     return-object v0
 .end method
@@ -130,6 +141,7 @@
     .parameter "loops"
 
     .prologue
+    .line 76
     const/4 v0, 0x0
 
     return-object v0
@@ -141,6 +153,7 @@
     .locals 1
 
     .prologue
+    .line 57
     iget-object v0, p0, Landroid/renderscript/Path;->mLoopBuffer:Landroid/renderscript/Allocation;
 
     return-object v0
@@ -150,6 +163,7 @@
     .locals 1
 
     .prologue
+    .line 61
     iget-object v0, p0, Landroid/renderscript/Path;->mPrimitive:Landroid/renderscript/Path$Primitive;
 
     return-object v0
@@ -159,6 +173,7 @@
     .locals 1
 
     .prologue
+    .line 53
     iget-object v0, p0, Landroid/renderscript/Path;->mVertexBuffer:Landroid/renderscript/Allocation;
 
     return-object v0
@@ -168,5 +183,6 @@
     .locals 0
 
     .prologue
+    .line 66
     return-void
 .end method

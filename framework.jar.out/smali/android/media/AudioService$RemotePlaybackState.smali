@@ -35,20 +35,26 @@
     .parameter "volMax"
 
     .prologue
+    .line 4339
     iput-object p1, p0, Landroid/media/AudioService$RemotePlaybackState;->this$0:Landroid/media/AudioService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 4340
     iput p2, p0, Landroid/media/AudioService$RemotePlaybackState;->mRccId:I
 
+    .line 4341
     iput p3, p0, Landroid/media/AudioService$RemotePlaybackState;->mVolume:I
 
+    .line 4342
     iput p4, p0, Landroid/media/AudioService$RemotePlaybackState;->mVolumeMax:I
 
+    .line 4343
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/media/AudioService$RemotePlaybackState;->mVolumeHandling:I
 
+    .line 4344
     return-void
 .end method
 
@@ -61,6 +67,7 @@
     .parameter "x4"
 
     .prologue
+    .line 4333
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/media/AudioService$RemotePlaybackState;-><init>(Landroid/media/AudioService;III)V
 
     return-void

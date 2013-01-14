@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest android:sharedUserId="android.uid.system" android:versionCode="16" android:versionName="4.1.2-eng.skf64498.20121120.172936" android:sharedUserLabel="@string/android_system_label" package="android" coreApp="true"
+<manifest android:sharedUserId="android.uid.system" android:versionCode="16" android:versionName="4.1.2-eng.skf64498.20121227.220422" android:sharedUserLabel="@string/android_system_label" package="android" coreApp="true"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="16" />
     <eat-comment />
@@ -294,7 +294,7 @@
     <uses-permission android:name="android.intent.category.MASTER_CLEAR.permission.C2D_MESSAGE" />
     <permission android:label="@string/permlab_packageVerificationAgent" android:name="android.permission.PACKAGE_VERIFICATION_AGENT" android:protectionLevel="system|signature" android:description="@string/permdesc_packageVerificationAgent" />
     <permission android:label="@string/permlab_bindPackageVerifier" android:name="android.permission.BIND_PACKAGE_VERIFIER" android:protectionLevel="signature" android:description="@string/permdesc_bindPackageVerifier" />
-    <permission android:label="@string/permlab_serialPort" android:name="android.permission.SERIAL_PORT" android:protectionLevel="normal" android:description="@string/permdesc_serialPort" />
+    <permission android:label="@string/permlab_serialPort" android:name="android.permission.SERIAL_PORT" android:protectionLevel="system|signature" android:description="@string/permdesc_serialPort" />
     <permission android:label="@string/permlab_accessContentProvidersExternally" android:name="android.permission.ACCESS_CONTENT_PROVIDERS_EXTERNALLY" android:protectionLevel="signature" android:description="@string/permdesc_accessContentProvidersExternally" />
     <permission android:label="@string/permlab_updateLock" android:name="android.permission.UPDATE_LOCK" android:protectionLevel="signatureOrSystem" android:description="@string/permdesc_updateLock" />
     <permission android:label="@string/permlab_fm_receiver" android:name="android.permission.ACCESS_FM_RECEIVER" android:protectionLevel="normal" android:permissionGroup="android.permission-group.NETWORK" android:description="@string/permdesc_fm_receiver" />

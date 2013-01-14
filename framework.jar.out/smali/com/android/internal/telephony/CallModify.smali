@@ -14,18 +14,22 @@
     .locals 1
 
     .prologue
+    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 37
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/telephony/CallModify;->call_index:I
 
+    .line 38
     new-instance v0, Lcom/android/internal/telephony/CallDetails;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/CallDetails;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/CallModify;->call_details:Lcom/android/internal/telephony/CallDetails;
 
+    .line 39
     return-void
 .end method
 
@@ -36,12 +40,14 @@
     .parameter "calldetails"
 
     .prologue
+    .line 42
     new-instance v0, Lcom/android/internal/telephony/CallDetails;
 
     invoke-direct {v0, p1}, Lcom/android/internal/telephony/CallDetails;-><init>(Lcom/android/internal/telephony/CallDetails;)V
 
     iput-object v0, p0, Lcom/android/internal/telephony/CallModify;->call_details:Lcom/android/internal/telephony/CallDetails;
 
+    .line 43
     return-void
 .end method
 
@@ -49,6 +55,7 @@
     .locals 2
 
     .prologue
+    .line 50
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

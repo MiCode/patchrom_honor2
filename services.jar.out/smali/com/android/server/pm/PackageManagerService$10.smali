@@ -24,6 +24,7 @@
     .parameter
 
     .prologue
+    .line 8770
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$10;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,21 +40,25 @@
     .parameter "intent"
 
     .prologue
+    .line 8773
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 8774
     .local v0, action:Ljava/lang/String;
     const-string v1, "android.intent.action.UNINSTALL_UPDATE"
 
     if-ne v1, v0, :cond_0
 
+    .line 8775
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$10;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     const/4 v2, 0x1
 
     iput-boolean v2, v1, Lcom/android/server/pm/PackageManagerService;->mUninstallUpdate:Z
 
+    .line 8777
     :cond_0
     return-void
 .end method

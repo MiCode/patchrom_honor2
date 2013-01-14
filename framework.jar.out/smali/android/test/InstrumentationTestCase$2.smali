@@ -39,6 +39,7 @@
     .parameter
 
     .prologue
+    .line 186
     iput-object p1, p0, Landroid/test/InstrumentationTestCase$2;->this$0:Landroid/test/InstrumentationTestCase;
 
     iput-object p2, p0, Landroid/test/InstrumentationTestCase$2;->val$testMethod:Ljava/lang/reflect/Method;
@@ -60,6 +61,7 @@
     .locals 5
 
     .prologue
+    .line 189
     :try_start_0
     iget-object v1, p0, Landroid/test/InstrumentationTestCase$2;->this$0:Landroid/test/InstrumentationTestCase;
 
@@ -74,12 +76,15 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 193
     :goto_0
     return-void
 
+    .line 190
     :catch_0
     move-exception v0
 
+    .line 191
     .local v0, throwable:Ljava/lang/Throwable;
     iget-object v1, p0, Landroid/test/InstrumentationTestCase$2;->val$exceptions:[Ljava/lang/Throwable;
 

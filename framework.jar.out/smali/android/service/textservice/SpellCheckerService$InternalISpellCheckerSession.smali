@@ -33,18 +33,25 @@
     .parameter "session"
 
     .prologue
+    .line 244
     invoke-direct {p0}, Lcom/android/internal/textservice/ISpellCheckerSession$Stub;-><init>()V
 
+    .line 245
     iput-object p2, p0, Landroid/service/textservice/SpellCheckerService$InternalISpellCheckerSession;->mListener:Lcom/android/internal/textservice/ISpellCheckerSessionListener;
 
+    .line 246
     iput-object p4, p0, Landroid/service/textservice/SpellCheckerService$InternalISpellCheckerSession;->mSession:Landroid/service/textservice/SpellCheckerService$Session;
 
+    .line 247
     iput-object p1, p0, Landroid/service/textservice/SpellCheckerService$InternalISpellCheckerSession;->mLocale:Ljava/lang/String;
 
+    .line 248
     iput-object p3, p0, Landroid/service/textservice/SpellCheckerService$InternalISpellCheckerSession;->mBundle:Landroid/os/Bundle;
 
+    .line 249
     invoke-virtual {p4, p0}, Landroid/service/textservice/SpellCheckerService$Session;->setInternalISpellCheckerSession(Landroid/service/textservice/SpellCheckerService$InternalISpellCheckerSession;)V
 
+    .line 250
     return-void
 .end method
 
@@ -54,6 +61,7 @@
     .locals 1
 
     .prologue
+    .line 304
     iget-object v0, p0, Landroid/service/textservice/SpellCheckerService$InternalISpellCheckerSession;->mBundle:Landroid/os/Bundle;
 
     return-object v0
@@ -63,6 +71,7 @@
     .locals 1
 
     .prologue
+    .line 300
     iget-object v0, p0, Landroid/service/textservice/SpellCheckerService$InternalISpellCheckerSession;->mLocale:Ljava/lang/String;
 
     return-object v0
@@ -72,6 +81,7 @@
     .locals 2
 
     .prologue
+    .line 278
     invoke-static {}, Landroid/os/Process;->myTid()I
 
     move-result v1
@@ -80,22 +90,27 @@
 
     move-result v0
 
+    .line 280
     .local v0, pri:I
     const/16 v1, 0xa
 
     :try_start_0
     invoke-static {v1}, Landroid/os/Process;->setThreadPriority(I)V
 
+    .line 281
     iget-object v1, p0, Landroid/service/textservice/SpellCheckerService$InternalISpellCheckerSession;->mSession:Landroid/service/textservice/SpellCheckerService$Session;
 
     invoke-virtual {v1}, Landroid/service/textservice/SpellCheckerService$Session;->onCancel()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 283
     invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
 
+    .line 285
     return-void
 
+    .line 283
     :catchall_0
     move-exception v1
 
@@ -110,6 +125,7 @@
     .prologue
     const/4 v2, 0x0
 
+    .line 289
     invoke-static {}, Landroid/os/Process;->myTid()I
 
     move-result v1
@@ -118,31 +134,39 @@
 
     move-result v0
 
+    .line 291
     .local v0, pri:I
     const/16 v1, 0xa
 
     :try_start_0
     invoke-static {v1}, Landroid/os/Process;->setThreadPriority(I)V
 
+    .line 292
     iget-object v1, p0, Landroid/service/textservice/SpellCheckerService$InternalISpellCheckerSession;->mSession:Landroid/service/textservice/SpellCheckerService$Session;
 
     invoke-virtual {v1}, Landroid/service/textservice/SpellCheckerService$Session;->onClose()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 294
     invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
 
+    .line 295
     iput-object v2, p0, Landroid/service/textservice/SpellCheckerService$InternalISpellCheckerSession;->mListener:Lcom/android/internal/textservice/ISpellCheckerSessionListener;
 
+    .line 297
     return-void
 
+    .line 294
     :catchall_0
     move-exception v1
 
     invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
 
+    .line 295
     iput-object v2, p0, Landroid/service/textservice/SpellCheckerService$InternalISpellCheckerSession;->mListener:Lcom/android/internal/textservice/ISpellCheckerSessionListener;
 
+    .line 294
     throw v1
 .end method
 
@@ -152,6 +176,7 @@
     .parameter "suggestionsLimit"
 
     .prologue
+    .line 270
     :try_start_0
     iget-object v0, p0, Landroid/service/textservice/SpellCheckerService$InternalISpellCheckerSession;->mListener:Lcom/android/internal/textservice/ISpellCheckerSessionListener;
 
@@ -165,9 +190,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 274
     :goto_0
     return-void
 
+    .line 272
     :catch_0
     move-exception v0
 
@@ -181,6 +208,7 @@
     .parameter "sequentialWords"
 
     .prologue
+    .line 255
     invoke-static {}, Landroid/os/Process;->myTid()I
 
     move-result v1
@@ -189,12 +217,14 @@
 
     move-result v0
 
+    .line 257
     .local v0, pri:I
     const/16 v1, 0xa
 
     :try_start_0
     invoke-static {v1}, Landroid/os/Process;->setThreadPriority(I)V
 
+    .line 258
     iget-object v1, p0, Landroid/service/textservice/SpellCheckerService$InternalISpellCheckerSession;->mListener:Lcom/android/internal/textservice/ISpellCheckerSessionListener;
 
     iget-object v2, p0, Landroid/service/textservice/SpellCheckerService$InternalISpellCheckerSession;->mSession:Landroid/service/textservice/SpellCheckerService$Session;
@@ -208,11 +238,14 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 263
     :goto_0
     invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
 
+    .line 265
     return-void
 
+    .line 263
     :catchall_0
     move-exception v1
 
@@ -220,6 +253,7 @@
 
     throw v1
 
+    .line 261
     :catch_0
     move-exception v1
 

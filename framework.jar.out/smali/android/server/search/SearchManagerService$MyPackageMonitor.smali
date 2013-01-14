@@ -24,6 +24,7 @@
     .parameter
 
     .prologue
+    .line 99
     iput-object p1, p0, Landroid/server/search/SearchManagerService$MyPackageMonitor;->this$0:Landroid/server/search/SearchManagerService;
 
     invoke-direct {p0}, Lcom/android/internal/content/PackageMonitor;-><init>()V
@@ -35,6 +36,7 @@
     .locals 2
 
     .prologue
+    .line 113
     iget-object v1, p0, Landroid/server/search/SearchManagerService$MyPackageMonitor;->this$0:Landroid/server/search/SearchManagerService;
 
     #calls: Landroid/server/search/SearchManagerService;->getSearchables()Landroid/server/search/Searchables;
@@ -44,17 +46,20 @@
 
     invoke-virtual {v1}, Landroid/server/search/Searchables;->buildSearchableList()V
 
+    .line 115
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.search.action.SEARCHABLES_CHANGED"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
+    .line 116
     .local v0, intent:Landroid/content/Intent;
     const/high16 v1, 0x2000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
+    .line 117
     iget-object v1, p0, Landroid/server/search/SearchManagerService$MyPackageMonitor;->this$0:Landroid/server/search/SearchManagerService;
 
     #getter for: Landroid/server/search/SearchManagerService;->mContext:Landroid/content/Context;
@@ -64,6 +69,7 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
+    .line 118
     return-void
 .end method
 
@@ -74,8 +80,10 @@
     .parameter "pkg"
 
     .prologue
+    .line 108
     invoke-direct {p0}, Landroid/server/search/SearchManagerService$MyPackageMonitor;->updateSearchables()V
 
+    .line 109
     return-void
 .end method
 
@@ -83,7 +91,9 @@
     .locals 0
 
     .prologue
+    .line 103
     invoke-direct {p0}, Landroid/server/search/SearchManagerService$MyPackageMonitor;->updateSearchables()V
 
+    .line 104
     return-void
 .end method

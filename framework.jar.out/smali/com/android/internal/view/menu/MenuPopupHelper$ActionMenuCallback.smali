@@ -27,6 +27,7 @@
     .parameter
 
     .prologue
+    .line 396
     iput-object p1, p0, Lcom/android/internal/view/menu/MenuPopupHelper$ActionMenuCallback;->this$0:Lcom/android/internal/view/menu/MenuPopupHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,6 +41,7 @@
     .parameter "x1"
 
     .prologue
+    .line 396
     invoke-direct {p0, p1}, Lcom/android/internal/view/menu/MenuPopupHelper$ActionMenuCallback;-><init>(Lcom/android/internal/view/menu/MenuPopupHelper;)V
 
     return-void
@@ -64,6 +66,7 @@
     .end annotation
 
     .prologue
+    .line 398
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     invoke-virtual {p1}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
 
@@ -71,28 +74,34 @@
 
     check-cast v6, Lcom/android/internal/view/menu/MenuPopupHelper$ActionMenuAdapter;
 
+    .line 399
     .local v6, adapter:Lcom/android/internal/view/menu/MenuPopupHelper$ActionMenuAdapter;
     invoke-virtual {v6, p3}, Lcom/android/internal/view/menu/MenuPopupHelper$ActionMenuAdapter;->getItemViewType(I)I
 
     move-result v7
 
+    .line 400
     .local v7, itemViewType:I
     packed-switch v7, :pswitch_data_0
 
+    .line 408
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v0
 
+    .line 402
     :pswitch_0
     const/4 v0, 0x0
 
     invoke-virtual {v6, v0}, Lcom/android/internal/view/menu/MenuPopupHelper$ActionMenuAdapter;->setShowFooterView(Z)V
 
+    .line 410
     :goto_0
     return-void
 
+    .line 405
     :pswitch_1
     iget-object v0, p0, Lcom/android/internal/view/menu/MenuPopupHelper$ActionMenuCallback;->this$0:Lcom/android/internal/view/menu/MenuPopupHelper;
 
@@ -108,6 +117,7 @@
 
     goto :goto_0
 
+    .line 400
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1

@@ -30,6 +30,7 @@
     .locals 1
 
     .prologue
+    .line 88
     new-instance v0, Landroid/accounts/AccountAuthenticatorResponse$1;
 
     invoke-direct {v0}, Landroid/accounts/AccountAuthenticatorResponse$1;-><init>()V
@@ -44,10 +45,13 @@
     .parameter "response"
 
     .prologue
+    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 37
     iput-object p1, p0, Landroid/accounts/AccountAuthenticatorResponse;->mAccountAuthenticatorResponse:Landroid/accounts/IAccountAuthenticatorResponse;
 
+    .line 38
     return-void
 .end method
 
@@ -56,8 +60,10 @@
     .parameter "parcel"
 
     .prologue
+    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 41
     invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v0
@@ -68,6 +74,7 @@
 
     iput-object v0, p0, Landroid/accounts/AccountAuthenticatorResponse;->mAccountAuthenticatorResponse:Landroid/accounts/IAccountAuthenticatorResponse;
 
+    .line 43
     return-void
 .end method
 
@@ -77,6 +84,7 @@
     .locals 1
 
     .prologue
+    .line 81
     const/4 v0, 0x0
 
     return v0
@@ -88,6 +96,7 @@
     .parameter "errorMessage"
 
     .prologue
+    .line 70
     const-string v0, "AccountAuthenticator"
 
     const/4 v1, 0x2
@@ -98,6 +107,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 71
     const-string v0, "AccountAuthenticator"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -130,6 +140,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 74
     :cond_0
     :try_start_0
     iget-object v0, p0, Landroid/accounts/AccountAuthenticatorResponse;->mAccountAuthenticatorResponse:Landroid/accounts/IAccountAuthenticatorResponse;
@@ -138,9 +149,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 78
     :goto_0
     return-void
 
+    .line 75
     :catch_0
     move-exception v0
 
@@ -151,6 +164,7 @@
     .locals 2
 
     .prologue
+    .line 59
     const-string v0, "AccountAuthenticator"
 
     const/4 v1, 0x2
@@ -161,12 +175,14 @@
 
     if-eqz v0, :cond_0
 
+    .line 60
     const-string v0, "AccountAuthenticator"
 
     const-string v1, "AccountAuthenticatorResponse.onRequestContinued"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 63
     :cond_0
     :try_start_0
     iget-object v0, p0, Landroid/accounts/AccountAuthenticatorResponse;->mAccountAuthenticatorResponse:Landroid/accounts/IAccountAuthenticatorResponse;
@@ -175,9 +191,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 67
     :goto_0
     return-void
 
+    .line 64
     :catch_0
     move-exception v0
 
@@ -189,6 +207,7 @@
     .parameter "result"
 
     .prologue
+    .line 46
     const-string v0, "AccountAuthenticator"
 
     const/4 v1, 0x2
@@ -199,8 +218,10 @@
 
     if-eqz v0, :cond_0
 
+    .line 47
     invoke-virtual {p1}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
+    .line 48
     const-string v0, "AccountAuthenticator"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -227,6 +248,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 52
     :cond_0
     :try_start_0
     iget-object v0, p0, Landroid/accounts/AccountAuthenticatorResponse;->mAccountAuthenticatorResponse:Landroid/accounts/IAccountAuthenticatorResponse;
@@ -235,9 +257,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 56
     :goto_0
     return-void
 
+    .line 53
     :catch_0
     move-exception v0
 
@@ -250,6 +274,7 @@
     .parameter "flags"
 
     .prologue
+    .line 85
     iget-object v0, p0, Landroid/accounts/AccountAuthenticatorResponse;->mAccountAuthenticatorResponse:Landroid/accounts/IAccountAuthenticatorResponse;
 
     invoke-interface {v0}, Landroid/accounts/IAccountAuthenticatorResponse;->asBinder()Landroid/os/IBinder;
@@ -258,5 +283,6 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
+    .line 86
     return-void
 .end method

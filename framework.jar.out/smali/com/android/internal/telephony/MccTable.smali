@@ -37,12 +37,14 @@
 
     const/4 v5, 0x2
 
+    .line 318
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v7}, Ljava/util/ArrayList;-><init>(I)V
 
     sput-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
+    .line 336
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -55,20 +57,22 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 337
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0xcc
 
-    const-string v3, "nl"
+    const-string/jumbo v3, "nl"
 
-    const-string v4, "nl"
+    const-string/jumbo v4, "nl"
 
     invoke-direct {v1, v2, v3, v5, v4}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;ILjava/lang/String;)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 338
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -81,6 +85,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 339
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -95,18 +100,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 340
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0xd4
 
-    const-string v3, "mc"
+    const-string/jumbo v3, "mc"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 341
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -119,6 +126,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 342
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -133,6 +141,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 343
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -145,6 +154,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 344
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -157,6 +167,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 345
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -169,18 +180,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 346
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0xdc
 
-    const-string v3, "rs"
+    const-string/jumbo v3, "rs"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 347
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -195,13 +208,14 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 348
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0xe1
 
-    const-string v3, "va"
+    const-string/jumbo v3, "va"
 
     const-string v4, "it"
 
@@ -209,18 +223,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 349
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0xe2
 
-    const-string v3, "ro"
+    const-string/jumbo v3, "ro"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 350
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -235,6 +251,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 351
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -249,18 +266,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 352
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0xe7
 
-    const-string v3, "sk"
+    const-string/jumbo v3, "sk"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 353
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -275,6 +294,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 354
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -289,6 +309,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 355
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -303,6 +324,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 356
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -315,28 +337,31 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 357
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
-    const-string v2, "se"
+    const-string/jumbo v2, "se"
 
     invoke-direct {v1, v7, v2, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 358
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0xf2
 
-    const-string v3, "no"
+    const-string/jumbo v3, "no"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 359
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -349,6 +374,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 360
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -361,6 +387,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 361
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -373,6 +400,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 362
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -385,30 +413,33 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 363
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0xfa
 
-    const-string v3, "ru"
+    const-string/jumbo v3, "ru"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 364
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0xff
 
-    const-string v3, "ua"
+    const-string/jumbo v3, "ua"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 365
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -421,30 +452,33 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 366
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x103
 
-    const-string v3, "md"
+    const-string/jumbo v3, "md"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 367
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x104
 
-    const-string v3, "pl"
+    const-string/jumbo v3, "pl"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 368
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -459,6 +493,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 369
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -471,18 +506,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 370
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x10c
 
-    const-string v3, "pt"
+    const-string/jumbo v3, "pt"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 371
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -495,6 +532,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 372
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -509,6 +547,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 373
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -521,6 +560,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 374
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -533,18 +573,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 375
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x116
 
-    const-string v3, "mt"
+    const-string/jumbo v3, "mt"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 376
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -557,6 +599,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 377
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -569,6 +612,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 378
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -581,6 +625,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 379
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -593,18 +638,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 380
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x11e
 
-    const-string v3, "tr"
+    const-string/jumbo v3, "tr"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 381
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -617,6 +664,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 382
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -629,6 +677,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 383
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -641,42 +690,46 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 384
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x124
 
-    const-string v3, "sm"
+    const-string/jumbo v3, "sm"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 385
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x125
 
-    const-string v3, "si"
+    const-string/jumbo v3, "si"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 386
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x126
 
-    const-string v3, "mk"
+    const-string/jumbo v3, "mk"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 387
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -689,18 +742,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 388
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x129
 
-    const-string v3, "me"
+    const-string/jumbo v3, "me"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 389
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -715,25 +770,27 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 390
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x134
 
-    const-string v3, "pm"
+    const-string/jumbo v3, "pm"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 391
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x136
 
-    const-string v3, "us"
+    const-string/jumbo v3, "us"
 
     const-string v4, "en"
 
@@ -741,13 +798,14 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 392
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x137
 
-    const-string v3, "us"
+    const-string/jumbo v3, "us"
 
     const-string v4, "en"
 
@@ -755,13 +813,14 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 393
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x138
 
-    const-string v3, "us"
+    const-string/jumbo v3, "us"
 
     const-string v4, "en"
 
@@ -769,13 +828,14 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 394
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x139
 
-    const-string v3, "us"
+    const-string/jumbo v3, "us"
 
     const-string v4, "en"
 
@@ -783,13 +843,14 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 395
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x13a
 
-    const-string v3, "us"
+    const-string/jumbo v3, "us"
 
     const-string v4, "en"
 
@@ -797,13 +858,14 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 396
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x13b
 
-    const-string v3, "us"
+    const-string/jumbo v3, "us"
 
     const-string v4, "en"
 
@@ -811,13 +873,14 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 397
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x13c
 
-    const-string v3, "us"
+    const-string/jumbo v3, "us"
 
     const-string v4, "en"
 
@@ -825,42 +888,46 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 398
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x14a
 
-    const-string v3, "pr"
+    const-string/jumbo v3, "pr"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 399
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x14c
 
-    const-string v3, "vi"
+    const-string/jumbo v3, "vi"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 400
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x14e
 
-    const-string v3, "mx"
+    const-string/jumbo v3, "mx"
 
     invoke-direct {v1, v2, v3, v6}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 401
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -873,6 +940,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 402
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -885,6 +953,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 403
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -897,6 +966,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 404
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -909,6 +979,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 405
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -921,18 +992,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 406
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x15c
 
-    const-string v3, "vg"
+    const-string/jumbo v3, "vg"
 
     invoke-direct {v1, v2, v3, v6}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 407
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -945,6 +1018,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 408
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -957,18 +1031,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 409
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x162
 
-    const-string v3, "ms"
+    const-string/jumbo v3, "ms"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 410
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -981,6 +1057,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 411
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -993,30 +1070,33 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 412
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x168
 
-    const-string v3, "vc"
+    const-string/jumbo v3, "vc"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 413
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x16a
 
-    const-string v3, "nl"
+    const-string/jumbo v3, "nl"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 414
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1029,6 +1109,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 415
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1041,6 +1122,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 416
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1053,6 +1135,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 417
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1065,6 +1148,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 418
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1077,6 +1161,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 419
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1089,6 +1174,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 420
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1101,30 +1187,33 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 421
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x176
 
-    const-string v3, "tt"
+    const-string/jumbo v3, "tt"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 422
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x178
 
-    const-string v3, "tc"
+    const-string/jumbo v3, "tc"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 423
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1137,6 +1226,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 424
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1149,6 +1239,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 425
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1161,6 +1252,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 426
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1173,6 +1265,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 427
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1185,18 +1278,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 428
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x19a
 
-    const-string v3, "pk"
+    const-string/jumbo v3, "pk"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 429
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1209,6 +1304,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 430
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1221,18 +1317,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 431
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x19e
 
-    const-string v3, "mm"
+    const-string/jumbo v3, "mm"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 432
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1245,6 +1343,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 433
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1257,18 +1356,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 434
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x1a1
 
-    const-string v3, "sy"
+    const-string/jumbo v3, "sy"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 435
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1281,6 +1382,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 436
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1293,54 +1395,59 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 437
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x1a4
 
-    const-string v3, "sa"
+    const-string/jumbo v3, "sa"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 438
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x1a5
 
-    const-string v3, "ye"
+    const-string/jumbo v3, "ye"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 439
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x1a6
 
-    const-string v3, "om"
+    const-string/jumbo v3, "om"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 440
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x1a7
 
-    const-string v3, "ps"
+    const-string/jumbo v3, "ps"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 441
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1353,6 +1460,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 442
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1365,6 +1473,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 443
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1377,42 +1486,46 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 444
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x1ab
 
-    const-string v3, "qa"
+    const-string/jumbo v3, "qa"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 445
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x1ac
 
-    const-string v3, "mn"
+    const-string/jumbo v3, "mn"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 446
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x1ad
 
-    const-string v3, "np"
+    const-string/jumbo v3, "np"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 447
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1425,6 +1538,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 448
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1437,6 +1551,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 449
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1449,30 +1564,33 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 450
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x1b2
 
-    const-string v3, "uz"
+    const-string/jumbo v3, "uz"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 451
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x1b4
 
-    const-string v3, "tj"
+    const-string/jumbo v3, "tj"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 452
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1485,18 +1603,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 453
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x1b6
 
-    const-string v3, "tm"
+    const-string/jumbo v3, "tm"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 454
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1511,6 +1631,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 455
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1525,6 +1646,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 456
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1539,18 +1661,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 457
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x1c4
 
-    const-string v3, "vn"
+    const-string/jumbo v3, "vn"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 458
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1563,18 +1687,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 459
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x1c7
 
-    const-string v3, "mo"
+    const-string/jumbo v3, "mo"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 460
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1587,6 +1713,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 461
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1599,6 +1726,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 462
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1607,12 +1735,13 @@
 
     const-string v3, "cn"
 
-    const-string v4, "zh"
+    const-string/jumbo v4, "zh"
 
     invoke-direct {v1, v2, v3, v5, v4}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;ILjava/lang/String;)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 463
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1621,24 +1750,26 @@
 
     const-string v3, "cn"
 
-    const-string v4, "zh"
+    const-string/jumbo v4, "zh"
 
     invoke-direct {v1, v2, v3, v5, v4}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;ILjava/lang/String;)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 464
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x1d2
 
-    const-string v3, "tw"
+    const-string/jumbo v3, "tw"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 465
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1651,6 +1782,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 466
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1663,30 +1795,33 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 467
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x1d8
 
-    const-string v3, "mv"
+    const-string/jumbo v3, "mv"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 468
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x1f6
 
-    const-string v3, "my"
+    const-string/jumbo v3, "my"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 469
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1701,6 +1836,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 470
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1713,49 +1849,53 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 471
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x202
 
-    const-string v3, "tl"
+    const-string/jumbo v3, "tl"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 472
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x203
 
-    const-string v3, "ph"
+    const-string/jumbo v3, "ph"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 473
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x208
 
-    const-string v3, "th"
+    const-string/jumbo v3, "th"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 474
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x20d
 
-    const-string v3, "sg"
+    const-string/jumbo v3, "sg"
 
     const-string v4, "en"
 
@@ -1763,6 +1903,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 475
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1775,13 +1916,14 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 476
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x212
 
-    const-string v3, "nz"
+    const-string/jumbo v3, "nz"
 
     const-string v4, "en"
 
@@ -1789,18 +1931,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 477
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x216
 
-    const-string v3, "mp"
+    const-string/jumbo v3, "mp"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 478
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1813,66 +1957,72 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 479
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x218
 
-    const-string v3, "nr"
+    const-string/jumbo v3, "nr"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 480
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x219
 
-    const-string v3, "pg"
+    const-string/jumbo v3, "pg"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 481
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x21b
 
-    const-string v3, "to"
+    const-string/jumbo v3, "to"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 482
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x21c
 
-    const-string v3, "sb"
+    const-string/jumbo v3, "sb"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 483
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x21d
 
-    const-string v3, "vu"
+    const-string/jumbo v3, "vu"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 484
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1885,18 +2035,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 485
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x21f
 
-    const-string v3, "wf"
+    const-string/jumbo v3, "wf"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 486
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1909,6 +2061,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 487
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1921,30 +2074,33 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 488
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x222
 
-    const-string v3, "nc"
+    const-string/jumbo v3, "nc"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 489
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x223
 
-    const-string v3, "pf"
+    const-string/jumbo v3, "pf"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 490
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1957,18 +2113,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 491
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x225
 
-    const-string v3, "ws"
+    const-string/jumbo v3, "ws"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 492
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -1981,30 +2139,33 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 493
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x227
 
-    const-string v3, "mh"
+    const-string/jumbo v3, "mh"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 494
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x228
 
-    const-string v3, "pw"
+    const-string/jumbo v3, "pw"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 495
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2017,6 +2178,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 496
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2029,30 +2191,33 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 497
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x25c
 
-    const-string v3, "ma"
+    const-string/jumbo v3, "ma"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 498
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x25d
 
-    const-string v3, "tn"
+    const-string/jumbo v3, "tn"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 499
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2065,6 +2230,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 500
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2077,42 +2243,46 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 501
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x260
 
-    const-string v3, "sn"
+    const-string/jumbo v3, "sn"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 502
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x261
 
-    const-string v3, "mr"
+    const-string/jumbo v3, "mr"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 503
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x262
 
-    const-string v3, "ml"
+    const-string/jumbo v3, "ml"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 504
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2125,6 +2295,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 505
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2137,6 +2308,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 506
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2149,30 +2321,33 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 507
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x266
 
-    const-string v3, "ne"
+    const-string/jumbo v3, "ne"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 508
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x267
 
-    const-string v3, "tg"
+    const-string/jumbo v3, "tg"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 509
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2185,18 +2360,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 510
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x269
 
-    const-string v3, "mu"
+    const-string/jumbo v3, "mu"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 511
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2209,18 +2386,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 512
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x26b
 
-    const-string v3, "sl"
+    const-string/jumbo v3, "sl"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 513
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2233,30 +2412,33 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 514
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x26d
 
-    const-string v3, "ng"
+    const-string/jumbo v3, "ng"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 515
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x26e
 
-    const-string v3, "td"
+    const-string/jumbo v3, "td"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 516
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2269,6 +2451,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 517
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2281,6 +2464,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 518
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2293,18 +2477,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 519
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x272
 
-    const-string v3, "st"
+    const-string/jumbo v3, "st"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 520
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2317,6 +2503,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 521
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2329,6 +2516,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 522
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2341,6 +2529,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 523
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2353,6 +2542,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 524
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2365,6 +2555,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 525
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2377,42 +2568,46 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 526
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x279
 
-    const-string v3, "sc"
+    const-string/jumbo v3, "sc"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 527
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x27a
 
-    const-string v3, "sd"
+    const-string/jumbo v3, "sd"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 528
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x27b
 
-    const-string v3, "rw"
+    const-string/jumbo v3, "rw"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 529
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2425,18 +2620,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 530
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x27d
 
-    const-string v3, "so"
+    const-string/jumbo v3, "so"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 531
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2449,6 +2646,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 532
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2461,30 +2659,33 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 533
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x280
 
-    const-string v3, "tz"
+    const-string/jumbo v3, "tz"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 534
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x281
 
-    const-string v3, "ug"
+    const-string/jumbo v3, "ug"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 535
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2497,90 +2698,98 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 536
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x283
 
-    const-string v3, "mz"
+    const-string/jumbo v3, "mz"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 537
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x285
 
-    const-string v3, "zm"
+    const-string/jumbo v3, "zm"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 538
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x286
 
-    const-string v3, "mg"
+    const-string/jumbo v3, "mg"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 539
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x287
 
-    const-string v3, "re"
+    const-string/jumbo v3, "re"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 540
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x288
 
-    const-string v3, "zw"
+    const-string/jumbo v3, "zw"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 541
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x289
 
-    const-string v3, "na"
+    const-string/jumbo v3, "na"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 542
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x28a
 
-    const-string v3, "mw"
+    const-string/jumbo v3, "mw"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 543
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2593,6 +2802,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 544
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2605,18 +2815,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 545
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x28d
 
-    const-string v3, "sz"
+    const-string/jumbo v3, "sz"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 546
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2629,13 +2841,14 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 547
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x28f
 
-    const-string v3, "za"
+    const-string/jumbo v3, "za"
 
     const-string v4, "en"
 
@@ -2643,6 +2856,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 548
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2655,6 +2869,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 549
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2667,6 +2882,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 550
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2679,18 +2895,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 551
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x2c2
 
-    const-string v3, "sv"
+    const-string/jumbo v3, "sv"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 552
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2703,18 +2921,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 553
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x2c6
 
-    const-string v3, "ni"
+    const-string/jumbo v3, "ni"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 554
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2727,30 +2947,33 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 555
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x2ca
 
-    const-string v3, "pa"
+    const-string/jumbo v3, "pa"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 556
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x2cc
 
-    const-string v3, "pe"
+    const-string/jumbo v3, "pe"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 557
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2763,6 +2986,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 558
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2775,6 +2999,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 559
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2787,6 +3012,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 560
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2799,18 +3025,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 561
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x2de
 
-    const-string v3, "ve"
+    const-string/jumbo v3, "ve"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 562
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2823,6 +3051,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 563
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2835,6 +3064,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 564
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2847,6 +3077,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 565
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2859,42 +3090,46 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 566
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x2e8
 
-    const-string v3, "py"
+    const-string/jumbo v3, "py"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 567
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x2ea
 
-    const-string v3, "sr"
+    const-string/jumbo v3, "sr"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 568
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/16 v2, 0x2ec
 
-    const-string v3, "uy"
+    const-string/jumbo v3, "uy"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 569
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
@@ -2907,10 +3142,12 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 572
     sget-object v0, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
     invoke-static {v0}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
+    .line 573
     return-void
 .end method
 
@@ -2918,8 +3155,10 @@
     .locals 0
 
     .prologue
+    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 46
     return-void
 .end method
 
@@ -2928,15 +3167,19 @@
     .parameter "mcc"
 
     .prologue
+    .line 123
     invoke-static {p0}, Lcom/android/internal/telephony/MccTable;->entryForMcc(I)Lcom/android/internal/telephony/MccTable$MccEntry;
 
     move-result-object v0
 
+    .line 125
     .local v0, entry:Lcom/android/internal/telephony/MccTable$MccEntry;
     if-nez v0, :cond_0
 
+    .line 126
     const-string v1, ""
 
+    .line 128
     :goto_0
     return-object v1
 
@@ -2951,15 +3194,19 @@
     .parameter "mcc"
 
     .prologue
+    .line 140
     invoke-static {p0}, Lcom/android/internal/telephony/MccTable;->entryForMcc(I)Lcom/android/internal/telephony/MccTable$MccEntry;
 
     move-result-object v0
 
+    .line 142
     .local v0, entry:Lcom/android/internal/telephony/MccTable$MccEntry;
     if-nez v0, :cond_0
 
+    .line 143
     const/4 v1, 0x0
 
+    .line 145
     :goto_0
     return-object v1
 
@@ -2976,10 +3223,12 @@
     .prologue
     const/4 v3, 0x0
 
+    .line 97
     invoke-static {p0}, Lcom/android/internal/telephony/MccTable;->entryForMcc(I)Lcom/android/internal/telephony/MccTable$MccEntry;
 
     move-result-object v0
 
+    .line 98
     .local v0, entry:Lcom/android/internal/telephony/MccTable$MccEntry;
     if-eqz v0, :cond_0
 
@@ -2987,38 +3236,45 @@
 
     if-nez v4, :cond_1
 
+    .line 109
     :cond_0
     :goto_0
     return-object v3
 
+    .line 102
     :cond_1
     iget-object v4, v0, Lcom/android/internal/telephony/MccTable$MccEntry;->language:Ljava/lang/String;
 
     if-nez v4, :cond_2
 
+    .line 103
     new-instance v1, Ljava/util/Locale;
 
     iget-object v4, v0, Lcom/android/internal/telephony/MccTable$MccEntry;->iso:Ljava/lang/String;
 
     invoke-direct {v1, v4}, Ljava/util/Locale;-><init>(Ljava/lang/String;)V
 
+    .line 107
     .local v1, locale:Ljava/util/Locale;
     :goto_1
     invoke-static {v1}, Llibcore/icu/TimeZones;->forLocale(Ljava/util/Locale;)[Ljava/lang/String;
 
     move-result-object v2
 
+    .line 108
     .local v2, tz:[Ljava/lang/String;
     array-length v4, v2
 
     if-eqz v4, :cond_0
 
+    .line 109
     const/4 v3, 0x0
 
     aget-object v3, v2, v3
 
     goto :goto_0
 
+    .line 105
     .end local v1           #locale:Ljava/util/Locale;
     .end local v2           #tz:[Ljava/lang/String;
     :cond_2
@@ -3041,12 +3297,14 @@
     .prologue
     const/4 v2, 0x0
 
+    .line 78
     new-instance v1, Lcom/android/internal/telephony/MccTable$MccEntry;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v2, v3}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
+    .line 80
     .local v1, m:Lcom/android/internal/telephony/MccTable$MccEntry;
     sget-object v3, Lcom/android/internal/telephony/MccTable;->table:Ljava/util/ArrayList;
 
@@ -3054,9 +3312,11 @@
 
     move-result v0
 
+    .line 82
     .local v0, index:I
     if-gez v0, :cond_0
 
+    .line 85
     :goto_0
     return-object v2
 
@@ -3078,6 +3338,7 @@
     .parameter "mcc"
 
     .prologue
+    .line 289
     invoke-static {}, Lcom/android/internal/telephony/BaseCommands;->getLteOnCdmaModeStatic()I
 
     move-result v2
@@ -3086,19 +3347,23 @@
 
     if-ne v2, v3, :cond_0
 
+    .line 299
     :goto_0
     return-void
 
+    .line 294
     :cond_0
     invoke-static {p1}, Lcom/android/internal/telephony/MccTable;->defaultLanguageForMcc(I)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 295
     .local v1, language:Ljava/lang/String;
     invoke-static {p1}, Lcom/android/internal/telephony/MccTable;->countryCodeForMcc(I)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 297
     .local v0, country:Ljava/lang/String;
     const-string v2, "MccTable"
 
@@ -3132,6 +3397,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 298
     const/4 v2, 0x0
 
     invoke-static {p0, v1, v0, v2}, Lcom/android/internal/telephony/MccTable;->setSystemLocale(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Z)V
@@ -3149,40 +3415,49 @@
     .prologue
     const/4 v11, 0x5
 
-    const-string v8, "persist.sys.language"
+    .line 220
+    const-string/jumbo v8, "persist.sys.language"
 
     invoke-static {v8}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
+    .line 221
     .local v6, l:Ljava/lang/String;
-    const-string v8, "persist.sys.country"
+    const-string/jumbo v8, "persist.sys.country"
 
     invoke-static {v8}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
+    .line 223
     .local v3, c:Ljava/lang/String;
     if-nez p1, :cond_1
 
+    .line 262
     :cond_0
     :goto_0
     return-void
 
+    .line 226
     :cond_1
     invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object p1
 
+    .line 227
     if-nez p2, :cond_2
 
+    .line 228
     const-string p2, ""
 
+    .line 230
     :cond_2
     invoke-virtual {p2}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
 
     move-result-object p2
 
+    .line 232
     if-eqz v6, :cond_3
 
     invoke-virtual {v6}, Ljava/lang/String;->length()I
@@ -3200,6 +3475,7 @@
 
     if-nez v8, :cond_0
 
+    .line 235
     :cond_4
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
@@ -3210,12 +3486,15 @@
 
     move-result-object v7
 
+    .line 236
     .local v7, locales:[Ljava/lang/String;
     array-length v0, v7
 
+    .line 237
     .local v0, N:I
     const/4 v2, 0x0
 
+    .line 238
     .local v2, bestMatch:Ljava/lang/String;
     const/4 v5, 0x0
 
@@ -3223,6 +3502,7 @@
     :goto_1
     if-ge v5, v0, :cond_5
 
+    .line 240
     aget-object v8, v7, v5
 
     if-eqz v8, :cond_7
@@ -3251,6 +3531,7 @@
 
     if-eqz v8, :cond_7
 
+    .line 242
     aget-object v8, v7, v5
 
     const/4 v9, 0x3
@@ -3267,20 +3548,25 @@
 
     if-eqz v8, :cond_6
 
+    .line 243
     aget-object v2, v7, v5
 
+    .line 250
     :cond_5
     if-eqz v2, :cond_0
 
+    .line 251
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v1
 
+    .line 252
     .local v1, am:Landroid/app/IActivityManager;
     invoke-interface {v1}, Landroid/app/IActivityManager;->getConfiguration()Landroid/content/res/Configuration;
 
     move-result-object v4
 
+    .line 253
     .local v4, config:Landroid/content/res/Configuration;
     new-instance v8, Ljava/util/Locale;
 
@@ -3304,14 +3590,17 @@
 
     iput-object v8, v4, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
+    .line 255
     const/4 v8, 0x1
 
     iput-boolean v8, v4, Landroid/content/res/Configuration;->userSetLocale:Z
 
+    .line 256
     invoke-interface {v1, v4}, Landroid/app/IActivityManager;->updateConfiguration(Landroid/content/res/Configuration;)V
 
     goto :goto_0
 
+    .line 258
     .end local v0           #N:I
     .end local v1           #am:Landroid/app/IActivityManager;
     .end local v2           #bestMatch:Ljava/lang/String;
@@ -3323,6 +3612,7 @@
 
     goto :goto_0
 
+    .line 245
     .restart local v0       #N:I
     .restart local v2       #bestMatch:Ljava/lang/String;
     .restart local v5       #i:I
@@ -3330,10 +3620,12 @@
     :cond_6
     if-nez v2, :cond_7
 
+    .line 246
     aget-object v2, v7, v5
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 238
     :cond_7
     add-int/lit8 v5, v5, 0x1
 
@@ -3346,12 +3638,14 @@
     .parameter "mcc"
 
     .prologue
-    const-string v3, "persist.sys.timezone"
+    .line 270
+    const-string/jumbo v3, "persist.sys.timezone"
 
     invoke-static {v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 271
     .local v1, timezone:Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -3361,11 +3655,13 @@
 
     if-nez v3, :cond_1
 
+    .line 272
     :cond_0
     invoke-static {p1}, Lcom/android/internal/telephony/MccTable;->defaultTimeZoneForMcc(I)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 273
     .local v2, zoneId:Ljava/lang/String;
     if-eqz v2, :cond_1
 
@@ -3375,6 +3671,7 @@
 
     if-lez v3, :cond_1
 
+    .line 275
     const-string v3, "alarm"
 
     invoke-virtual {p0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -3383,16 +3680,18 @@
 
     check-cast v0, Landroid/app/AlarmManager;
 
+    .line 277
     .local v0, alarm:Landroid/app/AlarmManager;
     invoke-virtual {v0, v2}, Landroid/app/AlarmManager;->setTimeZone(Ljava/lang/String;)V
 
+    .line 278
     const-string v3, "MccTable"
 
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "timezone set to "
+    const-string/jumbo v5, "timezone set to "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3408,6 +3707,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 281
     .end local v0           #alarm:Landroid/app/AlarmManager;
     .end local v2           #zoneId:Ljava/lang/String;
     :cond_1
@@ -3420,10 +3720,12 @@
     .parameter "mcc"
 
     .prologue
+    .line 308
     invoke-static {p1}, Lcom/android/internal/telephony/MccTable;->countryCodeForMcc(I)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 309
     .local v0, country:Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
@@ -3431,6 +3733,7 @@
 
     if-nez v2, :cond_0
 
+    .line 310
     const-string v2, "MccTable"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -3453,7 +3756,8 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string v2, "wifi"
+    .line 311
+    const-string/jumbo v2, "wifi"
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -3461,11 +3765,13 @@
 
     check-cast v1, Landroid/net/wifi/WifiManager;
 
+    .line 313
     .local v1, wM:Landroid/net/wifi/WifiManager;
     const/4 v2, 0x1
 
     invoke-virtual {v1, v0, v2}, Landroid/net/wifi/WifiManager;->setCountryCode(Ljava/lang/String;Z)V
 
+    .line 315
     .end local v1           #wM:Landroid/net/wifi/WifiManager;
     :cond_0
     return-void
@@ -3476,15 +3782,19 @@
     .parameter "mcc"
 
     .prologue
+    .line 159
     invoke-static {p0}, Lcom/android/internal/telephony/MccTable;->entryForMcc(I)Lcom/android/internal/telephony/MccTable$MccEntry;
 
     move-result-object v0
 
+    .line 161
     .local v0, entry:Lcom/android/internal/telephony/MccTable$MccEntry;
     if-nez v0, :cond_0
 
+    .line 162
     const/4 v1, 0x2
 
+    .line 164
     :goto_0
     return v1
 
@@ -3500,12 +3810,14 @@
     .parameter "mccmnc"
 
     .prologue
+    .line 175
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v4
 
     if-nez v4, :cond_3
 
+    .line 179
     const/4 v4, 0x0
 
     const/4 v5, 0x3
@@ -3519,6 +3831,7 @@
 
     move-result v2
 
+    .line 180
     .local v2, mcc:I
     const/4 v4, 0x3
 
@@ -3532,6 +3845,7 @@
 
     move-result v3
 
+    .line 186
     .local v3, mnc:I
     const-string v4, "MccTable"
 
@@ -3539,7 +3853,7 @@
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "updateMccMncConfiguration: mcc="
+    const-string/jumbo v6, "updateMccMncConfiguration: mcc="
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3565,14 +3879,19 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 188
     if-eqz v2, :cond_0
 
+    .line 189
     invoke-static {p0, v2}, Lcom/android/internal/telephony/MccTable;->setTimezoneFromMccIfNeeded(Landroid/content/Context;I)V
 
+    .line 190
     invoke-static {p0, v2}, Lcom/android/internal/telephony/MccTable;->setLocaleFromMccIfNeeded(Landroid/content/Context;I)V
 
+    .line 191
     invoke-static {p0, v2}, Lcom/android/internal/telephony/MccTable;->setWifiCountryCodeFromMcc(Landroid/content/Context;I)V
 
+    .line 194
     :cond_0
     :try_start_1
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
@@ -3583,16 +3902,21 @@
 
     move-result-object v0
 
+    .line 195
     .local v0, config:Landroid/content/res/Configuration;
     if-eqz v2, :cond_1
 
+    .line 196
     iput v2, v0, Landroid/content/res/Configuration;->mcc:I
 
+    .line 198
     :cond_1
     if-eqz v3, :cond_2
 
+    .line 199
     iput v3, v0, Landroid/content/res/Configuration;->mnc:I
 
+    .line 201
     :cond_2
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -3602,6 +3926,7 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
 
+    .line 206
     .end local v0           #config:Landroid/content/res/Configuration;
     .end local v2           #mcc:I
     .end local v3           #mnc:I
@@ -3609,9 +3934,11 @@
     :goto_0
     return-void
 
+    .line 181
     :catch_0
     move-exception v1
 
+    .line 182
     .local v1, e:Ljava/lang/NumberFormatException;
     const-string v4, "MccTable"
 
@@ -3621,12 +3948,14 @@
 
     goto :goto_0
 
+    .line 202
     .end local v1           #e:Ljava/lang/NumberFormatException;
     .restart local v2       #mcc:I
     .restart local v3       #mnc:I
     :catch_1
     move-exception v1
 
+    .line 203
     .local v1, e:Landroid/os/RemoteException;
     const-string v4, "MccTable"
 

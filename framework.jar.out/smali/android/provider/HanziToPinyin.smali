@@ -56,12 +56,14 @@
 
     const/4 v3, 0x6
 
+    .line 53
     new-array v0, v1, [C
 
     fill-array-data v0, :array_0
 
     sput-object v0, Landroid/provider/HanziToPinyin;->UNIHANS:[C
 
+    .line 111
     new-array v0, v1, [[B
 
     const/4 v1, 0x0
@@ -3320,6 +3322,7 @@
 
     sput-object v0, Landroid/provider/HanziToPinyin;->PINYINS:[[B
 
+    .line 258
     sget-object v0, Ljava/util/Locale;->CHINA:Ljava/util/Locale;
 
     invoke-static {v0}, Ljava/text/Collator;->getInstance(Ljava/util/Locale;)Ljava/text/Collator;
@@ -3330,6 +3333,7 @@
 
     return-void
 
+    .line 53
     nop
 
     :array_0
@@ -3743,6 +3747,7 @@
         0x28t 0x66t
     .end array-data
 
+    .line 111
     nop
 
     :array_1
@@ -8633,16 +8638,20 @@
     .parameter "hasChinaCollator"
 
     .prologue
+    .line 297
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 493
     new-instance v0, Landroid/provider/HanziToPinyin$1;
 
     invoke-direct {v0, p0}, Landroid/provider/HanziToPinyin$1;-><init>(Landroid/provider/HanziToPinyin;)V
 
     iput-object v0, p0, Landroid/provider/HanziToPinyin;->mMultiPinyin:Ljava/util/HashMap;
 
+    .line 298
     iput-boolean p1, p0, Landroid/provider/HanziToPinyin;->mHasChinaCollator:Z
 
+    .line 299
     return-void
 .end method
 
@@ -8663,11 +8672,13 @@
     .end annotation
 
     .prologue
+    .line 506
     .local p2, tokens:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/provider/HanziToPinyin$Token;>;"
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 507
     .local v0, str:Ljava/lang/String;
     new-instance v1, Landroid/provider/HanziToPinyin$Token;
 
@@ -8675,10 +8686,12 @@
 
     invoke-virtual {p2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 508
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->setLength(I)V
 
+    .line 509
     return-void
 .end method
 
@@ -8687,6 +8700,7 @@
     .parameter "token"
 
     .prologue
+    .line 476
     if-eqz p1, :cond_0
 
     const/4 v3, 0x2
@@ -8695,16 +8709,20 @@
 
     if-eq v3, v4, :cond_1
 
+    .line 486
     :cond_0
     :goto_0
     return-void
 
+    .line 479
     :cond_1
     iget-object v1, p1, Landroid/provider/HanziToPinyin$Token;->source:Ljava/lang/String;
 
+    .line 480
     .local v1, src:Ljava/lang/String;
     iget-object v2, p1, Landroid/provider/HanziToPinyin$Token;->target:Ljava/lang/String;
 
+    .line 481
     .local v2, tgt:Ljava/lang/String;
     iget-object v3, p0, Landroid/provider/HanziToPinyin;->mMultiPinyin:Ljava/util/HashMap;
 
@@ -8714,6 +8732,7 @@
 
     check-cast v0, Ljava/lang/String;
 
+    .line 482
     .local v0, pinyin:Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -8723,15 +8742,17 @@
 
     if-nez v3, :cond_0
 
+    .line 483
     iput-object v0, p1, Landroid/provider/HanziToPinyin$Token;->target:Ljava/lang/String;
 
+    .line 484
     const-string v3, "HanziToPinyin"
 
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "set new pinyin for "
+    const-string/jumbo v5, "set new pinyin for "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -8776,15 +8797,18 @@
     .prologue
     const/4 v8, 0x0
 
+    .line 330
     sget-object v9, Landroid/provider/HanziToPinyin;->UNIHANS:[C
 
     aget-char v5, v9, v8
 
+    .line 331
     .local v5, lastChar:C
     invoke-static {v5}, Ljava/lang/Character;->toString(C)Ljava/lang/String;
 
     move-result-object v6
 
+    .line 332
     .local v6, lastString:Ljava/lang/String;
     sget-object v0, Landroid/provider/HanziToPinyin;->UNIHANS:[C
 
@@ -8800,19 +8824,23 @@
 
     aget-char v1, v0, v4
 
+    .line 333
     .local v1, c:C
     if-ne v5, v1, :cond_0
 
+    .line 332
     :goto_1
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
+    .line 336
     :cond_0
     invoke-static {v1}, Ljava/lang/Character;->toString(C)Ljava/lang/String;
 
     move-result-object v3
 
+    .line 337
     .local v3, curString:Ljava/lang/String;
     sget-object v9, Landroid/provider/HanziToPinyin;->COLLATOR:Ljava/text/Collator;
 
@@ -8820,9 +8848,11 @@
 
     move-result v2
 
+    .line 338
     .local v2, cmp:I
     if-ltz v2, :cond_1
 
+    .line 339
     const-string v9, "HanziToPinyin"
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -8861,12 +8891,14 @@
 
     invoke-static {v9, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 345
     .end local v1           #c:C
     .end local v2           #cmp:I
     .end local v3           #curString:Ljava/lang/String;
     :goto_2
     return v8
 
+    .line 343
     .restart local v1       #c:C
     .restart local v2       #cmp:I
     .restart local v3       #curString:Ljava/lang/String;
@@ -8875,6 +8907,7 @@
 
     goto :goto_1
 
+    .line 345
     .end local v1           #c:C
     .end local v2           #cmp:I
     .end local v3           #curString:Ljava/lang/String;
@@ -8888,24 +8921,29 @@
     .locals 5
 
     .prologue
+    .line 302
     const-class v3, Landroid/provider/HanziToPinyin;
 
     monitor-enter v3
 
+    .line 303
     :try_start_0
     sget-object v2, Landroid/provider/HanziToPinyin;->sInstance:Landroid/provider/HanziToPinyin;
 
     if-eqz v2, :cond_0
 
+    .line 304
     sget-object v2, Landroid/provider/HanziToPinyin;->sInstance:Landroid/provider/HanziToPinyin;
 
     monitor-exit v3
 
+    .line 320
     .local v0, i:I
     .local v1, locale:[Ljava/util/Locale;
     :goto_0
     return-object v2
 
+    .line 307
     .end local v0           #i:I
     .end local v1           #locale:[Ljava/util/Locale;
     :cond_0
@@ -8913,6 +8951,7 @@
 
     move-result-object v1
 
+    .line 308
     .restart local v1       #locale:[Ljava/util/Locale;
     const/4 v0, 0x0
 
@@ -8922,6 +8961,7 @@
 
     if-ge v0, v2, :cond_2
 
+    .line 309
     aget-object v2, v1, v0
 
     sget-object v4, Ljava/util/Locale;->CHINA:Ljava/util/Locale;
@@ -8932,6 +8972,7 @@
 
     if-eqz v2, :cond_1
 
+    .line 314
     new-instance v2, Landroid/provider/HanziToPinyin;
 
     const/4 v4, 0x1
@@ -8940,12 +8981,14 @@
 
     sput-object v2, Landroid/provider/HanziToPinyin;->sInstance:Landroid/provider/HanziToPinyin;
 
+    .line 315
     sget-object v2, Landroid/provider/HanziToPinyin;->sInstance:Landroid/provider/HanziToPinyin;
 
     monitor-exit v3
 
     goto :goto_0
 
+    .line 321
     :catchall_0
     move-exception v2
 
@@ -8955,11 +8998,13 @@
 
     throw v2
 
+    .line 308
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
+    .line 318
     :cond_2
     :try_start_1
     const-string v2, "HanziToPinyin"
@@ -8968,6 +9013,7 @@
 
     invoke-static {v2, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 319
     new-instance v2, Landroid/provider/HanziToPinyin;
 
     const/4 v4, 0x0
@@ -8976,6 +9022,7 @@
 
     sput-object v2, Landroid/provider/HanziToPinyin;->sInstance:Landroid/provider/HanziToPinyin;
 
+    .line 320
     sget-object v2, Landroid/provider/HanziToPinyin;->sInstance:Landroid/provider/HanziToPinyin;
 
     monitor-exit v3
@@ -8994,78 +9041,100 @@
 
     const/4 v11, 0x2
 
+    .line 349
     new-instance v7, Landroid/provider/HanziToPinyin$Token;
 
     invoke-direct {v7}, Landroid/provider/HanziToPinyin$Token;-><init>()V
 
+    .line 350
     .local v7, token:Landroid/provider/HanziToPinyin$Token;
     invoke-static {p1}, Ljava/lang/Character;->toString(C)Ljava/lang/String;
 
     move-result-object v4
 
+    .line 351
     .local v4, letter:Ljava/lang/String;
     iput-object v4, v7, Landroid/provider/HanziToPinyin$Token;->source:Ljava/lang/String;
 
+    .line 352
     const/4 v5, -0x1
 
+    .line 354
     .local v5, offset:I
     const/16 v9, 0x100
 
     if-ge p1, v9, :cond_0
 
+    .line 355
     const/4 v9, 0x1
 
     iput v9, v7, Landroid/provider/HanziToPinyin$Token;->type:I
 
+    .line 356
     iput-object v4, v7, Landroid/provider/HanziToPinyin$Token;->target:Ljava/lang/String;
 
+    .line 409
     :goto_0
     return-object v7
 
+    .line 358
     :cond_0
     const/16 v9, 0x3400
 
     if-ge p1, v9, :cond_1
 
+    .line 359
     iput v12, v7, Landroid/provider/HanziToPinyin$Token;->type:I
 
+    .line 360
     iput-object v4, v7, Landroid/provider/HanziToPinyin$Token;->target:Ljava/lang/String;
 
     goto :goto_0
 
+    .line 363
     :cond_1
     sget-object v9, Landroid/provider/HanziToPinyin;->COLLATOR:Ljava/text/Collator;
 
-    const-string v10, "\u963f"
+    const-string/jumbo v10, "\u963f"
 
     invoke-virtual {v9, v4, v10}, Ljava/text/Collator;->compare(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v1
 
+    .line 364
     .local v1, cmp:I
     if-gez v1, :cond_2
 
+    .line 365
     iput v12, v7, Landroid/provider/HanziToPinyin$Token;->type:I
 
+    .line 366
     iput-object v4, v7, Landroid/provider/HanziToPinyin$Token;->target:Ljava/lang/String;
 
     goto :goto_0
 
+    .line 368
     :cond_2
     if-nez v1, :cond_6
 
+    .line 369
     iput v11, v7, Landroid/provider/HanziToPinyin$Token;->type:I
 
+    .line 370
     const/4 v5, 0x0
 
+    .line 384
     :cond_3
     :goto_1
     iput v11, v7, Landroid/provider/HanziToPinyin$Token;->type:I
 
+    .line 385
     if-gez v5, :cond_4
 
+    .line 386
     const/4 v0, 0x0
 
+    .line 387
     .local v0, begin:I
     sget-object v9, Landroid/provider/HanziToPinyin;->UNIHANS:[C
 
@@ -9073,14 +9142,17 @@
 
     add-int/lit8 v2, v9, -0x1
 
+    .line 388
     .local v2, end:I
     :goto_2
     if-gt v0, v2, :cond_4
 
+    .line 389
     add-int v9, v0, v2
 
     ushr-int/lit8 v5, v9, 0x1
 
+    .line 390
     sget-object v9, Landroid/provider/HanziToPinyin;->UNIHANS:[C
 
     aget-char v9, v9, v5
@@ -9089,6 +9161,7 @@
 
     move-result-object v8
 
+    .line 391
     .local v8, unihan:Ljava/lang/String;
     sget-object v9, Landroid/provider/HanziToPinyin;->COLLATOR:Ljava/text/Collator;
 
@@ -9096,21 +9169,26 @@
 
     move-result v1
 
+    .line 392
     if-nez v1, :cond_8
 
+    .line 401
     .end local v0           #begin:I
     .end local v2           #end:I
     .end local v8           #unihan:Ljava/lang/String;
     :cond_4
     if-gez v1, :cond_5
 
+    .line 402
     add-int/lit8 v5, v5, -0x1
 
+    .line 404
     :cond_5
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
+    .line 405
     .local v6, pinyin:Ljava/lang/StringBuilder;
     const/4 v3, 0x0
 
@@ -9132,6 +9210,7 @@
 
     if-eqz v9, :cond_a
 
+    .line 406
     sget-object v9, Landroid/provider/HanziToPinyin;->PINYINS:[[B
 
     aget-object v9, v9, v5
@@ -9142,34 +9221,42 @@
 
     invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
+    .line 405
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_3
 
+    .line 372
     .end local v3           #j:I
     .end local v6           #pinyin:Ljava/lang/StringBuilder;
     :cond_6
     sget-object v9, Landroid/provider/HanziToPinyin;->COLLATOR:Ljava/text/Collator;
 
-    const-string v10, "\u84d9"
+    const-string/jumbo v10, "\u84d9"
 
     invoke-virtual {v9, v4, v10}, Ljava/text/Collator;->compare(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v1
 
+    .line 373
     if-lez v1, :cond_7
 
+    .line 374
     iput v12, v7, Landroid/provider/HanziToPinyin$Token;->type:I
 
+    .line 375
     iput-object v4, v7, Landroid/provider/HanziToPinyin$Token;->target:Ljava/lang/String;
 
     goto :goto_0
 
+    .line 377
     :cond_7
     if-nez v1, :cond_3
 
+    .line 378
     iput v11, v7, Landroid/provider/HanziToPinyin$Token;->type:I
 
+    .line 379
     sget-object v9, Landroid/provider/HanziToPinyin;->UNIHANS:[C
 
     array-length v9, v9
@@ -9178,21 +9265,25 @@
 
     goto :goto_1
 
+    .line 394
     .restart local v0       #begin:I
     .restart local v2       #end:I
     .restart local v8       #unihan:Ljava/lang/String;
     :cond_8
     if-lez v1, :cond_9
 
+    .line 395
     add-int/lit8 v0, v5, 0x1
 
     goto :goto_2
 
+    .line 397
     :cond_9
     add-int/lit8 v2, v5, -0x1
 
     goto :goto_2
 
+    .line 408
     .end local v0           #begin:I
     .end local v2           #end:I
     .end local v8           #unihan:Ljava/lang/String;
@@ -9226,10 +9317,12 @@
     .end annotation
 
     .prologue
+    .line 418
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
+    .line 419
     .local v6, tokens:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/provider/HanziToPinyin$Token;>;"
     iget-boolean v7, p0, Landroid/provider/HanziToPinyin;->mHasChinaCollator:Z
 
@@ -9241,23 +9334,28 @@
 
     if-eqz v7, :cond_1
 
+    .line 471
     :cond_0
     :goto_0
     return-object v6
 
+    .line 423
     :cond_1
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v2
 
+    .line 424
     .local v2, inputLength:I
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
+    .line 425
     .local v3, sb:Ljava/lang/StringBuilder;
     const/4 v5, 0x1
 
+    .line 430
     .local v5, tokenType:I
     const/4 v1, 0x0
 
@@ -9265,34 +9363,41 @@
     :goto_1
     if-ge v1, v2, :cond_b
 
+    .line 431
     invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
+    .line 432
     .local v0, character:C
     const/16 v7, 0x20
 
     if-ne v0, v7, :cond_3
 
+    .line 433
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->length()I
 
     move-result v7
 
     if-lez v7, :cond_2
 
+    .line 434
     invoke-direct {p0, v3, v6, v5}, Landroid/provider/HanziToPinyin;->addToken(Ljava/lang/StringBuilder;Ljava/util/ArrayList;I)V
 
+    .line 430
     :cond_2
     :goto_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
+    .line 436
     :cond_3
     const/16 v7, 0x100
 
     if-ge v0, v7, :cond_5
 
+    .line 437
     const/4 v7, 0x1
 
     if-eq v5, v7, :cond_4
@@ -9303,20 +9408,25 @@
 
     if-lez v7, :cond_4
 
+    .line 438
     invoke-direct {p0, v3, v6, v5}, Landroid/provider/HanziToPinyin;->addToken(Ljava/lang/StringBuilder;Ljava/util/ArrayList;I)V
 
+    .line 440
     :cond_4
     const/4 v5, 0x1
 
+    .line 441
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_2
 
+    .line 442
     :cond_5
     const/16 v7, 0x3400
 
     if-ge v0, v7, :cond_7
 
+    .line 443
     const/4 v7, 0x3
 
     if-eq v5, v7, :cond_6
@@ -9327,20 +9437,25 @@
 
     if-lez v7, :cond_6
 
+    .line 444
     invoke-direct {p0, v3, v6, v5}, Landroid/provider/HanziToPinyin;->addToken(Ljava/lang/StringBuilder;Ljava/util/ArrayList;I)V
 
+    .line 446
     :cond_6
     const/4 v5, 0x3
 
+    .line 447
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_2
 
+    .line 449
     :cond_7
     invoke-direct {p0, v0}, Landroid/provider/HanziToPinyin;->getToken(C)Landroid/provider/HanziToPinyin$Token;
 
     move-result-object v4
 
+    .line 450
     .local v4, t:Landroid/provider/HanziToPinyin$Token;
     iget v7, v4, Landroid/provider/HanziToPinyin$Token;->type:I
 
@@ -9348,23 +9463,29 @@
 
     if-ne v7, v8, :cond_9
 
+    .line 452
     invoke-direct {p0, v4}, Landroid/provider/HanziToPinyin;->checkMultiPinyin(Landroid/provider/HanziToPinyin$Token;)V
 
+    .line 454
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->length()I
 
     move-result v7
 
     if-lez v7, :cond_8
 
+    .line 455
     invoke-direct {p0, v3, v6, v5}, Landroid/provider/HanziToPinyin;->addToken(Ljava/lang/StringBuilder;Ljava/util/ArrayList;I)V
 
+    .line 457
     :cond_8
     invoke-virtual {v6, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 458
     const/4 v5, 0x2
 
     goto :goto_2
 
+    .line 460
     :cond_9
     iget v7, v4, Landroid/provider/HanziToPinyin$Token;->type:I
 
@@ -9376,15 +9497,19 @@
 
     if-lez v7, :cond_a
 
+    .line 461
     invoke-direct {p0, v3, v6, v5}, Landroid/provider/HanziToPinyin;->addToken(Ljava/lang/StringBuilder;Ljava/util/ArrayList;I)V
 
+    .line 463
     :cond_a
     iget v5, v4, Landroid/provider/HanziToPinyin$Token;->type:I
 
+    .line 464
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_2
 
+    .line 468
     .end local v0           #character:C
     .end local v4           #t:Landroid/provider/HanziToPinyin$Token;
     :cond_b
@@ -9394,6 +9519,7 @@
 
     if-lez v7, :cond_0
 
+    .line 469
     invoke-direct {p0, v3, v6, v5}, Landroid/provider/HanziToPinyin;->addToken(Ljava/lang/StringBuilder;Ljava/util/ArrayList;I)V
 
     goto/16 :goto_0

@@ -47,20 +47,25 @@
     .parameter "m"
 
     .prologue
+    .line 811
     iput-object p1, p0, Lcom/android/server/NsdService$ClientInfo;->this$0:Lcom/android/server/NsdService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 809
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/NsdService$ClientInfo;->mClientIds:Landroid/util/SparseArray;
 
+    .line 812
     iput-object p2, p0, Lcom/android/server/NsdService$ClientInfo;->mChannel:Lcom/android/internal/util/AsyncChannel;
 
+    .line 813
     iput-object p3, p0, Lcom/android/server/NsdService$ClientInfo;->mMessenger:Landroid/os/Messenger;
 
+    .line 814
     const-string v0, "NsdService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -93,6 +98,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 815
     return-void
 .end method
 
@@ -104,6 +110,7 @@
     .parameter "x3"
 
     .prologue
+    .line 800
     invoke-direct {p0, p1, p2, p3}, Lcom/android/server/NsdService$ClientInfo;-><init>(Lcom/android/server/NsdService;Lcom/android/internal/util/AsyncChannel;Landroid/os/Messenger;)V
 
     return-void
@@ -114,6 +121,7 @@
     .parameter "x0"
 
     .prologue
+    .line 800
     iget-object v0, p0, Lcom/android/server/NsdService$ClientInfo;->mClientIds:Landroid/util/SparseArray;
 
     return-object v0
@@ -124,6 +132,7 @@
     .parameter "x0"
 
     .prologue
+    .line 800
     iget-object v0, p0, Lcom/android/server/NsdService$ClientInfo;->mResolvedService:Landroid/net/nsd/NsdServiceInfo;
 
     return-object v0
@@ -135,6 +144,7 @@
     .parameter "x1"
 
     .prologue
+    .line 800
     iput-object p1, p0, Lcom/android/server/NsdService$ClientInfo;->mResolvedService:Landroid/net/nsd/NsdServiceInfo;
 
     return-object p1
@@ -145,6 +155,7 @@
     .parameter "x0"
 
     .prologue
+    .line 800
     iget-object v0, p0, Lcom/android/server/NsdService$ClientInfo;->mChannel:Lcom/android/internal/util/AsyncChannel;
 
     return-object v0
@@ -156,10 +167,12 @@
     .locals 4
 
     .prologue
+    .line 819
     new-instance v1, Ljava/lang/StringBuffer;
 
     invoke-direct {v1}, Ljava/lang/StringBuffer;-><init>()V
 
+    .line 820
     .local v1, sb:Ljava/lang/StringBuffer;
     const-string v2, "mChannel "
 
@@ -177,6 +190,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
+    .line 821
     const-string v2, "mMessenger "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -193,6 +207,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
+    .line 822
     const-string v2, "mResolvedService "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -209,6 +224,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
+    .line 823
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -221,6 +237,7 @@
 
     if-ge v0, v2, :cond_0
 
+    .line 824
     const-string v2, "clientId "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -235,6 +252,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
 
+    .line 825
     const-string v2, " mDnsId "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -255,10 +273,12 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
+    .line 823
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    .line 827
     :cond_0
     invoke-virtual {v1}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 

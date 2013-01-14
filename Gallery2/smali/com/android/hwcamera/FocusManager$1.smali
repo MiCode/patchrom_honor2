@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 104
+    .line 103
     iput-object p1, p0, Lcom/android/hwcamera/FocusManager$1;->this$0:Lcom/android/hwcamera/FocusManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,17 +41,24 @@
     .locals 2
 
     .prologue
-    .line 107
+    .line 106
     const-string v0, "FocusManager"
 
     const-string v1, "onCameraMoved"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 109
+    .line 108
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/android/hwcamera/Util;->setIsCafEnded(Z)V
+
+    .line 110
+    iget-object v0, p0, Lcom/android/hwcamera/FocusManager$1;->this$0:Lcom/android/hwcamera/FocusManager;
+
+    const/4 v1, 0x2
+
+    invoke-virtual {v0, v1}, Lcom/android/hwcamera/FocusManager;->setFocusPolicy(I)V
 
     .line 111
     iget-object v0, p0, Lcom/android/hwcamera/FocusManager$1;->this$0:Lcom/android/hwcamera/FocusManager;

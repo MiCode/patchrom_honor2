@@ -8,6 +8,7 @@
     .locals 0
 
     .prologue
+    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,6 +20,7 @@
     .parameter "b"
 
     .prologue
+    .line 40
     if-eq p0, p1, :cond_0
 
     if-eqz p0, :cond_1
@@ -46,6 +48,7 @@
     .parameter "objects"
 
     .prologue
+    .line 59
     invoke-static {p0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
 
     move-result v0

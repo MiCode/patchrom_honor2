@@ -36,18 +36,24 @@
     .parameter "localRole"
 
     .prologue
+    .line 375
     iput-object p1, p0, Landroid/server/BluetoothPanProfileHandler$BluetoothPanDevice;->this$0:Landroid/server/BluetoothPanProfileHandler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 376
     iput p2, p0, Landroid/server/BluetoothPanProfileHandler$BluetoothPanDevice;->mState:I
 
+    .line 377
     iput-object p3, p0, Landroid/server/BluetoothPanProfileHandler$BluetoothPanDevice;->mIfaceAddr:Ljava/lang/String;
 
+    .line 378
     iput-object p4, p0, Landroid/server/BluetoothPanProfileHandler$BluetoothPanDevice;->mIface:Ljava/lang/String;
 
+    .line 379
     iput p5, p0, Landroid/server/BluetoothPanProfileHandler$BluetoothPanDevice;->mLocalRole:I
 
+    .line 380
     return-void
 .end method
 
@@ -56,6 +62,7 @@
     .parameter "x0"
 
     .prologue
+    .line 369
     iget v0, p0, Landroid/server/BluetoothPanProfileHandler$BluetoothPanDevice;->mState:I
 
     return v0
@@ -67,6 +74,7 @@
     .parameter "x1"
 
     .prologue
+    .line 369
     iput p1, p0, Landroid/server/BluetoothPanProfileHandler$BluetoothPanDevice;->mState:I
 
     return p1
@@ -77,6 +85,7 @@
     .parameter "x0"
 
     .prologue
+    .line 369
     iget v0, p0, Landroid/server/BluetoothPanProfileHandler$BluetoothPanDevice;->mLocalRole:I
 
     return v0
@@ -88,6 +97,7 @@
     .parameter "x1"
 
     .prologue
+    .line 369
     iput p1, p0, Landroid/server/BluetoothPanProfileHandler$BluetoothPanDevice;->mLocalRole:I
 
     return p1
@@ -98,6 +108,7 @@
     .parameter "x0"
 
     .prologue
+    .line 369
     iget-object v0, p0, Landroid/server/BluetoothPanProfileHandler$BluetoothPanDevice;->mIface:Ljava/lang/String;
 
     return-object v0
@@ -109,6 +120,7 @@
     .parameter "x1"
 
     .prologue
+    .line 369
     iput-object p1, p0, Landroid/server/BluetoothPanProfileHandler$BluetoothPanDevice;->mIface:Ljava/lang/String;
 
     return-object p1
@@ -119,6 +131,7 @@
     .parameter "x0"
 
     .prologue
+    .line 369
     iget-object v0, p0, Landroid/server/BluetoothPanProfileHandler$BluetoothPanDevice;->mIfaceAddr:Ljava/lang/String;
 
     return-object v0
@@ -130,6 +143,7 @@
     .parameter "x1"
 
     .prologue
+    .line 369
     iput-object p1, p0, Landroid/server/BluetoothPanProfileHandler$BluetoothPanDevice;->mIfaceAddr:Ljava/lang/String;
 
     return-object p1

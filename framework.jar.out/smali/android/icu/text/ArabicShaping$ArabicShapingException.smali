@@ -20,7 +20,9 @@
     .parameter "msg"
 
     .prologue
+    .line 1944
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
+    .line 1945
     return-void
 .end method

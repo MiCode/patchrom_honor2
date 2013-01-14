@@ -23,6 +23,7 @@
     .locals 3
 
     .prologue
+    .line 146
     invoke-static {}, Lcom/android/internal/policy/impl/KeyguardStatusViewManager$StatusMode;->values()[Lcom/android/internal/policy/impl/KeyguardStatusViewManager$StatusMode;
 
     move-result-object v0

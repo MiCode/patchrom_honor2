@@ -34,6 +34,7 @@
     .locals 1
 
     .prologue
+    .line 115
     new-instance v0, Landroid/view/inputmethod/CompletionInfo$1;
 
     invoke-direct {v0}, Landroid/view/inputmethod/CompletionInfo$1;-><init>()V
@@ -50,18 +51,24 @@
     .parameter "text"
 
     .prologue
+    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 37
     iput-wide p1, p0, Landroid/view/inputmethod/CompletionInfo;->mId:J
 
+    .line 38
     iput p3, p0, Landroid/view/inputmethod/CompletionInfo;->mPosition:I
 
+    .line 39
     iput-object p4, p0, Landroid/view/inputmethod/CompletionInfo;->mText:Ljava/lang/CharSequence;
 
+    .line 40
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/view/inputmethod/CompletionInfo;->mLabel:Ljava/lang/CharSequence;
 
+    .line 41
     return-void
 .end method
 
@@ -73,16 +80,22 @@
     .parameter "label"
 
     .prologue
+    .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 47
     iput-wide p1, p0, Landroid/view/inputmethod/CompletionInfo;->mId:J
 
+    .line 48
     iput p3, p0, Landroid/view/inputmethod/CompletionInfo;->mPosition:I
 
+    .line 49
     iput-object p4, p0, Landroid/view/inputmethod/CompletionInfo;->mText:Ljava/lang/CharSequence;
 
+    .line 50
     iput-object p5, p0, Landroid/view/inputmethod/CompletionInfo;->mLabel:Ljava/lang/CharSequence;
 
+    .line 51
     return-void
 .end method
 
@@ -91,20 +104,24 @@
     .parameter "source"
 
     .prologue
+    .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 54
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/view/inputmethod/CompletionInfo;->mId:J
 
+    .line 55
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/inputmethod/CompletionInfo;->mPosition:I
 
+    .line 56
     sget-object v0, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -115,6 +132,7 @@
 
     iput-object v0, p0, Landroid/view/inputmethod/CompletionInfo;->mText:Ljava/lang/CharSequence;
 
+    .line 57
     sget-object v0, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -125,6 +143,7 @@
 
     iput-object v0, p0, Landroid/view/inputmethod/CompletionInfo;->mLabel:Ljava/lang/CharSequence;
 
+    .line 58
     return-void
 .end method
 
@@ -134,6 +153,7 @@
     .parameter "x1"
 
     .prologue
+    .line 27
     invoke-direct {p0, p1}, Landroid/view/inputmethod/CompletionInfo;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -145,6 +165,7 @@
     .locals 1
 
     .prologue
+    .line 127
     const/4 v0, 0x0
 
     return v0
@@ -154,6 +175,7 @@
     .locals 2
 
     .prologue
+    .line 65
     iget-wide v0, p0, Landroid/view/inputmethod/CompletionInfo;->mId:J
 
     return-wide v0
@@ -163,6 +185,7 @@
     .locals 1
 
     .prologue
+    .line 90
     iget-object v0, p0, Landroid/view/inputmethod/CompletionInfo;->mLabel:Ljava/lang/CharSequence;
 
     return-object v0
@@ -172,6 +195,7 @@
     .locals 1
 
     .prologue
+    .line 73
     iget v0, p0, Landroid/view/inputmethod/CompletionInfo;->mPosition:I
 
     return v0
@@ -181,6 +205,7 @@
     .locals 1
 
     .prologue
+    .line 81
     iget-object v0, p0, Landroid/view/inputmethod/CompletionInfo;->mText:Ljava/lang/CharSequence;
 
     return-object v0
@@ -190,6 +215,7 @@
     .locals 3
 
     .prologue
+    .line 95
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -242,7 +268,7 @@
 
     move-result-object v0
 
-    const-string v1, "}"
+    const-string/jumbo v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -261,21 +287,26 @@
     .parameter "flags"
 
     .prologue
+    .line 106
     iget-wide v0, p0, Landroid/view/inputmethod/CompletionInfo;->mId:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
+    .line 107
     iget v0, p0, Landroid/view/inputmethod/CompletionInfo;->mPosition:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 108
     iget-object v0, p0, Landroid/view/inputmethod/CompletionInfo;->mText:Ljava/lang/CharSequence;
 
     invoke-static {v0, p1, p2}, Landroid/text/TextUtils;->writeToParcel(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V
 
+    .line 109
     iget-object v0, p0, Landroid/view/inputmethod/CompletionInfo;->mLabel:Ljava/lang/CharSequence;
 
     invoke-static {v0, p1, p2}, Landroid/text/TextUtils;->writeToParcel(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V
 
+    .line 110
     return-void
 .end method

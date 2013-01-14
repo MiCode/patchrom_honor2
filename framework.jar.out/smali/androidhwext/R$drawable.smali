@@ -173,6 +173,28 @@
 
 .field public static final ic_ab_back_emui:I = 0x203004a
 
+.field public static final ic_audio_alarm_emui:I = 0x20300df
+
+.field public static final ic_audio_alarm_mute_emui:I = 0x20300e0
+
+.field public static final ic_audio_bt_emui:I = 0x20300e1
+
+.field public static final ic_audio_notification_emui:I = 0x20300e2
+
+.field public static final ic_audio_notification_mute_emui:I = 0x20300e3
+
+.field public static final ic_audio_phone_emui:I = 0x20300e4
+
+.field public static final ic_audio_ring_notif_emui:I = 0x20300e5
+
+.field public static final ic_audio_ring_notif_mute_emui:I = 0x20300e6
+
+.field public static final ic_audio_ring_notif_vibrate_emui:I = 0x20300e7
+
+.field public static final ic_audio_vol_emui:I = 0x20300e8
+
+.field public static final ic_audio_vol_mute_emui:I = 0x20300e9
+
 .field public static final ic_clear_disabled_emui:I = 0x203004b
 
 .field public static final ic_clear_emui:I = 0x203004c
@@ -421,13 +443,13 @@
 
 .field public static final text_edit_paste_window_emui:I = 0x20300b6
 
-.field public static final text_select_background_arrow_down_emui:I = 0x20300df
+.field public static final text_select_background_arrow_down_emui:I = 0x20300ea
 
-.field public static final text_select_background_arrow_up_emui:I = 0x20300e0
+.field public static final text_select_background_arrow_up_emui:I = 0x20300eb
 
-.field public static final text_select_background_emui:I = 0x20300e1
+.field public static final text_select_background_emui:I = 0x20300ec
 
-.field public static final text_select_background_up_emui:I = 0x20300e2
+.field public static final text_select_background_up_emui:I = 0x20300ed
 
 .field public static final text_select_handle_left_emui:I = 0x20300b7
 
@@ -435,7 +457,7 @@
 
 .field public static final text_select_handle_right_emui:I = 0x20300b9
 
-.field public static final text_select_split_emui:I = 0x20300e3
+.field public static final text_select_split_emui:I = 0x20300ee
 
 .field public static final textfield_activated_emui:I = 0x20300ba
 
@@ -477,6 +499,7 @@
     .locals 0
 
     .prologue
+    .line 405
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -19,6 +19,7 @@
     .locals 0
 
     .prologue
+    .line 326
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,20 +31,23 @@
     .parameter "cursor"
 
     .prologue
+    .line 328
     new-instance v0, Landroid/telephony/CallerInfoHW;
 
     invoke-direct {v0}, Landroid/telephony/CallerInfoHW;-><init>()V
 
+    .line 329
     .local v0, callerInfoHW:Landroid/telephony/CallerInfoHW;
     check-cast p0, Ljava/lang/String;
 
     .end local p0
-    const-string v2, "number"
+    const-string/jumbo v2, "number"
 
     invoke-virtual {v0, p1, p0, v2}, Landroid/telephony/CallerInfoHW;->getCallerIndex(Landroid/database/Cursor;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v1
 
+    .line 330
     .local v1, fixedIndex:I
     const/4 v2, -0x1
 

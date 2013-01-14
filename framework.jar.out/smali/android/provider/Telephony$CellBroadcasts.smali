@@ -72,6 +72,7 @@
     .locals 3
 
     .prologue
+    .line 2144
     const-string v0, "content://cellbroadcasts"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -80,6 +81,7 @@
 
     sput-object v0, Landroid/provider/Telephony$CellBroadcasts;->CONTENT_URI:Landroid/net/Uri;
 
+    .line 2284
     const/16 v0, 0x14
 
     new-array v0, v0, [Ljava/lang/String;
@@ -98,7 +100,7 @@
 
     const/4 v1, 0x2
 
-    const-string v2, "plmn"
+    const-string/jumbo v2, "plmn"
 
     aput-object v2, v0, v1
 
@@ -116,13 +118,13 @@
 
     const/4 v1, 0x5
 
-    const-string v2, "serial_number"
+    const-string/jumbo v2, "serial_number"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x6
 
-    const-string v2, "service_category"
+    const-string/jumbo v2, "service_category"
 
     aput-object v2, v0, v1
 
@@ -146,7 +148,7 @@
 
     const/16 v1, 0xa
 
-    const-string v2, "read"
+    const-string/jumbo v2, "read"
 
     aput-object v2, v0, v1
 
@@ -158,7 +160,7 @@
 
     const/16 v1, 0xc
 
-    const-string v2, "priority"
+    const-string/jumbo v2, "priority"
 
     aput-object v2, v0, v1
 
@@ -213,6 +215,7 @@
     .locals 0
 
     .prologue
+    .line 2139
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

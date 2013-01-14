@@ -30,14 +30,17 @@
     .locals 3
 
     .prologue
+    .line 160
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 161
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     iput-object v0, p0, Landroid/widget/NumberPicker$1;->mBuilder:Ljava/lang/StringBuilder;
 
+    .line 163
     new-instance v0, Ljava/util/Formatter;
 
     iget-object v1, p0, Landroid/widget/NumberPicker$1;->mBuilder:Ljava/lang/StringBuilder;
@@ -48,6 +51,7 @@
 
     iput-object v0, p0, Landroid/widget/NumberPicker$1;->mFmt:Ljava/util/Formatter;
 
+    .line 165
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -66,6 +70,7 @@
     .prologue
     const/4 v2, 0x0
 
+    .line 168
     iget-object v0, p0, Landroid/widget/NumberPicker$1;->mArgs:[Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -74,6 +79,7 @@
 
     aput-object v1, v0, v2
 
+    .line 169
     iget-object v0, p0, Landroid/widget/NumberPicker$1;->mBuilder:Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Landroid/widget/NumberPicker$1;->mBuilder:Ljava/lang/StringBuilder;
@@ -84,6 +90,7 @@
 
     invoke-virtual {v0, v2, v1}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
+    .line 170
     iget-object v0, p0, Landroid/widget/NumberPicker$1;->mFmt:Ljava/util/Formatter;
 
     const-string v1, "%02d"
@@ -92,6 +99,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/Formatter;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Formatter;
 
+    .line 171
     iget-object v0, p0, Landroid/widget/NumberPicker$1;->mFmt:Ljava/util/Formatter;
 
     invoke-virtual {v0}, Ljava/util/Formatter;->toString()Ljava/lang/String;

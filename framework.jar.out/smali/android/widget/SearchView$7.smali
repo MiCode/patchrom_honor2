@@ -27,6 +27,7 @@
     .parameter
 
     .prologue
+    .line 913
     iput-object p1, p0, Landroid/widget/SearchView$7;->this$0:Landroid/widget/SearchView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,6 +48,7 @@
 
     const/4 v1, 0x0
 
+    .line 916
     iget-object v3, p0, Landroid/widget/SearchView$7;->this$0:Landroid/widget/SearchView;
 
     #getter for: Landroid/widget/SearchView;->mSearchable:Landroid/app/SearchableInfo;
@@ -56,10 +58,12 @@
 
     if-nez v3, :cond_1
 
+    .line 954
     :cond_0
     :goto_0
     return v1
 
+    .line 927
     :cond_1
     iget-object v3, p0, Landroid/widget/SearchView$7;->this$0:Landroid/widget/SearchView;
 
@@ -89,6 +93,7 @@
 
     if-eq v3, v4, :cond_2
 
+    .line 929
     iget-object v1, p0, Landroid/widget/SearchView$7;->this$0:Landroid/widget/SearchView;
 
     #calls: Landroid/widget/SearchView;->onSuggestionsKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
@@ -98,6 +103,7 @@
 
     goto :goto_0
 
+    .line 934
     :cond_2
     iget-object v3, p0, Landroid/widget/SearchView$7;->this$0:Landroid/widget/SearchView;
 
@@ -119,18 +125,22 @@
 
     if-eqz v3, :cond_0
 
+    .line 935
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v3
 
     if-ne v3, v2, :cond_3
 
+    .line 936
     const/16 v3, 0x42
 
     if-ne p2, v3, :cond_3
 
+    .line 937
     invoke-virtual {p1}, Landroid/view/View;->cancelLongPress()V
 
+    .line 940
     iget-object v3, p0, Landroid/widget/SearchView$7;->this$0:Landroid/widget/SearchView;
 
     const/4 v4, 0x0
@@ -155,8 +165,10 @@
 
     move v1, v2
 
+    .line 942
     goto :goto_0
 
+    .line 945
     :cond_3
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
@@ -164,6 +176,7 @@
 
     if-nez v3, :cond_0
 
+    .line 946
     iget-object v3, p0, Landroid/widget/SearchView$7;->this$0:Landroid/widget/SearchView;
 
     #getter for: Landroid/widget/SearchView;->mSearchable:Landroid/app/SearchableInfo;
@@ -175,6 +188,7 @@
 
     move-result-object v0
 
+    .line 947
     .local v0, actionKey:Landroid/app/SearchableInfo$ActionKeyInfo;
     if-eqz v0, :cond_0
 
@@ -184,6 +198,7 @@
 
     if-eqz v3, :cond_0
 
+    .line 948
     iget-object v1, p0, Landroid/widget/SearchView$7;->this$0:Landroid/widget/SearchView;
 
     invoke-virtual {v0}, Landroid/app/SearchableInfo$ActionKeyInfo;->getQueryActionMsg()Ljava/lang/String;
@@ -210,5 +225,6 @@
 
     move v1, v2
 
+    .line 950
     goto/16 :goto_0
 .end method

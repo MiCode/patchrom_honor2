@@ -36,12 +36,15 @@
     .locals 1
 
     .prologue
+    .line 15
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
+    .line 16
     const-string v0, "android.app.IInstrumentationWatcher"
 
     invoke-virtual {p0, p0, v0}, Landroid/app/IInstrumentationWatcher$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
+    .line 17
     return-void
 .end method
 
@@ -50,13 +53,17 @@
     .parameter "obj"
 
     .prologue
+    .line 24
     if-nez p0, :cond_0
 
+    .line 25
     const/4 v0, 0x0
 
+    .line 31
     :goto_0
     return-object v0
 
+    .line 27
     :cond_0
     const-string v1, "android.app.IInstrumentationWatcher"
 
@@ -64,6 +71,7 @@
 
     move-result-object v0
 
+    .line 28
     .local v0, iin:Landroid/os/IInterface;
     if-eqz v0, :cond_1
 
@@ -71,10 +79,12 @@
 
     if-eqz v1, :cond_1
 
+    .line 29
     check-cast v0, Landroid/app/IInstrumentationWatcher;
 
     goto :goto_0
 
+    .line 31
     :cond_1
     new-instance v0, Landroid/app/IInstrumentationWatcher$Stub$Proxy;
 
@@ -90,6 +100,7 @@
     .locals 0
 
     .prologue
+    .line 35
     return-object p0
 .end method
 
@@ -108,8 +119,10 @@
     .prologue
     const/4 v3, 0x1
 
+    .line 39
     sparse-switch p1, :sswitch_data_0
 
+    .line 91
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v3
@@ -117,6 +130,7 @@
     :goto_0
     return v3
 
+    .line 43
     :sswitch_0
     const-string v4, "android.app.IInstrumentationWatcher"
 
@@ -124,17 +138,20 @@
 
     goto :goto_0
 
+    .line 48
     :sswitch_1
     const-string v4, "android.app.IInstrumentationWatcher"
 
     invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 50
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     if-eqz v4, :cond_0
 
+    .line 51
     sget-object v4, Landroid/content/ComponentName;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v4, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -143,12 +160,14 @@
 
     check-cast v0, Landroid/content/ComponentName;
 
+    .line 57
     .local v0, _arg0:Landroid/content/ComponentName;
     :goto_1
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 59
     .local v1, _arg1:I
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
@@ -156,6 +175,7 @@
 
     if-eqz v4, :cond_1
 
+    .line 60
     sget-object v4, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v4, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -164,12 +184,14 @@
 
     check-cast v2, Landroid/os/Bundle;
 
+    .line 65
     .local v2, _arg2:Landroid/os/Bundle;
     :goto_2
     invoke-virtual {p0, v0, v1, v2}, Landroid/app/IInstrumentationWatcher$Stub;->instrumentationStatus(Landroid/content/ComponentName;ILandroid/os/Bundle;)V
 
     goto :goto_0
 
+    .line 54
     .end local v0           #_arg0:Landroid/content/ComponentName;
     .end local v1           #_arg1:I
     .end local v2           #_arg2:Landroid/os/Bundle;
@@ -179,6 +201,7 @@
     .restart local v0       #_arg0:Landroid/content/ComponentName;
     goto :goto_1
 
+    .line 63
     .restart local v1       #_arg1:I
     :cond_1
     const/4 v2, 0x0
@@ -186,6 +209,7 @@
     .restart local v2       #_arg2:Landroid/os/Bundle;
     goto :goto_2
 
+    .line 70
     .end local v0           #_arg0:Landroid/content/ComponentName;
     .end local v1           #_arg1:I
     .end local v2           #_arg2:Landroid/os/Bundle;
@@ -194,12 +218,14 @@
 
     invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 72
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     if-eqz v4, :cond_2
 
+    .line 73
     sget-object v4, Landroid/content/ComponentName;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v4, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -208,12 +234,14 @@
 
     check-cast v0, Landroid/content/ComponentName;
 
+    .line 79
     .restart local v0       #_arg0:Landroid/content/ComponentName;
     :goto_3
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
+    .line 81
     .restart local v1       #_arg1:I
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
@@ -221,6 +249,7 @@
 
     if-eqz v4, :cond_3
 
+    .line 82
     sget-object v4, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v4, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -229,12 +258,14 @@
 
     check-cast v2, Landroid/os/Bundle;
 
+    .line 87
     .restart local v2       #_arg2:Landroid/os/Bundle;
     :goto_4
     invoke-virtual {p0, v0, v1, v2}, Landroid/app/IInstrumentationWatcher$Stub;->instrumentationFinished(Landroid/content/ComponentName;ILandroid/os/Bundle;)V
 
     goto :goto_0
 
+    .line 76
     .end local v0           #_arg0:Landroid/content/ComponentName;
     .end local v1           #_arg1:I
     .end local v2           #_arg2:Landroid/os/Bundle;
@@ -244,6 +275,7 @@
     .restart local v0       #_arg0:Landroid/content/ComponentName;
     goto :goto_3
 
+    .line 85
     .restart local v1       #_arg1:I
     :cond_3
     const/4 v2, 0x0
@@ -251,6 +283,7 @@
     .restart local v2       #_arg2:Landroid/os/Bundle;
     goto :goto_4
 
+    .line 39
     nop
 
     :sswitch_data_0

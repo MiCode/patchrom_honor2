@@ -22,6 +22,7 @@
     .locals 0
 
     .prologue
+    .line 913
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,6 +33,7 @@
     .parameter "x0"
 
     .prologue
+    .line 913
     invoke-direct {p0}, Landroid/opengl/GLSurfaceView$DefaultWindowSurfaceFactory;-><init>()V
 
     return-void
@@ -47,8 +49,10 @@
     .parameter "nativeWindow"
 
     .prologue
+    .line 917
     const/4 v1, 0x0
 
+    .line 919
     .local v1, result:Ljavax/microedition/khronos/egl/EGLSurface;
     const/4 v2, 0x0
 
@@ -59,12 +63,15 @@
 
     move-result-object v1
 
+    .line 929
     :goto_0
     return-object v1
 
+    .line 920
     :catch_0
     move-exception v0
 
+    .line 927
     .local v0, e:Ljava/lang/IllegalArgumentException;
     const-string v2, "GLSurfaceView"
 
@@ -82,7 +89,9 @@
     .parameter "surface"
 
     .prologue
+    .line 934
     invoke-interface {p1, p2, p3}, Ljavax/microedition/khronos/egl/EGL10;->eglDestroySurface(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;)Z
 
+    .line 935
     return-void
 .end method

@@ -26,13 +26,13 @@
     .parameter "texture"
 
     .prologue
-    .line 36
+    .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 37
+    .line 39
     iput-object p1, p0, Lcom/android/gallery3d/ui/FadeTexture;->mTexture:Lcom/android/gallery3d/ui/BasicTexture;
 
-    .line 38
+    .line 40
     iget-object v0, p0, Lcom/android/gallery3d/ui/FadeTexture;->mTexture:Lcom/android/gallery3d/ui/BasicTexture;
 
     invoke-virtual {v0}, Lcom/android/gallery3d/ui/BasicTexture;->getWidth()I
@@ -41,7 +41,7 @@
 
     iput v0, p0, Lcom/android/gallery3d/ui/FadeTexture;->mWidth:I
 
-    .line 39
+    .line 41
     iget-object v0, p0, Lcom/android/gallery3d/ui/FadeTexture;->mTexture:Lcom/android/gallery3d/ui/BasicTexture;
 
     invoke-virtual {v0}, Lcom/android/gallery3d/ui/BasicTexture;->getHeight()I
@@ -50,7 +50,7 @@
 
     iput v0, p0, Lcom/android/gallery3d/ui/FadeTexture;->mHeight:I
 
-    .line 40
+    .line 42
     iget-object v0, p0, Lcom/android/gallery3d/ui/FadeTexture;->mTexture:Lcom/android/gallery3d/ui/BasicTexture;
 
     invoke-virtual {v0}, Lcom/android/gallery3d/ui/BasicTexture;->isOpaque()Z
@@ -59,19 +59,19 @@
 
     iput-boolean v0, p0, Lcom/android/gallery3d/ui/FadeTexture;->mIsOpaque:Z
 
-    .line 41
+    .line 43
     invoke-direct {p0}, Lcom/android/gallery3d/ui/FadeTexture;->now()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/gallery3d/ui/FadeTexture;->mStartTime:J
 
-    .line 42
+    .line 44
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/gallery3d/ui/FadeTexture;->mIsAnimating:Z
 
-    .line 43
+    .line 45
     return-void
 .end method
 
@@ -79,7 +79,7 @@
     .locals 2
 
     .prologue
-    .line 80
+    .line 82
     invoke-static {}, Lcom/android/gallery3d/ui/AnimationTime;->get()J
 
     move-result-wide v0
@@ -96,7 +96,7 @@
     .parameter "y"
 
     .prologue
-    .line 47
+    .line 49
     iget v4, p0, Lcom/android/gallery3d/ui/FadeTexture;->mWidth:I
 
     iget v5, p0, Lcom/android/gallery3d/ui/FadeTexture;->mHeight:I
@@ -111,7 +111,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/gallery3d/ui/FadeTexture;->draw(Lcom/android/gallery3d/ui/GLCanvas;IIII)V
 
-    .line 48
+    .line 50
     return-void
 .end method
 
@@ -119,7 +119,7 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 64
     iget v0, p0, Lcom/android/gallery3d/ui/FadeTexture;->mHeight:I
 
     return v0
@@ -131,7 +131,7 @@
     .prologue
     const/high16 v5, 0x3f80
 
-    .line 75
+    .line 77
     invoke-direct {p0}, Lcom/android/gallery3d/ui/FadeTexture;->now()J
 
     move-result-wide v1
@@ -142,11 +142,11 @@
 
     long-to-float v1, v1
 
-    const/high16 v2, 0x4334
+    const/high16 v2, 0x4270
 
     div-float v0, v1, v2
 
-    .line 76
+    .line 78
     .local v0, r:F
     sub-float v1, v5, v0
 
@@ -163,7 +163,7 @@
     .locals 1
 
     .prologue
-    .line 57
+    .line 59
     iget v0, p0, Lcom/android/gallery3d/ui/FadeTexture;->mWidth:I
 
     return v0
@@ -173,12 +173,12 @@
     .locals 4
 
     .prologue
-    .line 66
+    .line 68
     iget-boolean v0, p0, Lcom/android/gallery3d/ui/FadeTexture;->mIsAnimating:Z
 
     if-eqz v0, :cond_0
 
-    .line 67
+    .line 69
     invoke-direct {p0}, Lcom/android/gallery3d/ui/FadeTexture;->now()J
 
     move-result-wide v0
@@ -187,18 +187,18 @@
 
     sub-long/2addr v0, v2
 
-    const-wide/16 v2, 0xb4
+    const-wide/16 v2, 0x3c
 
     cmp-long v0, v0, v2
 
     if-ltz v0, :cond_0
 
-    .line 68
+    .line 70
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/gallery3d/ui/FadeTexture;->mIsAnimating:Z
 
-    .line 71
+    .line 73
     :cond_0
     iget-boolean v0, p0, Lcom/android/gallery3d/ui/FadeTexture;->mIsAnimating:Z
 
@@ -209,7 +209,7 @@
     .locals 1
 
     .prologue
-    .line 52
+    .line 54
     iget-boolean v0, p0, Lcom/android/gallery3d/ui/FadeTexture;->mIsOpaque:Z
 
     return v0

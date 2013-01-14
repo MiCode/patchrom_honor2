@@ -34,6 +34,7 @@
     .locals 1
 
     .prologue
+    .line 72
     new-instance v0, Landroid/content/pm/PackageInfoLite$1;
 
     invoke-direct {v0}, Landroid/content/pm/PackageInfoLite$1;-><init>()V
@@ -47,8 +48,10 @@
     .locals 0
 
     .prologue
+    .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 47
     return-void
 .end method
 
@@ -57,47 +60,57 @@
     .parameter "source"
 
     .prologue
+    .line 83
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 84
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/content/pm/PackageInfoLite;->packageName:Ljava/lang/String;
 
+    .line 85
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, p0, Landroid/content/pm/PackageInfoLite;->recommendedInstallLocation:I
 
+    .line 86
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, p0, Landroid/content/pm/PackageInfoLite;->installLocation:I
 
+    .line 88
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
+    .line 89
     .local v0, verifiersLength:I
     if-nez v0, :cond_0
 
+    .line 90
     const/4 v1, 0x0
 
     new-array v1, v1, [Landroid/content/pm/VerifierInfo;
 
     iput-object v1, p0, Landroid/content/pm/PackageInfoLite;->verifiers:[Landroid/content/pm/VerifierInfo;
 
+    .line 95
     :goto_0
     return-void
 
+    .line 92
     :cond_0
     new-array v1, v0, [Landroid/content/pm/VerifierInfo;
 
     iput-object v1, p0, Landroid/content/pm/PackageInfoLite;->verifiers:[Landroid/content/pm/VerifierInfo;
 
+    .line 93
     iget-object v1, p0, Landroid/content/pm/PackageInfoLite;->verifiers:[Landroid/content/pm/VerifierInfo;
 
     sget-object v2, Landroid/content/pm/VerifierInfo;->CREATOR:Landroid/os/Parcelable$Creator;
@@ -113,6 +126,7 @@
     .parameter "x1"
 
     .prologue
+    .line 27
     invoke-direct {p0, p1}, Landroid/content/pm/PackageInfoLite;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -124,6 +138,7 @@
     .locals 1
 
     .prologue
+    .line 56
     const/4 v0, 0x0
 
     return v0
@@ -133,6 +148,7 @@
     .locals 2
 
     .prologue
+    .line 50
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -167,7 +183,7 @@
 
     move-result-object v0
 
-    const-string v1, "}"
+    const-string/jumbo v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -186,18 +202,22 @@
     .parameter "parcelableFlags"
 
     .prologue
+    .line 60
     iget-object v0, p0, Landroid/content/pm/PackageInfoLite;->packageName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 61
     iget v0, p0, Landroid/content/pm/PackageInfoLite;->recommendedInstallLocation:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 62
     iget v0, p0, Landroid/content/pm/PackageInfoLite;->installLocation:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 64
     iget-object v0, p0, Landroid/content/pm/PackageInfoLite;->verifiers:[Landroid/content/pm/VerifierInfo;
 
     if-eqz v0, :cond_0
@@ -208,14 +228,17 @@
 
     if-nez v0, :cond_1
 
+    .line 65
     :cond_0
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 70
     :goto_0
     return-void
 
+    .line 67
     :cond_1
     iget-object v0, p0, Landroid/content/pm/PackageInfoLite;->verifiers:[Landroid/content/pm/VerifierInfo;
 
@@ -223,6 +246,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 68
     iget-object v0, p0, Landroid/content/pm/PackageInfoLite;->verifiers:[Landroid/content/pm/VerifierInfo;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V

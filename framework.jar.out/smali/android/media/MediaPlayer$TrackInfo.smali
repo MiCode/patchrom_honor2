@@ -49,6 +49,7 @@
     .locals 1
 
     .prologue
+    .line 1630
     new-instance v0, Landroid/media/MediaPlayer$TrackInfo$1;
 
     invoke-direct {v0}, Landroid/media/MediaPlayer$TrackInfo$1;-><init>()V
@@ -63,20 +64,24 @@
     .parameter "in"
 
     .prologue
+    .line 1605
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 1606
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/media/MediaPlayer$TrackInfo;->mTrackType:I
 
+    .line 1607
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/media/MediaPlayer$TrackInfo;->mLanguage:Ljava/lang/String;
 
+    .line 1608
     return-void
 .end method
 
@@ -86,6 +91,7 @@
     .locals 1
 
     .prologue
+    .line 1615
     const/4 v0, 0x0
 
     return v0
@@ -95,6 +101,7 @@
     .locals 1
 
     .prologue
+    .line 1594
     iget-object v0, p0, Landroid/media/MediaPlayer$TrackInfo;->mLanguage:Ljava/lang/String;
 
     return-object v0
@@ -104,6 +111,7 @@
     .locals 1
 
     .prologue
+    .line 1584
     iget v0, p0, Landroid/media/MediaPlayer$TrackInfo;->mTrackType:I
 
     return v0
@@ -115,13 +123,16 @@
     .parameter "flags"
 
     .prologue
+    .line 1623
     iget v0, p0, Landroid/media/MediaPlayer$TrackInfo;->mTrackType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 1624
     iget-object v0, p0, Landroid/media/MediaPlayer$TrackInfo;->mLanguage:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
+    .line 1625
     return-void
 .end method
