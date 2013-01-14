@@ -224,3 +224,9 @@
 
 .method public abstract show()V
 .end method
+
+.method public abstract setHomeViewBackground(I)V
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+.end method

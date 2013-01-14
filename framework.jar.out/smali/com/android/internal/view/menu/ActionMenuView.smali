@@ -2506,6 +2506,18 @@
 
     invoke-virtual {v0, v11, v1, v2, v3}, Landroid/view/View;->layout(IIII)V
 
+    move-object/from16 v0, v25
+
+    move/from16 v1, p2
+
+    move/from16 v2, v24
+
+    move/from16 v3, p4
+
+    move/from16 v4, p5
+
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/android/internal/view/menu/ActionMenuView$Injector;->layout(Landroid/view/View;IIII)V
+
     goto/16 :goto_0
 
     .line 449

@@ -15,6 +15,10 @@
 
 
 # instance fields
+.field mCompactMode:Z
+
+.field mIconDrawable:Landroid/graphics/drawable/Drawable;
+
 .field protected mIconView:Landroid/widget/ImageView;
 
 .field protected mUpView:Landroid/view/View;
@@ -86,7 +90,7 @@
     .line 1329
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpView:Landroid/view/View;
 
-    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+    invoke-static {p0, v0}, Lcom/android/internal/widget/ActionBarView$Injector;->getUpViewVisibility(Lcom/android/internal/widget/ActionBarView$HomeView;Landroid/view/View;)I
 
     move-result v0
 
@@ -128,6 +132,8 @@
     check-cast v0, Landroid/widget/ImageView;
 
     iput-object v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mIconView:Landroid/widget/ImageView;
+
+    invoke-static {p0}, Lcom/android/internal/widget/ActionBarView$Injector;->switchToCompactMode(Lcom/android/internal/widget/ActionBarView$HomeView;)V
 
     .line 1326
     return-void
@@ -604,12 +610,12 @@
     .parameter "icon"
 
     .prologue
-    .line 1298
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mIconView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1299
+    invoke-static {p0, p1}, Lcom/android/internal/widget/ActionBarView$Injector;->setIcon(Lcom/android/internal/widget/ActionBarView$HomeView;Landroid/graphics/drawable/Drawable;)V
+
     return-void
 .end method
 
@@ -628,6 +634,8 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
+    invoke-static {p0}, Lcom/android/internal/widget/ActionBarView$Injector;->setIcon(Lcom/android/internal/widget/ActionBarView$HomeView;)V
+
     .line 1295
     return-void
 
@@ -636,4 +644,28 @@
     const/16 v0, 0x8
 
     goto :goto_0
+.end method
+
+.method getIconView()Landroid/widget/ImageView;
+    .locals 1
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    iget-object v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mIconView:Landroid/widget/ImageView;
+
+    return-object v0
+.end method
+
+.method getUpView()Landroid/view/View;
+    .locals 1
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    iget-object v0, p0, Lcom/android/internal/widget/ActionBarView$HomeView;->mUpView:Landroid/view/View;
+
+    return-object v0
 .end method

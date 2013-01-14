@@ -2833,7 +2833,7 @@
 
     iget v4, v1, Landroid/content/pm/RegisteredServicesCache$ServiceInfo;->uid:I
 
-    invoke-virtual {v2, v4, p2}, Landroid/content/pm/PackageManager;->checkSignatures(II)I
+    invoke-static {v2, v4, p2, p1}, Landroid/accounts/AccountManagerService$Injector;->checkSignatures(Landroid/content/pm/PackageManager;IILjava/lang/String;)I
 
     move-result v2
 

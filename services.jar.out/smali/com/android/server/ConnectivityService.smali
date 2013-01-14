@@ -486,25 +486,23 @@
 
     iput-object v2, v0, Lcom/android/server/ConnectivityService;->wifiDisconnectManager:Lcom/android/server/ConnectivityService$WifiDisconnectManager;
 
-    .line 415
     const-string v2, "ConnectivityService starting up"
 
     move-object/from16 v0, p0
 
     invoke-direct {v0, v2}, Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
 
-    .line 417
+    invoke-static/range {p1 .. p1}, Lcom/miui/server/FirewallService;->setupService(Landroid/content/Context;)V
+
     new-instance v14, Landroid/os/HandlerThread;
 
     const-string v2, "ConnectivityServiceThread"
 
     invoke-direct {v14, v2}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
-    .line 418
     .local v14, handlerThread:Landroid/os/HandlerThread;
     invoke-virtual {v14}, Landroid/os/HandlerThread;->start()V
 
-    .line 419
     new-instance v2, Lcom/android/server/ConnectivityService$MyHandler;
 
     invoke-virtual {v14}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
@@ -8209,6 +8207,10 @@
 
     .line 1405
     .local v12, usedNetworkType:I
+    move-object/from16 v0, p1
+    
+    invoke-static {v0, v12}, Lcom/android/server/ConnectivityService$Injector;->stopUsingNetworkFeature(Lcom/android/server/ConnectivityService$FeatureUser;I)V    
+    
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/ConnectivityService;->mNetTrackers:[Landroid/net/NetworkStateTracker;
@@ -13276,17 +13278,16 @@
 
     invoke-interface {v0, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1235
     :cond_c
     monitor-exit p0
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_2
 
-    .line 1237
+    :try_start_9
+    invoke-static/range {v24 .. v24}, Lcom/android/server/ConnectivityService$Injector;->startUsingNetworkFeature(I)V
+
     if-ltz v16, :cond_d
 
-    .line 1238
-    :try_start_9
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ConnectivityService;->mHandler:Landroid/os/Handler;

@@ -701,7 +701,7 @@
 
     const/4 v5, 0x0
 
-    invoke-virtual {p1, v3, v4, v5}, Landroid/content/pm/PackageManager;->getDrawable(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p0, p1, v3, v4, v5}, Landroid/content/pm/ResolveInfo$Injector;->getDrawable(Landroid/content/pm/ResolveInfo;Landroid/content/pm/PackageManager;Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
@@ -739,7 +739,7 @@
 
     iget v4, p0, Landroid/content/pm/ResolveInfo;->icon:I
 
-    invoke-virtual {p1, v3, v4, v0}, Landroid/content/pm/PackageManager;->getDrawable(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p0, p1, v3, v4, v0}, Landroid/content/pm/ResolveInfo$Injector;->getDrawable(Landroid/content/pm/ResolveInfo;Landroid/content/pm/PackageManager;Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 

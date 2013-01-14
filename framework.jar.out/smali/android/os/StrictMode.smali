@@ -222,6 +222,10 @@
 
     sget-object v1, Landroid/os/Build;->TYPE:Ljava/lang/String;
 
+    invoke-static {v1}, Landroid/os/StrictMode;->ignoreDebugBuild(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -2916,4 +2920,27 @@
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
     goto :goto_0
+.end method
+
+.method static ignoreDebugBuild(Ljava/lang/String;)Ljava/lang/String;
+    .locals 1
+    .parameter "build"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    const-string v0, "userdebug"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string p0, "user"
+
+    .end local p0
+    :cond_0
+    return-object p0
 .end method

@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x12
+    accessFlags = 0x10
     name = "DecorView"
 .end annotation
 
@@ -47,6 +47,8 @@
 .field private final mFramePadding:Landroid/graphics/Rect;
 
 .field private mMenuBackground:Landroid/graphics/drawable/Drawable;
+
+.field mRoundedCorners:Lcom/android/internal/policy/impl/RoundedCorners;
 
 .field private mShowActionModePopup:Ljava/lang/Runnable;
 
@@ -403,6 +405,27 @@
 
 
 # virtual methods
+.method protected dispatchDraw(Landroid/graphics/Canvas;)V
+    .locals 3
+    .parameter "canvas"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
+
+    iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindow$DecorView;->this$0:Lcom/android/internal/policy/impl/PhoneWindow;
+
+    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindow$DecorView;->mFrameOffsets:Landroid/graphics/Rect;
+
+    iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindow$DecorView;->mDrawingBounds:Landroid/graphics/Rect;
+
+    invoke-static {v0, p0, p1, v1, v2}, Lcom/android/internal/policy/impl/PhoneWindow$Injector;->drawRoundedCorners(Lcom/android/internal/policy/impl/PhoneWindow;Lcom/android/internal/policy/impl/PhoneWindow$DecorView;Landroid/graphics/Canvas;Landroid/graphics/Rect;Landroid/graphics/Rect;)V
+
+    return-void
+.end method
+
 .method public dispatchGenericMotionEvent(Landroid/view/MotionEvent;)Z
     .locals 2
     .parameter "ev"

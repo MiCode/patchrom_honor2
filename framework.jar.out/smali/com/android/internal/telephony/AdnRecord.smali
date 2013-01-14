@@ -42,7 +42,7 @@
 
 .field static final MAX_EXT_CALLED_PARTY_LENGTH:I = 0xa
 
-.field static final MAX_NUMBER_SIZE_BYTES:I = 0xb
+.field static final MAX_NUMBER_SIZE_BYTES:I = 0xff
 
 
 # instance fields
@@ -273,35 +273,29 @@
 
     iput-object v3, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
-    .line 515
     array-length v3, p1
 
     add-int/lit8 v1, v3, -0xe
 
-    .line 517
     .local v1, footerOffset:I
     aget-byte v3, p1, v1
 
     and-int/lit16 v2, v3, 0xff
 
-    .line 519
     .local v2, numberLength:I
-    const/16 v3, 0xb
+    const/16 v3, 0xff
 
     if-le v2, v3, :cond_0
 
-    .line 521
     const-string v3, ""
 
     iput-object v3, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
-    .line 546
     .end local v1           #footerOffset:I
     .end local v2           #numberLength:I
     :goto_0
     return-void
 
-    .line 532
     .restart local v1       #footerOffset:I
     .restart local v2       #numberLength:I
     :cond_0
@@ -344,6 +338,10 @@
     const-string v3, "GSM"
 
     const-string v4, "Error parsing AdnRecord"
+
+    invoke-static {p0, v4}, Lcom/android/internal/telephony/AdnRecord$Injector;->adnRecordError(Lcom/android/internal/telephony/AdnRecord;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
 
     invoke-static {v3, v4, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 

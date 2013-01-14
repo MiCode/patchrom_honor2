@@ -22,6 +22,8 @@
 
 .field public static final FILE_TYPE_AMR:I = 0x4
 
+.field public static final FILE_TYPE_APE:I = 0x3e9
+
 .field public static final FILE_TYPE_ASF:I = 0x1a
 
 .field public static final FILE_TYPE_AVI:I = 0x1d
@@ -311,21 +313,18 @@
 
     invoke-static {v0, v1, v2}, Landroid/media/MediaFile;->addFileType(Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 190
     const-string v0, "AWB"
 
     const-string v1, "audio/amr-wb"
 
     invoke-static {v0, v4, v1}, Landroid/media/MediaFile;->addFileType(Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 191
-    invoke-static {}, Landroid/media/MediaFile;->isWMAEnabled()Z
+    invoke-static {}, Landroid/media/MediaFile$Injector;->isWMAEnabled()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 192
     const-string v0, "WMA"
 
     const/4 v1, 0x6

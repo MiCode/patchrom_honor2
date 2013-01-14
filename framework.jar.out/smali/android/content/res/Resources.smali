@@ -131,7 +131,7 @@
 
 .field private mPluralRule:Llibcore/icu/NativePluralRules;
 
-.field private mPreloading:Z
+.field mPreloading:Z
 
 .field final mTmpConfig:Landroid/content/res/Configuration;
 
@@ -145,57 +145,38 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 82
     new-instance v1, Ljava/lang/Object;
 
     invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
     sput-object v1, Landroid/content/res/Resources;->mSync:Ljava/lang/Object;
 
-    .line 83
     const/4 v1, 0x0
 
     sput-object v1, Landroid/content/res/Resources;->mSystem:Landroid/content/res/Resources;
 
-    .line 88
     new-instance v1, Landroid/util/LongSparseArray;
 
     invoke-direct {v1}, Landroid/util/LongSparseArray;-><init>()V
 
     sput-object v1, Landroid/content/res/Resources;->sPreloadedDrawables:Landroid/util/LongSparseArray;
 
-    .line 90
     new-instance v1, Landroid/util/LongSparseArray;
 
     invoke-direct {v1}, Landroid/util/LongSparseArray;-><init>()V
 
     sput-object v1, Landroid/content/res/Resources;->sPreloadedColorStateLists:Landroid/util/LongSparseArray;
 
-    .line 92
     new-instance v1, Landroid/util/LongSparseArray;
 
     invoke-direct {v1}, Landroid/util/LongSparseArray;-><init>()V
 
     sput-object v1, Landroid/content/res/Resources;->sPreloadedColorDrawables:Landroid/util/LongSparseArray;
 
-    .line 2229
-    const-string/jumbo v1, "ro.config.hwtheme"
-
-    invoke-static {v1, v0}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
-
-    move-result v1
-
-    if-lez v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :cond_0
-    sput-boolean v0, Landroid/content/res/Resources;->sIsHwTheme:Z
-
     return-void
 .end method
 
-.method protected constructor <init>()V
+.method constructor <init>()V
     .locals 3
 
     .prologue
@@ -354,110 +335,86 @@
 
     const/4 v1, 0x4
 
-    .line 185
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 96
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
     iput-object v0, p0, Landroid/content/res/Resources;->mTmpValue:Landroid/util/TypedValue;
 
-    .line 97
     new-instance v0, Landroid/content/res/Configuration;
 
     invoke-direct {v0}, Landroid/content/res/Configuration;-><init>()V
 
     iput-object v0, p0, Landroid/content/res/Resources;->mTmpConfig:Landroid/content/res/Configuration;
 
-    .line 100
     new-instance v0, Landroid/util/LongSparseArray;
 
     invoke-direct {v0}, Landroid/util/LongSparseArray;-><init>()V
 
     iput-object v0, p0, Landroid/content/res/Resources;->mDrawableCache:Landroid/util/LongSparseArray;
 
-    .line 102
     new-instance v0, Landroid/util/LongSparseArray;
 
     invoke-direct {v0}, Landroid/util/LongSparseArray;-><init>()V
 
     iput-object v0, p0, Landroid/content/res/Resources;->mColorStateListCache:Landroid/util/LongSparseArray;
 
-    .line 104
     new-instance v0, Landroid/util/LongSparseArray;
 
     invoke-direct {v0}, Landroid/util/LongSparseArray;-><init>()V
 
     iput-object v0, p0, Landroid/content/res/Resources;->mColorDrawableCache:Landroid/util/LongSparseArray;
 
-    .line 108
     iput-object v2, p0, Landroid/content/res/Resources;->mCachedStyledAttributes:Landroid/content/res/TypedArray;
 
-    .line 109
     iput-object v2, p0, Landroid/content/res/Resources;->mLastRetrievedAttrs:Ljava/lang/RuntimeException;
 
-    .line 111
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/content/res/Resources;->mLastCachedXmlBlockIndex:I
 
-    .line 112
     new-array v0, v1, [I
 
     fill-array-data v0, :array_0
 
     iput-object v0, p0, Landroid/content/res/Resources;->mCachedXmlBlockIds:[I
 
-    .line 113
     new-array v0, v1, [Landroid/content/res/XmlBlock;
 
     iput-object v0, p0, Landroid/content/res/Resources;->mCachedXmlBlocks:[Landroid/content/res/XmlBlock;
 
-    .line 116
     new-instance v0, Landroid/content/res/Configuration;
 
     invoke-direct {v0}, Landroid/content/res/Configuration;-><init>()V
 
     iput-object v0, p0, Landroid/content/res/Resources;->mConfiguration:Landroid/content/res/Configuration;
 
-    .line 117
     new-instance v0, Landroid/util/DisplayMetrics;
 
     invoke-direct {v0}, Landroid/util/DisplayMetrics;-><init>()V
 
     iput-object v0, p0, Landroid/content/res/Resources;->mMetrics:Landroid/util/DisplayMetrics;
 
-    .line 2231
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/content/res/Resources;->mConfigHwt:I
 
-    .line 186
     iput-object p1, p0, Landroid/content/res/Resources;->mAssets:Landroid/content/res/AssetManager;
 
-    .line 187
     iget-object v0, p0, Landroid/content/res/Resources;->mMetrics:Landroid/util/DisplayMetrics;
 
     invoke-virtual {v0}, Landroid/util/DisplayMetrics;->setToDefaults()V
 
-    .line 188
     iput-object p4, p0, Landroid/content/res/Resources;->mCompatibilityInfo:Landroid/content/res/CompatibilityInfo;
 
-    .line 190
-    invoke-direct {p0, p3}, Landroid/content/res/Resources;->setHwTheme(Landroid/content/res/Configuration;)V
-
-    .line 192
     invoke-virtual {p0, p3, p2}, Landroid/content/res/Resources;->updateConfiguration(Landroid/content/res/Configuration;Landroid/util/DisplayMetrics;)V
 
-    .line 193
     invoke-virtual {p1}, Landroid/content/res/AssetManager;->ensureStringBlocks()V
 
-    .line 194
     return-void
 
-    .line 112
     :array_0
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
@@ -728,7 +685,7 @@
     .restart local v0       #attrs:Landroid/content/res/TypedArray;
     :cond_1
     :try_start_1
-    new-instance v0, Landroid/content/res/TypedArray;
+    new-instance v0, Landroid/content/res/MiuiTypedArray;
 
     .end local v0           #attrs:Landroid/content/res/TypedArray;
     mul-int/lit8 v2, p1, 0x6
@@ -739,7 +696,7 @@
 
     new-array v4, v4, [I
 
-    invoke-direct {v0, p0, v2, v4, p1}, Landroid/content/res/TypedArray;-><init>(Landroid/content/res/Resources;[I[II)V
+    invoke-direct {v0, p0, v2, v4, p1}, Landroid/content/res/MiuiTypedArray;-><init>(Landroid/content/res/Resources;[I[II)V
 
     monitor-exit v3
     :try_end_1
@@ -866,28 +823,20 @@
     .locals 3
 
     .prologue
-    .line 203
     sget-object v2, Landroid/content/res/Resources;->mSync:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 204
     :try_start_0
     sget-object v0, Landroid/content/res/Resources;->mSystem:Landroid/content/res/Resources;
 
-    .line 205
     .local v0, ret:Landroid/content/res/Resources;
     if-nez v0, :cond_0
 
-    .line 207
-    sget-boolean v1, Landroid/content/res/Resources;->sIsHwTheme:Z
-
-    if-eqz v1, :cond_1
-
-    new-instance v0, Landroid/content/res/ResourcesEx;
+    new-instance v0, Landroid/content/res/MiuiResources;
 
     .end local v0           #ret:Landroid/content/res/Resources;
-    invoke-direct {v0}, Landroid/content/res/ResourcesEx;-><init>()V
+    invoke-direct {v0}, Landroid/content/res/MiuiResources;-><init>()V
 
     .line 209
     .restart local v0       #ret:Landroid/content/res/Resources;
@@ -987,30 +936,6 @@
     goto :goto_0
 .end method
 
-.method private setHwTheme(Landroid/content/res/Configuration;)V
-    .locals 1
-    .parameter "config"
-
-    .prologue
-    .line 2234
-    sget-boolean v0, Landroid/content/res/Resources;->sIsHwTheme:Z
-
-    if-eqz v0, :cond_0
-
-    if-eqz p1, :cond_0
-
-    .line 2235
-    iget-object v0, p1, Landroid/content/res/Configuration;->extraConfig:Landroid/content/res/ConfigurationEx;
-
-    iget v0, v0, Landroid/content/res/ConfigurationEx;->hwtheme:I
-
-    iput v0, p0, Landroid/content/res/Resources;->mConfigHwt:I
-
-    .line 2237
-    :cond_0
-    return-void
-.end method
-
 .method private static stringForQuantityCode(I)Ljava/lang/String;
     .locals 1
     .parameter "quantityCode"
@@ -1064,51 +989,6 @@
         :pswitch_3
         :pswitch_4
     .end packed-switch
-.end method
-
-.method private updateExtraConfiguration(I)V
-    .locals 3
-    .parameter "configChanges"
-
-    .prologue
-    .line 2240
-    iget-object v1, p0, Landroid/content/res/Resources;->mConfiguration:Landroid/content/res/Configuration;
-
-    iget-object v0, v1, Landroid/content/res/Configuration;->extraConfig:Landroid/content/res/ConfigurationEx;
-
-    .line 2241
-    .local v0, configEx:Landroid/content/res/ConfigurationEx;
-    sget-boolean v1, Landroid/content/res/Resources;->sIsHwTheme:Z
-
-    if-eqz v1, :cond_0
-
-    invoke-static {p1}, Landroid/content/res/ConfigurationEx;->needNewResources(I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 2242
-    iget v1, p0, Landroid/content/res/Resources;->mConfigHwt:I
-
-    iget v2, v0, Landroid/content/res/ConfigurationEx;->hwtheme:I
-
-    if-eq v1, v2, :cond_0
-
-    .line 2243
-    iget v1, v0, Landroid/content/res/ConfigurationEx;->hwtheme:I
-
-    iput v1, p0, Landroid/content/res/Resources;->mConfigHwt:I
-
-    .line 2244
-    invoke-static {}, Landroid/content/res/Resources;->clearPreloadedCache()V
-
-    .line 2245
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->handleClearCache(I)V
-
-    .line 2248
-    :cond_0
-    return-void
 .end method
 
 .method public static updateSystemConfiguration(Landroid/content/res/Configuration;Landroid/util/DisplayMetrics;)V
@@ -4246,13 +4126,15 @@
 
     .line 1948
     .local v7, is:Ljava/io/InputStream;
+    invoke-static/range {p2 .. p2}, Landroid/content/res/Resources$Injector;->setDrawableId(I)V
+
     const/4 v13, 0x0
 
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
-    invoke-static {v0, v1, v7, v6, v13}, Landroid/graphics/drawable/Drawable;->createFromResourceStream(Landroid/content/res/Resources;Landroid/util/TypedValue;Ljava/io/InputStream;Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, v1, v7, v6, v13}, Landroid/content/res/Resources$Injector;->createFromResourceStream(Landroid/content/res/Resources;Landroid/util/TypedValue;Ljava/io/InputStream;Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
@@ -4762,7 +4644,7 @@
     throw v7
 .end method
 
-.method public final newTheme()Landroid/content/res/Resources$Theme;
+.method public newTheme()Landroid/content/res/Resources$Theme;
     .locals 1
 
     .prologue
@@ -5708,12 +5590,16 @@
 
     move-result v20
 
-    .line 1455
     invoke-static/range {v20 .. v20}, Landroid/content/pm/ActivityInfo;->activityInfoConfigToNative(I)I
 
-    move-result v20
+    move-result v2
 
-    .line 1457
+    const/high16 v3, -0x8000
+
+    and-int v3, v3, v20
+
+    or-int v20, v2, v3
+
     move-object/from16 v0, p0
 
     move/from16 v1, v20
@@ -6022,34 +5908,22 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/content/res/Resources;->clearDrawableCache(Landroid/util/LongSparseArray;I)V
 
-    .line 1506
-    move-object/from16 v0, p0
-
-    move/from16 v1, v20
-
-    invoke-direct {v0, v1}, Landroid/content/res/Resources;->updateExtraConfiguration(I)V
-
-    .line 1509
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/content/res/Resources;->mColorStateListCache:Landroid/util/LongSparseArray;
 
     invoke-virtual {v2}, Landroid/util/LongSparseArray;->clear()V
 
-    .line 1511
     invoke-virtual/range {p0 .. p0}, Landroid/content/res/Resources;->flushLayoutCache()V
 
-    .line 1512
     monitor-exit v21
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1513
     sget-object v3, Landroid/content/res/Resources;->mSync:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 1514
     :try_start_1
     move-object/from16 v0, p0
 
@@ -6131,4 +6005,40 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     throw v2
+.end method
+
+.method static clearPreloadedCache()V
+    .locals 1
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    sget-object v0, Landroid/content/res/Resources;->sPreloadedDrawables:Landroid/util/LongSparseArray;
+
+    invoke-virtual {v0}, Landroid/util/LongSparseArray;->clear()V
+
+    sget-object v0, Landroid/content/res/Resources;->sPreloadedColorStateLists:Landroid/util/LongSparseArray;
+
+    invoke-virtual {v0}, Landroid/util/LongSparseArray;->clear()V
+
+    sget-object v0, Landroid/content/res/Resources;->sPreloadedColorDrawables:Landroid/util/LongSparseArray;
+
+    invoke-virtual {v0}, Landroid/util/LongSparseArray;->clear()V
+
+    return-void
+.end method
+
+.method loadOverlayDrawable(Landroid/util/TypedValue;I)Landroid/graphics/drawable/Drawable;
+    .locals 1
+    .parameter "value"
+    .parameter "id"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    const/4 v0, 0x0
+
+    return-object v0
 .end method

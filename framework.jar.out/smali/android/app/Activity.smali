@@ -5577,19 +5577,18 @@
     .locals 1
 
     .prologue
-    .line 1114
     invoke-virtual {p0}, Landroid/app/Activity;->getApplication()Landroid/app/Application;
 
     move-result-object v0
 
     invoke-virtual {v0, p0}, Landroid/app/Application;->dispatchActivityResumed(Landroid/app/Activity;)V
 
-    .line 1115
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/app/Activity;->mCalled:Z
 
-    .line 1116
+    invoke-static {p0}, Landroid/app/Activity$Injector;->checkAccessControl(Landroid/app/Activity;)V
+
     return-void
 .end method
 
@@ -9115,4 +9114,16 @@
 
     .line 2885
     return-void
+.end method
+
+.method getToken()Landroid/os/IBinder;
+    .locals 1
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    iget-object v0, p0, Landroid/app/Activity;->mToken:Landroid/os/IBinder;
+
+    return-object v0
 .end method

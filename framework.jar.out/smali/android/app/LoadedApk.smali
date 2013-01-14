@@ -1993,7 +1993,7 @@
 .end method
 
 .method public getResources(Landroid/app/ActivityThread;)Landroid/content/res/Resources;
-    .locals 1
+    .locals 2
     .parameter "mainThread"
 
     .prologue
@@ -2005,7 +2005,9 @@
     .line 477
     iget-object v0, p0, Landroid/app/LoadedApk;->mResDir:Ljava/lang/String;
 
-    invoke-virtual {p1, v0, p0}, Landroid/app/ActivityThread;->getTopLevelResources(Ljava/lang/String;Landroid/app/LoadedApk;)Landroid/content/res/Resources;
+    iget-object v1, p0, Landroid/app/LoadedApk;->mPackageName:Ljava/lang/String;
+
+    invoke-virtual {p1, v1, v0, p0}, Landroid/app/ActivityThread;->getTopLevelResources(Ljava/lang/String;Ljava/lang/String;Landroid/app/LoadedApk;)Landroid/content/res/Resources;
 
     move-result-object v0
 

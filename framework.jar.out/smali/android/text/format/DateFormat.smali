@@ -1298,22 +1298,23 @@
 
     const/4 v0, 0x1
 
-    .line 204
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v7
 
-    const-string/jumbo v8, "time_12_24"
+    const-string v8, "time_12_24"
 
     invoke-static {v7, v8}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 207
     .local v5, value:Ljava/lang/String;
+    invoke-static {p0, v5}, Landroid/text/format/DateFormat$Injector;->check24HourFormatForChina(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
     if-nez v5, :cond_1
 
-    .line 208
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v7

@@ -1913,19 +1913,17 @@
     .prologue
     const/16 v1, 0xa
 
-    .line 528
     :try_start_0
-    invoke-virtual {p0, p1}, Lcom/android/server/pm/PackageManagerService$PackageHandler;->doHandleMessage(Landroid/os/Message;)V
+    iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageHandler;->this$0:Lcom/android/server/pm/PackageManagerService;
+
+    invoke-static {v0, p0, p1}, Lcom/android/server/pm/PackageManagerService$Injector;->doHandleMessage(Lcom/android/server/pm/PackageManagerService;Lcom/android/server/pm/PackageManagerService$PackageHandler;Landroid/os/Message;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 530
     invoke-static {v1}, Landroid/os/Process;->setThreadPriority(I)V
 
-    .line 532
     return-void
 
-    .line 530
     :catchall_0
     move-exception v0
 

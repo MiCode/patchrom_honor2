@@ -183,6 +183,12 @@
 
     .line 95
     .local v14, locales:[Ljava/lang/String;
+    move-object/from16 v0, v17
+
+    invoke-static {v0, v14}, Lmiui/util/ExtraLocalePicker;->filterLocale(Landroid/content/res/Resources;[Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v14
+
     const v22, 0x1070007
 
     move-object/from16 v0, v17
@@ -507,28 +513,25 @@
     :cond_4
     new-array v13, v8, [Lcom/android/internal/app/LocalePicker$LocaleInfo;
 
-    .line 163
     .local v13, localeInfos:[Lcom/android/internal/app/LocalePicker$LocaleInfo;
     const/4 v9, 0x0
 
     :goto_3
     if-ge v9, v8, :cond_5
 
-    .line 164
     aget-object v22, v16, v9
 
     aput-object v22, v13, v9
 
-    .line 163
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_3
 
-    .line 166
     :cond_5
     invoke-static {v13}, Ljava/util/Arrays;->sort([Ljava/lang/Object;)V
 
-    .line 167
+    invoke-static {v13}, Lmiui/util/ExtraLocalePicker;->adjustLocaleOrder([Lcom/android/internal/app/LocalePicker$LocaleInfo;)V
+
     new-instance v22, Landroid/widget/ArrayAdapter;
 
     move-object/from16 v0, v22

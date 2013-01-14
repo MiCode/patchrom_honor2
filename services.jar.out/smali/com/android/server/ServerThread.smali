@@ -934,29 +934,25 @@
 
     move-result-object v56
 
-    .line 243
     const-string v3, "SystemServer"
 
     const-string v9, "System Content Providers"
 
     invoke-static {v3, v9}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 244
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->installSystemProviders()V
 
-    .line 246
     const-string v3, "SystemServer"
 
     const-string v9, "Lights Service"
 
     invoke-static {v3, v9}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 247
-    new-instance v74, Lcom/android/server/LightsService;
+    new-instance v74, Lcom/android/server/MiuiLightsService;
 
     move-object/from16 v0, v74
 
-    invoke-direct {v0, v4}, Lcom/android/server/LightsService;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v4}, Lcom/android/server/MiuiLightsService;-><init>(Landroid/content/Context;)V
     :try_end_6
     .catch Ljava/lang/RuntimeException; {:try_start_6 .. :try_end_6} :catch_0
 

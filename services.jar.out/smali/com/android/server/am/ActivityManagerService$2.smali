@@ -176,6 +176,18 @@
 
     if-nez v3, :cond_2
 
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/server/am/ActivityManagerService$2;->this$0:Lcom/android/server/am/ActivityManagerService;
+
+    move-object/from16 v0, v22
+
+    invoke-static {v3, v0}, Lcom/android/server/am/ActivityManagerService$Injector;->showAppCrashDialog(Lcom/android/server/am/ActivityManagerService;Ljava/util/HashMap;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_miui_0
+
     .line 916
     new-instance v21, Lcom/android/server/am/AppErrorDialog;
 
@@ -193,25 +205,22 @@
 
     invoke-direct {v0, v3, v1, v2}, Lcom/android/server/am/AppErrorDialog;-><init>(Landroid/content/Context;Lcom/android/server/am/AppErrorResult;Lcom/android/server/am/ProcessRecord;)V
 
-    .line 917
     .local v21, d:Landroid/app/Dialog;
     invoke-virtual/range {v21 .. v21}, Landroid/app/Dialog;->show()V
 
-    .line 918
     move-object/from16 v0, v21
 
     move-object/from16 v1, v38
 
     iput-object v0, v1, Lcom/android/server/am/ProcessRecord;->crashDialog:Landroid/app/Dialog;
 
-    .line 924
     .end local v21           #d:Landroid/app/Dialog;
+    :cond_miui_0
     :goto_1
     monitor-exit v4
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 926
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/am/ActivityManagerService$2;->this$0:Lcom/android/server/am/ActivityManagerService;

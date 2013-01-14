@@ -301,23 +301,21 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 337
-    const-string/jumbo v1, "sub_id"
+    #const-string v1, "sub_id"
 
-    invoke-static {p10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    #invoke-static {p10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    #move-result-object v2
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    #invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 338
-    const-string/jumbo v1, "network_type"
+    #const-string v1, "network_type"
 
-    invoke-static {p11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    #invoke-static {p11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    #move-result-object v2
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    #invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
     .line 339
     const-string v1, "address"

@@ -120,9 +120,20 @@
 
 .field public priority:I
 
+.field public private_key:Landroid/net/wifi/WifiConfiguration$EnterpriseField;
+
 .field public proxySettings:Landroid/net/wifi/WifiConfiguration$ProxySettings;
 
 .field public status:I
+
+.field public wapiASCert:Ljava/lang/String;
+
+.field public wapiPsk:Ljava/lang/String;
+
+.field public wapiPskType:I
+
+.field public wapiUserCert:Ljava/lang/String;
+
 
 .field public wepKeys:[Ljava/lang/String;
 
@@ -189,6 +200,14 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 106
+    new-instance v5, Landroid/net/wifi/WifiConfiguration$EnterpriseField;
+
+    const-string v6, "private_key"
+
+    invoke-direct {v5, p0, v6, v8}, Landroid/net/wifi/WifiConfiguration$EnterpriseField;-><init>(Landroid/net/wifi/WifiConfiguration;Ljava/lang/String;Landroid/net/wifi/WifiConfiguration$1;)V
+
+    iput-object v5, p0, Landroid/net/wifi/WifiConfiguration;->private_key:Landroid/net/wifi/WifiConfiguration$EnterpriseField;
+
     new-instance v5, Landroid/net/wifi/WifiConfiguration$EnterpriseField;
 
     const-string v6, "eap"
@@ -483,6 +502,14 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 106
+    new-instance v1, Landroid/net/wifi/WifiConfiguration$EnterpriseField;
+
+    const-string v2, "private_key"
+
+    invoke-direct {v1, p0, v2, v3}, Landroid/net/wifi/WifiConfiguration$EnterpriseField;-><init>(Landroid/net/wifi/WifiConfiguration;Ljava/lang/String;Landroid/net/wifi/WifiConfiguration$1;)V
+
+    iput-object v1, p0, Landroid/net/wifi/WifiConfiguration;->private_key:Landroid/net/wifi/WifiConfiguration$EnterpriseField;
+
     new-instance v1, Landroid/net/wifi/WifiConfiguration$EnterpriseField;
 
     const-string v2, "eap"

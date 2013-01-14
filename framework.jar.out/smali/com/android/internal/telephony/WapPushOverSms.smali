@@ -20,6 +20,9 @@
 
 .field private final WAKE_LOCK_TIMEOUT:I
 
+.field mAddress:Ljava/lang/String;
+
+
 .field private final mContext:Landroid/content/Context;
 
 .field private mOriginalAddr:Ljava/lang/String;
@@ -543,7 +546,17 @@
 
     invoke-static {v0, v7, v1, v3, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    goto :goto_1
+    move-object/from16 v0, p0
+
+    invoke-static {v0, v13}, Lcom/android/internal/telephony/WapPushOverSms$Injector;->checkFirewallForWapPush(Lcom/android/internal/telephony/WapPushOverSms;[B)Z
+
+    move-result v22
+
+    if-eqz v22, :goto_1
+
+    const/16 v22, -0x1
+
+    goto/16 :goto_0
 
     .end local v7           #dataIndex:I
     .restart local v24       #wapAppId:Ljava/lang/String;
@@ -955,6 +968,16 @@
 
     .line 311
     :cond_d
+    const-string v3, "address"
+
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/internal/telephony/WapPushOverSms;->mAddress:Ljava/lang/String;
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v3, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/telephony/WapPushOverSms;->mSmsDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
@@ -987,6 +1010,48 @@
     iput-object p2, p0, Lcom/android/internal/telephony/WapPushOverSms;->mOriginalAddr:Ljava/lang/String;
 
     .line 330
+    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/WapPushOverSms;->dispatchWapPdu([B)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method getContext()Landroid/content/Context;
+    .locals 1
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    iget-object v0, p0, Lcom/android/internal/telephony/WapPushOverSms;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method getSmsDispatcher()Lcom/android/internal/telephony/SMSDispatcher;
+    .locals 1
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    iget-object v0, p0, Lcom/android/internal/telephony/WapPushOverSms;->mSmsDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
+
+    return-object v0
+.end method
+
+.method public dispatchWapPdu([BLjava/lang/String;)I
+    .locals 1
+    .parameter "pdu"
+    .parameter "address"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    iput-object p2, p0, Lcom/android/internal/telephony/WapPushOverSms;->mAddress:Ljava/lang/String;
+
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/WapPushOverSms;->dispatchWapPdu([B)I
 
     move-result v0

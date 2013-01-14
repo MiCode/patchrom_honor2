@@ -806,6 +806,8 @@
 
     invoke-virtual {v3, p1}, Lcom/android/server/AppWidgetServiceImpl;->systemReady(Z)V
 
+    invoke-static {p0}, Lcom/android/server/AppWidgetService$Injector;->receiveRestoreFinish(Lcom/android/server/AppWidgetService;)V
+
     .line 153
     iget-object v3, p0, Lcom/android/server/AppWidgetService;->mContext:Landroid/content/Context;
 

@@ -304,6 +304,10 @@
 
 .field private mTouchModeReset:Ljava/lang/Runnable;
 
+.field mTouchPaddingLeft:I
+
+.field mTouchPaddingRight:I
+
 .field private mTouchSlop:I
 
 .field private mTranscriptMode:I
@@ -343,130 +347,99 @@
 
     const/4 v2, 0x0
 
-    .line 744
     invoke-direct {p0, p1}, Landroid/widget/AdapterView;-><init>(Landroid/content/Context;)V
 
-    .line 224
+    iput v2, p0, Landroid/widget/AbsListView;->mTouchPaddingLeft:I
+
+    iput v2, p0, Landroid/widget/AbsListView;->mTouchPaddingRight:I
+
     iput v2, p0, Landroid/widget/AbsListView;->mChoiceMode:I
 
-    .line 257
     iput v2, p0, Landroid/widget/AbsListView;->mLayoutMode:I
 
-    .line 282
     iput-boolean v2, p0, Landroid/widget/AbsListView;->mDeferNotifyDataSetChanged:Z
 
-    .line 287
     iput-boolean v2, p0, Landroid/widget/AbsListView;->mDrawSelectorOnTop:Z
 
-    .line 297
     iput v3, p0, Landroid/widget/AbsListView;->mSelectorPosition:I
 
-    .line 302
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v1, p0, Landroid/widget/AbsListView;->mSelectorRect:Landroid/graphics/Rect;
 
-    .line 308
     new-instance v1, Landroid/widget/AbsListView$RecycleBin;
 
     invoke-direct {v1, p0}, Landroid/widget/AbsListView$RecycleBin;-><init>(Landroid/widget/AbsListView;)V
 
     iput-object v1, p0, Landroid/widget/AbsListView;->mRecycler:Landroid/widget/AbsListView$RecycleBin;
 
-    .line 313
     iput v2, p0, Landroid/widget/AbsListView;->mSelectionLeftPadding:I
 
-    .line 318
     iput v2, p0, Landroid/widget/AbsListView;->mSelectionTopPadding:I
 
-    .line 323
     iput v2, p0, Landroid/widget/AbsListView;->mSelectionRightPadding:I
 
-    .line 328
     iput v2, p0, Landroid/widget/AbsListView;->mSelectionBottomPadding:I
 
-    .line 333
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v1, p0, Landroid/widget/AbsListView;->mListPadding:Landroid/graphics/Rect;
 
-    .line 338
     iput v2, p0, Landroid/widget/AbsListView;->mWidthMeasureSpec:I
 
-    .line 386
     iput v3, p0, Landroid/widget/AbsListView;->mTouchMode:I
 
-    .line 417
     iput v2, p0, Landroid/widget/AbsListView;->mSelectedTop:I
 
-    .line 455
     iput-boolean v4, p0, Landroid/widget/AbsListView;->mSmoothScrollbarEnabled:Z
 
-    .line 475
     iput v3, p0, Landroid/widget/AbsListView;->mResurrectToPosition:I
 
-    .line 477
     iput-object v5, p0, Landroid/widget/AbsListView;->mContextMenuInfo:Landroid/view/ContextMenu$ContextMenuInfo;
 
-    .line 503
     iput v3, p0, Landroid/widget/AbsListView;->mLastTouchMode:I
 
-    .line 506
     iput-boolean v2, p0, Landroid/widget/AbsListView;->mScrollProfilingStarted:Z
 
-    .line 509
     iput-boolean v2, p0, Landroid/widget/AbsListView;->mFlingProfilingStarted:Z
 
-    .line 517
     iput-object v5, p0, Landroid/widget/AbsListView;->mScrollStrictSpan:Landroid/os/StrictMode$Span;
 
-    .line 518
     iput-object v5, p0, Landroid/widget/AbsListView;->mFlingStrictSpan:Landroid/os/StrictMode$Span;
 
-    .line 565
     iput v2, p0, Landroid/widget/AbsListView;->mLastScrollState:I
 
-    .line 584
     const/high16 v1, 0x3f80
 
     iput v1, p0, Landroid/widget/AbsListView;->mVelocityScale:F
 
-    .line 586
     new-array v1, v4, [Z
 
     iput-object v1, p0, Landroid/widget/AbsListView;->mIsScrap:[Z
 
-    .line 596
     iput v3, p0, Landroid/widget/AbsListView;->mActivePointerId:I
 
-    .line 644
     iput v2, p0, Landroid/widget/AbsListView;->mDirection:I
 
-    .line 745
     invoke-direct {p0}, Landroid/widget/AbsListView;->initAbsListView()V
 
-    .line 747
     invoke-virtual {p0, v4}, Landroid/widget/AbsListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 748
     sget-object v1, Lcom/android/internal/R$styleable;->View:[I
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->obtainStyledAttributes([I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 749
     .local v0, a:Landroid/content/res/TypedArray;
     invoke-virtual {p0, v0}, Landroid/widget/AbsListView;->initializeScrollbars(Landroid/content/res/TypedArray;)V
 
-    .line 750
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 751
     return-void
 .end method
 
@@ -492,161 +465,138 @@
     .parameter "defStyle"
 
     .prologue
-    .line 758
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/AdapterView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 224
+    const/4 v9, 0x0
+
+    iput v9, p0, Landroid/widget/AbsListView;->mTouchPaddingLeft:I
+
+    const/4 v9, 0x0
+
+    iput v9, p0, Landroid/widget/AbsListView;->mTouchPaddingRight:I
+
     const/4 v9, 0x0
 
     iput v9, p0, Landroid/widget/AbsListView;->mChoiceMode:I
 
-    .line 257
     const/4 v9, 0x0
 
     iput v9, p0, Landroid/widget/AbsListView;->mLayoutMode:I
 
-    .line 282
     const/4 v9, 0x0
 
     iput-boolean v9, p0, Landroid/widget/AbsListView;->mDeferNotifyDataSetChanged:Z
 
-    .line 287
     const/4 v9, 0x0
 
     iput-boolean v9, p0, Landroid/widget/AbsListView;->mDrawSelectorOnTop:Z
 
-    .line 297
     const/4 v9, -0x1
 
     iput v9, p0, Landroid/widget/AbsListView;->mSelectorPosition:I
 
-    .line 302
     new-instance v9, Landroid/graphics/Rect;
 
     invoke-direct {v9}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v9, p0, Landroid/widget/AbsListView;->mSelectorRect:Landroid/graphics/Rect;
 
-    .line 308
     new-instance v9, Landroid/widget/AbsListView$RecycleBin;
 
     invoke-direct {v9, p0}, Landroid/widget/AbsListView$RecycleBin;-><init>(Landroid/widget/AbsListView;)V
 
     iput-object v9, p0, Landroid/widget/AbsListView;->mRecycler:Landroid/widget/AbsListView$RecycleBin;
 
-    .line 313
     const/4 v9, 0x0
 
     iput v9, p0, Landroid/widget/AbsListView;->mSelectionLeftPadding:I
 
-    .line 318
     const/4 v9, 0x0
 
     iput v9, p0, Landroid/widget/AbsListView;->mSelectionTopPadding:I
 
-    .line 323
     const/4 v9, 0x0
 
     iput v9, p0, Landroid/widget/AbsListView;->mSelectionRightPadding:I
 
-    .line 328
     const/4 v9, 0x0
 
     iput v9, p0, Landroid/widget/AbsListView;->mSelectionBottomPadding:I
 
-    .line 333
     new-instance v9, Landroid/graphics/Rect;
 
     invoke-direct {v9}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v9, p0, Landroid/widget/AbsListView;->mListPadding:Landroid/graphics/Rect;
 
-    .line 338
     const/4 v9, 0x0
 
     iput v9, p0, Landroid/widget/AbsListView;->mWidthMeasureSpec:I
 
-    .line 386
     const/4 v9, -0x1
 
     iput v9, p0, Landroid/widget/AbsListView;->mTouchMode:I
 
-    .line 417
     const/4 v9, 0x0
 
     iput v9, p0, Landroid/widget/AbsListView;->mSelectedTop:I
 
-    .line 455
     const/4 v9, 0x1
 
     iput-boolean v9, p0, Landroid/widget/AbsListView;->mSmoothScrollbarEnabled:Z
 
-    .line 475
     const/4 v9, -0x1
 
     iput v9, p0, Landroid/widget/AbsListView;->mResurrectToPosition:I
 
-    .line 477
     const/4 v9, 0x0
 
     iput-object v9, p0, Landroid/widget/AbsListView;->mContextMenuInfo:Landroid/view/ContextMenu$ContextMenuInfo;
 
-    .line 503
     const/4 v9, -0x1
 
     iput v9, p0, Landroid/widget/AbsListView;->mLastTouchMode:I
 
-    .line 506
     const/4 v9, 0x0
 
     iput-boolean v9, p0, Landroid/widget/AbsListView;->mScrollProfilingStarted:Z
 
-    .line 509
     const/4 v9, 0x0
 
     iput-boolean v9, p0, Landroid/widget/AbsListView;->mFlingProfilingStarted:Z
 
-    .line 517
     const/4 v9, 0x0
 
     iput-object v9, p0, Landroid/widget/AbsListView;->mScrollStrictSpan:Landroid/os/StrictMode$Span;
 
-    .line 518
     const/4 v9, 0x0
 
     iput-object v9, p0, Landroid/widget/AbsListView;->mFlingStrictSpan:Landroid/os/StrictMode$Span;
 
-    .line 565
     const/4 v9, 0x0
 
     iput v9, p0, Landroid/widget/AbsListView;->mLastScrollState:I
 
-    .line 584
     const/high16 v9, 0x3f80
 
     iput v9, p0, Landroid/widget/AbsListView;->mVelocityScale:F
 
-    .line 586
     const/4 v9, 0x1
 
     new-array v9, v9, [Z
 
     iput-object v9, p0, Landroid/widget/AbsListView;->mIsScrap:[Z
 
-    .line 596
     const/4 v9, -0x1
 
     iput v9, p0, Landroid/widget/AbsListView;->mActivePointerId:I
 
-    .line 644
     const/4 v9, 0x0
 
     iput v9, p0, Landroid/widget/AbsListView;->mDirection:I
 
-    .line 759
     invoke-direct {p0}, Landroid/widget/AbsListView;->initAbsListView()V
 
-    .line 761
     sget-object v9, Lcom/android/internal/R$styleable;->AbsListView:[I
 
     const/4 v10, 0x0
@@ -9477,14 +9427,23 @@
     .parameter "ev"
 
     .prologue
-    .line 3355
+    invoke-static/range {p0 .. p1}, Landroid/widget/AbsListView$Injector;->isOutOfTouchRange(Landroid/widget/AbsListView;Landroid/view/MotionEvent;)Z
+
+    move-result v26
+
+    if-eqz v26, :cond_miui_0
+
+    const/16 v26, 0x1
+
+    return v26
+
+    :cond_miui_0
     invoke-virtual/range {p0 .. p0}, Landroid/widget/AbsListView;->isEnabled()Z
 
     move-result v26
 
     if-nez v26, :cond_2
 
-    .line 3358
     invoke-virtual/range {p0 .. p0}, Landroid/widget/AbsListView;->isClickable()Z
 
     move-result v26
@@ -16904,4 +16863,20 @@
     const/4 v0, 0x0
 
     goto :goto_0
+.end method
+
+.method public setTouchPadding(II)V
+    .locals 0
+    .parameter "paddingLeft"
+    .parameter "paddingRight"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    iput p1, p0, Landroid/widget/AbsListView;->mTouchPaddingLeft:I
+
+    iput p2, p0, Landroid/widget/AbsListView;->mTouchPaddingRight:I
+
+    return-void
 .end method

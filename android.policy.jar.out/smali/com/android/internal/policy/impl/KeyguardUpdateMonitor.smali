@@ -1221,6 +1221,12 @@
     if-ne v1, v2, :cond_1
 
     :cond_0
+    invoke-static {}, Landroid/app/MiuiThemeHelper;->isScreenshotMode()Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
     :goto_0
     return v0
 
@@ -2257,6 +2263,12 @@
     if-eqz v0, :cond_1
 
     :cond_0
+    invoke-static {}, Landroid/app/MiuiThemeHelper;->isScreenshotMode()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
     const/4 v0, 0x1
 
     :goto_0

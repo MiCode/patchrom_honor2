@@ -16,12 +16,15 @@
 
 .field public static final ACTION_UNINSTALL_UPDATE:Ljava/lang/String; = "android.intent.action.UNINSTALL_UPDATE"
 
+.field public static final COMPONENT_ENABLED_STATE_ACCESS_CONTROL:I = -0x80000000
+
 .field public static final COMPONENT_ENABLED_STATE_DEFAULT:I = 0x0
 
 .field public static final COMPONENT_ENABLED_STATE_DISABLED:I = 0x2
 
 .field public static final COMPONENT_ENABLED_STATE_DISABLED_USER:I = 0x3
 
+.field public static final COMPONENT_ENABLED_STATE_DISABLE_AUTOSTART:I = 0x40000000
 .field public static final COMPONENT_ENABLED_STATE_ENABLED:I = 0x1
 
 .field public static final DELETE_FAILED_DEVICE_POLICY_MANAGER:I = -0x2
@@ -147,6 +150,10 @@
 .field public static final GET_UNINSTALLED_PACKAGES:I = 0x2000
 
 .field public static final GET_URI_PERMISSION_PATTERNS:I = 0x800
+
+.field public static final HAS_ACTIVITY:I = 0x20000
+
+.field public static final HAS_ACTIVITY_OR_SERVICES:I = 0x40000
 
 .field public static final INSTALL_ALLOW_TEST:I = 0x4
 

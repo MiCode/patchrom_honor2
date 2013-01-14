@@ -3371,11 +3371,13 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/gsm/GSMPhone;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1205
-    if-nez v25, :cond_1c
+    invoke-static/range {v25 .. v25}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    .line 1206
-    const-string/jumbo v35, "operatorNumeric is null"
+    move-result v35
+
+    if-eqz v35, :cond_1c
+
+    const-string v35, "operatorNumeric is null"
 
     move-object/from16 v0, p0
 

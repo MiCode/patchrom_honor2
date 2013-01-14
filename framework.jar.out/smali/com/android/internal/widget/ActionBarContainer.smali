@@ -545,6 +545,7 @@
     :cond_9
     if-eqz v4, :cond_a
 
+    .line 233
     iget-object v8, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
 
     if-eqz v8, :cond_a
@@ -556,34 +557,31 @@
 
     if-eqz v8, :cond_5
 
-    .line 233
-    iget-object v8, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
+    iget-object v8, p0, Lcom/android/internal/widget/ActionBarContainer;->mTabContainer:Landroid/view/View;
+
+    invoke-virtual {v8}, Landroid/view/View;->getLeft()I
+
+    move-result v8
 
     iget-object v9, p0, Lcom/android/internal/widget/ActionBarContainer;->mTabContainer:Landroid/view/View;
 
-    invoke-virtual {v9}, Landroid/view/View;->getLeft()I
+    invoke-virtual {v9}, Landroid/view/View;->getTop()I
 
     move-result v9
 
     iget-object v10, p0, Lcom/android/internal/widget/ActionBarContainer;->mTabContainer:Landroid/view/View;
 
-    invoke-virtual {v10}, Landroid/view/View;->getTop()I
+    invoke-virtual {v10}, Landroid/view/View;->getRight()I
 
     move-result v10
 
     iget-object v11, p0, Lcom/android/internal/widget/ActionBarContainer;->mTabContainer:Landroid/view/View;
 
-    invoke-virtual {v11}, Landroid/view/View;->getRight()I
+    invoke-virtual {v11}, Landroid/view/View;->getBottom()I
 
     move-result v11
 
-    iget-object v12, p0, Lcom/android/internal/widget/ActionBarContainer;->mTabContainer:Landroid/view/View;
-
-    invoke-virtual {v12}, Landroid/view/View;->getBottom()I
-
-    move-result v12
-
-    invoke-virtual {v8, v9, v10, v11, v12}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-static {p0, v8, v9, v10, v11}, Lcom/android/internal/widget/ActionBarContainer$Injector;->setBounds(Lcom/android/internal/widget/ActionBarContainer;IIII)V
 
     .line 235
     const/4 v6, 0x1
@@ -862,4 +860,53 @@
     const/4 v0, 0x0
 
     return-object v0
+.end method
+
+.method getActionBarBackground()Landroid/graphics/drawable/Drawable;
+    .locals 1
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
+
+    return-object v0
+.end method
+
+.method getActionBarView()Lcom/android/internal/widget/ActionBarView;
+    .locals 1
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mActionBarView:Lcom/android/internal/widget/ActionBarView;
+
+    return-object v0
+.end method
+
+.method getStackedBackground()Landroid/graphics/drawable/Drawable;
+    .locals 1
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
+
+    return-object v0
+.end method
+
+.method setIsStacked(Z)V
+    .locals 0
+    .parameter "value"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    iput-boolean p1, p0, Lcom/android/internal/widget/ActionBarContainer;->mIsStacked:Z
+
+    return-void
 .end method
