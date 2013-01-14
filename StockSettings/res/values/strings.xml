@@ -4,5 +4,8 @@
     <string name="stock_settings">Factory</string>
     <string name="power_saving_mode">Power saving mode</string>
     <string name="Dolby_mobile_settings">Dolby Mobile settings</string>
+    <string name="main_storage">Main storage (Reboot for activation)</string>
+    <string name="internal_sdcard">Internal sdcard</string>
+    <string name="external_sdcard">External sdcard (auto-ota unsupported)</string>
 </resources>
 

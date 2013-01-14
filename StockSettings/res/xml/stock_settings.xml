@@ -34,4 +34,11 @@
             android:persistent="false" />
     </PreferenceScreen>
 
+    <ListPreference
+        android:title="@string/main_storage"
+        android:key="main_storage_set"
+        android:defaultValue="0"
+        android:entries="@array/main_storage_entries"
+        android:entryValues="@array/main_storage_values" />
+
 </PreferenceScreen>

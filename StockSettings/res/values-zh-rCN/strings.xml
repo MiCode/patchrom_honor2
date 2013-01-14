@@ -4,5 +4,8 @@
     <string name="stock_settings">原厂设置</string>
     <string name="power_saving_mode">省电模式</string>
     <string name="Dolby_mobile_settings">杜比移动技术</string>
+    <string name="main_storage">默认存储器 (重启后生效)</string>
+    <string name="internal_sdcard">内置SD卡</string>
+    <string name="external_sdcard">外置SD卡 (不支持OTA自动升级)</string>
 </resources>
 

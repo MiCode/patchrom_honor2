@@ -7,7 +7,7 @@ LOCAL_SRC_FILES := $(call all-java-files-under, src)
 LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, $(res_dir))
 LOCAL_AAPT_FLAGS := --auto-add-overlay
 
-LOCAL_PACKAGE_NAME := StockSettings
+LOCAL_PACKAGE_NAME := StockSettings-honor2
 LOCAL_CERTIFICATE := platform
 
 include $(BUILD_PACKAGE)
