@@ -33,10 +33,7 @@ root-phone: remount
 	adb shell su2 -c chmod 777 /system/xbin/insecure
 	adb shell su2 -c insecure
 
-fullota-to-phone: fullota
-	adb push out/fullota.zip /sdcard/
-
-apply-fullota: 
+fullota-to-phone:
 	if adb shell ls -l /sdcard/fullota.zip | grep -q "No such file or directory"; \
 	then \
 		echo "no fullota.zip in sdcard, update it"; \
@@ -52,12 +49,21 @@ apply-fullota:
 			echo "md5 is same, skip update fullota.zip"; \
 		fi \
 	fi
-	#adb shell su2 -c 'cat /dev/null > /cache/recovery/command'
-	#adb shell su2 -c 'echo "--wipe_data" >> /cache/recovery/command'
-	#adb shell su2 -c 'echo "--wipe_cache" >> /cache/recovery/command'
-	#adb shell su2 -c 'echo "--update_package=/sdcard/fullota.zip" >> /cache/recovery/command'
+
+local-rec-cmd :=
+
+push-rec-cmd:
 	adb shell mkdir -p $(local-porting-tools)
-	adb push customize-make/command $(local-porting-tools)/
-	adb shell su2 -c cp $(local-porting-tools)/command /cache/recovery/
+	adb push customize-make/$(strip $(local-rec-cmd)) $(local-porting-tools)/command
+	adb shell su2 -c cp $(local-porting-tools)/command /cache/recovery/command
 	adb reboot recovery
+
+wipe: local-rec-cmd := rec_wipe
+wipe: push-rec-cmd
+
+apply-ota: local-rec-cmd := rec_ota
+apply-ota: fullota-to-phone push-rec-cmd
+
+apply-ota-wipe: local-rec-cmd := rec_wipe_ota
+apply-ota-wipe: fullota-to-phone push-rec-cmd
 
