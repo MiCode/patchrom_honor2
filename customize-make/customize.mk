@@ -29,8 +29,8 @@ root-phone: remount
 	adb shell mkdir -p $(local-porting-tools)/
 	adb push other/adbd $(local-porting-tools)/
 	adb push other/insecure $(local-porting-tools)/
-	adb shell su2 -c cp $(local-porting-tools)/insecure /system/xbin/
-	adb shell su2 -c chmod 777 /system/xbin/insecure
+	adb shell su2 -c busybox cp $(local-porting-tools)/insecure /system/xbin/
+	adb shell su2 -c busybox chmod 777 /system/xbin/insecure
 	adb shell su2 -c insecure
 
 fullota-to-phone:
