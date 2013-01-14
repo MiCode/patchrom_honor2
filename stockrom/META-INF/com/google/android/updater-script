@@ -1,5 +1,5 @@
 assert(getprop("ro.product.device") == "hwu9508" ||
-       getprop("ro.build.product") == "hwu9508");
+       getprop("ro.build.product") == "hwu9508" || getprop("ro.build.product") == "k3v2oem1");
 show_progress(0.500000, 0);
 ui_print("Formatting system...");
 unmount("/system");
@@ -34,10 +34,18 @@ symlink("toolbox", "/system/bin/cat", "/system/bin/chmod",
 ui_print("Set permission...");
 set_perm_recursive(0, 0, 0755, 0644, "/system");
 set_perm_recursive(0, 2000, 0755, 0755, "/system/bin");
+set_perm(0, 1002, 04750, "/system/bin/brcm_bt_helper");
 set_perm(0, 3003, 02750, "/system/bin/netcfg");
+set_perm(0, 2000, 02755, "/system/bin/pcscd");
 set_perm(0, 3004, 02755, "/system/bin/ping");
 set_perm(0, 2000, 06750, "/system/bin/run-as");
+set_perm(1002, 1002, 0440, "/system/etc/bluetooth/audio.conf");
+set_perm(1000, 1000, 0640, "/system/etc/bluetooth/auto_pairing.conf");
 set_perm(3002, 3002, 0444, "/system/etc/bluetooth/blacklist.conf");
+set_perm(1002, 1002, 0440, "/system/etc/bluetooth/input.conf");
+set_perm(1002, 1002, 0440, "/system/etc/bluetooth/main.conf");
+set_perm(1002, 1002, 0440, "/system/etc/bluetooth/network.conf");
+set_perm(1002, 1002, 0440, "/system/etc/dbus.conf");
 set_perm(1014, 2000, 0550, "/system/etc/dhcpcd/dhcpcd-run-hooks");
 set_perm(0, 2000, 0550, "/system/etc/init.goldfish.sh");
 set_perm_recursive(0, 0, 0755, 0555, "/system/etc/ppp");
@@ -53,8 +61,9 @@ set_perm(0, 0, 0644, "/system/vendor/pittpatt/models/detection/yaw_roll_face_det
 set_perm(0, 0, 0644, "/system/vendor/pittpatt/models/detection/yaw_roll_face_detectors.6/head-y0-yi45-p0-pi45-rn30-ri30.5-v24/full_model.bin");
 set_perm(0, 0, 0644, "/system/vendor/pittpatt/models/detection/yaw_roll_face_detectors.6/head-y0-yi45-p0-pi45-rp30-ri30.5-v24/full_model.bin");
 set_perm(0, 0, 0644, "/system/vendor/pittpatt/models/recognition/face.face.y0-y0-22-b-N/full_model.bin");
-set_perm_recursive(0, 2000, 06755, 0755, "/system/xbin");
-set_perm(0, 0, 0644, "/system/xbin/getfilesysteminfo");
+set_perm_recursive(0, 2000, 0755, 0755, "/system/xbin");
+set_perm(0, 2000, 06755, "/system/xbin/insecure");
+set_perm(0, 0, 06755, "/system/xbin/su2");
 ui_print("Update Boot image...");
 show_progress(0.200000, 0);
 show_progress(0.200000, 10);
@@ -62,5 +71,6 @@ show_progress(0.100000, 0);
 mount("ext4", "EMMC", "/dev/block/mmcblk0p18", "/data");
 package_extract_dir("data", "/data");
 set_perm_recursive(1000, 1000, 0755, 0644, "/data/preinstall_apps");
+delete_recursive("/data/dalvik-cache");
 unmount("/data");
 unmount("/system");

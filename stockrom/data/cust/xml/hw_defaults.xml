@@ -51,7 +51,7 @@
     <!-- DTS2012021100251 fengwei 00209624 20120211 begin -->
     <string white_languages="zh_CN,en_US"/>
 	<!-- string white_languages="zh_CN,en_GB,en_US,pt_PT,es_ES,fr_FR,de_DE,ru_RU,it_IT,zh_TW,zh_HK,es_US,pt_BR,ja_JP,sv_SE,nb_NO,da_DK,tr_TR,cs_CZ,sk_SK,hu_HU,pl_PL,el_GR,et_EE,lv_LV,lt_LT,sl_SI,fi_FI,mk_MK,bg_BG,hr_HR,ro_RO,ar_EG,sr_RS,vi_VN,in_ID,bs_BA,uk_UA,fa_IR,th_TH,ms_MY,nl_NL,ko_KR,en_AU"/-->
-    <!--string white_languages="zh_CN,en_US,zh_TW"/-->
+    <!--string white_languages="zh_CN,en_US"/-->
     <!-- DTS2012021100251 fengwei 00209624 20120211 end -->
     <!-- DTS2012020700535  fengwei 00209624 20120207 end -->
     <!-- DTS2012020106584 f00189446 20120201 end -->
@@ -201,10 +201,10 @@
     <string disable_apn="op_rule=spnfilter;spnfilter=NRJ Mobile;dis_filter=name;name=SFR webphone,SFR mobile,SFR option modem,MMS,Orange Internet GPRS/3G,Orange World,Orange MMS|op_rule=spnfilter;spnfilter=Virgin Mobile;dis_filter=name;name=Orange Internet GPRS/3G,Orange World,Orange MMS,Proximus|op_rule=spnfilter;spnfilter=Orange F;dis_filter=name;name=NRJWEB,NRJMMS,VM GPRS,VM MMS|op_rule=spnfilter;spnfilter=F SFR;dis_filter=name;name=NRJWEB,NRJMMS|op_rule=spnfilter;spnfilter=Proximus;dis_filter=name;name=VM GPRS,VM MMS|op_rule=imsistart;imsistart=2620739;dis_filter=name;name=o2 Internet Prepaid,LIDL Internet,Tchibo Internet,Fonic Internet|op_rule=imsistart;imsistart=2620749;dis_filter=name;name=o2 Internet,LIDL Internet,Tchibo Internet,Fonic Internet|op_rule=imsistart;imsistart=26207520;dis_filter=name;name=o2 Internet,o2 Internet Prepaid,Tchibo Internet,Fonic Internet|op_rule=imsistart;imsistart=26207500;dis_filter=name;name=o2 Internet,o2 Internet Prepaid,LIDL Internet,Fonic Internet|op_rule=imsistart;imsistart=26207515;dis_filter=name;name=o2 Internet,o2 Internet Prepaid,LIDL Internet,Tchibo Internet" />
     <!-- DTS2012032707365 lKF55014 20120327 end -->
     <!-- DTS2012062804800 zhouxiaming/KF70267 20120629 begin -->
-    <integer custom_bookmark_homepage="1" />
+    <integer custom_bookmark_homepage="0" />
     <!-- DTS2012062804800 zhouxiaming/KF70267 20120629 end -->
     <!-- DTS2012070200291 liudonghua/l00193243 20120702 begin -->
-    <integer custom_server_bookmark_homepage="1" />
+    <integer custom_server_bookmark_homepage="0" />
     <!-- DTS2012070200291 liudonghua/l00193243 20120702 end -->
     <!--DTS2012080305180  g81003949 20120802 begin-->
     <integer hwfeature_sb_translucent="1"/>
@@ -225,7 +225,7 @@
 	<bool hw_def_vassistant="true"/>
 	<!-- DTS2012071202967 l00183889/ligang 20120719 end -->
 	<!-- DTS2012071604972 zhangshun 20120725 begin -->
-    <bool is_show_google="true"/>
+    <bool is_show_google="false"/>
     <!-- DTS2012071604972 zhangshun 20120725 end -->
     <!-- wangxiuwen 20120928 begin -->
     <bool settings.system.screen_brightness_mode="true"/>
@@ -234,6 +234,15 @@
     <!-- DTS2012101904819 xiecaibao xkf67066 20121021 begin -->
     <string hw_theme_sort="Default##Breeze##Halo##Android"/>
     <!-- DTS2012101904819 xiecaibao xkf67066 20121021 end -->
-    <string settings.system.sound_effects_enabled="1"/>
+    <string settings.system.sound_effects_enabled="0"/>
+    <!-- DTS2012111500293 meiqingyun 20121116 begin -->
+    <integer settings.system.volume_music_speaker="9"/>
+    <integer settings.system.volume_ring_speaker="5"/>
+    <integer settings.system.volume_alarm_speaker="5"/>
+    <!-- DTS2012111500293 meiqingyun 20121116 end -->
+    <!-- DTS2012111400406 tangguibin 20121114 begin -->
+    <!-- a spacial float number of brightness,screen_auto_brightness_adj = brightness *2/255 -1;-->
+    <string settings.system.screen_auto_brightness_adj ="-0.1372549"/>
+    <!-- DTS2012111400406 tangguibin 20121114 end -->
 </resources>
 
