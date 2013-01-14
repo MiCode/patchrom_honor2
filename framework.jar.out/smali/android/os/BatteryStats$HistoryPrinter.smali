@@ -35,27 +35,20 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 1979
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1980
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldState:I
 
-    .line 1981
     iput v1, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldStatus:I
 
-    .line 1982
     iput v1, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldHealth:I
 
-    .line 1983
     iput v1, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldPlug:I
 
-    .line 1984
     iput v1, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldTemp:I
 
-    .line 1985
     iput v1, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldVolt:I
 
     return-void
@@ -70,12 +63,10 @@
     .parameter "now"
 
     .prologue
-    .line 1988
     const-string v0, "  "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1989
     iget-wide v0, p2, Landroid/os/BatteryStats$HistoryItem;->time:J
 
     sub-long/2addr v0, p3
@@ -84,33 +75,27 @@
 
     invoke-static {v0, v1, p1, v2}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;I)V
 
-    .line 1990
     const-string v0, " "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1991
     iget-byte v0, p2, Landroid/os/BatteryStats$HistoryItem;->cmd:B
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
 
-    .line 1992
     const-string v0, " START"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2091
     :goto_0
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->states:I
 
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldState:I
 
-    .line 2092
     return-void
 
-    .line 1993
     :cond_0
     iget-byte v0, p2, Landroid/os/BatteryStats$HistoryItem;->cmd:B
 
@@ -118,14 +103,12 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1994
     const-string v0, " *OVERFLOW*"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 1996
     :cond_1
     iget-byte v0, p2, Landroid/os/BatteryStats$HistoryItem;->batteryLevel:B
 
@@ -137,19 +120,16 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1998
     :cond_2
     :goto_1
     iget-byte v0, p2, Landroid/os/BatteryStats$HistoryItem;->batteryLevel:B
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 1999
     const-string v0, " "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2000
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->states:I
 
     const/16 v1, 0x10
@@ -160,7 +140,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2007
     :cond_3
     :goto_2
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->states:I
@@ -171,34 +150,28 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2008
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldStatus:I
 
     iget-byte v1, p2, Landroid/os/BatteryStats$HistoryItem;->batteryStatus:B
 
     if-eq v0, v1, :cond_4
 
-    .line 2009
     iget-byte v0, p2, Landroid/os/BatteryStats$HistoryItem;->batteryStatus:B
 
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldStatus:I
 
-    .line 2010
     const-string v0, " status="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2011
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldStatus:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 2028
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldStatus:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 2032
     :cond_4
     :goto_3
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldHealth:I
@@ -207,27 +180,22 @@
 
     if-eq v0, v1, :cond_5
 
-    .line 2033
     iget-byte v0, p2, Landroid/os/BatteryStats$HistoryItem;->batteryHealth:B
 
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldHealth:I
 
-    .line 2034
     const-string v0, " health="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2035
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldHealth:I
 
     packed-switch v0, :pswitch_data_1
 
-    .line 2055
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldHealth:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 2059
     :cond_5
     :goto_4
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldPlug:I
@@ -236,27 +204,22 @@
 
     if-eq v0, v1, :cond_6
 
-    .line 2060
     iget-byte v0, p2, Landroid/os/BatteryStats$HistoryItem;->batteryPlugType:B
 
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldPlug:I
 
-    .line 2061
     const-string v0, " plug="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2062
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldPlug:I
 
     packed-switch v0, :pswitch_data_2
 
-    .line 2073
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldPlug:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 2077
     :cond_6
     :goto_5
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldTemp:I
@@ -265,22 +228,18 @@
 
     if-eq v0, v1, :cond_7
 
-    .line 2078
     iget-char v0, p2, Landroid/os/BatteryStats$HistoryItem;->batteryTemperature:C
 
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldTemp:I
 
-    .line 2079
     const-string v0, " temp="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2080
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldTemp:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 2082
     :cond_7
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldVolt:I
 
@@ -288,22 +247,18 @@
 
     if-eq v0, v1, :cond_8
 
-    .line 2083
     iget-char v0, p2, Landroid/os/BatteryStats$HistoryItem;->batteryVoltage:C
 
     iput v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldVolt:I
 
-    .line 2084
     const-string v0, " volt="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 2085
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldVolt:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 2087
     :cond_8
     iget v0, p0, Landroid/os/BatteryStats$HistoryPrinter;->oldState:I
 
@@ -313,12 +268,10 @@
 
     invoke-static {p1, v0, v1, v2}, Landroid/os/BatteryStats;->printBitDescriptions(Ljava/io/PrintWriter;II[Landroid/os/BatteryStats$BitDescription;)V
 
-    .line 2089
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
     goto/16 :goto_0
 
-    .line 1997
     :cond_9
     iget-byte v0, p2, Landroid/os/BatteryStats$HistoryItem;->batteryLevel:B
 
@@ -332,7 +285,6 @@
 
     goto/16 :goto_1
 
-    .line 2001
     :cond_a
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->states:I
 
@@ -346,7 +298,6 @@
 
     goto/16 :goto_2
 
-    .line 2002
     :cond_b
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->states:I
 
@@ -360,7 +311,6 @@
 
     goto/16 :goto_2
 
-    .line 2003
     :cond_c
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->states:I
 
@@ -374,7 +324,6 @@
 
     goto/16 :goto_2
 
-    .line 2004
     :cond_d
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->states:I
 
@@ -388,7 +337,6 @@
 
     goto/16 :goto_2
 
-    .line 2005
     :cond_e
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->states:I
 
@@ -402,7 +350,6 @@
 
     goto/16 :goto_2
 
-    .line 2006
     :cond_f
     iget v0, p2, Landroid/os/BatteryStats$HistoryItem;->states:I
 
@@ -416,15 +363,13 @@
 
     goto/16 :goto_2
 
-    .line 2013
     :pswitch_0
-    const-string/jumbo v0, "unknown"
+    const-string v0, "unknown"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     goto/16 :goto_3
 
-    .line 2016
     :pswitch_1
     const-string v0, "charging"
 
@@ -432,7 +377,6 @@
 
     goto/16 :goto_3
 
-    .line 2019
     :pswitch_2
     const-string v0, "discharging"
 
@@ -440,15 +384,13 @@
 
     goto/16 :goto_3
 
-    .line 2022
     :pswitch_3
-    const-string/jumbo v0, "not-charging"
+    const-string v0, "not-charging"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     goto/16 :goto_3
 
-    .line 2025
     :pswitch_4
     const-string v0, "full"
 
@@ -456,15 +398,13 @@
 
     goto/16 :goto_3
 
-    .line 2037
     :pswitch_5
-    const-string/jumbo v0, "unknown"
+    const-string v0, "unknown"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     goto/16 :goto_4
 
-    .line 2040
     :pswitch_6
     const-string v0, "good"
 
@@ -472,15 +412,13 @@
 
     goto/16 :goto_4
 
-    .line 2043
     :pswitch_7
-    const-string/jumbo v0, "overheat"
+    const-string v0, "overheat"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     goto/16 :goto_4
 
-    .line 2046
     :pswitch_8
     const-string v0, "dead"
 
@@ -488,15 +426,13 @@
 
     goto/16 :goto_4
 
-    .line 2049
     :pswitch_9
-    const-string/jumbo v0, "over-voltage"
+    const-string v0, "over-voltage"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     goto/16 :goto_4
 
-    .line 2052
     :pswitch_a
     const-string v0, "failure"
 
@@ -504,15 +440,13 @@
 
     goto/16 :goto_4
 
-    .line 2064
     :pswitch_b
-    const-string/jumbo v0, "none"
+    const-string v0, "none"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     goto/16 :goto_5
 
-    .line 2067
     :pswitch_c
     const-string v0, "ac"
 
@@ -520,15 +454,13 @@
 
     goto/16 :goto_5
 
-    .line 2070
     :pswitch_d
-    const-string/jumbo v0, "usb"
+    const-string v0, "usb"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     goto/16 :goto_5
 
-    .line 2011
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -538,7 +470,6 @@
         :pswitch_4
     .end packed-switch
 
-    .line 2035
     :pswitch_data_1
     .packed-switch 0x1
         :pswitch_5
@@ -549,7 +480,6 @@
         :pswitch_a
     .end packed-switch
 
-    .line 2062
     :pswitch_data_2
     .packed-switch 0x0
         :pswitch_b

@@ -46,7 +46,6 @@
     .locals 2
 
     .prologue
-    .line 61
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x2
@@ -69,7 +68,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 90
     const-wide/16 v4, 0x0
 
     const/4 v6, 0x0
@@ -82,7 +80,6 @@
 
     invoke-direct/range {v0 .. v6}, Landroid/media/videoeditor/MediaImageItem;-><init>(Landroid/media/videoeditor/VideoEditor;Ljava/lang/String;Ljava/lang/String;JI)V
 
-    .line 91
     return-void
 .end method
 
@@ -100,7 +97,6 @@
     .end annotation
 
     .prologue
-    .line 107
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -113,14 +109,12 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Landroid/media/videoeditor/MediaItem;-><init>(Landroid/media/videoeditor/VideoEditor;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 79
     const/16 v7, 0x20
 
     move-object/from16 v0, p0
 
     iput v7, v0, Landroid/media/videoeditor/MediaImageItem;->MINWEIGHT:I
 
-    .line 80
     const/16 v7, 0x10
 
     move-object/from16 v0, p0
@@ -129,7 +123,6 @@
 
     move-object/from16 v7, p1
 
-    .line 109
     check-cast v7, Landroid/media/videoeditor/VideoEditorImpl;
 
     invoke-virtual {v7}, Landroid/media/videoeditor/VideoEditorImpl;->getNativeContext()Landroid/media/videoeditor/MediaArtistNativeHelper;
@@ -140,7 +133,6 @@
 
     iput-object v7, v0, Landroid/media/videoeditor/MediaImageItem;->mMANativeHelper:Landroid/media/videoeditor/MediaArtistNativeHelper;
 
-    .line 110
     check-cast p1, Landroid/media/videoeditor/VideoEditorImpl;
 
     .end local p1
@@ -150,7 +142,6 @@
 
     iput-object v0, v1, Landroid/media/videoeditor/MediaImageItem;->mVideoEditor:Landroid/media/videoeditor/VideoEditorImpl;
 
-    .line 112
     :try_start_0
     move-object/from16 v0, p0
 
@@ -162,7 +153,6 @@
 
     move-result-object v23
 
-    .line 114
     .local v23, properties:Landroid/media/videoeditor/MediaArtistNativeHelper$Properties;
     move-object/from16 v0, p0
 
@@ -178,7 +168,6 @@
 
     packed-switch v7, :pswitch_data_0
 
-    .line 121
     :pswitch_0
     new-instance v7, Ljava/lang/IllegalArgumentException;
 
@@ -190,12 +179,10 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 124
     .end local v23           #properties:Landroid/media/videoeditor/MediaArtistNativeHelper$Properties;
     :catch_0
     move-exception v17
 
-    .line 125
     .local v17, e:Ljava/lang/Exception;
     new-instance v7, Ljava/lang/IllegalArgumentException;
 
@@ -223,7 +210,6 @@
 
     throw v7
 
-    .line 127
     .end local v17           #e:Ljava/lang/Exception;
     .restart local v23       #properties:Landroid/media/videoeditor/MediaArtistNativeHelper$Properties;
     :pswitch_1
@@ -233,44 +219,37 @@
 
     iput-object v0, v1, Landroid/media/videoeditor/MediaImageItem;->mFileName:Ljava/lang/String;
 
-    .line 131
     new-instance v15, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v15}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 132
     .local v15, dbo:Landroid/graphics/BitmapFactory$Options;
     const/4 v7, 0x1
 
     iput-boolean v7, v15, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 133
     move-object/from16 v0, p3
 
     invoke-static {v0, v15}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 135
     iget v7, v15, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
     move-object/from16 v0, p0
 
     iput v7, v0, Landroid/media/videoeditor/MediaImageItem;->mWidth:I
 
-    .line 136
     iget v7, v15, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
     move-object/from16 v0, p0
 
     iput v7, v0, Landroid/media/videoeditor/MediaImageItem;->mHeight:I
 
-    .line 137
     move-wide/from16 v0, p4
 
     move-object/from16 v2, p0
 
     iput-wide v0, v2, Landroid/media/videoeditor/MediaImageItem;->mDurationMs:J
 
-    .line 140
     move-object/from16 v0, p0
 
     iget v7, v0, Landroid/media/videoeditor/MediaImageItem;->mWidth:I
@@ -287,7 +266,6 @@
 
     if-ge v7, v8, :cond_1
 
-    .line 142
     :cond_0
     new-instance v7, Ljava/lang/IllegalArgumentException;
 
@@ -297,7 +275,6 @@
 
     throw v7
 
-    .line 145
     :cond_1
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -357,7 +334,6 @@
 
     iput-object v7, v0, Landroid/media/videoeditor/MediaImageItem;->mDecodedFilename:Ljava/lang/String;
 
-    .line 149
     :try_start_1
     move-object/from16 v0, p0
 
@@ -381,21 +357,18 @@
     :try_end_1
     .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 154
     const/4 v7, 0x0
 
     move-object/from16 v0, p0
 
     iput v7, v0, Landroid/media/videoeditor/MediaImageItem;->mGeneratedClipHeight:I
 
-    .line 155
     const/4 v7, 0x0
 
     move-object/from16 v0, p0
 
     iput v7, v0, Landroid/media/videoeditor/MediaImageItem;->mGeneratedClipWidth:I
 
-    .line 161
     move-object/from16 v0, p0
 
     iget v7, v0, Landroid/media/videoeditor/MediaImageItem;->mAspectRatio:I
@@ -404,7 +377,6 @@
 
     move-result-object v24
 
-    .line 167
     .local v24, resolutions:[Landroid/util/Pair;,"[Landroid/util/Pair<Ljava/lang/Integer;Ljava/lang/Integer;>;"
     move-object/from16 v0, v24
 
@@ -414,7 +386,6 @@
 
     aget-object v21, v24, v7
 
-    .line 171
     .local v21, maxResolution:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/Integer;Ljava/lang/Integer;>;"
     move-object/from16 v0, p0
 
@@ -448,7 +419,6 @@
 
     if-le v8, v7, :cond_5
 
-    .line 175
     :cond_2
     move-object/from16 v0, v21
 
@@ -478,7 +448,6 @@
 
     move-result-object v5
 
-    .line 177
     .local v5, imageBitmap:Landroid/graphics/Bitmap;
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -538,7 +507,6 @@
 
     iput-object v7, v0, Landroid/media/videoeditor/MediaImageItem;->mScaledFilename:Ljava/lang/String;
 
-    .line 179
     new-instance v7, Ljava/io/File;
 
     move-object/from16 v0, p0
@@ -553,14 +521,12 @@
 
     if-nez v7, :cond_3
 
-    .line 180
     const/4 v7, 0x1
 
     move-object/from16 v0, p0
 
     iput-boolean v7, v0, Landroid/media/videoeditor/MediaItem;->mRegenerateClip:Z
 
-    .line 181
     new-instance v18, Ljava/io/FileOutputStream;
 
     move-object/from16 v0, p0
@@ -571,7 +537,6 @@
 
     invoke-direct {v0, v7}, Ljava/io/FileOutputStream;-><init>(Ljava/lang/String;)V
 
-    .line 182
     .local v18, f1:Ljava/io/FileOutputStream;
     sget-object v7, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
@@ -581,10 +546,8 @@
 
     invoke-virtual {v5, v7, v8, v0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 183
     invoke-virtual/range {v18 .. v18}, Ljava/io/FileOutputStream;->close()V
 
-    .line 186
     .end local v18           #f1:Ljava/io/FileOutputStream;
     :cond_3
     invoke-virtual {v5}, Landroid/graphics/Bitmap;->getWidth()I
@@ -599,7 +562,6 @@
 
     iput v7, v0, Landroid/media/videoeditor/MediaImageItem;->mScaledWidth:I
 
-    .line 187
     invoke-virtual {v5}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v7
@@ -612,28 +574,24 @@
 
     iput v7, v0, Landroid/media/videoeditor/MediaImageItem;->mScaledHeight:I
 
-    .line 188
     move-object/from16 v0, p0
 
     iget v7, v0, Landroid/media/videoeditor/MediaImageItem;->mScaledWidth:I
 
     if-nez v7, :cond_4
 
-    .line 190
     move-object/from16 v0, p0
 
     invoke-direct {v0, v5}, Landroid/media/videoeditor/MediaImageItem;->createNewBitMap(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
     move-result-object v5
 
-    .line 205
     :cond_4
     :goto_0
     move-object/from16 v0, p0
 
     iget v11, v0, Landroid/media/videoeditor/MediaImageItem;->mScaledWidth:I
 
-    .line 206
     .local v11, newWidth:I
     move-object/from16 v0, p0
 
@@ -641,7 +599,6 @@
 
     move/from16 v22, v0
 
-    .line 207
     .local v22, newHeight:I
     new-instance v7, Ljava/io/File;
 
@@ -657,7 +614,6 @@
 
     if-nez v7, :cond_7
 
-    .line 208
     new-instance v19, Ljava/io/FileOutputStream;
 
     move-object/from16 v0, p0
@@ -668,7 +624,6 @@
 
     invoke-direct {v0, v7}, Ljava/io/FileOutputStream;-><init>(Ljava/lang/String;)V
 
-    .line 209
     .local v19, fl:Ljava/io/FileOutputStream;
     new-instance v16, Ljava/io/DataOutputStream;
 
@@ -678,11 +633,9 @@
 
     invoke-direct {v0, v1}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
 
-    .line 210
     .local v16, dos:Ljava/io/DataOutputStream;
     new-array v6, v11, [I
 
-    .line 211
     .local v6, framingBuffer:[I
     array-length v7, v6
 
@@ -692,24 +645,20 @@
 
     move-result-object v14
 
-    .line 213
     .local v14, byteBuffer:Ljava/nio/ByteBuffer;
     invoke-virtual {v14}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object v13
 
-    .line 214
     .local v13, array:[B
     const/4 v10, 0x0
 
-    .line 215
     .local v10, tmp:I
     :goto_1
     move/from16 v0, v22
 
     if-ge v10, v0, :cond_6
 
-    .line 216
     const/4 v7, 0x0
 
     move-object/from16 v0, p0
@@ -722,12 +671,10 @@
 
     invoke-virtual/range {v5 .. v12}, Landroid/graphics/Bitmap;->getPixels([IIIIIII)V
 
-    .line 218
     invoke-virtual {v14}, Ljava/nio/ByteBuffer;->asIntBuffer()Ljava/nio/IntBuffer;
 
     move-result-object v20
 
-    .line 219
     .local v20, intBuffer:Ljava/nio/IntBuffer;
     const/4 v7, 0x0
 
@@ -735,17 +682,14 @@
 
     invoke-virtual {v0, v6, v7, v11}, Ljava/nio/IntBuffer;->put([III)Ljava/nio/IntBuffer;
 
-    .line 220
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v13}, Ljava/io/DataOutputStream;->write([B)V
 
-    .line 221
     add-int/lit8 v10, v10, 0x1
 
     goto :goto_1
 
-    .line 150
     .end local v5           #imageBitmap:Landroid/graphics/Bitmap;
     .end local v6           #framingBuffer:[I
     .end local v10           #tmp:I
@@ -761,7 +705,6 @@
     :catch_1
     move-exception v17
 
-    .line 151
     .local v17, e:Ljava/lang/IllegalArgumentException;
     new-instance v7, Ljava/lang/IllegalArgumentException;
 
@@ -771,7 +714,6 @@
 
     throw v7
 
-    .line 194
     .end local v17           #e:Ljava/lang/IllegalArgumentException;
     .restart local v21       #maxResolution:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/Integer;Ljava/lang/Integer;>;"
     .restart local v24       #resolutions:[Landroid/util/Pair;,"[Landroid/util/Pair<Ljava/lang/Integer;Ljava/lang/Integer;>;"
@@ -782,7 +724,6 @@
 
     iput-object v0, v1, Landroid/media/videoeditor/MediaImageItem;->mScaledFilename:Ljava/lang/String;
 
-    .line 196
     move-object/from16 v0, p0
 
     iget v7, v0, Landroid/media/videoeditor/MediaImageItem;->mWidth:I
@@ -795,7 +736,6 @@
 
     iput v7, v0, Landroid/media/videoeditor/MediaImageItem;->mScaledWidth:I
 
-    .line 197
     move-object/from16 v0, p0
 
     iget v7, v0, Landroid/media/videoeditor/MediaImageItem;->mHeight:I
@@ -808,7 +748,6 @@
 
     iput v7, v0, Landroid/media/videoeditor/MediaImageItem;->mScaledHeight:I
 
-    .line 198
     move-object/from16 v0, p0
 
     iget-object v7, v0, Landroid/media/videoeditor/MediaImageItem;->mScaledFilename:Ljava/lang/String;
@@ -817,7 +756,6 @@
 
     move-result-object v5
 
-    .line 199
     .restart local v5       #imageBitmap:Landroid/graphics/Bitmap;
     move-object/from16 v0, p0
 
@@ -825,7 +763,6 @@
 
     if-nez v7, :cond_4
 
-    .line 201
     move-object/from16 v0, p0
 
     invoke-direct {v0, v5}, Landroid/media/videoeditor/MediaImageItem;->createNewBitMap(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
@@ -834,7 +771,6 @@
 
     goto/16 :goto_0
 
-    .line 223
     .restart local v6       #framingBuffer:[I
     .restart local v10       #tmp:I
     .restart local v11       #newWidth:I
@@ -846,7 +782,6 @@
     :cond_6
     invoke-virtual/range {v19 .. v19}, Ljava/io/FileOutputStream;->close()V
 
-    .line 225
     .end local v6           #framingBuffer:[I
     .end local v10           #tmp:I
     .end local v13           #array:[B
@@ -856,10 +791,8 @@
     :cond_7
     invoke-virtual {v5}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 226
     return-void
 
-    .line 114
     :pswitch_data_0
     .packed-switch 0x5
         :pswitch_1
@@ -882,18 +815,15 @@
     .end annotation
 
     .prologue
-    .line 461
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 462
     .local v0, adjustedEffects:Ljava/util/List;,"Ljava/util/List<Landroid/media/videoeditor/Effect;>;"
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getAllEffects()Ljava/util/List;
 
     move-result-object v6
 
-    .line 463
     .local v6, effects:Ljava/util/List;,"Ljava/util/List<Landroid/media/videoeditor/Effect;>;"
     invoke-interface {v6}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -914,7 +844,6 @@
 
     check-cast v1, Landroid/media/videoeditor/Effect;
 
-    .line 468
     .local v1, effect:Landroid/media/videoeditor/Effect;
     invoke-virtual {v1}, Landroid/media/videoeditor/Effect;->getStartTime()J
 
@@ -928,10 +857,8 @@
 
     if-lez v8, :cond_2
 
-    .line 469
     const-wide/16 v4, 0x0
 
-    .line 478
     .local v4, effectStartTimeMs:J
     :goto_1
     invoke-virtual {v1}, Landroid/media/videoeditor/Effect;->getDuration()J
@@ -948,14 +875,12 @@
 
     if-lez v8, :cond_3
 
-    .line 479
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getDuration()J
 
     move-result-wide v8
 
     sub-long v2, v8, v4
 
-    .line 484
     .local v2, effectDurationMs:J
     :goto_2
     invoke-virtual {v1}, Landroid/media/videoeditor/Effect;->getStartTime()J
@@ -974,16 +899,13 @@
 
     if-eqz v8, :cond_0
 
-    .line 486
     :cond_1
     invoke-virtual {v1, v4, v5, v2, v3}, Landroid/media/videoeditor/Effect;->setStartTimeAndDuration(JJ)V
 
-    .line 487
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 471
     .end local v2           #effectDurationMs:J
     .end local v4           #effectStartTimeMs:J
     :cond_2
@@ -994,7 +916,6 @@
     .restart local v4       #effectStartTimeMs:J
     goto :goto_1
 
-    .line 481
     :cond_3
     invoke-virtual {v1}, Landroid/media/videoeditor/Effect;->getDuration()J
 
@@ -1003,7 +924,6 @@
     .restart local v2       #effectDurationMs:J
     goto :goto_2
 
-    .line 491
     .end local v1           #effect:Landroid/media/videoeditor/Effect;
     .end local v2           #effectDurationMs:J
     .end local v4           #effectStartTimeMs:J
@@ -1024,18 +944,15 @@
     .end annotation
 
     .prologue
-    .line 500
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 501
     .local v0, adjustedOverlays:Ljava/util/List;,"Ljava/util/List<Landroid/media/videoeditor/Overlay;>;"
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getAllOverlays()Ljava/util/List;
 
     move-result-object v7
 
-    .line 502
     .local v7, overlays:Ljava/util/List;,"Ljava/util/List<Landroid/media/videoeditor/Overlay;>;"
     invoke-interface {v7}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -1056,7 +973,6 @@
 
     check-cast v2, Landroid/media/videoeditor/Overlay;
 
-    .line 507
     .local v2, overlay:Landroid/media/videoeditor/Overlay;
     invoke-virtual {v2}, Landroid/media/videoeditor/Overlay;->getStartTime()J
 
@@ -1070,10 +986,8 @@
 
     if-lez v8, :cond_2
 
-    .line 508
     const-wide/16 v5, 0x0
 
-    .line 517
     .local v5, overlayStartTimeMs:J
     :goto_1
     invoke-virtual {v2}, Landroid/media/videoeditor/Overlay;->getDuration()J
@@ -1090,14 +1004,12 @@
 
     if-lez v8, :cond_3
 
-    .line 518
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getDuration()J
 
     move-result-wide v8
 
     sub-long v3, v8, v5
 
-    .line 523
     .local v3, overlayDurationMs:J
     :goto_2
     invoke-virtual {v2}, Landroid/media/videoeditor/Overlay;->getStartTime()J
@@ -1116,16 +1028,13 @@
 
     if-eqz v8, :cond_0
 
-    .line 525
     :cond_1
     invoke-virtual {v2, v5, v6, v3, v4}, Landroid/media/videoeditor/Overlay;->setStartTimeAndDuration(JJ)V
 
-    .line 526
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 510
     .end local v3           #overlayDurationMs:J
     .end local v5           #overlayStartTimeMs:J
     :cond_2
@@ -1136,7 +1045,6 @@
     .restart local v5       #overlayStartTimeMs:J
     goto :goto_1
 
-    .line 520
     :cond_3
     invoke-virtual {v2}, Landroid/media/videoeditor/Overlay;->getDuration()J
 
@@ -1145,7 +1053,6 @@
     .restart local v3       #overlayDurationMs:J
     goto :goto_2
 
-    .line 530
     .end local v2           #overlay:Landroid/media/videoeditor/Overlay;
     .end local v3           #overlayDurationMs:J
     .end local v5           #overlayStartTimeMs:J
@@ -1160,17 +1067,14 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1047
     const/16 v0, 0x20
 
     iput v0, p0, Landroid/media/videoeditor/MediaImageItem;->mScaledWidth:I
 
-    .line 1048
     new-instance v5, Landroid/graphics/Matrix;
 
     invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 1049
     .local v5, matrix:Landroid/graphics/Matrix;
     iget v0, p0, Landroid/media/videoeditor/MediaImageItem;->mScaledWidth:I
 
@@ -1184,15 +1088,12 @@
 
     div-float v9, v0, v2
 
-    .line 1050
     .local v9, scaleWidth:F
     const/high16 v8, 0x3f80
 
-    .line 1051
     .local v8, scaleHeight:F
     invoke-virtual {v5, v9, v8}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    .line 1052
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
@@ -1211,7 +1112,6 @@
 
     move-result-object v7
 
-    .line 1054
     .local v7, bitmap:Landroid/graphics/Bitmap;
     return-object v7
 .end method
@@ -1223,50 +1123,41 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 786
     const/4 v6, 0x0
 
     .local v6, width:I
     const/4 v4, 0x0
 
-    .line 787
     .local v4, height:I
     new-instance v5, Landroid/graphics/Rect;
 
     invoke-direct {v5}, Landroid/graphics/Rect;-><init>()V
 
-    .line 788
     .local v5, start:Landroid/graphics/Rect;
     new-instance v3, Landroid/graphics/Rect;
 
     invoke-direct {v3}, Landroid/graphics/Rect;-><init>()V
 
-    .line 789
     .local v3, end:Landroid/graphics/Rect;
     const/4 v2, 0x0
 
-    .line 790
     .local v2, clipSettings:Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;
     new-instance v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;
 
     .end local v2           #clipSettings:Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;
     invoke-direct {v2}, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;-><init>()V
 
-    .line 806
     .restart local v2       #clipSettings:Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;
     invoke-virtual {p1, v5, v3}, Landroid/media/videoeditor/EffectKenBurns;->getKenBurnsSettings(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
 
-    .line 807
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getWidth()I
 
     move-result v6
 
-    .line 808
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getHeight()I
 
     move-result v4
 
-    .line 809
     iget v7, v5, Landroid/graphics/Rect;->left:I
 
     if-ltz v7, :cond_0
@@ -1331,7 +1222,6 @@
 
     if-le v7, v4, :cond_1
 
-    .line 814
     :cond_0
     new-instance v7, Ljava/lang/IllegalArgumentException;
 
@@ -1341,7 +1231,6 @@
 
     throw v7
 
-    .line 817
     :cond_1
     iget v7, v5, Landroid/graphics/Rect;->right:I
 
@@ -1384,26 +1273,21 @@
 
     if-nez v7, :cond_4
 
-    .line 819
     :cond_3
     invoke-virtual {p0, v9}, Landroid/media/videoeditor/MediaImageItem;->setRegenerateClip(Z)V
 
-    .line 820
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getDecodedImageFileName()Ljava/lang/String;
 
     move-result-object v7
 
     iput-object v7, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->clipPath:Ljava/lang/String;
 
-    .line 821
     const/4 v7, 0x5
 
     iput v7, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->fileType:I
 
-    .line 822
     iput v9, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->beginCutTime:I
 
-    .line 823
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getTimelineDuration()J
 
     move-result-wide v7
@@ -1412,34 +1296,24 @@
 
     iput v7, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->endCutTime:I
 
-    .line 824
     iput v9, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->beginCutPercent:I
 
-    .line 825
     iput v9, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->endCutPercent:I
 
-    .line 826
     iput-boolean v9, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->panZoomEnabled:Z
 
-    .line 827
     iput v9, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->panZoomPercentStart:I
 
-    .line 828
     iput v9, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->panZoomTopLeftXStart:I
 
-    .line 829
     iput v9, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->panZoomTopLeftYStart:I
 
-    .line 830
     iput v9, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->panZoomPercentEnd:I
 
-    .line 831
     iput v9, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->panZoomTopLeftXEnd:I
 
-    .line 832
     iput v9, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->panZoomTopLeftYEnd:I
 
-    .line 833
     iget-object v7, p0, Landroid/media/videoeditor/MediaImageItem;->mMANativeHelper:Landroid/media/videoeditor/MediaArtistNativeHelper;
 
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getRenderingMode()I
@@ -1452,25 +1326,21 @@
 
     iput v7, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->mediaRendering:I
 
-    .line 836
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getScaledWidth()I
 
     move-result v7
 
     iput v7, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->rgbWidth:I
 
-    .line 837
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getScaledHeight()I
 
     move-result v7
 
     iput v7, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->rgbHeight:I
 
-    .line 864
     :goto_0
     return-object v2
 
-    .line 842
     :cond_4
     invoke-virtual {v5}, Landroid/graphics/Rect;->width()I
 
@@ -1480,7 +1350,6 @@
 
     div-int v0, v7, v6
 
-    .line 843
     .local v0, PanZoomXa:I
     invoke-virtual {v3}, Landroid/graphics/Rect;->width()I
 
@@ -1490,7 +1359,6 @@
 
     div-int v1, v7, v6
 
-    .line 845
     .local v1, PanZoomXb:I
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getDecodedImageFileName()Ljava/lang/String;
 
@@ -1498,7 +1366,6 @@
 
     iput-object v7, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->clipPath:Ljava/lang/String;
 
-    .line 846
     iget-object v7, p0, Landroid/media/videoeditor/MediaImageItem;->mMANativeHelper:Landroid/media/videoeditor/MediaArtistNativeHelper;
 
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getFileType()I
@@ -1511,10 +1378,8 @@
 
     iput v7, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->fileType:I
 
-    .line 847
     iput v9, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->beginCutTime:I
 
-    .line 848
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getTimelineDuration()J
 
     move-result-wide v7
@@ -1523,21 +1388,16 @@
 
     iput v7, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->endCutTime:I
 
-    .line 849
     iput v9, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->beginCutPercent:I
 
-    .line 850
     iput v9, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->endCutPercent:I
 
-    .line 851
     const/4 v7, 0x1
 
     iput-boolean v7, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->panZoomEnabled:Z
 
-    .line 852
     iput v0, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->panZoomPercentStart:I
 
-    .line 853
     iget v7, v5, Landroid/graphics/Rect;->left:I
 
     mul-int/lit16 v7, v7, 0x3e8
@@ -1546,7 +1406,6 @@
 
     iput v7, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->panZoomTopLeftXStart:I
 
-    .line 854
     iget v7, v5, Landroid/graphics/Rect;->top:I
 
     mul-int/lit16 v7, v7, 0x3e8
@@ -1555,10 +1414,8 @@
 
     iput v7, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->panZoomTopLeftYStart:I
 
-    .line 855
     iput v1, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->panZoomPercentEnd:I
 
-    .line 856
     iget v7, v3, Landroid/graphics/Rect;->left:I
 
     mul-int/lit16 v7, v7, 0x3e8
@@ -1567,7 +1424,6 @@
 
     iput v7, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->panZoomTopLeftXEnd:I
 
-    .line 857
     iget v7, v3, Landroid/graphics/Rect;->top:I
 
     mul-int/lit16 v7, v7, 0x3e8
@@ -1576,7 +1432,6 @@
 
     iput v7, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->panZoomTopLeftYEnd:I
 
-    .line 858
     iget-object v7, p0, Landroid/media/videoeditor/MediaImageItem;->mMANativeHelper:Landroid/media/videoeditor/MediaArtistNativeHelper;
 
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getRenderingMode()I
@@ -1589,14 +1444,12 @@
 
     iput v7, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->mediaRendering:I
 
-    .line 861
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getScaledWidth()I
 
     move-result v7
 
     iput v7, v2, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->rgbWidth:I
 
-    .line 862
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getScaledHeight()I
 
     move-result v7
@@ -1616,14 +1469,11 @@
 
     const/16 v2, 0x1e0
 
-    .line 540
     const/4 v0, 0x0
 
-    .line 542
     .local v0, width:I
     packed-switch p1, :pswitch_data_0
 
-    .line 579
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "Illegal arguments for aspectRatio"
@@ -1632,104 +1482,82 @@
 
     throw v1
 
-    .line 544
     :pswitch_0
     if-ne p2, v2, :cond_1
 
-    .line 545
     const/16 v0, 0x2d0
 
-    .line 584
     :cond_0
     :goto_0
     return v0
 
-    .line 546
     :cond_1
     if-ne p2, v3, :cond_0
 
-    .line 547
     const/16 v0, 0x438
 
     goto :goto_0
 
-    .line 551
     :pswitch_1
     const/16 v1, 0x168
 
     if-ne p2, v1, :cond_2
 
-    .line 552
     const/16 v0, 0x280
 
     goto :goto_0
 
-    .line 553
     :cond_2
     if-ne p2, v2, :cond_3
 
-    .line 554
     const/16 v0, 0x356
 
     goto :goto_0
 
-    .line 555
     :cond_3
     if-ne p2, v3, :cond_4
 
-    .line 556
     const/16 v0, 0x500
 
     goto :goto_0
 
-    .line 557
     :cond_4
     const/16 v1, 0x438
 
     if-ne p2, v1, :cond_0
 
-    .line 558
     const/16 v0, 0x780
 
     goto :goto_0
 
-    .line 562
     :pswitch_2
     if-ne p2, v2, :cond_5
 
-    .line 563
     const/16 v0, 0x280
 
-    .line 564
     :cond_5
     if-ne p2, v3, :cond_0
 
-    .line 565
     const/16 v0, 0x3c0
 
     goto :goto_0
 
-    .line 569
     :pswitch_3
     if-ne p2, v2, :cond_0
 
-    .line 570
     const/16 v0, 0x320
 
     goto :goto_0
 
-    .line 574
     :pswitch_4
     const/16 v1, 0x90
 
     if-ne p2, v1, :cond_0
 
-    .line 575
     const/16 v0, 0xb0
 
     goto :goto_0
 
-    .line 542
     nop
 
     :pswitch_data_0
@@ -1761,7 +1589,6 @@
     .end annotation
 
     .prologue
-    .line 376
     .local p1, effects:Ljava/util/List;,"Ljava/util/List<Landroid/media/videoeditor/Effect;>;"
     .local p2, overlays:Ljava/util/List;,"Ljava/util/List<Landroid/media/videoeditor/Overlay;>;"
     iget-object v5, p0, Landroid/media/videoeditor/MediaImageItem;->mBeginTransition:Landroid/media/videoeditor/Transition;
@@ -1776,14 +1603,12 @@
 
     if-eqz v5, :cond_3
 
-    .line 377
     iget-object v5, p0, Landroid/media/videoeditor/MediaImageItem;->mBeginTransition:Landroid/media/videoeditor/Transition;
 
     invoke-virtual {v5}, Landroid/media/videoeditor/Transition;->getDuration()J
 
     move-result-wide v3
 
-    .line 383
     .local v3, transitionDurationMs:J
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -1803,7 +1628,6 @@
 
     check-cast v0, Landroid/media/videoeditor/Effect;
 
-    .line 387
     .local v0, effect:Landroid/media/videoeditor/Effect;
     invoke-virtual {v0}, Landroid/media/videoeditor/Effect;->getStartTime()J
 
@@ -1813,12 +1637,10 @@
 
     if-gez v5, :cond_0
 
-    .line 388
     iget-object v5, p0, Landroid/media/videoeditor/MediaImageItem;->mBeginTransition:Landroid/media/videoeditor/Transition;
 
     invoke-virtual {v5}, Landroid/media/videoeditor/Transition;->invalidate()V
 
-    .line 393
     .end local v0           #effect:Landroid/media/videoeditor/Effect;
     :cond_1
     iget-object v5, p0, Landroid/media/videoeditor/MediaImageItem;->mBeginTransition:Landroid/media/videoeditor/Transition;
@@ -1829,7 +1651,6 @@
 
     if-eqz v5, :cond_3
 
-    .line 398
     invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -1847,7 +1668,6 @@
 
     check-cast v2, Landroid/media/videoeditor/Overlay;
 
-    .line 402
     .local v2, overlay:Landroid/media/videoeditor/Overlay;
     invoke-virtual {v2}, Landroid/media/videoeditor/Overlay;->getStartTime()J
 
@@ -1857,12 +1677,10 @@
 
     if-gez v5, :cond_2
 
-    .line 403
     iget-object v5, p0, Landroid/media/videoeditor/MediaImageItem;->mBeginTransition:Landroid/media/videoeditor/Transition;
 
     invoke-virtual {v5}, Landroid/media/videoeditor/Transition;->invalidate()V
 
-    .line 409
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v2           #overlay:Landroid/media/videoeditor/Overlay;
     .end local v3           #transitionDurationMs:J
@@ -1874,7 +1692,6 @@
     .locals 11
 
     .prologue
-    .line 416
     iget-object v7, p0, Landroid/media/videoeditor/MediaImageItem;->mEndTransition:Landroid/media/videoeditor/Transition;
 
     if-eqz v7, :cond_3
@@ -1887,20 +1704,17 @@
 
     if-eqz v7, :cond_3
 
-    .line 417
     iget-object v7, p0, Landroid/media/videoeditor/MediaImageItem;->mEndTransition:Landroid/media/videoeditor/Transition;
 
     invoke-virtual {v7}, Landroid/media/videoeditor/Transition;->getDuration()J
 
     move-result-wide v5
 
-    .line 423
     .local v5, transitionDurationMs:J
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getAllEffects()Ljava/util/List;
 
     move-result-object v1
 
-    .line 424
     .local v1, effects:Ljava/util/List;,"Ljava/util/List<Landroid/media/videoeditor/Effect;>;"
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -1920,7 +1734,6 @@
 
     check-cast v0, Landroid/media/videoeditor/Effect;
 
-    .line 428
     .local v0, effect:Landroid/media/videoeditor/Effect;
     invoke-virtual {v0}, Landroid/media/videoeditor/Effect;->getStartTime()J
 
@@ -1940,12 +1753,10 @@
 
     if-lez v7, :cond_0
 
-    .line 430
     iget-object v7, p0, Landroid/media/videoeditor/MediaImageItem;->mEndTransition:Landroid/media/videoeditor/Transition;
 
     invoke-virtual {v7}, Landroid/media/videoeditor/Transition;->invalidate()V
 
-    .line 435
     .end local v0           #effect:Landroid/media/videoeditor/Effect;
     :cond_1
     iget-object v7, p0, Landroid/media/videoeditor/MediaImageItem;->mEndTransition:Landroid/media/videoeditor/Transition;
@@ -1956,12 +1767,10 @@
 
     if-eqz v7, :cond_3
 
-    .line 440
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getAllOverlays()Ljava/util/List;
 
     move-result-object v4
 
-    .line 441
     .local v4, overlays:Ljava/util/List;,"Ljava/util/List<Landroid/media/videoeditor/Overlay;>;"
     invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -1980,7 +1789,6 @@
 
     check-cast v3, Landroid/media/videoeditor/Overlay;
 
-    .line 445
     .local v3, overlay:Landroid/media/videoeditor/Overlay;
     invoke-virtual {v3}, Landroid/media/videoeditor/Overlay;->getStartTime()J
 
@@ -2000,12 +1808,10 @@
 
     if-lez v7, :cond_2
 
-    .line 447
     iget-object v7, p0, Landroid/media/videoeditor/MediaImageItem;->mEndTransition:Landroid/media/videoeditor/Transition;
 
     invoke-virtual {v7}, Landroid/media/videoeditor/Transition;->invalidate()V
 
-    .line 453
     .end local v1           #effects:Ljava/util/List;,"Ljava/util/List<Landroid/media/videoeditor/Effect;>;"
     .end local v2           #i$:Ljava/util/Iterator;
     .end local v3           #overlay:Landroid/media/videoeditor/Overlay;
@@ -2020,35 +1826,28 @@
     .parameter "n"
 
     .prologue
-    .line 1059
     add-int/lit8 p0, p0, -0x1
 
-    .line 1060
     ushr-int/lit8 v0, p0, 0x10
 
     or-int/2addr p0, v0
 
-    .line 1061
     ushr-int/lit8 v0, p0, 0x8
 
     or-int/2addr p0, v0
 
-    .line 1062
     ushr-int/lit8 v0, p0, 0x4
 
     or-int/2addr p0, v0
 
-    .line 1063
     ushr-int/lit8 v0, p0, 0x2
 
     or-int/2addr p0, v0
 
-    .line 1064
     ushr-int/lit8 v0, p0, 0x1
 
     or-int/2addr p0, v0
 
-    .line 1065
     add-int/lit8 v0, p0, 0x1
 
     return v0
@@ -2066,30 +1865,24 @@
     .end annotation
 
     .prologue
-    .line 961
     new-instance v5, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v5}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 962
     .local v5, dbo:Landroid/graphics/BitmapFactory$Options;
     const/4 v13, 0x1
 
     iput-boolean v13, v5, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 963
     move-object/from16 v0, p1
 
     invoke-static {v0, v5}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 965
     iget v9, v5, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
-    .line 966
     .local v9, nativeWidth:I
     iget v8, v5, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
-    .line 967
     .local v8, nativeHeight:I
     const-string v13, "MediaImageItem"
 
@@ -2101,7 +1894,6 @@
 
     if-eqz v13, :cond_0
 
-    .line 968
     const-string v13, "MediaImageItem"
 
     new-instance v14, Ljava/lang/StringBuilder;
@@ -2158,7 +1950,6 @@
 
     invoke-static {v13, v14}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 974
     :cond_0
     move/from16 v0, p2
 
@@ -2168,7 +1959,6 @@
 
     if-le v8, v0, :cond_5
 
-    .line 975
     :cond_1
     int-to-float v13, v9
 
@@ -2178,7 +1968,6 @@
 
     div-float v6, v13, v14
 
-    .line 976
     .local v6, dx:F
     int-to-float v13, v8
 
@@ -2188,18 +1977,15 @@
 
     div-float v7, v13, v14
 
-    .line 978
     .local v7, dy:F
     cmpl-float v13, v6, v7
 
     if-lez v13, :cond_3
 
-    .line 979
     move/from16 v0, p2
 
     int-to-float v3, v0
 
-    .line 981
     .local v3, bitmapWidth:F
     int-to-float v13, v8
 
@@ -2213,7 +1999,6 @@
 
     if-gez v13, :cond_2
 
-    .line 982
     int-to-float v13, v8
 
     div-float/2addr v13, v6
@@ -2226,7 +2011,6 @@
 
     double-to-float v2, v13
 
-    .line 1000
     .local v2, bitmapHeight:F
     :goto_0
     int-to-float v13, v9
@@ -2249,29 +2033,24 @@
 
     double-to-int v11, v13
 
-    .line 1003
     .local v11, sampleSize:I
     invoke-static {v11}, Landroid/media/videoeditor/MediaImageItem;->nextPowerOf2(I)I
 
     move-result v11
 
-    .line 1004
     new-instance v10, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v10}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 1005
     .local v10, options:Landroid/graphics/BitmapFactory$Options;
     iput v11, v10, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    .line 1006
     move-object/from16 v0, p1
 
     invoke-static {v0, v10}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v12
 
-    .line 1014
     .end local v6           #dx:F
     .end local v7           #dy:F
     .end local v10           #options:Landroid/graphics/BitmapFactory$Options;
@@ -2280,14 +2059,12 @@
     :goto_1
     if-nez v12, :cond_6
 
-    .line 1015
     const-string v13, "MediaImageItem"
 
     const-string v14, "generateThumbnail: Cannot decode image bytes"
 
     invoke-static {v13, v14}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1016
     new-instance v13, Ljava/io/IOException;
 
     new-instance v14, Ljava/lang/StringBuilder;
@@ -2316,7 +2093,6 @@
 
     throw v13
 
-    .line 984
     .end local v2           #bitmapHeight:F
     .end local v12           #srcBitmap:Landroid/graphics/Bitmap;
     .restart local v6       #dx:F
@@ -2337,7 +2113,6 @@
     .restart local v2       #bitmapHeight:F
     goto :goto_0
 
-    .line 988
     .end local v2           #bitmapHeight:F
     .end local v3           #bitmapWidth:F
     :cond_3
@@ -2353,7 +2128,6 @@
 
     if-lez v13, :cond_4
 
-    .line 989
     int-to-float v13, v9
 
     div-float/2addr v13, v7
@@ -2366,7 +2140,6 @@
 
     double-to-float v3, v13
 
-    .line 994
     .restart local v3       #bitmapWidth:F
     :goto_2
     move/from16 v0, p3
@@ -2376,7 +2149,6 @@
     .restart local v2       #bitmapHeight:F
     goto :goto_0
 
-    .line 991
     .end local v2           #bitmapHeight:F
     .end local v3           #bitmapWidth:F
     :cond_4
@@ -2395,7 +2167,6 @@
     .restart local v3       #bitmapWidth:F
     goto :goto_2
 
-    .line 1008
     .end local v3           #bitmapWidth:F
     .end local v6           #dx:F
     .end local v7           #dy:F
@@ -2404,13 +2175,11 @@
 
     int-to-float v3, v0
 
-    .line 1009
     .restart local v3       #bitmapWidth:F
     move/from16 v0, p3
 
     int-to-float v2, v0
 
-    .line 1010
     .restart local v2       #bitmapHeight:F
     invoke-static/range {p1 .. p1}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
@@ -2419,7 +2188,6 @@
     .restart local v12       #srcBitmap:Landroid/graphics/Bitmap;
     goto :goto_1
 
-    .line 1022
     :cond_6
     float-to-int v13, v3
 
@@ -2431,13 +2199,11 @@
 
     move-result-object v1
 
-    .line 1025
     .local v1, bitmap:Landroid/graphics/Bitmap;
     new-instance v4, Landroid/graphics/Canvas;
 
     invoke-direct {v4, v1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 1026
     .local v4, canvas:Landroid/graphics/Canvas;
     new-instance v13, Landroid/graphics/Rect;
 
@@ -2475,15 +2241,12 @@
 
     invoke-virtual {v4, v12, v13, v14, v15}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    .line 1030
     const/4 v13, 0x0
 
     invoke-virtual {v4, v13}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 1034
     invoke-virtual {v12}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 1035
     return-object v1
 .end method
 
@@ -2496,12 +2259,10 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 874
     new-instance v1, Landroid/media/videoeditor/MediaArtistNativeHelper$EditSettings;
 
     invoke-direct {v1}, Landroid/media/videoeditor/MediaArtistNativeHelper$EditSettings;-><init>()V
 
-    .line 875
     .local v1, editSettings:Landroid/media/videoeditor/MediaArtistNativeHelper$EditSettings;
     const/4 v3, 0x1
 
@@ -2509,20 +2270,16 @@
 
     iput-object v3, v1, Landroid/media/videoeditor/MediaArtistNativeHelper$EditSettings;->clipSettingsArray:[Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;
 
-    .line 876
     const/4 v2, 0x0
 
-    .line 877
     .local v2, output:Ljava/lang/String;
     new-instance v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;
 
     invoke-direct {v0}, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;-><init>()V
 
-    .line 878
     .local v0, clipSettings:Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;
     invoke-virtual {p0, v0}, Landroid/media/videoeditor/MediaImageItem;->initClipSettings(Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;)V
 
-    .line 879
     iget-object v3, v1, Landroid/media/videoeditor/MediaArtistNativeHelper$EditSettings;->clipSettingsArray:[Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;
 
     invoke-direct {p0, p1}, Landroid/media/videoeditor/MediaImageItem;->getKenBurns(Landroid/media/videoeditor/EffectKenBurns;)Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;
@@ -2531,7 +2288,6 @@
 
     aput-object v4, v3, v5
 
-    .line 880
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getGeneratedImageClip()Ljava/lang/String;
 
     move-result-object v3
@@ -2544,33 +2300,26 @@
 
     if-eqz v3, :cond_0
 
-    .line 881
     iget-object v3, p0, Landroid/media/videoeditor/MediaImageItem;->mMANativeHelper:Landroid/media/videoeditor/MediaArtistNativeHelper;
 
     invoke-virtual {v3, v1, p0}, Landroid/media/videoeditor/MediaArtistNativeHelper;->generateKenBurnsClip(Landroid/media/videoeditor/MediaArtistNativeHelper$EditSettings;Landroid/media/videoeditor/MediaImageItem;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 882
     invoke-virtual {p0, v2}, Landroid/media/videoeditor/MediaImageItem;->setGeneratedImageClip(Ljava/lang/String;)V
 
-    .line 883
     invoke-virtual {p0, v5}, Landroid/media/videoeditor/MediaImageItem;->setRegenerateClip(Z)V
 
-    .line 884
     iput-object v2, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->clipPath:Ljava/lang/String;
 
-    .line 885
     iput v5, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->fileType:I
 
-    .line 887
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getScaledHeight()I
 
     move-result v3
 
     iput v3, p0, Landroid/media/videoeditor/MediaImageItem;->mGeneratedClipHeight:I
 
-    .line 888
     iget-object v3, p0, Landroid/media/videoeditor/MediaImageItem;->mVideoEditor:Landroid/media/videoeditor/VideoEditorImpl;
 
     invoke-virtual {v3}, Landroid/media/videoeditor/VideoEditorImpl;->getAspectRatio()I
@@ -2585,7 +2334,6 @@
 
     iput v3, p0, Landroid/media/videoeditor/MediaImageItem;->mGeneratedClipWidth:I
 
-    .line 903
     :goto_0
     iget-object v3, p0, Landroid/media/videoeditor/MediaImageItem;->mMANativeHelper:Landroid/media/videoeditor/MediaArtistNativeHelper;
 
@@ -2599,10 +2347,8 @@
 
     iput v3, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->mediaRendering:I
 
-    .line 904
     iput v5, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->beginCutTime:I
 
-    .line 905
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getTimelineDuration()J
 
     move-result-wide v3
@@ -2611,10 +2357,8 @@
 
     iput v3, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->endCutTime:I
 
-    .line 907
     return-object v0
 
-    .line 891
     :cond_0
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getGeneratedImageClip()Ljava/lang/String;
 
@@ -2622,26 +2366,22 @@
 
     if-nez v3, :cond_1
 
-    .line 892
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getDecodedImageFileName()Ljava/lang/String;
 
     move-result-object v3
 
     iput-object v3, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->clipPath:Ljava/lang/String;
 
-    .line 893
     const/4 v3, 0x5
 
     iput v3, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->fileType:I
 
-    .line 895
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getScaledWidth()I
 
     move-result v3
 
     iput v3, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->rgbWidth:I
 
-    .line 896
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getScaledHeight()I
 
     move-result v3
@@ -2650,7 +2390,6 @@
 
     goto :goto_0
 
-    .line 899
     :cond_1
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getGeneratedImageClip()Ljava/lang/String;
 
@@ -2658,7 +2397,6 @@
 
     iput-object v3, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->clipPath:Ljava/lang/String;
 
-    .line 900
     iput v5, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->fileType:I
 
     goto :goto_0
@@ -2668,7 +2406,6 @@
     .locals 1
 
     .prologue
-    .line 307
     iget v0, p0, Landroid/media/videoeditor/MediaImageItem;->mAspectRatio:I
 
     return v0
@@ -2678,7 +2415,6 @@
     .locals 1
 
     .prologue
-    .line 269
     iget-object v0, p0, Landroid/media/videoeditor/MediaImageItem;->mDecodedFilename:Ljava/lang/String;
 
     return-object v0
@@ -2688,7 +2424,6 @@
     .locals 2
 
     .prologue
-    .line 617
     iget-wide v0, p0, Landroid/media/videoeditor/MediaImageItem;->mDurationMs:J
 
     return-wide v0
@@ -2698,7 +2433,6 @@
     .locals 2
 
     .prologue
-    .line 233
     iget-object v0, p0, Landroid/media/videoeditor/MediaImageItem;->mFilename:Ljava/lang/String;
 
     const-string v1, ".jpg"
@@ -2739,15 +2473,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 235
     :cond_0
     const/4 v0, 0x5
 
-    .line 239
     :goto_0
     return v0
 
-    .line 236
     :cond_1
     iget-object v0, p0, Landroid/media/videoeditor/MediaImageItem;->mFilename:Ljava/lang/String;
 
@@ -2769,13 +2500,11 @@
 
     if-eqz v0, :cond_3
 
-    .line 237
     :cond_2
     const/16 v0, 0x8
 
     goto :goto_0
 
-    .line 239
     :cond_3
     const/16 v0, 0xff
 
@@ -2786,7 +2515,6 @@
     .locals 1
 
     .prologue
-    .line 254
     iget v0, p0, Landroid/media/videoeditor/MediaImageItem;->mGeneratedClipHeight:I
 
     return v0
@@ -2796,7 +2524,6 @@
     .locals 1
 
     .prologue
-    .line 261
     iget v0, p0, Landroid/media/videoeditor/MediaImageItem;->mGeneratedClipWidth:I
 
     return v0
@@ -2806,7 +2533,6 @@
     .locals 1
 
     .prologue
-    .line 609
     invoke-super {p0}, Landroid/media/videoeditor/MediaItem;->getGeneratedImageClip()Ljava/lang/String;
 
     move-result-object v0
@@ -2818,7 +2544,6 @@
     .locals 1
 
     .prologue
-    .line 285
     iget v0, p0, Landroid/media/videoeditor/MediaImageItem;->mHeight:I
 
     return v0
@@ -2828,30 +2553,24 @@
     .locals 8
 
     .prologue
-    .line 916
     new-instance v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;
 
     invoke-direct {v0}, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;-><init>()V
 
-    .line 917
     .local v0, clipSettings:Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;
     const/4 v4, 0x0
 
-    .line 918
     .local v4, effects:Ljava/util/List;,"Ljava/util/List<Landroid/media/videoeditor/Effect;>;"
     const/4 v2, 0x0
 
-    .line 919
     .local v2, effectKB:Landroid/media/videoeditor/EffectKenBurns;
     const/4 v3, 0x0
 
-    .line 921
     .local v3, effectKBPresent:Z
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getAllEffects()Ljava/util/List;
 
     move-result-object v4
 
-    .line 922
     invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v5
@@ -2870,7 +2589,6 @@
 
     check-cast v1, Landroid/media/videoeditor/Effect;
 
-    .line 923
     .local v1, effect:Landroid/media/videoeditor/Effect;
     instance-of v6, v1, Landroid/media/videoeditor/EffectKenBurns;
 
@@ -2878,48 +2596,38 @@
 
     move-object v2, v1
 
-    .line 924
     check-cast v2, Landroid/media/videoeditor/EffectKenBurns;
 
-    .line 925
     const/4 v3, 0x1
 
-    .line 930
     .end local v1           #effect:Landroid/media/videoeditor/Effect;
     :cond_1
     if-eqz v3, :cond_2
 
-    .line 931
     invoke-virtual {p0, v2}, Landroid/media/videoeditor/MediaImageItem;->generateKenburnsClip(Landroid/media/videoeditor/EffectKenBurns;)Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;
 
     move-result-object v0
 
-    .line 947
     :goto_0
     return-object v0
 
-    .line 936
     :cond_2
     invoke-virtual {p0, v0}, Landroid/media/videoeditor/MediaImageItem;->initClipSettings(Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;)V
 
-    .line 937
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getDecodedImageFileName()Ljava/lang/String;
 
     move-result-object v6
 
     iput-object v6, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->clipPath:Ljava/lang/String;
 
-    .line 938
     const/4 v6, 0x5
 
     iput v6, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->fileType:I
 
-    .line 939
     const/4 v6, 0x0
 
     iput v6, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->beginCutTime:I
 
-    .line 940
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getTimelineDuration()J
 
     move-result-wide v6
@@ -2928,7 +2636,6 @@
 
     iput v6, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->endCutTime:I
 
-    .line 941
     iget-object v6, p0, Landroid/media/videoeditor/MediaImageItem;->mMANativeHelper:Landroid/media/videoeditor/MediaArtistNativeHelper;
 
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getRenderingMode()I
@@ -2941,14 +2648,12 @@
 
     iput v6, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->mediaRendering:I
 
-    .line 943
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getScaledWidth()I
 
     move-result v6
 
     iput v6, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->rgbWidth:I
 
-    .line 944
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getScaledHeight()I
 
     move-result v6
@@ -2962,7 +2667,6 @@
     .locals 1
 
     .prologue
-    .line 299
     iget v0, p0, Landroid/media/videoeditor/MediaImageItem;->mScaledHeight:I
 
     return v0
@@ -2972,7 +2676,6 @@
     .locals 1
 
     .prologue
-    .line 247
     iget-object v0, p0, Landroid/media/videoeditor/MediaImageItem;->mScaledFilename:Ljava/lang/String;
 
     return-object v0
@@ -2982,7 +2685,6 @@
     .locals 1
 
     .prologue
-    .line 292
     iget v0, p0, Landroid/media/videoeditor/MediaImageItem;->mScaledWidth:I
 
     return v0
@@ -3000,14 +2702,12 @@
     .end annotation
 
     .prologue
-    .line 633
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getGeneratedImageClip()Ljava/lang/String;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 634
     iget-object v0, p0, Landroid/media/videoeditor/MediaImageItem;->mMANativeHelper:Landroid/media/videoeditor/MediaArtistNativeHelper;
 
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getGeneratedImageClip()Ljava/lang/String;
@@ -3026,7 +2726,6 @@
 
     move-result-object v0
 
-    .line 637
     :goto_0
     return-object v0
 
@@ -3056,14 +2755,12 @@
     .end annotation
 
     .prologue
-    .line 652
     invoke-virtual/range {p0 .. p0}, Landroid/media/videoeditor/MediaImageItem;->getGeneratedImageClip()Ljava/lang/String;
 
     move-result-object v3
 
     if-nez v3, :cond_0
 
-    .line 653
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/media/videoeditor/MediaImageItem;->mFilename:Ljava/lang/String;
@@ -3078,7 +2775,6 @@
 
     move-result-object v16
 
-    .line 654
     .local v16, thumbnail:Landroid/graphics/Bitmap;
     const/4 v15, 0x0
 
@@ -3090,7 +2786,6 @@
 
     if-ge v15, v3, :cond_3
 
-    .line 655
     aget v3, p8, v15
 
     move-object/from16 v0, p9
@@ -3099,12 +2794,10 @@
 
     invoke-interface {v0, v1, v3}, Landroid/media/videoeditor/MediaItem$GetThumbnailListCallback;->onThumbnail(Landroid/graphics/Bitmap;I)V
 
-    .line 654
     add-int/lit8 v15, v15, 0x1
 
     goto :goto_0
 
-    .line 658
     .end local v15           #i:I
     .end local v16           #thumbnail:Landroid/graphics/Bitmap;
     :cond_0
@@ -3112,7 +2805,6 @@
 
     if-lez v3, :cond_1
 
-    .line 659
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     const-string v4, "Start time is greater than end time"
@@ -3121,7 +2813,6 @@
 
     throw v3
 
-    .line 662
     :cond_1
     move-object/from16 v0, p0
 
@@ -3131,7 +2822,6 @@
 
     if-lez v3, :cond_2
 
-    .line 663
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     const-string v4, "End time is greater than file duration"
@@ -3140,7 +2830,6 @@
 
     throw v3
 
-    .line 666
     :cond_2
     move-object/from16 v0, p0
 
@@ -3168,7 +2857,6 @@
 
     invoke-virtual/range {v3 .. v14}, Landroid/media/videoeditor/MediaArtistNativeHelper;->getPixelsList(Ljava/lang/String;IIJJI[ILandroid/media/videoeditor/MediaItem$GetThumbnailListCallback;I)V
 
-    .line 669
     :cond_3
     return-void
 .end method
@@ -3177,7 +2865,6 @@
     .locals 2
 
     .prologue
-    .line 625
     iget-wide v0, p0, Landroid/media/videoeditor/MediaImageItem;->mDurationMs:J
 
     return-wide v0
@@ -3187,7 +2874,6 @@
     .locals 1
 
     .prologue
-    .line 277
     iget v0, p0, Landroid/media/videoeditor/MediaImageItem;->mWidth:I
 
     return v0
@@ -3199,14 +2885,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 759
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getGeneratedImageClip()Ljava/lang/String;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 760
     new-instance v0, Ljava/io/File;
 
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getGeneratedImageClip()Ljava/lang/String;
@@ -3217,28 +2901,23 @@
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 761
     invoke-virtual {p0, v2}, Landroid/media/videoeditor/MediaImageItem;->setGeneratedImageClip(Ljava/lang/String;)V
 
-    .line 762
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Landroid/media/videoeditor/MediaImageItem;->setRegenerateClip(Z)V
 
-    .line 765
     :cond_0
     iget-object v0, p0, Landroid/media/videoeditor/MediaImageItem;->mScaledFilename:Ljava/lang/String;
 
     if-eqz v0, :cond_2
 
-    .line 766
     iget-object v0, p0, Landroid/media/videoeditor/MediaImageItem;->mFileName:Ljava/lang/String;
 
     iget-object v1, p0, Landroid/media/videoeditor/MediaImageItem;->mScaledFilename:Ljava/lang/String;
 
     if-eq v0, v1, :cond_1
 
-    .line 767
     new-instance v0, Ljava/io/File;
 
     iget-object v1, p0, Landroid/media/videoeditor/MediaImageItem;->mScaledFilename:Ljava/lang/String;
@@ -3247,17 +2926,14 @@
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 769
     :cond_1
     iput-object v2, p0, Landroid/media/videoeditor/MediaImageItem;->mScaledFilename:Ljava/lang/String;
 
-    .line 772
     :cond_2
     iget-object v0, p0, Landroid/media/videoeditor/MediaImageItem;->mDecodedFilename:Ljava/lang/String;
 
     if-eqz v0, :cond_3
 
-    .line 773
     new-instance v0, Ljava/io/File;
 
     iget-object v1, p0, Landroid/media/videoeditor/MediaImageItem;->mDecodedFilename:Ljava/lang/String;
@@ -3266,10 +2942,8 @@
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 774
     iput-object v2, p0, Landroid/media/videoeditor/MediaImageItem;->mDecodedFilename:Ljava/lang/String;
 
-    .line 776
     :cond_3
     return-void
 .end method
@@ -3280,12 +2954,10 @@
     .parameter "durationMs"
 
     .prologue
-    .line 679
     iget-object v0, p0, Landroid/media/videoeditor/MediaImageItem;->mBeginTransition:Landroid/media/videoeditor/Transition;
 
     if-eqz v0, :cond_0
 
-    .line 680
     const-wide/16 v5, 0x0
 
     iget-object v0, p0, Landroid/media/videoeditor/MediaImageItem;->mBeginTransition:Landroid/media/videoeditor/Transition;
@@ -3306,25 +2978,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 681
     iget-object v0, p0, Landroid/media/videoeditor/MediaImageItem;->mBeginTransition:Landroid/media/videoeditor/Transition;
 
     invoke-virtual {v0}, Landroid/media/videoeditor/Transition;->invalidate()V
 
-    .line 685
     :cond_0
     iget-object v0, p0, Landroid/media/videoeditor/MediaImageItem;->mEndTransition:Landroid/media/videoeditor/Transition;
 
     if-eqz v0, :cond_1
 
-    .line 686
     iget-object v0, p0, Landroid/media/videoeditor/MediaImageItem;->mEndTransition:Landroid/media/videoeditor/Transition;
 
     invoke-virtual {v0}, Landroid/media/videoeditor/Transition;->getDuration()J
 
     move-result-wide v7
 
-    .line 687
     .local v7, transitionDurationMs:J
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getDuration()J
 
@@ -3344,12 +3012,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 689
     iget-object v0, p0, Landroid/media/videoeditor/MediaImageItem;->mEndTransition:Landroid/media/videoeditor/Transition;
 
     invoke-virtual {v0}, Landroid/media/videoeditor/Transition;->invalidate()V
 
-    .line 692
     .end local v7           #transitionDurationMs:J
     :cond_1
     return-void
@@ -3363,19 +3029,16 @@
     .parameter "newDurationMs"
 
     .prologue
-    .line 703
     iget-object v0, p0, Landroid/media/videoeditor/MediaImageItem;->mBeginTransition:Landroid/media/videoeditor/Transition;
 
     if-eqz v0, :cond_0
 
-    .line 704
     iget-object v0, p0, Landroid/media/videoeditor/MediaImageItem;->mBeginTransition:Landroid/media/videoeditor/Transition;
 
     invoke-virtual {v0}, Landroid/media/videoeditor/Transition;->getDuration()J
 
     move-result-wide v7
 
-    .line 705
     .local v7, transitionDurationMs:J
     const-wide/16 v5, 0x0
 
@@ -3389,7 +3052,6 @@
 
     move-result v10
 
-    .line 707
     .local v10, oldOverlap:Z
     const-wide/16 v5, 0x0
 
@@ -3403,16 +3065,13 @@
 
     move-result v9
 
-    .line 717
     .local v9, newOverlap:Z
     if-eq v9, v10, :cond_2
 
-    .line 718
     iget-object v0, p0, Landroid/media/videoeditor/MediaImageItem;->mBeginTransition:Landroid/media/videoeditor/Transition;
 
     invoke-virtual {v0}, Landroid/media/videoeditor/Transition;->invalidate()V
 
-    .line 728
     .end local v7           #transitionDurationMs:J
     .end local v9           #newOverlap:Z
     .end local v10           #oldOverlap:Z
@@ -3422,14 +3081,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 729
     iget-object v0, p0, Landroid/media/videoeditor/MediaImageItem;->mEndTransition:Landroid/media/videoeditor/Transition;
 
     invoke-virtual {v0}, Landroid/media/videoeditor/Transition;->getDuration()J
 
     move-result-wide v7
 
-    .line 730
     .restart local v7       #transitionDurationMs:J
     iget-wide v0, p0, Landroid/media/videoeditor/MediaImageItem;->mDurationMs:J
 
@@ -3445,7 +3102,6 @@
 
     move-result v10
 
-    .line 732
     .restart local v10       #oldOverlap:Z
     iget-wide v0, p0, Landroid/media/videoeditor/MediaImageItem;->mDurationMs:J
 
@@ -3461,16 +3117,13 @@
 
     move-result v9
 
-    .line 742
     .restart local v9       #newOverlap:Z
     if-eq v9, v10, :cond_4
 
-    .line 743
     iget-object v0, p0, Landroid/media/videoeditor/MediaImageItem;->mEndTransition:Landroid/media/videoeditor/Transition;
 
     invoke-virtual {v0}, Landroid/media/videoeditor/Transition;->invalidate()V
 
-    .line 752
     .end local v7           #transitionDurationMs:J
     .end local v9           #newOverlap:Z
     .end local v10           #oldOverlap:Z
@@ -3478,14 +3131,12 @@
     :goto_1
     return-void
 
-    .line 719
     .restart local v7       #transitionDurationMs:J
     .restart local v9       #newOverlap:Z
     .restart local v10       #oldOverlap:Z
     :cond_2
     if-eqz v9, :cond_0
 
-    .line 720
     cmp-long v0, p1, p5
 
     if-nez v0, :cond_3
@@ -3502,7 +3153,6 @@
 
     if-gtz v0, :cond_0
 
-    .line 723
     :cond_3
     iget-object v0, p0, Landroid/media/videoeditor/MediaImageItem;->mBeginTransition:Landroid/media/videoeditor/Transition;
 
@@ -3510,11 +3160,9 @@
 
     goto :goto_0
 
-    .line 744
     :cond_4
     if-eqz v9, :cond_1
 
-    .line 745
     add-long v0, p1, p3
 
     add-long v2, p5, p7
@@ -3539,7 +3187,6 @@
 
     if-lez v0, :cond_1
 
-    .line 748
     :cond_5
     iget-object v0, p0, Landroid/media/videoeditor/MediaImageItem;->mEndTransition:Landroid/media/videoeditor/Transition;
 
@@ -3555,58 +3202,46 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 318
     iget-wide v2, p0, Landroid/media/videoeditor/MediaImageItem;->mDurationMs:J
 
     cmp-long v2, p1, v2
 
     if-nez v2, :cond_0
 
-    .line 366
     :goto_0
     return-void
 
-    .line 322
     :cond_0
     iget-object v2, p0, Landroid/media/videoeditor/MediaImageItem;->mMANativeHelper:Landroid/media/videoeditor/MediaArtistNativeHelper;
 
     invoke-virtual {v2, v4}, Landroid/media/videoeditor/MediaArtistNativeHelper;->setGeneratePreview(Z)V
 
-    .line 336
     invoke-direct {p0}, Landroid/media/videoeditor/MediaImageItem;->invalidateEndTransition()V
 
-    .line 338
     iput-wide p1, p0, Landroid/media/videoeditor/MediaImageItem;->mDurationMs:J
 
-    .line 340
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->adjustTransitions()V
 
-    .line 341
     invoke-direct {p0}, Landroid/media/videoeditor/MediaImageItem;->adjustOverlays()Ljava/util/List;
 
     move-result-object v1
 
-    .line 342
     .local v1, adjustedOverlays:Ljava/util/List;,"Ljava/util/List<Landroid/media/videoeditor/Overlay;>;"
     invoke-direct {p0}, Landroid/media/videoeditor/MediaImageItem;->adjustEffects()Ljava/util/List;
 
     move-result-object v0
 
-    .line 352
     .local v0, adjustedEffects:Ljava/util/List;,"Ljava/util/List<Landroid/media/videoeditor/Effect;>;"
     invoke-direct {p0, v0, v1}, Landroid/media/videoeditor/MediaImageItem;->invalidateBeginTransition(Ljava/util/List;Ljava/util/List;)V
 
-    .line 353
     invoke-direct {p0}, Landroid/media/videoeditor/MediaImageItem;->invalidateEndTransition()V
 
-    .line 354
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getGeneratedImageClip()Ljava/lang/String;
 
     move-result-object v2
 
     if-eqz v2, :cond_1
 
-    .line 358
     new-instance v2, Ljava/io/File;
 
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getGeneratedImageClip()Ljava/lang/String;
@@ -3617,15 +3252,12 @@
 
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
 
-    .line 362
     const/4 v2, 0x0
 
     invoke-virtual {p0, v2}, Landroid/media/videoeditor/MediaImageItem;->setGeneratedImageClip(Ljava/lang/String;)V
 
-    .line 363
     invoke-super {p0, v4}, Landroid/media/videoeditor/MediaItem;->setRegenerateClip(Z)V
 
-    .line 365
     :cond_1
     iget-object v2, p0, Landroid/media/videoeditor/MediaImageItem;->mVideoEditor:Landroid/media/videoeditor/VideoEditorImpl;
 
@@ -3639,17 +3271,14 @@
     .parameter "generatedFilePath"
 
     .prologue
-    .line 595
     invoke-super {p0, p1}, Landroid/media/videoeditor/MediaItem;->setGeneratedImageClip(Ljava/lang/String;)V
 
-    .line 598
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaImageItem;->getScaledHeight()I
 
     move-result v0
 
     iput v0, p0, Landroid/media/videoeditor/MediaImageItem;->mGeneratedClipHeight:I
 
-    .line 599
     iget-object v0, p0, Landroid/media/videoeditor/MediaImageItem;->mVideoEditor:Landroid/media/videoeditor/VideoEditorImpl;
 
     invoke-virtual {v0}, Landroid/media/videoeditor/VideoEditorImpl;->getAspectRatio()I
@@ -3664,6 +3293,5 @@
 
     iput v0, p0, Landroid/media/videoeditor/MediaImageItem;->mGeneratedClipWidth:I
 
-    .line 601
     return-void
 .end method

@@ -30,7 +30,6 @@
     .parameter
 
     .prologue
-    .line 49
     iput-object p1, p0, Landroid/hardware/fmradio/FmTxEventListner$1;->this$0:Landroid/hardware/fmradio/FmTxEventListner;
 
     iput p2, p0, Landroid/hardware/fmradio/FmTxEventListner$1;->val$fd:I
@@ -48,7 +47,6 @@
     .locals 7
 
     .prologue
-    .line 52
     const-string v4, "FMTxEventListner"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -73,7 +71,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 54
     :cond_0
     :goto_0
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
@@ -86,17 +83,14 @@
 
     if-nez v4, :cond_1
 
-    .line 56
     const/4 v3, 0x0
 
-    .line 57
     .local v3, index:I
     const/16 v4, 0x80
 
     :try_start_0
     new-array v0, v4, [B
 
-    .line 58
     .local v0, buff:[B
     const-string v4, "FMTxEventListner"
 
@@ -104,7 +98,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 59
     iget v4, p0, Landroid/hardware/fmradio/FmTxEventListner$1;->val$fd:I
 
     const/4 v5, 0x1
@@ -113,7 +106,6 @@
 
     move-result v1
 
-    .line 60
     .local v1, eventCount:I
     const-string v4, "FMTxEventListner"
 
@@ -137,13 +129,11 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 62
     const/4 v3, 0x0
 
     :goto_1
     if-ge v3, v1, :cond_0
 
-    .line 63
     const-string v4, "FMTxEventListner"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -174,25 +164,21 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 64
     aget-byte v4, v0, v3
 
     sparse-switch v4, :sswitch_data_0
 
-    .line 78
     const-string v4, "FMTxEventListner"
 
     const-string v5, "Unknown event"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 62
     :goto_2
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 66
     :sswitch_0
     const-string v4, "FMTxEventListner"
 
@@ -200,7 +186,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 67
     iget-object v4, p0, Landroid/hardware/fmradio/FmTxEventListner$1;->val$cb:Landroid/hardware/fmradio/FmTransmitterCallbacks;
 
     iget v5, p0, Landroid/hardware/fmradio/FmTxEventListner$1;->val$fd:I
@@ -215,13 +200,11 @@
 
     goto :goto_2
 
-    .line 82
     .end local v0           #buff:[B
     .end local v1           #eventCount:I
     :catch_0
     move-exception v2
 
-    .line 83
     .local v2, ex:Ljava/lang/Exception;
     const-string v4, "FMTxEventListner"
 
@@ -229,7 +212,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 84
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v4
@@ -238,7 +220,6 @@
 
     goto/16 :goto_0
 
-    .line 70
     .end local v2           #ex:Ljava/lang/Exception;
     .restart local v0       #buff:[B
     .restart local v1       #eventCount:I
@@ -250,14 +231,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 71
     iget-object v4, p0, Landroid/hardware/fmradio/FmTxEventListner$1;->val$cb:Landroid/hardware/fmradio/FmTransmitterCallbacks;
 
     invoke-interface {v4}, Landroid/hardware/fmradio/FmTransmitterCallbacks;->onRDSGroupsAvailable()V
 
     goto :goto_2
 
-    .line 74
     :sswitch_2
     const-string v4, "FMTxEventListner"
 
@@ -265,7 +244,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 75
     iget-object v4, p0, Landroid/hardware/fmradio/FmTxEventListner$1;->val$cb:Landroid/hardware/fmradio/FmTransmitterCallbacks;
 
     invoke-interface {v4}, Landroid/hardware/fmradio/FmTransmitterCallbacks;->onContRDSGroupsComplete()V
@@ -274,7 +252,6 @@
 
     goto :goto_2
 
-    .line 87
     .end local v0           #buff:[B
     .end local v1           #eventCount:I
     .end local v3           #index:I
@@ -285,10 +262,8 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 88
     return-void
 
-    .line 64
     nop
 
     :sswitch_data_0

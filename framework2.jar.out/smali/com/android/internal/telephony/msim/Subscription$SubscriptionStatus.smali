@@ -52,7 +52,6 @@
 
     const/4 v2, 0x0
 
-    .line 45
     new-instance v0, Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;
 
     const-string v1, "SUB_DEACTIVATE"
@@ -61,7 +60,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;->SUB_DEACTIVATE:Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;
 
-    .line 46
     new-instance v0, Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;
 
     const-string v1, "SUB_ACTIVATE"
@@ -70,7 +68,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;->SUB_ACTIVATE:Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;
 
-    .line 47
     new-instance v0, Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;
 
     const-string v1, "SUB_ACTIVATED"
@@ -79,7 +76,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;->SUB_ACTIVATED:Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;
 
-    .line 48
     new-instance v0, Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;
 
     const-string v1, "SUB_DEACTIVATED"
@@ -88,7 +84,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;->SUB_DEACTIVATED:Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;
 
-    .line 49
     new-instance v0, Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;
 
     const-string v1, "SUB_INVALID"
@@ -97,7 +92,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;->SUB_INVALID:Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;
 
-    .line 44
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;
@@ -138,7 +132,6 @@
     .end annotation
 
     .prologue
-    .line 44
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -149,7 +142,6 @@
     .parameter "name"
 
     .prologue
-    .line 44
     const-class v0, Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -165,7 +157,6 @@
     .locals 1
 
     .prologue
-    .line 44
     sget-object v0, Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;->$VALUES:[Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;->clone()Ljava/lang/Object;

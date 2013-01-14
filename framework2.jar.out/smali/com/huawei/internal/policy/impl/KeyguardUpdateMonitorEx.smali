@@ -17,10 +17,8 @@
     .locals 0
 
     .prologue
-    .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 105
     return-void
 .end method
 
@@ -30,7 +28,6 @@
     .parameter "subscription"
 
     .prologue
-    .line 73
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->getSimState(I)Lcom/android/internal/telephony/IccCard$State;
 
     move-result-object v0
@@ -44,7 +41,6 @@
     .parameter "subscription"
 
     .prologue
-    .line 79
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->getTelephonyPlmn(I)Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -58,7 +54,6 @@
     .parameter "subscription"
 
     .prologue
-    .line 85
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->getTelephonySpn(I)Ljava/lang/CharSequence;
 
     move-result-object v0

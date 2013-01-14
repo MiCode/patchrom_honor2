@@ -29,22 +29,18 @@
     .parameter "tag"
 
     .prologue
-    .line 54
     iput-object p1, p0, Landroid/app/KeyguardManager$KeyguardLock;->this$0:Landroid/app/KeyguardManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 51
     new-instance v0, Landroid/os/Binder;
 
     invoke-direct {v0}, Landroid/os/Binder;-><init>()V
 
     iput-object v0, p0, Landroid/app/KeyguardManager$KeyguardLock;->mToken:Landroid/os/IBinder;
 
-    .line 55
     iput-object p2, p0, Landroid/app/KeyguardManager$KeyguardLock;->mTag:Ljava/lang/String;
 
-    .line 56
     return-void
 .end method
 
@@ -54,7 +50,6 @@
     .locals 3
 
     .prologue
-    .line 75
     :try_start_0
     iget-object v0, p0, Landroid/app/KeyguardManager$KeyguardLock;->this$0:Landroid/app/KeyguardManager;
 
@@ -71,11 +66,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 78
     :goto_0
     return-void
 
-    .line 76
     :catch_0
     move-exception v0
 
@@ -86,7 +79,6 @@
     .locals 2
 
     .prologue
-    .line 96
     :try_start_0
     iget-object v0, p0, Landroid/app/KeyguardManager$KeyguardLock;->this$0:Landroid/app/KeyguardManager;
 
@@ -101,11 +93,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 99
     :goto_0
     return-void
 
-    .line 97
     :catch_0
     move-exception v0
 

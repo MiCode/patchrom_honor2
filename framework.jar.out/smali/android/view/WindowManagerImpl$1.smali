@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 245
     iput-object p1, p0, Landroid/view/WindowManagerImpl$1;->this$0:Landroid/view/WindowManagerImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,16 +40,13 @@
     .locals 5
 
     .prologue
-    .line 247
     monitor-enter p0
 
-    .line 248
     :try_start_0
     monitor-enter p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 249
     :try_start_1
     iget-object v4, p0, Landroid/view/WindowManagerImpl$1;->this$0:Landroid/view/WindowManagerImpl;
 
@@ -71,32 +67,26 @@
 
     aget-object v3, v0, v1
 
-    .line 250
     .local v3, root:Landroid/view/ViewRootImpl;
     invoke-virtual {v3}, Landroid/view/ViewRootImpl;->loadSystemProperties()V
 
-    .line 249
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 252
     .end local v3           #root:Landroid/view/ViewRootImpl;
     :cond_0
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 253
     :try_start_2
     monitor-exit p0
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 254
     return-void
 
-    .line 252
     .end local v0           #arr$:[Landroid/view/ViewRootImpl;
     .end local v1           #i$:I
     .end local v2           #len$:I
@@ -111,7 +101,6 @@
     :try_start_4
     throw v4
 
-    .line 253
     :catchall_1
     move-exception v4
 

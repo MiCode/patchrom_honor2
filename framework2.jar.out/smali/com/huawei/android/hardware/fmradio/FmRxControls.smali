@@ -86,7 +86,6 @@
     .locals 0
 
     .prologue
-    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -99,14 +98,12 @@
     .parameter "fd"
 
     .prologue
-    .line 125
     const v1, 0x8000016
 
     invoke-static {p1, v1}, Lcom/huawei/android/hardware/fmradio/FmReceiverJNI;->getControlNative(II)I
 
     move-result v0
 
-    .line 126
     .local v0, intdet:I
     const-string v1, "FmRxControls"
 
@@ -130,7 +127,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 127
     return v0
 .end method
 
@@ -139,14 +135,12 @@
     .parameter "fd"
 
     .prologue
-    .line 116
     const v1, 0x8000015
 
     invoke-static {p1, v1}, Lcom/huawei/android/hardware/fmradio/FmReceiverJNI;->getControlNative(II)I
 
     move-result v0
 
-    .line 117
     .local v0, ioverc:I
     const-string v1, "FmRxControls"
 
@@ -170,7 +164,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 118
     return v0
 .end method
 
@@ -179,10 +172,8 @@
     .parameter "fd"
 
     .prologue
-    .line 304
     invoke-static {p1}, Lcom/huawei/android/hardware/fmradio/FmReceiverJNI;->cancelSearchNative(I)I
 
-    .line 305
     return-void
 .end method
 
@@ -191,14 +182,12 @@
     .parameter "fd"
 
     .prologue
-    .line 96
     const v0, 0x8000004
 
     const/4 v1, 0x0
 
     invoke-static {p1, v0, v1}, Lcom/huawei/android/hardware/fmradio/FmReceiverJNI;->setControlNative(III)I
 
-    .line 97
     return-void
 .end method
 
@@ -208,12 +197,10 @@
     .parameter "device"
 
     .prologue
-    .line 89
     const v0, 0x8000004
 
     invoke-static {p1, v0, p2}, Lcom/huawei/android/hardware/fmradio/FmReceiverJNI;->setControlNative(III)I
 
-    .line 90
     return-void
 .end method
 
@@ -221,7 +208,6 @@
     .locals 1
 
     .prologue
-    .line 149
     iget v0, p0, Lcom/huawei/android/hardware/fmradio/FmRxControls;->mFreq:I
 
     return v0
@@ -232,10 +218,8 @@
     .parameter "fd"
 
     .prologue
-    .line 326
     const/4 v0, 0x0
 
-    .line 328
     .local v0, re:I
     const v1, 0x8000011
 
@@ -243,7 +227,6 @@
 
     move-result v0
 
-    .line 330
     return v0
 .end method
 
@@ -252,12 +235,10 @@
     .parameter "fd"
 
     .prologue
-    .line 143
     invoke-static {p1}, Lcom/huawei/android/hardware/fmradio/FmReceiverJNI;->getFreqNative(I)I
 
     move-result v0
 
-    .line 144
     .local v0, frequency:I
     const-string v1, "FmRxControls"
 
@@ -281,7 +262,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 145
     return v0
 .end method
 
@@ -293,19 +273,15 @@
     .prologue
     const v1, 0x980909
 
-    .line 103
     if-eqz p2, :cond_0
 
-    .line 105
     const/4 v0, 0x3
 
     invoke-static {p1, v1, v0}, Lcom/huawei/android/hardware/fmradio/FmReceiverJNI;->setControlNative(III)I
 
-    .line 110
     :goto_0
     return-void
 
-    .line 108
     :cond_0
     const/4 v0, 0x0
 
@@ -323,7 +299,6 @@
     .parameter "RdsSrchPI"
 
     .prologue
-    .line 295
     return-void
 .end method
 
@@ -336,24 +311,20 @@
     .parameter "pty"
 
     .prologue
-    .line 166
     const v1, 0x8000001
 
     invoke-static {p1, v1, p2}, Lcom/huawei/android/hardware/fmradio/FmReceiverJNI;->setControlNative(III)I
 
     move-result v0
 
-    .line 167
     .local v0, re:I
     if-eqz v0, :cond_0
 
     move v1, v0
 
-    .line 192
     :goto_0
     return v1
 
-    .line 172
     :cond_0
     const v1, 0x800000b
 
@@ -361,49 +332,39 @@
 
     move-result v0
 
-    .line 173
     if-eqz v0, :cond_1
 
     move v1, v0
 
-    .line 174
     goto :goto_0
 
-    .line 178
     :cond_1
     if-lez p5, :cond_2
 
-    .line 179
     const v1, 0x8000009
 
     invoke-static {p1, v1, p5}, Lcom/huawei/android/hardware/fmradio/FmReceiverJNI;->setControlNative(III)I
 
     move-result v0
 
-    .line 181
     :cond_2
     if-eqz v0, :cond_3
 
     move v1, v0
 
-    .line 182
     goto :goto_0
 
-    .line 187
     :cond_3
     invoke-static {p1, p4}, Lcom/huawei/android/hardware/fmradio/FmReceiverJNI;->startSearchNative(II)I
 
     move-result v0
 
-    .line 188
     if-eqz v0, :cond_4
 
     move v1, v0
 
-    .line 189
     goto :goto_0
 
-    .line 192
     :cond_4
     const/4 v1, 0x0
 
@@ -422,10 +383,8 @@
     .prologue
     const v4, 0x8000001
 
-    .line 252
     const/4 v0, 0x0
 
-    .line 255
     .local v0, re:I
     const-string v1, "FmRxControls"
 
@@ -459,7 +418,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 256
     const-string v1, "FmRxControls"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -492,7 +450,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 257
     const-string v1, "FmRxControls"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -525,46 +482,38 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 261
     invoke-static {p1, v4, p2}, Lcom/huawei/android/hardware/fmradio/FmReceiverJNI;->setControlNative(III)I
 
     move-result v0
 
-    .line 263
     const v1, 0x8000002
 
     invoke-static {p1, v1, p3}, Lcom/huawei/android/hardware/fmradio/FmReceiverJNI;->setControlNative(III)I
 
     move-result v0
 
-    .line 265
     if-eqz p5, :cond_0
 
-    .line 267
     const v1, 0x8000009
 
     invoke-static {p1, v1, p5}, Lcom/huawei/android/hardware/fmradio/FmReceiverJNI;->setControlNative(III)I
 
     move-result v0
 
-    .line 270
     :cond_0
     if-eqz p6, :cond_1
 
-    .line 272
     const v1, 0x800000a
 
     invoke-static {p1, v1, p6}, Lcom/huawei/android/hardware/fmradio/FmReceiverJNI;->setControlNative(III)I
 
     move-result v0
 
-    .line 275
     :cond_1
     invoke-static {p1, p4}, Lcom/huawei/android/hardware/fmradio/FmReceiverJNI;->startSearchNative(II)I
 
     move-result v0
 
-    .line 277
     return-void
 .end method
 
@@ -573,10 +522,8 @@
     .parameter "f"
 
     .prologue
-    .line 153
     iput p1, p0, Lcom/huawei/android/hardware/fmradio/FmRxControls;->mFreq:I
 
-    .line 154
     return-void
 .end method
 
@@ -588,25 +535,20 @@
     .prologue
     const v2, 0x8000011
 
-    .line 310
     const/4 v0, 0x0
 
-    .line 312
     .local v0, re:I
     if-eqz p2, :cond_0
 
-    .line 313
     const/4 v1, 0x1
 
     invoke-static {p1, v2, v1}, Lcom/huawei/android/hardware/fmradio/FmReceiverJNI;->setControlNative(III)I
 
     move-result v0
 
-    .line 319
     :goto_0
     return v0
 
-    .line 316
     :cond_0
     const/4 v1, 0x0
 
@@ -622,7 +564,6 @@
     .parameter "fd"
 
     .prologue
-    .line 134
     const-string v1, "FmRxControls"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -645,14 +586,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 135
     iget v1, p0, Lcom/huawei/android/hardware/fmradio/FmRxControls;->mFreq:I
 
     invoke-static {p1, v1}, Lcom/huawei/android/hardware/fmradio/FmReceiverJNI;->setFreqNative(II)I
 
     move-result v0
 
-    .line 136
     .local v0, ret:I
     const-string v1, "FmRxControls"
 
@@ -676,7 +615,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 137
     return-void
 .end method
 
@@ -685,32 +623,25 @@
     .parameter "fd"
 
     .prologue
-    .line 200
     const/4 v1, 0x0
 
-    .line 201
     .local v1, freq:I
     const/4 v2, 0x0
 
-    .line 203
     .local v2, i:I
     const/4 v4, 0x0
 
-    .line 205
     .local v4, real_freq:F
     const/16 v10, 0x64
 
     new-array v5, v10, [B
 
-    .line 206
     .local v5, sList:[B
     const/4 v8, 0x0
 
-    .line 207
     .local v8, tmpFreqByte1:I
     const/4 v9, 0x0
 
-    .line 211
     .local v9, tmpFreqByte2:I
     invoke-static {p1}, Lcom/huawei/android/hardware/fmradio/FmReceiverJNI;->getLowerBandNative(I)I
 
@@ -724,7 +655,6 @@
 
     double-to-float v3, v10
 
-    .line 212
     .local v3, lowBand:F
     const-string v10, "FmRxControls"
 
@@ -748,23 +678,19 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 213
     const/4 v10, 0x0
 
     invoke-static {p1, v5, v10}, Lcom/huawei/android/hardware/fmradio/FmReceiverJNI;->getBufferNative(I[BI)I
 
-    .line 215
     const/4 v10, 0x0
 
     aget-byte v7, v5, v10
 
-    .line 216
     .local v7, station_num:I
     add-int/lit8 v10, v7, 0x1
 
     new-array v6, v10, [I
 
-    .line 217
     .local v6, stationList:[I
     const-string v10, "FmRxControls"
 
@@ -788,16 +714,13 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 219
     const/4 v2, 0x0
 
     :goto_0
     if-ge v2, v7, :cond_0
 
-    .line 220
     const/4 v1, 0x0
 
-    .line 221
     const-string v10, "FmRxControls"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -826,7 +749,6 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 222
     const-string v10, "FmRxControls"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -855,7 +777,6 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 223
     mul-int/lit8 v10, v2, 0x2
 
     add-int/lit8 v10, v10, 0x1
@@ -864,7 +785,6 @@
 
     and-int/lit16 v8, v10, 0xff
 
-    .line 224
     mul-int/lit8 v10, v2, 0x2
 
     add-int/lit8 v10, v10, 0x2
@@ -873,7 +793,6 @@
 
     and-int/lit16 v9, v10, 0xff
 
-    .line 225
     const-string v10, "FmRxControls"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -896,7 +815,6 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 226
     const-string v10, "FmRxControls"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -919,15 +837,12 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 227
     and-int/lit8 v10, v8, 0x3
 
     shl-int/lit8 v1, v10, 0x8
 
-    .line 228
     or-int/2addr v1, v9
 
-    .line 229
     const-string v10, "FmRxControls"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -950,7 +865,6 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 230
     int-to-double v10, v1
 
     const-wide v12, 0x3fa999999999999aL
@@ -961,7 +875,6 @@
 
     add-float v4, v10, v3
 
-    .line 231
     const-string v10, "FmRxControls"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -984,7 +897,6 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 232
     const/high16 v10, 0x447a
 
     mul-float/2addr v10, v4
@@ -993,7 +905,6 @@
 
     aput v10, v6, v2
 
-    .line 233
     const-string v10, "FmRxControls"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -1018,12 +929,10 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 219
     add-int/lit8 v2, v2, 0x1
 
     goto/16 :goto_0
 
-    .line 238
     :cond_0
     const/4 v10, 0x0
 
@@ -1032,15 +941,12 @@
     :try_end_0
     .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 244
     :goto_1
     return-object v6
 
-    .line 240
     :catch_0
     move-exception v0
 
-    .line 241
     .local v0, e:Ljava/lang/ArrayIndexOutOfBoundsException;
     const-string v10, "FmRxControls"
 
@@ -1057,17 +963,14 @@
     .parameter "stereo"
 
     .prologue
-    .line 282
     if-eqz p2, :cond_0
 
-    .line 283
     const/4 v0, 0x1
 
     invoke-static {p1, v0}, Lcom/huawei/android/hardware/fmradio/FmReceiverJNI;->setMonoStereoNative(II)I
 
     move-result v0
 
-    .line 286
     :goto_0
     return v0
 

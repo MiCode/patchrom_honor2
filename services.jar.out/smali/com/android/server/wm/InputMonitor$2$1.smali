@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 455
     iput-object p1, p0, Lcom/android/server/wm/InputMonitor$2$1;->this$1:Lcom/android/server/wm/InputMonitor$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .locals 2
 
     .prologue
-    .line 457
     iget-object v0, p0, Lcom/android/server/wm/InputMonitor$2$1;->this$1:Lcom/android/server/wm/InputMonitor$2;
 
     iget-object v0, v0, Lcom/android/server/wm/InputMonitor$2;->this$0:Lcom/android/server/wm/InputMonitor;
@@ -50,7 +48,6 @@
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 459
     iget-object v0, p0, Lcom/android/server/wm/InputMonitor$2$1;->this$1:Lcom/android/server/wm/InputMonitor$2;
 
     iget-object v0, v0, Lcom/android/server/wm/InputMonitor$2;->this$0:Lcom/android/server/wm/InputMonitor;
@@ -59,6 +56,5 @@
 
     iput-object v1, v0, Lcom/android/server/wm/InputMonitor;->mFastPoweronlock:Landroid/os/PowerManager$WakeLock;
 
-    .line 461
     return-void
 .end method

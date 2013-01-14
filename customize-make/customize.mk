@@ -55,7 +55,7 @@ local-rec-cmd :=
 push-rec-cmd:
 	adb shell mkdir -p $(local-porting-tools)
 	adb push customize-make/$(strip $(local-rec-cmd)) $(local-porting-tools)/command
-	adb shell su2 -c cp $(local-porting-tools)/command /cache/recovery/command
+	adb shell su2 -c busybox cp $(local-porting-tools)/command /cache/recovery/command
 	adb reboot recovery
 
 wipe: local-rec-cmd := rec_wipe

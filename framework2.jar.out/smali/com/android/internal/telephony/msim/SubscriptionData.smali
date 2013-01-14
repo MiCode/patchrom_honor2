@@ -13,22 +13,18 @@
     .parameter "numSub"
 
     .prologue
-    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 28
     new-array v1, p1, [Lcom/android/internal/telephony/msim/Subscription;
 
     iput-object v1, p0, Lcom/android/internal/telephony/msim/SubscriptionData;->subscription:[Lcom/android/internal/telephony/msim/Subscription;
 
-    .line 29
     const/4 v0, 0x0
 
     .local v0, i:I
     :goto_0
     if-ge v0, p1, :cond_0
 
-    .line 30
     iget-object v1, p0, Lcom/android/internal/telephony/msim/SubscriptionData;->subscription:[Lcom/android/internal/telephony/msim/Subscription;
 
     new-instance v2, Lcom/android/internal/telephony/msim/Subscription;
@@ -37,12 +33,10 @@
 
     aput-object v2, v1, v0
 
-    .line 29
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 32
     :cond_0
     return-void
 .end method
@@ -54,10 +48,8 @@
     .parameter "from"
 
     .prologue
-    .line 42
     if-eqz p1, :cond_0
 
-    .line 43
     invoke-virtual {p1}, Lcom/android/internal/telephony/msim/SubscriptionData;->getLength()I
 
     move-result v1
@@ -66,7 +58,6 @@
 
     iput-object v1, p0, Lcom/android/internal/telephony/msim/SubscriptionData;->subscription:[Lcom/android/internal/telephony/msim/Subscription;
 
-    .line 44
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -77,7 +68,6 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 45
     iget-object v1, p0, Lcom/android/internal/telephony/msim/SubscriptionData;->subscription:[Lcom/android/internal/telephony/msim/Subscription;
 
     new-instance v2, Lcom/android/internal/telephony/msim/Subscription;
@@ -86,7 +76,6 @@
 
     aput-object v2, v1, v0
 
-    .line 46
     iget-object v1, p0, Lcom/android/internal/telephony/msim/SubscriptionData;->subscription:[Lcom/android/internal/telephony/msim/Subscription;
 
     aget-object v1, v1, v0
@@ -97,12 +86,10 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/telephony/msim/Subscription;->copyFrom(Lcom/android/internal/telephony/msim/Subscription;)Lcom/android/internal/telephony/msim/Subscription;
 
-    .line 44
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 49
     .end local v0           #i:I
     :cond_0
     return-object p0
@@ -114,7 +101,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 53
     iget-object v0, p0, Lcom/android/internal/telephony/msim/SubscriptionData;->subscription:[Lcom/android/internal/telephony/msim/Subscription;
 
     array-length v0, v0
@@ -127,14 +113,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 54
     iget-object v0, p0, Lcom/android/internal/telephony/msim/SubscriptionData;->subscription:[Lcom/android/internal/telephony/msim/Subscription;
 
     aget-object v0, v0, v1
 
     iget-object v0, v0, Lcom/android/internal/telephony/msim/Subscription;->iccId:Ljava/lang/String;
 
-    .line 56
     :goto_0
     return-object v0
 
@@ -148,17 +132,14 @@
     .locals 1
 
     .prologue
-    .line 35
     iget-object v0, p0, Lcom/android/internal/telephony/msim/SubscriptionData;->subscription:[Lcom/android/internal/telephony/msim/Subscription;
 
     if-eqz v0, :cond_0
 
-    .line 36
     iget-object v0, p0, Lcom/android/internal/telephony/msim/SubscriptionData;->subscription:[Lcom/android/internal/telephony/msim/Subscription;
 
     array-length v0, v0
 
-    .line 38
     :goto_0
     return v0
 
@@ -173,7 +154,6 @@
     .parameter "sub"
 
     .prologue
-    .line 69
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -184,7 +164,6 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 70
     iget-object v1, p0, Lcom/android/internal/telephony/msim/SubscriptionData;->subscription:[Lcom/android/internal/telephony/msim/Subscription;
 
     aget-object v1, v1, v0
@@ -195,22 +174,18 @@
 
     if-eqz v1, :cond_0
 
-    .line 71
     iget-object v1, p0, Lcom/android/internal/telephony/msim/SubscriptionData;->subscription:[Lcom/android/internal/telephony/msim/Subscription;
 
     aget-object v1, v1, v0
 
-    .line 74
     :goto_1
     return-object v1
 
-    .line 69
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 74
     :cond_1
     const/4 v1, 0x0
 
@@ -222,7 +197,6 @@
     .parameter "sub"
 
     .prologue
-    .line 60
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -233,7 +207,6 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 61
     iget-object v1, p0, Lcom/android/internal/telephony/msim/SubscriptionData;->subscription:[Lcom/android/internal/telephony/msim/Subscription;
 
     aget-object v1, v1, v0
@@ -244,20 +217,16 @@
 
     if-eqz v1, :cond_0
 
-    .line 62
     const/4 v1, 0x1
 
-    .line 65
     :goto_1
     return v1
 
-    .line 60
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 65
     :cond_1
     const/4 v1, 0x0
 
@@ -268,7 +237,6 @@
     .locals 1
 
     .prologue
-    .line 78
     iget-object v0, p0, Lcom/android/internal/telephony/msim/SubscriptionData;->subscription:[Lcom/android/internal/telephony/msim/Subscription;
 
     invoke-static {v0}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;

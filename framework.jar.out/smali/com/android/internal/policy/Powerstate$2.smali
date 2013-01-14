@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 708
     iput-object p1, p0, Lcom/android/internal/policy/Powerstate$2;->val$broadcastDoneSync:Ljava/lang/Object;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,29 +39,23 @@
     .parameter "intent"
 
     .prologue
-    .line 711
     iget-object v1, p0, Lcom/android/internal/policy/Powerstate$2;->val$broadcastDoneSync:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 712
     const/4 v0, 0x1
 
     :try_start_0
     invoke-static {v0}, Lcom/android/internal/policy/Powerstate;->access$102(Z)Z
 
-    .line 713
     iget-object v0, p0, Lcom/android/internal/policy/Powerstate$2;->val$broadcastDoneSync:Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 714
     monitor-exit v1
 
-    .line 715
     return-void
 
-    .line 714
     :catchall_0
     move-exception v0
 

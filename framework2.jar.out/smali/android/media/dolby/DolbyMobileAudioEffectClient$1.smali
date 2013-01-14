@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 180
     iput-object p1, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient$1;->this$0:Landroid/media/dolby/DolbyMobileAudioEffectClient;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,14 +42,12 @@
     .parameter "service"
 
     .prologue
-    .line 184
     const-string v0, "DolbyMobileAudioEffectClient"
 
     const-string v1, "ServiceConnection.onServiceConnected()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 186
     iget-object v0, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient$1;->this$0:Landroid/media/dolby/DolbyMobileAudioEffectClient;
 
     invoke-static {p2}, Landroid/media/dolby/IDolbyMobileSystemInterface$Stub;->asInterface(Landroid/os/IBinder;)Landroid/media/dolby/IDolbyMobileSystemInterface;
@@ -60,7 +57,6 @@
     #setter for: Landroid/media/dolby/DolbyMobileAudioEffectClient;->mDolbyMobileSystem:Landroid/media/dolby/IDolbyMobileSystemInterface;
     invoke-static {v0, v1}, Landroid/media/dolby/DolbyMobileAudioEffectClient;->access$002(Landroid/media/dolby/DolbyMobileAudioEffectClient;Landroid/media/dolby/IDolbyMobileSystemInterface;)Landroid/media/dolby/IDolbyMobileSystemInterface;
 
-    .line 190
     :try_start_0
     iget-object v0, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient$1;->this$0:Landroid/media/dolby/DolbyMobileAudioEffectClient;
 
@@ -80,7 +76,6 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 196
     :goto_0
     iget-object v0, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient$1;->this$0:Landroid/media/dolby/DolbyMobileAudioEffectClient;
 
@@ -91,7 +86,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 198
     iget-object v0, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient$1;->this$0:Landroid/media/dolby/DolbyMobileAudioEffectClient;
 
     #getter for: Landroid/media/dolby/DolbyMobileAudioEffectClient;->mActivityCallback:Landroid/media/dolby/DolbyMobileClientCallbacks;
@@ -101,7 +95,6 @@
 
     invoke-interface {v0}, Landroid/media/dolby/DolbyMobileClientCallbacks;->onServiceConnected()V
 
-    .line 201
     :cond_0
     const-string v0, "DolbyMobileAudioEffectClient"
 
@@ -109,10 +102,8 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 202
     return-void
 
-    .line 192
     :catch_0
     move-exception v0
 
@@ -124,14 +115,12 @@
     .parameter "className"
 
     .prologue
-    .line 206
     const-string v0, "DolbyMobileAudioEffectClient"
 
     const-string v1, "ServiceConnection.onServiceDisconnected()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 209
     :try_start_0
     iget-object v0, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient$1;->this$0:Landroid/media/dolby/DolbyMobileAudioEffectClient;
 
@@ -151,7 +140,6 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 216
     :goto_0
     iget-object v0, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient$1;->this$0:Landroid/media/dolby/DolbyMobileAudioEffectClient;
 
@@ -162,7 +150,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 218
     iget-object v0, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient$1;->this$0:Landroid/media/dolby/DolbyMobileAudioEffectClient;
 
     #getter for: Landroid/media/dolby/DolbyMobileAudioEffectClient;->mActivityCallback:Landroid/media/dolby/DolbyMobileClientCallbacks;
@@ -172,7 +159,6 @@
 
     invoke-interface {v0}, Landroid/media/dolby/DolbyMobileClientCallbacks;->onServiceDisconnected()V
 
-    .line 221
     :cond_0
     const-string v0, "DolbyMobileAudioEffectClient"
 
@@ -180,10 +166,8 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 222
     return-void
 
-    .line 211
     :catch_0
     move-exception v0
 

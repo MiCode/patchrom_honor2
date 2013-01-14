@@ -33,30 +33,24 @@
     .parameter "lineCtrlPowerDenial"
 
     .prologue
-    .line 417
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 418
     int-to-byte v0, p1
 
     iput-byte v0, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$CdmaLineControlInfoRec;->lineCtrlPolarityIncluded:B
 
-    .line 419
     int-to-byte v0, p2
 
     iput-byte v0, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$CdmaLineControlInfoRec;->lineCtrlToggle:B
 
-    .line 420
     int-to-byte v0, p3
 
     iput-byte v0, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$CdmaLineControlInfoRec;->lineCtrlReverse:B
 
-    .line 421
     int-to-byte v0, p4
 
     iput-byte v0, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$CdmaLineControlInfoRec;->lineCtrlPowerDenial:B
 
-    .line 422
     return-void
 .end method
 
@@ -66,7 +60,6 @@
     .locals 2
 
     .prologue
-    .line 426
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

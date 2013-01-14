@@ -27,20 +27,16 @@
     .parameter "parameter"
 
     .prologue
-    .line 290
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 291
     int-to-byte v0, p1
 
     iput-byte v0, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings$SettingDefn;->feature:B
 
-    .line 292
     int-to-byte v0, p2
 
     iput-byte v0, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings$SettingDefn;->parameter:B
 
-    .line 293
     return-void
 .end method
 
@@ -53,12 +49,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 299
     instance-of v0, p1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings$SettingDefn;
 
     if-nez v0, :cond_0
 
-    .line 301
     .end local p1
     :goto_0
     return v1
@@ -101,7 +95,6 @@
     .locals 2
 
     .prologue
-    .line 307
     iget-byte v0, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings$SettingDefn;->feature:B
 
     mul-int/lit8 v0, v0, 0xd

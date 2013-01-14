@@ -32,7 +32,6 @@
     .locals 0
 
     .prologue
-    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +44,6 @@
     .parameter "x0"
 
     .prologue
-    .line 37
     invoke-virtual {p0, p1}, Lorg/simalliance/openmobileapi/service/SmartcardError$1;->createFromParcel(Landroid/os/Parcel;)Lorg/simalliance/openmobileapi/service/SmartcardError;
 
     move-result-object v0
@@ -58,7 +56,6 @@
     .parameter "in"
 
     .prologue
-    .line 39
     new-instance v0, Lorg/simalliance/openmobileapi/service/SmartcardError;
 
     const/4 v1, 0x0
@@ -73,7 +70,6 @@
     .parameter "x0"
 
     .prologue
-    .line 37
     invoke-virtual {p0, p1}, Lorg/simalliance/openmobileapi/service/SmartcardError$1;->newArray(I)[Lorg/simalliance/openmobileapi/service/SmartcardError;
 
     move-result-object v0
@@ -86,7 +82,6 @@
     .parameter "size"
 
     .prologue
-    .line 43
     new-array v0, p1, [Lorg/simalliance/openmobileapi/service/SmartcardError;
 
     return-object v0

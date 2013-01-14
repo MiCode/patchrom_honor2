@@ -29,15 +29,11 @@
     .parameter "arg2"
 
     .prologue
-    .line 164
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 165
     iput-object p1, p0, Lcom/huawei/telephony/HuaweiPhoneService$MainThreadRequest;->arg1:Ljava/lang/Object;
 
-    .line 166
     iput-object p2, p0, Lcom/huawei/telephony/HuaweiPhoneService$MainThreadRequest;->arg2:Ljava/lang/Object;
 
-    .line 167
     return-void
 .end method

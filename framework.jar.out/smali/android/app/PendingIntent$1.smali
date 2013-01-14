@@ -32,7 +32,6 @@
     .locals 0
 
     .prologue
-    .line 717
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -47,25 +46,20 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 719
     invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v3
 
-    .line 721
     .local v3, target:Landroid/os/IBinder;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 722
     .local v0, count:I
     if-lez v0, :cond_2
 
-    .line 723
     new-array v2, v0, [Landroid/content/Intent;
 
-    .line 724
     .local v2, intents:[Landroid/content/Intent;
     const/4 v1, 0x0
 
@@ -73,7 +67,6 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 725
     sget-object v4, Landroid/content/Intent;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v4, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -84,12 +77,10 @@
 
     aput-object v4, v2, v1
 
-    .line 724
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 727
     :cond_0
     if-eqz v3, :cond_1
 
@@ -101,7 +92,6 @@
 
     move-result-object v4
 
-    .line 729
     .end local v1           #i:I
     .end local v2           #intents:[Landroid/content/Intent;
     :goto_1
@@ -112,10 +102,8 @@
     :cond_1
     move-object v4, v5
 
-    .line 727
     goto :goto_1
 
-    .line 729
     .end local v1           #i:I
     .end local v2           #intents:[Landroid/content/Intent;
     :cond_2
@@ -136,7 +124,6 @@
     .parameter "x0"
 
     .prologue
-    .line 717
     invoke-virtual {p0, p1}, Landroid/app/PendingIntent$1;->createFromParcel(Landroid/os/Parcel;)Landroid/app/PendingIntent;
 
     move-result-object v0
@@ -149,7 +136,6 @@
     .parameter "size"
 
     .prologue
-    .line 734
     new-array v0, p1, [Landroid/app/PendingIntent;
 
     return-object v0
@@ -160,7 +146,6 @@
     .parameter "x0"
 
     .prologue
-    .line 717
     invoke-virtual {p0, p1}, Landroid/app/PendingIntent$1;->newArray(I)[Landroid/app/PendingIntent;
 
     move-result-object v0

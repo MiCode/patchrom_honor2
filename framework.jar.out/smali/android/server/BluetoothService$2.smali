@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 1984
     iput-object p1, p0, Landroid/server/BluetoothService$2;->this$0:Landroid/server/BluetoothService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -48,21 +47,17 @@
 
     const/4 v9, 0x0
 
-    .line 1987
     if-nez p2, :cond_1
 
-    .line 2063
     :cond_0
     :goto_0
     return-void
 
-    .line 1989
     :cond_1
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1990
     .local v0, action:Ljava/lang/String;
     const-string v6, "android.intent.action.AIRPLANE_MODE"
 
@@ -72,12 +67,10 @@
 
     if-eqz v6, :cond_3
 
-    .line 1991
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v4
 
-    .line 1994
     .local v4, resolver:Landroid/content/ContentResolver;
     iget-object v6, p0, Landroid/server/BluetoothService$2;->this$0:Landroid/server/BluetoothService;
 
@@ -87,7 +80,6 @@
 
     if-eqz v6, :cond_2
 
-    .line 1995
     iget-object v6, p0, Landroid/server/BluetoothService$2;->this$0:Landroid/server/BluetoothService;
 
     #getter for: Landroid/server/BluetoothService;->mBluetoothState:Landroid/server/BluetoothAdapterStateMachine;
@@ -101,7 +93,6 @@
 
     goto :goto_0
 
-    .line 1999
     :cond_2
     iget-object v6, p0, Landroid/server/BluetoothService$2;->this$0:Landroid/server/BluetoothService;
 
@@ -116,7 +107,6 @@
 
     goto :goto_0
 
-    .line 2003
     .end local v4           #resolver:Landroid/content/ContentResolver;
     :cond_3
     const-string v6, "android.intent.action.DOCK_EVENT"
@@ -127,14 +117,12 @@
 
     if-eqz v6, :cond_5
 
-    .line 2004
     const-string v6, "android.intent.extra.DOCK_STATE"
 
     invoke-virtual {p2, v6, v9}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v5
 
-    .line 2006
     .local v5, state:I
     const-string v6, "BluetoothService"
 
@@ -158,13 +146,10 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2007
     if-nez v5, :cond_4
 
-    .line 2008
     invoke-static {v12}, Landroid/server/BluetoothService;->access$702(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 2009
     iget-object v6, p0, Landroid/server/BluetoothService$2;->this$0:Landroid/server/BluetoothService;
 
     #setter for: Landroid/server/BluetoothService;->mDockPin:Ljava/lang/String;
@@ -172,7 +157,6 @@
 
     goto :goto_0
 
-    .line 2011
     :cond_4
     iget-object v6, p0, Landroid/server/BluetoothService$2;->this$0:Landroid/server/BluetoothService;
 
@@ -196,7 +180,6 @@
 
     move-result-object v1
 
-    .line 2014
     .local v1, editor:Landroid/content/SharedPreferences$Editor;
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -222,12 +205,10 @@
 
     invoke-interface {v1, v6, v11}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 2015
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     goto/16 :goto_0
 
-    .line 2019
     .end local v1           #editor:Landroid/content/SharedPreferences$Editor;
     .end local v5           #state:I
     :cond_5
@@ -239,14 +220,12 @@
 
     if-eqz v6, :cond_6
 
-    .line 2022
     const-string v6, "BluetoothService"
 
     const-string v7, " Received BOOT_COMPLETED message"
 
     invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2023
     iget-object v6, p0, Landroid/server/BluetoothService$2;->this$0:Landroid/server/BluetoothService;
 
     #getter for: Landroid/server/BluetoothService;->mHandler:Landroid/os/Handler;
@@ -273,7 +252,6 @@
 
     goto/16 :goto_0
 
-    .line 2024
     :cond_6
     const-string v6, "broadcom.android.bluetooth.intent.action.CALL_STATE_CHANGED"
 
@@ -283,12 +261,10 @@
 
     if-eqz v6, :cond_9
 
-    .line 2025
     invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v2
 
-    .line 2026
     .local v2, extras:Landroid/os/Bundle;
     const-string v6, "broadcom.android.bluetooth.intent.CALL_STATE"
 
@@ -296,7 +272,6 @@
 
     move-result v5
 
-    .line 2027
     .restart local v5       #state:I
     const-string v6, "BluetoothService"
 
@@ -320,8 +295,7 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2028
-    const-string/jumbo v7, "service.brcm.bt.call_active"
+    const-string v7, "service.brcm.bt.call_active"
 
     if-ne v5, v11, :cond_7
 
@@ -330,10 +304,8 @@
     :goto_1
     invoke-static {v7, v6}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2030
     if-nez v5, :cond_8
 
-    .line 2031
     const-string v6, "BluetoothService"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -356,7 +328,6 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2032
     iget-object v6, p0, Landroid/server/BluetoothService$2;->this$0:Landroid/server/BluetoothService;
 
     #getter for: Landroid/server/BluetoothService;->mHandler:Landroid/os/Handler;
@@ -366,7 +337,6 @@
 
     invoke-virtual {v6, v10}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 2033
     iget-object v6, p0, Landroid/server/BluetoothService$2;->this$0:Landroid/server/BluetoothService;
 
     #getter for: Landroid/server/BluetoothService;->mHandler:Landroid/os/Handler;
@@ -391,13 +361,11 @@
 
     goto/16 :goto_0
 
-    .line 2028
     :cond_7
     const-string v6, "0"
 
     goto :goto_1
 
-    .line 2036
     :cond_8
     const-string v6, "BluetoothService"
 
@@ -421,7 +389,6 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2037
     iget-object v6, p0, Landroid/server/BluetoothService$2;->this$0:Landroid/server/BluetoothService;
 
     #getter for: Landroid/server/BluetoothService;->mHandler:Landroid/os/Handler;
@@ -431,8 +398,7 @@
 
     invoke-virtual {v6, v10}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 2038
-    const-string/jumbo v6, "service.brcm.bt.avrcp_pass_thru"
+    const-string v6, "service.brcm.bt.avrcp_pass_thru"
 
     const-string v7, "0"
 
@@ -440,7 +406,6 @@
 
     goto/16 :goto_0
 
-    .line 2040
     .end local v2           #extras:Landroid/os/Bundle;
     .end local v5           #state:I
     :cond_9
@@ -452,7 +417,6 @@
 
     if-eqz v6, :cond_a
 
-    .line 2041
     iget-object v6, p0, Landroid/server/BluetoothService$2;->this$0:Landroid/server/BluetoothService;
 
     #getter for: Landroid/server/BluetoothService;->mBluetoothState:Landroid/server/BluetoothAdapterStateMachine;
@@ -464,7 +428,6 @@
 
     move-result-object v3
 
-    .line 2042
     .local v3, m:Landroid/os/Message;
     const-string v6, "BT_SVC_STATE"
 
@@ -474,12 +437,10 @@
 
     packed-switch v6, :pswitch_data_0
 
-    .line 2047
     const/16 v6, 0x321
 
     iput v6, v3, Landroid/os/Message;->what:I
 
-    .line 2048
     const-string v6, "BT_SVC_MSG_ID"
 
     invoke-virtual {p2, v6, v9}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -488,7 +449,6 @@
 
     iput v6, v3, Landroid/os/Message;->arg1:I
 
-    .line 2051
     :goto_2
     iget-object v6, p0, Landroid/server/BluetoothService$2;->this$0:Landroid/server/BluetoothService;
 
@@ -501,7 +461,6 @@
 
     goto/16 :goto_0
 
-    .line 2044
     :pswitch_0
     const/16 v6, 0x320
 
@@ -509,7 +468,6 @@
 
     goto :goto_2
 
-    .line 2055
     .end local v3           #m:Landroid/os/Message;
     :cond_a
     invoke-static {}, Landroid/server/BluetoothService;->access$1000()Ljava/lang/String;
@@ -522,7 +480,6 @@
 
     if-eqz v6, :cond_0
 
-    .line 2056
     iget-object v6, p0, Landroid/server/BluetoothService$2;->this$0:Landroid/server/BluetoothService;
 
     #calls: Landroid/server/BluetoothService;->isEnabledInternal()Z
@@ -532,7 +489,6 @@
 
     if-eqz v6, :cond_0
 
-    .line 2057
     iget-object v6, p0, Landroid/server/BluetoothService$2;->this$0:Landroid/server/BluetoothService;
 
     const/16 v7, 0x15
@@ -543,7 +499,6 @@
 
     goto/16 :goto_0
 
-    .line 2042
     :pswitch_data_0
     .packed-switch 0x2
         :pswitch_0

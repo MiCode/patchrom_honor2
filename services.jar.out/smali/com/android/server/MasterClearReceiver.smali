@@ -12,7 +12,6 @@
     .locals 0
 
     .prologue
-    .line 31
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -26,7 +25,6 @@
     .parameter "intent"
 
     .prologue
-    .line 36
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v1
@@ -39,7 +37,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 37
     const-string v1, "google.com"
 
     const-string v2, "from"
@@ -54,18 +51,15 @@
 
     if-nez v1, :cond_0
 
-    .line 38
     const-string v1, "MasterClear"
 
     const-string v2, "Ignoring master clear request -- not from trusted server."
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 60
     :goto_0
     return-void
 
-    .line 43
     :cond_0
     const-string v1, "MasterClear"
 
@@ -73,14 +67,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 45
     new-instance v0, Lcom/android/server/MasterClearReceiver$1;
 
     const-string v1, "Reboot"
 
     invoke-direct {v0, p0, v1, p1}, Lcom/android/server/MasterClearReceiver$1;-><init>(Lcom/android/server/MasterClearReceiver;Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 59
     .local v0, thr:Ljava/lang/Thread;
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 

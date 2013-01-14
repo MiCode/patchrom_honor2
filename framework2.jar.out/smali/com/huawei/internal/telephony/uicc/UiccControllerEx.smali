@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -18,7 +17,6 @@
     .locals 2
 
     .prologue
-    .line 40
     const-class v0, Lcom/huawei/internal/telephony/uicc/UiccControllerEx;
 
     monitor-enter v0
@@ -47,7 +45,6 @@
     .parameter "obj"
 
     .prologue
-    .line 46
     const-class v0, Lcom/huawei/internal/telephony/uicc/UiccControllerEx;
 
     monitor-enter v0
@@ -77,7 +74,6 @@
     .parameter "slotId"
 
     .prologue
-    .line 51
     const-class v1, Lcom/huawei/internal/telephony/uicc/UiccControllerEx;
 
     monitor-enter v1

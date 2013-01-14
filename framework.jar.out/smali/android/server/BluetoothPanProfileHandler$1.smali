@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 70
     iput-object p1, p0, Landroid/server/BluetoothPanProfileHandler$1;->this$0:Landroid/server/BluetoothPanProfileHandler;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +39,10 @@
     .parameter "intent"
 
     .prologue
-    .line 73
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 74
     .local v0, action:Ljava/lang/String;
     const-string v2, "android.bluetooth.adapter.action.STATE_CHANGED"
 
@@ -55,7 +52,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 75
     const-string v2, "android.bluetooth.adapter.extra.STATE"
 
     const/high16 v3, -0x8000
@@ -64,17 +60,14 @@
 
     move-result v1
 
-    .line 76
     .local v1, state:I
     packed-switch v1, :pswitch_data_0
 
-    .line 88
     .end local v1           #state:I
     :cond_0
     :goto_0
     return-void
 
-    .line 78
     .restart local v1       #state:I
     :pswitch_0
     iget-object v2, p0, Landroid/server/BluetoothPanProfileHandler$1;->this$0:Landroid/server/BluetoothPanProfileHandler;
@@ -85,14 +78,12 @@
 
     if-eqz v2, :cond_1
 
-    .line 79
     const-string v2, "BluetoothPanProfileHandler"
 
     const-string v3, "Tethering On"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 80
     iget-object v2, p0, Landroid/server/BluetoothPanProfileHandler$1;->this$0:Landroid/server/BluetoothPanProfileHandler;
 
     const/4 v3, 0x1
@@ -101,7 +92,6 @@
 
     goto :goto_0
 
-    .line 83
     :cond_1
     const-string v2, "BluetoothPanProfileHandler"
 
@@ -111,7 +101,6 @@
 
     goto :goto_0
 
-    .line 76
     :pswitch_data_0
     .packed-switch 0xc
         :pswitch_0

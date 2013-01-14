@@ -49,7 +49,6 @@
     .locals 1
 
     .prologue
-    .line 55
     new-instance v0, Landroid/telephony/SmsManager;
 
     invoke-direct {v0}, Landroid/telephony/SmsManager;-><init>()V
@@ -63,10 +62,8 @@
     .locals 2
 
     .prologue
-    .line 321
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 843
     new-instance v0, Landroid/telephony/SmsManager$SmsManagerEx;
 
     const/4 v1, 0x0
@@ -75,7 +72,6 @@
 
     iput-object v0, p0, Landroid/telephony/SmsManager;->mSmsManagerEx:Landroid/telephony/SmsManager$SmsManagerEx;
 
-    .line 323
     return-void
 .end method
 
@@ -97,22 +93,18 @@
     .end annotation
 
     .prologue
-    .line 752
     .local p0, records:Ljava/util/List;,"Ljava/util/List<Lcom/android/internal/telephony/SmsRawData;>;"
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 753
     .local v3, messages:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/telephony/SmsMessage;>;"
     if-eqz p0, :cond_1
 
-    .line 754
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 756
     .local v0, count:I
     const/4 v2, 0x0
 
@@ -120,18 +112,15 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 757
     invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/internal/telephony/SmsRawData;
 
-    .line 759
     .local v1, data:Lcom/android/internal/telephony/SmsRawData;
     if-eqz v1, :cond_0
 
-    .line 760
     add-int/lit8 v5, v2, 0x1
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/SmsRawData;->getBytes()[B
@@ -142,21 +131,17 @@
 
     move-result-object v4
 
-    .line 761
     .local v4, sms:Landroid/telephony/SmsMessage;
     if-eqz v4, :cond_0
 
-    .line 762
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 756
     .end local v4           #sms:Landroid/telephony/SmsMessage;
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 767
     .end local v0           #count:I
     .end local v1           #data:Lcom/android/internal/telephony/SmsRawData;
     .end local v2           #i:I
@@ -177,7 +162,6 @@
     .end annotation
 
     .prologue
-    .line 442
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v2
@@ -188,7 +172,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 443
     invoke-static {}, Landroid/telephony/MSimSmsManager;->getDefault()Landroid/telephony/MSimSmsManager;
 
     move-result-object v2
@@ -205,17 +188,14 @@
 
     move-result-object v2
 
-    .line 457
     .local v1, records:Ljava/util/List;,"Ljava/util/List<Lcom/android/internal/telephony/SmsRawData;>;"
     :goto_0
     return-object v2
 
-    .line 446
     .end local v1           #records:Ljava/util/List;,"Ljava/util/List<Lcom/android/internal/telephony/SmsRawData;>;"
     :cond_0
     const/4 v1, 0x0
 
-    .line 449
     .restart local v1       #records:Ljava/util/List;,"Ljava/util/List<Lcom/android/internal/telephony/SmsRawData;>;"
     :try_start_0
     const-string v2, "isms"
@@ -228,18 +208,15 @@
 
     move-result-object v0
 
-    .line 450
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_1
 
-    .line 451
     invoke-interface {v0}, Lcom/android/internal/telephony/ISms;->getAllMessagesFromIccEf()Ljava/util/List;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v1
 
-    .line 457
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :cond_1
     :goto_1
@@ -249,7 +226,6 @@
 
     goto :goto_0
 
-    .line 453
     :catch_0
     move-exception v2
 
@@ -260,7 +236,6 @@
     .locals 1
 
     .prologue
-    .line 318
     sget-object v0, Landroid/telephony/SmsManager;->sInstance:Landroid/telephony/SmsManager;
 
     return-object v0
@@ -275,7 +250,6 @@
     .parameter "status"
 
     .prologue
-    .line 341
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v2
@@ -286,7 +260,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 342
     invoke-static {}, Landroid/telephony/MSimSmsManager;->getDefault()Landroid/telephony/MSimSmsManager;
 
     move-result-object v2
@@ -303,29 +276,24 @@
 
     move-result v1
 
-    .line 359
     :cond_0
     :goto_0
     return v1
 
-    .line 345
     :cond_1
     const/4 v1, 0x0
 
-    .line 347
     .local v1, success:Z
     if-nez p2, :cond_2
 
-    .line 348
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v3, "pdu is NULL"
+    const-string v3, "pdu is NULL"
 
     invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
-    .line 351
     :cond_2
     :try_start_0
     const-string v2, "isms"
@@ -338,11 +306,9 @@
 
     move-result-object v0
 
-    .line 352
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
-    .line 353
     invoke-interface {v0, p3, p2, p1}, Lcom/android/internal/telephony/ISms;->copyMessageToIccEf(I[B[B)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -351,7 +317,6 @@
 
     goto :goto_0
 
-    .line 355
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :catch_0
     move-exception v2
@@ -364,7 +329,6 @@
     .parameter "messageIndex"
 
     .prologue
-    .line 375
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v3
@@ -375,7 +339,6 @@
 
     if-eqz v3, :cond_1
 
-    .line 376
     invoke-static {}, Landroid/telephony/MSimSmsManager;->getDefault()Landroid/telephony/MSimSmsManager;
 
     move-result-object v3
@@ -392,16 +355,13 @@
 
     move-result v2
 
-    .line 394
     :cond_0
     :goto_0
     return v2
 
-    .line 379
     :cond_1
     const/4 v2, 0x0
 
-    .line 381
     .local v2, success:Z
     iget-object v3, p0, Landroid/telephony/SmsManager;->mSmsManagerEx:Landroid/telephony/SmsManager$SmsManagerEx;
 
@@ -410,13 +370,11 @@
 
     move-result-object v1
 
-    .line 383
     .local v1, pdu:[B
     const/4 v3, -0x1
 
     invoke-static {v1, v3}, Ljava/util/Arrays;->fill([BB)V
 
-    .line 386
     :try_start_0
     const-string v3, "isms"
 
@@ -428,11 +386,9 @@
 
     move-result-object v0
 
-    .line 387
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
-    .line 388
     const/4 v3, 0x0
 
     invoke-interface {v0, p1, v3, v1}, Lcom/android/internal/telephony/ISms;->updateMessageOnIccEf(II[B)Z
@@ -443,7 +399,6 @@
 
     goto :goto_0
 
-    .line 390
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :catch_0
     move-exception v3
@@ -456,7 +411,6 @@
     .parameter "messageIdentifier"
 
     .prologue
-    .line 656
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v2
@@ -467,7 +421,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 657
     invoke-static {}, Landroid/telephony/MSimSmsManager;->getDefault()Landroid/telephony/MSimSmsManager;
 
     move-result-object v2
@@ -484,16 +437,13 @@
 
     move-result v1
 
-    .line 671
     :cond_0
     :goto_0
     return v1
 
-    .line 660
     :cond_1
     const/4 v1, 0x0
 
-    .line 663
     .local v1, success:Z
     :try_start_0
     const-string v2, "isms"
@@ -506,11 +456,9 @@
 
     move-result-object v0
 
-    .line 664
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
-    .line 665
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/ISms;->disableCdmaBroadcast(I)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -519,7 +467,6 @@
 
     goto :goto_0
 
-    .line 667
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :catch_0
     move-exception v2
@@ -533,14 +480,11 @@
     .parameter "endMessageId"
 
     .prologue
-    .line 726
     const/4 v1, 0x0
 
-    .line 728
     .local v1, success:Z
     if-ge p2, p1, :cond_0
 
-    .line 729
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string v3, "endMessageId < startMessageId"
@@ -549,7 +493,6 @@
 
     throw v2
 
-    .line 732
     :cond_0
     :try_start_0
     const-string v2, "isms"
@@ -562,24 +505,20 @@
 
     move-result-object v0
 
-    .line 733
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_1
 
-    .line 734
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/ISms;->disableCdmaBroadcastRange(II)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 740
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :cond_1
     :goto_0
     return v1
 
-    .line 736
     :catch_0
     move-exception v2
 
@@ -591,7 +530,6 @@
     .parameter "messageIdentifier"
 
     .prologue
-    .line 512
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v2
@@ -602,7 +540,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 513
     invoke-static {}, Landroid/telephony/MSimSmsManager;->getDefault()Landroid/telephony/MSimSmsManager;
 
     move-result-object v2
@@ -619,16 +556,13 @@
 
     move-result v1
 
-    .line 527
     :cond_0
     :goto_0
     return v1
 
-    .line 516
     :cond_1
     const/4 v1, 0x0
 
-    .line 519
     .local v1, success:Z
     :try_start_0
     const-string v2, "isms"
@@ -641,11 +575,9 @@
 
     move-result-object v0
 
-    .line 520
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
-    .line 521
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/ISms;->disableCellBroadcast(I)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -654,7 +586,6 @@
 
     goto :goto_0
 
-    .line 523
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :catch_0
     move-exception v2
@@ -668,7 +599,6 @@
     .parameter "endMessageId"
 
     .prologue
-    .line 589
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v2
@@ -679,7 +609,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 590
     invoke-static {}, Landroid/telephony/MSimSmsManager;->getDefault()Landroid/telephony/MSimSmsManager;
 
     move-result-object v2
@@ -696,20 +625,16 @@
 
     move-result v1
 
-    .line 607
     :cond_0
     :goto_0
     return v1
 
-    .line 593
     :cond_1
     const/4 v1, 0x0
 
-    .line 595
     .local v1, success:Z
     if-ge p2, p1, :cond_2
 
-    .line 596
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string v3, "endMessageId < startMessageId"
@@ -718,7 +643,6 @@
 
     throw v2
 
-    .line 599
     :cond_2
     :try_start_0
     const-string v2, "isms"
@@ -731,11 +655,9 @@
 
     move-result-object v0
 
-    .line 600
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
-    .line 601
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/ISms;->disableCellBroadcastRange(II)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -744,7 +666,6 @@
 
     goto :goto_0
 
-    .line 603
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :catch_0
     move-exception v2
@@ -768,19 +689,16 @@
     .end annotation
 
     .prologue
-    .line 127
     if-nez p1, :cond_0
 
-    .line 128
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "text is null"
+    const-string v1, "text is null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 130
     :cond_0
     invoke-static {p1}, Landroid/telephony/SmsMessage;->fragmentText(Ljava/lang/String;)Ljava/util/ArrayList;
 
@@ -794,7 +712,6 @@
     .parameter "messageIdentifier"
 
     .prologue
-    .line 625
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v2
@@ -805,7 +722,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 626
     invoke-static {}, Landroid/telephony/MSimSmsManager;->getDefault()Landroid/telephony/MSimSmsManager;
 
     move-result-object v2
@@ -822,16 +738,13 @@
 
     move-result v1
 
-    .line 640
     :cond_0
     :goto_0
     return v1
 
-    .line 629
     :cond_1
     const/4 v1, 0x0
 
-    .line 632
     .local v1, success:Z
     :try_start_0
     const-string v2, "isms"
@@ -844,11 +757,9 @@
 
     move-result-object v0
 
-    .line 633
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
-    .line 634
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/ISms;->enableCdmaBroadcast(I)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -857,7 +768,6 @@
 
     goto :goto_0
 
-    .line 636
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :catch_0
     move-exception v2
@@ -871,14 +781,11 @@
     .parameter "endMessageId"
 
     .prologue
-    .line 693
     const/4 v1, 0x0
 
-    .line 695
     .local v1, success:Z
     if-ge p2, p1, :cond_0
 
-    .line 696
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string v3, "endMessageId < startMessageId"
@@ -887,7 +794,6 @@
 
     throw v2
 
-    .line 699
     :cond_0
     :try_start_0
     const-string v2, "isms"
@@ -900,24 +806,20 @@
 
     move-result-object v0
 
-    .line 700
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_1
 
-    .line 701
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/ISms;->enableCdmaBroadcastRange(II)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 707
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :cond_1
     :goto_0
     return v1
 
-    .line 703
     :catch_0
     move-exception v2
 
@@ -929,7 +831,6 @@
     .parameter "messageIdentifier"
 
     .prologue
-    .line 477
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v2
@@ -940,7 +841,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 478
     invoke-static {}, Landroid/telephony/MSimSmsManager;->getDefault()Landroid/telephony/MSimSmsManager;
 
     move-result-object v2
@@ -957,16 +857,13 @@
 
     move-result v1
 
-    .line 492
     :cond_0
     :goto_0
     return v1
 
-    .line 481
     :cond_1
     const/4 v1, 0x0
 
-    .line 484
     .local v1, success:Z
     :try_start_0
     const-string v2, "isms"
@@ -979,11 +876,9 @@
 
     move-result-object v0
 
-    .line 485
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
-    .line 486
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/ISms;->enableCellBroadcast(I)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -992,7 +887,6 @@
 
     goto :goto_0
 
-    .line 488
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :catch_0
     move-exception v2
@@ -1006,7 +900,6 @@
     .parameter "endMessageId"
 
     .prologue
-    .line 549
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v2
@@ -1017,7 +910,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 550
     invoke-static {}, Landroid/telephony/MSimSmsManager;->getDefault()Landroid/telephony/MSimSmsManager;
 
     move-result-object v2
@@ -1034,20 +926,16 @@
 
     move-result v1
 
-    .line 567
     :cond_0
     :goto_0
     return v1
 
-    .line 553
     :cond_1
     const/4 v1, 0x0
 
-    .line 555
     .local v1, success:Z
     if-ge p2, p1, :cond_2
 
-    .line 556
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string v3, "endMessageId < startMessageId"
@@ -1056,7 +944,6 @@
 
     throw v2
 
-    .line 559
     :cond_2
     :try_start_0
     const-string v2, "isms"
@@ -1069,11 +956,9 @@
 
     move-result-object v0
 
-    .line 560
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
-    .line 561
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/ISms;->enableCellBroadcastRange(II)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -1082,7 +967,6 @@
 
     goto :goto_0
 
-    .line 563
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :catch_0
     move-exception v2
@@ -1094,10 +978,8 @@
     .locals 3
 
     .prologue
-    .line 773
     const/4 v1, 0x0
 
-    .line 776
     .local v1, smscAddr:Ljava/lang/String;
     :try_start_0
     const-string v2, "isms"
@@ -1110,24 +992,20 @@
 
     move-result-object v0
 
-    .line 778
     .local v0, simISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
-    .line 780
     invoke-interface {v0}, Lcom/android/internal/telephony/ISms;->getSmscAddr()Ljava/lang/String;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v1
 
-    .line 788
     .end local v0           #simISms:Lcom/android/internal/telephony/ISms;
     :cond_0
     :goto_0
     return-object v1
 
-    .line 783
     :catch_0
     move-exception v2
 
@@ -1144,14 +1022,12 @@
     .parameter "deliveryIntent"
 
     .prologue
-    .line 237
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 238
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "Invalid destinationAddress"
@@ -1160,7 +1036,6 @@
 
     throw v1
 
-    .line 241
     :cond_0
     if-eqz p4, :cond_1
 
@@ -1168,7 +1043,6 @@
 
     if-nez v1, :cond_2
 
-    .line 242
     :cond_1
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -1178,7 +1052,6 @@
 
     throw v1
 
-    .line 246
     :cond_2
     :try_start_0
     const-string v1, "isms"
@@ -1191,11 +1064,9 @@
 
     move-result-object v0
 
-    .line 247
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_3
 
-    .line 248
     const v1, 0xffff
 
     and-int v3, p3, v1
@@ -1214,13 +1085,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 254
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :cond_3
     :goto_0
     return-void
 
-    .line 251
     :catch_0
     move-exception v1
 
@@ -1253,7 +1122,6 @@
     .end annotation
 
     .prologue
-    .line 291
     .local p5, sentIntents:Ljava/util/List;,"Ljava/util/List<Landroid/app/PendingIntent;>;"
     .local p6, deliveryIntents:Ljava/util/List;,"Ljava/util/List<Landroid/app/PendingIntent;>;"
     const-string v1, "SmsManager"
@@ -1262,14 +1130,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 292
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 293
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "Invalid destinationAddress"
@@ -1278,7 +1144,6 @@
 
     throw v1
 
-    .line 296
     :cond_0
     if-eqz p4, :cond_1
 
@@ -1286,7 +1151,6 @@
 
     if-nez v1, :cond_2
 
-    .line 297
     :cond_1
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -1296,7 +1160,6 @@
 
     throw v1
 
-    .line 301
     :cond_2
     :try_start_0
     const-string v1, "isms"
@@ -1309,11 +1172,9 @@
 
     move-result-object v0
 
-    .line 302
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_3
 
-    .line 303
     const v1, 0xffff
 
     and-int v3, p3, v1
@@ -1332,13 +1193,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 309
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :cond_3
     :goto_0
     return-void
 
-    .line 306
     :catch_0
     move-exception v1
 
@@ -1380,7 +1239,6 @@
 
     const/4 v2, 0x0
 
-    .line 169
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v1
@@ -1391,7 +1249,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 170
     invoke-static {}, Landroid/telephony/MSimSmsManager;->getDefault()Landroid/telephony/MSimSmsManager;
 
     move-result-object v0
@@ -1416,12 +1273,10 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/telephony/MSimSmsManager;->sendMultipartTextMessage(Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;I)V
 
-    .line 205
     :cond_0
     :goto_0
     return-void
 
-    .line 176
     :cond_1
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1429,7 +1284,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 177
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "Invalid destinationAddress"
@@ -1438,7 +1292,6 @@
 
     throw v1
 
-    .line 179
     :cond_2
     if-eqz p3, :cond_3
 
@@ -1448,7 +1301,6 @@
 
     if-ge v1, v3, :cond_4
 
-    .line 180
     :cond_3
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -1458,7 +1310,6 @@
 
     throw v1
 
-    .line 183
     :cond_4
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
@@ -1466,7 +1317,6 @@
 
     if-le v1, v3, :cond_5
 
-    .line 185
     :try_start_0
     const-string v1, "isms"
 
@@ -1478,7 +1328,6 @@
 
     move-result-object v0
 
-    .line 186
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
@@ -1492,29 +1341,24 @@
 
     move-object v5, p5
 
-    .line 187
     invoke-interface/range {v0 .. v5}, Lcom/android/internal/telephony/ISms;->sendMultipartText(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 190
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :catch_0
     move-exception v1
 
     goto :goto_0
 
-    .line 194
     :cond_5
     const/4 v5, 0x0
 
-    .line 195
     .local v5, sentIntent:Landroid/app/PendingIntent;
     const/4 v6, 0x0
 
-    .line 196
     .local v6, deliveryIntent:Landroid/app/PendingIntent;
     if-eqz p4, :cond_6
 
@@ -1524,7 +1368,6 @@
 
     if-lez v1, :cond_6
 
-    .line 197
     invoke-virtual {p4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
@@ -1532,7 +1375,6 @@
     .end local v5           #sentIntent:Landroid/app/PendingIntent;
     check-cast v5, Landroid/app/PendingIntent;
 
-    .line 199
     .restart local v5       #sentIntent:Landroid/app/PendingIntent;
     :cond_6
     if-eqz p5, :cond_7
@@ -1543,7 +1385,6 @@
 
     if-lez v1, :cond_7
 
-    .line 200
     invoke-virtual {p5, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -1551,7 +1392,6 @@
     .end local v6           #deliveryIntent:Landroid/app/PendingIntent;
     check-cast v6, Landroid/app/PendingIntent;
 
-    .line 202
     .restart local v6       #deliveryIntent:Landroid/app/PendingIntent;
     :cond_7
     invoke-virtual {p3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1580,7 +1420,6 @@
     .parameter "deliveryIntent"
 
     .prologue
-    .line 91
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v1
@@ -1591,7 +1430,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 92
     invoke-static {}, Landroid/telephony/MSimSmsManager;->getDefault()Landroid/telephony/MSimSmsManager;
 
     move-result-object v0
@@ -1616,12 +1454,10 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/telephony/MSimSmsManager;->sendTextMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;I)V
 
-    .line 114
     :cond_0
     :goto_0
     return-void
 
-    .line 98
     :cond_1
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1629,7 +1465,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 99
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "Invalid destinationAddress"
@@ -1638,7 +1473,6 @@
 
     throw v1
 
-    .line 102
     :cond_2
     invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1646,7 +1480,6 @@
 
     if-eqz v1, :cond_3
 
-    .line 103
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "Invalid message body"
@@ -1655,7 +1488,6 @@
 
     throw v1
 
-    .line 107
     :cond_3
     :try_start_0
     const-string v1, "isms"
@@ -1668,7 +1500,6 @@
 
     move-result-object v0
 
-    .line 108
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
@@ -1682,14 +1513,12 @@
 
     move-object v5, p5
 
-    .line 109
     invoke-interface/range {v0 .. v5}, Lcom/android/internal/telephony/ISms;->sendText(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 111
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :catch_0
     move-exception v1
@@ -1702,10 +1531,8 @@
     .parameter "smscAddr"
 
     .prologue
-    .line 793
     const/4 v0, 0x0
 
-    .line 796
     .local v0, ret:Z
     :try_start_0
     const-string v2, "isms"
@@ -1718,24 +1545,20 @@
 
     move-result-object v1
 
-    .line 798
     .local v1, simISms:Lcom/android/internal/telephony/ISms;
     if-eqz v1, :cond_0
 
-    .line 800
     invoke-interface {v1, p1}, Lcom/android/internal/telephony/ISms;->setSmscAddr(Ljava/lang/String;)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v0
 
-    .line 808
     .end local v1           #simISms:Lcom/android/internal/telephony/ISms;
     :cond_0
     :goto_0
     return v0
 
-    .line 803
     :catch_0
     move-exception v2
 
@@ -1749,7 +1572,6 @@
     .parameter "pdu"
 
     .prologue
-    .line 413
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v2
@@ -1760,7 +1582,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 414
     invoke-static {}, Landroid/telephony/MSimSmsManager;->getDefault()Landroid/telephony/MSimSmsManager;
 
     move-result-object v2
@@ -1777,16 +1598,13 @@
 
     move-result v1
 
-    .line 428
     :cond_0
     :goto_0
     return v1
 
-    .line 417
     :cond_1
     const/4 v1, 0x0
 
-    .line 420
     .local v1, success:Z
     :try_start_0
     const-string v2, "isms"
@@ -1799,11 +1617,9 @@
 
     move-result-object v0
 
-    .line 421
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
-    .line 422
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/ISms;->updateMessageOnIccEf(II[B)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -1812,7 +1628,6 @@
 
     goto :goto_0
 
-    .line 424
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :catch_0
     move-exception v2

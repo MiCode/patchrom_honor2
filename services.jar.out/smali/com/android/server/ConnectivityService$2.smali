@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 3367
     iput-object p1, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +39,10 @@
     .parameter "intent"
 
     .prologue
-    .line 3370
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 3372
     .local v2, action:Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -66,19 +63,16 @@
 
     check-cast v9, Landroid/app/KeyguardManager;
 
-    .line 3374
     .local v9, keyguardManager:Landroid/app/KeyguardManager;
     invoke-virtual {v9}, Landroid/app/KeyguardManager;->isLockScreenDisabled()Z
 
     move-result v4
 
-    .line 3375
     .local v4, disable:Z
     invoke-virtual {v9}, Landroid/app/KeyguardManager;->isKeyguardLocked()Z
 
     move-result v11
 
-    .line 3376
     .local v11, locked:Z
     move-object/from16 v0, p0
 
@@ -101,7 +95,6 @@
 
     if-nez v4, :cond_0
 
-    .line 3377
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
@@ -112,7 +105,6 @@
 
     iget-boolean v11, v0, Lcom/android/server/ConnectivityService;->mStartPowerSaving:Z
 
-    .line 3379
     :cond_0
     move-object/from16 v0, p0
 
@@ -135,7 +127,6 @@
 
     if-nez v4, :cond_4
 
-    .line 3380
     const-string v17, "android.intent.action.KEYGUARD_UNLOCK"
 
     move-object/from16 v0, v17
@@ -146,7 +137,6 @@
 
     if-eqz v17, :cond_2
 
-    .line 3381
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
@@ -160,7 +150,6 @@
 
     monitor-enter v18
 
-    .line 3382
     :try_start_0
     move-object/from16 v0, p0
 
@@ -177,7 +166,6 @@
     #calls: Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/android/server/ConnectivityService;->access$100(Lcom/android/server/ConnectivityService;Ljava/lang/String;)V
 
-    .line 3384
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
@@ -192,7 +180,6 @@
 
     if-eqz v17, :cond_1
 
-    .line 3385
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
@@ -208,7 +195,6 @@
     #calls: Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/android/server/ConnectivityService;->access$100(Lcom/android/server/ConnectivityService;Ljava/lang/String;)V
 
-    .line 3386
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
@@ -218,7 +204,6 @@
     #calls: Lcom/android/server/ConnectivityService;->cancelPowerSaving()V
     invoke-static/range {v17 .. v17}, Lcom/android/server/ConnectivityService;->access$4100(Lcom/android/server/ConnectivityService;)V
 
-    .line 3387
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
@@ -233,13 +218,11 @@
 
     iput-boolean v0, v1, Lcom/android/server/ConnectivityService;->mStartPowerSaving:Z
 
-    .line 3389
     :cond_1
     monitor-exit v18
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3404
     :cond_2
     :goto_0
     const-string v17, "android.intent.action.SCREEN_OFF"
@@ -252,7 +235,6 @@
 
     if-eqz v17, :cond_10
 
-    .line 3406
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
@@ -266,7 +248,6 @@
 
     monitor-enter v18
 
-    .line 3407
     :try_start_1
     move-object/from16 v0, p0
 
@@ -283,10 +264,8 @@
     #calls: Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/android/server/ConnectivityService;->access$100(Lcom/android/server/ConnectivityService;Ljava/lang/String;)V
 
-    .line 3408
     const/4 v6, 0x0
 
-    .line 3410
     .local v6, isDataConnected:Z
     move-object/from16 v0, p0
 
@@ -313,17 +292,14 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
-    .line 3411
     .local v13, nt:Landroid/net/NetworkStateTracker;
     if-nez v13, :cond_6
 
-    .line 3410
     :cond_3
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
-    .line 3389
     .end local v3           #arr$:[Landroid/net/NetworkStateTracker;
     .end local v5           #i$:I
     .end local v6           #isDataConnected:Z
@@ -339,7 +315,6 @@
 
     throw v17
 
-    .line 3392
     :cond_4
     const-string v17, "android.intent.action.SCREEN_ON"
 
@@ -351,7 +326,6 @@
 
     if-eqz v17, :cond_2
 
-    .line 3393
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
@@ -365,7 +339,6 @@
 
     monitor-enter v18
 
-    .line 3394
     :try_start_3
     move-object/from16 v0, p0
 
@@ -382,7 +355,6 @@
     #calls: Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/android/server/ConnectivityService;->access$100(Lcom/android/server/ConnectivityService;Ljava/lang/String;)V
 
-    .line 3396
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
@@ -397,7 +369,6 @@
 
     if-eqz v17, :cond_5
 
-    .line 3397
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
@@ -413,7 +384,6 @@
     #calls: Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/android/server/ConnectivityService;->access$100(Lcom/android/server/ConnectivityService;Ljava/lang/String;)V
 
-    .line 3398
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
@@ -423,7 +393,6 @@
     #calls: Lcom/android/server/ConnectivityService;->cancelPowerSaving()V
     invoke-static/range {v17 .. v17}, Lcom/android/server/ConnectivityService;->access$4100(Lcom/android/server/ConnectivityService;)V
 
-    .line 3399
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
@@ -438,7 +407,6 @@
 
     iput-boolean v0, v1, Lcom/android/server/ConnectivityService;->mStartPowerSaving:Z
 
-    .line 3401
     :cond_5
     monitor-exit v18
 
@@ -453,7 +421,6 @@
 
     throw v17
 
-    .line 3414
     .restart local v3       #arr$:[Landroid/net/NetworkStateTracker;
     .restart local v5       #i$:I
     .restart local v6       #isDataConnected:Z
@@ -469,7 +436,6 @@
 
     move-result v12
 
-    .line 3415
     .local v12, netType:I
     move-object/from16 v0, p0
 
@@ -493,7 +459,6 @@
 
     if-nez v17, :cond_3
 
-    .line 3416
     invoke-interface {v13}, Landroid/net/NetworkStateTracker;->isAvailable()Z
 
     move-result v17
@@ -510,10 +475,8 @@
 
     if-eqz v17, :cond_3
 
-    .line 3417
     const/4 v6, 0x1
 
-    .line 3418
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
@@ -529,13 +492,11 @@
     #calls: Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/android/server/ConnectivityService;->access$100(Lcom/android/server/ConnectivityService;Ljava/lang/String;)V
 
-    .line 3424
     .end local v12           #netType:I
     .end local v13           #nt:Landroid/net/NetworkStateTracker;
     :cond_7
     const/4 v8, 0x0
 
-    .line 3425
     .local v8, isWifiApOn:Z
     const-string v17, "wifi"
 
@@ -549,20 +510,16 @@
 
     check-cast v16, Landroid/net/wifi/WifiManager;
 
-    .line 3426
     .local v16, wifiManager:Landroid/net/wifi/WifiManager;
     if-eqz v16, :cond_8
 
-    .line 3427
     invoke-virtual/range {v16 .. v16}, Landroid/net/wifi/WifiManager;->isWifiApEnabled()Z
 
     move-result v8
 
-    .line 3430
     :cond_8
     if-eqz v8, :cond_e
 
-    .line 3431
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
@@ -578,11 +535,9 @@
     #calls: Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/android/server/ConnectivityService;->access$100(Lcom/android/server/ConnectivityService;Ljava/lang/String;)V
 
-    .line 3439
     :goto_2
     const/4 v7, 0x0
 
-    .line 3440
     .local v7, isUsbTetheringOn:Z
     const-string v17, "sys.isusbtetheringon"
 
@@ -596,7 +551,6 @@
 
     move-result-object v15
 
-    .line 3441
     .local v15, usbTetheringState:Ljava/lang/String;
     if-eqz v15, :cond_9
 
@@ -610,10 +564,8 @@
 
     if-eqz v17, :cond_9
 
-    .line 3442
     const/4 v7, 0x1
 
-    .line 3446
     :cond_9
     move-object/from16 v0, p0
 
@@ -640,7 +592,6 @@
 
     if-eqz v17, :cond_c
 
-    .line 3447
     if-eqz v6, :cond_c
 
     move-object/from16 v0, p0
@@ -682,13 +633,11 @@
 
     if-nez v4, :cond_c
 
-    .line 3449
     :cond_a
     if-nez v8, :cond_c
 
     if-nez v7, :cond_c
 
-    .line 3450
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
@@ -704,7 +653,6 @@
     #calls: Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/android/server/ConnectivityService;->access$100(Lcom/android/server/ConnectivityService;Ljava/lang/String;)V
 
-    .line 3451
     if-nez v4, :cond_b
 
     move-object/from16 v0, p0
@@ -730,7 +678,6 @@
 
     if-eqz v17, :cond_f
 
-    .line 3452
     :cond_b
     move-object/from16 v0, p0
 
@@ -741,7 +688,6 @@
     #calls: Lcom/android/server/ConnectivityService;->tryPowerSaving()V
     invoke-static/range {v17 .. v17}, Lcom/android/server/ConnectivityService;->access$4300(Lcom/android/server/ConnectivityService;)V
 
-    .line 3456
     :goto_3
     move-object/from16 v0, p0
 
@@ -757,11 +703,9 @@
 
     iput-boolean v0, v1, Lcom/android/server/ConnectivityService;->mStartPowerSaving:Z
 
-    .line 3463
     :cond_c
     monitor-exit v18
 
-    .line 3488
     .end local v3           #arr$:[Landroid/net/NetworkStateTracker;
     .end local v5           #i$:I
     .end local v6           #isDataConnected:Z
@@ -774,7 +718,6 @@
     :goto_4
     return-void
 
-    .line 3433
     .restart local v3       #arr$:[Landroid/net/NetworkStateTracker;
     .restart local v5       #i$:I
     .restart local v6       #isDataConnected:Z
@@ -799,7 +742,6 @@
 
     goto/16 :goto_2
 
-    .line 3463
     .end local v3           #arr$:[Landroid/net/NetworkStateTracker;
     .end local v5           #i$:I
     .end local v6           #isDataConnected:Z
@@ -815,7 +757,6 @@
 
     throw v17
 
-    .line 3454
     .restart local v3       #arr$:[Landroid/net/NetworkStateTracker;
     .restart local v5       #i$:I
     .restart local v6       #isDataConnected:Z
@@ -841,7 +782,6 @@
 
     goto :goto_3
 
-    .line 3464
     .end local v3           #arr$:[Landroid/net/NetworkStateTracker;
     .end local v5           #i$:I
     .end local v6           #isDataConnected:Z
@@ -861,12 +801,10 @@
 
     if-eqz v17, :cond_d
 
-    .line 3466
     sget-boolean v17, Lcom/android/server/ConnectivityService;->useCtrlSocket:Z
 
     if-eqz v17, :cond_11
 
-    .line 3469
     const/16 v17, 0x64
 
     const/16 v18, 0x1
@@ -875,7 +813,6 @@
 
     move-result v14
 
-    .line 3470
     .local v14, retVal:I
     const-string v17, "ConnectivityService"
 
@@ -901,17 +838,14 @@
 
     invoke-static/range {v17 .. v18}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3471
     if-nez v14, :cond_d
 
-    .line 3473
     const-string v17, "ConnectivityService"
 
     const-string v18, "turn off Data Connection!"
 
     invoke-static/range {v17 .. v18}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3474
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
@@ -923,7 +857,6 @@
 
     goto :goto_4
 
-    .line 3478
     .end local v14           #retVal:I
     :cond_11
     move-object/from16 v0, p0
@@ -939,7 +872,6 @@
 
     monitor-enter v18
 
-    .line 3479
     :try_start_6
     move-object/from16 v0, p0
 
@@ -955,7 +887,6 @@
 
     if-eqz v17, :cond_12
 
-    .line 3481
     const-string v17, "ConnectivityService"
 
     const-string v19, "turn off Data Connection!"
@@ -966,7 +897,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3482
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
@@ -976,7 +906,6 @@
     #calls: Lcom/android/server/ConnectivityService;->turnoffDC()V
     invoke-static/range {v17 .. v17}, Lcom/android/server/ConnectivityService;->access$4500(Lcom/android/server/ConnectivityService;)V
 
-    .line 3484
     :cond_12
     monitor-exit v18
 

@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 136
     iput-object p1, p0, Landroid/server/BluetoothPanProfileHandler$2;->this$0:Landroid/server/BluetoothPanProfileHandler;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -42,7 +41,6 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 139
     const-string v0, "android.bluetooth.adapter.extra.STATE"
 
     const/16 v1, 0xa
@@ -55,13 +53,11 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 141
     iget-object v0, p0, Landroid/server/BluetoothPanProfileHandler$2;->this$0:Landroid/server/BluetoothPanProfileHandler;
 
     #setter for: Landroid/server/BluetoothPanProfileHandler;->mTetheringOn:Z
     invoke-static {v0, v2}, Landroid/server/BluetoothPanProfileHandler;->access$002(Landroid/server/BluetoothPanProfileHandler;Z)Z
 
-    .line 142
     iget-object v0, p0, Landroid/server/BluetoothPanProfileHandler$2;->this$0:Landroid/server/BluetoothPanProfileHandler;
 
     #getter for: Landroid/server/BluetoothPanProfileHandler;->mContext:Landroid/content/Context;
@@ -78,7 +74,6 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 144
     iget-object v0, p0, Landroid/server/BluetoothPanProfileHandler$2;->this$0:Landroid/server/BluetoothPanProfileHandler;
 
     invoke-virtual {v0}, Landroid/server/BluetoothPanProfileHandler;->isTetheringOn()Z
@@ -87,7 +82,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 145
     iget-object v0, p0, Landroid/server/BluetoothPanProfileHandler$2;->this$0:Landroid/server/BluetoothPanProfileHandler;
 
     #getter for: Landroid/server/BluetoothPanProfileHandler;->mBluetoothService:Landroid/server/BluetoothService;
@@ -97,12 +91,10 @@
 
     invoke-virtual {v0, v2}, Landroid/server/BluetoothService;->setBluetoothPanSdpNative(I)V
 
-    .line 150
     :cond_0
     :goto_0
     return-void
 
-    .line 147
     :cond_1
     iget-object v0, p0, Landroid/server/BluetoothPanProfileHandler$2;->this$0:Landroid/server/BluetoothPanProfileHandler;
 

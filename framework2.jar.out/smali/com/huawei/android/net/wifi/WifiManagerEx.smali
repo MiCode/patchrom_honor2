@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,7 +29,6 @@
     .end annotation
 
     .prologue
-    .line 56
     invoke-virtual {p0}, Landroid/net/wifi/WifiManager;->getApLinkedStaList()Ljava/util/List;
 
     move-result-object v0
@@ -44,10 +42,8 @@
     .parameter "obj"
 
     .prologue
-    .line 84
     invoke-virtual {p1, p0}, Landroid/net/wifi/WifiManager;->setSoftapDisassociateSta(Ljava/lang/String;)V
 
-    .line 85
     return-void
 .end method
 
@@ -57,10 +53,8 @@
     .parameter "obj"
 
     .prologue
-    .line 74
     invoke-virtual {p1, p0}, Landroid/net/wifi/WifiManager;->setSoftapMacFilter(Ljava/lang/String;)V
 
-    .line 75
     return-void
 .end method
 
@@ -71,7 +65,6 @@
     .parameter "maxNum"
 
     .prologue
-    .line 60
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."

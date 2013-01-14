@@ -30,17 +30,13 @@
     .parameter "status"
 
     .prologue
-    .line 112
     iput-object p1, p0, Lcom/android/internal/telephony/msim/SubscriptionManager$SetUiccSubsParams;->this$0:Lcom/android/internal/telephony/msim/SubscriptionManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 113
     iput p2, p0, Lcom/android/internal/telephony/msim/SubscriptionManager$SetUiccSubsParams;->subId:I
 
-    .line 114
     iput-object p3, p0, Lcom/android/internal/telephony/msim/SubscriptionManager$SetUiccSubsParams;->subStatus:Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;
 
-    .line 115
     return-void
 .end method

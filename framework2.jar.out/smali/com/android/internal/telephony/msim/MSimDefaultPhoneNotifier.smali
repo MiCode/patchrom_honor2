@@ -16,10 +16,8 @@
     .locals 1
 
     .prologue
-    .line 45
     invoke-direct {p0}, Lcom/android/internal/telephony/DefaultPhoneNotifier;-><init>()V
 
-    .line 46
     const-string v0, "telephony.msim.registry"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -32,7 +30,6 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/msim/MSimDefaultPhoneNotifier;->mMSimRegistry:Lcom/android/internal/telephony/ITelephonyRegistryMSim;
 
-    .line 48
     return-void
 .end method
 
@@ -41,7 +38,6 @@
     .parameter "s"
 
     .prologue
-    .line 204
     const-string v0, "GSM"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -64,7 +60,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 205
     return-void
 .end method
 
@@ -78,18 +73,15 @@
     .parameter "state"
 
     .prologue
-    .line 132
     invoke-interface/range {p1 .. p1}, Lcom/android/internal/telephony/Phone;->getSubscription()I
 
     move-result v14
 
-    .line 133
     .local v14, subscription:I
     invoke-static {}, Lcom/android/internal/telephony/msim/MSimPhoneFactory;->getDataSubscription()I
 
     move-result v12
 
-    .line 134
     .local v12, dds:I
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -123,32 +115,25 @@
 
     invoke-direct {v0, v2}, Lcom/android/internal/telephony/msim/MSimDefaultPhoneNotifier;->log(Ljava/lang/String;)V
 
-    .line 135
     if-eq v14, v12, :cond_0
 
-    .line 169
     :goto_0
     return-void
 
-    .line 143
     :cond_0
     invoke-static {}, Landroid/telephony/MSimTelephonyManager;->getDefault()Landroid/telephony/MSimTelephonyManager;
 
     move-result-object v15
 
-    .line 144
     .local v15, telephony:Landroid/telephony/MSimTelephonyManager;
     const/4 v8, 0x0
 
-    .line 145
     .local v8, linkProperties:Landroid/net/LinkProperties;
     const/4 v9, 0x0
 
-    .line 146
     .local v9, linkCapabilities:Landroid/net/LinkCapabilities;
     const/4 v11, 0x0
 
-    .line 148
     .local v11, roaming:Z
     sget-object v2, Lcom/android/internal/telephony/Phone$DataState;->CONNECTED:Lcom/android/internal/telephony/Phone$DataState;
 
@@ -156,7 +141,6 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 149
     move-object/from16 v0, p1
 
     move-object/from16 v1, p3
@@ -165,7 +149,6 @@
 
     move-result-object v8
 
-    .line 150
     move-object/from16 v0, p1
 
     move-object/from16 v1, p3
@@ -174,13 +157,11 @@
 
     move-result-object v9
 
-    .line 152
     :cond_1
     invoke-interface/range {p1 .. p1}, Lcom/android/internal/telephony/Phone;->getServiceState()Landroid/telephony/ServiceState;
 
     move-result-object v13
 
-    .line 153
     .local v13, ss:Landroid/telephony/ServiceState;
     if-eqz v13, :cond_2
 
@@ -188,7 +169,6 @@
 
     move-result v11
 
-    .line 156
     :cond_2
     :try_start_0
     move-object/from16 v0, p0
@@ -232,13 +212,11 @@
 
     goto :goto_0
 
-    .line 166
     :catch_0
     move-exception v2
 
     goto :goto_0
 
-    .line 156
     :cond_3
     const/4 v10, 0x0
 
@@ -250,12 +228,10 @@
     .parameter "sender"
 
     .prologue
-    .line 105
     invoke-interface {p1}, Lcom/android/internal/telephony/Phone;->getSubscription()I
 
     move-result v0
 
-    .line 107
     .local v0, subscription:I
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimDefaultPhoneNotifier;->mMSimRegistry:Lcom/android/internal/telephony/ITelephonyRegistryMSim;
@@ -268,11 +244,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 113
     :goto_0
     return-void
 
-    .line 110
     :catch_0
     move-exception v1
 
@@ -284,18 +258,15 @@
     .parameter "sender"
 
     .prologue
-    .line 182
     invoke-interface {p1}, Lcom/android/internal/telephony/Phone;->getSubscription()I
 
     move-result v1
 
-    .line 183
     .local v1, subscription:I
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 184
     .local v0, data:Landroid/os/Bundle;
     invoke-interface {p1}, Lcom/android/internal/telephony/Phone;->getCellLocation()Landroid/telephony/CellLocation;
 
@@ -303,7 +274,6 @@
 
     invoke-virtual {v2, v0}, Landroid/telephony/CellLocation;->fillInNotifierBundle(Landroid/os/Bundle;)V
 
-    .line 186
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/telephony/msim/MSimDefaultPhoneNotifier;->mMSimRegistry:Lcom/android/internal/telephony/ITelephonyRegistryMSim;
 
@@ -311,11 +281,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 192
     :goto_0
     return-void
 
-    .line 189
     :catch_0
     move-exception v2
 
@@ -327,7 +295,6 @@
     .parameter "sender"
 
     .prologue
-    .line 118
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/telephony/msim/MSimDefaultPhoneNotifier;->mMSimRegistry:Lcom/android/internal/telephony/ITelephonyRegistryMSim;
 
@@ -343,11 +310,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 122
     :goto_0
     return-void
 
-    .line 119
     :catch_0
     move-exception v0
 
@@ -362,10 +327,8 @@
     .parameter "state"
 
     .prologue
-    .line 127
     invoke-virtual {p0, p1, p2, p3, p4}, Lcom/android/internal/telephony/msim/MSimDefaultPhoneNotifier;->doNotifyDataConnection(Lcom/android/internal/telephony/Phone;Ljava/lang/String;Ljava/lang/String;Lcom/android/internal/telephony/Phone$DataState;)V
 
-    .line 128
     return-void
 .end method
 
@@ -376,7 +339,6 @@
     .parameter "apnType"
 
     .prologue
-    .line 174
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/telephony/msim/MSimDefaultPhoneNotifier;->mMSimRegistry:Lcom/android/internal/telephony/ITelephonyRegistryMSim;
 
@@ -384,11 +346,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 178
     :goto_0
     return-void
 
-    .line 175
     :catch_0
     move-exception v0
 
@@ -400,12 +360,10 @@
     .parameter "sender"
 
     .prologue
-    .line 93
     invoke-interface {p1}, Lcom/android/internal/telephony/Phone;->getSubscription()I
 
     move-result v0
 
-    .line 95
     .local v0, subscription:I
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimDefaultPhoneNotifier;->mMSimRegistry:Lcom/android/internal/telephony/ITelephonyRegistryMSim;
@@ -418,11 +376,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 101
     :goto_0
     return-void
 
-    .line 98
     :catch_0
     move-exception v1
 
@@ -435,7 +391,6 @@
     .parameter "otaspMode"
 
     .prologue
-    .line 197
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/telephony/msim/MSimDefaultPhoneNotifier;->mMSimRegistry:Lcom/android/internal/telephony/ITelephonyRegistryMSim;
 
@@ -443,11 +398,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 201
     :goto_0
     return-void
 
-    .line 198
     :catch_0
     move-exception v0
 
@@ -459,22 +412,18 @@
     .parameter "sender"
 
     .prologue
-    .line 52
     invoke-interface {p1}, Lcom/android/internal/telephony/Phone;->getRingingCall()Lcom/android/internal/telephony/Call;
 
     move-result-object v1
 
-    .line 53
     .local v1, ringingCall:Lcom/android/internal/telephony/Call;
     invoke-interface {p1}, Lcom/android/internal/telephony/Phone;->getSubscription()I
 
     move-result v2
 
-    .line 54
     .local v2, subscription:I
     const-string v0, ""
 
-    .line 55
     .local v0, incomingNumber:Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -484,7 +433,6 @@
 
     if-eqz v3, :cond_0
 
-    .line 56
     invoke-virtual {v1}, Lcom/android/internal/telephony/Call;->getEarliestConnection()Lcom/android/internal/telephony/Connection;
 
     move-result-object v3
@@ -493,7 +441,6 @@
 
     move-result-object v0
 
-    .line 59
     :cond_0
     :try_start_0
     iget-object v3, p0, Lcom/android/internal/telephony/msim/MSimDefaultPhoneNotifier;->mMSimRegistry:Lcom/android/internal/telephony/ITelephonyRegistryMSim;
@@ -510,11 +457,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 64
     :goto_0
     return-void
 
-    .line 61
     :catch_0
     move-exception v3
 
@@ -526,32 +471,26 @@
     .parameter "sender"
 
     .prologue
-    .line 68
     invoke-interface {p1}, Lcom/android/internal/telephony/Phone;->getServiceState()Landroid/telephony/ServiceState;
 
     move-result-object v0
 
-    .line 69
     .local v0, ss:Landroid/telephony/ServiceState;
     invoke-interface {p1}, Lcom/android/internal/telephony/Phone;->getSubscription()I
 
     move-result v1
 
-    .line 70
     .local v1, subscription:I
     if-nez v0, :cond_0
 
-    .line 71
     new-instance v0, Landroid/telephony/ServiceState;
 
     .end local v0           #ss:Landroid/telephony/ServiceState;
     invoke-direct {v0}, Landroid/telephony/ServiceState;-><init>()V
 
-    .line 72
     .restart local v0       #ss:Landroid/telephony/ServiceState;
     invoke-virtual {v0}, Landroid/telephony/ServiceState;->setStateOutOfService()V
 
-    .line 75
     :cond_0
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/telephony/msim/MSimDefaultPhoneNotifier;->mMSimRegistry:Lcom/android/internal/telephony/ITelephonyRegistryMSim;
@@ -560,11 +499,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 79
     :goto_0
     return-void
 
-    .line 76
     :catch_0
     move-exception v2
 
@@ -576,12 +513,10 @@
     .parameter "sender"
 
     .prologue
-    .line 83
     invoke-interface {p1}, Lcom/android/internal/telephony/Phone;->getSubscription()I
 
     move-result v0
 
-    .line 85
     .local v0, subscription:I
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimDefaultPhoneNotifier;->mMSimRegistry:Lcom/android/internal/telephony/ITelephonyRegistryMSim;
@@ -594,11 +529,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 89
     :goto_0
     return-void
 
-    .line 86
     :catch_0
     move-exception v1
 

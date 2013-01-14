@@ -30,7 +30,6 @@
     .parameter
 
     .prologue
-    .line 1082
     iput-object p1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$MainHanler$2;->this$1:Lcom/android/server/accessibility/AccessibilityManagerService$MainHanler;
 
     iput-object p2, p0, Lcom/android/server/accessibility/AccessibilityManagerService$MainHanler$2;->val$service:Lcom/android/server/accessibility/AccessibilityManagerService$Service;
@@ -48,7 +47,6 @@
     .parameter "which"
 
     .prologue
-    .line 1086
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$MainHanler$2;->this$1:Lcom/android/server/accessibility/AccessibilityManagerService$MainHanler;
 
     iget-object v0, v0, Lcom/android/server/accessibility/AccessibilityManagerService$MainHanler;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
@@ -64,7 +62,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 1087
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$MainHanler$2;->this$1:Lcom/android/server/accessibility/AccessibilityManagerService$MainHanler;
 
     iget-object v0, v0, Lcom/android/server/accessibility/AccessibilityManagerService$MainHanler;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
@@ -83,7 +80,6 @@
     #calls: Lcom/android/server/accessibility/AccessibilityManagerService;->persistComponentNamesToSettingLocked(Ljava/lang/String;Ljava/util/Set;)V
     invoke-static {v0, v1, v2}, Lcom/android/server/accessibility/AccessibilityManagerService;->access$500(Lcom/android/server/accessibility/AccessibilityManagerService;Ljava/lang/String;Ljava/util/Set;)V
 
-    .line 1092
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$MainHanler$2;->this$1:Lcom/android/server/accessibility/AccessibilityManagerService$MainHanler;
 
     iget-object v0, v0, Lcom/android/server/accessibility/AccessibilityManagerService$MainHanler;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
@@ -100,6 +96,5 @@
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 1094
     return-void
 .end method

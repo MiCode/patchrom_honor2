@@ -92,7 +92,6 @@
 
     const/4 v3, 0x0
 
-    .line 36
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "PERSO_LOCKED"
@@ -101,7 +100,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->PERSO_LOCKED:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 37
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "CARD_IO_ERROR"
@@ -110,7 +108,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->CARD_IO_ERROR:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 38
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "DEACTIVED"
@@ -119,7 +116,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->DEACTIVED:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 39
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "SIM_NETWORK_SUBSET_LOCKED"
@@ -128,7 +124,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->SIM_NETWORK_SUBSET_LOCKED:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 40
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "SIM_CORPORATE_LOCKED"
@@ -137,7 +132,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->SIM_CORPORATE_LOCKED:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 41
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "SIM_SERVICE_PROVIDER_LOCKED"
@@ -148,7 +142,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->SIM_SERVICE_PROVIDER_LOCKED:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 42
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "SIM_SIM_LOCKED"
@@ -159,7 +152,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->SIM_SIM_LOCKED:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 43
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "RUIM_NETWORK1_LOCKED"
@@ -170,7 +162,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->RUIM_NETWORK1_LOCKED:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 44
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "RUIM_NETWORK2_LOCKED"
@@ -181,7 +172,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->RUIM_NETWORK2_LOCKED:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 45
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "RUIM_HRPD_LOCKED"
@@ -192,7 +182,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->RUIM_HRPD_LOCKED:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 46
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "RUIM_CORPORATE_LOCKED"
@@ -203,7 +192,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->RUIM_CORPORATE_LOCKED:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 47
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "RUIM_SERVICE_PROVIDER_LOCKED"
@@ -214,7 +202,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->RUIM_SERVICE_PROVIDER_LOCKED:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 48
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "RUIM_RUIM_LOCKED"
@@ -225,7 +212,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->RUIM_RUIM_LOCKED:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 49
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "SIM_NETWORK_LOCKED_PUK"
@@ -236,7 +222,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->SIM_NETWORK_LOCKED_PUK:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 50
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "SIM_NETWORK_SUBSET_LOCKED_PUK"
@@ -247,7 +232,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->SIM_NETWORK_SUBSET_LOCKED_PUK:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 51
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "SIM_CORPORATE_LOCKED_PUK"
@@ -258,7 +242,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->SIM_CORPORATE_LOCKED_PUK:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 53
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "SIM_SERVICE_PROVIDER_LOCKED_PUK"
@@ -269,7 +252,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->SIM_SERVICE_PROVIDER_LOCKED_PUK:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 54
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "UNKNOWN"
@@ -280,7 +262,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->UNKNOWN:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 55
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "ABSENT"
@@ -291,7 +272,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->ABSENT:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 56
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "PIN_REQUIRED"
@@ -302,7 +282,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->PIN_REQUIRED:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 57
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "PUK_REQUIRED"
@@ -313,7 +292,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->PUK_REQUIRED:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 58
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "NETWORK_LOCKED"
@@ -324,7 +302,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->NETWORK_LOCKED:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 59
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "READY"
@@ -335,7 +312,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->READY:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 60
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "NOT_READY"
@@ -346,7 +322,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->NOT_READY:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 61
     new-instance v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     const-string v1, "PERM_DISABLED"
@@ -357,7 +332,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->PERM_DISABLED:Lcom/huawei/internal/telephony/IccCardEx$State;
 
-    .line 35
     const/16 v0, 0x19
 
     new-array v0, v0, [Lcom/huawei/internal/telephony/IccCardEx$State;
@@ -518,7 +492,6 @@
     .end annotation
 
     .prologue
-    .line 35
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -529,7 +502,6 @@
     .parameter "obj"
 
     .prologue
-    .line 64
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -544,7 +516,6 @@
     .parameter "name"
 
     .prologue
-    .line 35
     const-class v0, Lcom/huawei/internal/telephony/IccCardEx$State;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -560,7 +531,6 @@
     .locals 1
 
     .prologue
-    .line 35
     sget-object v0, Lcom/huawei/internal/telephony/IccCardEx$State;->$VALUES:[Lcom/huawei/internal/telephony/IccCardEx$State;
 
     invoke-virtual {v0}, [Lcom/huawei/internal/telephony/IccCardEx$State;->clone()Ljava/lang/Object;

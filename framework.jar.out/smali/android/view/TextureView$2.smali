@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 349
     iput-object p1, p0, Landroid/view/TextureView$2;->this$0:Landroid/view/TextureView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .parameter "surfaceTexture"
 
     .prologue
-    .line 354
     iget-object v0, p0, Landroid/view/TextureView$2;->this$0:Landroid/view/TextureView;
 
     #getter for: Landroid/view/TextureView;->mLock:[Ljava/lang/Object;
@@ -52,7 +50,6 @@
 
     monitor-enter v1
 
-    .line 355
     :try_start_0
     iget-object v0, p0, Landroid/view/TextureView$2;->this$0:Landroid/view/TextureView;
 
@@ -61,12 +58,10 @@
     #setter for: Landroid/view/TextureView;->mUpdateLayer:Z
     invoke-static {v0, v2}, Landroid/view/TextureView;->access$202(Landroid/view/TextureView;Z)Z
 
-    .line 356
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 358
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -77,16 +72,13 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 359
     iget-object v0, p0, Landroid/view/TextureView$2;->this$0:Landroid/view/TextureView;
 
     invoke-virtual {v0}, Landroid/view/TextureView;->invalidate()V
 
-    .line 363
     :goto_0
     return-void
 
-    .line 356
     :catchall_0
     move-exception v0
 
@@ -97,7 +89,6 @@
 
     throw v0
 
-    .line 361
     :cond_0
     iget-object v0, p0, Landroid/view/TextureView$2;->this$0:Landroid/view/TextureView;
 

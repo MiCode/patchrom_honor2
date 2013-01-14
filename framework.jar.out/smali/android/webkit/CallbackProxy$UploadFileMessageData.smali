@@ -30,19 +30,14 @@
     .parameter "capture"
 
     .prologue
-    .line 1594
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1595
     iput-object p1, p0, Landroid/webkit/CallbackProxy$UploadFileMessageData;->mCallback:Landroid/webkit/CallbackProxy$UploadFile;
 
-    .line 1596
     iput-object p2, p0, Landroid/webkit/CallbackProxy$UploadFileMessageData;->mAcceptType:Ljava/lang/String;
 
-    .line 1597
     iput-object p3, p0, Landroid/webkit/CallbackProxy$UploadFileMessageData;->mCapture:Ljava/lang/String;
 
-    .line 1598
     return-void
 .end method
 
@@ -52,7 +47,6 @@
     .locals 1
 
     .prologue
-    .line 1605
     iget-object v0, p0, Landroid/webkit/CallbackProxy$UploadFileMessageData;->mAcceptType:Ljava/lang/String;
 
     return-object v0
@@ -62,7 +56,6 @@
     .locals 1
 
     .prologue
-    .line 1609
     iget-object v0, p0, Landroid/webkit/CallbackProxy$UploadFileMessageData;->mCapture:Ljava/lang/String;
 
     return-object v0
@@ -72,7 +65,6 @@
     .locals 1
 
     .prologue
-    .line 1601
     iget-object v0, p0, Landroid/webkit/CallbackProxy$UploadFileMessageData;->mCallback:Landroid/webkit/CallbackProxy$UploadFile;
 
     return-object v0

@@ -31,15 +31,12 @@
     .locals 7
 
     .prologue
-    .line 48
     const-string v4, "configuration"
 
     sput-object v4, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->TAG:Ljava/lang/String;
 
-    .line 51
     const/4 v2, 0x0
 
-    .line 53
     .local v2, is:Ljava/io/InputStream;
     :try_start_0
     sget-object v4, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->TAG:Ljava/lang/String;
@@ -48,12 +45,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 54
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyXMLParseContentHandler;
 
     invoke-direct {v0}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyXMLParseContentHandler;-><init>()V
 
-    .line 56
     .local v0, contentHandler:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyXMLParseContentHandler;
     new-instance v3, Ljava/io/FileInputStream;
 
@@ -71,7 +66,6 @@
     .catch Lorg/xml/sax/SAXException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_3
 
-    .line 58
     .end local v2           #is:Ljava/io/InputStream;
     .local v3, is:Ljava/io/InputStream;
     :try_start_1
@@ -79,42 +73,36 @@
 
     invoke-static {v3, v4, v0}, Landroid/util/Xml;->parse(Ljava/io/InputStream;Landroid/util/Xml$Encoding;Lorg/xml/sax/ContentHandler;)V
 
-    .line 59
     sget-object v4, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->TAG:Ljava/lang/String;
 
     const-string v5, "config xmlparse over"
 
     invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 60
     invoke-virtual {v0}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyXMLParseContentHandler;->getSpeakerCoefficients48000()[B
 
     move-result-object v4
 
     sput-object v4, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->speakerCoefficients48000:[B
 
-    .line 61
     invoke-virtual {v0}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyXMLParseContentHandler;->getSpeakerCoefficients44100()[B
 
     move-result-object v4
 
     sput-object v4, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->speakerCoefficients44100:[B
 
-    .line 62
     invoke-virtual {v0}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyXMLParseContentHandler;->getSpeakerCoefficients32000()[B
 
     move-result-object v4
 
     sput-object v4, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->speakerCoefficients32000:[B
 
-    .line 63
     invoke-virtual {v0}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyXMLParseContentHandler;->getSpeakerCoefficients24000()[B
 
     move-result-object v4
 
     sput-object v4, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->speakerCoefficients24000:[B
 
-    .line 64
     invoke-virtual {v0}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyXMLParseContentHandler;->getPresets()Ljava/util/Vector;
 
     move-result-object v4
@@ -125,10 +113,8 @@
     .catch Lorg/xml/sax/SAXException; {:try_start_1 .. :try_end_1} :catch_7
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_6
 
-    .line 77
     if-eqz v3, :cond_2
 
-    .line 79
     :try_start_2
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
     :try_end_2
@@ -136,7 +122,6 @@
 
     move-object v2, v3
 
-    .line 84
     .end local v0           #contentHandler:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyXMLParseContentHandler;
     .end local v3           #is:Ljava/io/InputStream;
     .restart local v2       #is:Ljava/io/InputStream;
@@ -144,7 +129,6 @@
     :goto_0
     return-void
 
-    .line 80
     .end local v2           #is:Ljava/io/InputStream;
     .restart local v0       #contentHandler:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyXMLParseContentHandler;
     .restart local v3       #is:Ljava/io/InputStream;
@@ -153,17 +137,14 @@
 
     move-object v2, v3
 
-    .line 81
     .end local v3           #is:Ljava/io/InputStream;
     .restart local v2       #is:Ljava/io/InputStream;
     goto :goto_0
 
-    .line 65
     .end local v0           #contentHandler:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyXMLParseContentHandler;
     :catch_1
     move-exception v1
 
-    .line 66
     .local v1, e:Lorg/xml/sax/SAXException;
     :goto_1
     :try_start_3
@@ -171,10 +152,8 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 77
     if-eqz v2, :cond_0
 
-    .line 79
     :try_start_4
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_4
@@ -182,18 +161,15 @@
 
     goto :goto_0
 
-    .line 80
     :catch_2
     move-exception v4
 
     goto :goto_0
 
-    .line 67
     .end local v1           #e:Lorg/xml/sax/SAXException;
     :catch_3
     move-exception v1
 
-    .line 68
     .local v1, e:Ljava/io/IOException;
     :goto_2
     :try_start_5
@@ -203,50 +179,42 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 70
     invoke-static {}, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->GetDefaultSpeakerCoefficients48000()[B
 
     move-result-object v4
 
     sput-object v4, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->speakerCoefficients48000:[B
 
-    .line 71
     invoke-static {}, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->GetDefaultSpeakerCoefficients44100()[B
 
     move-result-object v4
 
     sput-object v4, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->speakerCoefficients44100:[B
 
-    .line 72
     invoke-static {}, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->GetDefaultSpeakerCoefficients32000()[B
 
     move-result-object v4
 
     sput-object v4, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->speakerCoefficients32000:[B
 
-    .line 73
     invoke-static {}, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->GetDefaultSpeakerCoefficients24000()[B
 
     move-result-object v4
 
     sput-object v4, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->speakerCoefficients24000:[B
 
-    .line 74
     invoke-static {}, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->GetDefaultPresets()Ljava/util/Vector;
 
     move-result-object v4
 
     sput-object v4, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->presets:Ljava/util/Vector;
 
-    .line 75
     invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 77
     if-eqz v2, :cond_0
 
-    .line 79
     :try_start_6
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_6
@@ -254,13 +222,11 @@
 
     goto :goto_0
 
-    .line 80
     :catch_4
     move-exception v4
 
     goto :goto_0
 
-    .line 77
     .end local v1           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v4
@@ -268,24 +234,20 @@
     :goto_3
     if-eqz v2, :cond_1
 
-    .line 79
     :try_start_7
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_5
 
-    .line 81
     :cond_1
     :goto_4
     throw v4
 
-    .line 80
     :catch_5
     move-exception v5
 
     goto :goto_4
 
-    .line 77
     .end local v2           #is:Ljava/io/InputStream;
     .restart local v0       #contentHandler:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyXMLParseContentHandler;
     .restart local v3       #is:Ljava/io/InputStream;
@@ -298,7 +260,6 @@
     .restart local v2       #is:Ljava/io/InputStream;
     goto :goto_3
 
-    .line 67
     .end local v2           #is:Ljava/io/InputStream;
     .restart local v3       #is:Ljava/io/InputStream;
     :catch_6
@@ -310,7 +271,6 @@
     .restart local v2       #is:Ljava/io/InputStream;
     goto :goto_2
 
-    .line 65
     .end local v2           #is:Ljava/io/InputStream;
     .restart local v3       #is:Ljava/io/InputStream;
     :catch_7
@@ -336,7 +296,6 @@
     .locals 0
 
     .prologue
-    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -365,18 +324,15 @@
 
     const/4 v8, 0x3
 
-    .line 215
     new-instance v6, Ljava/util/Vector;
 
     invoke-direct {v6}, Ljava/util/Vector;-><init>()V
 
-    .line 218
     .local v6, presets:Ljava/util/Vector;,"Ljava/util/Vector<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;>;"
     new-instance v3, Ljava/util/HashMap;
 
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 220
     .local v3, allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -572,7 +528,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 260
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -751,7 +706,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 299
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Default"
@@ -764,13 +718,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 305
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 307
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -950,7 +902,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 345
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -1129,7 +1080,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 383
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "News"
@@ -1142,13 +1092,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 389
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 391
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -1328,7 +1276,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 429
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -1507,7 +1454,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 467
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Sports"
@@ -1520,13 +1466,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 469
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 471
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -1706,7 +1650,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 509
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -1885,7 +1828,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 547
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Drama"
@@ -1898,13 +1840,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 549
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 551
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -2084,7 +2024,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 589
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -2263,7 +2202,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 627
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Music video"
@@ -2276,13 +2214,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 629
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 631
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -2462,7 +2398,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 669
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -2641,7 +2576,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 707
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Movie"
@@ -2654,13 +2588,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 709
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 711
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -2840,7 +2772,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 749
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -3019,7 +2950,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 787
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Comedy"
@@ -3032,13 +2962,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 790
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 792
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -3218,7 +3146,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 830
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -3397,7 +3324,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 868
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Musical"
@@ -3410,13 +3336,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 871
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 873
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -3596,7 +3520,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 911
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -3775,7 +3698,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 949
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Animated"
@@ -3788,13 +3710,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 952
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 954
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -3974,7 +3894,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 992
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -4153,7 +4072,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1030
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Variety Show"
@@ -4166,13 +4084,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 1032
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 1034
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -4368,7 +4284,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1074
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -4547,7 +4462,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1112
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "speaker on"
@@ -4560,13 +4474,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 1117
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 1118
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -4738,7 +4650,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1155
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -4917,7 +4828,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1193
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Default"
@@ -4930,13 +4840,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 1198
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 1199
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -5092,7 +5000,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1232
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -5271,7 +5178,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1270
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Rock"
@@ -5284,13 +5190,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 1275
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 1276
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -5446,7 +5350,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1309
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -5625,7 +5528,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1348
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Jazz"
@@ -5638,13 +5540,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 1353
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 1354
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -5800,7 +5700,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1387
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -5979,7 +5878,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1426
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Pop"
@@ -5992,13 +5890,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 1432
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 1433
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -6178,7 +6074,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1470
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -6357,7 +6252,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1508
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Classical"
@@ -6370,13 +6264,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 1513
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 1514
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -6532,7 +6424,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1547
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -6711,7 +6602,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1585
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "R&B"
@@ -6724,13 +6614,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 1590
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 1591
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -6886,7 +6774,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1624
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -7065,7 +6952,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1662
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Hip Hop"
@@ -7078,13 +6964,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 1667
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 1668
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -7240,7 +7124,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1701
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -7419,7 +7302,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1739
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Blues"
@@ -7432,13 +7314,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 1744
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 1745
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -7594,7 +7474,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1778
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -7773,7 +7652,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1816
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Electronic"
@@ -7786,13 +7664,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 1821
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 1822
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -7948,7 +7824,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1855
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -8127,7 +8002,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1893
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Country"
@@ -8140,13 +8014,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 1898
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 1899
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -8302,7 +8174,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1932
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -8481,7 +8352,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1970
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Urban Contemporary"
@@ -8494,13 +8364,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 1975
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 1976
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -8656,7 +8524,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2009
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -8835,7 +8702,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2047
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Podcast"
@@ -8848,13 +8714,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 2052
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 2053
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -9010,7 +8874,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2086
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -9189,7 +9052,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2124
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Dance"
@@ -9202,13 +9064,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 2130
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 2131
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -9364,7 +9224,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2164
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -9543,7 +9402,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2202
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Latin American"
@@ -9556,13 +9414,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 2207
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 2208
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -9718,7 +9574,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2241
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -9897,7 +9752,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2279
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Jungle"
@@ -9910,13 +9764,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 2284
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 2285
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -10072,7 +9924,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2318
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -10251,7 +10102,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2356
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Metal"
@@ -10264,13 +10114,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 2361
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 2362
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -10426,7 +10274,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2395
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -10605,7 +10452,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2433
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "Flat"
@@ -10618,13 +10464,11 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 2439
     new-instance v3, Ljava/util/HashMap;
 
     .end local v3           #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    .line 2440
     .restart local v3       #allSettings:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
@@ -10820,7 +10664,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2481
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     new-instance v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -10999,7 +10842,6 @@
 
     invoke-virtual {v3, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2519
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     const-string v1, "speaker on"
@@ -11012,10 +10854,8 @@
 
     invoke-virtual {v6, v0}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 2521
     return-object v6
 
-    .line 220
     :array_0
     .array-data 0x4
         0xat 0x0t 0x0t 0x0t
@@ -11184,7 +11024,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 260
     :array_18
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -11339,7 +11178,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 307
     :array_2e
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
@@ -11494,7 +11332,6 @@
         0x0t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 345
     :array_44
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -11649,7 +11486,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 391
     :array_5a
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
@@ -11804,7 +11640,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 429
     :array_70
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -11959,7 +11794,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 471
     :array_86
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
@@ -12114,7 +11948,6 @@
         0x0t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 509
     :array_9c
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -12269,7 +12102,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 551
     :array_b2
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
@@ -12424,7 +12256,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 589
     :array_c8
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -12579,7 +12410,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 631
     :array_de
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
@@ -12734,7 +12564,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 669
     :array_f4
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -12889,7 +12718,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 711
     :array_10a
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
@@ -13044,7 +12872,6 @@
         0x0t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 749
     :array_120
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -13199,7 +13026,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 792
     :array_136
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
@@ -13354,7 +13180,6 @@
         0x0t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 830
     :array_14c
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -13509,7 +13334,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 873
     :array_162
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
@@ -13664,7 +13488,6 @@
         0x0t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 911
     :array_178
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -13819,7 +13642,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 954
     :array_18e
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
@@ -13974,7 +13796,6 @@
         0x0t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 992
     :array_1a4
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -14129,7 +13950,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1034
     :array_1ba
     .array-data 0x4
         0xat 0x0t 0x0t 0x0t
@@ -14298,7 +14118,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1074
     :array_1d2
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -14453,7 +14272,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1118
     :array_1e8
     .array-data 0x4
         0xat 0x0t 0x0t 0x0t
@@ -14601,7 +14419,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1155
     :array_1fd
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -14756,7 +14573,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1199
     :array_213
     .array-data 0x4
         0x6t 0x0t 0x0t 0x0t
@@ -14890,7 +14706,6 @@
         0x18t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1232
     :array_226
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -15045,7 +14860,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1276
     :array_23c
     .array-data 0x4
         0x6t 0x0t 0x0t 0x0t
@@ -15179,7 +14993,6 @@
         0x18t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1309
     :array_24f
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -15334,7 +15147,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1354
     :array_265
     .array-data 0x4
         0x6t 0x0t 0x0t 0x0t
@@ -15468,7 +15280,6 @@
         0x18t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1387
     :array_278
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -15623,7 +15434,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1433
     :array_28e
     .array-data 0x4
         0x6t 0x0t 0x0t 0x0t
@@ -15778,7 +15588,6 @@
         0x0t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1470
     :array_2a4
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -15933,7 +15742,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1514
     :array_2ba
     .array-data 0x4
         0x6t 0x0t 0x0t 0x0t
@@ -16067,7 +15875,6 @@
         0x18t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1547
     :array_2cd
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -16222,7 +16029,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1591
     :array_2e3
     .array-data 0x4
         0x6t 0x0t 0x0t 0x0t
@@ -16356,7 +16162,6 @@
         0x18t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1624
     :array_2f6
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -16511,7 +16316,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1668
     :array_30c
     .array-data 0x4
         0x6t 0x0t 0x0t 0x0t
@@ -16645,7 +16449,6 @@
         0x18t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1701
     :array_31f
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -16800,7 +16603,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1745
     :array_335
     .array-data 0x4
         0x6t 0x0t 0x0t 0x0t
@@ -16934,7 +16736,6 @@
         0x18t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1778
     :array_348
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -17089,7 +16890,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1822
     :array_35e
     .array-data 0x4
         0x6t 0x0t 0x0t 0x0t
@@ -17223,7 +17023,6 @@
         0x18t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1855
     :array_371
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -17378,7 +17177,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1899
     :array_387
     .array-data 0x4
         0x6t 0x0t 0x0t 0x0t
@@ -17512,7 +17310,6 @@
         0x18t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1932
     :array_39a
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -17667,7 +17464,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 1976
     :array_3b0
     .array-data 0x4
         0x6t 0x0t 0x0t 0x0t
@@ -17801,7 +17597,6 @@
         0x18t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 2009
     :array_3c3
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -17956,7 +17751,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 2053
     :array_3d9
     .array-data 0x4
         0x6t 0x0t 0x0t 0x0t
@@ -18090,7 +17884,6 @@
         0x18t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 2086
     :array_3ec
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -18245,7 +18038,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 2131
     :array_402
     .array-data 0x4
         0x6t 0x0t 0x0t 0x0t
@@ -18379,7 +18171,6 @@
         0x18t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 2164
     :array_415
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -18534,7 +18325,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 2208
     :array_42b
     .array-data 0x4
         0x6t 0x0t 0x0t 0x0t
@@ -18668,7 +18458,6 @@
         0x18t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 2241
     :array_43e
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -18823,7 +18612,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 2285
     :array_454
     .array-data 0x4
         0x6t 0x0t 0x0t 0x0t
@@ -18957,7 +18745,6 @@
         0x18t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 2318
     :array_467
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -19112,7 +18899,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 2362
     :array_47d
     .array-data 0x4
         0x6t 0x0t 0x0t 0x0t
@@ -19246,7 +19032,6 @@
         0x18t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 2395
     :array_490
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -19401,7 +19186,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 2440
     :array_4a6
     .array-data 0x4
         0xat 0x0t 0x0t 0x0t
@@ -19570,7 +19354,6 @@
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 2481
     :array_4be
     .array-data 0x4
         0xct 0x0t 0x0t 0x0t
@@ -19730,7 +19513,6 @@
     .locals 1
 
     .prologue
-    .line 143
     const/16 v0, 0x1c
 
     new-array v0, v0, [B
@@ -19776,7 +19558,6 @@
     .locals 1
 
     .prologue
-    .line 156
     const/16 v0, 0x1c
 
     new-array v0, v0, [B
@@ -19822,7 +19603,6 @@
     .locals 1
 
     .prologue
-    .line 167
     const/16 v0, 0x64
 
     new-array v0, v0, [B
@@ -19940,7 +19720,6 @@
     .locals 1
 
     .prologue
-    .line 193
     const/16 v0, 0x4c
 
     new-array v0, v0, [B
@@ -20043,12 +19822,10 @@
     .end annotation
 
     .prologue
-    .line 131
     new-instance v0, Ljava/util/Vector;
 
     invoke-direct {v0}, Ljava/util/Vector;-><init>()V
 
-    .line 133
     .local v0, presets:Ljava/util/Vector;,"Ljava/util/Vector<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;>;"
     return-object v0
 .end method
@@ -20066,7 +19843,6 @@
     .end annotation
 
     .prologue
-    .line 126
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->presets:Ljava/util/Vector;
 
     return-object v0
@@ -20076,7 +19852,6 @@
     .locals 1
 
     .prologue
-    .line 102
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->speakerCoefficients24000:[B
 
     return-object v0
@@ -20086,7 +19861,6 @@
     .locals 1
 
     .prologue
-    .line 109
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->speakerCoefficients32000:[B
 
     return-object v0
@@ -20096,7 +19870,6 @@
     .locals 1
 
     .prologue
-    .line 115
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->speakerCoefficients44100:[B
 
     return-object v0
@@ -20106,7 +19879,6 @@
     .locals 1
 
     .prologue
-    .line 122
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->speakerCoefficients48000:[B
 
     return-object v0
@@ -20117,6 +19889,5 @@
     .parameter "args"
 
     .prologue
-    .line 137
     return-void
 .end method

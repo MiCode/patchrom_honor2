@@ -25,7 +25,6 @@
     .locals 3
 
     .prologue
-    .line 33
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Class;
@@ -53,15 +52,12 @@
     .parameter "packageName"
 
     .prologue
-    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 37
     if-eqz p2, :cond_0
 
     if-nez p1, :cond_1
 
-    .line 38
     :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -71,14 +67,11 @@
 
     throw v0
 
-    .line 41
     :cond_1
     iput-object p1, p0, Landroid/widget/WidgetFactoryHuaWei;->mContext:Landroid/content/Context;
 
-    .line 42
     iput-object p2, p0, Landroid/widget/WidgetFactoryHuaWei;->mPackageName:Ljava/lang/String;
 
-    .line 43
     return-void
 .end method
 
@@ -93,7 +86,6 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 54
     const/4 v7, -0x1
 
     const-string v9, "."
@@ -106,11 +98,9 @@
 
     move-object v7, v8
 
-    .line 79
     :goto_0
     return-object v7
 
-    .line 68
     :cond_0
     :try_start_0
     iget-object v7, p0, Landroid/widget/WidgetFactoryHuaWei;->mContext:Landroid/content/Context;
@@ -123,19 +113,16 @@
 
     move-result-object v1
 
-    .line 69
     .local v1, c:Landroid/content/Context;
     invoke-virtual {v1}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v6
 
-    .line 70
     .local v6, loader:Ljava/lang/ClassLoader;
     invoke-virtual {v6, p1}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v2
 
-    .line 71
     .local v2, clazz:Ljava/lang/Class;,"Ljava/lang/Class<+Landroid/view/View;>;"
     sget-object v7, Landroid/widget/WidgetFactoryHuaWei;->mConstructorSignature:[Ljava/lang/Class;
 
@@ -143,7 +130,6 @@
 
     move-result-object v3
 
-    .line 72
     .local v3, constructor:Ljava/lang/reflect/Constructor;,"Ljava/lang/reflect/Constructor<+Landroid/view/View;>;"
     const/4 v7, 0x2
 
@@ -157,7 +143,6 @@
 
     aput-object p3, v0, v7
 
-    .line 73
     .local v0, args:[Ljava/lang/Object;
     invoke-virtual {v3, v0}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -170,7 +155,6 @@
 
     goto :goto_0
 
-    .line 74
     .end local v0           #args:[Ljava/lang/Object;
     .end local v1           #c:Landroid/content/Context;
     .end local v2           #clazz:Ljava/lang/Class;,"Ljava/lang/Class<+Landroid/view/View;>;"
@@ -179,7 +163,6 @@
     :catch_0
     move-exception v5
 
-    .line 75
     .local v5, e1:Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v7, "WidgetFactoryHuaWei"
 
@@ -187,7 +170,7 @@
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v10, "packageName is "
+    const-string v10, "packageName is "
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -221,15 +204,12 @@
 
     move-object v7, v8
 
-    .line 76
     goto :goto_0
 
-    .line 77
     .end local v5           #e1:Landroid/content/pm/PackageManager$NameNotFoundException;
     :catch_1
     move-exception v4
 
-    .line 78
     .local v4, e:Ljava/lang/Exception;
     const-string v7, "WidgetFactoryHuaWei"
 
@@ -269,6 +249,5 @@
 
     move-object v7, v8
 
-    .line 79
     goto :goto_0
 .end method

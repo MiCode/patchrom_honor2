@@ -16,10 +16,8 @@
     .locals 0
 
     .prologue
-    .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 23
     return-void
 .end method
 
@@ -29,7 +27,6 @@
     .parameter "call"
 
     .prologue
-    .line 30
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."

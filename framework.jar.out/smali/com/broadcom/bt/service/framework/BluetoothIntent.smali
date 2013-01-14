@@ -109,7 +109,6 @@
     .locals 1
 
     .prologue
-    .line 86
     const-string v0, "broadcom.android.bluetooth.intent.action."
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -125,7 +124,6 @@
     .locals 0
 
     .prologue
-    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

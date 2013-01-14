@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 564
     iput-object p1, p0, Lcom/android/server/pm/ShutdownThread$6;->this$0:Lcom/android/server/pm/ShutdownThread;
 
     invoke-direct {p0}, Landroid/os/storage/IMountShutdownObserver$Stub;-><init>()V
@@ -44,7 +43,6 @@
     .end annotation
 
     .prologue
-    .line 566
     const-string v0, "ShutdownThread"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -73,11 +71,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 567
     iget-object v0, p0, Lcom/android/server/pm/ShutdownThread$6;->this$0:Lcom/android/server/pm/ShutdownThread;
 
     invoke-virtual {v0}, Lcom/android/server/pm/ShutdownThread;->actionDone()V
 
-    .line 568
     return-void
 .end method

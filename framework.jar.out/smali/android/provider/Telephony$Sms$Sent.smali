@@ -29,7 +29,6 @@
     .locals 1
 
     .prologue
-    .line 495
     const-string v0, "content://sms/sent"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -45,7 +44,6 @@
     .locals 0
 
     .prologue
-    .line 491
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -60,7 +58,6 @@
     .parameter "date"
 
     .prologue
-    .line 515
     sget-object v1, Landroid/provider/Telephony$Sms$Sent;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v6, 0x1
@@ -102,7 +99,6 @@
     .parameter "subId"
 
     .prologue
-    .line 533
     sget-object v1, Landroid/provider/Telephony$Sms$Sent;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v6, 0x1
@@ -139,7 +135,6 @@
     .parameter "networkType"
 
     .prologue
-    .line 551
     sget-object v1, Landroid/provider/Telephony$Sms$Sent;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v6, 0x1

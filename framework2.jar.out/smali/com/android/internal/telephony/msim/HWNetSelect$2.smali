@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 377
     iput-object p1, p0, Lcom/android/internal/telephony/msim/HWNetSelect$2;->this$0:Lcom/android/internal/telephony/msim/HWNetSelect;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,16 +38,13 @@
     .parameter "msg"
 
     .prologue
-    .line 380
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 405
     :goto_0
     return-void
 
-    .line 382
     :pswitch_0
     iget-object v1, p0, Lcom/android/internal/telephony/msim/HWNetSelect$2;->this$0:Lcom/android/internal/telephony/msim/HWNetSelect;
 
@@ -61,14 +57,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 383
     const-string v1, "persist.radio.switchto.modem"
 
     const-string v2, "MODEM_CDMA"
 
     invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 384
     invoke-static {}, Lcom/huawei/telephony/HuaweiTelephonyManager;->getDefault()Lcom/huawei/telephony/HuaweiTelephonyManager;
 
     move-result-object v1
@@ -77,28 +71,24 @@
 
     invoke-virtual {v1, v2}, Lcom/huawei/telephony/HuaweiTelephonyManager;->setDualCardMode(I)Z
 
-    .line 385
     invoke-static {}, Lcom/android/internal/telephony/msim/SubscriptionManager;->getInstance()Lcom/android/internal/telephony/msim/SubscriptionManager;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/msim/SubscriptionManager;->clearCGIccid()V
 
-    .line 386
     invoke-static {}, Lcom/android/internal/telephony/msim/SubscriptionManager;->getInstance()Lcom/android/internal/telephony/msim/SubscriptionManager;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/msim/SubscriptionManager;->resetCardsSubsInfo()V
 
-    .line 388
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.MAIN"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 389
     .local v0, setSubscriptionIntent:Landroid/content/Intent;
     invoke-static {}, Lcom/android/internal/telephony/msim/HWNetSelect;->access$200()Z
 
@@ -106,34 +96,29 @@
 
     if-eqz v1, :cond_0
 
-    .line 390
     const-string v1, "com.huawei.android.dsdscardmanager"
 
     const-string v2, "com.huawei.android.dsdscardmanager.HWCardManagerTabActivity"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 394
     :goto_1
     const/high16 v1, 0x3000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 395
     const-string v1, "dualmgrstartcause"
 
     const-string v2, "framework"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 396
     const-string v1, "ccardchanged"
 
     const-string v2, "true"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 397
     iget-object v1, p0, Lcom/android/internal/telephony/msim/HWNetSelect$2;->this$0:Lcom/android/internal/telephony/msim/HWNetSelect;
 
     #getter for: Lcom/android/internal/telephony/msim/HWNetSelect;->mContext:Landroid/content/Context;
@@ -143,7 +128,6 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 402
     invoke-static {}, Lcom/android/internal/telephony/msim/SubscriptionManager;->getInstance()Lcom/android/internal/telephony/msim/SubscriptionManager;
 
     move-result-object v1
@@ -154,7 +138,6 @@
 
     goto :goto_0
 
-    .line 392
     :cond_0
     const-string v1, "com.huawei.android.dsdscardmanager"
 
@@ -164,7 +147,6 @@
 
     goto :goto_1
 
-    .line 380
     nop
 
     :pswitch_data_0

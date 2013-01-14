@@ -48,7 +48,6 @@
 
     const/4 v2, 0x0
 
-    .line 46
     new-instance v0, Lcom/android/internal/telephony/DataProfile$DataProfileType;
 
     const-string v1, "PROFILE_TYPE_APN"
@@ -57,7 +56,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/DataProfile$DataProfileType;->PROFILE_TYPE_APN:Lcom/android/internal/telephony/DataProfile$DataProfileType;
 
-    .line 47
     new-instance v0, Lcom/android/internal/telephony/DataProfile$DataProfileType;
 
     const-string v1, "PROFILE_TYPE_CDMA"
@@ -66,7 +64,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/DataProfile$DataProfileType;->PROFILE_TYPE_CDMA:Lcom/android/internal/telephony/DataProfile$DataProfileType;
 
-    .line 48
     new-instance v0, Lcom/android/internal/telephony/DataProfile$DataProfileType;
 
     const-string v1, "PROFILE_TYPE_OMH"
@@ -75,7 +72,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/DataProfile$DataProfileType;->PROFILE_TYPE_OMH:Lcom/android/internal/telephony/DataProfile$DataProfileType;
 
-    .line 45
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/internal/telephony/DataProfile$DataProfileType;
@@ -109,13 +105,10 @@
     .end annotation
 
     .prologue
-    .line 52
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 53
     iput p3, p0, Lcom/android/internal/telephony/DataProfile$DataProfileType;->id:I
 
-    .line 54
     return-void
 .end method
 
@@ -124,7 +117,6 @@
     .parameter "name"
 
     .prologue
-    .line 45
     const-class v0, Lcom/android/internal/telephony/DataProfile$DataProfileType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -140,7 +132,6 @@
     .locals 1
 
     .prologue
-    .line 45
     sget-object v0, Lcom/android/internal/telephony/DataProfile$DataProfileType;->$VALUES:[Lcom/android/internal/telephony/DataProfile$DataProfileType;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/DataProfile$DataProfileType;->clone()Ljava/lang/Object;
@@ -158,7 +149,6 @@
     .locals 1
 
     .prologue
-    .line 57
     iget v0, p0, Lcom/android/internal/telephony/DataProfile$DataProfileType;->id:I
 
     return v0

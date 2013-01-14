@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -25,9 +24,7 @@
     .end annotation
 
     .prologue
-    .line 41
     invoke-interface {p0, p1}, Landroid/os/storage/IMountService;->switchParamInit(Ljava/lang/String;)V
 
-    .line 42
     return-void
 .end method

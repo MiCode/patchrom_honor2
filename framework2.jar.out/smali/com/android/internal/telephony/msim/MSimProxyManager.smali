@@ -38,27 +38,20 @@
     .parameter "ci"
 
     .prologue
-    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 72
     const-string v0, "Constructor - Enter"
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/msim/MSimProxyManager;->logd(Ljava/lang/String;)V
 
-    .line 74
     iput-object p1, p0, Lcom/android/internal/telephony/msim/MSimProxyManager;->mContext:Landroid/content/Context;
 
-    .line 75
     iput-object p2, p0, Lcom/android/internal/telephony/msim/MSimProxyManager;->mProxyPhones:[Lcom/android/internal/telephony/Phone;
 
-    .line 76
     iput-object p3, p0, Lcom/android/internal/telephony/msim/MSimProxyManager;->mUiccManager:Lcom/android/internal/telephony/UiccManager;
 
-    .line 77
     iput-object p4, p0, Lcom/android/internal/telephony/msim/MSimProxyManager;->mCi:[Lcom/android/internal/telephony/CommandsInterface;
 
-    .line 79
     new-instance v0, Lcom/android/internal/telephony/msim/MSimIccPhoneBookInterfaceManagerProxy;
 
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimProxyManager;->mProxyPhones:[Lcom/android/internal/telephony/Phone;
@@ -67,7 +60,6 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/msim/MSimProxyManager;->mMSimIccPhoneBookInterfaceManagerProxy:Lcom/android/internal/telephony/msim/MSimIccPhoneBookInterfaceManagerProxy;
 
-    .line 81
     new-instance v0, Lcom/android/internal/telephony/msim/MSimPhoneSubInfoProxy;
 
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimProxyManager;->mProxyPhones:[Lcom/android/internal/telephony/Phone;
@@ -76,7 +68,6 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/msim/MSimProxyManager;->mMSimPhoneSubInfoProxy:Lcom/android/internal/telephony/msim/MSimPhoneSubInfoProxy;
 
-    .line 82
     new-instance v0, Lcom/android/internal/telephony/msim/MSimIccSmsInterfaceManager;
 
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimProxyManager;->mProxyPhones:[Lcom/android/internal/telephony/Phone;
@@ -85,26 +76,22 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/msim/MSimProxyManager;->mMSimIccSmsInterfaceManager:Lcom/android/internal/telephony/msim/MSimIccSmsInterfaceManager;
 
-    .line 83
     invoke-static {p1, p3, p4}, Lcom/android/internal/telephony/msim/CardSubscriptionManager;->getInstance(Landroid/content/Context;Lcom/android/internal/telephony/UiccManager;[Lcom/android/internal/telephony/CommandsInterface;)Lcom/android/internal/telephony/msim/CardSubscriptionManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/msim/MSimProxyManager;->mCardSubscriptionManager:Lcom/android/internal/telephony/msim/CardSubscriptionManager;
 
-    .line 84
     invoke-static {p1, p3, p4}, Lcom/android/internal/telephony/msim/SubscriptionManager;->getInstance(Landroid/content/Context;Lcom/android/internal/telephony/UiccManager;[Lcom/android/internal/telephony/CommandsInterface;)Lcom/android/internal/telephony/msim/SubscriptionManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/msim/MSimProxyManager;->mSubscriptionManager:Lcom/android/internal/telephony/msim/SubscriptionManager;
 
-    .line 86
     const-string v0, "Constructor - Exit"
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/msim/MSimProxyManager;->logd(Ljava/lang/String;)V
 
-    .line 87
     return-void
 .end method
 
@@ -112,7 +99,6 @@
     .locals 1
 
     .prologue
-    .line 67
     sget-object v0, Lcom/android/internal/telephony/msim/MSimProxyManager;->sMSimProxyManager:Lcom/android/internal/telephony/msim/MSimProxyManager;
 
     return-object v0
@@ -126,19 +112,16 @@
     .parameter "ci"
 
     .prologue
-    .line 60
     sget-object v0, Lcom/android/internal/telephony/msim/MSimProxyManager;->sMSimProxyManager:Lcom/android/internal/telephony/msim/MSimProxyManager;
 
     if-nez v0, :cond_0
 
-    .line 61
     new-instance v0, Lcom/android/internal/telephony/msim/MSimProxyManager;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/android/internal/telephony/msim/MSimProxyManager;-><init>(Landroid/content/Context;[Lcom/android/internal/telephony/Phone;Lcom/android/internal/telephony/UiccManager;[Lcom/android/internal/telephony/CommandsInterface;)V
 
     sput-object v0, Lcom/android/internal/telephony/msim/MSimProxyManager;->sMSimProxyManager:Lcom/android/internal/telephony/msim/MSimProxyManager;
 
-    .line 63
     :cond_0
     sget-object v0, Lcom/android/internal/telephony/msim/MSimProxyManager;->sMSimProxyManager:Lcom/android/internal/telephony/msim/MSimProxyManager;
 
@@ -150,12 +133,10 @@
     .parameter "string"
 
     .prologue
-    .line 122
     const-string v0, "PROXY"
 
     invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 123
     return-void
 .end method
 
@@ -166,10 +147,8 @@
     .parameter "userSub"
 
     .prologue
-    .line 107
     iget v0, p1, Lcom/android/internal/telephony/msim/Subscription;->subId:I
 
-    .line 108
     .local v0, subId:I
     iget-object v1, p1, Lcom/android/internal/telephony/msim/Subscription;->appType:Ljava/lang/String;
 
@@ -208,12 +187,10 @@
 
     if-nez v1, :cond_2
 
-    .line 111
     const-string v1, "gets New GSM phone"
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/msim/MSimProxyManager;->logd(Ljava/lang/String;)V
 
-    .line 112
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimProxyManager;->mProxyPhones:[Lcom/android/internal/telephony/Phone;
 
     aget-object v1, v1, v0
@@ -224,12 +201,10 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/telephony/PhoneProxy;->updatePhoneObject(I)V
 
-    .line 119
     :cond_1
     :goto_0
     return-void
 
-    .line 113
     :cond_2
     iget-object v1, p1, Lcom/android/internal/telephony/msim/Subscription;->appType:Ljava/lang/String;
 
@@ -268,12 +243,10 @@
 
     if-nez v1, :cond_1
 
-    .line 116
     const-string v1, "gets New CDMA phone"
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/msim/MSimProxyManager;->logd(Ljava/lang/String;)V
 
-    .line 117
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimProxyManager;->mProxyPhones:[Lcom/android/internal/telephony/Phone;
 
     aget-object v1, v1, v0
@@ -293,7 +266,6 @@
     .parameter "dataCleanedUpMsg"
 
     .prologue
-    .line 99
     iget-object v0, p0, Lcom/android/internal/telephony/msim/MSimProxyManager;->mProxyPhones:[Lcom/android/internal/telephony/Phone;
 
     aget-object v0, v0, p1
@@ -304,7 +276,6 @@
 
     invoke-virtual {v0, v1, p2}, Lcom/android/internal/telephony/msim/MSimPhoneProxy;->setInternalDataEnabled(ZLandroid/os/Message;)V
 
-    .line 100
     return-void
 .end method
 
@@ -313,7 +284,6 @@
     .parameter "sub"
 
     .prologue
-    .line 94
     iget-object v0, p0, Lcom/android/internal/telephony/msim/MSimProxyManager;->mProxyPhones:[Lcom/android/internal/telephony/Phone;
 
     aget-object v0, v0, p1
@@ -324,7 +294,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/msim/MSimPhoneProxy;->setInternalDataEnabled(Z)V
 
-    .line 95
     return-void
 .end method
 
@@ -336,7 +305,6 @@
     .parameter "obj"
 
     .prologue
-    .line 126
     iget-object v0, p0, Lcom/android/internal/telephony/msim/MSimProxyManager;->mProxyPhones:[Lcom/android/internal/telephony/Phone;
 
     aget-object v0, v0, p1
@@ -345,7 +313,6 @@
 
     invoke-virtual {v0, p2, p3, p4}, Lcom/android/internal/telephony/msim/MSimPhoneProxy;->registerForAllDataDisconnected(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 127
     return-void
 .end method
 
@@ -354,7 +321,6 @@
     .parameter "sub"
 
     .prologue
-    .line 103
     iget-object v0, p0, Lcom/android/internal/telephony/msim/MSimProxyManager;->mProxyPhones:[Lcom/android/internal/telephony/Phone;
 
     aget-object v0, v0, p1
@@ -363,7 +329,6 @@
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/msim/MSimPhoneProxy;->updateCurrentCarrierInProvider()Z
 
-    .line 104
     return-void
 .end method
 
@@ -372,7 +337,6 @@
     .parameter "sub"
 
     .prologue
-    .line 90
     iget-object v0, p0, Lcom/android/internal/telephony/msim/MSimProxyManager;->mProxyPhones:[Lcom/android/internal/telephony/Phone;
 
     aget-object v0, v0, p1
@@ -381,6 +345,5 @@
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/msim/MSimPhoneProxy;->updateDataConnectionTracker()V
 
-    .line 91
     return-void
 .end method

@@ -40,7 +40,6 @@
 
     const/4 v2, 0x0
 
-    .line 234
     new-instance v0, Lcom/android/internal/telephony/msim/SubscriptionManager$SubscriptionId;
 
     const-string v1, "SUB1"
@@ -49,7 +48,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/msim/SubscriptionManager$SubscriptionId;->SUB1:Lcom/android/internal/telephony/msim/SubscriptionManager$SubscriptionId;
 
-    .line 235
     new-instance v0, Lcom/android/internal/telephony/msim/SubscriptionManager$SubscriptionId;
 
     const-string v1, "SUB2"
@@ -58,7 +56,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/msim/SubscriptionManager$SubscriptionId;->SUB2:Lcom/android/internal/telephony/msim/SubscriptionManager$SubscriptionId;
 
-    .line 233
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/android/internal/telephony/msim/SubscriptionManager$SubscriptionId;
@@ -87,7 +84,6 @@
     .end annotation
 
     .prologue
-    .line 233
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -98,7 +94,6 @@
     .parameter "name"
 
     .prologue
-    .line 233
     const-class v0, Lcom/android/internal/telephony/msim/SubscriptionManager$SubscriptionId;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -114,7 +109,6 @@
     .locals 1
 
     .prologue
-    .line 233
     sget-object v0, Lcom/android/internal/telephony/msim/SubscriptionManager$SubscriptionId;->$VALUES:[Lcom/android/internal/telephony/msim/SubscriptionManager$SubscriptionId;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/msim/SubscriptionManager$SubscriptionId;->clone()Ljava/lang/Object;

@@ -79,14 +79,12 @@
     .locals 1
 
     .prologue
-    .line 64
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/content/res/AssetManager;->sSync:Ljava/lang/Object;
 
-    .line 65
     const/4 v0, 0x0
 
     sput-object v0, Landroid/content/res/AssetManager;->sSystem:Landroid/content/res/AssetManager;
@@ -187,7 +185,6 @@
     .parameter "x1"
 
     .prologue
-    .line 35
     invoke-direct {p0, p1}, Landroid/content/res/AssetManager;->getAssetLength(I)J
 
     move-result-wide v0
@@ -201,7 +198,6 @@
     .parameter "x1"
 
     .prologue
-    .line 35
     invoke-direct {p0, p1}, Landroid/content/res/AssetManager;->readAssetChar(I)I
 
     move-result v0
@@ -215,7 +211,6 @@
     .parameter "x1"
 
     .prologue
-    .line 35
     invoke-direct {p0, p1}, Landroid/content/res/AssetManager;->getAssetRemainingLength(I)J
 
     move-result-wide v0
@@ -229,7 +224,6 @@
     .parameter "x1"
 
     .prologue
-    .line 35
     invoke-direct {p0, p1}, Landroid/content/res/AssetManager;->destroyAsset(I)V
 
     return-void
@@ -241,7 +235,6 @@
     .parameter "x1"
 
     .prologue
-    .line 35
     invoke-direct {p0, p1}, Landroid/content/res/AssetManager;->decRefsLocked(I)V
 
     return-void
@@ -255,7 +248,6 @@
     .parameter "x3"
 
     .prologue
-    .line 35
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/content/res/AssetManager;->seekAsset(IJI)J
 
     move-result-wide v0
@@ -272,7 +264,6 @@
     .parameter "x4"
 
     .prologue
-    .line 35
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/content/res/AssetManager;->readAsset(I[BII)I
 
     move-result v0
@@ -294,22 +285,18 @@
     .parameter "id"
 
     .prologue
-    .line 763
     iget v0, p0, Landroid/content/res/AssetManager;->mNumRefs:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Landroid/content/res/AssetManager;->mNumRefs:I
 
-    .line 766
     iget v0, p0, Landroid/content/res/AssetManager;->mNumRefs:I
 
     if-nez v0, :cond_0
 
-    .line 767
     invoke-direct {p0}, Landroid/content/res/AssetManager;->destroy()V
 
-    .line 769
     :cond_0
     return-void
 .end method
@@ -330,41 +317,33 @@
     .locals 3
 
     .prologue
-    .line 100
     sget-object v2, Landroid/content/res/AssetManager;->sSync:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 101
     :try_start_0
     sget-object v1, Landroid/content/res/AssetManager;->sSystem:Landroid/content/res/AssetManager;
 
     if-nez v1, :cond_0
 
-    .line 102
     new-instance v0, Landroid/content/res/AssetManager;
 
     const/4 v1, 0x1
 
     invoke-direct {v0, v1}, Landroid/content/res/AssetManager;-><init>(Z)V
 
-    .line 103
     .local v0, system:Landroid/content/res/AssetManager;
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/content/res/AssetManager;->makeStringBlocks(Z)V
 
-    .line 104
     sput-object v0, Landroid/content/res/AssetManager;->sSystem:Landroid/content/res/AssetManager;
 
-    .line 106
     :cond_0
     monitor-exit v2
 
-    .line 107
     return-void
 
-    .line 106
     :catchall_0
     move-exception v1
 
@@ -406,10 +385,8 @@
     .locals 1
 
     .prologue
-    .line 126
     invoke-static {}, Landroid/content/res/AssetManager;->ensureSystemAssets()V
 
-    .line 127
     sget-object v0, Landroid/content/res/AssetManager;->sSystem:Landroid/content/res/AssetManager;
 
     return-object v0
@@ -420,14 +397,12 @@
     .parameter "id"
 
     .prologue
-    .line 756
     iget v0, p0, Landroid/content/res/AssetManager;->mNumRefs:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Landroid/content/res/AssetManager;->mNumRefs:I
 
-    .line 757
     return-void
 .end method
 
@@ -490,23 +465,18 @@
     .parameter "paths"
 
     .prologue
-    .line 615
     if-nez p1, :cond_1
 
-    .line 616
     const/4 v0, 0x0
 
-    .line 624
     :cond_0
     return-object v0
 
-    .line 619
     :cond_1
     array-length v2, p1
 
     new-array v0, v2, [I
 
-    .line 620
     .local v0, cookies:[I
     const/4 v1, 0x0
 
@@ -516,7 +486,6 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 621
     aget-object v2, p1, v1
 
     invoke-virtual {p0, v2}, Landroid/content/res/AssetManager;->addAssetPath(Ljava/lang/String;)I
@@ -525,7 +494,6 @@
 
     aput v2, v0, v1
 
-    .line 620
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
@@ -535,35 +503,28 @@
     .locals 1
 
     .prologue
-    .line 134
     monitor-enter p0
 
-    .line 137
     :try_start_0
     iget-boolean v0, p0, Landroid/content/res/AssetManager;->mOpen:Z
 
     if-eqz v0, :cond_0
 
-    .line 138
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/content/res/AssetManager;->mOpen:Z
 
-    .line 139
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
     invoke-direct {p0, v0}, Landroid/content/res/AssetManager;->decRefsLocked(I)V
 
-    .line 141
     :cond_0
     monitor-exit p0
 
-    .line 142
     return-void
 
-    .line 141
     :catchall_0
     move-exception v0
 
@@ -578,16 +539,13 @@
     .locals 3
 
     .prologue
-    .line 504
     monitor-enter p0
 
-    .line 505
     :try_start_0
     iget-boolean v1, p0, Landroid/content/res/AssetManager;->mOpen:Z
 
     if-nez v1, :cond_0
 
-    .line 506
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Assetmanager has been closed"
@@ -596,7 +554,6 @@
 
     throw v1
 
-    .line 511
     :catchall_0
     move-exception v1
 
@@ -606,18 +563,15 @@
 
     throw v1
 
-    .line 508
     :cond_0
     :try_start_1
     invoke-direct {p0}, Landroid/content/res/AssetManager;->newTheme()I
 
     move-result v0
 
-    .line 509
     .local v0, res:I
     invoke-direct {p0, v0}, Landroid/content/res/AssetManager;->incRefsLocked(I)V
 
-    .line 510
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -629,34 +583,27 @@
     .locals 1
 
     .prologue
-    .line 246
     iget-object v0, p0, Landroid/content/res/AssetManager;->mStringBlocks:[Landroid/content/res/StringBlock;
 
     if-nez v0, :cond_1
 
-    .line 247
     monitor-enter p0
 
-    .line 248
     :try_start_0
     iget-object v0, p0, Landroid/content/res/AssetManager;->mStringBlocks:[Landroid/content/res/StringBlock;
 
     if-nez v0, :cond_0
 
-    .line 249
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Landroid/content/res/AssetManager;->makeStringBlocks(Z)V
 
-    .line 251
     :cond_0
     monitor-exit p0
 
-    .line 253
     :cond_1
     return-void
 
-    .line 251
     :catchall_0
     move-exception v0
 
@@ -676,19 +623,15 @@
     .end annotation
 
     .prologue
-    .line 532
     :try_start_0
     invoke-direct {p0}, Landroid/content/res/AssetManager;->destroy()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 534
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 536
     return-void
 
-    .line 534
     :catchall_0
     move-exception v0
 
@@ -715,7 +658,6 @@
     .parameter "id"
 
     .prologue
-    .line 274
     iget-object v0, p0, Landroid/content/res/AssetManager;->mStringBlocks:[Landroid/content/res/StringBlock;
 
     add-int/lit8 v1, p1, -0x1
@@ -735,14 +677,11 @@
     .parameter "bagEntryId"
 
     .prologue
-    .line 167
     monitor-enter p0
 
-    .line 168
     :try_start_0
     iget-object v1, p0, Landroid/content/res/AssetManager;->mValue:Landroid/util/TypedValue;
 
-    .line 169
     .local v1, tmpValue:Landroid/util/TypedValue;
     const/4 v2, 0x1
 
@@ -750,18 +689,15 @@
 
     move-result v0
 
-    .line 170
     .local v0, block:I
     if-ltz v0, :cond_1
 
-    .line 171
     iget v2, v1, Landroid/util/TypedValue;->type:I
 
     const/4 v3, 0x3
 
     if-ne v2, v3, :cond_0
 
-    .line 172
     iget-object v2, p0, Landroid/content/res/AssetManager;->mStringBlocks:[Landroid/content/res/StringBlock;
 
     aget-object v2, v2, v0
@@ -774,11 +710,9 @@
 
     monitor-exit p0
 
-    .line 177
     :goto_0
     return-object v2
 
-    .line 174
     :cond_0
     invoke-virtual {v1}, Landroid/util/TypedValue;->coerceToString()Ljava/lang/CharSequence;
 
@@ -788,7 +722,6 @@
 
     goto :goto_0
 
-    .line 176
     .end local v0           #block:I
     .end local v1           #tmpValue:Landroid/util/TypedValue;
     :catchall_0
@@ -808,7 +741,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 177
     const/4 v2, 0x0
 
     goto :goto_0
@@ -831,12 +763,10 @@
     .parameter "id"
 
     .prologue
-    .line 186
     invoke-direct {p0, p1}, Landroid/content/res/AssetManager;->getArrayStringResource(I)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 187
     .local v0, retArray:[Ljava/lang/String;
     return-object v0
 .end method
@@ -846,14 +776,11 @@
     .parameter "ident"
 
     .prologue
-    .line 149
     monitor-enter p0
 
-    .line 150
     :try_start_0
     iget-object v1, p0, Landroid/content/res/AssetManager;->mValue:Landroid/util/TypedValue;
 
-    .line 151
     .local v1, tmpValue:Landroid/util/TypedValue;
     const/4 v2, 0x0
 
@@ -863,18 +790,15 @@
 
     move-result v0
 
-    .line 152
     .local v0, block:I
     if-ltz v0, :cond_1
 
-    .line 153
     iget v2, v1, Landroid/util/TypedValue;->type:I
 
     const/4 v3, 0x3
 
     if-ne v2, v3, :cond_0
 
-    .line 154
     iget-object v2, p0, Landroid/content/res/AssetManager;->mStringBlocks:[Landroid/content/res/StringBlock;
 
     aget-object v2, v2, v0
@@ -887,11 +811,9 @@
 
     monitor-exit p0
 
-    .line 159
     :goto_0
     return-object v2
 
-    .line 156
     :cond_0
     invoke-virtual {v1}, Landroid/util/TypedValue;->coerceToString()Ljava/lang/CharSequence;
 
@@ -901,7 +823,6 @@
 
     goto :goto_0
 
-    .line 158
     .end local v0           #block:I
     .end local v1           #tmpValue:Landroid/util/TypedValue;
     :catchall_0
@@ -921,7 +842,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 159
     const/4 v2, 0x0
 
     goto :goto_0
@@ -932,24 +852,19 @@
     .parameter "id"
 
     .prologue
-    .line 213
     invoke-direct {p0, p1}, Landroid/content/res/AssetManager;->getArrayStringInfo(I)[I
 
     move-result-object v5
 
-    .line 214
     .local v5, rawInfoArray:[I
     array-length v6, v5
 
-    .line 215
     .local v6, rawInfoArrayLen:I
     div-int/lit8 v3, v6, 0x2
 
-    .line 218
     .local v3, infoArrayLen:I
     new-array v7, v3, [Ljava/lang/CharSequence;
 
-    .line 219
     .local v7, retArray:[Ljava/lang/CharSequence;
     const/4 v1, 0x0
 
@@ -960,16 +875,13 @@
     :goto_0
     if-ge v1, v6, :cond_1
 
-    .line 220
     aget v0, v5, v1
 
-    .line 221
     .local v0, block:I
     add-int/lit8 v8, v1, 0x1
 
     aget v2, v5, v8
 
-    .line 222
     .local v2, index:I
     if-ltz v2, :cond_0
 
@@ -984,20 +896,17 @@
     :goto_1
     aput-object v8, v7, v4
 
-    .line 219
     add-int/lit8 v1, v1, 0x2
 
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 222
     :cond_0
     const/4 v8, 0x0
 
     goto :goto_1
 
-    .line 224
     .end local v0           #block:I
     .end local v2           #index:I
     :cond_1
@@ -1017,29 +926,24 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 196
     int-to-short v2, p2
 
     invoke-direct {p0, p1, v2, p3, p4}, Landroid/content/res/AssetManager;->loadResourceValue(ISLandroid/util/TypedValue;Z)I
 
     move-result v0
 
-    .line 197
     .local v0, block:I
     if-ltz v0, :cond_1
 
-    .line 198
     iget v2, p3, Landroid/util/TypedValue;->type:I
 
     const/4 v3, 0x3
 
     if-eq v2, v3, :cond_0
 
-    .line 204
     :goto_0
     return v1
 
-    .line 201
     :cond_0
     iget-object v2, p0, Landroid/content/res/AssetManager;->mStringBlocks:[Landroid/content/res/StringBlock;
 
@@ -1055,7 +959,6 @@
 
     goto :goto_0
 
-    .line 204
     :cond_1
     const/4 v1, 0x0
 
@@ -1072,41 +975,32 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 229
     invoke-static {p1, p2, p3, p4}, Landroid/content/res/AssetManager;->loadThemeAttributeValue(IILandroid/util/TypedValue;Z)I
 
     move-result v0
 
-    .line 230
     .local v0, block:I
     if-ltz v0, :cond_2
 
-    .line 231
     iget v3, p3, Landroid/util/TypedValue;->type:I
 
     const/4 v4, 0x3
 
     if-eq v3, v4, :cond_0
 
-    .line 242
     :goto_0
     return v2
 
-    .line 234
     :cond_0
     iget-object v1, p0, Landroid/content/res/AssetManager;->mStringBlocks:[Landroid/content/res/StringBlock;
 
-    .line 235
     .local v1, blocks:[Landroid/content/res/StringBlock;
     if-nez v1, :cond_1
 
-    .line 236
     invoke-virtual {p0}, Landroid/content/res/AssetManager;->ensureStringBlocks()V
 
-    .line 237
     iget-object v1, p0, Landroid/content/res/AssetManager;->mStringBlocks:[Landroid/content/res/StringBlock;
 
-    .line 239
     :cond_1
     aget-object v3, v1, v0
 
@@ -1120,7 +1014,6 @@
 
     goto :goto_0
 
-    .line 242
     .end local v1           #blocks:[Landroid/content/res/StringBlock;
     :cond_2
     const/4 v2, 0x0
@@ -1144,7 +1037,6 @@
     .parameter "copyFromSystem"
 
     .prologue
-    .line 256
     if-eqz p1, :cond_0
 
     sget-object v3, Landroid/content/res/AssetManager;->sSystem:Landroid/content/res/AssetManager;
@@ -1153,30 +1045,25 @@
 
     array-length v2, v3
 
-    .line 257
     .local v2, sysNum:I
     :goto_0
     invoke-direct {p0}, Landroid/content/res/AssetManager;->getStringBlockCount()I
 
     move-result v1
 
-    .line 258
     .local v1, num:I
     new-array v3, v1, [Landroid/content/res/StringBlock;
 
     iput-object v3, p0, Landroid/content/res/AssetManager;->mStringBlocks:[Landroid/content/res/StringBlock;
 
-    .line 261
     const/4 v0, 0x0
 
     .local v0, i:I
     :goto_1
     if-ge v0, v1, :cond_2
 
-    .line 262
     if-ge v0, v2, :cond_1
 
-    .line 263
     iget-object v3, p0, Landroid/content/res/AssetManager;->mStringBlocks:[Landroid/content/res/StringBlock;
 
     sget-object v4, Landroid/content/res/AssetManager;->sSystem:Landroid/content/res/AssetManager;
@@ -1187,13 +1074,11 @@
 
     aput-object v4, v3, v0
 
-    .line 261
     :goto_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 256
     .end local v0           #i:I
     .end local v1           #num:I
     .end local v2           #sysNum:I
@@ -1202,7 +1087,6 @@
 
     goto :goto_0
 
-    .line 265
     .restart local v0       #i:I
     .restart local v1       #num:I
     .restart local v2       #sysNum:I
@@ -1223,7 +1107,6 @@
 
     goto :goto_2
 
-    .line 268
     :cond_2
     return-void
 .end method
@@ -1238,7 +1121,6 @@
     .end annotation
 
     .prologue
-    .line 289
     const/4 v0, 0x2
 
     invoke-virtual {p0, p1, v0}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;I)Ljava/io/InputStream;
@@ -1259,16 +1141,13 @@
     .end annotation
 
     .prologue
-    .line 311
     monitor-enter p0
 
-    .line 312
     :try_start_0
     iget-boolean v2, p0, Landroid/content/res/AssetManager;->mOpen:Z
 
     if-nez v2, :cond_0
 
-    .line 313
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "Assetmanager has been closed"
@@ -1277,7 +1156,6 @@
 
     throw v2
 
-    .line 321
     :catchall_0
     move-exception v2
 
@@ -1287,25 +1165,21 @@
 
     throw v2
 
-    .line 315
     :cond_0
     :try_start_1
     invoke-direct {p0, p1, p2}, Landroid/content/res/AssetManager;->openAsset(Ljava/lang/String;I)I
 
     move-result v0
 
-    .line 316
     .local v0, asset:I
     if-eqz v0, :cond_1
 
-    .line 317
     new-instance v1, Landroid/content/res/AssetManager$AssetInputStream;
 
     const/4 v2, 0x0
 
     invoke-direct {v1, p0, v0, v2}, Landroid/content/res/AssetManager$AssetInputStream;-><init>(Landroid/content/res/AssetManager;ILandroid/content/res/AssetManager$1;)V
 
-    .line 318
     .local v1, res:Landroid/content/res/AssetManager$AssetInputStream;
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
@@ -1313,19 +1187,16 @@
 
     invoke-direct {p0, v2}, Landroid/content/res/AssetManager;->incRefsLocked(I)V
 
-    .line 319
     monitor-exit p0
 
     return-object v1
 
-    .line 321
     .end local v1           #res:Landroid/content/res/AssetManager$AssetInputStream;
     :cond_1
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 322
     new-instance v2, Ljava/io/FileNotFoundException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1361,16 +1232,13 @@
     .end annotation
 
     .prologue
-    .line 327
     monitor-enter p0
 
-    .line 328
     :try_start_0
     iget-boolean v0, p0, Landroid/content/res/AssetManager;->mOpen:Z
 
     if-nez v0, :cond_0
 
-    .line 329
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v2, "Assetmanager has been closed"
@@ -1379,7 +1247,6 @@
 
     throw v0
 
-    .line 335
     :catchall_0
     move-exception v0
 
@@ -1389,7 +1256,6 @@
 
     throw v0
 
-    .line 331
     :cond_0
     :try_start_1
     iget-object v0, p0, Landroid/content/res/AssetManager;->mOffsets:[J
@@ -1398,11 +1264,9 @@
 
     move-result-object v1
 
-    .line 332
     .local v1, pfd:Landroid/os/ParcelFileDescriptor;
     if-eqz v1, :cond_1
 
-    .line 333
     new-instance v0, Landroid/content/res/AssetFileDescriptor;
 
     iget-object v2, p0, Landroid/content/res/AssetManager;->mOffsets:[J
@@ -1423,13 +1287,11 @@
 
     return-object v0
 
-    .line 335
     :cond_1
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 336
     new-instance v0, Ljava/io/FileNotFoundException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1466,7 +1328,6 @@
     .end annotation
 
     .prologue
-    .line 390
     const/4 v0, 0x2
 
     invoke-virtual {p0, p1, p2, v0}, Landroid/content/res/AssetManager;->openNonAsset(ILjava/lang/String;I)Ljava/io/InputStream;
@@ -1488,16 +1349,13 @@
     .end annotation
 
     .prologue
-    .line 403
     monitor-enter p0
 
-    .line 404
     :try_start_0
     iget-boolean v2, p0, Landroid/content/res/AssetManager;->mOpen:Z
 
     if-nez v2, :cond_0
 
-    .line 405
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "Assetmanager has been closed"
@@ -1506,7 +1364,6 @@
 
     throw v2
 
-    .line 413
     :catchall_0
     move-exception v2
 
@@ -1516,25 +1373,21 @@
 
     throw v2
 
-    .line 407
     :cond_0
     :try_start_1
     invoke-direct {p0, p1, p2, p3}, Landroid/content/res/AssetManager;->openNonAssetNative(ILjava/lang/String;I)I
 
     move-result v0
 
-    .line 408
     .local v0, asset:I
     if-eqz v0, :cond_1
 
-    .line 409
     new-instance v1, Landroid/content/res/AssetManager$AssetInputStream;
 
     const/4 v2, 0x0
 
     invoke-direct {v1, p0, v0, v2}, Landroid/content/res/AssetManager$AssetInputStream;-><init>(Landroid/content/res/AssetManager;ILandroid/content/res/AssetManager$1;)V
 
-    .line 410
     .local v1, res:Landroid/content/res/AssetManager$AssetInputStream;
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
@@ -1542,19 +1395,16 @@
 
     invoke-direct {p0, v2}, Landroid/content/res/AssetManager;->incRefsLocked(I)V
 
-    .line 411
     monitor-exit p0
 
     return-object v1
 
-    .line 413
     .end local v1           #res:Landroid/content/res/AssetManager$AssetInputStream;
     :cond_1
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 414
     new-instance v2, Ljava/io/FileNotFoundException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1590,7 +1440,6 @@
     .end annotation
 
     .prologue
-    .line 364
     const/4 v0, 0x0
 
     const/4 v1, 0x2
@@ -1613,7 +1462,6 @@
     .end annotation
 
     .prologue
-    .line 378
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0, p1, p2}, Landroid/content/res/AssetManager;->openNonAsset(ILjava/lang/String;I)Ljava/io/InputStream;
@@ -1634,16 +1482,13 @@
     .end annotation
 
     .prologue
-    .line 424
     monitor-enter p0
 
-    .line 425
     :try_start_0
     iget-boolean v0, p0, Landroid/content/res/AssetManager;->mOpen:Z
 
     if-nez v0, :cond_0
 
-    .line 426
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v2, "Assetmanager has been closed"
@@ -1652,7 +1497,6 @@
 
     throw v0
 
-    .line 433
     :catchall_0
     move-exception v0
 
@@ -1662,7 +1506,6 @@
 
     throw v0
 
-    .line 428
     :cond_0
     :try_start_1
     iget-object v0, p0, Landroid/content/res/AssetManager;->mOffsets:[J
@@ -1671,11 +1514,9 @@
 
     move-result-object v1
 
-    .line 430
     .local v1, pfd:Landroid/os/ParcelFileDescriptor;
     if-eqz v1, :cond_1
 
-    .line 431
     new-instance v0, Landroid/content/res/AssetFileDescriptor;
 
     iget-object v2, p0, Landroid/content/res/AssetManager;->mOffsets:[J
@@ -1696,13 +1537,11 @@
 
     return-object v0
 
-    .line 433
     :cond_1
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 434
     new-instance v0, Ljava/io/FileNotFoundException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1738,7 +1577,6 @@
     .end annotation
 
     .prologue
-    .line 419
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0, p1}, Landroid/content/res/AssetManager;->openNonAssetFd(ILjava/lang/String;)Landroid/content/res/AssetFileDescriptor;
@@ -1759,16 +1597,13 @@
     .end annotation
 
     .prologue
-    .line 483
     monitor-enter p0
 
-    .line 484
     :try_start_0
     iget-boolean v2, p0, Landroid/content/res/AssetManager;->mOpen:Z
 
     if-nez v2, :cond_0
 
-    .line 485
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "Assetmanager has been closed"
@@ -1777,7 +1612,6 @@
 
     throw v2
 
-    .line 493
     :catchall_0
     move-exception v2
 
@@ -1787,23 +1621,19 @@
 
     throw v2
 
-    .line 487
     :cond_0
     :try_start_1
     invoke-direct {p0, p1, p2}, Landroid/content/res/AssetManager;->openXmlAssetNative(ILjava/lang/String;)I
 
     move-result v1
 
-    .line 488
     .local v1, xmlBlock:I
     if-eqz v1, :cond_1
 
-    .line 489
     new-instance v0, Landroid/content/res/XmlBlock;
 
     invoke-direct {v0, p0, v1}, Landroid/content/res/XmlBlock;-><init>(Landroid/content/res/AssetManager;I)V
 
-    .line 490
     .local v0, res:Landroid/content/res/XmlBlock;
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
@@ -1811,19 +1641,16 @@
 
     invoke-direct {p0, v2}, Landroid/content/res/AssetManager;->incRefsLocked(I)V
 
-    .line 491
     monitor-exit p0
 
     return-object v0
 
-    .line 493
     .end local v0           #res:Landroid/content/res/XmlBlock;
     :cond_1
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 494
     new-instance v2, Ljava/io/FileNotFoundException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1859,7 +1686,6 @@
     .end annotation
 
     .prologue
-    .line 470
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0, p1}, Landroid/content/res/AssetManager;->openXmlBlockAsset(ILjava/lang/String;)Landroid/content/res/XmlBlock;
@@ -1880,22 +1706,18 @@
     .end annotation
 
     .prologue
-    .line 455
     invoke-virtual {p0, p1, p2}, Landroid/content/res/AssetManager;->openXmlBlockAsset(ILjava/lang/String;)Landroid/content/res/XmlBlock;
 
     move-result-object v0
 
-    .line 456
     .local v0, block:Landroid/content/res/XmlBlock;
     invoke-virtual {v0}, Landroid/content/res/XmlBlock;->newParser()Landroid/content/res/XmlResourceParser;
 
     move-result-object v1
 
-    .line 457
     .local v1, rp:Landroid/content/res/XmlResourceParser;
     invoke-virtual {v0}, Landroid/content/res/XmlBlock;->close()V
 
-    .line 458
     return-object v1
 .end method
 
@@ -1909,7 +1731,6 @@
     .end annotation
 
     .prologue
-    .line 444
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0, p1}, Landroid/content/res/AssetManager;->openXmlResourceParser(ILjava/lang/String;)Landroid/content/res/XmlResourceParser;
@@ -1924,23 +1745,17 @@
     .parameter "theme"
 
     .prologue
-    .line 515
     monitor-enter p0
 
-    .line 516
     :try_start_0
     invoke-direct {p0, p1}, Landroid/content/res/AssetManager;->deleteTheme(I)V
 
-    .line 517
     invoke-direct {p0, p1}, Landroid/content/res/AssetManager;->decRefsLocked(I)V
 
-    .line 518
     monitor-exit p0
 
-    .line 519
     return-void
 
-    .line 518
     :catchall_0
     move-exception v0
 
@@ -1968,20 +1783,15 @@
     .parameter "id"
 
     .prologue
-    .line 498
     monitor-enter p0
 
-    .line 499
     :try_start_0
     invoke-direct {p0, p1}, Landroid/content/res/AssetManager;->decRefsLocked(I)V
 
-    .line 500
     monitor-exit p0
 
-    .line 501
     return-void
 
-    .line 500
     :catchall_0
     move-exception v0
 

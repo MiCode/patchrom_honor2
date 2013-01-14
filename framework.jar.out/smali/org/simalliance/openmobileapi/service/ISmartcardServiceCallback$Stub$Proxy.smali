@@ -27,13 +27,10 @@
     .parameter "remote"
 
     .prologue
-    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 56
     iput-object p1, p0, Lorg/simalliance/openmobileapi/service/ISmartcardServiceCallback$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    .line 57
     return-void
 .end method
 
@@ -43,7 +40,6 @@
     .locals 1
 
     .prologue
-    .line 60
     iget-object v0, p0, Lorg/simalliance/openmobileapi/service/ISmartcardServiceCallback$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     return-object v0
@@ -53,8 +49,7 @@
     .locals 1
 
     .prologue
-    .line 64
-    const-string/jumbo v0, "org.simalliance.openmobileapi.service.ISmartcardServiceCallback"
+    const-string v0, "org.simalliance.openmobileapi.service.ISmartcardServiceCallback"
 
     return-object v0
 .end method

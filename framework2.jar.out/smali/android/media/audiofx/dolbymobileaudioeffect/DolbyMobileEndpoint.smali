@@ -39,7 +39,6 @@
 
     const/4 v3, 0x0
 
-    .line 39
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     const-string v1, "SPEAKERS"
@@ -50,7 +49,6 @@
 
     sput-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->SPEAKERS:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
-    .line 43
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     const-string v1, "HEADPHONES"
@@ -61,7 +59,6 @@
 
     sput-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->HEADPHONES:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
-    .line 47
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     const-string v1, "AUX_DIGITAL"
@@ -72,7 +69,6 @@
 
     sput-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->AUX_DIGITAL:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
-    .line 34
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
@@ -108,7 +104,6 @@
     .end annotation
 
     .prologue
-    .line 50
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     iput-object p3, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->_device:Landroid/media/audiofx/dolbymobileaudioeffect/AudioDevice;
@@ -121,7 +116,6 @@
     .parameter "name"
 
     .prologue
-    .line 34
     const-class v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -137,7 +131,6 @@
     .locals 1
 
     .prologue
-    .line 34
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->$VALUES:[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;
 
     invoke-virtual {v0}, [Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->clone()Ljava/lang/Object;
@@ -155,7 +148,6 @@
     .locals 1
 
     .prologue
-    .line 55
     iget-object v0, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileEndpoint;->_device:Landroid/media/audiofx/dolbymobileaudioeffect/AudioDevice;
 
     return-object v0

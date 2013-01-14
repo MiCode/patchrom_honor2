@@ -30,7 +30,6 @@
     .parameter
 
     .prologue
-    .line 375
     iput-object p1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$6;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     iput-object p2, p0, Lcom/android/server/accessibility/AccessibilityManagerService$6;->val$addedClient:Landroid/view/accessibility/IAccessibilityManagerClient;
@@ -46,14 +45,12 @@
     .locals 3
 
     .prologue
-    .line 377
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$6;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     iget-object v1, v0, Lcom/android/server/accessibility/AccessibilityManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 378
     :try_start_0
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$6;->val$addedClient:Landroid/view/accessibility/IAccessibilityManagerClient;
 
@@ -65,7 +62,6 @@
 
     invoke-interface {v0, p0, v2}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
-    .line 379
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$6;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     iget-object v0, v0, Lcom/android/server/accessibility/AccessibilityManagerService;->mClients:Ljava/util/List;
@@ -74,13 +70,10 @@
 
     invoke-interface {v0, v2}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 380
     monitor-exit v1
 
-    .line 381
     return-void
 
-    .line 380
     :catchall_0
     move-exception v0
 

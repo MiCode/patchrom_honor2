@@ -33,21 +33,16 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 50
     invoke-direct/range {p0 .. p5}, Lcom/android/internal/policy/impl/SimUnlockScreen;-><init>(Landroid/content/Context;Landroid/content/res/Configuration;Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;Lcom/android/internal/policy/impl/KeyguardScreenCallback;Lcom/android/internal/widget/LockPatternUtils;)V
 
-    .line 45
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mSubscription:I
 
-    .line 52
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->layoutType(Landroid/content/Context;)V
 
-    .line 53
     iput p6, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mSubscription:I
 
-    .line 54
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v0
@@ -58,7 +53,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 55
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -89,13 +83,11 @@
 
     move-result-object v6
 
-    .line 58
     .local v6, displayText:Ljava/lang/String;
     iget-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 63
     .end local v6           #displayText:Ljava/lang/String;
     :goto_0
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
@@ -108,7 +100,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 64
     new-instance v0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;
 
     move-object v1, p0
@@ -123,11 +114,9 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mKeyguardStatusViewManager:Lcom/android/internal/policy/impl/KeyguardStatusViewManager;
 
-    .line 71
     :goto_1
     return-void
 
-    .line 60
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
@@ -137,7 +126,6 @@
 
     goto :goto_0
 
-    .line 67
     :cond_1
     new-instance v0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;
 
@@ -161,7 +149,6 @@
     .parameter "x0"
 
     .prologue
-    .line 42
     iget v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mSubscription:I
 
     return v0
@@ -173,42 +160,35 @@
     .locals 2
 
     .prologue
-    .line 143
     iget v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mEnteredDigits:I
 
     const/4 v1, 0x4
 
     if-ge v0, v1, :cond_0
 
-    .line 145
     iget-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
     const v1, 0x10400d2
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 146
     iget-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mPinText:Landroid/widget/TextView;
 
     const-string v1, ""
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 147
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mEnteredDigits:I
 
-    .line 148
     iget-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
 
-    .line 208
     :goto_0
     return-void
 
-    .line 151
     :cond_0
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->getSimUnlockProgressDialog()Landroid/app/Dialog;
 
@@ -216,7 +196,6 @@
 
     invoke-virtual {v0}, Landroid/app/Dialog;->show()V
 
-    .line 153
     new-instance v0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mPinText:Landroid/widget/TextView;
@@ -243,33 +222,27 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 75
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v0
 
-    .line 76
     .local v0, inflater:Landroid/view/LayoutInflater;
     iget v1, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mKeyboardHidden:I
 
     if-ne v1, v2, :cond_0
 
-    .line 77
     const v1, 0x1090052
 
     invoke-virtual {v0, v1, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    .line 82
     :goto_0
     return-void
 
-    .line 79
     :cond_0
     const v1, 0x1090053
 
     invoke-virtual {v0, v1, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    .line 80
     new-instance v1, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;
 
     const/4 v2, 0x0
@@ -283,7 +256,6 @@
     .locals 4
 
     .prologue
-    .line 88
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v1
@@ -294,7 +266,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 89
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -325,13 +296,11 @@
 
     move-result-object v0
 
-    .line 92
     .local v0, displayText:Ljava/lang/String;
     iget-object v1, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 99
     .end local v0           #displayText:Ljava/lang/String;
     :goto_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mPinText:Landroid/widget/TextView;
@@ -340,20 +309,16 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 100
     const/4 v1, 0x0
 
     iput v1, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mEnteredDigits:I
 
-    .line 102
     iget-object v1, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mKeyguardStatusViewManager:Lcom/android/internal/policy/impl/KeyguardStatusViewManager;
 
     invoke-virtual {v1}, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->onResume()V
 
-    .line 103
     return-void
 
-    .line 94
     :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 

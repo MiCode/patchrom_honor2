@@ -61,7 +61,6 @@
     .locals 1
 
     .prologue
-    .line 1287
     new-instance v0, Landroid/app/ActivityManager$ProcessErrorStateInfo$1;
 
     invoke-direct {v0}, Landroid/app/ActivityManager$ProcessErrorStateInfo$1;-><init>()V
@@ -75,15 +74,12 @@
     .locals 1
 
     .prologue
-    .line 1258
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1256
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/app/ActivityManager$ProcessErrorStateInfo;->crashData:[B
 
-    .line 1259
     return-void
 .end method
 
@@ -92,18 +88,14 @@
     .parameter "source"
 
     .prologue
-    .line 1297
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1256
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/app/ActivityManager$ProcessErrorStateInfo;->crashData:[B
 
-    .line 1298
     invoke-virtual {p0, p1}, Landroid/app/ActivityManager$ProcessErrorStateInfo;->readFromParcel(Landroid/os/Parcel;)V
 
-    .line 1299
     return-void
 .end method
 
@@ -113,7 +105,6 @@
     .parameter "x1"
 
     .prologue
-    .line 1203
     invoke-direct {p0, p1}, Landroid/app/ActivityManager$ProcessErrorStateInfo;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -125,7 +116,6 @@
     .locals 1
 
     .prologue
-    .line 1262
     const/4 v0, 0x0
 
     return v0
@@ -136,63 +126,54 @@
     .parameter "source"
 
     .prologue
-    .line 1277
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/ActivityManager$ProcessErrorStateInfo;->condition:I
 
-    .line 1278
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/ActivityManager$ProcessErrorStateInfo;->processName:Ljava/lang/String;
 
-    .line 1279
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/ActivityManager$ProcessErrorStateInfo;->pid:I
 
-    .line 1280
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/ActivityManager$ProcessErrorStateInfo;->uid:I
 
-    .line 1281
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/ActivityManager$ProcessErrorStateInfo;->tag:Ljava/lang/String;
 
-    .line 1282
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/ActivityManager$ProcessErrorStateInfo;->shortMsg:Ljava/lang/String;
 
-    .line 1283
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/ActivityManager$ProcessErrorStateInfo;->longMsg:Ljava/lang/String;
 
-    .line 1284
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/ActivityManager$ProcessErrorStateInfo;->stackTrace:Ljava/lang/String;
 
-    .line 1285
     return-void
 .end method
 
@@ -202,46 +183,37 @@
     .parameter "flags"
 
     .prologue
-    .line 1266
     iget v0, p0, Landroid/app/ActivityManager$ProcessErrorStateInfo;->condition:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1267
     iget-object v0, p0, Landroid/app/ActivityManager$ProcessErrorStateInfo;->processName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1268
     iget v0, p0, Landroid/app/ActivityManager$ProcessErrorStateInfo;->pid:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1269
     iget v0, p0, Landroid/app/ActivityManager$ProcessErrorStateInfo;->uid:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1270
     iget-object v0, p0, Landroid/app/ActivityManager$ProcessErrorStateInfo;->tag:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1271
     iget-object v0, p0, Landroid/app/ActivityManager$ProcessErrorStateInfo;->shortMsg:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1272
     iget-object v0, p0, Landroid/app/ActivityManager$ProcessErrorStateInfo;->longMsg:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1273
     iget-object v0, p0, Landroid/app/ActivityManager$ProcessErrorStateInfo;->stackTrace:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1274
     return-void
 .end method

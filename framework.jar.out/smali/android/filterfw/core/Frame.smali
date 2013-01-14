@@ -38,44 +38,34 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
     iput-boolean v1, p0, Landroid/filterfw/core/Frame;->mReadOnly:Z
 
-    .line 40
     iput-boolean v1, p0, Landroid/filterfw/core/Frame;->mReusable:Z
 
-    .line 41
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/filterfw/core/Frame;->mRefCount:I
 
-    .line 42
     iput v1, p0, Landroid/filterfw/core/Frame;->mBindingType:I
 
-    .line 43
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/filterfw/core/Frame;->mBindingId:J
 
-    .line 44
     const-wide/16 v0, -0x2
 
     iput-wide v0, p0, Landroid/filterfw/core/Frame;->mTimestamp:J
 
-    .line 47
     invoke-virtual {p1}, Landroid/filterfw/core/FrameFormat;->mutableCopy()Landroid/filterfw/core/MutableFrameFormat;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/filterfw/core/Frame;->mFormat:Landroid/filterfw/core/FrameFormat;
 
-    .line 48
     iput-object p2, p0, Landroid/filterfw/core/Frame;->mFrameManager:Landroid/filterfw/core/FrameManager;
 
-    .line 49
     return-void
 .end method
 
@@ -89,50 +79,38 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
     iput-boolean v1, p0, Landroid/filterfw/core/Frame;->mReadOnly:Z
 
-    .line 40
     iput-boolean v1, p0, Landroid/filterfw/core/Frame;->mReusable:Z
 
-    .line 41
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/filterfw/core/Frame;->mRefCount:I
 
-    .line 42
     iput v1, p0, Landroid/filterfw/core/Frame;->mBindingType:I
 
-    .line 43
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/filterfw/core/Frame;->mBindingId:J
 
-    .line 44
     const-wide/16 v0, -0x2
 
     iput-wide v0, p0, Landroid/filterfw/core/Frame;->mTimestamp:J
 
-    .line 52
     invoke-virtual {p1}, Landroid/filterfw/core/FrameFormat;->mutableCopy()Landroid/filterfw/core/MutableFrameFormat;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/filterfw/core/Frame;->mFormat:Landroid/filterfw/core/FrameFormat;
 
-    .line 53
     iput-object p2, p0, Landroid/filterfw/core/Frame;->mFrameManager:Landroid/filterfw/core/FrameManager;
 
-    .line 54
     iput p3, p0, Landroid/filterfw/core/Frame;->mBindingType:I
 
-    .line 55
     iput-wide p4, p0, Landroid/filterfw/core/Frame;->mBindingId:J
 
-    .line 56
     return-void
 .end method
 
@@ -141,7 +119,6 @@
     .parameter "bitmap"
 
     .prologue
-    .line 182
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
 
     move-result-object v1
@@ -150,12 +127,10 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 191
     .end local p0
     :goto_0
     return-object p0
 
-    .line 185
     .restart local p0
     :cond_0
     sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
@@ -166,11 +141,9 @@
 
     move-result-object v0
 
-    .line 186
     .local v0, result:Landroid/graphics/Bitmap;
     if-nez v0, :cond_1
 
-    .line 187
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Error converting bitmap to RGBA!"
@@ -179,7 +152,6 @@
 
     throw v1
 
-    .line 188
     :cond_1
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getRowBytes()I
 
@@ -193,7 +165,6 @@
 
     if-eq v1, v2, :cond_2
 
-    .line 189
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Unsupported row byte count in bitmap!"
@@ -205,7 +176,6 @@
     :cond_2
     move-object p0, v0
 
-    .line 191
     goto :goto_0
 .end method
 
@@ -215,14 +185,12 @@
     .locals 2
 
     .prologue
-    .line 163
     invoke-virtual {p0}, Landroid/filterfw/core/Frame;->isReadOnly()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 164
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Attempting to modify read-only frame!"
@@ -231,7 +199,6 @@
 
     throw v0
 
-    .line 166
     :cond_0
     return-void
 .end method
@@ -240,14 +207,12 @@
     .locals 1
 
     .prologue
-    .line 224
     iget v0, p0, Landroid/filterfw/core/Frame;->mRefCount:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Landroid/filterfw/core/Frame;->mRefCount:I
 
-    .line 225
     iget v0, p0, Landroid/filterfw/core/Frame;->mRefCount:I
 
     return v0
@@ -257,7 +222,6 @@
     .locals 2
 
     .prologue
-    .line 75
     iget-wide v0, p0, Landroid/filterfw/core/Frame;->mBindingId:J
 
     return-wide v0
@@ -267,7 +231,6 @@
     .locals 1
 
     .prologue
-    .line 71
     iget v0, p0, Landroid/filterfw/core/Frame;->mBindingType:I
 
     return v0
@@ -280,7 +243,6 @@
     .locals 1
 
     .prologue
-    .line 63
     invoke-virtual {p0}, Landroid/filterfw/core/Frame;->getFormat()Landroid/filterfw/core/FrameFormat;
 
     move-result-object v0
@@ -302,7 +264,6 @@
     .locals 1
 
     .prologue
-    .line 59
     iget-object v0, p0, Landroid/filterfw/core/Frame;->mFormat:Landroid/filterfw/core/FrameFormat;
 
     return-object v0
@@ -312,7 +273,6 @@
     .locals 1
 
     .prologue
-    .line 159
     iget-object v0, p0, Landroid/filterfw/core/Frame;->mFrameManager:Landroid/filterfw/core/FrameManager;
 
     return-object v0
@@ -328,7 +288,6 @@
     .locals 1
 
     .prologue
-    .line 139
     iget v0, p0, Landroid/filterfw/core/Frame;->mRefCount:I
 
     return v0
@@ -338,7 +297,6 @@
     .locals 2
 
     .prologue
-    .line 127
     iget-wide v0, p0, Landroid/filterfw/core/Frame;->mTimestamp:J
 
     return-wide v0
@@ -351,14 +309,12 @@
     .locals 1
 
     .prologue
-    .line 219
     iget v0, p0, Landroid/filterfw/core/Frame;->mRefCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Landroid/filterfw/core/Frame;->mRefCount:I
 
-    .line 220
     iget v0, p0, Landroid/filterfw/core/Frame;->mRefCount:I
 
     return v0
@@ -368,7 +324,6 @@
     .locals 1
 
     .prologue
-    .line 67
     iget-boolean v0, p0, Landroid/filterfw/core/Frame;->mReadOnly:Z
 
     return v0
@@ -378,7 +333,6 @@
     .locals 1
 
     .prologue
-    .line 229
     iget-boolean v0, p0, Landroid/filterfw/core/Frame;->mReusable:Z
 
     return v0
@@ -388,12 +342,10 @@
     .locals 1
 
     .prologue
-    .line 233
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/filterfw/core/Frame;->mReadOnly:Z
 
-    .line 234
     return-void
 .end method
 
@@ -401,7 +353,6 @@
     .locals 0
 
     .prologue
-    .line 211
     return-void
 .end method
 
@@ -409,7 +360,6 @@
     .locals 0
 
     .prologue
-    .line 205
     return-void
 .end method
 
@@ -417,19 +367,16 @@
     .locals 1
 
     .prologue
-    .line 143
     iget-object v0, p0, Landroid/filterfw/core/Frame;->mFrameManager:Landroid/filterfw/core/FrameManager;
 
     if-eqz v0, :cond_0
 
-    .line 144
     iget-object v0, p0, Landroid/filterfw/core/Frame;->mFrameManager:Landroid/filterfw/core/FrameManager;
 
     invoke-virtual {v0, p0}, Landroid/filterfw/core/FrameManager;->releaseFrame(Landroid/filterfw/core/Frame;)Landroid/filterfw/core/Frame;
 
     move-result-object p0
 
-    .line 146
     .end local p0
     :cond_0
     return-object p0
@@ -443,7 +390,6 @@
     .parameter "newDimensions"
 
     .prologue
-    .line 135
     const/4 v0, 0x0
 
     return v0
@@ -454,24 +400,20 @@
     .parameter "newFormat"
 
     .prologue
-    .line 196
     invoke-virtual {p1}, Landroid/filterfw/core/FrameFormat;->mutableCopy()Landroid/filterfw/core/MutableFrameFormat;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/filterfw/core/Frame;->mFormat:Landroid/filterfw/core/FrameFormat;
 
-    .line 197
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/filterfw/core/Frame;->mReadOnly:Z
 
-    .line 198
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/filterfw/core/Frame;->mRefCount:I
 
-    .line 199
     return-void
 .end method
 
@@ -479,19 +421,16 @@
     .locals 1
 
     .prologue
-    .line 151
     iget-object v0, p0, Landroid/filterfw/core/Frame;->mFrameManager:Landroid/filterfw/core/FrameManager;
 
     if-eqz v0, :cond_0
 
-    .line 152
     iget-object v0, p0, Landroid/filterfw/core/Frame;->mFrameManager:Landroid/filterfw/core/FrameManager;
 
     invoke-virtual {v0, p0}, Landroid/filterfw/core/FrameManager;->retainFrame(Landroid/filterfw/core/Frame;)Landroid/filterfw/core/Frame;
 
     move-result-object p0
 
-    .line 154
     .end local p0
     :cond_0
     return-object p0
@@ -505,7 +444,6 @@
     .parameter "buffer"
 
     .prologue
-    .line 109
     const/4 v0, 0x0
 
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
@@ -514,7 +452,6 @@
 
     invoke-virtual {p0, p1, v0, v1}, Landroid/filterfw/core/Frame;->setData(Ljava/nio/ByteBuffer;II)V
 
-    .line 110
     return-void
 .end method
 
@@ -528,14 +465,12 @@
     .parameter "length"
 
     .prologue
-    .line 113
     invoke-static {p1, p2, p3}, Ljava/nio/ByteBuffer;->wrap([BII)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/filterfw/core/Frame;->setData(Ljava/nio/ByteBuffer;)V
 
-    .line 114
     return-void
 .end method
 
@@ -544,14 +479,12 @@
     .parameter "frame"
 
     .prologue
-    .line 131
     invoke-virtual {p1}, Landroid/filterfw/core/Frame;->getData()Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/filterfw/core/Frame;->setData(Ljava/nio/ByteBuffer;)V
 
-    .line 132
     return-void
 .end method
 
@@ -563,14 +496,12 @@
     .parameter "format"
 
     .prologue
-    .line 173
     invoke-virtual {p1}, Landroid/filterfw/core/FrameFormat;->mutableCopy()Landroid/filterfw/core/MutableFrameFormat;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/filterfw/core/Frame;->mFormat:Landroid/filterfw/core/FrameFormat;
 
-    .line 174
     return-void
 .end method
 
@@ -579,7 +510,6 @@
     .parameter "value"
 
     .prologue
-    .line 177
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -617,15 +547,12 @@
     .parameter "object"
 
     .prologue
-    .line 79
     invoke-virtual {p0}, Landroid/filterfw/core/Frame;->assertFrameMutable()V
 
-    .line 83
     instance-of v0, p1, [I
 
     if-eqz v0, :cond_0
 
-    .line 84
     check-cast p1, [I
 
     .end local p1
@@ -633,18 +560,15 @@
 
     invoke-virtual {p0, p1}, Landroid/filterfw/core/Frame;->setInts([I)V
 
-    .line 94
     :goto_0
     return-void
 
-    .line 85
     .restart local p1
     :cond_0
     instance-of v0, p1, [F
 
     if-eqz v0, :cond_1
 
-    .line 86
     check-cast p1, [F
 
     .end local p1
@@ -654,14 +578,12 @@
 
     goto :goto_0
 
-    .line 87
     .restart local p1
     :cond_1
     instance-of v0, p1, Ljava/nio/ByteBuffer;
 
     if-eqz v0, :cond_2
 
-    .line 88
     check-cast p1, Ljava/nio/ByteBuffer;
 
     .end local p1
@@ -669,14 +591,12 @@
 
     goto :goto_0
 
-    .line 89
     .restart local p1
     :cond_2
     instance-of v0, p1, Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_3
 
-    .line 90
     check-cast p1, Landroid/graphics/Bitmap;
 
     .end local p1
@@ -684,7 +604,6 @@
 
     goto :goto_0
 
-    .line 92
     .restart local p1
     :cond_3
     invoke-virtual {p0, p1}, Landroid/filterfw/core/Frame;->setGenericObjectValue(Ljava/lang/Object;)V
@@ -697,10 +616,8 @@
     .parameter "reusable"
 
     .prologue
-    .line 169
     iput-boolean p1, p0, Landroid/filterfw/core/Frame;->mReusable:Z
 
-    .line 170
     return-void
 .end method
 
@@ -709,9 +626,7 @@
     .parameter "timestamp"
 
     .prologue
-    .line 123
     iput-wide p1, p0, Landroid/filterfw/core/Frame;->mTimestamp:J
 
-    .line 124
     return-void
 .end method

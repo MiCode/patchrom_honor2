@@ -17,10 +17,8 @@
     .parameter "phone"
 
     .prologue
-    .line 37
     invoke-direct {p0}, Lcom/android/internal/telephony/msim/IIccPhoneBookMSim$Stub;-><init>()V
 
-    .line 38
     const-string v0, "simphonebook_msim"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -29,16 +27,13 @@
 
     if-nez v0, :cond_0
 
-    .line 39
     const-string v0, "simphonebook_msim"
 
     invoke-static {v0, p0}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 41
     :cond_0
     iput-object p1, p0, Lcom/android/internal/telephony/msim/MSimIccPhoneBookInterfaceManagerProxy;->mPhone:[Lcom/android/internal/telephony/Phone;
 
-    .line 42
     return-void
 .end method
 
@@ -46,7 +41,6 @@
     .locals 1
 
     .prologue
-    .line 163
     invoke-static {}, Lcom/android/internal/telephony/msim/MSimPhoneFactory;->getDefaultSubscription()I
 
     move-result v0
@@ -61,7 +55,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 150
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimIccPhoneBookInterfaceManagerProxy;->mPhone:[Lcom/android/internal/telephony/Phone;
 
@@ -76,15 +69,12 @@
 
     move-result-object v1
 
-    .line 158
     :goto_0
     return-object v1
 
-    .line 151
     :catch_0
     move-exception v0
 
-    .line 152
     .local v0, e:Ljava/lang/NullPointerException;
     const-string v1, "MSimIccPbkIntMngProxy"
 
@@ -122,20 +112,16 @@
 
     invoke-static {v1, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 153
     invoke-virtual {v0}, Ljava/lang/NullPointerException;->printStackTrace()V
 
     move-object v1, v2
 
-    .line 154
     goto :goto_0
 
-    .line 155
     .end local v0           #e:Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 156
     .local v0, e:Ljava/lang/ArrayIndexOutOfBoundsException;
     const-string v1, "MSimIccPbkIntMngProxy"
 
@@ -173,12 +159,10 @@
 
     invoke-static {v1, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 157
     invoke-virtual {v0}, Ljava/lang/ArrayIndexOutOfBoundsException;->printStackTrace()V
 
     move-object v1, v2
 
-    .line 158
     goto :goto_0
 .end method
 
@@ -204,7 +188,6 @@
     .end annotation
 
     .prologue
-    .line 128
     invoke-direct {p0}, Lcom/android/internal/telephony/msim/MSimIccPhoneBookInterfaceManagerProxy;->getDefaultSubscription()I
 
     move-result v0
@@ -237,25 +220,20 @@
     .end annotation
 
     .prologue
-    .line 133
     invoke-direct {p0, p2}, Lcom/android/internal/telephony/msim/MSimIccPhoneBookInterfaceManagerProxy;->getIccPhoneBookInterfaceManagerProxy(I)Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;
 
     move-result-object v0
 
-    .line 135
     .local v0, iccPbkIntMgrProxy:Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;
     if-eqz v0, :cond_0
 
-    .line 136
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->getAdnRecordsInEf(I)Ljava/util/List;
 
     move-result-object v1
 
-    .line 140
     :goto_0
     return-object v1
 
-    .line 138
     :cond_0
     const-string v1, "MSimIccPbkIntMngProxy"
 
@@ -279,7 +257,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 140
     const/4 v1, 0x0
 
     goto :goto_0
@@ -295,7 +272,6 @@
     .end annotation
 
     .prologue
-    .line 91
     invoke-direct {p0}, Lcom/android/internal/telephony/msim/MSimIccPhoneBookInterfaceManagerProxy;->getDefaultSubscription()I
 
     move-result v0
@@ -318,25 +294,20 @@
     .end annotation
 
     .prologue
-    .line 98
     invoke-direct {p0, p2}, Lcom/android/internal/telephony/msim/MSimIccPhoneBookInterfaceManagerProxy;->getIccPhoneBookInterfaceManagerProxy(I)Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;
 
     move-result-object v0
 
-    .line 100
     .local v0, iccPbkIntMgrProxy:Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;
     if-eqz v0, :cond_0
 
-    .line 101
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->getAdnRecordsSize(I)[I
 
     move-result-object v1
 
-    .line 105
     :goto_0
     return-object v1
 
-    .line 103
     :cond_0
     const-string v1, "MSimIccPbkIntMngProxy"
 
@@ -360,7 +331,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 105
     const/4 v1, 0x0
 
     goto :goto_0
@@ -377,25 +347,20 @@
     .end annotation
 
     .prologue
-    .line 116
     invoke-direct {p0, p2}, Lcom/android/internal/telephony/msim/MSimIccPhoneBookInterfaceManagerProxy;->getIccPhoneBookInterfaceManagerProxy(I)Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;
 
     move-result-object v0
 
-    .line 118
     .local v0, iccPbkIntMgrProxy:Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;
     if-eqz v0, :cond_0
 
-    .line 119
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->getAdnRecordsSize(I)[I
 
     move-result-object v1
 
-    .line 123
     :goto_0
     return-object v1
 
-    .line 121
     :cond_0
     const-string v1, "MSimIccPbkIntMngProxy"
 
@@ -419,7 +384,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 123
     const/4 v1, 0x0
 
     goto :goto_0
@@ -439,7 +403,6 @@
     .end annotation
 
     .prologue
-    .line 71
     invoke-direct {p0}, Lcom/android/internal/telephony/msim/MSimIccPhoneBookInterfaceManagerProxy;->getDefaultSubscription()I
 
     move-result v6
@@ -478,12 +441,10 @@
     .end annotation
 
     .prologue
-    .line 78
     invoke-direct {p0, p6}, Lcom/android/internal/telephony/msim/MSimIccPhoneBookInterfaceManagerProxy;->getIccPhoneBookInterfaceManagerProxy(I)Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;
 
     move-result-object v0
 
-    .line 80
     .local v0, iccPbkIntMgrProxy:Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;
     if-eqz v0, :cond_0
 
@@ -497,16 +458,13 @@
 
     move-object v5, p5
 
-    .line 81
     invoke-virtual/range {v0 .. v5}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->updateAdnRecordsInEfByIndex(ILjava/lang/String;Ljava/lang/String;ILjava/lang/String;)Z
 
     move-result v1
 
-    .line 86
     :goto_0
     return v1
 
-    .line 84
     :cond_0
     const-string v1, "MSimIccPbkIntMngProxy"
 
@@ -530,7 +488,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 86
     const/4 v1, 0x0
 
     goto :goto_0
@@ -551,7 +508,6 @@
     .end annotation
 
     .prologue
-    .line 48
     invoke-direct {p0}, Lcom/android/internal/telephony/msim/MSimIccPhoneBookInterfaceManagerProxy;->getDefaultSubscription()I
 
     move-result v7
@@ -593,12 +549,10 @@
     .end annotation
 
     .prologue
-    .line 56
     invoke-direct {p0, p7}, Lcom/android/internal/telephony/msim/MSimIccPhoneBookInterfaceManagerProxy;->getIccPhoneBookInterfaceManagerProxy(I)Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;
 
     move-result-object v0
 
-    .line 58
     .local v0, iccPbkIntMgrProxy:Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;
     if-eqz v0, :cond_0
 
@@ -614,16 +568,13 @@
 
     move-object v6, p6
 
-    .line 59
     invoke-virtual/range {v0 .. v6}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->updateAdnRecordsInEfBySearch(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v1
 
-    .line 64
     :goto_0
     return v1
 
-    .line 62
     :cond_0
     const-string v1, "MSimIccPbkIntMngProxy"
 
@@ -647,7 +598,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 64
     const/4 v1, 0x0
 
     goto :goto_0

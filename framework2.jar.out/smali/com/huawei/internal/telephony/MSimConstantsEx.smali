@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -18,7 +17,6 @@
     .locals 2
 
     .prologue
-    .line 34
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -32,7 +30,6 @@
     .locals 2
 
     .prologue
-    .line 42
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -46,7 +43,6 @@
     .locals 2
 
     .prologue
-    .line 26
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."

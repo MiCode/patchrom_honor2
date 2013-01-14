@@ -40,10 +40,8 @@
 
     const/4 v3, 0x1
 
-    .line 123
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 107
     invoke-static {}, Landroid/view/InputEventConsistencyVerifier;->isInstrumentationEnabled()Z
 
     move-result v0
@@ -59,7 +57,6 @@
     :goto_0
     iput-object v0, p0, Lcom/android/server/input/InputFilter;->mInboundInputEventConsistencyVerifier:Landroid/view/InputEventConsistencyVerifier;
 
-    .line 112
     invoke-static {}, Landroid/view/InputEventConsistencyVerifier;->isInstrumentationEnabled()Z
 
     move-result v0
@@ -75,20 +72,17 @@
     :cond_0
     iput-object v1, p0, Lcom/android/server/input/InputFilter;->mOutboundInputEventConsistencyVerifier:Landroid/view/InputEventConsistencyVerifier;
 
-    .line 124
     new-instance v0, Lcom/android/server/input/InputFilter$H;
 
     invoke-direct {v0, p0, p1}, Lcom/android/server/input/InputFilter$H;-><init>(Lcom/android/server/input/InputFilter;Landroid/os/Looper;)V
 
     iput-object v0, p0, Lcom/android/server/input/InputFilter;->mH:Lcom/android/server/input/InputFilter$H;
 
-    .line 125
     return-void
 
     :cond_1
     move-object v0, v1
 
-    .line 107
     goto :goto_0
 .end method
 
@@ -98,7 +92,6 @@
     .parameter "x1"
 
     .prologue
-    .line 98
     iput-object p1, p0, Lcom/android/server/input/InputFilter;->mHost:Lcom/android/server/input/InputFilter$Host;
 
     return-object p1
@@ -109,7 +102,6 @@
     .parameter "x0"
 
     .prologue
-    .line 98
     iget-object v0, p0, Lcom/android/server/input/InputFilter;->mInboundInputEventConsistencyVerifier:Landroid/view/InputEventConsistencyVerifier;
 
     return-object v0
@@ -120,7 +112,6 @@
     .parameter "x0"
 
     .prologue
-    .line 98
     iget-object v0, p0, Lcom/android/server/input/InputFilter;->mOutboundInputEventConsistencyVerifier:Landroid/view/InputEventConsistencyVerifier;
 
     return-object v0
@@ -134,7 +125,6 @@
     .parameter "policyFlags"
 
     .prologue
-    .line 153
     iget-object v0, p0, Lcom/android/server/input/InputFilter;->mH:Lcom/android/server/input/InputFilter$H;
 
     const/4 v1, 0x3
@@ -147,7 +137,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 154
     return-void
 .end method
 
@@ -156,7 +145,6 @@
     .parameter "host"
 
     .prologue
-    .line 134
     iget-object v0, p0, Lcom/android/server/input/InputFilter;->mH:Lcom/android/server/input/InputFilter$H;
 
     const/4 v1, 0x1
@@ -167,7 +155,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 135
     return-void
 .end method
 
@@ -177,10 +164,8 @@
     .parameter "policyFlags"
 
     .prologue
-    .line 189
     invoke-virtual {p0, p1, p2}, Lcom/android/server/input/InputFilter;->sendInputEvent(Landroid/view/InputEvent;I)V
 
-    .line 190
     return-void
 .end method
 
@@ -188,7 +173,6 @@
     .locals 0
 
     .prologue
-    .line 200
     return-void
 .end method
 
@@ -196,7 +180,6 @@
     .locals 0
 
     .prologue
-    .line 210
     return-void
 .end method
 
@@ -206,10 +189,8 @@
     .parameter "policyFlags"
 
     .prologue
-    .line 163
     if-nez p1, :cond_0
 
-    .line 164
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "event must not be null"
@@ -218,13 +199,11 @@
 
     throw v0
 
-    .line 166
     :cond_0
     iget-object v0, p0, Lcom/android/server/input/InputFilter;->mHost:Lcom/android/server/input/InputFilter$Host;
 
     if-nez v0, :cond_1
 
-    .line 167
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Cannot send input event because the input filter is not installed."
@@ -233,26 +212,22 @@
 
     throw v0
 
-    .line 170
     :cond_1
     iget-object v0, p0, Lcom/android/server/input/InputFilter;->mOutboundInputEventConsistencyVerifier:Landroid/view/InputEventConsistencyVerifier;
 
     if-eqz v0, :cond_2
 
-    .line 171
     iget-object v0, p0, Lcom/android/server/input/InputFilter;->mOutboundInputEventConsistencyVerifier:Landroid/view/InputEventConsistencyVerifier;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, p1, v1}, Landroid/view/InputEventConsistencyVerifier;->onInputEvent(Landroid/view/InputEvent;I)V
 
-    .line 173
     :cond_2
     iget-object v0, p0, Lcom/android/server/input/InputFilter;->mHost:Lcom/android/server/input/InputFilter$Host;
 
     invoke-interface {v0, p1, p2}, Lcom/android/server/input/InputFilter$Host;->sendInputEvent(Landroid/view/InputEvent;I)V
 
-    .line 174
     return-void
 .end method
 
@@ -260,7 +235,6 @@
     .locals 2
 
     .prologue
-    .line 142
     iget-object v0, p0, Lcom/android/server/input/InputFilter;->mH:Lcom/android/server/input/InputFilter$H;
 
     const/4 v1, 0x2
@@ -271,6 +245,5 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 143
     return-void
 .end method

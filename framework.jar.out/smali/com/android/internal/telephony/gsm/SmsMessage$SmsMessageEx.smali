@@ -32,7 +32,6 @@
     .parameter
 
     .prologue
-    .line 1653
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/SmsMessage$SmsMessageEx;->this$0:Lcom/android/internal/telephony/gsm/SmsMessage;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +45,6 @@
     .parameter "x1"
 
     .prologue
-    .line 1653
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/gsm/SmsMessage$SmsMessageEx;-><init>(Lcom/android/internal/telephony/gsm/SmsMessage;)V
 
     return-void
@@ -58,7 +56,6 @@
     .parameter "x1"
 
     .prologue
-    .line 1653
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/gsm/SmsMessage$SmsMessageEx;->getValidityPeriod(I)I
 
     move-result v0
@@ -71,39 +68,32 @@
     .parameter "firstByte"
 
     .prologue
-    .line 1666
     and-int/lit8 v0, p1, 0x18
 
-    .line 1667
     .local v0, ValidityPeriod:I
     sparse-switch v0, :sswitch_data_0
 
-    .line 1678
     const-string v1, "PduParser"
 
-    const-string/jumbo v2, "unsupported validity format."
+    const-string v2, "unsupported validity format."
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1679
     const/4 v1, 0x0
 
     :goto_0
     return v1
 
-    .line 1669
     :sswitch_0
     const/4 v1, 0x1
 
     goto :goto_0
 
-    .line 1674
     :sswitch_1
     const/4 v1, 0x7
 
     goto :goto_0
 
-    .line 1667
     nop
 
     :sswitch_data_0

@@ -30,7 +30,6 @@
     .parameter
 
     .prologue
-    .line 274
     iput-object p1, p0, Landroid/view/ViewRootImpl$ResizedInfo;->this$0:Landroid/view/ViewRootImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

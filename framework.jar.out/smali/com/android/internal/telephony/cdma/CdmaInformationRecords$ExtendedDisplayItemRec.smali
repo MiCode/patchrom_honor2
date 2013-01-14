@@ -31,20 +31,16 @@
     .parameter "len"
 
     .prologue
-    .line 152
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 148
     const-string v0, "US-ASCII"
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$ExtendedDisplayItemRec;->INFO_CHARSET:Ljava/lang/String;
 
-    .line 153
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$ExtendedDisplayItemRec;->init(Lcom/android/internal/telephony/cdma/CdmaInformationRecords$ExtendedDisplayTag;B[B)V
 
-    .line 154
     return-void
 .end method
 
@@ -55,18 +51,14 @@
     .parameter "data"
 
     .prologue
-    .line 149
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 148
     const-string v0, "US-ASCII"
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$ExtendedDisplayItemRec;->INFO_CHARSET:Ljava/lang/String;
 
-    .line 150
     invoke-direct {p0, p1, p2, p3}, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$ExtendedDisplayItemRec;->init(Lcom/android/internal/telephony/cdma/CdmaInformationRecords$ExtendedDisplayTag;B[B)V
 
-    .line 151
     return-void
 .end method
 
@@ -77,16 +69,12 @@
     .parameter "data"
 
     .prologue
-    .line 156
     iput-object p1, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$ExtendedDisplayItemRec;->displayTag:Lcom/android/internal/telephony/cdma/CdmaInformationRecords$ExtendedDisplayTag;
 
-    .line 157
     iput-byte p2, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$ExtendedDisplayItemRec;->mLen:B
 
-    .line 158
     iput-object p3, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$ExtendedDisplayItemRec;->mData:[B
 
-    .line 159
     return-void
 .end method
 
@@ -96,7 +84,6 @@
     .locals 1
 
     .prologue
-    .line 161
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$ExtendedDisplayItemRec;->mData:[B
 
     return-object v0
@@ -106,10 +93,8 @@
     .locals 7
 
     .prologue
-    .line 164
     const/4 v4, 0x0
 
-    .line 165
     .local v4, ret:Ljava/lang/String;
     const-string v5, "CdmaDisplayInfoRec"
 
@@ -117,18 +102,15 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 166
     iget-object v5, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$ExtendedDisplayItemRec;->mData:[B
 
     if-nez v5, :cond_0
 
     const-string v5, ""
 
-    .line 175
     :goto_0
     return-object v5
 
-    .line 167
     :cond_0
     const-string v5, "US-ASCII"
 
@@ -136,13 +118,11 @@
 
     move-result-object v1
 
-    .line 168
     .local v1, chs:Ljava/nio/charset/Charset;
     invoke-virtual {v1}, Ljava/nio/charset/Charset;->newDecoder()Ljava/nio/charset/CharsetDecoder;
 
     move-result-object v2
 
-    .line 169
     .local v2, d:Ljava/nio/charset/CharsetDecoder;
     iget-object v5, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$ExtendedDisplayItemRec;->mData:[B
 
@@ -150,7 +130,6 @@
 
     move-result-object v0
 
-    .line 171
     .local v0, b:Ljava/nio/ByteBuffer;
     :try_start_0
     invoke-virtual {v2, v0}, Ljava/nio/charset/CharsetDecoder;->decode(Ljava/nio/ByteBuffer;)Ljava/nio/CharBuffer;
@@ -166,14 +145,11 @@
     :goto_1
     move-object v5, v4
 
-    .line 175
     goto :goto_0
 
-    .line 172
     :catch_0
     move-exception v3
 
-    .line 173
     .local v3, e:Ljava/nio/charset/CharacterCodingException;
     const-string v5, "CdmaDisplayInfoRec"
 
@@ -188,10 +164,8 @@
     .locals 3
 
     .prologue
-    .line 179
     const-string v0, ""
 
-    .line 180
     .local v0, ret:Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -241,6 +215,5 @@
 
     move-result-object v0
 
-    .line 183
     return-object v0
 .end method

@@ -34,12 +34,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 4322
     iput-object p1, p0, Lcom/android/server/PowerManagerService$PowerManagerServiceEx;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4323
     const-string v0, "ro.config.hw_proximity"
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
@@ -48,7 +46,6 @@
 
     iput-boolean v0, p0, Lcom/android/server/PowerManagerService$PowerManagerServiceEx;->mProximitySensorAccelerated:Z
 
-    .line 4325
     iput-boolean v1, p0, Lcom/android/server/PowerManagerService$PowerManagerServiceEx;->mProximityScreenOff:Z
 
     return-void
@@ -60,7 +57,6 @@
     .parameter "x1"
 
     .prologue
-    .line 4322
     invoke-direct {p0, p1}, Lcom/android/server/PowerManagerService$PowerManagerServiceEx;-><init>(Lcom/android/server/PowerManagerService;)V
 
     return-void
@@ -71,7 +67,6 @@
     .parameter "x0"
 
     .prologue
-    .line 4322
     invoke-direct {p0}, Lcom/android/server/PowerManagerService$PowerManagerServiceEx;->proximitySensorAccelerated()I
 
     move-result v0
@@ -84,7 +79,6 @@
     .parameter "x0"
 
     .prologue
-    .line 4322
     iget-boolean v0, p0, Lcom/android/server/PowerManagerService$PowerManagerServiceEx;->mProximitySensorAccelerated:Z
 
     return v0
@@ -96,7 +90,6 @@
     .parameter "x1"
 
     .prologue
-    .line 4322
     iput-boolean p1, p0, Lcom/android/server/PowerManagerService$PowerManagerServiceEx;->mProximityScreenOff:Z
 
     return p1
@@ -106,10 +99,8 @@
     .locals 2
 
     .prologue
-    .line 4329
     const/16 v0, 0x3c
 
-    .line 4330
     .local v0, animStepsValue:I
     iget-boolean v1, p0, Lcom/android/server/PowerManagerService$PowerManagerServiceEx;->mProximitySensorAccelerated:Z
 
@@ -119,10 +110,8 @@
 
     if-eqz v1, :cond_0
 
-    .line 4331
     const/4 v0, 0x2
 
-    .line 4333
     :cond_0
     return v0
 .end method
@@ -133,6 +122,5 @@
     .locals 0
 
     .prologue
-    .line 4327
     return-void
 .end method

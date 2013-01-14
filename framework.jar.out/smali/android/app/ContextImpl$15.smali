@@ -19,7 +19,6 @@
     .locals 0
 
     .prologue
-    .line 341
     invoke-direct {p0}, Landroid/app/ContextImpl$StaticServiceFetcher;-><init>()V
 
     return-void
@@ -31,7 +30,6 @@
     .locals 1
 
     .prologue
-    .line 343
     invoke-static {}, Landroid/hardware/input/InputManager;->getInstance()Landroid/hardware/input/InputManager;
 
     move-result-object v0

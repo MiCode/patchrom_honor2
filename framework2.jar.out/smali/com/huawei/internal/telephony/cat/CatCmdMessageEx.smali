@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,7 +18,6 @@
     .parameter "obj"
 
     .prologue
-    .line 62
     invoke-virtual {p0}, Lcom/android/internal/telephony/cat/CatCmdMessage;->getLanguageNotification()Ljava/lang/String;
 
     move-result-object v0
@@ -32,7 +30,6 @@
     .parameter "obj"
 
     .prologue
-    .line 48
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -47,7 +44,6 @@
     .parameter "obj"
 
     .prologue
-    .line 34
     invoke-virtual {p0}, Lcom/android/internal/telephony/cat/CatCmdMessage;->getSetEventList()Lcom/android/internal/telephony/cat/CatCmdMessage$SetupEventListSettings;
 
     move-result-object v0
@@ -62,7 +58,6 @@
     .parameter "obj"
 
     .prologue
-    .line 40
     invoke-virtual {p0}, Lcom/android/internal/telephony/cat/CatCmdMessage;->hasIconLoadFailed()Z
 
     move-result v0

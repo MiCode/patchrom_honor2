@@ -14,12 +14,10 @@
     .locals 1
 
     .prologue
-    .line 30
     const-string v0, "HwSystemProperties"
 
     sput-object v0, Lcom/huawei/android/os/HwSystemProperties;->TAG:Ljava/lang/String;
 
-    .line 31
     const/4 v0, 0x1
 
     sput-boolean v0, Lcom/huawei/android/os/HwSystemProperties;->DEBUG:Z
@@ -31,7 +29,6 @@
     .locals 0
 
     .prologue
-    .line 29
     invoke-direct {p0}, Landroid/os/SystemProperties;-><init>()V
 
     return-void
@@ -43,7 +40,6 @@
     .parameter "def"
 
     .prologue
-    .line 38
     sget-boolean v0, Lcom/huawei/android/os/HwSystemProperties;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -84,7 +80,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 39
     :cond_0
     invoke-static {p0, p1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -97,7 +92,6 @@
     .locals 2
 
     .prologue
-    .line 43
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."

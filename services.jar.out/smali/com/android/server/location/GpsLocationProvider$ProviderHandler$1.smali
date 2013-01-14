@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 1590
     iput-object p1, p0, Lcom/android/server/location/GpsLocationProvider$ProviderHandler$1;->this$1:Lcom/android/server/location/GpsLocationProvider$ProviderHandler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .locals 1
 
     .prologue
-    .line 1592
     iget-object v0, p0, Lcom/android/server/location/GpsLocationProvider$ProviderHandler$1;->this$1:Lcom/android/server/location/GpsLocationProvider$ProviderHandler;
 
     iget-object v0, v0, Lcom/android/server/location/GpsLocationProvider$ProviderHandler;->this$0:Lcom/android/server/location/GpsLocationProvider;
@@ -49,6 +47,5 @@
     #calls: Lcom/android/server/location/GpsLocationProvider;->handleInjectNtpTime()V
     invoke-static {v0}, Lcom/android/server/location/GpsLocationProvider;->access$1100(Lcom/android/server/location/GpsLocationProvider;)V
 
-    .line 1593
     return-void
 .end method

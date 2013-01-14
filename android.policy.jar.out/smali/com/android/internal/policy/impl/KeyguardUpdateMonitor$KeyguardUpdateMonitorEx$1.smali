@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 1031
     iput-object p1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$KeyguardUpdateMonitorEx$1;->this$1:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$KeyguardUpdateMonitorEx;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +39,10 @@
     .parameter "intent"
 
     .prologue
-    .line 1034
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1035
     .local v0, action:Ljava/lang/String;
     const-string v1, "android.intent.action.SIM_STATE_CHANGED"
 
@@ -77,7 +74,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 1037
     iget-object v1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$KeyguardUpdateMonitorEx$1;->this$1:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$KeyguardUpdateMonitorEx;
 
     #getter for: Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$KeyguardUpdateMonitorEx;->mIccLoadedHandler:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$KeyguardUpdateMonitorEx$IccLoadedHandler;
@@ -100,7 +96,6 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$KeyguardUpdateMonitorEx$IccLoadedHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1039
     :cond_0
     return-void
 .end method

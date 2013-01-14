@@ -25,7 +25,6 @@
     .locals 1
 
     .prologue
-    .line 40
     const-class v0, Landroid/os/UEventObserver;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -34,7 +33,6 @@
 
     sput-object v0, Landroid/os/UEventObserver;->TAG:Ljava/lang/String;
 
-    .line 83
     const/4 v0, 0x0
 
     sput-boolean v0, Landroid/os/UEventObserver;->sThreadStarted:Z
@@ -46,10 +44,8 @@
     .locals 0
 
     .prologue
-    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 85
     return-void
 .end method
 
@@ -57,7 +53,6 @@
     .locals 0
 
     .prologue
-    .line 39
     invoke-static {}, Landroid/os/UEventObserver;->native_setup()V
 
     return-void
@@ -68,7 +63,6 @@
     .parameter "x0"
 
     .prologue
-    .line 39
     invoke-static {p0}, Landroid/os/UEventObserver;->next_event([B)I
 
     move-result v0
@@ -80,7 +74,6 @@
     .locals 2
 
     .prologue
-    .line 145
     const-class v1, Landroid/os/UEventObserver;
 
     monitor-enter v1
@@ -90,32 +83,27 @@
 
     if-nez v0, :cond_0
 
-    .line 146
     new-instance v0, Landroid/os/UEventObserver$UEventThread;
 
     invoke-direct {v0}, Landroid/os/UEventObserver$UEventThread;-><init>()V
 
     sput-object v0, Landroid/os/UEventObserver;->sThread:Landroid/os/UEventObserver$UEventThread;
 
-    .line 147
     sget-object v0, Landroid/os/UEventObserver;->sThread:Landroid/os/UEventObserver$UEventThread;
 
     invoke-virtual {v0}, Landroid/os/UEventObserver$UEventThread;->start()V
 
-    .line 148
     const/4 v0, 0x1
 
     sput-boolean v0, Landroid/os/UEventObserver;->sThreadStarted:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 150
     :cond_0
     monitor-exit v1
 
     return-void
 
-    .line 145
     :catchall_0
     move-exception v0
 
@@ -141,19 +129,15 @@
     .end annotation
 
     .prologue
-    .line 186
     :try_start_0
     invoke-virtual {p0}, Landroid/os/UEventObserver;->stopObserving()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 188
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 190
     return-void
 
-    .line 188
     :catchall_0
     move-exception v0
 
@@ -170,25 +154,21 @@
     .parameter "match"
 
     .prologue
-    .line 165
     monitor-enter p0
 
     :try_start_0
     invoke-static {}, Landroid/os/UEventObserver;->ensureThreadStarted()V
 
-    .line 166
     sget-object v0, Landroid/os/UEventObserver;->sThread:Landroid/os/UEventObserver$UEventThread;
 
     invoke-virtual {v0, p1, p0}, Landroid/os/UEventObserver$UEventThread;->addObserver(Ljava/lang/String;Landroid/os/UEventObserver;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 167
     monitor-exit p0
 
     return-void
 
-    .line 165
     :catchall_0
     move-exception v0
 
@@ -201,7 +181,6 @@
     .locals 1
 
     .prologue
-    .line 175
     monitor-enter p0
 
     :try_start_0
@@ -211,12 +190,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 176
     monitor-exit p0
 
     return-void
 
-    .line 175
     :catchall_0
     move-exception v0
 

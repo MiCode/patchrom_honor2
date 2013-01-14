@@ -28,7 +28,6 @@
     .parameter
 
     .prologue
-    .line 46
     iput-object p1, p0, Lcom/huawei/android/hardware/fmradio/FmTransmitter$FmPSFeatures;->this$0:Lcom/huawei/android/hardware/fmradio/FmTransmitter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

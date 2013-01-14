@@ -12,10 +12,8 @@
     .locals 1
 
     .prologue
-    .line 6
     invoke-direct {p0}, Landroid/pmqos/Pmqos;-><init>()V
 
-    .line 7
     const-string v0, "cpu_dma_latency"
 
     invoke-static {v0}, Landroid/pmqos/Pmqos;->pm_qos_open(Ljava/lang/String;)I
@@ -24,7 +22,6 @@
 
     iput v0, p0, Landroid/pmqos/Cpu_dma_latency;->fd:I
 
-    .line 8
     return-void
 .end method
 
@@ -34,12 +31,10 @@
     .locals 1
 
     .prologue
-    .line 16
     iget v0, p0, Landroid/pmqos/Cpu_dma_latency;->fd:I
 
     invoke-static {v0}, Landroid/pmqos/Pmqos;->pm_qos_close(I)V
 
-    .line 17
     return-void
 .end method
 
@@ -47,12 +42,10 @@
     .locals 1
 
     .prologue
-    .line 10
     iget v0, p0, Landroid/pmqos/Cpu_dma_latency;->fd:I
 
     invoke-static {v0}, Landroid/pmqos/Pmqos;->pm_qos_read(I)I
 
-    .line 11
     return-void
 .end method
 
@@ -61,11 +54,9 @@
     .parameter "buffer"
 
     .prologue
-    .line 13
     iget v0, p0, Landroid/pmqos/Cpu_dma_latency;->fd:I
 
     invoke-static {p1, v0}, Landroid/pmqos/Pmqos;->pm_qos_write(II)I
 
-    .line 14
     return-void
 .end method

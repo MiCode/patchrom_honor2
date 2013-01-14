@@ -48,7 +48,6 @@
 
     const/4 v2, 0x0
 
-    .line 53
     new-instance v0, Lcom/android/internal/telephony/gsm/EONS$EonsState;
 
     const-string v1, "INITING"
@@ -57,7 +56,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/gsm/EONS$EonsState;->INITING:Lcom/android/internal/telephony/gsm/EONS$EonsState;
 
-    .line 54
     new-instance v0, Lcom/android/internal/telephony/gsm/EONS$EonsState;
 
     const-string v1, "DISABLED"
@@ -66,7 +64,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/gsm/EONS$EonsState;->DISABLED:Lcom/android/internal/telephony/gsm/EONS$EonsState;
 
-    .line 55
     new-instance v0, Lcom/android/internal/telephony/gsm/EONS$EonsState;
 
     const-string v1, "PNN_PRESENT"
@@ -75,7 +72,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/gsm/EONS$EonsState;->PNN_PRESENT:Lcom/android/internal/telephony/gsm/EONS$EonsState;
 
-    .line 56
     new-instance v0, Lcom/android/internal/telephony/gsm/EONS$EonsState;
 
     const-string v1, "PNN_AND_OPL_PRESENT"
@@ -84,7 +80,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/gsm/EONS$EonsState;->PNN_AND_OPL_PRESENT:Lcom/android/internal/telephony/gsm/EONS$EonsState;
 
-    .line 52
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/android/internal/telephony/gsm/EONS$EonsState;
@@ -121,7 +116,6 @@
     .end annotation
 
     .prologue
-    .line 52
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -132,7 +126,6 @@
     .parameter "name"
 
     .prologue
-    .line 52
     const-class v0, Lcom/android/internal/telephony/gsm/EONS$EonsState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -148,7 +141,6 @@
     .locals 1
 
     .prologue
-    .line 52
     sget-object v0, Lcom/android/internal/telephony/gsm/EONS$EonsState;->$VALUES:[Lcom/android/internal/telephony/gsm/EONS$EonsState;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/gsm/EONS$EonsState;->clone()Ljava/lang/Object;
@@ -166,7 +158,6 @@
     .locals 1
 
     .prologue
-    .line 63
     sget-object v0, Lcom/android/internal/telephony/gsm/EONS$EonsState;->DISABLED:Lcom/android/internal/telephony/gsm/EONS$EonsState;
 
     if-ne p0, v0, :cond_0
@@ -186,7 +177,6 @@
     .locals 1
 
     .prologue
-    .line 59
     sget-object v0, Lcom/android/internal/telephony/gsm/EONS$EonsState;->INITING:Lcom/android/internal/telephony/gsm/EONS$EonsState;
 
     if-ne p0, v0, :cond_0
@@ -206,7 +196,6 @@
     .locals 1
 
     .prologue
-    .line 71
     sget-object v0, Lcom/android/internal/telephony/gsm/EONS$EonsState;->PNN_AND_OPL_PRESENT:Lcom/android/internal/telephony/gsm/EONS$EonsState;
 
     if-ne p0, v0, :cond_0
@@ -226,7 +215,6 @@
     .locals 1
 
     .prologue
-    .line 67
     sget-object v0, Lcom/android/internal/telephony/gsm/EONS$EonsState;->PNN_PRESENT:Lcom/android/internal/telephony/gsm/EONS$EonsState;
 
     if-ne p0, v0, :cond_0

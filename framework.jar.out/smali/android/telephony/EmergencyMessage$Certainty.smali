@@ -44,7 +44,6 @@
 
     const/4 v2, 0x0
 
-    .line 53
     new-instance v0, Landroid/telephony/EmergencyMessage$Certainty;
 
     const-string v1, "OBSERVED"
@@ -53,7 +52,6 @@
 
     sput-object v0, Landroid/telephony/EmergencyMessage$Certainty;->OBSERVED:Landroid/telephony/EmergencyMessage$Certainty;
 
-    .line 54
     new-instance v0, Landroid/telephony/EmergencyMessage$Certainty;
 
     const-string v1, "LIKELY"
@@ -62,7 +60,6 @@
 
     sput-object v0, Landroid/telephony/EmergencyMessage$Certainty;->LIKELY:Landroid/telephony/EmergencyMessage$Certainty;
 
-    .line 55
     new-instance v0, Landroid/telephony/EmergencyMessage$Certainty;
 
     const-string v1, "UNDEFINED"
@@ -71,7 +68,6 @@
 
     sput-object v0, Landroid/telephony/EmergencyMessage$Certainty;->UNDEFINED:Landroid/telephony/EmergencyMessage$Certainty;
 
-    .line 52
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/telephony/EmergencyMessage$Certainty;
@@ -104,7 +100,6 @@
     .end annotation
 
     .prologue
-    .line 52
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -115,7 +110,6 @@
     .parameter "name"
 
     .prologue
-    .line 52
     const-class v0, Landroid/telephony/EmergencyMessage$Certainty;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -131,7 +125,6 @@
     .locals 1
 
     .prologue
-    .line 52
     sget-object v0, Landroid/telephony/EmergencyMessage$Certainty;->$VALUES:[Landroid/telephony/EmergencyMessage$Certainty;
 
     invoke-virtual {v0}, [Landroid/telephony/EmergencyMessage$Certainty;->clone()Ljava/lang/Object;

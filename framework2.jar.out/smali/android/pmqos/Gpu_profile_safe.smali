@@ -12,10 +12,8 @@
     .locals 1
 
     .prologue
-    .line 7
     invoke-direct {p0}, Landroid/pmqos/Pmqos;-><init>()V
 
-    .line 8
     const-string v0, "gpu_profile_safe"
 
     invoke-static {v0}, Landroid/pmqos/Pmqos;->pm_qos_open(Ljava/lang/String;)I
@@ -24,7 +22,6 @@
 
     iput v0, p0, Landroid/pmqos/Gpu_profile_safe;->fd:I
 
-    .line 9
     return-void
 .end method
 
@@ -34,12 +31,10 @@
     .locals 1
 
     .prologue
-    .line 17
     iget v0, p0, Landroid/pmqos/Gpu_profile_safe;->fd:I
 
     invoke-static {v0}, Landroid/pmqos/Pmqos;->pm_qos_close(I)V
 
-    .line 18
     return-void
 .end method
 
@@ -47,12 +42,10 @@
     .locals 1
 
     .prologue
-    .line 11
     iget v0, p0, Landroid/pmqos/Gpu_profile_safe;->fd:I
 
     invoke-static {v0}, Landroid/pmqos/Pmqos;->pm_qos_read(I)I
 
-    .line 12
     return-void
 .end method
 
@@ -61,11 +54,9 @@
     .parameter "buffer"
 
     .prologue
-    .line 14
     iget v0, p0, Landroid/pmqos/Gpu_profile_safe;->fd:I
 
     invoke-static {p1, v0}, Landroid/pmqos/Pmqos;->pm_qos_write(II)I
 
-    .line 15
     return-void
 .end method

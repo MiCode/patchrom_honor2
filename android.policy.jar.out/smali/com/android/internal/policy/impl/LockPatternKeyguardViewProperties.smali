@@ -19,16 +19,12 @@
     .parameter "updateMonitor"
 
     .prologue
-    .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 43
     iput-object p1, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardViewProperties;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 44
     iput-object p2, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardViewProperties;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
-    .line 45
     return-void
 .end method
 
@@ -36,10 +32,8 @@
     .locals 6
 
     .prologue
-    .line 66
     const/4 v1, 0x0
 
-    .line 67
     .local v1, isSimPinSecure:Z
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
@@ -49,11 +43,9 @@
 
     move-result v2
 
-    .line 69
     .local v2, numPhones:I
     new-array v3, v2, [Lcom/android/internal/telephony/IccCard$State;
 
-    .line 70
     .local v3, simState:[Lcom/android/internal/telephony/IccCard$State;
     const/4 v0, 0x0
 
@@ -61,7 +53,6 @@
     :goto_0
     if-ge v0, v2, :cond_1
 
-    .line 71
     iget-object v4, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardViewProperties;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     invoke-virtual {v4, v0}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->getSimState(I)Lcom/android/internal/telephony/IccCard$State;
@@ -70,7 +61,6 @@
 
     aput-object v4, v3, v0
 
-    .line 75
     if-nez v1, :cond_0
 
     aget-object v4, v3, v0
@@ -90,21 +80,17 @@
     :cond_0
     const/4 v1, 0x1
 
-    .line 78
     :goto_1
     if-eqz v1, :cond_3
 
-    .line 80
     :cond_1
     return v1
 
-    .line 75
     :cond_2
     const/4 v1, 0x0
 
     goto :goto_1
 
-    .line 70
     :cond_3
     add-int/lit8 v0, v0, 0x1
 
@@ -121,7 +107,6 @@
     .parameter "controller"
 
     .prologue
-    .line 51
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v0
@@ -132,14 +117,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 52
     new-instance v0, Lcom/android/internal/policy/impl/MSimLockPatternKeyguardView;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardViewProperties;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-direct {v0, p1, p3, v1, p4}, Lcom/android/internal/policy/impl/MSimLockPatternKeyguardView;-><init>(Landroid/content/Context;Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;Lcom/android/internal/widget/LockPatternUtils;Lcom/android/internal/policy/impl/KeyguardWindowController;)V
 
-    .line 55
     :goto_0
     return-object v0
 
@@ -157,7 +140,6 @@
     .locals 1
 
     .prologue
-    .line 61
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardViewProperties;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils;->isSecure()Z

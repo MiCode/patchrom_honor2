@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 136
     iput-object p1, p0, Lcom/android/server/usb/UsbDeviceManager$1;->this$0:Lcom/android/server/usb/UsbDeviceManager;
 
     invoke-direct {p0}, Landroid/os/UEventObserver;-><init>()V
@@ -39,14 +38,12 @@
     .parameter "event"
 
     .prologue
-    .line 141
     const-string v3, "USB_STATE"
 
     invoke-virtual {p1, v3}, Landroid/os/UEventObserver$UEvent;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 142
     .local v1, state:Ljava/lang/String;
     const-string v3, "ACCESSORY"
 
@@ -54,7 +51,6 @@
 
     move-result-object v0
 
-    .line 143
     .local v0, accessory:Ljava/lang/String;
     const-string v3, "USB_PORT_SWITCH"
 
@@ -62,11 +58,9 @@
 
     move-result-object v2
 
-    .line 144
     .local v2, usbPortSwitch:Ljava/lang/String;
     if-eqz v2, :cond_0
 
-    .line 145
     iget-object v3, p0, Lcom/android/server/usb/UsbDeviceManager$1;->this$0:Lcom/android/server/usb/UsbDeviceManager;
 
     #getter for: Lcom/android/server/usb/UsbDeviceManager;->mHandler:Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
@@ -77,11 +71,9 @@
     #calls: Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->updateUsbPort(Ljava/lang/String;)V
     invoke-static {v3, v2}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->access$200(Lcom/android/server/usb/UsbDeviceManager$UsbHandler;Ljava/lang/String;)V
 
-    .line 147
     :cond_0
     if-eqz v1, :cond_2
 
-    .line 148
     iget-object v3, p0, Lcom/android/server/usb/UsbDeviceManager$1;->this$0:Lcom/android/server/usb/UsbDeviceManager;
 
     #getter for: Lcom/android/server/usb/UsbDeviceManager;->mHandler:Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
@@ -91,12 +83,10 @@
 
     invoke-virtual {v3, v1}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->updateState(Ljava/lang/String;)V
 
-    .line 153
     :cond_1
     :goto_0
     return-void
 
-    .line 149
     :cond_2
     const-string v3, "START"
 
@@ -106,7 +96,6 @@
 
     if-eqz v3, :cond_1
 
-    .line 151
     iget-object v3, p0, Lcom/android/server/usb/UsbDeviceManager$1;->this$0:Lcom/android/server/usb/UsbDeviceManager;
 
     #calls: Lcom/android/server/usb/UsbDeviceManager;->startAccessoryMode()V

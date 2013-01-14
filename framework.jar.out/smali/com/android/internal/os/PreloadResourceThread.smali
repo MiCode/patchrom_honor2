@@ -26,7 +26,6 @@
     .locals 1
 
     .prologue
-    .line 56
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -42,16 +41,12 @@
     .parameter "part"
 
     .prologue
-    .line 62
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
-    .line 63
     iput-object p1, p0, Lcom/android/internal/os/PreloadResourceThread;->runtime:Ldalvik/system/VMRuntime;
 
-    .line 64
     iput p2, p0, Lcom/android/internal/os/PreloadResourceThread;->mPart:I
 
-    .line 65
     return-void
 .end method
 
@@ -61,25 +56,20 @@
     .parameter "ar"
 
     .prologue
-    .line 68
     invoke-virtual {p2}, Landroid/content/res/TypedArray;->length()I
 
     move-result v0
 
-    .line 71
     .local v0, N:I
     iget v5, p0, Lcom/android/internal/os/PreloadResourceThread;->mPart:I
 
     if-nez v5, :cond_2
 
-    .line 72
     const/4 v3, 0x0
 
-    .line 73
     .local v3, j:I
     shr-int/lit8 v4, v0, 0x1
 
-    .line 79
     .local v4, k:I
     :goto_0
     move v2, v3
@@ -88,7 +78,6 @@
     :goto_1
     if-ge v2, v4, :cond_3
 
-    .line 80
     invoke-static {}, Landroid/os/Debug;->getGlobalAllocSize()I
 
     move-result v5
@@ -97,16 +86,12 @@
 
     if-le v5, v6, :cond_0
 
-    .line 84
     invoke-static {}, Ljava/lang/System;->gc()V
 
-    .line 85
     invoke-virtual {p1}, Ldalvik/system/VMRuntime;->runFinalizationSync()V
 
-    .line 86
     invoke-static {}, Landroid/os/Debug;->resetGlobalAllocSize()V
 
-    .line 88
     :cond_0
     const/4 v5, 0x0
 
@@ -116,12 +101,10 @@
 
     iput v5, p0, Lcom/android/internal/os/PreloadResourceThread;->id:I
 
-    .line 90
     iget v5, p0, Lcom/android/internal/os/PreloadResourceThread;->id:I
 
     if-eqz v5, :cond_1
 
-    .line 91
     sget-object v5, Lcom/android/internal/os/PreloadResourceThread;->mResources:Landroid/content/res/Resources;
 
     iget v6, p0, Lcom/android/internal/os/PreloadResourceThread;->id:I
@@ -130,7 +113,6 @@
 
     move-result-object v1
 
-    .line 92
     .local v1, dr:Landroid/graphics/drawable/Drawable;
     invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getChangingConfigurations()I
 
@@ -142,7 +124,6 @@
 
     if-eqz v5, :cond_1
 
-    .line 93
     const-string v5, "PreloadResource"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -191,14 +172,12 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 79
     .end local v1           #dr:Landroid/graphics/drawable/Drawable;
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 75
     .end local v2           #i:I
     .end local v3           #j:I
     .end local v4           #k:I
@@ -207,14 +186,12 @@
 
     add-int/lit8 v3, v5, 0x1
 
-    .line 76
     .restart local v3       #j:I
     move v4, v0
 
     .restart local v4       #k:I
     goto :goto_0
 
-    .line 100
     .restart local v2       #i:I
     :cond_3
     sub-int v5, v4, v3
@@ -228,7 +205,6 @@
     .locals 3
 
     .prologue
-    .line 104
     sget-object v1, Lcom/android/internal/os/PreloadResourceThread;->mResources:Landroid/content/res/Resources;
 
     const v2, 0x1070005
@@ -237,15 +213,12 @@
 
     move-result-object v0
 
-    .line 106
     .local v0, ar:Landroid/content/res/TypedArray;
     iget-object v1, p0, Lcom/android/internal/os/PreloadResourceThread;->runtime:Ldalvik/system/VMRuntime;
 
     invoke-direct {p0, v1, v0}, Lcom/android/internal/os/PreloadResourceThread;->preloadDrawables(Ldalvik/system/VMRuntime;Landroid/content/res/TypedArray;)I
 
-    .line 107
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 108
     return-void
 .end method

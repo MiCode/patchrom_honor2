@@ -27,13 +27,10 @@
     .parameter "callback"
 
     .prologue
-    .line 1798
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1799
     iput-object p1, p0, Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy;->mCallback:Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallback;
 
-    .line 1800
     return-void
 .end method
 
@@ -42,7 +39,6 @@
     .parameter "x0"
 
     .prologue
-    .line 1795
     iget-object v0, p0, Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy;->mCallback:Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallback;
 
     return-object v0
@@ -53,7 +49,6 @@
     .parameter "runnable"
 
     .prologue
-    .line 1806
     new-instance v0, Ljava/lang/Thread;
 
     const-string v1, "SIP-KeepAliveProcessCallbackThread"
@@ -62,7 +57,6 @@
 
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 1807
     return-void
 .end method
 
@@ -74,16 +68,13 @@
     .parameter "description"
 
     .prologue
-    .line 1823
     iget-object v0, p0, Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy;->mCallback:Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallback;
 
     if-nez v0, :cond_0
 
-    .line 1833
     :goto_0
     return-void
 
-    .line 1824
     :cond_0
     new-instance v0, Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy$2;
 
@@ -99,16 +90,13 @@
     .parameter "portChanged"
 
     .prologue
-    .line 1810
     iget-object v0, p0, Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy;->mCallback:Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallback;
 
     if-nez v0, :cond_0
 
-    .line 1820
     :goto_0
     return-void
 
-    .line 1811
     :cond_0
     new-instance v0, Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy$1;
 

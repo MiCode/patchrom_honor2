@@ -12,10 +12,8 @@
     .locals 1
 
     .prologue
-    .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 31
     const-string v0, "power"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -28,7 +26,6 @@
 
     iput-object v0, p0, Lcom/huawei/android/os/PowerManagerEx;->mService:Landroid/os/IPowerManager;
 
-    .line 32
     return-void
 .end method
 
@@ -38,7 +35,6 @@
     .locals 1
 
     .prologue
-    .line 43
     iget-object v0, p0, Lcom/huawei/android/os/PowerManagerEx;->mService:Landroid/os/IPowerManager;
 
     return-object v0
@@ -54,7 +50,6 @@
     .end annotation
 
     .prologue
-    .line 39
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."

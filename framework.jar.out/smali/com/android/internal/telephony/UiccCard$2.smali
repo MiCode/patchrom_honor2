@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 219
     iput-object p1, p0, Lcom/android/internal/telephony/UiccCard$2;->this$0:Lcom/android/internal/telephony/UiccCard;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,7 +38,6 @@
     .parameter "msg"
 
     .prologue
-    .line 222
     iget-object v1, p0, Lcom/android/internal/telephony/UiccCard$2;->this$0:Lcom/android/internal/telephony/UiccCard;
 
     #getter for: Lcom/android/internal/telephony/UiccCard;->mDestroyed:Z
@@ -49,7 +47,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 223
     const-string v1, "RIL_UiccCard"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -90,17 +87,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 255
     :goto_0
     return-void
 
-    .line 231
     :cond_0
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 253
     iget-object v1, p0, Lcom/android/internal/telephony/UiccCard$2;->this$0:Lcom/android/internal/telephony/UiccCard;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -128,7 +122,6 @@
 
     goto :goto_0
 
-    .line 233
     :pswitch_0
     iget-object v1, p0, Lcom/android/internal/telephony/UiccCard$2;->this$0:Lcom/android/internal/telephony/UiccCard;
 
@@ -139,7 +132,6 @@
 
     goto :goto_0
 
-    .line 236
     :pswitch_1
     iget-object v1, p0, Lcom/android/internal/telephony/UiccCard$2;->this$0:Lcom/android/internal/telephony/UiccCard;
 
@@ -150,19 +142,16 @@
 
     goto :goto_0
 
-    .line 242
     :pswitch_2
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
-    .line 243
     .local v0, ar:Landroid/os/AsyncResult;
     iget-object v1, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-eqz v1, :cond_1
 
-    .line 244
     const-string v1, "RIL_UiccCard"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -187,7 +176,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 247
     :cond_1
     iget-object v1, v0, Landroid/os/AsyncResult;->userObj:Ljava/lang/Object;
 
@@ -199,7 +187,6 @@
 
     invoke-static {v1, v2, v3}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 249
     iget-object v1, v0, Landroid/os/AsyncResult;->userObj:Ljava/lang/Object;
 
     check-cast v1, Landroid/os/Message;
@@ -208,7 +195,6 @@
 
     goto :goto_0
 
-    .line 231
     :pswitch_data_0
     .packed-switch 0xd
         :pswitch_0

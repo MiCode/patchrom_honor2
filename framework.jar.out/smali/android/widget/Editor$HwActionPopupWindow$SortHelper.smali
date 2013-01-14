@@ -43,18 +43,14 @@
     .parameter "w"
 
     .prologue
-    .line 4212
     iput-object p1, p0, Landroid/widget/Editor$HwActionPopupWindow$SortHelper;->this$1:Landroid/widget/Editor$HwActionPopupWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4213
     iput p2, p0, Landroid/widget/Editor$HwActionPopupWindow$SortHelper;->index:I
 
-    .line 4214
     iput p3, p0, Landroid/widget/Editor$HwActionPopupWindow$SortHelper;->width:I
 
-    .line 4215
     return-void
 .end method
 
@@ -63,7 +59,6 @@
     .parameter "x0"
 
     .prologue
-    .line 4208
     iget v0, p0, Landroid/widget/Editor$HwActionPopupWindow$SortHelper;->width:I
 
     return v0
@@ -74,7 +69,6 @@
     .parameter "x0"
 
     .prologue
-    .line 4208
     iget v0, p0, Landroid/widget/Editor$HwActionPopupWindow$SortHelper;->index:I
 
     return v0
@@ -87,7 +81,6 @@
     .parameter "arg0"
 
     .prologue
-    .line 4218
     iget v0, p0, Landroid/widget/Editor$HwActionPopupWindow$SortHelper;->width:I
 
     iget v1, p1, Landroid/widget/Editor$HwActionPopupWindow$SortHelper;->width:I
@@ -102,7 +95,6 @@
     .parameter "x0"
 
     .prologue
-    .line 4208
     check-cast p1, Landroid/widget/Editor$HwActionPopupWindow$SortHelper;
 
     .end local p1
@@ -120,14 +112,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 4224
     if-eqz p1, :cond_0
 
     instance-of v2, p1, Landroid/widget/Editor$HwActionPopupWindow$SortHelper;
 
     if-nez v2, :cond_1
 
-    .line 4228
     :cond_0
     :goto_0
     return v1
@@ -135,10 +125,8 @@
     :cond_1
     move-object v0, p1
 
-    .line 4227
     check-cast v0, Landroid/widget/Editor$HwActionPopupWindow$SortHelper;
 
-    .line 4228
     .local v0, other:Landroid/widget/Editor$HwActionPopupWindow$SortHelper;
     iget v2, p0, Landroid/widget/Editor$HwActionPopupWindow$SortHelper;->width:I
 
@@ -155,19 +143,15 @@
     .locals 3
 
     .prologue
-    .line 4233
     const/16 v0, 0x1f
 
-    .line 4234
     .local v0, prime:I
     const/4 v1, 0x1
 
-    .line 4235
     .local v1, result:I
     iget v2, p0, Landroid/widget/Editor$HwActionPopupWindow$SortHelper;->width:I
 
     add-int/lit8 v1, v2, 0x1f
 
-    .line 4236
     return v1
 .end method

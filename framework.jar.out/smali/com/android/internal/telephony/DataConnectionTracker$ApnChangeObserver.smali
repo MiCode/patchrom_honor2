@@ -25,13 +25,10 @@
     .parameter "h"
 
     .prologue
-    .line 382
     iput-object p1, p0, Lcom/android/internal/telephony/DataConnectionTracker$ApnChangeObserver;->this$0:Lcom/android/internal/telephony/DataConnectionTracker;
 
-    .line 383
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 384
     return-void
 .end method
 
@@ -42,7 +39,6 @@
     .parameter "selfChange"
 
     .prologue
-    .line 388
     iget-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker$ApnChangeObserver;->this$0:Lcom/android/internal/telephony/DataConnectionTracker;
 
     iget-object v1, p0, Lcom/android/internal/telephony/DataConnectionTracker$ApnChangeObserver;->this$0:Lcom/android/internal/telephony/DataConnectionTracker;
@@ -55,6 +51,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->sendMessage(Landroid/os/Message;)Z
 
-    .line 389
     return-void
 .end method

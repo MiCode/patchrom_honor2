@@ -32,28 +32,23 @@
     .parameter "context"
 
     .prologue
-    .line 48
     invoke-direct {p0}, Landroid/service/dreams/IDreamManager$Stub;-><init>()V
 
-    .line 39
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/lang/Object;
 
     iput-object v0, p0, Landroid/service/dreams/DreamManagerService;->mLock:Ljava/lang/Object;
 
-    .line 49
     const-string v0, "DreamManagerService"
 
     const-string v1, "DreamManagerService startup"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 50
     iput-object p1, p0, Landroid/service/dreams/DreamManagerService;->mContext:Landroid/content/Context;
 
-    .line 51
-    const-string/jumbo v0, "window"
+    const-string v0, "window"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
@@ -65,7 +60,6 @@
 
     iput-object v0, p0, Landroid/service/dreams/DreamManagerService;->mIWindowManager:Landroid/view/IWindowManager;
 
-    .line 53
     return-void
 .end method
 
@@ -74,7 +68,6 @@
     .parameter "permission"
 
     .prologue
-    .line 56
     iget-object v0, p0, Landroid/service/dreams/DreamManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->checkCallingOrSelfPermission(Ljava/lang/String;)I
@@ -83,7 +76,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 57
     new-instance v0, Ljava/lang/SecurityException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -122,7 +114,6 @@
 
     throw v0
 
-    .line 60
     :cond_0
     return-void
 .end method
@@ -133,37 +124,30 @@
     .locals 2
 
     .prologue
-    .line 114
     const-string v0, "DreamManagerService"
 
     const-string v1, "awaken()"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 115
     iget-object v1, p0, Landroid/service/dreams/DreamManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 116
     :try_start_0
     iget-object v0, p0, Landroid/service/dreams/DreamManagerService;->mCurrentDream:Landroid/service/dreams/IDreamService;
 
     if-eqz v0, :cond_0
 
-    .line 117
     iget-object v0, p0, Landroid/service/dreams/DreamManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p0}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
 
-    .line 119
     :cond_0
     monitor-exit v1
 
-    .line 120
     return-void
 
-    .line 119
     :catchall_0
     move-exception v0
 
@@ -180,7 +164,6 @@
     .parameter "test"
 
     .prologue
-    .line 123
     const-string v2, "DreamManagerService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -231,7 +214,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 126
     new-instance v2, Landroid/content/Intent;
 
     const-string v3, "android.intent.action.MAIN"
@@ -254,7 +236,6 @@
 
     move-result-object v1
 
-    .line 133
     .local v1, intent:Landroid/content/Intent;
     iget-object v2, p0, Landroid/service/dreams/DreamManagerService;->mContext:Landroid/content/Context;
 
@@ -266,14 +247,13 @@
 
     if-nez v2, :cond_0
 
-    .line 134
     const-string v2, "DreamManagerService"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "unable to bind service: "
+    const-string v4, "unable to bind service: "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -289,22 +269,18 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 148
     :goto_0
     return-void
 
-    .line 137
     :cond_0
     iput-object p1, p0, Landroid/service/dreams/DreamManagerService;->mCurrentDreamComponent:Landroid/content/ComponentName;
 
-    .line 138
     new-instance v2, Landroid/os/Binder;
 
     invoke-direct {v2}, Landroid/os/Binder;-><init>()V
 
     iput-object v2, p0, Landroid/service/dreams/DreamManagerService;->mCurrentDreamToken:Landroid/os/Binder;
 
-    .line 140
     :try_start_0
     const-string v2, "DreamManagerService"
 
@@ -342,7 +318,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 142
     iget-object v2, p0, Landroid/service/dreams/DreamManagerService;->mIWindowManager:Landroid/view/IWindowManager;
 
     iget-object v3, p0, Landroid/service/dreams/DreamManagerService;->mCurrentDreamToken:Landroid/os/Binder;
@@ -355,11 +330,9 @@
 
     goto :goto_0
 
-    .line 144
     :catch_0
     move-exception v0
 
-    .line 145
     .local v0, e:Landroid/os/RemoteException;
     const-string v2, "DreamManagerService"
 
@@ -374,21 +347,17 @@
     .locals 5
 
     .prologue
-    .line 64
     invoke-virtual {p0}, Landroid/service/dreams/DreamManagerService;->getDreamComponent()Landroid/content/ComponentName;
 
     move-result-object v2
 
-    .line 65
     .local v2, name:Landroid/content/ComponentName;
     if-eqz v2, :cond_0
 
-    .line 66
     iget-object v4, p0, Landroid/service/dreams/DreamManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v4
 
-    .line 67
     :try_start_0
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
     :try_end_0
@@ -396,7 +365,6 @@
 
     move-result-wide v0
 
-    .line 69
     .local v0, ident:J
     const/4 v3, 0x0
 
@@ -405,19 +373,15 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 71
     :try_start_2
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 73
     monitor-exit v4
 
-    .line 75
     .end local v0           #ident:J
     :cond_0
     return-void
 
-    .line 71
     .restart local v0       #ident:J
     :catchall_0
     move-exception v3
@@ -426,7 +390,6 @@
 
     throw v3
 
-    .line 73
     .end local v0           #ident:J
     :catchall_1
     move-exception v3
@@ -445,7 +408,6 @@
     .parameter "args"
 
     .prologue
-    .line 172
     iget-object v0, p0, Landroid/service/dreams/DreamManagerService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.DUMP"
@@ -454,12 +416,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 174
     const-string v0, "Dreamland:"
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 175
     const-string v0, "  component="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -468,7 +428,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 176
     const-string v0, "  token="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -477,7 +436,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 177
     const-string v0, "  dream="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -486,7 +444,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 178
     return-void
 .end method
 
@@ -494,24 +451,21 @@
     .locals 3
 
     .prologue
-    .line 85
     iget-object v1, p0, Landroid/service/dreams/DreamManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    const-string/jumbo v2, "screensaver_component"
+    const-string v2, "screensaver_component"
 
     invoke-static {v1, v2}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 86
     .local v0, component:Ljava/lang/String;
     if-nez v0, :cond_0
 
-    .line 87
     iget-object v1, p0, Landroid/service/dreams/DreamManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -524,16 +478,13 @@
 
     move-result-object v0
 
-    .line 90
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 91
     invoke-static {v0}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
 
     move-result-object v1
 
-    .line 93
     :goto_0
     return-object v1
 
@@ -549,7 +500,6 @@
     .parameter "service"
 
     .prologue
-    .line 152
     const-string v1, "DreamManagerService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -600,14 +550,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 154
     invoke-static {p2}, Landroid/service/dreams/IDreamService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/service/dreams/IDreamService;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/service/dreams/DreamManagerService;->mCurrentDream:Landroid/service/dreams/IDreamService;
 
-    .line 156
     :try_start_0
     const-string v1, "DreamManagerService"
 
@@ -633,7 +581,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 157
     iget-object v1, p0, Landroid/service/dreams/DreamManagerService;->mCurrentDream:Landroid/service/dreams/IDreamService;
 
     iget-object v2, p0, Landroid/service/dreams/DreamManagerService;->mCurrentDreamToken:Landroid/os/Binder;
@@ -642,15 +589,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 161
     :goto_0
     return-void
 
-    .line 158
     :catch_0
     move-exception v0
 
-    .line 159
     .local v0, ex:Landroid/os/RemoteException;
     const-string v1, "DreamManagerService"
 
@@ -684,7 +628,6 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 165
     const-string v0, "DreamManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -719,13 +662,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 166
     iput-object v3, p0, Landroid/service/dreams/DreamManagerService;->mCurrentDream:Landroid/service/dreams/IDreamService;
 
-    .line 167
     iput-object v3, p0, Landroid/service/dreams/DreamManagerService;->mCurrentDreamToken:Landroid/os/Binder;
 
-    .line 168
     return-void
 .end method
 
@@ -734,14 +674,13 @@
     .parameter "name"
 
     .prologue
-    .line 79
     iget-object v0, p0, Landroid/service/dreams/DreamManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    const-string/jumbo v1, "screensaver_component"
+    const-string v1, "screensaver_component"
 
     invoke-virtual {p1}, Landroid/content/ComponentName;->flattenToString()Ljava/lang/String;
 
@@ -749,7 +688,6 @@
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 80
     return-void
 .end method
 
@@ -757,14 +695,12 @@
     .locals 2
 
     .prologue
-    .line 181
     const-string v0, "DreamManagerService"
 
-    const-string/jumbo v1, "ready to dream!"
+    const-string v1, "ready to dream!"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 182
     return-void
 .end method
 
@@ -773,14 +709,13 @@
     .parameter "name"
 
     .prologue
-    .line 99
     const-string v2, "DreamManagerService"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "startDream name="
+    const-string v4, "startDream name="
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -824,12 +759,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 102
     iget-object v3, p0, Landroid/service/dreams/DreamManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 103
     :try_start_0
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
     :try_end_0
@@ -837,7 +770,6 @@
 
     move-result-wide v0
 
-    .line 105
     .local v0, ident:J
     const/4 v2, 0x1
 
@@ -846,17 +778,13 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 107
     :try_start_2
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 109
     monitor-exit v3
 
-    .line 110
     return-void
 
-    .line 107
     :catchall_0
     move-exception v2
 
@@ -864,7 +792,6 @@
 
     throw v2
 
-    .line 109
     .end local v0           #ident:J
     :catchall_1
     move-exception v2

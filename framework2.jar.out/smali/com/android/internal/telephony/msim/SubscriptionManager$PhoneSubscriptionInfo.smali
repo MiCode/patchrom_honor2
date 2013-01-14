@@ -30,28 +30,23 @@
     .parameter
 
     .prologue
-    .line 129
     iput-object p1, p0, Lcom/android/internal/telephony/msim/SubscriptionManager$PhoneSubscriptionInfo;->this$0:Lcom/android/internal/telephony/msim/SubscriptionManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 130
     new-instance v0, Lcom/android/internal/telephony/msim/Subscription;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/msim/Subscription;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/msim/SubscriptionManager$PhoneSubscriptionInfo;->sub:Lcom/android/internal/telephony/msim/Subscription;
 
-    .line 131
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/msim/SubscriptionManager$PhoneSubscriptionInfo;->subReady:Z
 
-    .line 132
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/msim/SubscriptionManager$PhoneSubscriptionInfo;->cause:Ljava/lang/String;
 
-    .line 133
     return-void
 .end method

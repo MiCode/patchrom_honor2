@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 256
     iput-object p1, p0, Lcom/android/server/UiModeManagerService$6;->this$0:Lcom/android/server/UiModeManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .parameter "location"
 
     .prologue
-    .line 258
     return-void
 .end method
 
@@ -51,7 +49,6 @@
     .parameter "provider"
 
     .prologue
-    .line 261
     return-void
 .end method
 
@@ -60,7 +57,6 @@
     .parameter "provider"
 
     .prologue
-    .line 264
     return-void
 .end method
 
@@ -71,6 +67,5 @@
     .parameter "extras"
 
     .prologue
-    .line 267
     return-void
 .end method

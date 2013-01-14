@@ -60,7 +60,6 @@
 
     const/4 v2, 0x0
 
-    .line 42
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;
 
     const-string v1, "MUSIC"
@@ -69,7 +68,6 @@
 
     sput-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;->MUSIC:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;
 
-    .line 43
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;
 
     const-string v1, "MOVIE"
@@ -78,7 +76,6 @@
 
     sput-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;->MOVIE:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;
 
-    .line 44
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;
 
     const-string v1, "GAME"
@@ -87,7 +84,6 @@
 
     sput-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;->GAME:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;
 
-    .line 45
     new-instance v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;
 
     const-string v1, "VOICE"
@@ -96,7 +92,6 @@
 
     sput-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;->VOICE:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;
 
-    .line 40
     new-array v0, v6, [Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;
 
     sget-object v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;->MUSIC:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;
@@ -117,7 +112,6 @@
 
     sput-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;->$VALUES:[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;
 
-    .line 67
     new-array v0, v6, [Ljava/lang/String;
 
     const-string v1, "Music"
@@ -138,7 +132,6 @@
 
     sput-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;->NAME:[Ljava/lang/String;
 
-    .line 68
     new-array v0, v6, [Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;
 
     sget-object v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;->MUSIC:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;
@@ -174,7 +167,6 @@
     .end annotation
 
     .prologue
-    .line 70
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     iput p3, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;->_value:I
@@ -187,7 +179,6 @@
     .parameter "i"
 
     .prologue
-    .line 66
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;->CATEGORY:[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;
 
     aget-object v0, v0, p0
@@ -200,7 +191,6 @@
     .parameter "name"
 
     .prologue
-    .line 40
     const-class v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -216,7 +206,6 @@
     .locals 1
 
     .prologue
-    .line 40
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;->$VALUES:[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;
 
     invoke-virtual {v0}, [Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;->clone()Ljava/lang/Object;
@@ -234,7 +223,6 @@
     .locals 1
 
     .prologue
-    .line 56
     iget v0, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;->_value:I
 
     return v0
@@ -244,7 +232,6 @@
     .locals 2
 
     .prologue
-    .line 60
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;->NAME:[Ljava/lang/String;
 
     iget v1, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;->_value:I

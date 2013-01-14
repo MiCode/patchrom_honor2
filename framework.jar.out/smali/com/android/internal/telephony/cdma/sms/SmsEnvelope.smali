@@ -74,15 +74,12 @@
     .locals 1
 
     .prologue
-    .line 141
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 88
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/telephony/cdma/sms/SmsEnvelope;->teleService:I
 
-    .line 143
     return-void
 .end method
 
@@ -92,7 +89,6 @@
     .locals 2
 
     .prologue
-    .line 146
     iget v0, p0, Lcom/android/internal/telephony/cdma/sms/SmsEnvelope;->serviceCategory:I
 
     const/16 v1, 0x1000
@@ -105,10 +101,8 @@
 
     if-gt v0, v1, :cond_0
 
-    .line 148
     const/4 v0, 0x1
 
-    .line 150
     :goto_0
     return v0
 

@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 69
     iput-object p1, p0, Lcom/android/server/am/AppDvfsAdapter$1;->this$0:Lcom/android/server/am/AppDvfsAdapter;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,14 +38,12 @@
     .parameter "msg"
 
     .prologue
-    .line 73
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
 
-    .line 74
     iget-object v0, p0, Lcom/android/server/am/AppDvfsAdapter$1;->this$0:Lcom/android/server/am/AppDvfsAdapter;
 
     #getter for: Lcom/android/server/am/AppDvfsAdapter;->mMinprofile:Lcom/android/server/am/AppDvfsAdapter$Minprofile;
@@ -56,7 +53,6 @@
 
     invoke-virtual {v0}, Lcom/android/server/am/AppDvfsAdapter$Minprofile;->pm_qos_close()V
 
-    .line 76
     :cond_0
     return-void
 .end method

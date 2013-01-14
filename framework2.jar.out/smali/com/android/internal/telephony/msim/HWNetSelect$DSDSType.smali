@@ -48,7 +48,6 @@
 
     const/4 v2, 0x0
 
-    .line 60
     new-instance v0, Lcom/android/internal/telephony/msim/HWNetSelect$DSDSType;
 
     const-string v1, "CDMA_GSM"
@@ -57,7 +56,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/msim/HWNetSelect$DSDSType;->CDMA_GSM:Lcom/android/internal/telephony/msim/HWNetSelect$DSDSType;
 
-    .line 61
     new-instance v0, Lcom/android/internal/telephony/msim/HWNetSelect$DSDSType;
 
     const-string v1, "UMTS_GSM"
@@ -66,7 +64,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/msim/HWNetSelect$DSDSType;->UMTS_GSM:Lcom/android/internal/telephony/msim/HWNetSelect$DSDSType;
 
-    .line 63
     new-instance v0, Lcom/android/internal/telephony/msim/HWNetSelect$DSDSType;
 
     const-string v1, "TDSCDMA_GSM"
@@ -75,7 +72,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/msim/HWNetSelect$DSDSType;->TDSCDMA_GSM:Lcom/android/internal/telephony/msim/HWNetSelect$DSDSType;
 
-    .line 64
     new-instance v0, Lcom/android/internal/telephony/msim/HWNetSelect$DSDSType;
 
     const-string v1, "UNKNOWN"
@@ -84,7 +80,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/msim/HWNetSelect$DSDSType;->UNKNOWN:Lcom/android/internal/telephony/msim/HWNetSelect$DSDSType;
 
-    .line 59
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/android/internal/telephony/msim/HWNetSelect$DSDSType;
@@ -121,7 +116,6 @@
     .end annotation
 
     .prologue
-    .line 59
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -132,7 +126,6 @@
     .parameter "name"
 
     .prologue
-    .line 59
     const-class v0, Lcom/android/internal/telephony/msim/HWNetSelect$DSDSType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -148,7 +141,6 @@
     .locals 1
 
     .prologue
-    .line 59
     sget-object v0, Lcom/android/internal/telephony/msim/HWNetSelect$DSDSType;->$VALUES:[Lcom/android/internal/telephony/msim/HWNetSelect$DSDSType;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/msim/HWNetSelect$DSDSType;->clone()Ljava/lang/Object;

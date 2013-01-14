@@ -17,13 +17,10 @@
     .parameter "phone"
 
     .prologue
-    .line 41
     invoke-direct {p0}, Lcom/android/internal/telephony/msim/ISmsMSim$Stub;-><init>()V
 
-    .line 42
     iput-object p1, p0, Lcom/android/internal/telephony/msim/MSimIccSmsInterfaceManager;->mPhone:[Lcom/android/internal/telephony/Phone;
 
-    .line 44
     const-string v0, "isms_msim"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -32,12 +29,10 @@
 
     if-nez v0, :cond_0
 
-    .line 45
     const-string v0, "isms_msim"
 
     invoke-static {v0, p0}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 47
     :cond_0
     return-void
 .end method
@@ -49,7 +44,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 181
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimIccSmsInterfaceManager;->mPhone:[Lcom/android/internal/telephony/Phone;
 
@@ -64,15 +58,12 @@
 
     move-result-object v1
 
-    .line 189
     :goto_0
     return-object v1
 
-    .line 182
     :catch_0
     move-exception v0
 
-    .line 183
     .local v0, e:Ljava/lang/NullPointerException;
     const-string v1, "RIL_MSimIccSms"
 
@@ -110,20 +101,16 @@
 
     invoke-static {v1, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 184
     invoke-virtual {v0}, Ljava/lang/NullPointerException;->printStackTrace()V
 
     move-object v1, v2
 
-    .line 185
     goto :goto_0
 
-    .line 186
     .end local v0           #e:Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 187
     .local v0, e:Ljava/lang/ArrayIndexOutOfBoundsException;
     const-string v1, "RIL_MSimIccSms"
 
@@ -161,12 +148,10 @@
 
     invoke-static {v1, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 188
     invoke-virtual {v0}, Ljava/lang/ArrayIndexOutOfBoundsException;->printStackTrace()V
 
     move-object v1, v2
 
-    .line 189
     goto :goto_0
 .end method
 
@@ -185,25 +170,20 @@
     .end annotation
 
     .prologue
-    .line 78
     invoke-direct {p0, p4}, Lcom/android/internal/telephony/msim/MSimIccSmsInterfaceManager;->getIccSmsInterfaceManager(I)Lcom/android/internal/telephony/IccSmsInterfaceManager;
 
     move-result-object v0
 
-    .line 79
     .local v0, iccSmsIntMgr:Lcom/android/internal/telephony/IccSmsInterfaceManager;
     if-eqz v0, :cond_0
 
-    .line 80
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->copyMessageToIccEf(I[B[B)Z
 
     move-result v1
 
-    .line 84
     :goto_0
     return v1
 
-    .line 82
     :cond_0
     const-string v1, "RIL_MSimIccSms"
 
@@ -227,7 +207,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 84
     const/4 v1, 0x0
 
     goto :goto_0
@@ -239,25 +218,20 @@
     .parameter "subscription"
 
     .prologue
-    .line 166
     invoke-direct {p0, p2}, Lcom/android/internal/telephony/msim/MSimIccSmsInterfaceManager;->getIccSmsInterfaceManager(I)Lcom/android/internal/telephony/IccSmsInterfaceManager;
 
     move-result-object v0
 
-    .line 167
     .local v0, iccSmsIntMgr:Lcom/android/internal/telephony/IccSmsInterfaceManager;
     if-eqz v0, :cond_0
 
-    .line 168
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->disableCdmaBroadcast(I)Z
 
     move-result v1
 
-    .line 173
     :goto_0
     return v1
 
-    .line 170
     :cond_0
     const-string v1, "RIL_MSimIccSms"
 
@@ -281,7 +255,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 173
     const/4 v1, 0x0
 
     goto :goto_0
@@ -293,7 +266,6 @@
     .parameter "subscription"
 
     .prologue
-    .line 140
     invoke-virtual {p0, p1, p1, p2}, Lcom/android/internal/telephony/msim/MSimIccSmsInterfaceManager;->disableCellBroadcastRange(III)Z
 
     move-result v0
@@ -308,25 +280,20 @@
     .parameter "subscription"
 
     .prologue
-    .line 144
     invoke-direct {p0, p3}, Lcom/android/internal/telephony/msim/MSimIccSmsInterfaceManager;->getIccSmsInterfaceManager(I)Lcom/android/internal/telephony/IccSmsInterfaceManager;
 
     move-result-object v0
 
-    .line 145
     .local v0, iccSmsIntMgr:Lcom/android/internal/telephony/IccSmsInterfaceManager;
     if-eqz v0, :cond_0
 
-    .line 146
     invoke-virtual {v0, p1, p2}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->disableCellBroadcastRange(II)Z
 
     move-result v1
 
-    .line 151
     :goto_0
     return v1
 
-    .line 148
     :cond_0
     const-string v1, "RIL_MSimIccSms"
 
@@ -350,7 +317,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 151
     const/4 v1, 0x0
 
     goto :goto_0
@@ -362,25 +328,20 @@
     .parameter "subscription"
 
     .prologue
-    .line 155
     invoke-direct {p0, p2}, Lcom/android/internal/telephony/msim/MSimIccSmsInterfaceManager;->getIccSmsInterfaceManager(I)Lcom/android/internal/telephony/IccSmsInterfaceManager;
 
     move-result-object v0
 
-    .line 156
     .local v0, iccSmsIntMgr:Lcom/android/internal/telephony/IccSmsInterfaceManager;
     if-eqz v0, :cond_0
 
-    .line 157
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->enableCdmaBroadcast(I)Z
 
     move-result v1
 
-    .line 162
     :goto_0
     return v1
 
-    .line 159
     :cond_0
     const-string v1, "RIL_MSimIccSms"
 
@@ -404,7 +365,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 162
     const/4 v1, 0x0
 
     goto :goto_0
@@ -421,7 +381,6 @@
     .end annotation
 
     .prologue
-    .line 125
     invoke-virtual {p0, p1, p1, p2}, Lcom/android/internal/telephony/msim/MSimIccSmsInterfaceManager;->enableCellBroadcastRange(III)Z
 
     move-result v0
@@ -436,25 +395,20 @@
     .parameter "subscription"
 
     .prologue
-    .line 129
     invoke-direct {p0, p3}, Lcom/android/internal/telephony/msim/MSimIccSmsInterfaceManager;->getIccSmsInterfaceManager(I)Lcom/android/internal/telephony/IccSmsInterfaceManager;
 
     move-result-object v0
 
-    .line 130
     .local v0, iccSmsIntMgr:Lcom/android/internal/telephony/IccSmsInterfaceManager;
     if-eqz v0, :cond_0
 
-    .line 131
     invoke-virtual {v0, p1, p2}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->enableCellBroadcastRange(II)Z
 
     move-result v1
 
-    .line 136
     :goto_0
     return v1
 
-    .line 133
     :cond_0
     const-string v1, "RIL_MSimIccSms"
 
@@ -478,7 +432,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 136
     const/4 v1, 0x0
 
     goto :goto_0
@@ -489,14 +442,12 @@
     .parameter "message"
 
     .prologue
-    .line 50
     invoke-virtual {p0}, Lcom/android/internal/telephony/msim/MSimIccSmsInterfaceManager;->getPreferredSmsSubscription()I
 
     move-result v0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/internal/telephony/msim/MSimIccSmsInterfaceManager;->enforceReceiveAndSend(Ljava/lang/String;I)V
 
-    .line 51
     return-void
 .end method
 
@@ -506,23 +457,18 @@
     .parameter "subscription"
 
     .prologue
-    .line 54
     invoke-direct {p0, p2}, Lcom/android/internal/telephony/msim/MSimIccSmsInterfaceManager;->getIccSmsInterfaceManager(I)Lcom/android/internal/telephony/IccSmsInterfaceManager;
 
     move-result-object v0
 
-    .line 55
     .local v0, iccSmsIntMgr:Lcom/android/internal/telephony/IccSmsInterfaceManager;
     if-eqz v0, :cond_0
 
-    .line 56
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->enforceReceiveAndSend(Ljava/lang/String;)V
 
-    .line 61
     :goto_0
     return-void
 
-    .line 58
     :cond_0
     const-string v1, "RIL_MSimIccSms"
 
@@ -569,25 +515,20 @@
     .end annotation
 
     .prologue
-    .line 90
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/msim/MSimIccSmsInterfaceManager;->getIccSmsInterfaceManager(I)Lcom/android/internal/telephony/IccSmsInterfaceManager;
 
     move-result-object v0
 
-    .line 91
     .local v0, iccSmsIntMgr:Lcom/android/internal/telephony/IccSmsInterfaceManager;
     if-eqz v0, :cond_0
 
-    .line 92
     invoke-virtual {v0}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->getAllMessagesFromIccEf()Ljava/util/List;
 
     move-result-object v1
 
-    .line 96
     :goto_0
     return-object v1
 
-    .line 94
     :cond_0
     const-string v1, "RIL_MSimIccSms"
 
@@ -611,7 +552,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 96
     const/4 v1, 0x0
 
     goto :goto_0
@@ -621,7 +561,6 @@
     .locals 1
 
     .prologue
-    .line 196
     invoke-static {}, Lcom/android/internal/telephony/msim/MSimPhoneFactory;->getSMSSubscription()I
 
     move-result v0
@@ -634,25 +573,20 @@
     .parameter "subscription"
 
     .prologue
-    .line 200
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/msim/MSimIccSmsInterfaceManager;->getIccSmsInterfaceManager(I)Lcom/android/internal/telephony/IccSmsInterfaceManager;
 
     move-result-object v0
 
-    .line 201
     .local v0, iccSmsIntMgr:Lcom/android/internal/telephony/IccSmsInterfaceManager;
     if-eqz v0, :cond_0
 
-    .line 202
     invoke-virtual {v0}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->getSmscAddr()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 206
     :goto_0
     return-object v1
 
-    .line 204
     :cond_0
     const-string v1, "RIL_MSimIccSms"
 
@@ -676,7 +610,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 206
     const/4 v1, 0x0
 
     goto :goto_0
@@ -717,7 +650,6 @@
     .end annotation
 
     .prologue
-    .line 114
     .local p3, parts:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     .local p4, sentIntents:Ljava/util/List;,"Ljava/util/List<Landroid/app/PendingIntent;>;"
     .local p5, deliveryIntents:Ljava/util/List;,"Ljava/util/List<Landroid/app/PendingIntent;>;"
@@ -725,7 +657,6 @@
 
     move-result-object v0
 
-    .line 115
     .local v0, iccSmsIntMgr:Lcom/android/internal/telephony/IccSmsInterfaceManager;
     if-eqz v0, :cond_0
 
@@ -739,14 +670,11 @@
 
     move-object v5, p5
 
-    .line 116
     invoke-virtual/range {v0 .. v5}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->sendMultipartText(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
 
-    .line 121
     :goto_0
     return-void
 
-    .line 118
     :cond_0
     const-string v1, "RIL_MSimIccSms"
 
@@ -783,12 +711,10 @@
     .parameter "subscription"
 
     .prologue
-    .line 102
     invoke-direct {p0, p6}, Lcom/android/internal/telephony/msim/MSimIccSmsInterfaceManager;->getIccSmsInterfaceManager(I)Lcom/android/internal/telephony/IccSmsInterfaceManager;
 
     move-result-object v0
 
-    .line 103
     .local v0, iccSmsIntMgr:Lcom/android/internal/telephony/IccSmsInterfaceManager;
     if-eqz v0, :cond_0
 
@@ -802,14 +728,11 @@
 
     move-object v5, p5
 
-    .line 104
     invoke-virtual/range {v0 .. v5}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->sendText(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V
 
-    .line 109
     :goto_0
     return-void
 
-    .line 106
     :cond_0
     const-string v1, "RIL_MSimIccSms"
 
@@ -849,25 +772,20 @@
     .end annotation
 
     .prologue
-    .line 66
     invoke-direct {p0, p4}, Lcom/android/internal/telephony/msim/MSimIccSmsInterfaceManager;->getIccSmsInterfaceManager(I)Lcom/android/internal/telephony/IccSmsInterfaceManager;
 
     move-result-object v0
 
-    .line 67
     .local v0, iccSmsIntMgr:Lcom/android/internal/telephony/IccSmsInterfaceManager;
     if-eqz v0, :cond_0
 
-    .line 68
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->updateMessageOnIccEf(II[B)Z
 
     move-result v1
 
-    .line 72
     :goto_0
     return v1
 
-    .line 70
     :cond_0
     const-string v1, "RIL_MSimIccSms"
 
@@ -891,7 +809,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 72
     const/4 v1, 0x0
 
     goto :goto_0

@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,7 +18,6 @@
     .parameter "obj"
 
     .prologue
-    .line 38
     invoke-virtual {p0}, Lcom/android/internal/telephony/cat/CatService;->getLanguageNotificationCode()Ljava/lang/String;
 
     move-result-object v0
@@ -32,7 +30,6 @@
     .parameter "obj"
 
     .prologue
-    .line 54
     invoke-virtual {p0}, Lcom/android/internal/telephony/cat/CatService;->getLanguageSelectionStateAvailable()Z
 
     move-result v0
@@ -44,7 +41,6 @@
     .locals 1
 
     .prologue
-    .line 62
     sget-object v0, Lcom/android/internal/telephony/cat/AppInterface$CommandType;->LANGUAGE_NOTIFICATION:Lcom/android/internal/telephony/cat/AppInterface$CommandType;
 
     return-object v0
@@ -57,10 +53,8 @@
     .parameter "obj"
 
     .prologue
-    .line 31
     invoke-virtual {p2, p0, p1}, Lcom/android/internal/telephony/cat/CatService;->sendLanguageSelection(II)V
 
-    .line 32
     return-void
 .end method
 
@@ -70,9 +64,7 @@
     .parameter "obj"
 
     .prologue
-    .line 46
     invoke-virtual {p1, p0}, Lcom/android/internal/telephony/cat/CatService;->setLanguageSelectionStateAvailable(Z)V
 
-    .line 47
     return-void
 .end method

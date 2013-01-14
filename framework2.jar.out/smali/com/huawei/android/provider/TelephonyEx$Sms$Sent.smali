@@ -27,7 +27,6 @@
     .locals 1
 
     .prologue
-    .line 132
     const-string v0, "content://sms/sent"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -43,7 +42,6 @@
     .locals 0
 
     .prologue
-    .line 131
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -59,7 +57,6 @@
     .parameter "subId"
 
     .prologue
-    .line 136
     sget-object v1, Lcom/huawei/android/provider/TelephonyEx$Sms$Sent;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v6, 0x1
@@ -96,7 +93,6 @@
     .parameter "networkType"
 
     .prologue
-    .line 142
     sget-object v1, Lcom/huawei/android/provider/TelephonyEx$Sms$Sent;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v6, 0x1

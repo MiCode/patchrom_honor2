@@ -80,55 +80,46 @@
     .locals 1
 
     .prologue
-    .line 38
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 59
     sget-object v0, Lcom/android/internal/telephony/Phone$State;->IDLE:Lcom/android/internal/telephony/Phone$State;
 
     iput-object v0, p0, Lcom/android/internal/telephony/CallTracker;->state:Lcom/android/internal/telephony/Phone$State;
 
-    .line 60
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/CallTracker;->mIsInEmergencyCall:Z
 
-    .line 97
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/CallTracker;->voiceCallEndedRegistrants:Landroid/os/RegistrantList;
 
-    .line 98
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/CallTracker;->voiceCallStartedRegistrants:Landroid/os/RegistrantList;
 
-    .line 99
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/CallTracker;->imsCallEndedRegistrants:Landroid/os/RegistrantList;
 
-    .line 100
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/CallTracker;->imsCallStartedRegistrants:Landroid/os/RegistrantList;
 
-    .line 101
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/CallTracker;->callWaitingRegistrants:Landroid/os/RegistrantList;
 
-    .line 38
     return-void
 .end method
 
@@ -136,7 +127,6 @@
     .locals 1
 
     .prologue
-    .line 157
     iget v0, p0, Lcom/android/internal/telephony/CallTracker;->pendingOperations:I
 
     if-nez v0, :cond_0
@@ -172,7 +162,6 @@
     .end annotation
 
     .prologue
-    .line 288
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -209,7 +198,6 @@
     .end annotation
 
     .prologue
-    .line 293
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -251,14 +239,12 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 182
-    const-string/jumbo v2, "ril.test.emergencynumber"
+    const-string v2, "ril.test.emergencynumber"
 
     invoke-static {v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 187
     .local v0, testEn:Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -266,14 +252,12 @@
 
     if-nez v2, :cond_0
 
-    .line 188
     const-string v2, ":"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v1
 
-    .line 189
     .local v1, values:[Ljava/lang/String;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -297,14 +281,12 @@
 
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/CallTracker;->log(Ljava/lang/String;)V
 
-    .line 190
     array-length v2, v1
 
     const/4 v3, 0x2
 
     if-ne v2, v3, :cond_0
 
-    .line 191
     const/4 v2, 0x0
 
     aget-object v2, v1, v2
@@ -319,12 +301,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 193
     iget-object v2, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v2}, Lcom/android/internal/telephony/CommandsInterface;->testingEmergencyCall()V
 
-    .line 194
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -357,10 +337,8 @@
 
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/CallTracker;->log(Ljava/lang/String;)V
 
-    .line 196
     aget-object p1, v1, v4
 
-    .line 200
     .end local v1           #values:[Ljava/lang/String;
     :cond_0
     return-object p1
@@ -396,7 +374,6 @@
     .end annotation
 
     .prologue
-    .line 279
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -434,7 +411,6 @@
     .end annotation
 
     .prologue
-    .line 270
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -471,7 +447,6 @@
     .end annotation
 
     .prologue
-    .line 283
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -508,7 +483,6 @@
     .end annotation
 
     .prologue
-    .line 275
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -544,12 +518,10 @@
     .parameter "args"
 
     .prologue
-    .line 311
     const-string v0, "CallTracker:"
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 312
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -572,7 +544,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 313
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -595,7 +566,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 314
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -618,7 +588,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 315
     return-void
 .end method
 
@@ -641,14 +610,12 @@
     .end annotation
 
     .prologue
-    .line 258
     iget-object v3, p1, Lcom/android/internal/telephony/Call;->connections:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 259
     .local v1, count:I
     const/4 v2, 0x0
 
@@ -656,7 +623,6 @@
     :goto_0
     if-ge v2, v1, :cond_1
 
-    .line 260
     iget-object v3, p1, Lcom/android/internal/telephony/Call;->connections:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -665,7 +631,6 @@
 
     check-cast v0, Lcom/android/internal/telephony/Connection;
 
-    .line 261
     .local v0, cn:Lcom/android/internal/telephony/Connection;
     invoke-virtual {v0}, Lcom/android/internal/telephony/Connection;->getIndex()I
 
@@ -673,19 +638,16 @@
 
     if-ne v3, p2, :cond_0
 
-    .line 266
     .end local v0           #cn:Lcom/android/internal/telephony/Connection;
     :goto_1
     return-object v0
 
-    .line 259
     .restart local v0       #cn:Lcom/android/internal/telephony/Connection;
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 266
     .end local v0           #cn:Lcom/android/internal/telephony/Connection;
     :cond_1
     const/4 v0, 0x0
@@ -706,10 +668,8 @@
     .locals 0
 
     .prologue
-    .line 131
     invoke-virtual {p0}, Lcom/android/internal/telephony/CallTracker;->pollCallsWhenSafe()V
 
-    .line 132
     return-void
 .end method
 
@@ -731,7 +691,6 @@
     .end annotation
 
     .prologue
-    .line 237
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -777,7 +736,6 @@
     .end annotation
 
     .prologue
-    .line 224
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -823,10 +781,8 @@
     .end annotation
 
     .prologue
-    .line 298
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/CallTracker;->hangupAllCallsP(I)V
 
-    .line 299
     return-void
 .end method
 
@@ -840,7 +796,6 @@
     .end annotation
 
     .prologue
-    .line 302
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
     const-string v1, "hangupAllCalls is not supported in this CallTracker"
@@ -866,7 +821,6 @@
     .parameter "e"
 
     .prologue
-    .line 123
     if-eqz p1, :cond_0
 
     instance-of v0, p1, Lcom/android/internal/telephony/CommandException;
@@ -899,7 +853,6 @@
     .locals 1
 
     .prologue
-    .line 218
     iget-boolean v0, p0, Lcom/android/internal/telephony/CallTracker;->mIsInEmergencyCall:Z
 
     return v0
@@ -913,19 +866,16 @@
     .parameter "what"
 
     .prologue
-    .line 144
     iget v0, p0, Lcom/android/internal/telephony/CallTracker;->pendingOperations:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/internal/telephony/CallTracker;->pendingOperations:I
 
-    .line 145
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/CallTracker;->lastRelevantPoll:Landroid/os/Message;
 
-    .line 146
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/CallTracker;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
@@ -937,23 +887,19 @@
     .locals 3
 
     .prologue
-    .line 115
     invoke-virtual {p0}, Lcom/android/internal/telephony/CallTracker;->obtainMessage()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 117
     .local v0, msg:Landroid/os/Message;
     const/4 v1, 0x3
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 118
     const-wide/16 v1, 0xfa
 
     invoke-virtual {p0, v0, v1, v2}, Lcom/android/internal/telephony/CallTracker;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 119
     return-void
 .end method
 
@@ -963,31 +909,26 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 105
     iput-boolean v1, p0, Lcom/android/internal/telephony/CallTracker;->needsPoll:Z
 
-    .line 107
     invoke-direct {p0}, Lcom/android/internal/telephony/CallTracker;->checkNoOperationsPending()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 108
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/CallTracker;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/CallTracker;->lastRelevantPoll:Landroid/os/Message;
 
-    .line 109
     iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     iget-object v1, p0, Lcom/android/internal/telephony/CallTracker;->lastRelevantPoll:Landroid/os/Message;
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->getCurrentCalls(Landroid/os/Message;)V
 
-    .line 111
     :cond_0
     return-void
 .end method
@@ -999,18 +940,15 @@
     .parameter "obj"
 
     .prologue
-    .line 248
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 249
     .local v0, r:Landroid/os/Registrant;
     iget-object v1, p0, Lcom/android/internal/telephony/CallTracker;->callWaitingRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
 
-    .line 250
     return-void
 .end method
 
@@ -1038,10 +976,9 @@
     .end annotation
 
     .prologue
-    .line 306
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
-    const-string/jumbo v1, "rejectCall with PhoneBase is not supported in this CallTracker"
+    const-string v1, "rejectCall with PhoneBase is not supported in this CallTracker"
 
     invoke-direct {v0, v1}, Lcom/android/internal/telephony/CallStateException;-><init>(Ljava/lang/String;)V
 
@@ -1058,7 +995,6 @@
     .end annotation
 
     .prologue
-    .line 243
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1104,7 +1040,6 @@
     .end annotation
 
     .prologue
-    .line 230
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1156,12 +1091,10 @@
     .parameter "h"
 
     .prologue
-    .line 253
     iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->callWaitingRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 254
     return-void
 .end method
 

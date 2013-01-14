@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 44
     iput-object p1, p0, Lcom/android/server/SmartcardSystemService$1;->this$0:Lcom/android/server/SmartcardSystemService;
 
     invoke-direct {p0}, Lorg/simalliance/openmobileapi/service/ISmartcardServiceCallback$Stub;-><init>()V

@@ -22,7 +22,6 @@
     .locals 0
 
     .prologue
-    .line 295
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,7 +35,6 @@
     .parameter "o2"
 
     .prologue
-    .line 297
     check-cast p1, Ljava/io/File;
 
     .end local p1

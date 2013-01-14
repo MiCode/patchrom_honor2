@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 573
     iput-object p1, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +37,6 @@
     .parameter "x1"
 
     .prologue
-    .line 573
     invoke-direct {p0, p1}, Lcom/android/server/PowerManagerService$BatteryReceiver;-><init>(Lcom/android/server/PowerManagerService;)V
 
     return-void
@@ -54,7 +52,6 @@
     .prologue
     const/high16 v8, 0x3f80
 
-    .line 576
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mLocks:Lcom/android/server/PowerManagerService$LockList;
@@ -64,7 +61,6 @@
 
     monitor-enter v4
 
-    .line 577
     :try_start_0
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
@@ -73,7 +69,6 @@
 
     move-result v2
 
-    .line 578
     .local v2, wasPowered:Z
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
@@ -91,7 +86,6 @@
     #setter for: Lcom/android/server/PowerManagerService;->mIsPowered:Z
     invoke-static {v3, v5}, Lcom/android/server/PowerManagerService;->access$802(Lcom/android/server/PowerManagerService;Z)Z
 
-    .line 598
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mIsPowered:Z
@@ -101,7 +95,6 @@
 
     if-eq v3, v2, :cond_3
 
-    .line 600
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mHighLight:Z
@@ -111,7 +104,6 @@
 
     if-eqz v3, :cond_0
 
-    .line 601
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mAutoBrightessEnabled:Z
@@ -130,7 +122,6 @@
 
     if-eqz v3, :cond_4
 
-    .line 602
     new-instance v1, Lcom/android/server/PowerManagerService$SettingsObserver;
 
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
@@ -139,7 +130,6 @@
 
     invoke-direct {v1, v3, v5}, Lcom/android/server/PowerManagerService$SettingsObserver;-><init>(Lcom/android/server/PowerManagerService;Lcom/android/server/PowerManagerService$1;)V
 
-    .line 603
     .local v1, settingsObserver:Lcom/android/server/PowerManagerService$SettingsObserver;
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
@@ -150,7 +140,6 @@
 
     invoke-virtual {v3, v1}, Landroid/content/ContentQueryMap;->addObserver(Ljava/util/Observer;)V
 
-    .line 604
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mSettings:Landroid/content/ContentQueryMap;
@@ -162,7 +151,6 @@
 
     invoke-virtual {v1, v3, v5}, Lcom/android/server/PowerManagerService$SettingsObserver;->update(Ljava/util/Observable;Ljava/lang/Object;)V
 
-    .line 605
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     iget-object v5, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
@@ -177,7 +165,6 @@
     #setter for: Lcom/android/server/PowerManagerService;->mLightSensorValue:F
     invoke-static {v3, v5}, Lcom/android/server/PowerManagerService;->access$1402(Lcom/android/server/PowerManagerService;F)F
 
-    .line 607
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     iget-object v5, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
@@ -190,7 +177,6 @@
     #setter for: Lcom/android/server/PowerManagerService;->mSavedCurAutoBrightnessLevel:F
     invoke-static {v3, v5}, Lcom/android/server/PowerManagerService;->access$1502(Lcom/android/server/PowerManagerService;F)F
 
-    .line 608
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     iget-object v5, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
@@ -205,7 +191,6 @@
     #setter for: Lcom/android/server/PowerManagerService;->mCurAutoBrightnessLevel:F
     invoke-static {v3, v5}, Lcom/android/server/PowerManagerService;->access$1602(Lcom/android/server/PowerManagerService;F)F
 
-    .line 609
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     const/4 v5, 0x0
@@ -213,7 +198,6 @@
     #setter for: Lcom/android/server/PowerManagerService;->mCalled:Z
     invoke-static {v3, v5}, Lcom/android/server/PowerManagerService;->access$1802(Lcom/android/server/PowerManagerService;Z)Z
 
-    .line 611
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     iget-object v5, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
@@ -228,7 +212,6 @@
     #calls: Lcom/android/server/PowerManagerService;->lightSensorChangedLocked(IZ)V
     invoke-static {v3, v5, v6}, Lcom/android/server/PowerManagerService;->access$2000(Lcom/android/server/PowerManagerService;IZ)V
 
-    .line 636
     .end local v1           #settingsObserver:Lcom/android/server/PowerManagerService$SettingsObserver;
     :cond_0
     :goto_0
@@ -237,7 +220,6 @@
     #calls: Lcom/android/server/PowerManagerService;->updateWakeLockLocked()V
     invoke-static {v3}, Lcom/android/server/PowerManagerService;->access$2500(Lcom/android/server/PowerManagerService;)V
 
-    .line 638
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     iget-object v5, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
@@ -254,13 +236,11 @@
     #setter for: Lcom/android/server/PowerManagerService;->mPlugType:I
     invoke-static {v3, v5}, Lcom/android/server/PowerManagerService;->access$2602(Lcom/android/server/PowerManagerService;I)I
 
-    .line 639
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     #calls: Lcom/android/server/PowerManagerService;->updateCallingLimit()V
     invoke-static {v3}, Lcom/android/server/PowerManagerService;->access$2700(Lcom/android/server/PowerManagerService;)V
 
-    .line 651
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mLocks:Lcom/android/server/PowerManagerService$LockList;
@@ -272,7 +252,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 652
     if-eqz v2, :cond_1
 
     :try_start_1
@@ -293,28 +272,23 @@
 
     if-eqz v3, :cond_2
 
-    .line 654
     :cond_1
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     #calls: Lcom/android/server/PowerManagerService;->forceUserActivityLocked()V
     invoke-static {v3}, Lcom/android/server/PowerManagerService;->access$2900(Lcom/android/server/PowerManagerService;)V
 
-    .line 656
     :cond_2
     monitor-exit v5
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 658
     :cond_3
     :try_start_2
     monitor-exit v4
 
-    .line 659
     return-void
 
-    .line 612
     :cond_4
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
@@ -325,7 +299,6 @@
 
     if-nez v3, :cond_0
 
-    .line 613
     new-instance v1, Lcom/android/server/PowerManagerService$SettingsObserver;
 
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
@@ -334,7 +307,6 @@
 
     invoke-direct {v1, v3, v5}, Lcom/android/server/PowerManagerService$SettingsObserver;-><init>(Lcom/android/server/PowerManagerService;Lcom/android/server/PowerManagerService$1;)V
 
-    .line 614
     .restart local v1       #settingsObserver:Lcom/android/server/PowerManagerService$SettingsObserver;
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
@@ -345,7 +317,6 @@
 
     invoke-virtual {v3, v1}, Landroid/content/ContentQueryMap;->addObserver(Ljava/util/Observer;)V
 
-    .line 615
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mSettings:Landroid/content/ContentQueryMap;
@@ -357,7 +328,6 @@
 
     invoke-virtual {v1, v3, v5}, Lcom/android/server/PowerManagerService$SettingsObserver;->update(Ljava/util/Observable;Ljava/lang/Object;)V
 
-    .line 616
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     iget-object v5, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
@@ -384,7 +354,6 @@
     #setter for: Lcom/android/server/PowerManagerService;->mLightSensorScreenBrightness:I
     invoke-static {v3, v5}, Lcom/android/server/PowerManagerService;->access$2102(Lcom/android/server/PowerManagerService;I)I
 
-    .line 617
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     iget-object v5, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
@@ -399,7 +368,6 @@
     #setter for: Lcom/android/server/PowerManagerService;->mLightSensorValue:F
     invoke-static {v3, v5}, Lcom/android/server/PowerManagerService;->access$1402(Lcom/android/server/PowerManagerService;F)F
 
-    .line 619
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mCalled:Z
@@ -409,7 +377,6 @@
 
     if-nez v3, :cond_0
 
-    .line 620
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mSavedCurAutoBrightnessLevel:F
@@ -423,7 +390,6 @@
 
     if-nez v3, :cond_5
 
-    .line 621
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mContext:Landroid/content/Context;
@@ -443,7 +409,6 @@
 
     move-result v0
 
-    .line 623
     .local v0, adj:F
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
@@ -460,7 +425,6 @@
     #setter for: Lcom/android/server/PowerManagerService;->mCurAutoBrightnessLevel:F
     invoke-static {v3, v5}, Lcom/android/server/PowerManagerService;->access$1602(Lcom/android/server/PowerManagerService;F)F
 
-    .line 628
     .end local v0           #adj:F
     :goto_1
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
@@ -470,7 +434,6 @@
     #setter for: Lcom/android/server/PowerManagerService;->mCalled:Z
     invoke-static {v3, v5}, Lcom/android/server/PowerManagerService;->access$1802(Lcom/android/server/PowerManagerService;Z)Z
 
-    .line 629
     iget-object v3, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     iget-object v5, p0, Lcom/android/server/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/PowerManagerService;
@@ -487,7 +450,6 @@
 
     goto/16 :goto_0
 
-    .line 658
     .end local v1           #settingsObserver:Lcom/android/server/PowerManagerService$SettingsObserver;
     .end local v2           #wasPowered:Z
     :catchall_0
@@ -499,7 +461,6 @@
 
     throw v3
 
-    .line 626
     .restart local v1       #settingsObserver:Lcom/android/server/PowerManagerService$SettingsObserver;
     .restart local v2       #wasPowered:Z
     :cond_5
@@ -520,7 +481,6 @@
 
     goto :goto_1
 
-    .line 656
     .end local v1           #settingsObserver:Lcom/android/server/PowerManagerService$SettingsObserver;
     :catchall_1
     move-exception v3

@@ -32,20 +32,16 @@
     .parameter "service"
 
     .prologue
-    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/server/BluetoothDeviceProperties;->mPropertiesMap:Ljava/util/HashMap;
 
-    .line 35
     iput-object p1, p0, Landroid/server/BluetoothDeviceProperties;->mService:Landroid/server/BluetoothService;
 
-    .line 36
     return-void
 .end method
 
@@ -71,12 +67,10 @@
     .end annotation
 
     .prologue
-    .line 44
     iget-object v9, p0, Landroid/server/BluetoothDeviceProperties;->mPropertiesMap:Ljava/util/HashMap;
 
     monitor-enter v9
 
-    .line 45
     :try_start_0
     iget-object v8, p0, Landroid/server/BluetoothDeviceProperties;->mPropertiesMap:Ljava/util/HashMap;
 
@@ -86,11 +80,9 @@
 
     check-cast v6, Ljava/util/Map;
 
-    .line 46
     .local v6, propertyValues:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     if-nez v6, :cond_0
 
-    .line 47
     new-instance v6, Ljava/util/HashMap;
 
     .end local v6           #propertyValues:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
@@ -98,7 +90,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 51
     .restart local v6       #propertyValues:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     :cond_0
     const/4 v1, 0x0
@@ -110,18 +101,14 @@
 
     if-ge v1, v8, :cond_5
 
-    .line 52
     aget-object v4, p2, v1
 
-    .line 53
     .local v4, name:Ljava/lang/String;
     const/4 v5, 0x0
 
-    .line 55
     .local v5, newValue:Ljava/lang/String;
     if-nez v4, :cond_1
 
-    .line 56
     const-string v8, "BluetoothDeviceProperties"
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -150,13 +137,11 @@
 
     invoke-static {v8, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 51
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 60
     :cond_1
     const-string v8, "UUIDs"
 
@@ -192,13 +177,11 @@
 
     if-eqz v8, :cond_6
 
-    .line 62
     :cond_2
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 63
     .local v7, str:Ljava/lang/StringBuilder;
     add-int/lit8 v1, v1, 0x1
 
@@ -212,7 +195,6 @@
 
     move-result v3
 
-    .line 64
     .local v3, len:I
     const/4 v2, 0x0
 
@@ -220,33 +202,27 @@
     :goto_2
     if-ge v2, v3, :cond_3
 
-    .line 65
     add-int/lit8 v1, v1, 0x1
 
     aget-object v8, p2, v1
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 66
     const-string v8, ","
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 64
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_2
 
-    .line 68
     :cond_3
     if-lez v3, :cond_4
 
-    .line 69
     invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 75
     .end local v2           #j:I
     .end local v3           #len:I
     .end local v7           #str:Ljava/lang/StringBuilder;
@@ -259,13 +235,11 @@
 
     goto :goto_1
 
-    .line 77
     .end local v4           #name:Ljava/lang/String;
     .end local v5           #newValue:Ljava/lang/String;
     :catch_0
     move-exception v0
 
-    .line 78
     .local v0, e:Ljava/lang/ArrayIndexOutOfBoundsException;
     :try_start_2
     const-string v8, "BluetoothDeviceProperties"
@@ -274,27 +248,22 @@
 
     invoke-static {v8, v10, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 81
     .end local v0           #e:Ljava/lang/ArrayIndexOutOfBoundsException;
     :cond_5
     iget-object v8, p0, Landroid/server/BluetoothDeviceProperties;->mPropertiesMap:Ljava/util/HashMap;
 
     invoke-virtual {v8, p1, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 82
     monitor-exit v9
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 86
     iget-object v8, p0, Landroid/server/BluetoothDeviceProperties;->mService:Landroid/server/BluetoothService;
 
     invoke-virtual {v8, p1}, Landroid/server/BluetoothService;->updateDeviceServiceChannelCache(Ljava/lang/String;)V
 
-    .line 87
     return-object v6
 
-    .line 72
     .restart local v4       #name:Ljava/lang/String;
     .restart local v5       #newValue:Ljava/lang/String;
     :cond_6
@@ -308,7 +277,6 @@
 
     goto :goto_3
 
-    .line 82
     .end local v1           #i:I
     .end local v4           #name:Ljava/lang/String;
     .end local v5           #newValue:Ljava/lang/String;
@@ -330,12 +298,10 @@
     .parameter "property"
 
     .prologue
-    .line 127
     iget-object v2, p0, Landroid/server/BluetoothDeviceProperties;->mPropertiesMap:Ljava/util/HashMap;
 
     monitor-enter v2
 
-    .line 128
     :try_start_0
     iget-object v1, p0, Landroid/server/BluetoothDeviceProperties;->mPropertiesMap:Ljava/util/HashMap;
 
@@ -345,11 +311,9 @@
 
     check-cast v0, Ljava/util/Map;
 
-    .line 129
     .local v0, properties:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     if-eqz v0, :cond_0
 
-    .line 130
     invoke-interface {v0, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
@@ -358,20 +322,16 @@
 
     monitor-exit v2
 
-    .line 142
     :goto_0
     return-object v1
 
-    .line 135
     :cond_0
     invoke-virtual {p0, p1}, Landroid/server/BluetoothDeviceProperties;->updateCache(Ljava/lang/String;)Ljava/util/Map;
 
     move-result-object v0
 
-    .line 136
     if-eqz v0, :cond_1
 
-    .line 137
     invoke-interface {v0, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
@@ -382,7 +342,6 @@
 
     goto :goto_0
 
-    .line 140
     .end local v0           #properties:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     :catchall_0
     move-exception v1
@@ -400,7 +359,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 141
     const-string v1, "BluetoothDeviceProperties"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -433,7 +391,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 142
     const/4 v1, 0x0
 
     goto :goto_0
@@ -443,12 +400,10 @@
     .locals 2
 
     .prologue
-    .line 115
     iget-object v1, p0, Landroid/server/BluetoothDeviceProperties;->mPropertiesMap:Ljava/util/HashMap;
 
     monitor-enter v1
 
-    .line 116
     :try_start_0
     iget-object v0, p0, Landroid/server/BluetoothDeviceProperties;->mPropertiesMap:Ljava/util/HashMap;
 
@@ -460,7 +415,6 @@
 
     return v0
 
-    .line 117
     :catchall_0
     move-exception v0
 
@@ -476,12 +430,10 @@
     .parameter "address"
 
     .prologue
-    .line 109
     iget-object v1, p0, Landroid/server/BluetoothDeviceProperties;->mPropertiesMap:Ljava/util/HashMap;
 
     monitor-enter v1
 
-    .line 110
     :try_start_0
     iget-object v0, p0, Landroid/server/BluetoothDeviceProperties;->mPropertiesMap:Ljava/util/HashMap;
 
@@ -503,7 +455,6 @@
 
     goto :goto_0
 
-    .line 111
     :catchall_0
     move-exception v0
 
@@ -519,7 +470,6 @@
     .parameter "str"
 
     .prologue
-    .line 92
     const-string v0, "-?\\d+"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
@@ -542,12 +492,10 @@
     .end annotation
 
     .prologue
-    .line 121
     iget-object v1, p0, Landroid/server/BluetoothDeviceProperties;->mPropertiesMap:Ljava/util/HashMap;
 
     monitor-enter v1
 
-    .line 122
     :try_start_0
     iget-object v0, p0, Landroid/server/BluetoothDeviceProperties;->mPropertiesMap:Ljava/util/HashMap;
 
@@ -559,7 +507,6 @@
 
     return-object v0
 
-    .line 123
     :catchall_0
     move-exception v0
 
@@ -577,12 +524,10 @@
     .parameter "value"
 
     .prologue
-    .line 97
     iget-object v2, p0, Landroid/server/BluetoothDeviceProperties;->mPropertiesMap:Ljava/util/HashMap;
 
     monitor-enter v2
 
-    .line 98
     :try_start_0
     iget-object v1, p0, Landroid/server/BluetoothDeviceProperties;->mPropertiesMap:Ljava/util/HashMap;
 
@@ -592,26 +537,20 @@
 
     check-cast v0, Ljava/util/Map;
 
-    .line 99
     .local v0, propVal:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     if-eqz v0, :cond_0
 
-    .line 100
     invoke-interface {v0, p2, p3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 101
     iget-object v1, p0, Landroid/server/BluetoothDeviceProperties;->mPropertiesMap:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 105
     :goto_0
     monitor-exit v2
 
-    .line 106
     return-void
 
-    .line 103
     :cond_0
     const-string v1, "BluetoothDeviceProperties"
 
@@ -619,7 +558,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "setRemoteDeviceProperty for a device not in cache:"
+    const-string v4, "setRemoteDeviceProperty for a device not in cache:"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -637,7 +576,6 @@
 
     goto :goto_0
 
-    .line 105
     .end local v0           #propVal:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     :catchall_0
     move-exception v1
@@ -666,23 +604,19 @@
     .end annotation
 
     .prologue
-    .line 146
     iget-object v1, p0, Landroid/server/BluetoothDeviceProperties;->mService:Landroid/server/BluetoothService;
 
     invoke-virtual {v1, p1}, Landroid/server/BluetoothService;->getRemoteDeviceProperties(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 147
     .local v0, propValues:[Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 148
     invoke-virtual {p0, p1, v0}, Landroid/server/BluetoothDeviceProperties;->addProperties(Ljava/lang/String;[Ljava/lang/String;)Ljava/util/Map;
 
     move-result-object v1
 
-    .line 150
     :goto_0
     return-object v1
 

@@ -13,10 +13,8 @@
     .parameter "phone"
 
     .prologue
-    .line 34
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
 
-    .line 35
     return-void
 .end method
 
@@ -28,7 +26,6 @@
     .parameter "defValue"
 
     .prologue
-    .line 52
     iget-object v0, p0, Lcom/android/internal/telephony/msim/MSimCdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     check-cast v0, Lcom/android/internal/telephony/msim/MSimCDMAPhone;
@@ -48,7 +45,6 @@
     .locals 4
 
     .prologue
-    .line 39
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimCdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     check-cast v1, Lcom/android/internal/telephony/msim/MSimCDMAPhone;
@@ -57,11 +53,9 @@
 
     move-result-object v0
 
-    .line 40
     .local v0, subscriptionData:Lcom/android/internal/telephony/msim/Subscription;
     if-eqz v0, :cond_0
 
-    .line 41
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimCdmaServiceStateTracker;->mUiccManager:Lcom/android/internal/telephony/UiccManager;
 
     iget v2, v0, Lcom/android/internal/telephony/msim/Subscription;->slotId:I
@@ -72,7 +66,6 @@
 
     move-result-object v1
 
-    .line 43
     :goto_0
     return-object v1
 
@@ -87,7 +80,6 @@
     .parameter "s"
 
     .prologue
-    .line 57
     const-string v1, "CDMA"
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -128,7 +120,6 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 58
     return-void
 .end method
 
@@ -137,7 +128,6 @@
     .parameter "s"
 
     .prologue
-    .line 62
     const-string v1, "CDMA"
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -178,7 +168,6 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 63
     return-void
 .end method
 
@@ -186,7 +175,6 @@
     .locals 2
 
     .prologue
-    .line 47
     iget-object v0, p0, Lcom/android/internal/telephony/msim/MSimCdmaServiceStateTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v1, 0x22
@@ -197,6 +185,5 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->getCDMASubscription(Landroid/os/Message;)V
 
-    .line 48
     return-void
 .end method

@@ -31,7 +31,6 @@
     .locals 0
 
     .prologue
-    .line 408
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,32 +44,26 @@
     .parameter "fd"
 
     .prologue
-    .line 415
     iget-boolean v0, p0, Landroid/app/ActivityThread$Profiler;->profiling:Z
 
     if-eqz v0, :cond_1
 
-    .line 416
     if-eqz p2, :cond_0
 
-    .line 418
     :try_start_0
     invoke-virtual {p2}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 434
     :cond_0
     :goto_0
     return-void
 
-    .line 425
     :cond_1
     iget-object v0, p0, Landroid/app/ActivityThread$Profiler;->profileFd:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v0, :cond_2
 
-    .line 427
     :try_start_1
     iget-object v0, p0, Landroid/app/ActivityThread$Profiler;->profileFd:Landroid/os/ParcelFileDescriptor;
 
@@ -78,23 +71,19 @@
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 432
     :cond_2
     :goto_1
     iput-object p1, p0, Landroid/app/ActivityThread$Profiler;->profileFile:Ljava/lang/String;
 
-    .line 433
     iput-object p2, p0, Landroid/app/ActivityThread$Profiler;->profileFd:Landroid/os/ParcelFileDescriptor;
 
     goto :goto_0
 
-    .line 419
     :catch_0
     move-exception v0
 
     goto :goto_0
 
-    .line 428
     :catch_1
     move-exception v0
 
@@ -105,7 +94,6 @@
     .locals 6
 
     .prologue
-    .line 436
     iget-object v2, p0, Landroid/app/ActivityThread$Profiler;->profileFd:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v2, :cond_0
@@ -114,12 +102,10 @@
 
     if-eqz v2, :cond_1
 
-    .line 452
     :cond_0
     :goto_0
     return-void
 
-    .line 440
     :cond_1
     :try_start_0
     iget-object v2, p0, Landroid/app/ActivityThread$Profiler;->profileFile:Ljava/lang/String;
@@ -136,7 +122,6 @@
 
     invoke-static {v2, v3, v4, v5}, Landroid/os/Debug;->startMethodTracing(Ljava/lang/String;Ljava/io/FileDescriptor;II)V
 
-    .line 442
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Landroid/app/ActivityThread$Profiler;->profiling:Z
@@ -145,11 +130,9 @@
 
     goto :goto_0
 
-    .line 443
     :catch_0
     move-exception v0
 
-    .line 444
     .local v0, e:Ljava/lang/RuntimeException;
     const-string v2, "ActivityThread"
 
@@ -175,13 +158,11 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 446
     :try_start_1
     iget-object v2, p0, Landroid/app/ActivityThread$Profiler;->profileFd:Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {v2}, Landroid/os/ParcelFileDescriptor;->close()V
 
-    .line 447
     const/4 v2, 0x0
 
     iput-object v2, p0, Landroid/app/ActivityThread$Profiler;->profileFd:Landroid/os/ParcelFileDescriptor;
@@ -190,11 +171,9 @@
 
     goto :goto_0
 
-    .line 448
     :catch_1
     move-exception v1
 
-    .line 449
     .local v1, e2:Ljava/io/IOException;
     const-string v2, "ActivityThread"
 
@@ -211,25 +190,20 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 454
     iget-boolean v0, p0, Landroid/app/ActivityThread$Profiler;->profiling:Z
 
     if-eqz v0, :cond_1
 
-    .line 455
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/app/ActivityThread$Profiler;->profiling:Z
 
-    .line 456
     invoke-static {}, Landroid/os/Debug;->stopMethodTracing()V
 
-    .line 457
     iget-object v0, p0, Landroid/app/ActivityThread$Profiler;->profileFd:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v0, :cond_0
 
-    .line 459
     :try_start_0
     iget-object v0, p0, Landroid/app/ActivityThread$Profiler;->profileFd:Landroid/os/ParcelFileDescriptor;
 
@@ -237,19 +211,15 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 463
     :cond_0
     :goto_0
     iput-object v1, p0, Landroid/app/ActivityThread$Profiler;->profileFd:Landroid/os/ParcelFileDescriptor;
 
-    .line 464
     iput-object v1, p0, Landroid/app/ActivityThread$Profiler;->profileFile:Ljava/lang/String;
 
-    .line 466
     :cond_1
     return-void
 
-    .line 460
     :catch_0
     move-exception v0
 

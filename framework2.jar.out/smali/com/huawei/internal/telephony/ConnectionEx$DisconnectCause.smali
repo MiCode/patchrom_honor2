@@ -122,7 +122,6 @@
 
     const/4 v3, 0x0
 
-    .line 28
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "NOT_DISCONNECTED"
@@ -131,7 +130,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->NOT_DISCONNECTED:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 29
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "INCOMING_MISSED"
@@ -140,7 +138,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->INCOMING_MISSED:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 30
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "NORMAL"
@@ -149,7 +146,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->NORMAL:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 31
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "LOCAL"
@@ -158,7 +154,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->LOCAL:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 32
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "BUSY"
@@ -167,7 +162,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->BUSY:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 33
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "CONGESTION"
@@ -178,7 +172,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->CONGESTION:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 34
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "MMI"
@@ -189,7 +182,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->MMI:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 35
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "INVALID_NUMBER"
@@ -200,7 +192,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->INVALID_NUMBER:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 36
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "NUMBER_UNREACHABLE"
@@ -211,7 +202,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->NUMBER_UNREACHABLE:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 37
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "SERVER_UNREACHABLE"
@@ -222,7 +212,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->SERVER_UNREACHABLE:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 38
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "INVALID_CREDENTIALS"
@@ -233,7 +222,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->INVALID_CREDENTIALS:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 39
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "OUT_OF_NETWORK"
@@ -244,7 +232,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->OUT_OF_NETWORK:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 40
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "SERVER_ERROR"
@@ -255,7 +242,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->SERVER_ERROR:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 41
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "TIMED_OUT"
@@ -266,7 +252,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->TIMED_OUT:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 42
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "LOST_SIGNAL"
@@ -277,7 +262,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->LOST_SIGNAL:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 43
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "LIMIT_EXCEEDED"
@@ -288,7 +272,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->LIMIT_EXCEEDED:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 44
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "INCOMING_REJECTED"
@@ -299,7 +282,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->INCOMING_REJECTED:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 45
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "POWER_OFF"
@@ -310,7 +292,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->POWER_OFF:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 46
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "OUT_OF_SERVICE"
@@ -321,7 +302,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->OUT_OF_SERVICE:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 47
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "ICC_ERROR"
@@ -332,7 +312,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->ICC_ERROR:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 48
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "CALL_BARRED"
@@ -343,7 +322,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->CALL_BARRED:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 49
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "FDN_BLOCKED"
@@ -354,7 +332,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->FDN_BLOCKED:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 50
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "CS_RESTRICTED"
@@ -365,7 +342,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->CS_RESTRICTED:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 51
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "CS_RESTRICTED_NORMAL"
@@ -376,7 +352,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->CS_RESTRICTED_NORMAL:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 52
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "CS_RESTRICTED_EMERGENCY"
@@ -387,7 +362,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->CS_RESTRICTED_EMERGENCY:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 53
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "UNOBTAINABLE_NUMBER"
@@ -398,7 +372,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->UNOBTAINABLE_NUMBER:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 54
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "DIAL_MODIFIED_TO_USSD"
@@ -409,7 +382,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->DIAL_MODIFIED_TO_USSD:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 55
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "DIAL_MODIFIED_TO_SS"
@@ -420,7 +392,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->DIAL_MODIFIED_TO_SS:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 56
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "DIAL_MODIFIED_TO_DIAL"
@@ -431,7 +402,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->DIAL_MODIFIED_TO_DIAL:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 57
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "CDMA_LOCKED_UNTIL_POWER_CYCLE"
@@ -442,7 +412,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->CDMA_LOCKED_UNTIL_POWER_CYCLE:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 58
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "CDMA_DROP"
@@ -453,7 +422,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->CDMA_DROP:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 59
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "CDMA_INTERCEPT"
@@ -464,7 +432,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->CDMA_INTERCEPT:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 60
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "CDMA_REORDER"
@@ -475,7 +442,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->CDMA_REORDER:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 61
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "CDMA_SO_REJECT"
@@ -486,7 +452,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->CDMA_SO_REJECT:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 62
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "CDMA_RETRY_ORDER"
@@ -497,7 +462,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->CDMA_RETRY_ORDER:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 63
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "CDMA_ACCESS_FAILURE"
@@ -508,7 +472,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->CDMA_ACCESS_FAILURE:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 64
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "CDMA_PREEMPTED"
@@ -519,7 +482,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->CDMA_PREEMPTED:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 65
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "CDMA_NOT_EMERGENCY"
@@ -530,7 +492,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->CDMA_NOT_EMERGENCY:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 66
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "CDMA_ACCESS_BLOCKED"
@@ -541,7 +502,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->CDMA_ACCESS_BLOCKED:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 67
     new-instance v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     const-string v1, "ERROR_UNSPECIFIED"
@@ -552,7 +512,6 @@
 
     sput-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->ERROR_UNSPECIFIED:Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
-    .line 27
     const/16 v0, 0x28
 
     new-array v0, v0, [Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
@@ -803,7 +762,6 @@
     .end annotation
 
     .prologue
-    .line 27
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -814,7 +772,6 @@
     .parameter "name"
 
     .prologue
-    .line 27
     const-class v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -830,7 +787,6 @@
     .locals 1
 
     .prologue
-    .line 27
     sget-object v0, Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->$VALUES:[Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;
 
     invoke-virtual {v0}, [Lcom/huawei/internal/telephony/ConnectionEx$DisconnectCause;->clone()Ljava/lang/Object;

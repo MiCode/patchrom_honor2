@@ -56,7 +56,6 @@
 
     const/4 v2, 0x0
 
-    .line 63
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$SimStatus;
 
     const-string v1, "SIM_ABSENT"
@@ -65,7 +64,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$SimStatus;->SIM_ABSENT:Lcom/huawei/atcommand/HuaweiATUtils$SimStatus;
 
-    .line 64
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$SimStatus;
 
     const-string v1, "SIM_NOT_READY"
@@ -74,7 +72,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$SimStatus;->SIM_NOT_READY:Lcom/huawei/atcommand/HuaweiATUtils$SimStatus;
 
-    .line 65
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$SimStatus;
 
     const-string v1, "SIM_READY"
@@ -83,7 +80,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$SimStatus;->SIM_READY:Lcom/huawei/atcommand/HuaweiATUtils$SimStatus;
 
-    .line 66
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$SimStatus;
 
     const-string v1, "SIM_PIN"
@@ -92,7 +88,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$SimStatus;->SIM_PIN:Lcom/huawei/atcommand/HuaweiATUtils$SimStatus;
 
-    .line 67
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$SimStatus;
 
     const-string v1, "SIM_PUK"
@@ -101,7 +96,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$SimStatus;->SIM_PUK:Lcom/huawei/atcommand/HuaweiATUtils$SimStatus;
 
-    .line 62
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/huawei/atcommand/HuaweiATUtils$SimStatus;
@@ -143,10 +137,8 @@
     .end annotation
 
     .prologue
-    .line 71
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 72
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -161,7 +153,6 @@
     .parameter "status"
 
     .prologue
-    .line 80
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -176,7 +167,6 @@
     .parameter "name"
 
     .prologue
-    .line 62
     const-class v0, Lcom/huawei/atcommand/HuaweiATUtils$SimStatus;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -192,7 +182,6 @@
     .locals 1
 
     .prologue
-    .line 62
     sget-object v0, Lcom/huawei/atcommand/HuaweiATUtils$SimStatus;->$VALUES:[Lcom/huawei/atcommand/HuaweiATUtils$SimStatus;
 
     invoke-virtual {v0}, [Lcom/huawei/atcommand/HuaweiATUtils$SimStatus;->clone()Ljava/lang/Object;
@@ -210,7 +199,6 @@
     .locals 2
 
     .prologue
-    .line 76
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."

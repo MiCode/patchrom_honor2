@@ -54,28 +54,22 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 87
     invoke-direct {p0}, Lcom/huawei/telephony/IHuaweiTelephony$Stub;-><init>()V
 
-    .line 73
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mLock:Ljava/lang/Object;
 
-    .line 76
     iput-object v1, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mPhones:[Lcom/huawei/telephony/HuaweiPhone;
 
-    .line 78
     iput-object v1, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mMsim:Lcom/android/internal/telephony/IHuaweiMsim;
 
-    .line 79
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mbATReady:Z
 
-    .line 89
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "HuaweiPhoneTempService"
@@ -84,12 +78,10 @@
 
     iput-object v0, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mMessageThread:Landroid/os/HandlerThread;
 
-    .line 90
     iget-object v0, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mMessageThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 91
     new-instance v0, Lcom/huawei/telephony/HuaweiPhoneService$MainHandler;
 
     iget-object v1, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mMessageThread:Landroid/os/HandlerThread;
@@ -102,12 +94,10 @@
 
     iput-object v0, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mMainHandler:Lcom/huawei/telephony/HuaweiPhoneService$MainHandler;
 
-    .line 93
     const-string v0, "huaweiphone"
 
     invoke-static {v0, p0}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 94
     return-void
 .end method
 
@@ -117,7 +107,6 @@
     .parameter "x1"
 
     .prologue
-    .line 56
     iput-object p1, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mATResponse:[Ljava/lang/String;
 
     return-object p1
@@ -128,7 +117,6 @@
     .parameter "x0"
 
     .prologue
-    .line 56
     iget-object v0, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mLock:Ljava/lang/Object;
 
     return-object v0
@@ -140,7 +128,6 @@
     .parameter "x1"
 
     .prologue
-    .line 56
     iput-boolean p1, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mbATReady:Z
 
     return p1
@@ -151,7 +138,6 @@
     .parameter "msg"
 
     .prologue
-    .line 207
     const-string v0, "HuaweiPhoneService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -174,7 +160,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 208
     return-void
 .end method
 
@@ -185,7 +170,6 @@
     .parameter "arg2"
 
     .prologue
-    .line 177
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v2
@@ -198,7 +182,6 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 178
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "This method will deadlock if called from the main thread."
@@ -207,13 +190,11 @@
 
     throw v2
 
-    .line 181
     :cond_0
     new-instance v1, Lcom/huawei/telephony/HuaweiPhoneService$MainThreadRequest;
 
     invoke-direct {v1, p2, p3}, Lcom/huawei/telephony/HuaweiPhoneService$MainThreadRequest;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 182
     .local v1, request:Lcom/huawei/telephony/HuaweiPhoneService$MainThreadRequest;
     iget-object v2, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mMainHandler:Lcom/huawei/telephony/HuaweiPhoneService$MainHandler;
 
@@ -221,14 +202,11 @@
 
     move-result-object v0
 
-    .line 183
     .local v0, msg:Landroid/os/Message;
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 185
     monitor-enter v1
 
-    .line 186
     :goto_0
     :try_start_0
     iget-object v2, v1, Lcom/huawei/telephony/HuaweiPhoneService$MainThreadRequest;->result:Ljava/lang/Object;
@@ -237,7 +215,6 @@
 
     if-nez v2, :cond_1
 
-    .line 188
     :try_start_1
     invoke-virtual {v1}, Ljava/lang/Object;->wait()V
     :try_end_1
@@ -246,25 +223,21 @@
 
     goto :goto_0
 
-    .line 189
     :catch_0
     move-exception v2
 
     goto :goto_0
 
-    .line 193
     :cond_1
     :try_start_2
     monitor-exit v1
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 195
     iget-object v2, v1, Lcom/huawei/telephony/HuaweiPhoneService$MainThreadRequest;->result:Ljava/lang/Object;
 
     return-object v2
 
-    .line 193
     :catchall_0
     move-exception v2
 
@@ -287,37 +260,30 @@
 
     const/4 v7, 0x0
 
-    .line 310
     new-array v5, v8, [Ljava/lang/String;
 
     const-string v6, "0"
 
     aput-object v6, v5, v7
 
-    .line 311
     .local v5, response:[Ljava/lang/String;
     new-array v0, v8, [Ljava/lang/String;
 
     aput-object p1, v0, v7
 
-    .line 312
     .local v0, ATCommands:[Ljava/lang/String;
     iput-boolean v7, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mbATReady:Z
 
-    .line 315
     :try_start_0
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v4
 
-    .line 316
     .local v4, myLooper:Landroid/os/Looper;
     if-nez v4, :cond_0
 
-    .line 317
     invoke-static {}, Landroid/os/Looper;->prepare()V
 
-    .line 323
     :cond_0
     iget-object v7, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mLock:Ljava/lang/Object;
 
@@ -325,7 +291,6 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 325
     :try_start_1
     iget-object v6, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mMainHandler:Lcom/huawei/telephony/HuaweiPhoneService$MainHandler;
 
@@ -335,7 +300,6 @@
 
     move-result-object v3
 
-    .line 328
     .local v3, msg:Landroid/os/Message;
     iget-object v6, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mPhones:[Lcom/huawei/telephony/HuaweiPhone;
 
@@ -345,7 +309,6 @@
 
     invoke-virtual {v6, v0, v3}, Lcom/huawei/telephony/HuaweiPhone;->invokeOemRilRequestStrings([Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 331
     :goto_0
     iget-boolean v6, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mbATReady:Z
     :try_end_1
@@ -353,7 +316,6 @@
 
     if-nez v6, :cond_1
 
-    .line 334
     :try_start_2
     iget-object v6, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mLock:Ljava/lang/Object;
 
@@ -364,11 +326,9 @@
 
     goto :goto_0
 
-    .line 336
     :catch_0
     move-exception v1
 
-    .line 338
     .local v1, e:Ljava/lang/InterruptedException;
     :try_start_3
     const-string v6, "interrupted while trying to send command from ATDirectChannel"
@@ -377,7 +337,6 @@
 
     goto :goto_0
 
-    .line 341
     .end local v1           #e:Ljava/lang/InterruptedException;
     .end local v3           #msg:Landroid/os/Message;
     :catchall_0
@@ -392,12 +351,10 @@
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
 
-    .line 343
     .end local v4           #myLooper:Landroid/os/Looper;
     :catch_1
     move-exception v2
 
-    .line 344
     .local v2, ex:Ljava/lang/Exception;
     const-string v6, "HuaweiPhoneService"
 
@@ -421,12 +378,10 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 347
     .end local v2           #ex:Ljava/lang/Exception;
     :goto_1
     return-object v5
 
-    .line 341
     .restart local v3       #msg:Landroid/os/Message;
     .restart local v4       #myLooper:Landroid/os/Looper;
     :cond_1
@@ -435,7 +390,6 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 342
     :try_start_6
     iget-object v5, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mATResponse:[Ljava/lang/String;
     :try_end_6
@@ -449,7 +403,6 @@
     .parameter "nMode"
 
     .prologue
-    .line 371
     :try_start_0
     iget-object v1, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mMsim:Lcom/android/internal/telephony/IHuaweiMsim;
 
@@ -457,15 +410,12 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 375
     :goto_0
     return-void
 
-    .line 372
     :catch_0
     move-exception v0
 
-    .line 373
     .local v0, ex:Ljava/lang/Exception;
     const-string v1, "HuaweiPhoneService"
 
@@ -497,7 +447,6 @@
     .parameter "slotId"
 
     .prologue
-    .line 251
     :try_start_0
     invoke-static {}, Lcom/android/internal/telephony/UiccManager;->getInstance()Lcom/android/internal/telephony/UiccManager;
 
@@ -509,15 +458,12 @@
 
     move-result v1
 
-    .line 254
     :goto_0
     return v1
 
-    .line 252
     :catch_0
     move-exception v0
 
-    .line 253
     .local v0, ex:Ljava/lang/Exception;
     const-string v1, "HuaweiPhoneService"
 
@@ -541,7 +487,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 254
     const/4 v1, -0x1
 
     goto :goto_0
@@ -551,7 +496,6 @@
     .locals 3
 
     .prologue
-    .line 303
     iget-object v0, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -560,7 +504,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 304
     iget-object v0, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mPhone:Lcom/huawei/telephony/HuaweiPhone;
 
     invoke-virtual {v0}, Lcom/huawei/telephony/HuaweiPhone;->getCdmaPrlVersion()Ljava/lang/String;
@@ -575,10 +518,8 @@
     .parameter "subId"
 
     .prologue
-    .line 353
     sget-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->RADIO_UNAVAILABLE:Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
-    .line 354
     .local v0, radioState:Lcom/android/internal/telephony/CommandsInterface$RadioState;
     iget-object v1, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mContext:Landroid/content/Context;
 
@@ -588,7 +529,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 355
     iget-object v1, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mPhones:[Lcom/huawei/telephony/HuaweiPhone;
 
     aget-object v1, v1, p1
@@ -597,7 +537,6 @@
 
     move-result-object v0
 
-    .line 356
     invoke-virtual {v0}, Lcom/android/internal/telephony/CommandsInterface$RadioState;->isOn()Z
 
     move-result v1
@@ -610,12 +549,10 @@
     .parameter "callback"
 
     .prologue
-    .line 203
     iget-object v0, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mPhone:Lcom/huawei/telephony/HuaweiPhone;
 
     invoke-virtual {v0, p1}, Lcom/huawei/telephony/HuaweiPhone;->getDemoString(Ljava/lang/Object;)V
 
-    .line 204
     return-void
 .end method
 
@@ -624,10 +561,8 @@
     .parameter "callback"
 
     .prologue
-    .line 199
     invoke-virtual {p0, p1}, Lcom/huawei/telephony/HuaweiPhoneService;->getDemoString(Ljava/lang/Object;)V
 
-    .line 200
     return-void
 .end method
 
@@ -635,7 +570,6 @@
     .locals 3
 
     .prologue
-    .line 292
     iget-object v0, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -644,7 +578,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 293
     iget-object v0, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mPhone:Lcom/huawei/telephony/HuaweiPhone;
 
     invoke-virtual {v0}, Lcom/huawei/telephony/HuaweiPhone;->getEsn()Ljava/lang/String;
@@ -658,7 +591,6 @@
     .locals 3
 
     .prologue
-    .line 287
     iget-object v0, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -667,7 +599,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 288
     iget-object v0, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mPhone:Lcom/huawei/telephony/HuaweiPhone;
 
     invoke-virtual {v0}, Lcom/huawei/telephony/HuaweiPhone;->getMin()Ljava/lang/String;
@@ -681,7 +612,6 @@
     .locals 4
 
     .prologue
-    .line 278
     iget-object v1, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mContext:Landroid/content/Context;
 
     const-string v2, "android.permission.READ_PHONE_STATE"
@@ -690,12 +620,10 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 279
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 280
     .local v0, data:Landroid/os/Bundle;
     iget-object v1, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mPhone:Lcom/huawei/telephony/HuaweiPhone;
 
@@ -705,7 +633,6 @@
 
     invoke-virtual {v1, v0}, Landroid/telephony/ServiceState;->fillInNotifierBundle(Landroid/os/Bundle;)V
 
-    .line 281
     return-object v0
 .end method
 
@@ -713,7 +640,6 @@
     .locals 4
 
     .prologue
-    .line 271
     iget-object v1, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mContext:Landroid/content/Context;
 
     const-string v2, "android.permission.READ_PHONE_STATE"
@@ -722,12 +648,10 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 272
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 273
     .local v0, data:Landroid/os/Bundle;
     iget-object v1, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mPhone:Lcom/huawei/telephony/HuaweiPhone;
 
@@ -737,7 +661,6 @@
 
     invoke-virtual {v1, v0}, Landroid/telephony/SignalStrength;->fillInNotifierBundle(Landroid/os/Bundle;)V
 
-    .line 274
     return-object v0
 .end method
 
@@ -746,7 +669,6 @@
     .parameter "subId"
 
     .prologue
-    .line 242
     :try_start_0
     iget-object v1, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mMsim:Lcom/android/internal/telephony/IHuaweiMsim;
 
@@ -756,15 +678,12 @@
 
     move-result v1
 
-    .line 244
     :goto_0
     return v1
 
-    .line 243
     :catch_0
     move-exception v0
 
-    .line 244
     .local v0, ex:Ljava/lang/Exception;
     const/4 v1, -0x1
 
@@ -776,7 +695,6 @@
     .parameter "slotId"
 
     .prologue
-    .line 232
     :try_start_0
     iget-object v1, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mMsim:Lcom/android/internal/telephony/IHuaweiMsim;
 
@@ -786,15 +704,12 @@
 
     move-result v1
 
-    .line 234
     :goto_0
     return v1
 
-    .line 233
     :catch_0
     move-exception v0
 
-    .line 234
     .local v0, ex:Ljava/lang/Exception;
     const/4 v1, -0x1
 
@@ -805,7 +720,6 @@
     .locals 4
 
     .prologue
-    .line 261
     :try_start_0
     invoke-static {}, Lcom/android/internal/telephony/UiccManager;->getInstance()Lcom/android/internal/telephony/UiccManager;
 
@@ -819,15 +733,12 @@
 
     move-result v1
 
-    .line 264
     :goto_0
     return v1
 
-    .line 262
     :catch_0
     move-exception v0
 
-    .line 263
     .local v0, ex:Ljava/lang/Exception;
     const-string v1, "HuaweiPhoneService"
 
@@ -851,7 +762,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 264
     const/4 v1, 0x0
 
     goto :goto_0
@@ -864,19 +774,16 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 214
     if-ltz p1, :cond_0
 
     const/4 v2, 0x2
 
     if-le p1, v2, :cond_1
 
-    .line 222
     :cond_0
     :goto_0
     return v1
 
-    .line 220
     :cond_1
     :try_start_0
     iget-object v2, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mMsim:Lcom/android/internal/telephony/IHuaweiMsim;
@@ -889,11 +796,9 @@
 
     goto :goto_0
 
-    .line 221
     :catch_0
     move-exception v0
 
-    .line 222
     .local v0, ex:Ljava/lang/Exception;
     goto :goto_0
 .end method
@@ -903,10 +808,8 @@
     .parameter "subId"
 
     .prologue
-    .line 361
     const/4 v1, 0x0
 
-    .line 363
     .local v1, result:Z
     :try_start_0
     iget-object v2, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mMsim:Lcom/android/internal/telephony/IHuaweiMsim;
@@ -917,15 +820,12 @@
 
     move-result v1
 
-    .line 367
     :goto_0
     return v1
 
-    .line 364
     :catch_0
     move-exception v0
 
-    .line 365
     .local v0, ex:Ljava/lang/Exception;
     const-string v2, "HuaweiPhoneService"
 
@@ -957,10 +857,8 @@
     .parameter "msim"
 
     .prologue
-    .line 116
     iput-object p1, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mMsim:Lcom/android/internal/telephony/IHuaweiMsim;
 
-    .line 117
     return-void
 .end method
 
@@ -970,17 +868,14 @@
     .parameter "context"
 
     .prologue
-    .line 98
     new-instance v0, Lcom/huawei/telephony/HuaweiPhone;
 
     invoke-direct {v0, p1}, Lcom/huawei/telephony/HuaweiPhone;-><init>(Lcom/android/internal/telephony/Phone;)V
 
     iput-object v0, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mPhone:Lcom/huawei/telephony/HuaweiPhone;
 
-    .line 99
     iput-object p2, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mContext:Landroid/content/Context;
 
-    .line 100
     return-void
 .end method
 
@@ -990,7 +885,6 @@
     .parameter "context"
 
     .prologue
-    .line 104
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v2
@@ -999,20 +893,17 @@
 
     move-result v1
 
-    .line 105
     .local v1, numPhones:I
     new-array v2, v1, [Lcom/huawei/telephony/HuaweiPhone;
 
     iput-object v2, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mPhones:[Lcom/huawei/telephony/HuaweiPhone;
 
-    .line 106
     const/4 v0, 0x0
 
     .local v0, i:I
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 107
     const-string v2, "HuaweiPhoneService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1035,7 +926,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 108
     iget-object v2, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mPhones:[Lcom/huawei/telephony/HuaweiPhone;
 
     new-instance v3, Lcom/huawei/telephony/HuaweiPhone;
@@ -1046,12 +936,10 @@
 
     aput-object v3, v2, v0
 
-    .line 106
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 110
     :cond_0
     iget-object v2, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mPhones:[Lcom/huawei/telephony/HuaweiPhone;
 
@@ -1061,9 +949,7 @@
 
     iput-object v2, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mPhone:Lcom/huawei/telephony/HuaweiPhone;
 
-    .line 111
     iput-object p2, p0, Lcom/huawei/telephony/HuaweiPhoneService;->mContext:Landroid/content/Context;
 
-    .line 112
     return-void
 .end method

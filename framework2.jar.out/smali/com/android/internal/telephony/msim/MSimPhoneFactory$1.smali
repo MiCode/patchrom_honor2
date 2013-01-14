@@ -22,7 +22,6 @@
     .locals 0
 
     .prologue
-    .line 176
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,14 +34,12 @@
     .parameter "mode"
 
     .prologue
-    .line 193
     invoke-static {}, Lcom/android/internal/telephony/msim/MSimPhoneFactory;->access$000()Lcom/android/internal/telephony/msim/SubscriptionManager;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/msim/SubscriptionManager;->clearUserPrefWhenChangeMode(I)V
 
-    .line 194
     return-void
 .end method
 
@@ -51,7 +48,6 @@
     .parameter "slot"
 
     .prologue
-    .line 196
     invoke-static {}, Lcom/android/internal/telephony/msim/MSimPhoneFactory;->access$000()Lcom/android/internal/telephony/msim/SubscriptionManager;
 
     move-result-object v2
@@ -60,32 +56,26 @@
 
     move-result-object v1
 
-    .line 197
     .local v1, sub:Lcom/android/internal/telephony/msim/Subscription;
     new-instance v0, Lcom/android/internal/telephony/IHuaweiMsim$SubInfo;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/IHuaweiMsim$SubInfo;-><init>()V
 
-    .line 198
     .local v0, si:Lcom/android/internal/telephony/IHuaweiMsim$SubInfo;
     if-eqz v1, :cond_0
 
-    .line 199
     iget v2, v1, Lcom/android/internal/telephony/msim/Subscription;->subId:I
 
     iput v2, v0, Lcom/android/internal/telephony/IHuaweiMsim$SubInfo;->subId:I
 
-    .line 200
     iget v2, v1, Lcom/android/internal/telephony/msim/Subscription;->slotId:I
 
     iput v2, v0, Lcom/android/internal/telephony/IHuaweiMsim$SubInfo;->slotId:I
 
-    .line 201
     iget-object v2, v1, Lcom/android/internal/telephony/msim/Subscription;->appType:Ljava/lang/String;
 
     iput-object v2, v0, Lcom/android/internal/telephony/IHuaweiMsim$SubInfo;->appType:Ljava/lang/String;
 
-    .line 203
     :cond_0
     return-object v0
 .end method
@@ -95,7 +85,6 @@
     .parameter "sub"
 
     .prologue
-    .line 184
     invoke-static {}, Lcom/android/internal/telephony/msim/MSimPhoneFactory;->access$000()Lcom/android/internal/telephony/msim/SubscriptionManager;
 
     move-result-object v0
@@ -112,7 +101,6 @@
     .parameter "slot"
 
     .prologue
-    .line 181
     invoke-static {}, Lcom/android/internal/telephony/msim/MSimPhoneFactory;->access$000()Lcom/android/internal/telephony/msim/SubscriptionManager;
 
     move-result-object v0
@@ -129,7 +117,6 @@
     .parameter "slot"
 
     .prologue
-    .line 178
     invoke-static {}, Lcom/android/internal/telephony/msim/MSimPhoneFactory;->access$000()Lcom/android/internal/telephony/msim/SubscriptionManager;
 
     move-result-object v0
@@ -146,7 +133,6 @@
     .parameter "sub"
 
     .prologue
-    .line 190
     invoke-static {}, Lcom/android/internal/telephony/msim/MSimPhoneFactory;->access$000()Lcom/android/internal/telephony/msim/SubscriptionManager;
 
     move-result-object v0

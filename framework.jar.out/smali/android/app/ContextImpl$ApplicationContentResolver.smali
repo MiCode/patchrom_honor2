@@ -25,13 +25,10 @@
     .parameter "mainThread"
 
     .prologue
-    .line 1699
     invoke-direct {p0, p1}, Landroid/content/ContentResolver;-><init>(Landroid/content/Context;)V
 
-    .line 1700
     iput-object p2, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
-    .line 1701
     return-void
 .end method
 
@@ -43,7 +40,6 @@
     .parameter "name"
 
     .prologue
-    .line 1710
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
     const/4 v1, 0x1
@@ -61,7 +57,6 @@
     .parameter "name"
 
     .prologue
-    .line 1705
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
     const/4 v1, 0x1
@@ -79,7 +74,6 @@
     .parameter "name"
 
     .prologue
-    .line 1720
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
     const/4 v1, 0x0
@@ -96,7 +90,6 @@
     .parameter "provider"
 
     .prologue
-    .line 1715
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
     const/4 v1, 0x1
@@ -113,7 +106,6 @@
     .parameter "icp"
 
     .prologue
-    .line 1725
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
     const/4 v1, 0x0
@@ -130,7 +122,6 @@
     .parameter "icp"
 
     .prologue
-    .line 1730
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
     invoke-interface {p1}, Landroid/content/IContentProvider;->asBinder()Landroid/os/IBinder;
@@ -141,6 +132,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/app/ActivityThread;->handleUnstableProviderDied(Landroid/os/IBinder;Z)V
 
-    .line 1731
     return-void
 .end method

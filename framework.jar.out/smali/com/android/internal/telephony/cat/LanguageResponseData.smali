@@ -13,13 +13,10 @@
     .parameter "lang"
 
     .prologue
-    .line 217
     invoke-direct {p0}, Lcom/android/internal/telephony/cat/ResponseData;-><init>()V
 
-    .line 218
     iput-object p1, p0, Lcom/android/internal/telephony/cat/LanguageResponseData;->lang:Ljava/lang/String;
 
-    .line 219
     return-void
 .end method
 
@@ -30,14 +27,11 @@
     .parameter "buf"
 
     .prologue
-    .line 223
     if-nez p1, :cond_1
 
-    .line 245
     :cond_0
     return-void
 
-    .line 228
     :cond_1
     sget-object v6, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->LANGUAGE:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
@@ -47,11 +41,9 @@
 
     or-int/lit16 v5, v6, 0x80
 
-    .line 229
     .local v5, tag:I
     invoke-virtual {p1, v5}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 233
     iget-object v6, p0, Lcom/android/internal/telephony/cat/LanguageResponseData;->lang:Ljava/lang/String;
 
     if-eqz v6, :cond_2
@@ -64,21 +56,18 @@
 
     if-lez v6, :cond_2
 
-    .line 234
     iget-object v6, p0, Lcom/android/internal/telephony/cat/LanguageResponseData;->lang:Ljava/lang/String;
 
     invoke-static {v6}, Lcom/android/internal/telephony/GsmAlphabet;->stringToGsm8BitPacked(Ljava/lang/String;)[B
 
     move-result-object v2
 
-    .line 240
     .local v2, data:[B
     :goto_0
     array-length v6, v2
 
     invoke-virtual {p1, v6}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 242
     move-object v0, v2
 
     .local v0, arr$:[B
@@ -93,16 +82,13 @@
 
     aget-byte v1, v0, v3
 
-    .line 243
     .local v1, b:B
     invoke-virtual {p1, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 242
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 237
     .end local v0           #arr$:[B
     .end local v1           #b:B
     .end local v2           #data:[B

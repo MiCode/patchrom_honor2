@@ -29,7 +29,6 @@
     .parameter "x4"
 
     .prologue
-    .line 240
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$3;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     move-object v0, p0
@@ -56,7 +55,6 @@
     .parameter "on"
 
     .prologue
-    .line 243
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$3;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
@@ -66,7 +64,6 @@
 
     invoke-interface {v0}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->restart()V
 
-    .line 244
     return-void
 .end method
 
@@ -74,7 +71,6 @@
     .locals 1
 
     .prologue
-    .line 251
     const/4 v0, 0x1
 
     return v0
@@ -84,7 +80,6 @@
     .locals 1
 
     .prologue
-    .line 247
     const/4 v0, 0x1
 
     return v0

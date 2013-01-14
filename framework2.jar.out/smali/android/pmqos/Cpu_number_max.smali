@@ -12,10 +12,8 @@
     .locals 1
 
     .prologue
-    .line 8
     invoke-direct {p0}, Landroid/pmqos/Pmqos;-><init>()V
 
-    .line 9
     const-string v0, "cpu_number_max"
 
     invoke-static {v0}, Landroid/pmqos/Pmqos;->pm_qos_open(Ljava/lang/String;)I
@@ -24,7 +22,6 @@
 
     iput v0, p0, Landroid/pmqos/Cpu_number_max;->fd:I
 
-    .line 10
     return-void
 .end method
 
@@ -34,12 +31,10 @@
     .locals 1
 
     .prologue
-    .line 18
     iget v0, p0, Landroid/pmqos/Cpu_number_max;->fd:I
 
     invoke-static {v0}, Landroid/pmqos/Pmqos;->pm_qos_close(I)V
 
-    .line 19
     return-void
 .end method
 
@@ -47,12 +42,10 @@
     .locals 1
 
     .prologue
-    .line 12
     iget v0, p0, Landroid/pmqos/Cpu_number_max;->fd:I
 
     invoke-static {v0}, Landroid/pmqos/Pmqos;->pm_qos_read(I)I
 
-    .line 13
     return-void
 .end method
 
@@ -61,11 +54,9 @@
     .parameter "buffer"
 
     .prologue
-    .line 15
     iget v0, p0, Landroid/pmqos/Cpu_number_max;->fd:I
 
     invoke-static {p1, v0}, Landroid/pmqos/Pmqos;->pm_qos_write(II)I
 
-    .line 16
     return-void
 .end method

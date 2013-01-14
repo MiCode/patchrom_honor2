@@ -28,7 +28,6 @@
     .parameter
 
     .prologue
-    .line 453
     iput-object p1, p0, Lcom/android/server/net/NetworkStatsService$1;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     invoke-direct {p0}, Landroid/net/INetworkStatsSession$Stub;-><init>()V
@@ -40,12 +39,10 @@
     .locals 2
 
     .prologue
-    .line 458
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$1;->mUidComplete:Lcom/android/server/net/NetworkStatsCollection;
 
     if-nez v0, :cond_0
 
-    .line 459
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$1;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     #getter for: Lcom/android/server/net/NetworkStatsService;->mStatsLock:Ljava/lang/Object;
@@ -55,7 +52,6 @@
 
     monitor-enter v1
 
-    .line 460
     :try_start_0
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$1;->this$0:Lcom/android/server/net/NetworkStatsService;
 
@@ -70,18 +66,15 @@
 
     iput-object v0, p0, Lcom/android/server/net/NetworkStatsService$1;->mUidComplete:Lcom/android/server/net/NetworkStatsCollection;
 
-    .line 461
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 463
     :cond_0
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$1;->mUidComplete:Lcom/android/server/net/NetworkStatsCollection;
 
     return-object v0
 
-    .line 461
     :catchall_0
     move-exception v0
 
@@ -97,12 +90,10 @@
     .locals 2
 
     .prologue
-    .line 467
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$1;->mUidTagComplete:Lcom/android/server/net/NetworkStatsCollection;
 
     if-nez v0, :cond_0
 
-    .line 468
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$1;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     #getter for: Lcom/android/server/net/NetworkStatsService;->mStatsLock:Ljava/lang/Object;
@@ -112,7 +103,6 @@
 
     monitor-enter v1
 
-    .line 469
     :try_start_0
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$1;->this$0:Lcom/android/server/net/NetworkStatsService;
 
@@ -127,18 +117,15 @@
 
     iput-object v0, p0, Lcom/android/server/net/NetworkStatsService$1;->mUidTagComplete:Lcom/android/server/net/NetworkStatsCollection;
 
-    .line 470
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 472
     :cond_0
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$1;->mUidTagComplete:Lcom/android/server/net/NetworkStatsCollection;
 
     return-object v0
 
-    .line 470
     :catchall_0
     move-exception v0
 
@@ -158,13 +145,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 510
     iput-object v0, p0, Lcom/android/server/net/NetworkStatsService$1;->mUidComplete:Lcom/android/server/net/NetworkStatsCollection;
 
-    .line 511
     iput-object v0, p0, Lcom/android/server/net/NetworkStatsService$1;->mUidTagComplete:Lcom/android/server/net/NetworkStatsCollection;
 
-    .line 512
     return-void
 .end method
 
@@ -174,7 +158,6 @@
     .parameter "fields"
 
     .prologue
-    .line 483
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$1;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     #calls: Lcom/android/server/net/NetworkStatsService;->internalGetHistoryForNetwork(Landroid/net/NetworkTemplate;I)Landroid/net/NetworkStatsHistory;
@@ -194,10 +177,8 @@
     .parameter "fields"
 
     .prologue
-    .line 501
     if-nez p4, :cond_0
 
-    .line 502
     invoke-direct {p0}, Lcom/android/server/net/NetworkStatsService$1;->getUidComplete()Lcom/android/server/net/NetworkStatsCollection;
 
     move-result-object v0
@@ -216,7 +197,6 @@
 
     move-result-object v0
 
-    .line 504
     :goto_0
     return-object v0
 
@@ -250,7 +230,6 @@
     .parameter "includeTags"
 
     .prologue
-    .line 489
     invoke-direct {p0}, Lcom/android/server/net/NetworkStatsService$1;->getUidComplete()Lcom/android/server/net/NetworkStatsCollection;
 
     move-result-object v0
@@ -265,11 +244,9 @@
 
     move-result-object v6
 
-    .line 490
     .local v6, stats:Landroid/net/NetworkStats;
     if-eqz p6, :cond_0
 
-    .line 491
     invoke-direct {p0}, Lcom/android/server/net/NetworkStatsService$1;->getUidTagComplete()Lcom/android/server/net/NetworkStatsCollection;
 
     move-result-object v0
@@ -284,11 +261,9 @@
 
     move-result-object v7
 
-    .line 493
     .local v7, tagStats:Landroid/net/NetworkStats;
     invoke-virtual {v6, v7}, Landroid/net/NetworkStats;->combineAllValues(Landroid/net/NetworkStats;)V
 
-    .line 495
     .end local v7           #tagStats:Landroid/net/NetworkStats;
     :cond_0
     return-object v6
@@ -301,7 +276,6 @@
     .parameter "end"
 
     .prologue
-    .line 478
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$1;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     move-object v1, p1

@@ -20,13 +20,10 @@
     .parameter "device"
 
     .prologue
-    .line 67
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 68
     iput-object p1, p0, Lcom/huawei/android/bluetooth/BluetoothDeviceEx;->mDevice:Landroid/bluetooth/BluetoothDevice;
 
-    .line 69
     return-void
 .end method
 
@@ -39,7 +36,6 @@
     .parameter "always"
 
     .prologue
-    .line 73
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -53,7 +49,6 @@
     .locals 2
 
     .prologue
-    .line 104
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -67,7 +62,6 @@
     .locals 2
 
     .prologue
-    .line 82
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -81,7 +75,6 @@
     .locals 2
 
     .prologue
-    .line 90
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -96,7 +89,6 @@
     .parameter "value"
 
     .prologue
-    .line 100
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -112,7 +104,6 @@
     .parameter "flags"
 
     .prologue
-    .line 108
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."

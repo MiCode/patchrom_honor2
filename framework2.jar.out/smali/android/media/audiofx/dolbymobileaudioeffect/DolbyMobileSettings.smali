@@ -411,133 +411,114 @@
 
     const/4 v5, 0x2
 
-    .line 32
     new-array v2, v5, [I
 
     fill-array-data v2, :array_0
 
     sput-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->TDAS_HFE_DEPTH_RANGE:[I
 
-    .line 33
     new-array v2, v5, [I
 
     fill-array-data v2, :array_1
 
     sput-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->TDAS_SLC_LEVEL_RANGE:[I
 
-    .line 34
     new-array v2, v5, [I
 
     fill-array-data v2, :array_2
 
     sput-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->TDAS_SLC_DEPTH_RANGE:[I
 
-    .line 35
     new-array v2, v5, [I
 
     fill-array-data v2, :array_3
 
     sput-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->TDAS_GEQ_LEVEL_RANGE:[I
 
-    .line 36
     new-array v2, v5, [I
 
     fill-array-data v2, :array_4
 
     sput-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->TDAS_NB_BOOST_RANGE:[I
 
-    .line 37
     new-array v2, v5, [I
 
     fill-array-data v2, :array_5
 
     sput-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->TDAS_NB_CUTOFF_RANGE:[I
 
-    .line 38
     new-array v2, v5, [I
 
     fill-array-data v2, :array_6
 
     sput-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->TDAS_NB_LEVEL_RANGE:[I
 
-    .line 39
     new-array v2, v5, [I
 
     fill-array-data v2, :array_7
 
     sput-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->TDAS_MSR_ROOMSIZE_RANGE:[I
 
-    .line 40
     new-array v2, v5, [I
 
     fill-array-data v2, :array_8
 
     sput-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->TDAS_MSR_BRIGHTNESS_RANGE:[I
 
-    .line 41
     new-array v2, v5, [I
 
     fill-array-data v2, :array_9
 
     sput-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->TDAS_MSR_MAXIMUM_PROFILE_RANGE:[I
 
-    .line 42
     new-array v2, v5, [I
 
     fill-array-data v2, :array_a
 
     sput-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->TDAS_IN_MATRIX_RANGE:[I
 
-    .line 43
     new-array v2, v5, [I
 
     fill-array-data v2, :array_b
 
     sput-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->TDAS_SSE_SPK_MODE_RANGE:[I
 
-    .line 44
     new-array v2, v5, [I
 
     fill-array-data v2, :array_c
 
     sput-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->TDAS_SSE_WIDTH_RANGE:[I
 
-    .line 45
     new-array v2, v5, [I
 
     fill-array-data v2, :array_d
 
     sput-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->TDAS_SEQ_LEFT_LEVEL_RANGE:[I
 
-    .line 46
     new-array v2, v5, [I
 
     fill-array-data v2, :array_e
 
     sput-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->TDAS_SEQ_RIGHT_LEVEL_RANGE:[I
 
-    .line 47
     new-array v2, v5, [I
 
     fill-array-data v2, :array_f
 
     sput-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->TDAS_GEQ_MAXBOOST_RANGE:[I
 
-    .line 48
     new-array v2, v5, [I
 
     fill-array-data v2, :array_10
 
     sput-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->TDAS_GEQ_PREAMP_RANGE:[I
 
-    .line 49
     new-array v2, v5, [I
 
     fill-array-data v2, :array_11
 
     sput-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->TDAS_GEQ_NUMBEROFBANDS_RANGE:[I
 
-    .line 343
     const/16 v2, 0x26
 
     new-array v1, v2, [Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings$SettingDefnDefault;
@@ -890,7 +871,6 @@
 
     aput-object v3, v1, v2
 
-    .line 388
     .local v1, settingsAndDefaults:[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings$SettingDefnDefault;
     new-instance v2, Ljava/util/LinkedHashMap;
 
@@ -898,14 +878,12 @@
 
     sput-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->_settingsDefinitions:Ljava/util/LinkedHashMap;
 
-    .line 389
     array-length v2, v1
 
     new-array v2, v2, [I
 
     sput-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->_settingsDefaults:[I
 
-    .line 390
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -914,7 +892,6 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 392
     sget-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->_settingsDefinitions:Ljava/util/LinkedHashMap;
 
     aget-object v3, v1, v0
@@ -927,7 +904,6 @@
 
     invoke-virtual {v2, v3, v4}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 393
     sget-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->_settingsDefaults:[I
 
     aget-object v3, v1, v0
@@ -936,16 +912,13 @@
 
     aput v3, v2, v0
 
-    .line 390
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 395
     :cond_0
     return-void
 
-    .line 32
     nop
 
     :array_0
@@ -954,119 +927,102 @@
         0x6t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 33
     :array_1
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
         0x6t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 34
     :array_2
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
         0x2t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 35
     :array_3
     .array-data 0x4
         0xd0t 0xfft 0xfft 0xfft
         0x30t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 36
     :array_4
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
         0x6t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 37
     :array_5
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
         0x17t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 38
     :array_6
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
         0x6t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 39
     :array_7
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
         0x2t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 40
     :array_8
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
         0x2t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 41
     :array_9
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
         0x3t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 42
     :array_a
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
         0x4t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 43
     :array_b
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
         0x2t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 44
     :array_c
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
         0x1t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 45
     :array_d
     .array-data 0x4
         0xe8t 0xfft 0xfft 0xfft
         0x18t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 46
     :array_e
     .array-data 0x4
         0xe8t 0xfft 0xfft 0xfft
         0x18t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 47
     :array_f
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
         0x30t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 48
     :array_10
     .array-data 0x4
         0xd0t 0xfft 0xfft 0xfft
         0x0t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 49
     :array_11
     .array-data 0x4
         0x2t 0x0t 0x0t 0x0t
@@ -1078,10 +1034,8 @@
     .locals 2
 
     .prologue
-    .line 412
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 413
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->_settingsDefaults:[I
 
     sget-object v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->_settingsDefaults:[I
@@ -1094,7 +1048,6 @@
 
     iput-object v0, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->_values:[I
 
-    .line 414
     return-void
 .end method
 
@@ -1103,10 +1056,8 @@
     .parameter "c"
 
     .prologue
-    .line 421
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 422
     invoke-virtual {p1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->getValues()[I
 
     move-result-object v0
@@ -1123,7 +1074,6 @@
 
     iput-object v0, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->_values:[I
 
-    .line 423
     return-void
 .end method
 
@@ -1132,13 +1082,10 @@
     .parameter "settings"
 
     .prologue
-    .line 432
     invoke-direct {p0}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;-><init>()V
 
-    .line 433
     invoke-virtual {p0, p1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->set([[I)V
 
-    .line 434
     return-void
 .end method
 
@@ -1146,7 +1093,6 @@
     .locals 1
 
     .prologue
-    .line 281
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->_settingsDefinitions:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v0}, Ljava/util/LinkedHashMap;->size()I
@@ -1160,7 +1106,6 @@
     .locals 1
 
     .prologue
-    .line 405
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->_settingsDefinitions:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v0}, Ljava/util/LinkedHashMap;->keySet()Ljava/util/Set;
@@ -1180,7 +1125,6 @@
     .parameter "parameter"
 
     .prologue
-    .line 273
     sget-object v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->_settingsDefinitions:Ljava/util/LinkedHashMap;
 
     new-instance v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings$SettingDefn;
@@ -1193,7 +1137,6 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 274
     .local v0, i:Ljava/lang/Integer;
     if-nez v0, :cond_0
 
@@ -1215,14 +1158,12 @@
     .parameter "rangeOfTwoValues"
 
     .prologue
-    .line 498
     array-length v0, p0
 
     const/4 v1, 0x2
 
     if-eq v0, v1, :cond_0
 
-    .line 499
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "The number of elements in this array is not equal to 2. This is not allowed"
@@ -1231,7 +1172,6 @@
 
     throw v0
 
-    .line 500
     :cond_0
     const/4 v0, 0x1
 
@@ -1254,18 +1194,15 @@
     .parameter "parameter"
 
     .prologue
-    .line 489
     invoke-static {p1, p2}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->GetTdasSettingIndex(II)I
 
     move-result v0
 
-    .line 490
     .local v0, i:I
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 491
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "The feature and parameter combination is not allowed"
@@ -1274,7 +1211,6 @@
 
     throw v1
 
-    .line 493
     :cond_0
     iget-object v1, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->_values:[I
 
@@ -1287,7 +1223,6 @@
     .locals 1
 
     .prologue
-    .line 445
     iget-object v0, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->_values:[I
 
     return-object v0
@@ -1305,12 +1240,10 @@
     .end annotation
 
     .prologue
-    .line 471
     invoke-static {p1, p2}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->GetTdasSettingIndex(II)I
 
     move-result v0
 
-    .line 472
     .local v0, i:I
     const-string v1, "DolbyMobileSettings"
 
@@ -1364,12 +1297,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 473
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 474
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "The feature and parameter combination is not allowed"
@@ -1378,13 +1309,11 @@
 
     throw v1
 
-    .line 476
     :cond_0
     iget-object v1, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->_values:[I
 
     aput p3, v1, v0
 
-    .line 478
     return-void
 .end method
 
@@ -1398,7 +1327,6 @@
     .end annotation
 
     .prologue
-    .line 454
     move-object v0, p1
 
     .local v0, arr$:[[I
@@ -1413,7 +1341,6 @@
 
     aget-object v1, v0, v2
 
-    .line 456
     .local v1, fpv:[I
     array-length v4, v1
 
@@ -1421,7 +1348,6 @@
 
     if-eq v4, v5, :cond_0
 
-    .line 457
     new-instance v4, Ljava/lang/IllegalArgumentException;
 
     const-string v5, "Each setting must contain an array of 3 ints declared as int[3]"
@@ -1430,7 +1356,6 @@
 
     throw v4
 
-    .line 458
     :cond_0
     const/4 v4, 0x0
 
@@ -1446,12 +1371,10 @@
 
     invoke-virtual {p0, v4, v5, v6}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->set(III)V
 
-    .line 454
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 460
     .end local v1           #fpv:[I
     :cond_1
     return-void

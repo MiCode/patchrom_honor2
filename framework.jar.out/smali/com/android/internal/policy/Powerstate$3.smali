@@ -22,7 +22,6 @@
     .locals 0
 
     .prologue
-    .line 914
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,14 +33,12 @@
     .locals 2
 
     .prologue
-    .line 916
     const-string v0, "Powerstate"
 
-    const-string/jumbo v1, "turn off the screen after 9.0s"
+    const-string v1, "turn off the screen after 9.0s"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 917
     sget-object v0, Lcom/android/internal/policy/Powerstate;->animChargeProcess:Ljava/lang/Process;
 
     if-eqz v0, :cond_0
@@ -50,14 +47,12 @@
 
     if-nez v0, :cond_0
 
-    .line 919
     const-string v0, "Powerstate"
 
-    const-string/jumbo v1, "setScreenState false."
+    const-string v1, "setScreenState false."
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 921
     :try_start_0
     invoke-static {}, Lcom/android/internal/policy/Powerstate;->access$200()Landroid/os/IPowerManager;
 
@@ -69,17 +64,14 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 924
     :goto_0
     const/4 v0, -0x1
 
     invoke-static {v0}, Lcom/android/internal/policy/Powerstate;->access$302(I)I
 
-    .line 926
     :cond_0
     return-void
 
-    .line 922
     :catch_0
     move-exception v0
 

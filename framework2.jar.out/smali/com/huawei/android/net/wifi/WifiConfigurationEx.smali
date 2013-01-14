@@ -21,13 +21,10 @@
     .parameter "config"
 
     .prologue
-    .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 54
     iput-object p1, p0, Lcom/huawei/android/net/wifi/WifiConfigurationEx;->mConfig:Landroid/net/wifi/WifiConfiguration;
 
-    .line 55
     return-void
 .end method
 
@@ -37,7 +34,6 @@
     .locals 1
 
     .prologue
-    .line 58
     iget-object v0, p0, Lcom/huawei/android/net/wifi/WifiConfigurationEx;->wapiAsCert:Ljava/lang/String;
 
     return-object v0
@@ -47,7 +43,6 @@
     .locals 1
 
     .prologue
-    .line 74
     iget v0, p0, Lcom/huawei/android/net/wifi/WifiConfigurationEx;->wapiCertIndex:I
 
     return v0
@@ -57,7 +52,6 @@
     .locals 1
 
     .prologue
-    .line 82
     iget v0, p0, Lcom/huawei/android/net/wifi/WifiConfigurationEx;->wapiPskType:I
 
     return v0
@@ -67,7 +61,6 @@
     .locals 1
 
     .prologue
-    .line 66
     iget-object v0, p0, Lcom/huawei/android/net/wifi/WifiConfigurationEx;->wapiUserCert:Ljava/lang/String;
 
     return-object v0
@@ -78,10 +71,8 @@
     .parameter "wapiAsCert"
 
     .prologue
-    .line 62
     iput-object p1, p0, Lcom/huawei/android/net/wifi/WifiConfigurationEx;->wapiAsCert:Ljava/lang/String;
 
-    .line 63
     return-void
 .end method
 
@@ -90,10 +81,8 @@
     .parameter "wapiCertIndex"
 
     .prologue
-    .line 78
     iput p1, p0, Lcom/huawei/android/net/wifi/WifiConfigurationEx;->wapiCertIndex:I
 
-    .line 79
     return-void
 .end method
 
@@ -102,10 +91,8 @@
     .parameter "wapiPskType"
 
     .prologue
-    .line 86
     iput p1, p0, Lcom/huawei/android/net/wifi/WifiConfigurationEx;->wapiPskType:I
 
-    .line 87
     return-void
 .end method
 
@@ -114,9 +101,7 @@
     .parameter "wapiUserCert"
 
     .prologue
-    .line 70
     iput-object p1, p0, Lcom/huawei/android/net/wifi/WifiConfigurationEx;->wapiUserCert:Ljava/lang/String;
 
-    .line 71
     return-void
 .end method

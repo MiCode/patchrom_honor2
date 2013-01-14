@@ -35,27 +35,22 @@
     .locals 1
 
     .prologue
-    .line 26
     const/4 v0, 0x1
 
     sput v0, Lcom/android/internal/telephony/Connection;->PRESENTATION_ALLOWED:I
 
-    .line 27
     const/4 v0, 0x2
 
     sput v0, Lcom/android/internal/telephony/Connection;->PRESENTATION_RESTRICTED:I
 
-    .line 28
     const/4 v0, 0x3
 
     sput v0, Lcom/android/internal/telephony/Connection;->PRESENTATION_UNKNOWN:I
 
-    .line 29
     const/4 v0, 0x4
 
     sput v0, Lcom/android/internal/telephony/Connection;->PRESENTATION_PAYPHONE:I
 
-    .line 31
     const-string v0, "TelephonyConnection"
 
     sput-object v0, Lcom/android/internal/telephony/Connection;->LOG_TAG:Ljava/lang/String;
@@ -67,10 +62,8 @@
     .locals 0
 
     .prologue
-    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 238
     return-void
 .end method
 
@@ -83,12 +76,10 @@
     .locals 1
 
     .prologue
-    .line 255
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/Connection;->userData:Ljava/lang/Object;
 
-    .line 256
     return-void
 .end method
 
@@ -102,7 +93,6 @@
     .locals 1
 
     .prologue
-    .line 326
     const/4 v0, 0x0
 
     return-object v0
@@ -112,7 +102,6 @@
     .locals 1
 
     .prologue
-    .line 96
     const/4 v0, 0x0
 
     return-object v0
@@ -122,7 +111,6 @@
     .locals 1
 
     .prologue
-    .line 113
     const/4 v0, 0x0
 
     return v0
@@ -155,19 +143,16 @@
     .end annotation
 
     .prologue
-    .line 318
     iget v0, p0, Lcom/android/internal/telephony/Connection;->index:I
 
     if-ltz v0, :cond_0
 
-    .line 319
     iget v0, p0, Lcom/android/internal/telephony/Connection;->index:I
 
     add-int/lit8 v0, v0, 0x1
 
     return v0
 
-    .line 321
     :cond_0
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
@@ -185,7 +170,6 @@
     .locals 1
 
     .prologue
-    .line 104
     const/4 v0, 0x0
 
     return-object v0
@@ -195,7 +179,6 @@
     .locals 1
 
     .prologue
-    .line 331
     const/4 v0, 0x0
 
     return-object v0
@@ -211,19 +194,15 @@
     .locals 2
 
     .prologue
-    .line 182
     invoke-virtual {p0}, Lcom/android/internal/telephony/Connection;->getCall()Lcom/android/internal/telephony/Call;
 
     move-result-object v0
 
-    .line 184
     .local v0, c:Lcom/android/internal/telephony/Call;
     if-nez v0, :cond_0
 
-    .line 185
     sget-object v1, Lcom/android/internal/telephony/Call$State;->IDLE:Lcom/android/internal/telephony/Call$State;
 
-    .line 187
     :goto_0
     return-object v1
 
@@ -242,7 +221,6 @@
     .locals 1
 
     .prologue
-    .line 215
     iget-object v0, p0, Lcom/android/internal/telephony/Connection;->userData:Ljava/lang/Object;
 
     return-object v0
@@ -260,7 +238,6 @@
     .locals 1
 
     .prologue
-    .line 199
     invoke-virtual {p0}, Lcom/android/internal/telephony/Connection;->getState()Lcom/android/internal/telephony/Call$State;
 
     move-result-object v0
@@ -279,7 +256,6 @@
     .locals 1
 
     .prologue
-    .line 207
     invoke-virtual {p0}, Lcom/android/internal/telephony/Connection;->getState()Lcom/android/internal/telephony/Call$State;
 
     move-result-object v0
@@ -310,10 +286,8 @@
     .parameter "userdata"
 
     .prologue
-    .line 223
     iput-object p1, p0, Lcom/android/internal/telephony/Connection;->userData:Ljava/lang/Object;
 
-    .line 224
     return-void
 .end method
 
@@ -321,14 +295,12 @@
     .locals 4
 
     .prologue
-    .line 300
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x80
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 302
     .local v0, str:Ljava/lang/StringBuilder;
     sget-object v1, Lcom/android/internal/telephony/Connection;->LOG_TAG:Ljava/lang/String;
 
@@ -340,7 +312,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 303
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -501,7 +472,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 310
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -579,7 +549,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 313
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

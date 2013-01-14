@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 63
     iput-object p1, p0, Lcom/android/internal/os/storage/ExternalStorageFormatter$1;->this$0:Lcom/android/internal/os/storage/ExternalStorageFormatter;
 
     invoke-direct {p0}, Landroid/os/storage/StorageEventListener;-><init>()V
@@ -41,7 +40,6 @@
     .parameter "newState"
 
     .prologue
-    .line 67
     const-string v0, "ExternalStorageFormatter"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -101,7 +99,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 70
     iget-object v0, p0, Lcom/android/internal/os/storage/ExternalStorageFormatter$1;->this$0:Lcom/android/internal/os/storage/ExternalStorageFormatter;
 
     #getter for: Lcom/android/internal/os/storage/ExternalStorageFormatter;->mMaybeRemountState:Z
@@ -111,7 +108,7 @@
 
     if-eqz v0, :cond_1
 
-    const-string/jumbo v0, "mounted"
+    const-string v0, "mounted"
 
     invoke-virtual {v0, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -127,12 +124,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 79
     :cond_0
     :goto_0
     return-void
 
-    .line 78
     :cond_1
     iget-object v0, p0, Lcom/android/internal/os/storage/ExternalStorageFormatter$1;->this$0:Lcom/android/internal/os/storage/ExternalStorageFormatter;
 

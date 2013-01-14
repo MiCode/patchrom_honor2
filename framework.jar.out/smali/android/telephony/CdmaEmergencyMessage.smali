@@ -52,7 +52,6 @@
 
     const/4 v4, 0x0
 
-    .line 58
     const/4 v0, 0x7
 
     new-array v0, v0, [[I
@@ -113,7 +112,6 @@
 
     sput-object v0, Landroid/telephony/CdmaEmergencyMessage;->MESSAGE_IDS:[[I
 
-    .line 144
     new-instance v0, Landroid/telephony/CdmaEmergencyMessage$1;
 
     invoke-direct {v0}, Landroid/telephony/CdmaEmergencyMessage$1;-><init>()V
@@ -127,15 +125,12 @@
     .locals 1
 
     .prologue
-    .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 45
     const-string v0, "CdmaEmergencyMessage Uninitialized"
 
     iput-object v0, p0, Landroid/telephony/CdmaEmergencyMessage;->mBody:Ljava/lang/String;
 
-    .line 67
     return-void
 .end method
 
@@ -144,18 +139,14 @@
     .parameter "in"
 
     .prologue
-    .line 108
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 45
     const-string v0, "CdmaEmergencyMessage Uninitialized"
 
     iput-object v0, p0, Landroid/telephony/CdmaEmergencyMessage;->mBody:Ljava/lang/String;
 
-    .line 109
     invoke-direct {p0, p1}, Landroid/telephony/CdmaEmergencyMessage;->readFromParcel(Landroid/os/Parcel;)V
 
-    .line 110
     return-void
 .end method
 
@@ -165,7 +156,6 @@
     .parameter "x1"
 
     .prologue
-    .line 43
     invoke-direct {p0, p1}, Landroid/telephony/CdmaEmergencyMessage;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -176,12 +166,10 @@
     .parameter "src"
 
     .prologue
-    .line 93
     new-instance v0, Landroid/telephony/CdmaEmergencyMessage;
 
     invoke-direct {v0}, Landroid/telephony/CdmaEmergencyMessage;-><init>()V
 
-    .line 94
     .local v0, message:Landroid/telephony/CdmaEmergencyMessage;
     invoke-virtual {p0}, Landroid/telephony/SmsMessage;->getMessageBody()Ljava/lang/String;
 
@@ -189,14 +177,12 @@
 
     iput-object v1, v0, Landroid/telephony/CdmaEmergencyMessage;->mBody:Ljava/lang/String;
 
-    .line 95
     iget-object v1, p0, Landroid/telephony/SmsMessage;->mWrappedSmsMessage:Lcom/android/internal/telephony/SmsMessageBase;
 
     instance-of v1, v1, Lcom/android/internal/telephony/cdma/SmsMessage;
 
     if-eqz v1, :cond_0
 
-    .line 96
     iget-object v1, p0, Landroid/telephony/SmsMessage;->mWrappedSmsMessage:Lcom/android/internal/telephony/SmsMessageBase;
 
     check-cast v1, Lcom/android/internal/telephony/cdma/SmsMessage;
@@ -207,7 +193,6 @@
 
     iput v1, v0, Landroid/telephony/CdmaEmergencyMessage;->mServiceCategory:I
 
-    .line 97
     iget-object v1, p0, Landroid/telephony/SmsMessage;->mWrappedSmsMessage:Lcom/android/internal/telephony/SmsMessageBase;
 
     check-cast v1, Lcom/android/internal/telephony/cdma/SmsMessage;
@@ -218,7 +203,6 @@
 
     iput-object v1, v0, Landroid/telephony/CdmaEmergencyMessage;->mSeverity:Landroid/telephony/EmergencyMessage$Severity;
 
-    .line 98
     iget-object v1, p0, Landroid/telephony/SmsMessage;->mWrappedSmsMessage:Lcom/android/internal/telephony/SmsMessageBase;
 
     check-cast v1, Lcom/android/internal/telephony/cdma/SmsMessage;
@@ -229,7 +213,6 @@
 
     iput-object v1, v0, Landroid/telephony/CdmaEmergencyMessage;->mUrgency:Landroid/telephony/EmergencyMessage$Urgency;
 
-    .line 99
     iget-object v1, p0, Landroid/telephony/SmsMessage;->mWrappedSmsMessage:Lcom/android/internal/telephony/SmsMessageBase;
 
     check-cast v1, Lcom/android/internal/telephony/cdma/SmsMessage;
@@ -240,7 +223,6 @@
 
     iput-object v1, v0, Landroid/telephony/CdmaEmergencyMessage;->mCertainty:Landroid/telephony/EmergencyMessage$Certainty;
 
-    .line 100
     iget-object v1, p0, Landroid/telephony/SmsMessage;->mWrappedSmsMessage:Lcom/android/internal/telephony/SmsMessageBase;
 
     check-cast v1, Lcom/android/internal/telephony/cdma/SmsMessage;
@@ -251,7 +233,6 @@
 
     iput v1, v0, Landroid/telephony/CdmaEmergencyMessage;->mLanguageCode:I
 
-    .line 105
     :cond_0
     return-object v0
 .end method
@@ -261,7 +242,6 @@
     .parameter "alertType"
 
     .prologue
-    .line 113
     sget-object v0, Landroid/telephony/CdmaEmergencyMessage;->MESSAGE_IDS:[[I
 
     invoke-virtual {p0}, Landroid/telephony/EmergencyMessage$Alerts;->ordinal()I
@@ -278,21 +258,18 @@
     .parameter "in"
 
     .prologue
-    .line 131
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/telephony/CdmaEmergencyMessage;->mBody:Ljava/lang/String;
 
-    .line 132
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/CdmaEmergencyMessage;->mServiceCategory:I
 
-    .line 133
     invoke-static {}, Landroid/telephony/EmergencyMessage$Severity;->values()[Landroid/telephony/EmergencyMessage$Severity;
 
     move-result-object v0
@@ -305,7 +282,6 @@
 
     iput-object v0, p0, Landroid/telephony/CdmaEmergencyMessage;->mSeverity:Landroid/telephony/EmergencyMessage$Severity;
 
-    .line 134
     invoke-static {}, Landroid/telephony/EmergencyMessage$Urgency;->values()[Landroid/telephony/EmergencyMessage$Urgency;
 
     move-result-object v0
@@ -318,7 +294,6 @@
 
     iput-object v0, p0, Landroid/telephony/CdmaEmergencyMessage;->mUrgency:Landroid/telephony/EmergencyMessage$Urgency;
 
-    .line 135
     invoke-static {}, Landroid/telephony/EmergencyMessage$Certainty;->values()[Landroid/telephony/EmergencyMessage$Certainty;
 
     move-result-object v0
@@ -331,14 +306,12 @@
 
     iput-object v0, p0, Landroid/telephony/CdmaEmergencyMessage;->mCertainty:Landroid/telephony/EmergencyMessage$Certainty;
 
-    .line 136
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/CdmaEmergencyMessage;->mLanguageCode:I
 
-    .line 137
     return-void
 .end method
 
@@ -348,7 +321,6 @@
     .locals 1
 
     .prologue
-    .line 140
     const/4 v0, 0x0
 
     return v0
@@ -358,7 +330,6 @@
     .locals 1
 
     .prologue
-    .line 86
     iget-object v0, p0, Landroid/telephony/CdmaEmergencyMessage;->mCertainty:Landroid/telephony/EmergencyMessage$Certainty;
 
     return-object v0
@@ -368,7 +339,6 @@
     .locals 2
 
     .prologue
-    .line 90
     iget v0, p0, Landroid/telephony/CdmaEmergencyMessage;->mLanguageCode:I
 
     const/4 v1, 0x1
@@ -390,7 +360,6 @@
     .locals 1
 
     .prologue
-    .line 70
     iget-object v0, p0, Landroid/telephony/CdmaEmergencyMessage;->mBody:Ljava/lang/String;
 
     return-object v0
@@ -400,7 +369,6 @@
     .locals 1
 
     .prologue
-    .line 74
     iget v0, p0, Landroid/telephony/CdmaEmergencyMessage;->mServiceCategory:I
 
     return v0
@@ -410,7 +378,6 @@
     .locals 1
 
     .prologue
-    .line 78
     iget-object v0, p0, Landroid/telephony/CdmaEmergencyMessage;->mSeverity:Landroid/telephony/EmergencyMessage$Severity;
 
     return-object v0
@@ -420,7 +387,6 @@
     .locals 1
 
     .prologue
-    .line 82
     iget-object v0, p0, Landroid/telephony/CdmaEmergencyMessage;->mUrgency:Landroid/telephony/EmergencyMessage$Urgency;
 
     return-object v0
@@ -430,7 +396,6 @@
     .locals 2
 
     .prologue
-    .line 118
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -460,17 +425,14 @@
     .parameter "flags"
 
     .prologue
-    .line 122
     iget-object v0, p0, Landroid/telephony/CdmaEmergencyMessage;->mBody:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 123
     iget v0, p0, Landroid/telephony/CdmaEmergencyMessage;->mServiceCategory:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 124
     iget-object v0, p0, Landroid/telephony/CdmaEmergencyMessage;->mSeverity:Landroid/telephony/EmergencyMessage$Severity;
 
     invoke-virtual {v0}, Landroid/telephony/EmergencyMessage$Severity;->ordinal()I
@@ -479,7 +441,6 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 125
     iget-object v0, p0, Landroid/telephony/CdmaEmergencyMessage;->mUrgency:Landroid/telephony/EmergencyMessage$Urgency;
 
     invoke-virtual {v0}, Landroid/telephony/EmergencyMessage$Urgency;->ordinal()I
@@ -488,7 +449,6 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 126
     iget-object v0, p0, Landroid/telephony/CdmaEmergencyMessage;->mCertainty:Landroid/telephony/EmergencyMessage$Certainty;
 
     invoke-virtual {v0}, Landroid/telephony/EmergencyMessage$Certainty;->ordinal()I
@@ -497,11 +457,9 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 127
     iget v0, p0, Landroid/telephony/CdmaEmergencyMessage;->mLanguageCode:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 128
     return-void
 .end method

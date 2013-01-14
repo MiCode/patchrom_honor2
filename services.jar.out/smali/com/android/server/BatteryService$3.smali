@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 630
     iput-object p1, p0, Lcom/android/server/BatteryService$3;->this$0:Lcom/android/server/BatteryService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +39,6 @@
     .parameter "intent"
 
     .prologue
-    .line 633
     const-string v1, "true"
 
     const-string v2, "ro.config.hw_quickpoweron"
@@ -55,12 +53,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 634
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 635
     .local v0, action:Ljava/lang/String;
     const-string v1, "android.intent.action.ACTION_SHUTDOWN"
 
@@ -78,7 +74,6 @@
 
     if-nez v1, :cond_1
 
-    .line 638
     iget-object v1, p0, Lcom/android/server/BatteryService$3;->this$0:Lcom/android/server/BatteryService;
 
     #getter for: Lcom/android/server/BatteryService;->mLed:Lcom/android/server/BatteryService$Led;
@@ -88,13 +83,11 @@
 
     invoke-virtual {v1}, Lcom/android/server/BatteryService$Led;->turnOffLight()V
 
-    .line 645
     .end local v0           #action:Ljava/lang/String;
     :cond_0
     :goto_0
     return-void
 
-    .line 639
     .restart local v0       #action:Ljava/lang/String;
     :cond_1
     const-string v1, "android.intent.action.BOOT_COMPLETED"
@@ -117,7 +110,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 642
     iget-object v1, p0, Lcom/android/server/BatteryService$3;->this$0:Lcom/android/server/BatteryService;
 
     #getter for: Lcom/android/server/BatteryService;->mLed:Lcom/android/server/BatteryService$Led;

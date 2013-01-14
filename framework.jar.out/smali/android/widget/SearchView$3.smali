@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 159
     iput-object p1, p0, Landroid/widget/SearchView$3;->this$0:Landroid/widget/SearchView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .locals 2
 
     .prologue
-    .line 161
     iget-object v0, p0, Landroid/widget/SearchView$3;->this$0:Landroid/widget/SearchView;
 
     #getter for: Landroid/widget/SearchView;->mSuggestionsAdapter:Landroid/widget/CursorAdapter;
@@ -62,7 +60,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 162
     iget-object v0, p0, Landroid/widget/SearchView$3;->this$0:Landroid/widget/SearchView;
 
     #getter for: Landroid/widget/SearchView;->mSuggestionsAdapter:Landroid/widget/CursorAdapter;
@@ -74,7 +71,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/CursorAdapter;->changeCursor(Landroid/database/Cursor;)V
 
-    .line 164
     :cond_0
     return-void
 .end method

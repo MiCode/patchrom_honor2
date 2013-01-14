@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 1174
     iput-object p1, p0, Lcom/android/server/MountService$4;->this$0:Lcom/android/server/MountService;
 
     iput-object p2, p0, Lcom/android/server/MountService$4;->val$path:Ljava/lang/String;
@@ -43,10 +42,8 @@
     .locals 9
 
     .prologue
-    .line 1179
     const/4 v3, 0x0
 
-    .line 1180
     .local v3, retryCountToDisableUMS:I
     :try_start_0
     const-string v4, "MountService"
@@ -55,11 +52,9 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1182
     :goto_0
     add-int/lit8 v3, v3, 0x1
 
-    .line 1183
     iget-object v4, p0, Lcom/android/server/MountService$4;->this$0:Lcom/android/server/MountService;
 
     iget-object v5, p0, Lcom/android/server/MountService$4;->val$path:Ljava/lang/String;
@@ -71,7 +66,6 @@
     #calls: Lcom/android/server/MountService;->doShareUnshareVolume(Ljava/lang/String;Ljava/lang/String;Z)V
     invoke-static {v4, v5, v6, v7}, Lcom/android/server/MountService;->access$200(Lcom/android/server/MountService;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 1184
     iget-object v4, p0, Lcom/android/server/MountService$4;->this$0:Lcom/android/server/MountService;
 
     iget-object v5, p0, Lcom/android/server/MountService$4;->val$path:Ljava/lang/String;
@@ -84,19 +78,16 @@
     .local v2, rc:I
     if-nez v2, :cond_0
 
-    .line 1204
     .end local v2           #rc:I
     :goto_1
     return-void
 
-    .line 1189
     .restart local v2       #rc:I
     :cond_0
     const/4 v4, 0x5
 
     if-lt v3, v4, :cond_1
 
-    .line 1190
     const-string v4, "MountService"
 
     const-string v5, "Failed to remount {%s} on UMS enabled-disconnect (%d)"
@@ -129,12 +120,10 @@
 
     goto :goto_1
 
-    .line 1200
     .end local v2           #rc:I
     :catch_0
     move-exception v1
 
-    .line 1201
     .local v1, ex:Ljava/lang/Exception;
     const-string v4, "MountService"
 
@@ -142,12 +131,10 @@
 
     invoke-static {v4, v5, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1202
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_1
 
-    .line 1194
     .end local v1           #ex:Ljava/lang/Exception;
     .restart local v2       #rc:I
     :cond_1
@@ -160,11 +147,9 @@
 
     goto :goto_0
 
-    .line 1195
     :catch_1
     move-exception v0
 
-    .line 1196
     .local v0, e:Ljava/lang/Exception;
     :try_start_2
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V

@@ -35,7 +35,6 @@
     .locals 2
 
     .prologue
-    .line 29
     new-instance v0, Ljava/util/ArrayList;
 
     const/4 v1, 0x6
@@ -44,49 +43,42 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils;->mAtCmdError:Ljava/util/ArrayList;
 
-    .line 30
     sget-object v0, Lcom/huawei/atcommand/HuaweiATUtils;->mAtCmdError:Ljava/util/ArrayList;
 
     const-string v1, "ERROR"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 31
     sget-object v0, Lcom/huawei/atcommand/HuaweiATUtils;->mAtCmdError:Ljava/util/ArrayList;
 
     const-string v1, "+CMS ERROR:"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 32
     sget-object v0, Lcom/huawei/atcommand/HuaweiATUtils;->mAtCmdError:Ljava/util/ArrayList;
 
     const-string v1, "+CME ERROR:"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 33
     sget-object v0, Lcom/huawei/atcommand/HuaweiATUtils;->mAtCmdError:Ljava/util/ArrayList;
 
     const-string v1, "NO CARRIER"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 34
     sget-object v0, Lcom/huawei/atcommand/HuaweiATUtils;->mAtCmdError:Ljava/util/ArrayList;
 
     const-string v1, "NO ANSWER"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 35
     sget-object v0, Lcom/huawei/atcommand/HuaweiATUtils;->mAtCmdError:Ljava/util/ArrayList;
 
     const-string v1, "NO DIALTONE"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 36
     return-void
 .end method
 
@@ -94,10 +86,8 @@
     .locals 0
 
     .prologue
-    .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 85
     return-void
 .end method
 
@@ -106,7 +96,6 @@
     .parameter "digitString"
 
     .prologue
-    .line 191
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -121,7 +110,6 @@
     .parameter "input"
 
     .prologue
-    .line 199
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -136,7 +124,6 @@
     .parameter "cmeError"
 
     .prologue
-    .line 150
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -151,7 +138,6 @@
     .parameter "rawdString"
 
     .prologue
-    .line 183
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -166,7 +152,6 @@
     .parameter "error"
 
     .prologue
-    .line 159
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -181,7 +166,6 @@
     .parameter "error"
 
     .prologue
-    .line 167
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -196,7 +180,6 @@
     .parameter "rawString"
 
     .prologue
-    .line 175
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."

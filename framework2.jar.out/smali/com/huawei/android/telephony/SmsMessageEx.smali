@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -23,7 +22,6 @@
     .parameter "UDH"
 
     .prologue
-    .line 85
     invoke-static {p0, p1, p2, p3, p4}, Landroid/telephony/SmsMessage;->getDeliverPdu(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[B)Landroid/telephony/SmsMessage$SubmitPdu;
 
     move-result-object v0
@@ -35,7 +33,6 @@
     .locals 1
 
     .prologue
-    .line 48
     invoke-static {}, Landroid/telephony/SmsMessage;->getMessageRefrenceNumber()I
 
     move-result v0
@@ -48,7 +45,6 @@
     .parameter "obj"
 
     .prologue
-    .line 39
     invoke-virtual {p0}, Landroid/telephony/SmsMessage;->getSubId()I
 
     move-result v0
@@ -65,7 +61,6 @@
     .parameter "UDH"
 
     .prologue
-    .line 69
     invoke-static {p0, p1, p2, p3, p4}, Landroid/telephony/SmsMessage;->getSubmitPdu(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[B)Landroid/telephony/SmsMessage$SubmitPdu;
 
     move-result-object v0
@@ -80,7 +75,6 @@
     .parameter "MessageReferenceNum"
 
     .prologue
-    .line 55
     invoke-static {p0, p1, p2}, Landroid/telephony/SmsMessage;->getUserDataHeaderForGsm(III)[B
 
     move-result-object v0
@@ -94,9 +88,7 @@
     .parameter "subId"
 
     .prologue
-    .line 35
     invoke-virtual {p0, p1}, Landroid/telephony/SmsMessage;->setSubId(I)V
 
-    .line 36
     return-void
 .end method

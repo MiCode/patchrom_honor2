@@ -22,7 +22,6 @@
     .locals 0
 
     .prologue
-    .line 282
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +34,6 @@
     .parameter "pathName"
 
     .prologue
-    .line 284
     invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v0

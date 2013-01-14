@@ -30,10 +30,8 @@
     .parameter "record"
 
     .prologue
-    .line 135
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 130
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -42,13 +40,10 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/OplRecords$OplRecord;->mPlmn:[I
 
-    .line 136
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/gsm/OplRecords$OplRecord;->getPlmn([B)V
 
-    .line 137
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/gsm/OplRecords$OplRecord;->getLac([B)V
 
-    .line 138
     const/4 v0, 0x7
 
     aget-byte v0, p1, v0
@@ -57,10 +52,8 @@
 
     iput v0, p0, Lcom/android/internal/telephony/gsm/OplRecords$OplRecord;->mPnnRecordNumber:I
 
-    .line 139
     return-void
 
-    .line 130
     nop
 
     :array_0
@@ -79,7 +72,6 @@
     .parameter "x0"
 
     .prologue
-    .line 129
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/OplRecords$OplRecord;->mPlmn:[I
 
     return-object v0
@@ -90,7 +82,6 @@
     .parameter "x0"
 
     .prologue
-    .line 129
     iget v0, p0, Lcom/android/internal/telephony/gsm/OplRecords$OplRecord;->mLac1:I
 
     return v0
@@ -101,7 +92,6 @@
     .parameter "x0"
 
     .prologue
-    .line 129
     iget v0, p0, Lcom/android/internal/telephony/gsm/OplRecords$OplRecord;->mLac2:I
 
     return v0
@@ -112,7 +102,6 @@
     .parameter "record"
 
     .prologue
-    .line 163
     const/4 v0, 0x3
 
     aget-byte v0, p1, v0
@@ -131,7 +120,6 @@
 
     iput v0, p0, Lcom/android/internal/telephony/gsm/OplRecords$OplRecord;->mLac1:I
 
-    .line 164
     const/4 v0, 0x5
 
     aget-byte v0, p1, v0
@@ -150,7 +138,6 @@
 
     iput v0, p0, Lcom/android/internal/telephony/gsm/OplRecords$OplRecord;->mLac2:I
 
-    .line 165
     return-void
 .end method
 
@@ -167,7 +154,6 @@
 
     const/4 v3, 0x0
 
-    .line 143
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/OplRecords$OplRecord;->mPlmn:[I
 
     aget-byte v1, p1, v3
@@ -176,7 +162,6 @@
 
     aput v1, v0, v3
 
-    .line 144
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/OplRecords$OplRecord;->mPlmn:[I
 
     aget-byte v1, p1, v3
@@ -187,7 +172,6 @@
 
     aput v1, v0, v4
 
-    .line 145
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/OplRecords$OplRecord;->mPlmn:[I
 
     aget-byte v1, p1, v4
@@ -196,7 +180,6 @@
 
     aput v1, v0, v5
 
-    .line 147
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/OplRecords$OplRecord;->mPlmn:[I
 
     const/4 v1, 0x3
@@ -207,7 +190,6 @@
 
     aput v2, v0, v1
 
-    .line 148
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/OplRecords$OplRecord;->mPlmn:[I
 
     const/4 v1, 0x4
@@ -220,7 +202,6 @@
 
     aput v2, v0, v1
 
-    .line 149
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/OplRecords$OplRecord;->mPlmn:[I
 
     aget-byte v1, p1, v4
@@ -231,7 +212,6 @@
 
     aput v1, v0, v6
 
-    .line 156
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/OplRecords$OplRecord;->mPlmn:[I
 
     aget v0, v0, v6
@@ -244,7 +224,6 @@
 
     aput v3, v0, v6
 
-    .line 157
     :cond_0
     return-void
 .end method
@@ -255,7 +234,6 @@
     .locals 1
 
     .prologue
-    .line 168
     iget v0, p0, Lcom/android/internal/telephony/gsm/OplRecords$OplRecord;->mPnnRecordNumber:I
 
     return v0
@@ -265,7 +243,6 @@
     .locals 3
 
     .prologue
-    .line 172
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

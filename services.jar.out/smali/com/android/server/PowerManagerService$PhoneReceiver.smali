@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 663
     iput-object p1, p0, Lcom/android/server/PowerManagerService$PhoneReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +37,6 @@
     .parameter "x1"
 
     .prologue
-    .line 663
     invoke-direct {p0, p1}, Lcom/android/server/PowerManagerService$PhoneReceiver;-><init>(Lcom/android/server/PowerManagerService;)V
 
     return-void
@@ -52,12 +50,10 @@
     .parameter "intent"
 
     .prologue
-    .line 666
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 667
     .local v0, action:Ljava/lang/String;
     const-string v1, "android.intent.action.PHONE_STATE"
 
@@ -67,7 +63,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 668
     iget-object v1, p0, Lcom/android/server/PowerManagerService$PhoneReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     const-string v2, "state"
@@ -85,13 +80,11 @@
     #setter for: Lcom/android/server/PowerManagerService;->mInCall:Z
     invoke-static {v1, v2}, Lcom/android/server/PowerManagerService;->access$3002(Lcom/android/server/PowerManagerService;Z)Z
 
-    .line 670
     iget-object v1, p0, Lcom/android/server/PowerManagerService$PhoneReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     #calls: Lcom/android/server/PowerManagerService;->updateCallingLimit()V
     invoke-static {v1}, Lcom/android/server/PowerManagerService;->access$2700(Lcom/android/server/PowerManagerService;)V
 
-    .line 672
     :cond_0
     return-void
 .end method

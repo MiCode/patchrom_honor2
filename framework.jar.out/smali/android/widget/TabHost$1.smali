@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 130
     iput-object p1, p0, Landroid/widget/TabHost$1;->this$0:Landroid/widget/TabHost;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,10 +43,8 @@
     .parameter "event"
 
     .prologue
-    .line 132
     sparse-switch p2, :sswitch_data_0
 
-    .line 142
     iget-object v0, p0, Landroid/widget/TabHost$1;->this$0:Landroid/widget/TabHost;
 
     #getter for: Landroid/widget/TabHost;->mTabContent:Landroid/widget/FrameLayout;
@@ -59,7 +56,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->requestFocus(I)Z
 
-    .line 143
     iget-object v0, p0, Landroid/widget/TabHost$1;->this$0:Landroid/widget/TabHost;
 
     #getter for: Landroid/widget/TabHost;->mTabContent:Landroid/widget/FrameLayout;
@@ -74,13 +70,11 @@
     :goto_0
     return v0
 
-    .line 139
     :sswitch_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 132
     :sswitch_data_0
     .sparse-switch
         0x13 -> :sswitch_0

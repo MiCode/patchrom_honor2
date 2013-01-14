@@ -28,7 +28,6 @@
     .locals 0
 
     .prologue
-    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +38,6 @@
     .parameter "object"
 
     .prologue
-    .line 99
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -54,7 +52,6 @@
     .parameter "object"
 
     .prologue
-    .line 73
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -69,7 +66,6 @@
     .parameter "object"
 
     .prologue
-    .line 95
     invoke-virtual {p0}, Landroid/telephony/TelephonyManager;->getPhoneType()I
 
     move-result v0
@@ -82,7 +78,6 @@
     .parameter "object"
 
     .prologue
-    .line 81
     invoke-virtual {p0}, Landroid/telephony/TelephonyManager;->isMultiSimEnabled()Z
 
     move-result v0

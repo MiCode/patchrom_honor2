@@ -130,7 +130,6 @@
 
     const/4 v4, 0x0
 
-    .line 86
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_ERROR_NON_CME"
@@ -141,7 +140,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_ERROR_NON_CME:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 87
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_SUCCESS"
@@ -150,7 +148,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_SUCCESS:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 88
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_NO_CONNECTION_TO_PHONE"
@@ -159,7 +156,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_NO_CONNECTION_TO_PHONE:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 89
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_PHONE_ADAPTORLINK_RESERVED"
@@ -168,7 +164,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_PHONE_ADAPTORLINK_RESERVED:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 90
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_OPERATION_NOT_ALLOWED"
@@ -177,7 +172,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_OPERATION_NOT_ALLOWED:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 91
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_OPERATION_NOT_SUPPORTED"
@@ -188,7 +182,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_OPERATION_NOT_SUPPORTED:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 92
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_PH_SIM_PIN_REQUIRE"
@@ -201,7 +194,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_PH_SIM_PIN_REQUIRE:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 93
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_PH_FSIM_PIN_REQUIRED"
@@ -214,7 +206,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_PH_FSIM_PIN_REQUIRED:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 94
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_PH_FSIM_PUK_REQUIRED"
@@ -227,7 +218,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_PH_FSIM_PUK_REQUIRED:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 95
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_SIM_NOT_INSERTED"
@@ -240,7 +230,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_SIM_NOT_INSERTED:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 96
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_SIM_PIN_REQUIRED"
@@ -253,7 +242,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_SIM_PIN_REQUIRED:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 97
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_SIM_PUK_REQUIRED"
@@ -266,7 +254,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_SIM_PUK_REQUIRED:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 98
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_SIM_FAILURE"
@@ -279,7 +266,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_SIM_FAILURE:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 99
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_SIM_BUSY"
@@ -292,7 +278,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_SIM_BUSY:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 100
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_SIM_WRONG"
@@ -305,7 +290,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_SIM_WRONG:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 101
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_INCORRECT_PASSWORD"
@@ -318,7 +302,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_INCORRECT_PASSWORD:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 102
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_SIM_PIN2_REQUIRED"
@@ -331,7 +314,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_SIM_PIN2_REQUIRED:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 103
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_SIM_PUK2_REQUIRED"
@@ -344,7 +326,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_SIM_PUK2_REQUIRED:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 104
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_MEMORY_FULL"
@@ -357,7 +338,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_MEMORY_FULL:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 105
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_INVALID_INDEX"
@@ -370,7 +350,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_INVALID_INDEX:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 106
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_NOT_FOUND"
@@ -383,7 +362,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_NOT_FOUND:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 107
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_MEMORY_FAILURE"
@@ -396,7 +374,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_MEMORY_FAILURE:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 108
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_TEXT_STRING_TOO_LONG"
@@ -409,7 +386,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_TEXT_STRING_TOO_LONG:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 109
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_INVALID_CHARACTERS"
@@ -422,7 +398,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_INVALID_CHARACTERS:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 110
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_DIAL_STRING_TOO_LONG"
@@ -435,7 +410,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_DIAL_STRING_TOO_LONG:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 111
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_INVALID_DIAL_STRING"
@@ -448,7 +422,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_INVALID_DIAL_STRING:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 112
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_NO_NETWORK_SERVICE"
@@ -461,7 +434,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_NO_NETWORK_SERVICE:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 113
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_NETWORK_TIMEOUT"
@@ -474,7 +446,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_NETWORK_TIMEOUT:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 114
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_EMERGENCY_CALL_ONLY"
@@ -487,7 +458,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_EMERGENCY_CALL_ONLY:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 115
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_INCORRECT_PARAMETERS"
@@ -500,7 +470,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_INCORRECT_PARAMETERS:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 116
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_UNKNOWN"
@@ -513,7 +482,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_UNKNOWN:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 117
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_ILLEGAL_MS"
@@ -526,7 +494,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_ILLEGAL_MS:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 118
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_ILLEGAL_ME"
@@ -539,7 +506,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_ILLEGAL_ME:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 119
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_GPRS_SERVICES_NOT_ALLOWED"
@@ -552,7 +518,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_GPRS_SERVICES_NOT_ALLOWED:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 120
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_PLMN_NOT_ALLOWED"
@@ -565,7 +530,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_PLMN_NOT_ALLOWED:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 121
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_LOCATION_AREA_NOT_ALLOWED"
@@ -578,7 +542,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_LOCATION_AREA_NOT_ALLOWED:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 122
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_ROAMING_NOT_ALLOWED"
@@ -591,7 +554,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_ROAMING_NOT_ALLOWED:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 123
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_SERVICE_OPTION_NOT_SUPPORTED"
@@ -604,7 +566,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_SERVICE_OPTION_NOT_SUPPORTED:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 124
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_REQUESTED_SERVICE_OPTION_NOT_SUBSCRIBED"
@@ -617,7 +578,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_REQUESTED_SERVICE_OPTION_NOT_SUBSCRIBED:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 125
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_SERVICE_OPTION_TEMPORARILY_OUT_OF_ORDER"
@@ -630,7 +590,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_SERVICE_OPTION_TEMPORARILY_OUT_OF_ORDER:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 126
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_PDP_AUTHENTICATION_FAILURE"
@@ -643,7 +602,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_PDP_AUTHENTICATION_FAILURE:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 127
     new-instance v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     const-string v1, "CME_INVALID_MOBILE_CLASS"
@@ -656,7 +614,6 @@
 
     sput-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->CME_INVALID_MOBILE_CLASS:Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
-    .line 85
     const/16 v0, 0x2a
 
     new-array v0, v0, [Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
@@ -920,10 +877,8 @@
     .end annotation
 
     .prologue
-    .line 131
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 132
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -938,7 +893,6 @@
     .parameter "type"
 
     .prologue
-    .line 140
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -953,7 +907,6 @@
     .parameter "name"
 
     .prologue
-    .line 85
     const-class v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -969,7 +922,6 @@
     .locals 1
 
     .prologue
-    .line 85
     sget-object v0, Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->$VALUES:[Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;
 
     invoke-virtual {v0}, [Lcom/huawei/atcommand/HuaweiATUtils$ATCmdCmeErrorType;->clone()Ljava/lang/Object;
@@ -987,7 +939,6 @@
     .locals 2
 
     .prologue
-    .line 136
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."

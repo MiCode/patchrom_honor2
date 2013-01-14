@@ -42,7 +42,6 @@
     .parameter
 
     .prologue
-    .line 359
     iput-object p1, p0, Lcom/android/server/am/ServiceRecord$1;->this$0:Lcom/android/server/am/ServiceRecord;
 
     iput-object p2, p0, Lcom/android/server/am/ServiceRecord$1;->val$localPackageName:Ljava/lang/String;
@@ -70,29 +69,24 @@
 
     const/4 v9, 0x1
 
-    .line 361
     invoke-static {}, Landroid/app/NotificationManager;->getService()Landroid/app/INotificationManager;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/server/NotificationManagerService;
 
-    .line 363
     .local v0, nm:Lcom/android/server/NotificationManagerService;
     if-nez v0, :cond_0
 
-    .line 380
     :goto_0
     return-void
 
-    .line 367
     :cond_0
     const/4 v1, 0x1
 
     :try_start_0
     new-array v7, v1, [I
 
-    .line 368
     .local v7, outId:[I
     iget-object v1, p0, Lcom/android/server/am/ServiceRecord$1;->val$localPackageName:Ljava/lang/String;
 
@@ -112,12 +106,10 @@
 
     goto :goto_0
 
-    .line 370
     .end local v7           #outId:[I
     :catch_0
     move-exception v8
 
-    .line 371
     .local v8, e:Ljava/lang/RuntimeException;
     const-string v1, "ActivityManager"
 
@@ -125,7 +117,6 @@
 
     invoke-static {v1, v2, v8}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 375
     iget-object v1, p0, Lcom/android/server/am/ServiceRecord$1;->this$0:Lcom/android/server/am/ServiceRecord;
 
     iget-object v1, v1, Lcom/android/server/am/ServiceRecord;->ams:Lcom/android/server/am/ActivityManagerService;
@@ -144,7 +135,6 @@
 
     invoke-virtual/range {v1 .. v6}, Lcom/android/server/am/ActivityManagerService;->setServiceForeground(Landroid/content/ComponentName;Landroid/os/IBinder;ILandroid/app/Notification;Z)V
 
-    .line 377
     iget-object v1, p0, Lcom/android/server/am/ServiceRecord$1;->this$0:Lcom/android/server/am/ServiceRecord;
 
     iget-object v1, v1, Lcom/android/server/am/ServiceRecord;->ams:Lcom/android/server/am/ActivityManagerService;

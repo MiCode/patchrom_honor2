@@ -21,20 +21,16 @@
     .parameter "context"
 
     .prologue
-    .line 72
     invoke-direct {p0}, Lorg/simalliance/openmobileapi/service/ISmartcardSystemService$Stub;-><init>()V
 
-    .line 44
     new-instance v1, Lcom/android/server/SmartcardSystemService$1;
 
     invoke-direct {v1, p0}, Lcom/android/server/SmartcardSystemService$1;-><init>(Lcom/android/server/SmartcardSystemService;)V
 
     iput-object v1, p0, Lcom/android/server/SmartcardSystemService;->callback:Lorg/simalliance/openmobileapi/service/ISmartcardServiceCallback;
 
-    .line 73
     if-nez p1, :cond_0
 
-    .line 74
     new-instance v1, Ljava/lang/NullPointerException;
 
     const-string v2, "context must not be null"
@@ -43,13 +39,11 @@
 
     throw v1
 
-    .line 76
     :cond_0
     new-instance v0, Lcom/android/server/SmartcardSystemService$2;
 
     invoke-direct {v0, p0}, Lcom/android/server/SmartcardSystemService$2;-><init>(Lcom/android/server/SmartcardSystemService;)V
 
-    .line 88
     .local v0, connection:Landroid/content/ServiceConnection;
     new-instance v1, Landroid/content/Intent;
 
@@ -65,7 +59,6 @@
 
     invoke-virtual {p1, v1, v0, v2}, Landroid/content/Context;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
 
-    .line 89
     return-void
 .end method
 
@@ -75,7 +68,6 @@
     .parameter "x1"
 
     .prologue
-    .line 36
     iput-object p1, p0, Lcom/android/server/SmartcardSystemService;->smartcardService:Lorg/simalliance/openmobileapi/service/ISmartcardService;
 
     return-object p1
@@ -86,12 +78,10 @@
     .parameter "bytes"
 
     .prologue
-    .line 47
     new-instance v4, Ljava/lang/StringBuffer;
 
     invoke-direct {v4}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 48
     .local v4, sb:Ljava/lang/StringBuffer;
     move-object v0, p0
 
@@ -107,7 +97,6 @@
 
     aget-byte v1, v0, v2
 
-    .line 49
     .local v1, b:B
     const-string v5, "%02X"
 
@@ -131,12 +120,10 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 48
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 51
     .end local v1           #b:B
     :cond_0
     invoke-virtual {v4}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
@@ -153,18 +140,15 @@
     .prologue
     const/16 v6, 0x10
 
-    .line 62
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v2
 
-    .line 63
     .local v2, len:I
     div-int/lit8 v3, v2, 0x2
 
     new-array v0, v3, [B
 
-    .line 64
     .local v0, data:[B
     const/4 v1, 0x0
 
@@ -172,7 +156,6 @@
     :goto_0
     if-ge v1, v2, :cond_0
 
-    .line 65
     div-int/lit8 v3, v1, 0x2
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
@@ -201,12 +184,10 @@
 
     aput-byte v4, v0, v3
 
-    .line 64
     add-int/lit8 v1, v1, 0x2
 
     goto :goto_0
 
-    .line 68
     :cond_0
     return-object v0
 .end method
@@ -216,7 +197,6 @@
     .parameter "s"
 
     .prologue
-    .line 55
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -225,7 +205,6 @@
 
     new-array v0, v2, [B
 
-    .line 56
     .local v0, b:[B
     const/4 v1, 0x0
 
@@ -235,7 +214,6 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 57
     mul-int/lit8 v2, v1, 0x2
 
     mul-int/lit8 v3, v1, 0x2
@@ -256,12 +234,10 @@
 
     aput-byte v2, v0, v1
 
-    .line 56
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 58
     :cond_0
     return-object v0
 .end method
@@ -278,7 +254,6 @@
     .end annotation
 
     .prologue
-    .line 94
     const-string v1, "SmartcardSystemService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -307,25 +282,21 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 95
     new-instance v0, Lorg/simalliance/openmobileapi/service/SmartcardError;
 
     invoke-direct {v0}, Lorg/simalliance/openmobileapi/service/SmartcardError;-><init>()V
 
-    .line 96
     .local v0, error:Lorg/simalliance/openmobileapi/service/SmartcardError;
     iget-object v1, p0, Lcom/android/server/SmartcardSystemService;->smartcardService:Lorg/simalliance/openmobileapi/service/ISmartcardService;
 
     invoke-interface {v1, p1, p2, v0}, Lorg/simalliance/openmobileapi/service/ISmartcardService;->closeChannel(JLorg/simalliance/openmobileapi/service/SmartcardError;)V
 
-    .line 97
     invoke-virtual {v0}, Lorg/simalliance/openmobileapi/service/SmartcardError;->createException()Ljava/lang/Exception;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/server/SmartcardSystemService;->lastException:Ljava/lang/Exception;
 
-    .line 98
     const-string v1, "SmartcardSystemService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -352,7 +323,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 99
     return-void
 .end method
 
@@ -360,44 +330,37 @@
     .locals 4
 
     .prologue
-    .line 182
     const-string v1, "SmartcardSystemService"
 
     const-string v2, "called: getLastError"
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 183
     new-instance v0, Ljava/lang/String;
 
     const-string v1, ""
 
     invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    .line 184
     .local v0, strErrorMessage:Ljava/lang/String;
     iget-object v1, p0, Lcom/android/server/SmartcardSystemService;->lastException:Ljava/lang/Exception;
 
     if-eqz v1, :cond_1
 
-    .line 186
     iget-object v1, p0, Lcom/android/server/SmartcardSystemService;->lastException:Ljava/lang/Exception;
 
     invoke-virtual {v1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 187
     if-nez v0, :cond_0
 
-    .line 189
     iget-object v1, p0, Lcom/android/server/SmartcardSystemService;->lastException:Ljava/lang/Exception;
 
     invoke-virtual {v1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 192
     :cond_0
     const-string v1, "SmartcardSystemService"
 
@@ -421,7 +384,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 194
     :cond_1
     return-object v0
 .end method
@@ -435,19 +397,16 @@
     .end annotation
 
     .prologue
-    .line 103
     const-string v4, "SmartcardSystemService"
 
     const-string v5, "called: getReaders()"
 
     invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 104
     new-instance v0, Lorg/simalliance/openmobileapi/service/SmartcardError;
 
     invoke-direct {v0}, Lorg/simalliance/openmobileapi/service/SmartcardError;-><init>()V
 
-    .line 105
     .local v0, error:Lorg/simalliance/openmobileapi/service/SmartcardError;
     iget-object v4, p0, Lcom/android/server/SmartcardSystemService;->smartcardService:Lorg/simalliance/openmobileapi/service/ISmartcardService;
 
@@ -455,7 +414,6 @@
 
     move-result-object v3
 
-    .line 106
     .local v3, result:[Ljava/lang/String;
     const/4 v1, 0x0
 
@@ -465,7 +423,6 @@
 
     if-ge v1, v4, :cond_0
 
-    .line 108
     const-string v4, "SmartcardSystemService"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -500,12 +457,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 106
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 110
     :cond_0
     invoke-virtual {v0}, Lorg/simalliance/openmobileapi/service/SmartcardError;->createException()Ljava/lang/Exception;
 
@@ -513,10 +468,8 @@
 
     iput-object v4, p0, Lcom/android/server/SmartcardSystemService;->lastException:Ljava/lang/Exception;
 
-    .line 111
     const-string v2, ""
 
-    .line 112
     .local v2, readerlist:Ljava/lang/String;
     const/4 v1, 0x0
 
@@ -525,7 +478,6 @@
 
     if-ge v1, v4, :cond_1
 
-    .line 114
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -544,7 +496,6 @@
 
     move-result-object v2
 
-    .line 115
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -563,12 +514,10 @@
 
     move-result-object v2
 
-    .line 112
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 118
     :cond_1
     return-object v2
 .end method
@@ -583,12 +532,10 @@
     .end annotation
 
     .prologue
-    .line 123
     new-instance v0, Lorg/simalliance/openmobileapi/service/SmartcardError;
 
     invoke-direct {v0}, Lorg/simalliance/openmobileapi/service/SmartcardError;-><init>()V
 
-    .line 124
     .local v0, error:Lorg/simalliance/openmobileapi/service/SmartcardError;
     iget-object v2, p0, Lcom/android/server/SmartcardSystemService;->smartcardService:Lorg/simalliance/openmobileapi/service/ISmartcardService;
 
@@ -596,7 +543,6 @@
 
     move-result v1
 
-    .line 125
     .local v1, result:Z
     const-string v2, "SmartcardSystemService"
 
@@ -630,14 +576,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 126
     invoke-virtual {v0}, Lorg/simalliance/openmobileapi/service/SmartcardError;->createException()Ljava/lang/Exception;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/android/server/SmartcardSystemService;->lastException:Ljava/lang/Exception;
 
-    .line 127
     return v1
 .end method
 
@@ -651,7 +595,6 @@
     .end annotation
 
     .prologue
-    .line 132
     const-string v3, "SmartcardSystemService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -680,12 +623,10 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 133
     new-instance v2, Lorg/simalliance/openmobileapi/service/SmartcardError;
 
     invoke-direct {v2}, Lorg/simalliance/openmobileapi/service/SmartcardError;-><init>()V
 
-    .line 134
     .local v2, error:Lorg/simalliance/openmobileapi/service/SmartcardError;
     iget-object v3, p0, Lcom/android/server/SmartcardSystemService;->smartcardService:Lorg/simalliance/openmobileapi/service/ISmartcardService;
 
@@ -695,7 +636,6 @@
 
     move-result-wide v0
 
-    .line 135
     .local v0, channelValue:J
     invoke-virtual {v2}, Lorg/simalliance/openmobileapi/service/SmartcardError;->createException()Ljava/lang/Exception;
 
@@ -703,7 +643,6 @@
 
     iput-object v3, p0, Lcom/android/server/SmartcardSystemService;->lastException:Ljava/lang/Exception;
 
-    .line 136
     return-wide v0
 .end method
 
@@ -718,7 +657,6 @@
     .end annotation
 
     .prologue
-    .line 142
     const-string v3, "SmartcardSystemService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -747,12 +685,10 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 143
     new-instance v2, Lorg/simalliance/openmobileapi/service/SmartcardError;
 
     invoke-direct {v2}, Lorg/simalliance/openmobileapi/service/SmartcardError;-><init>()V
 
-    .line 144
     .local v2, error:Lorg/simalliance/openmobileapi/service/SmartcardError;
     iget-object v3, p0, Lcom/android/server/SmartcardSystemService;->smartcardService:Lorg/simalliance/openmobileapi/service/ISmartcardService;
 
@@ -766,7 +702,6 @@
 
     move-result-wide v0
 
-    .line 145
     .local v0, channelValue:J
     invoke-virtual {v2}, Lorg/simalliance/openmobileapi/service/SmartcardError;->createException()Ljava/lang/Exception;
 
@@ -774,7 +709,6 @@
 
     iput-object v3, p0, Lcom/android/server/SmartcardSystemService;->lastException:Ljava/lang/Exception;
 
-    .line 146
     return-wide v0
 .end method
 
@@ -789,7 +723,6 @@
     .end annotation
 
     .prologue
-    .line 152
     const-string v3, "SmartcardSystemService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -828,12 +761,10 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 153
     new-instance v2, Lorg/simalliance/openmobileapi/service/SmartcardError;
 
     invoke-direct {v2}, Lorg/simalliance/openmobileapi/service/SmartcardError;-><init>()V
 
-    .line 154
     .local v2, error:Lorg/simalliance/openmobileapi/service/SmartcardError;
     iget-object v3, p0, Lcom/android/server/SmartcardSystemService;->smartcardService:Lorg/simalliance/openmobileapi/service/ISmartcardService;
 
@@ -847,7 +778,6 @@
 
     move-result-wide v0
 
-    .line 155
     .local v0, channelValue:J
     invoke-virtual {v2}, Lorg/simalliance/openmobileapi/service/SmartcardError;->createException()Ljava/lang/Exception;
 
@@ -855,7 +785,6 @@
 
     iput-object v3, p0, Lcom/android/server/SmartcardSystemService;->lastException:Ljava/lang/Exception;
 
-    .line 156
     return-wide v0
 .end method
 
@@ -870,7 +799,6 @@
     .end annotation
 
     .prologue
-    .line 161
     const-string v5, "SmartcardSystemService"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -909,18 +837,15 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 162
     new-instance v2, Lorg/simalliance/openmobileapi/service/SmartcardError;
 
     invoke-direct {v2}, Lorg/simalliance/openmobileapi/service/SmartcardError;-><init>()V
 
-    .line 163
     .local v2, error:Lorg/simalliance/openmobileapi/service/SmartcardError;
     invoke-static {p3}, Lcom/android/server/SmartcardSystemService;->hexStringToByteArray(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 164
     .local v0, cmd:[B
     const-string v5, "SmartcardSystemService"
 
@@ -948,10 +873,8 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 165
     const-string v4, ""
 
-    .line 167
     .local v4, strResponse:Ljava/lang/String;
     :try_start_0
     iget-object v5, p0, Lcom/android/server/SmartcardSystemService;->smartcardService:Lorg/simalliance/openmobileapi/service/ISmartcardService;
@@ -960,7 +883,6 @@
 
     move-result-object v3
 
-    .line 168
     .local v3, rsp:[B
     const-string v5, "SmartcardSystemService"
 
@@ -988,14 +910,12 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 169
     invoke-static {v3}, Lcom/android/server/SmartcardSystemService;->bytesToString([B)Ljava/lang/String;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v4
 
-    .line 175
     .end local v3           #rsp:[B
     :cond_0
     :goto_0
@@ -1021,21 +941,17 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 176
     invoke-virtual {v2}, Lorg/simalliance/openmobileapi/service/SmartcardError;->createException()Ljava/lang/Exception;
 
     move-result-object v5
 
     iput-object v5, p0, Lcom/android/server/SmartcardSystemService;->lastException:Ljava/lang/Exception;
 
-    .line 177
     return-object v4
 
-    .line 170
     :catch_0
     move-exception v1
 
-    .line 171
     .local v1, e:Ljava/lang/Exception;
     const-string v5, "SmartcardSystemService"
 
@@ -1063,10 +979,8 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 172
     if-eqz v2, :cond_0
 
-    .line 173
     const-string v5, "SmartcardSystemService"
 
     new-instance v6, Ljava/lang/StringBuilder;

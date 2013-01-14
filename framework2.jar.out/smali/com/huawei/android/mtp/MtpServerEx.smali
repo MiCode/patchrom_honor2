@@ -10,10 +10,8 @@
     .parameter "usePtp"
 
     .prologue
-    .line 29
     invoke-direct {p0, p1, p2}, Landroid/mtp/MtpServer;-><init>(Landroid/mtp/MtpDatabase;Z)V
 
-    .line 30
     return-void
 .end method
 
@@ -23,9 +21,7 @@
     .locals 0
 
     .prologue
-    .line 33
     invoke-super {p0}, Landroid/mtp/MtpServer;->sendAllStorageInfoChangedIfNeed()V
 
-    .line 34
     return-void
 .end method

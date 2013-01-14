@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -21,10 +20,8 @@
     .parameter "additionalInfo"
 
     .prologue
-    .line 41
     invoke-virtual {p0, p1, p2}, Lcom/android/internal/telephony/cat/CatResponseMessage;->setAdditionalInfo(ZI)V
 
-    .line 42
     return-void
 .end method
 
@@ -35,10 +32,8 @@
     .parameter "addedInfo"
 
     .prologue
-    .line 26
     invoke-virtual {p0, p1, p2}, Lcom/android/internal/telephony/cat/CatResponseMessage;->setEventDownload(I[B)V
 
-    .line 27
     return-void
 .end method
 
@@ -51,7 +46,6 @@
     .parameter "obj"
 
     .prologue
-    .line 30
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -68,7 +62,6 @@
     .parameter "obj"
 
     .prologue
-    .line 37
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."

@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,7 +18,6 @@
     .parameter "obj"
 
     .prologue
-    .line 42
     invoke-virtual {p0}, Landroid/telephony/SmsManager;->getSmscAddr()Ljava/lang/String;
 
     move-result-object v0

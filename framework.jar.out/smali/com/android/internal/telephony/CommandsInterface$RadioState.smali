@@ -68,7 +68,6 @@
 
     const/4 v3, 0x1
 
-    .line 36
     new-instance v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
     const-string v1, "RADIO_OFF"
@@ -77,7 +76,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->RADIO_OFF:Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
-    .line 37
     new-instance v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
     const-string v1, "RADIO_UNAVAILABLE"
@@ -86,7 +84,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->RADIO_UNAVAILABLE:Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
-    .line 38
     new-instance v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
     const-string v1, "SIM_NOT_READY"
@@ -95,7 +92,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->SIM_NOT_READY:Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
-    .line 39
     new-instance v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
     const-string v1, "SIM_LOCKED_OR_ABSENT"
@@ -104,7 +100,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->SIM_LOCKED_OR_ABSENT:Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
-    .line 41
     new-instance v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
     const-string v1, "SIM_READY"
@@ -113,7 +108,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->SIM_READY:Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
-    .line 42
     new-instance v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
     const-string v1, "RUIM_NOT_READY"
@@ -124,7 +118,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->RUIM_NOT_READY:Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
-    .line 43
     new-instance v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
     const-string v1, "RUIM_READY"
@@ -135,7 +128,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->RUIM_READY:Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
-    .line 44
     new-instance v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
     const-string v1, "RUIM_LOCKED_OR_ABSENT"
@@ -146,7 +138,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->RUIM_LOCKED_OR_ABSENT:Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
-    .line 46
     new-instance v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
     const-string v1, "NV_NOT_READY"
@@ -157,7 +148,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->NV_NOT_READY:Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
-    .line 47
     new-instance v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
     const-string v1, "NV_READY"
@@ -168,7 +158,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->NV_READY:Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
-    .line 49
     new-instance v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
     const-string v1, "SUB_TO_ACTIVATE"
@@ -179,7 +168,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->SUB_TO_ACTIVATE:Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
-    .line 34
     const/16 v0, 0xb
 
     new-array v0, v0, [Lcom/android/internal/telephony/CommandsInterface$RadioState;
@@ -257,13 +245,10 @@
     .end annotation
 
     .prologue
-    .line 66
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 67
     iput p3, p0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->stateType:I
 
-    .line 68
     return-void
 .end method
 
@@ -272,7 +257,6 @@
     .parameter "name"
 
     .prologue
-    .line 34
     const-class v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -288,7 +272,6 @@
     .locals 1
 
     .prologue
-    .line 34
     sget-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->$VALUES:[Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/CommandsInterface$RadioState;->clone()Ljava/lang/Object;
@@ -306,7 +289,6 @@
     .locals 1
 
     .prologue
-    .line 71
     iget v0, p0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->stateType:I
 
     return v0
@@ -316,7 +298,6 @@
     .locals 1
 
     .prologue
-    .line 75
     sget-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->RADIO_UNAVAILABLE:Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
     if-eq p0, v0, :cond_0
@@ -338,14 +319,12 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 101
     invoke-static {}, Lcom/android/internal/telephony/BaseCommands;->getLteOnCdmaModeStatic()I
 
     move-result v1
 
     if-ne v1, v0, :cond_1
 
-    .line 104
     :cond_0
     :goto_0
     return v0
@@ -384,14 +363,12 @@
 
     const/4 v0, 0x0
 
-    .line 91
     invoke-static {}, Lcom/android/internal/telephony/BaseCommands;->getLteOnCdmaModeStatic()I
 
     move-result v2
 
     if-ne v2, v1, :cond_1
 
-    .line 94
     :cond_0
     :goto_0
     return v0
@@ -419,7 +396,6 @@
     .locals 1
 
     .prologue
-    .line 87
     sget-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->NV_READY:Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
     if-ne p0, v0, :cond_0
@@ -439,7 +415,6 @@
     .locals 1
 
     .prologue
-    .line 53
     sget-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->SIM_NOT_READY:Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
     if-eq p0, v0, :cond_0
@@ -492,7 +467,6 @@
     .locals 1
 
     .prologue
-    .line 83
     sget-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->RUIM_READY:Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
     if-ne p0, v0, :cond_0
@@ -512,7 +486,6 @@
     .locals 1
 
     .prologue
-    .line 79
     sget-object v0, Lcom/android/internal/telephony/CommandsInterface$RadioState;->SIM_READY:Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
     if-ne p0, v0, :cond_0

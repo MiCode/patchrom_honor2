@@ -27,15 +27,11 @@
     .parameter "resName"
 
     .prologue
-    .line 733
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 734
     iput-object p1, p0, Landroid/content/res/ResourcesEx$ThemeResource;->packageName:Ljava/lang/String;
 
-    .line 735
     iput-object p2, p0, Landroid/content/res/ResourcesEx$ThemeResource;->resName:Ljava/lang/String;
 
-    .line 736
     return-void
 .end method

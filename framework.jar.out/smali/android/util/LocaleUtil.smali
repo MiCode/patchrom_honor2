@@ -14,12 +14,10 @@
     .locals 1
 
     .prologue
-    .line 33
     const-string v0, "Arab"
 
     sput-object v0, Landroid/util/LocaleUtil;->ARAB_SCRIPT_SUBTAG:Ljava/lang/String;
 
-    .line 34
     const-string v0, "Hebr"
 
     sput-object v0, Landroid/util/LocaleUtil;->HEBR_SCRIPT_SUBTAG:Ljava/lang/String;
@@ -31,7 +29,6 @@
     .locals 0
 
     .prologue
-    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,7 +41,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 75
     invoke-virtual {p0, p0}, Ljava/util/Locale;->getDisplayName(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v1
@@ -59,17 +55,14 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 82
     :goto_0
     return v0
 
-    .line 78
     :pswitch_0
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 75
     nop
 
     :pswitch_data_0
@@ -84,7 +77,6 @@
     .parameter "locale"
 
     .prologue
-    .line 48
     if-eqz p0, :cond_2
 
     sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
@@ -95,7 +87,6 @@
 
     if-nez v1, :cond_2
 
-    .line 49
     invoke-virtual {p0}, Ljava/util/Locale;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -108,7 +99,6 @@
 
     move-result-object v0
 
-    .line 50
     .local v0, scriptSubtag:Ljava/lang/String;
     if-nez v0, :cond_0
 
@@ -116,12 +106,10 @@
 
     move-result v1
 
-    .line 58
     .end local v0           #scriptSubtag:Ljava/lang/String;
     :goto_0
     return v1
 
-    .line 52
     .restart local v0       #scriptSubtag:Ljava/lang/String;
     :cond_0
     sget-object v1, Landroid/util/LocaleUtil;->ARAB_SCRIPT_SUBTAG:Ljava/lang/String;
@@ -140,13 +128,11 @@
 
     if-eqz v1, :cond_2
 
-    .line 54
     :cond_1
     const/4 v1, 0x1
 
     goto :goto_0
 
-    .line 58
     .end local v0           #scriptSubtag:Ljava/lang/String;
     :cond_2
     const/4 v1, 0x0

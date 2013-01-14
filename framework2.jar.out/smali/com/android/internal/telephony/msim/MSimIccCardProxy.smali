@@ -33,16 +33,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 77
     invoke-direct {p0, p1, p2}, Lcom/android/internal/telephony/IccCardProxy;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;)V
 
-    .line 68
     iput-object v3, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCardIndex:Ljava/lang/Integer;
 
-    .line 69
     iput-object v3, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mSubscriptionData:Lcom/android/internal/telephony/msim/Subscription;
 
-    .line 72
     const-string v1, "ro.config.hw_dsda"
 
     const/4 v2, 0x0
@@ -53,19 +49,16 @@
 
     iput-boolean v1, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->bHuaweiDSDA:Z
 
-    .line 79
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCardIndex:Ljava/lang/Integer;
 
-    .line 82
     invoke-static {}, Lcom/android/internal/telephony/msim/SubscriptionManager;->getInstance()Lcom/android/internal/telephony/msim/SubscriptionManager;
 
     move-result-object v0
 
-    .line 84
     .local v0, subMgr:Lcom/android/internal/telephony/msim/SubscriptionManager;
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCardIndex:Ljava/lang/Integer;
 
@@ -77,7 +70,6 @@
 
     invoke-virtual {v0, v1, p0, v2, v3}, Lcom/android/internal/telephony/msim/SubscriptionManager;->registerForSubscriptionActivatedOnSlot(ILandroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 85
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCardIndex:Ljava/lang/Integer;
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
@@ -88,15 +80,12 @@
 
     invoke-virtual {v0, v1, p0, v2, v3}, Lcom/android/internal/telephony/msim/SubscriptionManager;->registerForSubscriptionDeactivatedOnSlot(ILandroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 88
     invoke-virtual {p0}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->resetProperties()V
 
-    .line 89
     sget-object v1, Lcom/android/internal/telephony/IccCard$State;->NOT_READY:Lcom/android/internal/telephony/IccCard$State;
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->setExternalState(Lcom/android/internal/telephony/IccCard$State;)V
 
-    .line 90
     return-void
 .end method
 
@@ -104,12 +93,10 @@
     .locals 3
 
     .prologue
-    .line 167
     invoke-static {}, Lcom/android/internal/telephony/msim/SubscriptionManager;->getInstance()Lcom/android/internal/telephony/msim/SubscriptionManager;
 
     move-result-object v0
 
-    .line 169
     .local v0, subMgr:Lcom/android/internal/telephony/msim/SubscriptionManager;
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCardIndex:Ljava/lang/Integer;
 
@@ -123,14 +110,12 @@
 
     iput-object v1, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mSubscriptionData:Lcom/android/internal/telephony/msim/Subscription;
 
-    .line 172
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mSubscriptionData:Lcom/android/internal/telephony/msim/Subscription;
 
     iget-object v1, v1, Lcom/android/internal/telephony/msim/Subscription;->appType:Ljava/lang/String;
 
     if-eqz v1, :cond_1
 
-    .line 173
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mSubscriptionData:Lcom/android/internal/telephony/msim/Subscription;
 
     iget-object v1, v1, Lcom/android/internal/telephony/msim/Subscription;->appType:Ljava/lang/String;
@@ -162,42 +147,33 @@
 
     if-eq v1, v2, :cond_2
 
-    .line 176
     const-string v1, "update App Family to 3GPP"
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->log(Ljava/lang/String;)V
 
-    .line 177
     sget-object v1, Lcom/android/internal/telephony/UiccManager$AppFamily;->APP_FAM_3GPP:Lcom/android/internal/telephony/UiccManager$AppFamily;
 
     iput-object v1, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCurrentAppType:Lcom/android/internal/telephony/UiccManager$AppFamily;
 
-    .line 191
     :cond_1
     :goto_0
     iget-boolean v1, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->bHuaweiDSDA:Z
 
     if-eqz v1, :cond_4
 
-    .line 192
     const-string v1, "DSDA!, we didn\'t reset properities, because this event may be later after EVENT_RECORDS_LOADED"
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->log(Ljava/lang/String;)V
 
-    .line 198
     :goto_1
     invoke-virtual {p0}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->updateIccAvailability()V
 
-    .line 199
     invoke-direct {p0}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->updateStateProperty()V
 
-    .line 200
     invoke-virtual {p0}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->setOperatorPropAfterActivated()V
 
-    .line 201
     return-void
 
-    .line 178
     :cond_2
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mSubscriptionData:Lcom/android/internal/telephony/msim/Subscription;
 
@@ -230,19 +206,16 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 181
     const-string v1, "update App Family to 3GPP2"
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->log(Ljava/lang/String;)V
 
-    .line 182
     sget-object v1, Lcom/android/internal/telephony/UiccManager$AppFamily;->APP_FAM_3GPP2:Lcom/android/internal/telephony/UiccManager$AppFamily;
 
     iput-object v1, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCurrentAppType:Lcom/android/internal/telephony/UiccManager$AppFamily;
 
     goto :goto_0
 
-    .line 194
     :cond_4
     invoke-virtual {p0}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->resetProperties()V
 
@@ -253,12 +226,10 @@
     .locals 2
 
     .prologue
-    .line 204
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mSubscriptionData:Lcom/android/internal/telephony/msim/Subscription;
 
-    .line 207
     iget-object v0, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCdmaSSM:Lcom/android/internal/telephony/cdma/CdmaSubscriptionSourceManager;
 
     if-eqz v0, :cond_0
@@ -275,24 +246,19 @@
 
     if-eqz v0, :cond_0
 
-    .line 210
     iget-object v0, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lcom/android/internal/telephony/IccRecords;->recordsRequested:Z
 
-    .line 214
     :cond_0
     invoke-virtual {p0}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->resetProperties()V
 
-    .line 215
     invoke-virtual {p0}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->updateIccAvailability()V
 
-    .line 216
     invoke-direct {p0}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->updateStateProperty()V
 
-    .line 217
     return-void
 .end method
 
@@ -300,12 +266,10 @@
     .locals 3
 
     .prologue
-    .line 288
     iget-object v0, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mSubscriptionData:Lcom/android/internal/telephony/msim/Subscription;
 
     if-eqz v0, :cond_0
 
-    .line 290
     const-string v0, "gsm.sim.state"
 
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCardIndex:Ljava/lang/Integer;
@@ -324,7 +288,6 @@
 
     invoke-static {v0, v1, v2}, Landroid/telephony/MSimTelephonyManager;->setTelephonyProperty(Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 294
     :cond_0
     return-void
 .end method
@@ -337,21 +300,17 @@
     .parameter "reason"
 
     .prologue
-    .line 312
     iget-object v2, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCardIndex:Ljava/lang/Integer;
 
     if-nez v2, :cond_0
 
-    .line 313
     const-string v2, "broadcastIccStateChangedIntent: Card Index is not set; Return!!"
 
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->loge(Ljava/lang/String;)V
 
-    .line 336
     :goto_0
     return-void
 
-    .line 317
     :cond_0
     iget-object v2, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCardIndex:Ljava/lang/Integer;
 
@@ -359,13 +318,11 @@
 
     move-result v1
 
-    .line 318
     .local v1, subId:I
     iget-boolean v2, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mQuietMode:Z
 
     if-eqz v2, :cond_1
 
-    .line 319
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -398,7 +355,6 @@
 
     goto :goto_0
 
-    .line 324
     :cond_1
     new-instance v0, Landroid/content/Intent;
 
@@ -406,7 +362,6 @@
 
     invoke-direct {v0, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 328
     .local v0, intent:Landroid/content/Intent;
     const-string v2, "phoneName"
 
@@ -414,22 +369,18 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 329
     const-string v2, "ss"
 
     invoke-virtual {v0, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 330
     const-string v2, "reason"
 
     invoke-virtual {v0, v2, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 332
     const-string v2, "subscription"
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 333
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -470,7 +421,6 @@
 
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->log(Ljava/lang/String;)V
 
-    .line 335
     const-string v2, "android.permission.READ_PHONE_STATE"
 
     invoke-static {v0, v2}, Landroid/app/ActivityManagerNative;->broadcastStickyIntent(Landroid/content/Intent;Ljava/lang/String;)V
@@ -482,13 +432,10 @@
     .locals 0
 
     .prologue
-    .line 94
     invoke-super {p0}, Lcom/android/internal/telephony/IccCardProxy;->dispose()V
 
-    .line 96
     invoke-virtual {p0}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->resetProperties()V
 
-    .line 97
     return-void
 .end method
 
@@ -499,42 +446,34 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 101
     iget v5, p1, Landroid/os/Message;->what:I
 
     sparse-switch v5, :sswitch_data_0
 
-    .line 162
     invoke-super {p0, p1}, Lcom/android/internal/telephony/IccCardProxy;->handleMessage(Landroid/os/Message;)V
 
-    .line 164
     :cond_0
     :goto_0
     return-void
 
-    .line 103
     :sswitch_0
     const-string v5, "EVENT_SUBSCRIPTION_ACTIVATED"
 
     invoke-virtual {p0, v5}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->log(Ljava/lang/String;)V
 
-    .line 104
     invoke-direct {p0}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->onSubscriptionActivated()V
 
     goto :goto_0
 
-    .line 108
     :sswitch_1
     const-string v5, "EVENT_SUBSCRIPTION_DEACTIVATED"
 
     invoke-virtual {p0, v5}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->log(Ljava/lang/String;)V
 
-    .line 109
     invoke-direct {p0}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->onSubscriptionDeactivated()V
 
     goto :goto_0
 
-    .line 114
     :sswitch_2
     iget-object v5, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCurrentAppType:Lcom/android/internal/telephony/UiccManager$AppFamily;
 
@@ -553,14 +492,12 @@
 
     if-eqz v5, :cond_3
 
-    .line 115
     iget-object v5, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
     invoke-virtual {v5}, Lcom/android/internal/telephony/IccRecords;->getOperatorNumeric()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 117
     .local v3, operator:Ljava/lang/String;
     iget-object v5, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mSubscriptionData:Lcom/android/internal/telephony/msim/Subscription;
 
@@ -570,12 +507,10 @@
 
     iget v4, v5, Lcom/android/internal/telephony/msim/Subscription;->subId:I
 
-    .line 118
     .local v4, sub:I
     :cond_2
     if-eqz v3, :cond_4
 
-    .line 120
     const-string v5, "gsm.sim.operator.numeric"
 
     iget-object v6, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCardIndex:Ljava/lang/Integer;
@@ -586,7 +521,6 @@
 
     invoke-static {v5, v6, v3}, Landroid/telephony/MSimTelephonyManager;->setTelephonyProperty(Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 127
     :goto_1
     iget-object v5, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCurrentAppType:Lcom/android/internal/telephony/UiccManager$AppFamily;
 
@@ -594,7 +528,6 @@
 
     if-ne v5, v6, :cond_3
 
-    .line 128
     iget-object v5, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
     check-cast v5, Lcom/android/internal/telephony/gsm/SIMRecords;
@@ -603,11 +536,9 @@
 
     move-result-object v1
 
-    .line 129
     .local v1, countryCode:Ljava/lang/String;
     if-eqz v1, :cond_5
 
-    .line 131
     const-string v5, "gsm.sim.operator.iso-country"
 
     iget-object v6, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCardIndex:Ljava/lang/Integer;
@@ -626,7 +557,6 @@
 
     invoke-static {v5, v6, v7}, Landroid/telephony/MSimTelephonyManager;->setTelephonyProperty(Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 142
     .end local v1           #countryCode:Ljava/lang/String;
     .end local v3           #operator:Ljava/lang/String;
     .end local v4           #sub:I
@@ -640,7 +570,6 @@
 
     goto :goto_0
 
-    .line 124
     .restart local v3       #operator:Ljava/lang/String;
     .restart local v4       #sub:I
     :cond_4
@@ -650,7 +579,6 @@
 
     goto :goto_1
 
-    .line 136
     .restart local v1       #countryCode:Ljava/lang/String;
     :cond_5
     const-string v5, "EVENT_RECORDS_LOADED Country code is null"
@@ -659,7 +587,6 @@
 
     goto :goto_2
 
-    .line 147
     .end local v1           #countryCode:Ljava/lang/String;
     .end local v3           #operator:Ljava/lang/String;
     .end local v4           #sub:I
@@ -681,7 +608,6 @@
 
     if-eqz v5, :cond_0
 
-    .line 148
     iget-object v5, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mSubscriptionData:Lcom/android/internal/telephony/msim/Subscription;
 
     if-eqz v5, :cond_7
@@ -690,14 +616,12 @@
 
     iget v4, v5, Lcom/android/internal/telephony/msim/Subscription;->subId:I
 
-    .line 149
     .restart local v4       #sub:I
     :cond_7
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
-    .line 150
     .local v0, ar:Landroid/os/AsyncResult;
     iget-object v5, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
@@ -707,13 +631,11 @@
 
     move-result v2
 
-    .line 151
     .local v2, eventCode:I
     const/4 v5, 0x2
 
     if-ne v2, v5, :cond_0
 
-    .line 153
     const-string v5, "gsm.sim.operator.alpha"
 
     iget-object v6, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCardIndex:Ljava/lang/Integer;
@@ -732,7 +654,6 @@
 
     goto/16 :goto_0
 
-    .line 101
     nop
 
     :sswitch_data_0
@@ -749,7 +670,6 @@
     .parameter "msg"
 
     .prologue
-    .line 371
     const-string v0, "RIL_MSimIccCardProxy"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -784,7 +704,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 372
     return-void
 .end method
 
@@ -793,7 +712,6 @@
     .parameter "msg"
 
     .prologue
-    .line 376
     const-string v0, "RIL_MSimIccCardProxy"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -828,7 +746,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 377
     return-void
 .end method
 
@@ -836,15 +753,12 @@
     .locals 3
 
     .prologue
-    .line 298
     invoke-super {p0}, Lcom/android/internal/telephony/IccCardProxy;->registerUiccCardEvents()V
 
-    .line 299
     iget-object v0, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
     if-eqz v0, :cond_0
 
-    .line 300
     iget-object v0, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
     const/16 v1, 0x1f4
@@ -853,7 +767,6 @@
 
     invoke-virtual {v0, p0, v1, v2}, Lcom/android/internal/telephony/IccRecords;->registerForRecordsEvents(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 302
     :cond_0
     return-void
 .end method
@@ -862,7 +775,6 @@
     .locals 3
 
     .prologue
-    .line 274
     iget-object v0, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mSubscriptionData:Lcom/android/internal/telephony/msim/Subscription;
 
     if-eqz v0, :cond_0
@@ -873,7 +785,6 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 277
     const-string v0, "gsm.sim.operator.numeric"
 
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCardIndex:Ljava/lang/Integer;
@@ -886,7 +797,6 @@
 
     invoke-static {v0, v1, v2}, Landroid/telephony/MSimTelephonyManager;->setTelephonyProperty(Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 279
     const-string v0, "gsm.sim.operator.iso-country"
 
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCardIndex:Ljava/lang/Integer;
@@ -899,7 +809,6 @@
 
     invoke-static {v0, v1, v2}, Landroid/telephony/MSimTelephonyManager;->setTelephonyProperty(Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 281
     const-string v0, "gsm.sim.operator.alpha"
 
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCardIndex:Ljava/lang/Integer;
@@ -912,7 +821,6 @@
 
     invoke-static {v0, v1, v2}, Landroid/telephony/MSimTelephonyManager;->setTelephonyProperty(Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 285
     :cond_0
     return-void
 .end method
@@ -922,31 +830,25 @@
     .parameter "newState"
 
     .prologue
-    .line 340
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCardIndex:Ljava/lang/Integer;
 
     if-nez v1, :cond_1
 
-    .line 341
     const-string v1, "setExternalState: Card Index is not set; Return!!"
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->loge(Ljava/lang/String;)V
 
-    .line 367
     :cond_0
     :goto_0
     return-void
 
-    .line 345
     :cond_1
     iget-object v1, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mExternalState:Lcom/android/internal/telephony/IccCard$State;
 
     if-eq p1, v1, :cond_0
 
-    .line 348
     iput-object p1, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mExternalState:Lcom/android/internal/telephony/IccCard$State;
 
-    .line 349
     const-string v1, "gsm.sim.state"
 
     iget-object v2, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCardIndex:Ljava/lang/Integer;
@@ -965,10 +867,8 @@
 
     invoke-static {v1, v2, v3}, Landroid/telephony/MSimTelephonyManager;->setTelephonyProperty(Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 356
     const/4 v0, 0x0
 
-    .line 358
     .local v0, notBroadcast:Z
     sget-object v1, Lcom/android/internal/telephony/IccCard$State;->DEACTIVED:Lcom/android/internal/telephony/IccCard$State;
 
@@ -992,10 +892,8 @@
 
     if-ne v1, v2, :cond_2
 
-    .line 359
     const/4 v0, 0x1
 
-    .line 363
     :cond_2
     iget-boolean v1, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mInitialized:Z
 
@@ -1003,7 +901,6 @@
 
     if-nez v0, :cond_0
 
-    .line 364
     invoke-virtual {p0}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->broadcastCurrentState()V
 
     goto :goto_0
@@ -1013,7 +910,6 @@
     .locals 5
 
     .prologue
-    .line 381
     iget-object v2, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCurrentAppType:Lcom/android/internal/telephony/UiccManager$AppFamily;
 
     sget-object v3, Lcom/android/internal/telephony/UiccManager$AppFamily;->APP_FAM_3GPP:Lcom/android/internal/telephony/UiccManager$AppFamily;
@@ -1031,18 +927,15 @@
 
     if-eqz v2, :cond_2
 
-    .line 382
     iget-object v2, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/IccRecords;->getOperatorNumeric()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 383
     .local v1, operator:Ljava/lang/String;
     if-eqz v1, :cond_1
 
-    .line 384
     const-string v2, "gsm.sim.operator.numeric"
 
     iget-object v3, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCardIndex:Ljava/lang/Integer;
@@ -1053,7 +946,6 @@
 
     invoke-static {v2, v3, v1}, Landroid/telephony/MSimTelephonyManager;->setTelephonyProperty(Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 388
     :cond_1
     iget-object v2, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCurrentAppType:Lcom/android/internal/telephony/UiccManager$AppFamily;
 
@@ -1061,7 +953,6 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 389
     iget-object v2, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
     check-cast v2, Lcom/android/internal/telephony/gsm/SIMRecords;
@@ -1070,11 +961,9 @@
 
     move-result-object v0
 
-    .line 390
     .local v0, countryCode:Ljava/lang/String;
     if-eqz v0, :cond_2
 
-    .line 391
     const-string v2, "gsm.sim.operator.iso-country"
 
     iget-object v3, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCardIndex:Ljava/lang/Integer;
@@ -1093,7 +982,6 @@
 
     invoke-static {v2, v3, v4}, Landroid/telephony/MSimTelephonyManager;->setTelephonyProperty(Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 397
     .end local v0           #countryCode:Ljava/lang/String;
     .end local v1           #operator:Ljava/lang/String;
     :cond_2
@@ -1104,10 +992,8 @@
     .locals 1
 
     .prologue
-    .line 306
     invoke-super {p0}, Lcom/android/internal/telephony/IccCardProxy;->unregisterUiccCardEvents()V
 
-    .line 307
     iget-object v0, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
     if-eqz v0, :cond_0
@@ -1116,7 +1002,6 @@
 
     invoke-virtual {v0, p0}, Lcom/android/internal/telephony/IccRecords;->unregisterForRecordsEvents(Landroid/os/Handler;)V
 
-    .line 308
     :cond_0
     return-void
 .end method
@@ -1127,7 +1012,6 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 221
     iget-object v4, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mUiccManager:Lcom/android/internal/telephony/UiccManager;
 
     iget-object v5, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCardIndex:Ljava/lang/Integer;
@@ -1140,28 +1024,22 @@
 
     move-result-object v1
 
-    .line 222
     .local v1, newCard:Lcom/android/internal/telephony/UiccCard;
     sget-object v3, Lcom/android/internal/telephony/IccCardStatus$CardState;->CARDSTATE_ABSENT:Lcom/android/internal/telephony/IccCardStatus$CardState;
 
-    .line 223
     .local v3, state:Lcom/android/internal/telephony/IccCardStatus$CardState;
     const/4 v0, 0x0
 
-    .line 224
     .local v0, newApp:Lcom/android/internal/telephony/UiccCardApplication;
     const/4 v2, 0x0
 
-    .line 225
     .local v2, newRecords:Lcom/android/internal/telephony/IccRecords;
     if-eqz v1, :cond_4
 
-    .line 226
     invoke-virtual {v1}, Lcom/android/internal/telephony/UiccCard;->getCardState()Lcom/android/internal/telephony/IccCardStatus$CardState;
 
     move-result-object v3
 
-    .line 227
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -1182,7 +1060,6 @@
 
     invoke-virtual {p0, v4}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->log(Ljava/lang/String;)V
 
-    .line 230
     const/4 v4, 0x1
 
     iget-boolean v5, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->IS_CHINA_TELECOM:Z
@@ -1207,12 +1084,10 @@
 
     if-ltz v4, :cond_0
 
-    .line 234
     sget-object v4, Lcom/android/internal/telephony/UiccManager$AppFamily;->APP_FAM_3GPP:Lcom/android/internal/telephony/UiccManager$AppFamily;
 
     iput-object v4, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCurrentAppType:Lcom/android/internal/telephony/UiccManager$AppFamily;
 
-    .line 238
     :cond_0
     iget-object v4, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mCurrentAppType:Lcom/android/internal/telephony/UiccManager$AppFamily;
 
@@ -1220,15 +1095,12 @@
 
     move-result-object v0
 
-    .line 239
     if-eqz v0, :cond_1
 
-    .line 240
     invoke-virtual {v0}, Lcom/android/internal/telephony/UiccCardApplication;->getIccRecords()Lcom/android/internal/telephony/IccRecords;
 
     move-result-object v2
 
-    .line 246
     :cond_1
     :goto_0
     iget-object v4, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
@@ -1243,51 +1115,37 @@
 
     if-eq v4, v1, :cond_3
 
-    .line 247
     :cond_2
     const-string v4, "Icc changed. Reregestering."
 
     invoke-virtual {p0, v4}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->log(Ljava/lang/String;)V
 
-    .line 248
     invoke-virtual {p0}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->unregisterUiccCardEvents()V
 
-    .line 249
     iput-object v6, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mUiccCard:Lcom/android/internal/telephony/UiccCard;
 
-    .line 250
     iput-object v6, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mUiccApplication:Lcom/android/internal/telephony/UiccCardApplication;
 
-    .line 251
     iput-object v6, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
-    .line 253
     if-eqz v2, :cond_5
 
-    .line 254
     iput-object v1, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mUiccCard:Lcom/android/internal/telephony/UiccCard;
 
-    .line 255
     iput-object v0, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mUiccApplication:Lcom/android/internal/telephony/UiccCardApplication;
 
-    .line 256
     iput-object v2, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
-    .line 257
     invoke-virtual {p0}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->registerUiccCardEvents()V
 
-    .line 259
     invoke-virtual {p0}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->updateActiveRecord()V
 
-    .line 270
     :cond_3
     :goto_1
     invoke-virtual {p0}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->updateExternalState()V
 
-    .line 271
     return-void
 
-    .line 243
     :cond_4
     const-string v4, "No card available"
 
@@ -1295,16 +1153,13 @@
 
     goto :goto_0
 
-    .line 262
     :cond_5
     if-eqz v1, :cond_3
 
     if-nez v0, :cond_3
 
-    .line 264
     iput-object v1, p0, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->mUiccCard:Lcom/android/internal/telephony/UiccCard;
 
-    .line 265
     invoke-virtual {p0}, Lcom/android/internal/telephony/msim/MSimIccCardProxy;->registerUiccCardEvents()V
 
     goto :goto_1

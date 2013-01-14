@@ -40,26 +40,20 @@
 
     const/4 v3, 0x0
 
-    .line 122
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 123
     iput-object v1, p0, Lcom/android/internal/telephony/gsm/PnnRecords$PnnRecord;->mFullName:Ljava/lang/String;
 
-    .line 124
     iput-object v1, p0, Lcom/android/internal/telephony/gsm/PnnRecords$PnnRecord;->mShortName:Ljava/lang/String;
 
-    .line 125
     iput-object v1, p0, Lcom/android/internal/telephony/gsm/PnnRecords$PnnRecord;->mAddlInfo:Ljava/lang/String;
 
-    .line 127
     new-instance v0, Lcom/android/internal/telephony/gsm/SimTlv;
 
     array-length v1, p1
 
     invoke-direct {v0, p1, v3, v1}, Lcom/android/internal/telephony/gsm/SimTlv;-><init>([BII)V
 
-    .line 129
     .local v0, tlv:Lcom/android/internal/telephony/gsm/SimTlv;
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/SimTlv;->isValidObject()Z
 
@@ -75,7 +69,6 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 130
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/SimTlv;->getData()[B
 
     move-result-object v1
@@ -92,11 +85,9 @@
 
     iput-object v1, p0, Lcom/android/internal/telephony/gsm/PnnRecords$PnnRecord;->mFullName:Ljava/lang/String;
 
-    .line 137
     :goto_0
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/SimTlv;->nextObject()Z
 
-    .line 138
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/SimTlv;->isValidObject()Z
 
     move-result v1
@@ -111,7 +102,6 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 139
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/SimTlv;->getData()[B
 
     move-result-object v1
@@ -128,11 +118,9 @@
 
     iput-object v1, p0, Lcom/android/internal/telephony/gsm/PnnRecords$PnnRecord;->mShortName:Ljava/lang/String;
 
-    .line 146
     :goto_1
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/SimTlv;->nextObject()Z
 
-    .line 147
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/SimTlv;->isValidObject()Z
 
     move-result v1
@@ -147,7 +135,6 @@
 
     if-ne v1, v2, :cond_2
 
-    .line 148
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/SimTlv;->getData()[B
 
     move-result-object v1
@@ -164,11 +151,9 @@
 
     iput-object v1, p0, Lcom/android/internal/telephony/gsm/PnnRecords$PnnRecord;->mAddlInfo:Ljava/lang/String;
 
-    .line 154
     :goto_2
     return-void
 
-    .line 133
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -210,7 +195,6 @@
 
     goto :goto_0
 
-    .line 142
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -252,7 +236,6 @@
 
     goto :goto_1
 
-    .line 151
     :cond_2
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -301,7 +284,6 @@
     .locals 1
 
     .prologue
-    .line 165
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/PnnRecords$PnnRecord;->mAddlInfo:Ljava/lang/String;
 
     return-object v0
@@ -311,7 +293,6 @@
     .locals 1
 
     .prologue
-    .line 157
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/PnnRecords$PnnRecord;->mFullName:Ljava/lang/String;
 
     return-object v0
@@ -321,7 +302,6 @@
     .locals 1
 
     .prologue
-    .line 161
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/PnnRecords$PnnRecord;->mShortName:Ljava/lang/String;
 
     return-object v0
@@ -331,7 +311,6 @@
     .locals 2
 
     .prologue
-    .line 169
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

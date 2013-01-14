@@ -44,18 +44,14 @@
     .locals 1
 
     .prologue
-    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/msim/Subscription;->DEBUG:Z
 
-    .line 55
     invoke-virtual {p0}, Lcom/android/internal/telephony/msim/Subscription;->clear()V
 
-    .line 56
     return-void
 .end method
 
@@ -69,36 +65,26 @@
 
     const/4 v0, -0x1
 
-    .line 131
     iput v0, p0, Lcom/android/internal/telephony/msim/Subscription;->slotId:I
 
-    .line 132
     iput v0, p0, Lcom/android/internal/telephony/msim/Subscription;->m3gppIndex:I
 
-    .line 133
     iput v0, p0, Lcom/android/internal/telephony/msim/Subscription;->m3gpp2Index:I
 
-    .line 134
     iput v0, p0, Lcom/android/internal/telephony/msim/Subscription;->subId:I
 
-    .line 135
     sget-object v0, Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;->SUB_INVALID:Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;
 
     iput-object v0, p0, Lcom/android/internal/telephony/msim/Subscription;->subStatus:Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;
 
-    .line 136
     iput-object v1, p0, Lcom/android/internal/telephony/msim/Subscription;->appId:Ljava/lang/String;
 
-    .line 137
     iput-object v1, p0, Lcom/android/internal/telephony/msim/Subscription;->appLabel:Ljava/lang/String;
 
-    .line 138
     iput-object v1, p0, Lcom/android/internal/telephony/msim/Subscription;->appType:Ljava/lang/String;
 
-    .line 139
     iput-object v1, p0, Lcom/android/internal/telephony/msim/Subscription;->iccId:Ljava/lang/String;
 
-    .line 140
     return-void
 .end method
 
@@ -107,40 +93,32 @@
     .parameter "from"
 
     .prologue
-    .line 148
     if-eqz p1, :cond_3
 
-    .line 149
     iget v0, p1, Lcom/android/internal/telephony/msim/Subscription;->slotId:I
 
     iput v0, p0, Lcom/android/internal/telephony/msim/Subscription;->slotId:I
 
-    .line 150
     iget v0, p1, Lcom/android/internal/telephony/msim/Subscription;->m3gppIndex:I
 
     iput v0, p0, Lcom/android/internal/telephony/msim/Subscription;->m3gppIndex:I
 
-    .line 151
     iget v0, p1, Lcom/android/internal/telephony/msim/Subscription;->m3gpp2Index:I
 
     iput v0, p0, Lcom/android/internal/telephony/msim/Subscription;->m3gpp2Index:I
 
-    .line 152
     iget v0, p1, Lcom/android/internal/telephony/msim/Subscription;->subId:I
 
     iput v0, p0, Lcom/android/internal/telephony/msim/Subscription;->subId:I
 
-    .line 153
     iget-object v0, p1, Lcom/android/internal/telephony/msim/Subscription;->subStatus:Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;
 
     iput-object v0, p0, Lcom/android/internal/telephony/msim/Subscription;->subStatus:Lcom/android/internal/telephony/msim/Subscription$SubscriptionStatus;
 
-    .line 154
     iget-object v0, p1, Lcom/android/internal/telephony/msim/Subscription;->appId:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 155
     new-instance v0, Ljava/lang/String;
 
     iget-object v1, p1, Lcom/android/internal/telephony/msim/Subscription;->appId:Ljava/lang/String;
@@ -149,13 +127,11 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/msim/Subscription;->appId:Ljava/lang/String;
 
-    .line 157
     :cond_0
     iget-object v0, p1, Lcom/android/internal/telephony/msim/Subscription;->appLabel:Ljava/lang/String;
 
     if-eqz v0, :cond_1
 
-    .line 158
     new-instance v0, Ljava/lang/String;
 
     iget-object v1, p1, Lcom/android/internal/telephony/msim/Subscription;->appLabel:Ljava/lang/String;
@@ -164,13 +140,11 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/msim/Subscription;->appLabel:Ljava/lang/String;
 
-    .line 160
     :cond_1
     iget-object v0, p1, Lcom/android/internal/telephony/msim/Subscription;->appType:Ljava/lang/String;
 
     if-eqz v0, :cond_2
 
-    .line 161
     new-instance v0, Ljava/lang/String;
 
     iget-object v1, p1, Lcom/android/internal/telephony/msim/Subscription;->appType:Ljava/lang/String;
@@ -179,13 +153,11 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/msim/Subscription;->appType:Ljava/lang/String;
 
-    .line 163
     :cond_2
     iget-object v0, p1, Lcom/android/internal/telephony/msim/Subscription;->iccId:Ljava/lang/String;
 
     if-eqz v0, :cond_3
 
-    .line 164
     new-instance v0, Ljava/lang/String;
 
     iget-object v1, p1, Lcom/android/internal/telephony/msim/Subscription;->iccId:Ljava/lang/String;
@@ -194,7 +166,6 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/msim/Subscription;->iccId:Ljava/lang/String;
 
-    .line 168
     :cond_3
     return-object p0
 .end method
@@ -204,10 +175,8 @@
     .parameter "sub"
 
     .prologue
-    .line 72
     if-eqz p1, :cond_8
 
-    .line 73
     iget v0, p0, Lcom/android/internal/telephony/msim/Subscription;->slotId:I
 
     iget v1, p1, Lcom/android/internal/telephony/msim/Subscription;->slotId:I
@@ -349,15 +318,12 @@
 
     if-eqz v0, :cond_9
 
-    .line 84
     :cond_7
     const/4 v0, 0x1
 
-    .line 89
     :goto_0
     return v0
 
-    .line 87
     :cond_8
     const-string v0, "Subscription"
 
@@ -365,7 +331,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 89
     :cond_9
     const/4 v0, 0x0
 
@@ -376,17 +341,14 @@
     .locals 2
 
     .prologue
-    .line 176
     iget v0, p0, Lcom/android/internal/telephony/msim/Subscription;->m3gppIndex:I
 
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_0
 
-    .line 177
     iget v0, p0, Lcom/android/internal/telephony/msim/Subscription;->m3gppIndex:I
 
-    .line 179
     :goto_0
     return v0
 
@@ -401,15 +363,12 @@
     .parameter "sub"
 
     .prologue
-    .line 100
     if-eqz p1, :cond_7
 
-    .line 101
     iget-boolean v0, p0, Lcom/android/internal/telephony/msim/Subscription;->DEBUG:Z
 
     if-eqz v0, :cond_0
 
-    .line 102
     const-string v0, "Subscription"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -482,7 +441,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 107
     const-string v0, "Subscription"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -555,7 +513,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 113
     :cond_0
     iget v0, p0, Lcom/android/internal/telephony/msim/Subscription;->m3gppIndex:I
 
@@ -652,11 +609,9 @@
 
     if-eqz v0, :cond_7
 
-    .line 121
     :cond_6
     const/4 v0, 0x1
 
-    .line 124
     :goto_0
     return v0
 
@@ -670,7 +625,6 @@
     .locals 2
 
     .prologue
-    .line 59
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

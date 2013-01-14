@@ -172,7 +172,6 @@
     .locals 3
 
     .prologue
-    .line 160
     const/16 v0, 0x14
 
     new-array v0, v0, [Ljava/lang/String;
@@ -251,49 +250,49 @@
 
     const/16 v1, 0xc
 
-    const-string/jumbo v2, "ma"
+    const-string v2, "ma"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xd
 
-    const-string/jumbo v2, "ml"
+    const-string v2, "ml"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xe
 
-    const-string/jumbo v2, "mr"
+    const-string v2, "mr"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xf
 
-    const-string/jumbo v2, "pt"
+    const-string v2, "pt"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x10
 
-    const-string/jumbo v2, "sl"
+    const-string v2, "sl"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x11
 
-    const-string/jumbo v2, "sn"
+    const-string v2, "sn"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x12
 
-    const-string/jumbo v2, "st"
+    const-string v2, "st"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x13
 
-    const-string/jumbo v2, "tg"
+    const-string v2, "tg"
 
     aput-object v2, v0, v1
 
@@ -310,103 +309,82 @@
 
     const/4 v1, 0x0
 
-    .line 187
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 39
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mUiccManager:Lcom/android/internal/telephony/UiccManager;
 
-    .line 40
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mUiccApplcation:Lcom/android/internal/telephony/UiccCardApplication;
 
-    .line 41
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
-    .line 49
     new-instance v0, Lcom/android/internal/telephony/RestrictedState;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/RestrictedState;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRestrictedState:Lcom/android/internal/telephony/RestrictedState;
 
-    .line 64
     iput-boolean v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRadioPowerIsInProgress:Z
 
-    .line 65
     iput-boolean v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mGSMRadioPowerIsInProgress:Z
 
-    .line 71
     iput v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRilRadioTechnology:I
 
-    .line 72
     iput v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mNewRilRadioTechnology:I
 
-    .line 79
     iput-boolean v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->dontPollSignalStrength:Z
 
-    .line 81
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRoamingOnRegistrants:Landroid/os/RegistrantList;
 
-    .line 82
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRoamingOffRegistrants:Landroid/os/RegistrantList;
 
-    .line 83
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mAttachedRegistrants:Landroid/os/RegistrantList;
 
-    .line 84
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mDetachedRegistrants:Landroid/os/RegistrantList;
 
-    .line 85
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mNetworkAttachedRegistrants:Landroid/os/RegistrantList;
 
-    .line 86
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPsRestrictEnabledRegistrants:Landroid/os/RegistrantList;
 
-    .line 87
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRatChangedRegistrants:Landroid/os/RegistrantList;
 
-    .line 88
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPsRestrictDisabledRegistrants:Landroid/os/RegistrantList;
 
-    .line 91
     iput-boolean v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPendingRadioPowerOffAfterDataOff:Z
 
-    .line 92
     iput v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPendingRadioPowerOffAfterDataOffTag:I
 
-    .line 188
     return-void
 .end method
 
@@ -419,120 +397,96 @@
 
     const/4 v1, 0x0
 
-    .line 190
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 39
     iput-object v2, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mUiccManager:Lcom/android/internal/telephony/UiccManager;
 
-    .line 40
     iput-object v2, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mUiccApplcation:Lcom/android/internal/telephony/UiccCardApplication;
 
-    .line 41
     iput-object v2, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
-    .line 49
     new-instance v0, Lcom/android/internal/telephony/RestrictedState;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/RestrictedState;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRestrictedState:Lcom/android/internal/telephony/RestrictedState;
 
-    .line 64
     iput-boolean v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRadioPowerIsInProgress:Z
 
-    .line 65
     iput-boolean v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mGSMRadioPowerIsInProgress:Z
 
-    .line 71
     iput v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRilRadioTechnology:I
 
-    .line 72
     iput v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mNewRilRadioTechnology:I
 
-    .line 79
     iput-boolean v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->dontPollSignalStrength:Z
 
-    .line 81
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRoamingOnRegistrants:Landroid/os/RegistrantList;
 
-    .line 82
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRoamingOffRegistrants:Landroid/os/RegistrantList;
 
-    .line 83
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mAttachedRegistrants:Landroid/os/RegistrantList;
 
-    .line 84
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mDetachedRegistrants:Landroid/os/RegistrantList;
 
-    .line 85
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mNetworkAttachedRegistrants:Landroid/os/RegistrantList;
 
-    .line 86
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPsRestrictEnabledRegistrants:Landroid/os/RegistrantList;
 
-    .line 87
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRatChangedRegistrants:Landroid/os/RegistrantList;
 
-    .line 88
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPsRestrictDisabledRegistrants:Landroid/os/RegistrantList;
 
-    .line 91
     iput-boolean v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPendingRadioPowerOffAfterDataOff:Z
 
-    .line 92
     iput v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPendingRadioPowerOffAfterDataOffTag:I
 
-    .line 191
     iput-object p1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
-    .line 192
     invoke-static {}, Lcom/android/internal/telephony/UiccManager;->getInstance()Lcom/android/internal/telephony/UiccManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mUiccManager:Lcom/android/internal/telephony/UiccManager;
 
-    .line 193
     iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mUiccManager:Lcom/android/internal/telephony/UiccManager;
 
     const/16 v1, 0x2c
 
     invoke-virtual {v0, p0, v1, v2}, Lcom/android/internal/telephony/UiccManager;->registerForIccChanged(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 194
     return-void
 .end method
 
@@ -542,14 +496,12 @@
     .locals 1
 
     .prologue
-    .line 521
     const/4 v0, 0x1
 
     new-array v0, v0, [I
 
     iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->pollingContext:[I
 
-    .line 522
     return-void
 .end method
 
@@ -559,10 +511,8 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 311
     iput-boolean v2, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mWantContinuousLocationUpdates:Z
 
-    .line 312
     iget-boolean v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mWantSingleLocationUpdate:Z
 
     if-nez v0, :cond_0
@@ -571,14 +521,12 @@
 
     if-nez v0, :cond_0
 
-    .line 313
     iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, v2, v1}, Lcom/android/internal/telephony/CommandsInterface;->setLocationUpdates(ZLandroid/os/Message;)V
 
-    .line 315
     :cond_0
     return-void
 .end method
@@ -589,10 +537,8 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 304
     iput-boolean v2, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mWantSingleLocationUpdate:Z
 
-    .line 305
     iget-boolean v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mWantSingleLocationUpdate:Z
 
     if-nez v0, :cond_0
@@ -601,14 +547,12 @@
 
     if-nez v0, :cond_0
 
-    .line 306
     iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, v2, v1}, Lcom/android/internal/telephony/CommandsInterface;->setLocationUpdates(ZLandroid/os/Message;)V
 
-    .line 308
     :cond_0
     return-void
 .end method
@@ -620,12 +564,10 @@
     .parameter "args"
 
     .prologue
-    .line 613
     const-string v0, "ServiceStateTracker:"
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 614
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -648,7 +590,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 615
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -671,7 +612,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 616
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -694,7 +634,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 617
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -717,7 +656,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 618
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -740,7 +678,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 619
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -763,7 +700,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 620
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -786,7 +722,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 621
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -809,7 +744,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 622
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -832,7 +766,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 623
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -855,7 +788,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 624
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -878,7 +810,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 625
     return-void
 .end method
 
@@ -888,7 +819,6 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 298
     iget-boolean v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mWantSingleLocationUpdate:Z
 
     if-nez v0, :cond_0
@@ -897,16 +827,13 @@
 
     if-eqz v0, :cond_1
 
-    .line 301
     :cond_0
     :goto_0
     return-void
 
-    .line 299
     :cond_1
     iput-boolean v2, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mWantContinuousLocationUpdates:Z
 
-    .line 300
     iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v1, 0x12
@@ -926,7 +853,6 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 292
     iget-boolean v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mWantSingleLocationUpdate:Z
 
     if-nez v0, :cond_0
@@ -935,16 +861,13 @@
 
     if-eqz v0, :cond_1
 
-    .line 295
     :cond_0
     :goto_0
     return-void
 
-    .line 293
     :cond_1
     iput-boolean v2, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mWantSingleLocationUpdate:Z
 
-    .line 294
     iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v1, 0x12
@@ -965,7 +888,6 @@
     .locals 1
 
     .prologue
-    .line 197
     iget-boolean v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mDesiredPowerState:Z
 
     return v0
@@ -979,12 +901,10 @@
     .parameter "msg"
 
     .prologue
-    .line 319
     iget v0, p1, Landroid/os/Message;->what:I
 
     sparse-switch v0, :sswitch_data_0
 
-    .line 340
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1007,15 +927,12 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/ServiceStateTracker;->log(Ljava/lang/String;)V
 
-    .line 343
     :goto_0
     return-void
 
-    .line 321
     :sswitch_0
     monitor-enter p0
 
-    .line 322
     :try_start_0
     iget-boolean v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPendingRadioPowerOffAfterDataOff:Z
 
@@ -1027,27 +944,22 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 324
     const-string v0, "EVENT_SET_RADIO_OFF, turn radio off now."
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/ServiceStateTracker;->log(Ljava/lang/String;)V
 
-    .line 325
     invoke-virtual {p0}, Lcom/android/internal/telephony/ServiceStateTracker;->hangupAndPowerOff()V
 
-    .line 326
     iget v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPendingRadioPowerOffAfterDataOffTag:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPendingRadioPowerOffAfterDataOffTag:I
 
-    .line 327
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPendingRadioPowerOffAfterDataOff:Z
 
-    .line 332
     :goto_1
     monitor-exit p0
 
@@ -1062,7 +974,6 @@
 
     throw v0
 
-    .line 329
     :cond_0
     :try_start_1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1103,13 +1014,11 @@
 
     goto :goto_1
 
-    .line 336
     :sswitch_1
     invoke-virtual {p0}, Lcom/android/internal/telephony/ServiceStateTracker;->updateIccAvailability()V
 
     goto :goto_0
 
-    .line 319
     :sswitch_data_0
     .sparse-switch
         0x26 -> :sswitch_0
@@ -1139,16 +1048,13 @@
     .parameter "isGsm"
 
     .prologue
-    .line 529
     iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mSignalStrength:Landroid/telephony/SignalStrength;
 
-    .line 534
     .local v1, oldSignalStrength:Landroid/telephony/SignalStrength;
     iget-object v2, p1, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-nez v2, :cond_1
 
-    .line 535
     new-instance v3, Landroid/telephony/SignalStrength;
 
     iget-object v2, p1, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
@@ -1159,13 +1065,11 @@
 
     iput-object v3, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mSignalStrength:Landroid/telephony/SignalStrength;
 
-    .line 540
     :goto_0
     iget-object v2, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mSignalStrength:Landroid/telephony/SignalStrength;
 
     invoke-virtual {v2, p3}, Landroid/telephony/SignalStrength;->setGsm(Z)V
 
-    .line 542
     iget-object v2, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mSignalStrength:Landroid/telephony/SignalStrength;
 
     invoke-virtual {v2, v1}, Landroid/telephony/SignalStrength;->equals(Ljava/lang/Object;)Z
@@ -1174,24 +1078,21 @@
 
     if-nez v2, :cond_0
 
-    .line 547
     :try_start_0
     invoke-virtual {p2}, Lcom/android/internal/telephony/PhoneBase;->notifySignalStrength()V
     :try_end_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 553
     :cond_0
     :goto_1
     return-void
 
-    .line 537
     :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "onSignalStrengthResult() Exception from RIL : "
+    const-string v3, "onSignalStrengthResult() Exception from RIL : "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1209,7 +1110,6 @@
 
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/ServiceStateTracker;->log(Ljava/lang/String;)V
 
-    .line 538
     new-instance v2, Landroid/telephony/SignalStrength;
 
     invoke-direct {v2}, Landroid/telephony/SignalStrength;-><init>()V
@@ -1218,17 +1118,15 @@
 
     goto :goto_0
 
-    .line 548
     :catch_0
     move-exception v0
 
-    .line 549
     .local v0, ex:Ljava/lang/NullPointerException;
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "onSignalStrengthResult() Phone already destroyed: "
+    const-string v3, "onSignalStrengthResult() Phone already destroyed: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1258,61 +1156,49 @@
     .parameter "dcTracker"
 
     .prologue
-    .line 469
     monitor-enter p0
 
-    .line 470
     :try_start_0
     iget-boolean v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPendingRadioPowerOffAfterDataOff:Z
 
     if-nez v1, :cond_0
 
-    .line 473
     invoke-virtual {p1}, Lcom/android/internal/telephony/DataConnectionTracker;->isDisconnected()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 475
-    const-string/jumbo v1, "radioTurnedOff"
+    const-string v1, "radioTurnedOff"
 
     invoke-virtual {p1, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->cleanUpAllConnections(Ljava/lang/String;)V
 
-    .line 476
     const-string v1, "Data disconnected, turn off radio right away."
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/ServiceStateTracker;->log(Ljava/lang/String;)V
 
-    .line 477
     invoke-virtual {p0}, Lcom/android/internal/telephony/ServiceStateTracker;->hangupAndPowerOff()V
 
-    .line 492
     :cond_0
     :goto_0
     monitor-exit p0
 
-    .line 493
     return-void
 
-    .line 479
     :cond_1
-    const-string/jumbo v1, "radioTurnedOff"
+    const-string v1, "radioTurnedOff"
 
     invoke-virtual {p1, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->cleanUpAllConnections(Ljava/lang/String;)V
 
-    .line 480
     invoke-static {p0}, Landroid/os/Message;->obtain(Landroid/os/Handler;)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 481
     .local v0, msg:Landroid/os/Message;
     const/16 v1, 0x26
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 482
     iget v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPendingRadioPowerOffAfterDataOffTag:I
 
     add-int/lit8 v1, v1, 0x1
@@ -1321,7 +1207,6 @@
 
     iput v1, v0, Landroid/os/Message;->arg1:I
 
-    .line 483
     const-wide/16 v1, 0x7530
 
     invoke-virtual {p0, v0, v1, v2}, Lcom/android/internal/telephony/ServiceStateTracker;->sendMessageDelayed(Landroid/os/Message;J)Z
@@ -1330,19 +1215,16 @@
 
     if-eqz v1, :cond_2
 
-    .line 484
     const-string v1, "Wait upto 30s for data to disconnect, then turn off radio."
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/ServiceStateTracker;->log(Ljava/lang/String;)V
 
-    .line 485
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPendingRadioPowerOffAfterDataOff:Z
 
     goto :goto_0
 
-    .line 492
     .end local v0           #msg:Landroid/os/Message;
     :catchall_0
     move-exception v1
@@ -1353,7 +1235,6 @@
 
     throw v1
 
-    .line 487
     .restart local v0       #msg:Landroid/os/Message;
     :cond_2
     :try_start_1
@@ -1361,7 +1242,6 @@
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/ServiceStateTracker;->log(Ljava/lang/String;)V
 
-    .line 488
     invoke-virtual {p0}, Lcom/android/internal/telephony/ServiceStateTracker;->hangupAndPowerOff()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -1375,41 +1255,33 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 501
     monitor-enter p0
 
-    .line 502
     :try_start_0
     iget-boolean v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPendingRadioPowerOffAfterDataOff:Z
 
     if-eqz v1, :cond_0
 
-    .line 503
     const-string v0, "Process pending request to turn radio off."
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/ServiceStateTracker;->log(Ljava/lang/String;)V
 
-    .line 504
     iget v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPendingRadioPowerOffAfterDataOffTag:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPendingRadioPowerOffAfterDataOffTag:I
 
-    .line 505
     invoke-virtual {p0}, Lcom/android/internal/telephony/ServiceStateTracker;->hangupAndPowerOff()V
 
-    .line 506
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPendingRadioPowerOffAfterDataOff:Z
 
-    .line 507
     const/4 v0, 0x1
 
     monitor-exit p0
 
-    .line 509
     :goto_0
     return v0
 
@@ -1418,7 +1290,6 @@
 
     goto :goto_0
 
-    .line 510
     :catchall_0
     move-exception v0
 
@@ -1434,7 +1305,6 @@
     .parameter "onComplete"
 
     .prologue
-    .line 258
     iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v1, 0x13
@@ -1445,7 +1315,6 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->getPreferredNetworkType(Landroid/os/Message;)V
 
-    .line 260
     return-void
 .end method
 
@@ -1456,28 +1325,23 @@
     .parameter "obj"
 
     .prologue
-    .line 363
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 364
     .local v0, r:Landroid/os/Registrant;
     iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mAttachedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
 
-    .line 366
     invoke-virtual {p0}, Lcom/android/internal/telephony/ServiceStateTracker;->getCurrentDataConnectionState()I
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 367
     invoke-virtual {v0}, Landroid/os/Registrant;->notifyRegistrant()V
 
-    .line 369
     :cond_0
     return-void
 .end method
@@ -1489,28 +1353,23 @@
     .parameter "obj"
 
     .prologue
-    .line 381
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 382
     .local v0, r:Landroid/os/Registrant;
     iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mDetachedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
 
-    .line 384
     invoke-virtual {p0}, Lcom/android/internal/telephony/ServiceStateTracker;->getCurrentDataConnectionState()I
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 385
     invoke-virtual {v0}, Landroid/os/Registrant;->notifyRegistrant()V
 
-    .line 387
     :cond_0
     return-void
 .end method
@@ -1522,18 +1381,15 @@
     .parameter "obj"
 
     .prologue
-    .line 399
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 401
     .local v0, r:Landroid/os/Registrant;
     iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mNetworkAttachedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
 
-    .line 402
     iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     invoke-virtual {v1}, Landroid/telephony/ServiceState;->getState()I
@@ -1542,10 +1398,8 @@
 
     if-nez v1, :cond_0
 
-    .line 403
     invoke-virtual {v0}, Landroid/os/Registrant;->notifyRegistrant()V
 
-    .line 405
     :cond_0
     return-void
 .end method
@@ -1557,18 +1411,15 @@
     .parameter "obj"
 
     .prologue
-    .line 451
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 452
     .local v0, r:Landroid/os/Registrant;
     iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPsRestrictDisabledRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
 
-    .line 454
     iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRestrictedState:Lcom/android/internal/telephony/RestrictedState;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/RestrictedState;->isPsRestricted()Z
@@ -1577,10 +1428,8 @@
 
     if-eqz v1, :cond_0
 
-    .line 455
     invoke-virtual {v0}, Landroid/os/Registrant;->notifyRegistrant()V
 
-    .line 457
     :cond_0
     return-void
 .end method
@@ -1592,18 +1441,15 @@
     .parameter "obj"
 
     .prologue
-    .line 417
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 418
     .local v0, r:Landroid/os/Registrant;
     iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPsRestrictEnabledRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
 
-    .line 420
     iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRestrictedState:Lcom/android/internal/telephony/RestrictedState;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/RestrictedState;->isPsRestricted()Z
@@ -1612,10 +1458,8 @@
 
     if-eqz v1, :cond_0
 
-    .line 421
     invoke-virtual {v0}, Landroid/os/Registrant;->notifyRegistrant()V
 
-    .line 423
     :cond_0
     return-void
 .end method
@@ -1627,18 +1471,15 @@
     .parameter "obj"
 
     .prologue
-    .line 436
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 437
     .local v0, r:Landroid/os/Registrant;
     iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRatChangedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
 
-    .line 438
     return-void
 .end method
 
@@ -1649,18 +1490,15 @@
     .parameter "obj"
 
     .prologue
-    .line 236
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 237
     .local v0, r:Landroid/os/Registrant;
     iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRoamingOffRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
 
-    .line 239
     iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     invoke-virtual {v1}, Landroid/telephony/ServiceState;->getRoaming()Z
@@ -1669,10 +1507,8 @@
 
     if-nez v1, :cond_0
 
-    .line 240
     invoke-virtual {v0}, Landroid/os/Registrant;->notifyRegistrant()V
 
-    .line 242
     :cond_0
     return-void
 .end method
@@ -1684,18 +1520,15 @@
     .parameter "obj"
 
     .prologue
-    .line 215
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 216
     .local v0, r:Landroid/os/Registrant;
     iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRoamingOnRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
 
-    .line 218
     iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     invoke-virtual {v1}, Landroid/telephony/ServiceState;->getRoaming()Z
@@ -1704,10 +1537,8 @@
 
     if-eqz v1, :cond_0
 
-    .line 219
     invoke-virtual {v0}, Landroid/os/Registrant;->notifyRegistrant()V
 
-    .line 221
     :cond_0
     return-void
 .end method
@@ -1717,10 +1548,8 @@
     .parameter "dps"
 
     .prologue
-    .line 202
     iput-boolean p1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mDesiredPowerState:Z
 
-    .line 203
     return-void
 .end method
 
@@ -1736,16 +1565,12 @@
 
     const/4 v0, 0x0
 
-    .line 264
     iput-boolean p1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mDesiredPowerState:Z
 
-    .line 266
     iput-boolean v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRadioPowerIsInProgress:Z
 
-    .line 267
     iput-boolean v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mGSMRadioPowerIsInProgress:Z
 
-    .line 269
     iget-boolean v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRadioPowerIsInProgress:Z
 
     if-nez v0, :cond_0
@@ -1754,20 +1579,15 @@
 
     if-nez v0, :cond_0
 
-    .line 270
     iput-boolean v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRadioPowerIsInProgress:Z
 
-    .line 271
     iput-boolean v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mGSMRadioPowerIsInProgress:Z
 
-    .line 272
     invoke-virtual {p0}, Lcom/android/internal/telephony/ServiceStateTracker;->setPowerStateToDesired()V
 
-    .line 276
     :goto_0
     return-void
 
-    .line 274
     :cond_0
     const-string v0, "Previous radio power request is in progress ignore current request"
 
@@ -1788,7 +1608,6 @@
 
     const/4 v8, 0x0
 
-    .line 574
     const/4 v9, 0x0
 
     const/4 v10, 0x3
@@ -1804,7 +1623,6 @@
 
     move-result v5
 
-    .line 587
     .local v5, mcc:I
     const/4 v9, 0x0
 
@@ -1821,14 +1639,12 @@
 
     move-result v6
 
-    .line 593
     .local v6, prevMcc:I
     :goto_0
     invoke-virtual {p1}, Lcom/android/internal/telephony/PhoneBase;->getIccCard()Lcom/android/internal/telephony/IccCard;
 
     move-result-object v3
 
-    .line 594
     .local v3, iccCard:Lcom/android/internal/telephony/IccCard;
     if-eqz v3, :cond_2
 
@@ -1844,7 +1660,6 @@
 
     move v4, v7
 
-    .line 597
     .local v4, iccCardExist:Z
     :goto_1
     if-eqz v4, :cond_0
@@ -1854,7 +1669,6 @@
     :cond_0
     if-eqz p4, :cond_3
 
-    .line 599
     .local v7, retVal:Z
     :cond_1
     :goto_2
@@ -1862,13 +1676,12 @@
 
     move-result-wide v0
 
-    .line 600
     .local v0, ctm:J
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v9, "shouldFixTimeZoneNow: retVal="
+    const-string v9, "shouldFixTimeZoneNow: retVal="
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1896,7 +1709,7 @@
 
     if-nez v3, :cond_4
 
-    const-string/jumbo v8, "null"
+    const-string v8, "null"
 
     :goto_3
     invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1983,7 +1796,6 @@
 
     invoke-virtual {p0, v8}, Lcom/android/internal/telephony/ServiceStateTracker;->log(Ljava/lang/String;)V
 
-    .line 609
     .end local v0           #ctm:J
     .end local v3           #iccCard:Lcom/android/internal/telephony/IccCard;
     .end local v4           #iccCardExist:Z
@@ -1993,17 +1805,15 @@
     :goto_4
     return v7
 
-    .line 575
     :catch_0
     move-exception v2
 
-    .line 577
     .local v2, e:Ljava/lang/Exception;
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v10, "shouldFixTimeZoneNow: no mcc, operatorNumeric="
+    const-string v10, "shouldFixTimeZoneNow: no mcc, operatorNumeric="
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2027,16 +1837,13 @@
 
     move v7, v8
 
-    .line 580
     goto :goto_4
 
-    .line 588
     .end local v2           #e:Ljava/lang/Exception;
     .restart local v5       #mcc:I
     :catch_1
     move-exception v2
 
-    .line 589
     .restart local v2       #e:Ljava/lang/Exception;
     add-int/lit8 v6, v5, 0x1
 
@@ -2048,17 +1855,14 @@
     :cond_2
     move v4, v8
 
-    .line 594
     goto/16 :goto_1
 
     .restart local v4       #iccCardExist:Z
     :cond_3
     move v7, v8
 
-    .line 597
     goto/16 :goto_2
 
-    .line 600
     .restart local v0       #ctm:J
     .restart local v7       #retVal:Z
     :cond_4
@@ -2078,12 +1882,10 @@
     .parameter "h"
 
     .prologue
-    .line 371
     iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mAttachedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 372
     return-void
 .end method
 
@@ -2092,12 +1894,10 @@
     .parameter "h"
 
     .prologue
-    .line 389
     iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mDetachedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 390
     return-void
 .end method
 
@@ -2106,12 +1906,10 @@
     .parameter "h"
 
     .prologue
-    .line 407
     iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mNetworkAttachedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 408
     return-void
 .end method
 
@@ -2120,12 +1918,10 @@
     .parameter "h"
 
     .prologue
-    .line 460
     iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPsRestrictDisabledRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 461
     return-void
 .end method
 
@@ -2134,12 +1930,10 @@
     .parameter "h"
 
     .prologue
-    .line 426
     iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPsRestrictEnabledRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 427
     return-void
 .end method
 
@@ -2148,12 +1942,10 @@
     .parameter "h"
 
     .prologue
-    .line 441
     iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRatChangedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 442
     return-void
 .end method
 
@@ -2162,12 +1954,10 @@
     .parameter "h"
 
     .prologue
-    .line 245
     iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRoamingOffRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 246
     return-void
 .end method
 
@@ -2176,12 +1966,10 @@
     .parameter "h"
 
     .prologue
-    .line 224
     iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRoamingOnRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 225
     return-void
 .end method
 

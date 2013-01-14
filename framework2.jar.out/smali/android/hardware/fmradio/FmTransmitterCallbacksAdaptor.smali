@@ -11,7 +11,6 @@
     .locals 0
 
     .prologue
-    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -23,7 +22,6 @@
     .locals 0
 
     .prologue
-    .line 41
     return-void
 .end method
 
@@ -31,7 +29,6 @@
     .locals 0
 
     .prologue
-    .line 39
     return-void
 .end method
 
@@ -39,7 +36,6 @@
     .locals 0
 
     .prologue
-    .line 40
     return-void
 .end method
 
@@ -48,6 +44,5 @@
     .parameter "freq"
 
     .prologue
-    .line 38
     return-void
 .end method

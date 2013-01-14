@@ -29,7 +29,6 @@
     .locals 1
 
     .prologue
-    .line 181
     const-string v0, "ringtone2"
 
     invoke-static {v0}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -45,7 +44,6 @@
     .locals 0
 
     .prologue
-    .line 156
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

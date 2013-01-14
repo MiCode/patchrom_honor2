@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 253
     iput-object p1, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient$3;->this$0:Landroid/media/dolby/DolbyMobileAudioEffectClient;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,20 +38,16 @@
     .parameter "msg"
 
     .prologue
-    .line 257
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 281
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 283
     :cond_0
     :goto_0
     return-void
 
-    .line 260
     :pswitch_0
     const-string v1, "DolbyMobileAudioEffectClient"
 
@@ -78,14 +73,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 261
     iget v1, p1, Landroid/os/Message;->arg1:I
 
     if-nez v1, :cond_1
 
     const/4 v0, 0x0
 
-    .line 264
     .local v0, isOn:Z
     :goto_1
     iget-object v1, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient$3;->this$0:Landroid/media/dolby/DolbyMobileAudioEffectClient;
@@ -97,7 +90,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 266
     iget-object v1, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient$3;->this$0:Landroid/media/dolby/DolbyMobileAudioEffectClient;
 
     #getter for: Landroid/media/dolby/DolbyMobileAudioEffectClient;->mActivityCallback:Landroid/media/dolby/DolbyMobileClientCallbacks;
@@ -109,14 +101,12 @@
 
     goto :goto_0
 
-    .line 261
     .end local v0           #isOn:Z
     :cond_1
     const/4 v0, 0x1
 
     goto :goto_1
 
-    .line 271
     :pswitch_1
     const-string v1, "DolbyMobileAudioEffectClient"
 
@@ -154,7 +144,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 274
     iget-object v1, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient$3;->this$0:Landroid/media/dolby/DolbyMobileAudioEffectClient;
 
     #getter for: Landroid/media/dolby/DolbyMobileAudioEffectClient;->mActivityCallback:Landroid/media/dolby/DolbyMobileClientCallbacks;
@@ -164,7 +153,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 276
     iget-object v1, p0, Landroid/media/dolby/DolbyMobileAudioEffectClient$3;->this$0:Landroid/media/dolby/DolbyMobileAudioEffectClient;
 
     #getter for: Landroid/media/dolby/DolbyMobileAudioEffectClient;->mActivityCallback:Landroid/media/dolby/DolbyMobileClientCallbacks;
@@ -180,7 +168,6 @@
 
     goto :goto_0
 
-    .line 257
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

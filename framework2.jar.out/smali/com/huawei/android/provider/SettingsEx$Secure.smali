@@ -23,7 +23,6 @@
     .locals 0
 
     .prologue
-    .line 457
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +40,6 @@
     .end annotation
 
     .prologue
-    .line 484
     invoke-static {p0, p1, p2}, Landroid/provider/Settings$Secure;->getIntAtIndex(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v0
@@ -57,7 +55,6 @@
     .parameter "value"
 
     .prologue
-    .line 501
     invoke-static {p0, p1, p2, p3}, Landroid/provider/Settings$Secure;->putIntAtIndex(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
     move-result v0

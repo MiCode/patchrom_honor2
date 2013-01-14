@@ -53,7 +53,6 @@
     .locals 1
 
     .prologue
-    .line 87
     new-instance v0, Landroid/bluetooth/BluetoothClass$1;
 
     invoke-direct {v0}, Landroid/bluetooth/BluetoothClass$1;-><init>()V
@@ -68,13 +67,10 @@
     .parameter "classInt"
 
     .prologue
-    .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 62
     iput p1, p0, Landroid/bluetooth/BluetoothClass;->mClass:I
 
-    .line 63
     return-void
 .end method
 
@@ -84,7 +80,6 @@
     .locals 1
 
     .prologue
-    .line 84
     const/4 v0, 0x0
 
     return v0
@@ -101,24 +96,20 @@
 
     const/4 v0, 0x1
 
-    .line 348
     if-ne p1, v0, :cond_2
 
-    .line 349
     invoke-virtual {p0, v2}, Landroid/bluetooth/BluetoothClass;->hasService(I)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 425
     :cond_0
     :goto_0
     :pswitch_0
     :sswitch_0
     return v0
 
-    .line 355
     :cond_1
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothClass;->getDeviceClass()I
 
@@ -128,21 +119,17 @@
 
     move v0, v1
 
-    .line 362
     goto :goto_0
 
-    .line 364
     :cond_2
     if-nez p1, :cond_3
 
-    .line 367
     invoke-virtual {p0, v2}, Landroid/bluetooth/BluetoothClass;->hasService(I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 371
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothClass;->getDeviceClass()I
 
     move-result v2
@@ -151,16 +138,13 @@
 
     move v0, v1
 
-    .line 377
     goto :goto_0
 
-    .line 379
     :cond_3
     const/4 v2, 0x2
 
     if-ne p1, v2, :cond_4
 
-    .line 380
     const/high16 v2, 0x10
 
     invoke-virtual {p0, v2}, Landroid/bluetooth/BluetoothClass;->hasService(I)Z
@@ -169,7 +153,6 @@
 
     if-nez v2, :cond_0
 
-    .line 384
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothClass;->getDeviceClass()I
 
     move-result v2
@@ -178,16 +161,13 @@
 
     move v0, v1
 
-    .line 400
     goto :goto_0
 
-    .line 402
     :cond_4
     const/4 v2, 0x3
 
     if-ne p1, v2, :cond_5
 
-    .line 403
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothClass;->getDeviceClass()I
 
     move-result v2
@@ -202,7 +182,6 @@
 
     goto :goto_0
 
-    .line 404
     :cond_5
     const/4 v2, 0x4
 
@@ -212,7 +191,6 @@
 
     if-ne p1, v2, :cond_7
 
-    .line 406
     :cond_6
     const/high16 v2, 0x2
 
@@ -222,7 +200,6 @@
 
     if-nez v2, :cond_0
 
-    .line 409
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothClass;->getDeviceClass()I
 
     move-result v2
@@ -237,13 +214,11 @@
 
     goto :goto_0
 
-    .line 411
     :cond_7
     const/4 v2, 0x6
 
     if-ne p1, v2, :cond_8
 
-    .line 417
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothClass;->getMajorDeviceClass()I
 
     move-result v2
@@ -252,16 +227,13 @@
 
     move v0, v1
 
-    .line 421
     goto :goto_0
 
     :cond_8
     move v0, v1
 
-    .line 425
     goto :goto_0
 
-    .line 355
     :sswitch_data_0
     .sparse-switch
         0x414 -> :sswitch_0
@@ -270,7 +242,6 @@
         0x428 -> :sswitch_0
     .end sparse-switch
 
-    .line 371
     :sswitch_data_1
     .sparse-switch
         0x404 -> :sswitch_0
@@ -278,7 +249,6 @@
         0x420 -> :sswitch_0
     .end sparse-switch
 
-    .line 384
     :sswitch_data_2
     .sparse-switch
         0x100 -> :sswitch_0
@@ -296,7 +266,6 @@
         0x214 -> :sswitch_0
     .end sparse-switch
 
-    .line 417
     :pswitch_data_0
     .packed-switch 0x600
         :pswitch_0
@@ -310,12 +279,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 67
     instance-of v1, p1, Landroid/bluetooth/BluetoothClass;
 
     if-eqz v1, :cond_0
 
-    .line 68
     iget v1, p0, Landroid/bluetooth/BluetoothClass;->mClass:I
 
     check-cast p1, Landroid/bluetooth/BluetoothClass;
@@ -327,7 +294,6 @@
 
     const/4 v0, 0x1
 
-    .line 70
     :cond_0
     return v0
 .end method
@@ -336,7 +302,6 @@
     .locals 1
 
     .prologue
-    .line 318
     iget v0, p0, Landroid/bluetooth/BluetoothClass;->mClass:I
 
     and-int/lit16 v0, v0, 0x1ffc
@@ -348,7 +313,6 @@
     .locals 1
 
     .prologue
-    .line 305
     iget v0, p0, Landroid/bluetooth/BluetoothClass;->mClass:I
 
     and-int/lit16 v0, v0, 0x1f00
@@ -361,7 +325,6 @@
     .parameter "service"
 
     .prologue
-    .line 148
     iget v0, p0, Landroid/bluetooth/BluetoothClass;->mClass:I
 
     const v1, 0xffe000
@@ -387,7 +350,6 @@
     .locals 1
 
     .prologue
-    .line 75
     iget v0, p0, Landroid/bluetooth/BluetoothClass;->mClass:I
 
     return v0
@@ -397,7 +359,6 @@
     .locals 1
 
     .prologue
-    .line 80
     iget v0, p0, Landroid/bluetooth/BluetoothClass;->mClass:I
 
     invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
@@ -413,11 +374,9 @@
     .parameter "flags"
 
     .prologue
-    .line 98
     iget v0, p0, Landroid/bluetooth/BluetoothClass;->mClass:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 99
     return-void
 .end method

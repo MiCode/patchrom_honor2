@@ -27,16 +27,12 @@
     .parameter "fileId"
 
     .prologue
-    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 29
     iput-object p1, p0, Lcom/android/internal/telephony/VirtualNet$SpecialFile;->filePath:Ljava/lang/String;
 
-    .line 30
     iput-object p2, p0, Lcom/android/internal/telephony/VirtualNet$SpecialFile;->fileId:Ljava/lang/String;
 
-    .line 31
     return-void
 .end method
 
@@ -49,12 +45,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 37
     instance-of v2, p1, Lcom/android/internal/telephony/VirtualNet$SpecialFile;
 
     if-nez v2, :cond_1
 
-    .line 41
     :cond_0
     :goto_0
     return v1
@@ -62,10 +56,8 @@
     :cond_1
     move-object v0, p1
 
-    .line 40
     check-cast v0, Lcom/android/internal/telephony/VirtualNet$SpecialFile;
 
-    .line 41
     .local v0, other:Lcom/android/internal/telephony/VirtualNet$SpecialFile;
     if-eqz v0, :cond_0
 
@@ -106,7 +98,6 @@
     .locals 2
 
     .prologue
-    .line 47
     iget-object v0, p0, Lcom/android/internal/telephony/VirtualNet$SpecialFile;->filePath:Ljava/lang/String;
 
     if-eqz v0, :cond_0
@@ -115,11 +106,9 @@
 
     if-nez v0, :cond_1
 
-    .line 48
     :cond_0
     const/4 v0, 0x0
 
-    .line 50
     :goto_0
     return v0
 

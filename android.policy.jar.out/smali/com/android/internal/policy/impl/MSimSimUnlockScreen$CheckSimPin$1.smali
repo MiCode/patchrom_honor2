@@ -30,7 +30,6 @@
     .parameter
 
     .prologue
-    .line 124
     iput-object p1, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$CheckSimPin$1;->this$1:Lcom/android/internal/policy/impl/MSimSimUnlockScreen$CheckSimPin;
 
     iput p2, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$CheckSimPin$1;->val$result:I
@@ -46,13 +45,11 @@
     .locals 2
 
     .prologue
-    .line 126
     iget-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$CheckSimPin$1;->this$1:Lcom/android/internal/policy/impl/MSimSimUnlockScreen$CheckSimPin;
 
     iget v1, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$CheckSimPin$1;->val$result:I
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$CheckSimPin;->onSimLockChangedResponse(I)V
 
-    .line 127
     return-void
 .end method

@@ -32,7 +32,6 @@
     .locals 0
 
     .prologue
-    .line 481
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -69,10 +68,8 @@
 
     move v0, v1
 
-    .line 488
     goto :goto_0
 
-    .line 491
     :cond_2
     iget v2, p1, Landroid/text/util/Linkify$LinkSpec;->end:I
 
@@ -82,10 +79,8 @@
 
     move v0, v1
 
-    .line 492
     goto :goto_0
 
-    .line 495
     :cond_3
     iget v1, p1, Landroid/text/util/Linkify$LinkSpec;->end:I
 
@@ -93,7 +88,6 @@
 
     if-gt v1, v2, :cond_0
 
-    .line 499
     const/4 v0, 0x0
 
     goto :goto_0
@@ -123,7 +117,6 @@
     .parameter "o"
 
     .prologue
-    .line 503
     const/4 v0, 0x0
 
     return v0

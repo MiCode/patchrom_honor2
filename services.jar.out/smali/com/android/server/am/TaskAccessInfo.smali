@@ -33,9 +33,7 @@
     .locals 0
 
     .prologue
-    .line 24
     invoke-direct {p0}, Landroid/app/ActivityManager$TaskThumbnails;-><init>()V
 
-    .line 25
     return-void
 .end method

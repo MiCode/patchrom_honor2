@@ -96,10 +96,9 @@
     .locals 3
 
     .prologue
-    .line 39
     const-string v0, "1"
 
-    const-string/jumbo v1, "ro.config.headless"
+    const-string v1, "ro.config.headless"
 
     const-string v2, "0"
 
@@ -113,10 +112,8 @@
 
     sput-boolean v0, Landroid/view/Surface;->headless:Z
 
-    .line 253
     invoke-static {}, Landroid/view/Surface;->nativeClassInit()V
 
-    .line 526
     new-instance v0, Landroid/view/Surface$1;
 
     invoke-direct {v0}, Landroid/view/Surface$1;-><init>()V
@@ -130,13 +127,10 @@
     .locals 2
 
     .prologue
-    .line 287
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 288
     invoke-static {}, Landroid/view/Surface;->checkHeadless()V
 
-    .line 293
     new-instance v0, Landroid/view/Surface$CompatibleCanvas;
 
     const/4 v1, 0x0
@@ -145,7 +139,6 @@
 
     iput-object v0, p0, Landroid/view/Surface;->mCanvas:Landroid/graphics/Canvas;
 
-    .line 294
     return-void
 .end method
 
@@ -154,13 +147,10 @@
     .parameter "surfaceTexture"
 
     .prologue
-    .line 58
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 59
     invoke-static {}, Landroid/view/Surface;->checkHeadless()V
 
-    .line 64
     new-instance v0, Landroid/view/Surface$CompatibleCanvas;
 
     const/4 v1, 0x0
@@ -169,10 +159,8 @@
 
     iput-object v0, p0, Landroid/view/Surface;->mCanvas:Landroid/graphics/Canvas;
 
-    .line 65
     invoke-direct {p0, p1}, Landroid/view/Surface;->initFromSurfaceTexture(Landroid/graphics/SurfaceTexture;)V
 
-    .line 66
     return-void
 .end method
 
@@ -186,13 +174,10 @@
     .end annotation
 
     .prologue
-    .line 296
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 297
     invoke-direct {p0, p1}, Landroid/view/Surface;->init(Landroid/os/Parcel;)V
 
-    .line 298
     return-void
 .end method
 
@@ -207,7 +192,6 @@
     .end annotation
 
     .prologue
-    .line 29
     invoke-direct {p0, p1}, Landroid/view/Surface;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -229,13 +213,10 @@
     .end annotation
 
     .prologue
-    .line 258
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 259
     invoke-static {}, Landroid/view/Surface;->checkHeadless()V
 
-    .line 264
     new-instance v0, Landroid/view/Surface$CompatibleCanvas;
 
     const/4 v1, 0x0
@@ -244,7 +225,6 @@
 
     iput-object v0, p0, Landroid/view/Surface;->mCanvas:Landroid/graphics/Canvas;
 
-    .line 265
     const/4 v3, 0x0
 
     move-object v0, p0
@@ -265,7 +245,6 @@
 
     invoke-direct/range {v0 .. v8}, Landroid/view/Surface;->init(Landroid/view/SurfaceSession;ILjava/lang/String;IIIII)V
 
-    .line 266
     return-void
 .end method
 
@@ -286,13 +265,10 @@
     .end annotation
 
     .prologue
-    .line 271
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 272
     invoke-static {}, Landroid/view/Surface;->checkHeadless()V
 
-    .line 277
     new-instance v0, Landroid/view/Surface$CompatibleCanvas;
 
     const/4 v1, 0x0
@@ -301,13 +277,10 @@
 
     iput-object v0, p0, Landroid/view/Surface;->mCanvas:Landroid/graphics/Canvas;
 
-    .line 278
     invoke-direct/range {p0 .. p8}, Landroid/view/Surface;->init(Landroid/view/SurfaceSession;ILjava/lang/String;IIIII)V
 
-    .line 279
     iput-object p3, p0, Landroid/view/Surface;->mName:Ljava/lang/String;
 
-    .line 280
     return-void
 .end method
 
@@ -316,7 +289,6 @@
     .parameter "x0"
 
     .prologue
-    .line 29
     iget-object v0, p0, Landroid/view/Surface;->mCompatibilityTranslator:Landroid/content/res/CompatibilityInfo$Translator;
 
     return-object v0
@@ -327,7 +299,6 @@
     .parameter "x0"
 
     .prologue
-    .line 29
     iget-object v0, p0, Landroid/view/Surface;->mCompatibleMatrix:Landroid/graphics/Matrix;
 
     return-object v0
@@ -337,12 +308,10 @@
     .locals 2
 
     .prologue
-    .line 43
     sget-boolean v0, Landroid/view/Surface;->headless:Z
 
     if-eqz v0, :cond_0
 
-    .line 44
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Device is headless"
@@ -351,7 +320,6 @@
 
     throw v0
 
-    .line 46
     :cond_0
     return-void
 .end method
@@ -403,12 +371,10 @@
     .parameter "orientation"
 
     .prologue
-    .line 455
     const/4 v0, 0x0
 
     invoke-static {p0, p1, v0}, Landroid/view/Surface;->setOrientation(III)V
 
-    .line 456
     return-void
 .end method
 
@@ -427,7 +393,6 @@
     .locals 1
 
     .prologue
-    .line 106
     const/4 v0, 0x0
 
     return v0
@@ -445,13 +410,11 @@
     .end annotation
 
     .prologue
-    .line 546
     :try_start_0
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 548
     iget v0, p0, Landroid/view/Surface;->mNativeSurface:I
 
     if-nez v0, :cond_0
@@ -460,7 +423,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 553
     :cond_0
     const-string v0, "Surface"
 
@@ -504,14 +466,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 557
     :cond_1
     invoke-virtual {p0}, Landroid/view/Surface;->release()V
 
-    .line 559
     return-void
 
-    .line 548
     :catchall_0
     move-exception v0
 
@@ -523,7 +482,6 @@
 
     if-eqz v1, :cond_3
 
-    .line 553
     :cond_2
     const-string v1, "Surface"
 
@@ -567,7 +525,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 557
     :cond_3
     invoke-virtual {p0}, Landroid/view/Surface;->release()V
 
@@ -581,7 +538,6 @@
     .locals 1
 
     .prologue
-    .line 323
     iget v0, p0, Landroid/view/Surface;->mSurfaceGenerationId:I
 
     return v0
@@ -591,7 +547,6 @@
     .locals 1
 
     .prologue
-    .line 409
     iget v0, p0, Landroid/view/Surface;->mNativeSurface:I
 
     return v0
@@ -617,7 +572,6 @@
     .end annotation
 
     .prologue
-    .line 88
     invoke-direct {p0, p1}, Landroid/view/Surface;->lockCanvasNative(Landroid/graphics/Rect;)Landroid/graphics/Canvas;
 
     move-result-object v0
@@ -639,13 +593,10 @@
     .parameter "translator"
 
     .prologue
-    .line 400
     if-eqz p1, :cond_0
 
-    .line 401
     iget v0, p1, Landroid/content/res/CompatibilityInfo$Translator;->applicationScale:F
 
-    .line 402
     .local v0, appScale:F
     new-instance v1, Landroid/graphics/Matrix;
 
@@ -653,12 +604,10 @@
 
     iput-object v1, p0, Landroid/view/Surface;->mCompatibleMatrix:Landroid/graphics/Matrix;
 
-    .line 403
     iget-object v1, p0, Landroid/view/Surface;->mCompatibleMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v1, v0, v0}, Landroid/graphics/Matrix;->setScale(FF)V
 
-    .line 405
     .end local v0           #appScale:F
     :cond_0
     return-void
@@ -685,7 +634,6 @@
     .parameter "y"
 
     .prologue
-    .line 496
     int-to-float v0, p1
 
     int-to-float v1, p2
@@ -711,7 +659,6 @@
     .locals 2
 
     .prologue
-    .line 102
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

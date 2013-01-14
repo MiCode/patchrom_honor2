@@ -41,19 +41,16 @@
     .parameter
 
     .prologue
-    .line 462
     iput-object p1, p0, Lcom/android/internal/telephony/QosSpec$QosPipe;->this$0:Lcom/android/internal/telephony/QosSpec;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 463
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/QosSpec$QosPipe;->mQosParams:Ljava/util/LinkedList;
 
-    .line 464
     return-void
 .end method
 
@@ -62,7 +59,6 @@
     .parameter "x0"
 
     .prologue
-    .line 447
     invoke-direct {p0}, Lcom/android/internal/telephony/QosSpec$QosPipe;->getRilPipeSpec()Ljava/lang/String;
 
     move-result-object v0
@@ -76,14 +72,11 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 584
     const-string v5, ""
 
-    .line 585
     .local v5, rilPipeSpec:Ljava/lang/String;
     const-string v2, ""
 
-    .line 587
     .local v2, keyValue:Ljava/lang/String;
     iget-object v6, p0, Lcom/android/internal/telephony/QosSpec$QosPipe;->mQosParams:Ljava/util/LinkedList;
 
@@ -107,7 +100,6 @@
 
     aget-object v4, v0, v1
 
-    .line 588
     .local v4, qkv:Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -139,7 +131,6 @@
 
     move-result-object v2
 
-    .line 591
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -162,12 +153,10 @@
 
     move-result-object v5
 
-    .line 587
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 595
     .end local v4           #qkv:Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;
     :cond_0
     invoke-virtual {v5}, Ljava/lang/String;->length()I
@@ -180,7 +169,6 @@
 
     move-result-object v5
 
-    .line 597
     return-object v5
 .end method
 
@@ -190,12 +178,10 @@
     .locals 1
 
     .prologue
-    .line 470
     iget-object v0, p0, Lcom/android/internal/telephony/QosSpec$QosPipe;->mQosParams:Ljava/util/LinkedList;
 
     invoke-virtual {v0}, Ljava/util/LinkedList;->clear()V
 
-    .line 471
     return-void
 .end method
 
@@ -204,18 +190,14 @@
     .parameter "key"
 
     .prologue
-    .line 498
     const/4 v0, 0x0
 
-    .line 499
     .local v0, count:I
     const/4 v3, 0x0
 
-    .line 500
     .local v3, value:Ljava/lang/String;
     const/4 v2, 0x0
 
-    .line 502
     .local v2, kv:Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;
     iget-object v4, p0, Lcom/android/internal/telephony/QosSpec$QosPipe;->mQosParams:Ljava/util/LinkedList;
 
@@ -223,7 +205,6 @@
 
     move-result-object v1
 
-    .line 503
     .local v1, itr:Ljava/util/ListIterator;
     :cond_0
     :goto_0
@@ -233,7 +214,6 @@
 
     if-eqz v4, :cond_1
 
-    .line 504
     invoke-interface {v1}, Ljava/util/ListIterator;->next()Ljava/lang/Object;
 
     move-result-object v2
@@ -241,21 +221,17 @@
     .end local v2           #kv:Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;
     check-cast v2, Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;
 
-    .line 505
     .restart local v2       #kv:Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;
     iget v4, v2, Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;->qosKey:I
 
     if-ne v4, p1, :cond_0
 
-    .line 506
     iget-object v3, v2, Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;->qosValue:Ljava/lang/String;
 
-    .line 507
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 511
     :cond_1
     const/4 v4, 0x1
 
@@ -285,12 +261,10 @@
     .end annotation
 
     .prologue
-    .line 561
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 562
     .local v2, keys:Ljava/util/List;,"Ljava/util/List<Ljava/lang/Integer;>;"
     iget-object v5, p0, Lcom/android/internal/telephony/QosSpec$QosPipe;->mQosParams:Ljava/util/LinkedList;
 
@@ -316,7 +290,6 @@
 
     aget-object v4, v0, v1
 
-    .line 563
     .local v4, qkv:Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;
     iget v5, v4, Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;->qosKey:I
 
@@ -326,12 +299,10 @@
 
     invoke-interface {v2, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 562
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 566
     .end local v4           #qkv:Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;
     :cond_0
     return-object v2
@@ -350,12 +321,10 @@
     .end annotation
 
     .prologue
-    .line 575
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 576
     .local v4, values:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     iget-object v5, p0, Lcom/android/internal/telephony/QosSpec$QosPipe;->mQosParams:Ljava/util/LinkedList;
 
@@ -381,18 +350,15 @@
 
     aget-object v3, v0, v1
 
-    .line 577
     .local v3, qkv:Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;
     iget-object v5, v3, Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;->qosValue:Ljava/lang/String;
 
     invoke-interface {v4, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 576
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 580
     .end local v3           #qkv:Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;
     :cond_0
     return-object v4
@@ -412,16 +378,13 @@
     .end annotation
 
     .prologue
-    .line 523
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 524
     .local v2, values:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     const/4 v1, 0x0
 
-    .line 526
     .local v1, kv:Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;
     iget-object v3, p0, Lcom/android/internal/telephony/QosSpec$QosPipe;->mQosParams:Ljava/util/LinkedList;
 
@@ -429,7 +392,6 @@
 
     move-result-object v0
 
-    .line 527
     .local v0, itr:Ljava/util/ListIterator;
     :cond_0
     :goto_0
@@ -439,7 +401,6 @@
 
     if-eqz v3, :cond_1
 
-    .line 528
     invoke-interface {v0}, Ljava/util/ListIterator;->next()Ljava/lang/Object;
 
     move-result-object v1
@@ -447,20 +408,17 @@
     .end local v1           #kv:Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;
     check-cast v1, Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;
 
-    .line 529
     .restart local v1       #kv:Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;
     iget v3, v1, Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;->qosKey:I
 
     if-ne v3, p1, :cond_0
 
-    .line 530
     iget-object v3, v1, Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;->qosValue:Ljava/lang/String;
 
     invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 534
     :cond_1
     return-object v2
 .end method
@@ -469,7 +427,6 @@
     .locals 1
 
     .prologue
-    .line 477
     iget-object v0, p0, Lcom/android/internal/telephony/QosSpec$QosPipe;->mQosParams:Ljava/util/LinkedList;
 
     invoke-virtual {v0}, Ljava/util/LinkedList;->isEmpty()Z
@@ -485,14 +442,12 @@
     .parameter "value"
 
     .prologue
-    .line 547
     invoke-static {p1}, Lcom/android/internal/telephony/QosSpec$QosSpecKey;->isValid(I)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 548
     const-string v0, "QosSpec"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -515,7 +470,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 549
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -540,7 +494,6 @@
 
     throw v0
 
-    .line 552
     :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/QosSpec$QosPipe;->mQosParams:Ljava/util/LinkedList;
 
@@ -550,7 +503,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    .line 553
     return-void
 .end method
 
@@ -558,7 +510,6 @@
     .locals 1
 
     .prologue
-    .line 486
     iget-object v0, p0, Lcom/android/internal/telephony/QosSpec$QosPipe;->mQosParams:Ljava/util/LinkedList;
 
     invoke-virtual {v0}, Ljava/util/LinkedList;->size()I
@@ -572,21 +523,17 @@
     .locals 8
 
     .prologue
-    .line 605
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 606
     .local v5, sb:Ljava/lang/StringBuilder;
-    const-string/jumbo v6, "{"
+    const-string v6, "{"
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 607
     const/4 v1, 0x1
 
-    .line 608
     .local v1, firstTime:Z
     iget-object v6, p0, Lcom/android/internal/telephony/QosSpec$QosPipe;->mQosParams:Ljava/util/LinkedList;
 
@@ -612,40 +559,32 @@
 
     aget-object v4, v0, v2
 
-    .line 609
     .local v4, qkv:Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;
     if-eqz v1, :cond_0
 
-    .line 610
     const/4 v1, 0x0
 
-    .line 614
     :goto_1
     iget v6, v4, Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;->qosKey:I
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 615
     const-string v6, ":\""
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 616
     iget-object v6, v4, Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;->qosValue:Ljava/lang/String;
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 617
     const-string v6, "\""
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 608
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 612
     :cond_0
     const-string v6, ", "
 
@@ -653,14 +592,12 @@
 
     goto :goto_1
 
-    .line 619
     .end local v4           #qkv:Lcom/android/internal/telephony/QosSpec$QosPipe$QosKeyValue;
     :cond_1
-    const-string/jumbo v6, "}"
+    const-string v6, "}"
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 620
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v6

@@ -52,7 +52,6 @@
     .locals 1
 
     .prologue
-    .line 57
     const-string v0, "ec7178ec-e5e1-4432-a3f4-4657e6795210"
 
     invoke-static {v0}, Ljava/util/UUID;->fromString(Ljava/lang/String;)Ljava/util/UUID;
@@ -61,7 +60,6 @@
 
     sput-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->EFFECT_TYPE_NULL:Ljava/util/UUID;
 
-    .line 61
     const-string v0, "60d67640-6705-11e0-ae3e-0002a5d5c51b"
 
     invoke-static {v0}, Ljava/util/UUID;->fromString(Ljava/lang/String;)Ljava/util/UUID;
@@ -70,7 +68,6 @@
 
     sput-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->EFFECT_TYPE_TDAS:Ljava/util/UUID;
 
-    .line 62
     const-string v0, "7c0cb5a0-6705-11e0-ae3e-0002a5d5c51b"
 
     invoke-static {v0}, Ljava/util/UUID;->fromString(Ljava/lang/String;)Ljava/util/UUID;
@@ -104,10 +101,8 @@
 
     const/4 v6, 0x0
 
-    .line 97
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 58
     const-string v2, "4a387fc0-8ab3-11df-8bad-0002a5d5c51b"
 
     invoke-static {v2}, Ljava/util/UUID;->fromString(Ljava/lang/String;)Ljava/util/UUID;
@@ -116,19 +111,14 @@
 
     iput-object v2, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->nxp_env_reverb_uuid:Ljava/util/UUID;
 
-    .line 76
     iput-object v3, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->classAudioEffect:Ljava/lang/Class;
 
-    .line 77
     iput-object v3, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->audioEffect:Landroid/media/audiofx/AudioEffect;
 
-    .line 78
     iput-object v3, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->methodSetParameter:Ljava/lang/reflect/Method;
 
-    .line 79
     iput-object v3, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->methodGetParameter:Ljava/lang/reflect/Method;
 
-    .line 100
     :try_start_0
     const-string v2, "android.media.audiofx.AudioEffect"
 
@@ -140,10 +130,8 @@
     :try_end_0
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 108
     const/4 v0, 0x0
 
-    .line 112
     .local v0, ctorAudioEffect:Ljava/lang/reflect/Constructor;
     :try_start_1
     iget-object v2, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->classAudioEffect:Ljava/lang/Class;
@@ -180,7 +168,6 @@
 
     move-result-object v0
 
-    .line 113
     const-string v2, "DolbyMobile"
 
     const-string v3, "Found AudioEffect Constructor"
@@ -190,7 +177,6 @@
     .catch Ljava/lang/SecurityException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_1} :catch_2
 
-    .line 126
     const/4 v2, 0x4
 
     :try_start_2
@@ -234,7 +220,6 @@
 
     iput-object v2, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->audioEffect:Landroid/media/audiofx/AudioEffect;
 
-    .line 127
     const-string v2, "DolbyMobile"
 
     const-string v3, "Created DolbyMobile AudioEffect successfully"
@@ -246,14 +231,12 @@
     .catch Ljava/lang/IllegalAccessException; {:try_start_2 .. :try_end_2} :catch_5
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_2 .. :try_end_2} :catch_6
 
-    .line 147
     iget-object v2, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->audioEffect:Landroid/media/audiofx/AudioEffect;
 
     invoke-virtual {v2}, Landroid/media/audiofx/AudioEffect;->getDescriptor()Landroid/media/audiofx/AudioEffect$Descriptor;
 
     move-result-object v1
 
-    .line 149
     .local v1, e:Landroid/media/audiofx/AudioEffect$Descriptor;
     iget-object v2, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->classAudioEffect:Ljava/lang/Class;
 
@@ -275,7 +258,6 @@
 
     iput-object v2, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->methodSetParameter:Ljava/lang/reflect/Method;
 
-    .line 150
     iget-object v2, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->classAudioEffect:Ljava/lang/Class;
 
     const-string v3, "getParameter"
@@ -296,7 +278,6 @@
 
     iput-object v2, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->methodGetParameter:Ljava/lang/reflect/Method;
 
-    .line 152
     const-string v2, "DolbyMobile"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -407,26 +388,20 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 161
     invoke-direct {p0}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->_setDefineSettings()V
 
-    .line 162
     iput p1, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->_audioSessionId:I
 
-    .line 163
     return-void
 
-    .line 102
     .end local v0           #ctorAudioEffect:Ljava/lang/reflect/Constructor;
     .end local v1           #e:Landroid/media/audiofx/AudioEffect$Descriptor;
     :catch_0
     move-exception v1
 
-    .line 104
     .local v1, e:Ljava/lang/ClassNotFoundException;
     invoke-virtual {v1}, Ljava/lang/ClassNotFoundException;->printStackTrace()V
 
-    .line 105
     const-string v2, "DolbyMobile"
 
     invoke-virtual {v1}, Ljava/lang/ClassNotFoundException;->toString()Ljava/lang/String;
@@ -435,16 +410,13 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 106
     throw v1
 
-    .line 115
     .end local v1           #e:Ljava/lang/ClassNotFoundException;
     .restart local v0       #ctorAudioEffect:Ljava/lang/reflect/Constructor;
     :catch_1
     move-exception v1
 
-    .line 117
     .local v1, e:Ljava/lang/SecurityException;
     const-string v2, "DolbyMobile"
 
@@ -454,15 +426,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 118
     throw v1
 
-    .line 119
     .end local v1           #e:Ljava/lang/SecurityException;
     :catch_2
     move-exception v1
 
-    .line 121
     .local v1, e:Ljava/lang/NoSuchMethodException;
     const-string v2, "DolbyMobile"
 
@@ -472,19 +441,15 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 122
     throw v1
 
-    .line 128
     .end local v1           #e:Ljava/lang/NoSuchMethodException;
     :catch_3
     move-exception v1
 
-    .line 129
     .local v1, e:Ljava/lang/IllegalArgumentException;
     invoke-virtual {v1}, Ljava/lang/IllegalArgumentException;->printStackTrace()V
 
-    .line 130
     const-string v2, "DolbyMobile"
 
     invoke-virtual {v1}, Ljava/lang/IllegalArgumentException;->toString()Ljava/lang/String;
@@ -493,19 +458,15 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 131
     throw v1
 
-    .line 132
     .end local v1           #e:Ljava/lang/IllegalArgumentException;
     :catch_4
     move-exception v1
 
-    .line 133
     .local v1, e:Ljava/lang/InstantiationException;
     invoke-virtual {v1}, Ljava/lang/InstantiationException;->printStackTrace()V
 
-    .line 134
     const-string v2, "DolbyMobile"
 
     invoke-virtual {v1}, Ljava/lang/InstantiationException;->toString()Ljava/lang/String;
@@ -514,19 +475,15 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 135
     throw v1
 
-    .line 136
     .end local v1           #e:Ljava/lang/InstantiationException;
     :catch_5
     move-exception v1
 
-    .line 137
     .local v1, e:Ljava/lang/IllegalAccessException;
     invoke-virtual {v1}, Ljava/lang/IllegalAccessException;->printStackTrace()V
 
-    .line 138
     const-string v2, "DolbyMobile"
 
     invoke-virtual {v1}, Ljava/lang/IllegalAccessException;->toString()Ljava/lang/String;
@@ -535,19 +492,15 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 139
     throw v1
 
-    .line 140
     .end local v1           #e:Ljava/lang/IllegalAccessException;
     :catch_6
     move-exception v1
 
-    .line 141
     .local v1, e:Ljava/lang/reflect/InvocationTargetException;
     invoke-virtual {v1}, Ljava/lang/reflect/InvocationTargetException;->printStackTrace()V
 
-    .line 142
     const-string v2, "DolbyMobile"
 
     invoke-virtual {v1}, Ljava/lang/reflect/InvocationTargetException;->toString()Ljava/lang/String;
@@ -556,7 +509,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 143
     throw v1
 .end method
 
@@ -565,7 +517,6 @@
     .parameter "ba"
 
     .prologue
-    .line 277
     const/4 v0, 0x3
 
     aget-byte v0, p0, v0
@@ -610,7 +561,6 @@
     .parameter "ba"
 
     .prologue
-    .line 282
     new-instance v4, Ljava/lang/StringBuilder;
 
     array-length v5, p0
@@ -621,13 +571,11 @@
 
     invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 283
     .local v4, sb:Ljava/lang/StringBuilder;
     const-string v5, "HEX("
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 284
     move-object v0, p0
 
     .local v0, arr$:[B
@@ -642,7 +590,6 @@
 
     aget-byte v1, v0, v2
 
-    .line 286
     .local v1, b:B
     invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
@@ -650,24 +597,20 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 287
     const/16 v5, 0x20
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 284
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 289
     .end local v1           #b:B
     :cond_0
     const/16 v5, 0x29
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 290
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
@@ -680,16 +623,13 @@
     .parameter "src"
 
     .prologue
-    .line 230
     array-length v4, p0
 
-    .line 231
     .local v4, srcLength:I
     shl-int/lit8 v6, v4, 0x2
 
     new-array v0, v6, [B
 
-    .line 233
     .local v0, dst:[B
     const/4 v1, 0x0
 
@@ -697,14 +637,11 @@
     :goto_0
     if-ge v1, v4, :cond_0
 
-    .line 235
     aget v5, p0, v1
 
-    .line 236
     .local v5, x:I
     shl-int/lit8 v2, v1, 0x2
 
-    .line 237
     .local v2, j:I
     add-int/lit8 v3, v2, 0x1
 
@@ -718,7 +655,6 @@
 
     aput-byte v6, v0, v2
 
-    .line 238
     add-int/lit8 v2, v3, 0x1
 
     .end local v3           #j:I
@@ -731,7 +667,6 @@
 
     aput-byte v6, v0, v3
 
-    .line 239
     add-int/lit8 v3, v2, 0x1
 
     .end local v2           #j:I
@@ -744,7 +679,6 @@
 
     aput-byte v6, v0, v2
 
-    .line 240
     add-int/lit8 v2, v3, 0x1
 
     .end local v3           #j:I
@@ -757,12 +691,10 @@
 
     aput-byte v6, v0, v3
 
-    .line 233
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 242
     .end local v2           #j:I
     .end local v5           #x:I
     :cond_0
@@ -776,14 +708,12 @@
     .parameter "index"
 
     .prologue
-    .line 262
     and-int/lit16 v0, p0, 0xff
 
     int-to-byte v0, v0
 
     aput-byte v0, p1, p2
 
-    .line 263
     add-int/lit8 v0, p2, 0x1
 
     ushr-int/lit8 v1, p0, 0x8
@@ -794,7 +724,6 @@
 
     aput-byte v1, p1, v0
 
-    .line 264
     const/4 v0, 0x2
 
     return v0
@@ -807,7 +736,6 @@
     .parameter "index"
 
     .prologue
-    .line 268
     add-int/lit8 v0, p2, 0x1
 
     .end local p2
@@ -818,7 +746,6 @@
 
     aput-byte v1, p1, p2
 
-    .line 269
     add-int/lit8 p2, v0, 0x1
 
     .end local v0           #index:I
@@ -831,7 +758,6 @@
 
     aput-byte v1, p1, v0
 
-    .line 270
     add-int/lit8 v0, p2, 0x1
 
     .end local p2
@@ -844,7 +770,6 @@
 
     aput-byte v1, p1, p2
 
-    .line 271
     ushr-int/lit8 v1, p0, 0x18
 
     and-int/lit16 v1, v1, 0xff
@@ -853,7 +778,6 @@
 
     aput-byte v1, p1, v0
 
-    .line 272
     const/4 v1, 0x4
 
     return v1
@@ -865,38 +789,31 @@
     .parameter "value"
 
     .prologue
-    .line 367
     const/4 v2, 0x0
 
-    .line 368
     .local v2, iRet:I
     invoke-direct {p0, p1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->intToByteArray(I)[B
 
     move-result-object v0
 
-    .line 369
     .local v0, baParam:[B
     invoke-direct {p0, p2}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->intToByteArray(I)[B
 
     move-result-object v1
 
-    .line 370
     .local v1, baValue:[B
     invoke-direct {p0, v0, v1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->_invokeGetParameter([B[B)I
 
     move-result v2
 
-    .line 371
     if-eqz v2, :cond_0
 
-    .line 372
     const-string v3, "DolbyMobile"
 
     const-string v4, "_getIntParameter: Error in getting the parameter!"
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 375
     .end local v2           #iRet:I
     :goto_0
     return v2
@@ -918,7 +835,6 @@
     .prologue
     const/4 v3, -0x5
 
-    .line 335
     const-string v2, "DolbyMobile"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -959,10 +875,8 @@
 
     invoke-static {v2, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 337
     const/4 v1, 0x0
 
-    .line 340
     .local v1, iRet:I
     :try_start_0
     iget-object v2, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->methodGetParameter:Ljava/lang/reflect/Method;
@@ -995,7 +909,6 @@
 
     move-result v1
 
-    .line 360
     const-string v2, "DolbyMobile"
 
     const-string v3, "_invokeGetParameter returning."
@@ -1004,19 +917,15 @@
 
     move v2, v1
 
-    .line 362
     :goto_0
     return v2
 
-    .line 341
     :catch_0
     move-exception v0
 
-    .line 344
     .local v0, e:Ljava/lang/IllegalArgumentException;
     invoke-virtual {v0}, Ljava/lang/IllegalArgumentException;->printStackTrace()V
 
-    .line 345
     const-string v2, "DolbyMobile"
 
     invoke-virtual {v0}, Ljava/lang/IllegalArgumentException;->toString()Ljava/lang/String;
@@ -1025,21 +934,17 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 346
     const/4 v2, -0x4
 
     goto :goto_0
 
-    .line 347
     .end local v0           #e:Ljava/lang/IllegalArgumentException;
     :catch_1
     move-exception v0
 
-    .line 350
     .local v0, e:Ljava/lang/IllegalAccessException;
     invoke-virtual {v0}, Ljava/lang/IllegalAccessException;->printStackTrace()V
 
-    .line 351
     const-string v2, "DolbyMobile"
 
     invoke-virtual {v0}, Ljava/lang/IllegalAccessException;->toString()Ljava/lang/String;
@@ -1050,19 +955,15 @@
 
     move v2, v3
 
-    .line 352
     goto :goto_0
 
-    .line 353
     .end local v0           #e:Ljava/lang/IllegalAccessException;
     :catch_2
     move-exception v0
 
-    .line 356
     .local v0, e:Ljava/lang/reflect/InvocationTargetException;
     invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->printStackTrace()V
 
-    .line 357
     const-string v2, "DolbyMobile"
 
     invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->toString()Ljava/lang/String;
@@ -1073,7 +974,6 @@
 
     move v2, v3
 
-    .line 358
     goto :goto_0
 .end method
 
@@ -1085,7 +985,6 @@
     .prologue
     const/4 v3, -0x5
 
-    .line 295
     const-string v2, "DolbyMobile"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1126,10 +1025,8 @@
 
     invoke-static {v2, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 297
     const/4 v1, 0x0
 
-    .line 300
     .local v1, iRet:I
     :try_start_0
     iget-object v2, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->methodSetParameter:Ljava/lang/reflect/Method;
@@ -1162,7 +1059,6 @@
 
     move-result v1
 
-    .line 320
     const-string v2, "DolbyMobile"
 
     const-string v3, "_invokeSetParameter returning."
@@ -1171,19 +1067,15 @@
 
     move v2, v1
 
-    .line 322
     :goto_0
     return v2
 
-    .line 301
     :catch_0
     move-exception v0
 
-    .line 304
     .local v0, e:Ljava/lang/IllegalArgumentException;
     invoke-virtual {v0}, Ljava/lang/IllegalArgumentException;->printStackTrace()V
 
-    .line 305
     const-string v2, "DolbyMobile"
 
     invoke-virtual {v0}, Ljava/lang/IllegalArgumentException;->toString()Ljava/lang/String;
@@ -1192,21 +1084,17 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 306
     const/4 v2, -0x4
 
     goto :goto_0
 
-    .line 307
     .end local v0           #e:Ljava/lang/IllegalArgumentException;
     :catch_1
     move-exception v0
 
-    .line 310
     .local v0, e:Ljava/lang/IllegalAccessException;
     invoke-virtual {v0}, Ljava/lang/IllegalAccessException;->printStackTrace()V
 
-    .line 311
     const-string v2, "DolbyMobile"
 
     invoke-virtual {v0}, Ljava/lang/IllegalAccessException;->toString()Ljava/lang/String;
@@ -1217,19 +1105,15 @@
 
     move v2, v3
 
-    .line 312
     goto :goto_0
 
-    .line 313
     .end local v0           #e:Ljava/lang/IllegalAccessException;
     :catch_2
     move-exception v0
 
-    .line 316
     .local v0, e:Ljava/lang/reflect/InvocationTargetException;
     invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->printStackTrace()V
 
-    .line 317
     const-string v2, "DolbyMobile"
 
     invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->toString()Ljava/lang/String;
@@ -1240,7 +1124,6 @@
 
     move v2, v3
 
-    .line 318
     goto :goto_0
 .end method
 
@@ -1248,14 +1131,12 @@
     .locals 6
 
     .prologue
-    .line 388
     const/4 v5, 0x0
 
     invoke-direct {p0, v5}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->intToByteArray(I)[B
 
     move-result-object v0
 
-    .line 389
     .local v0, baParam:[B
     invoke-static {}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->GetNumSettingsPerDevice()I
 
@@ -1267,11 +1148,9 @@
 
     new-array v1, v5, [B
 
-    .line 390
     .local v1, baValue:[B
     const/4 v4, 0x0
 
-    .line 391
     .local v4, index:I
     invoke-static {}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->GetNumSettingsPerDevice()I
 
@@ -1283,12 +1162,10 @@
 
     add-int/2addr v4, v5
 
-    .line 395
     invoke-static {}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->GetSettingsDefinitions()[Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 396
     .local v2, defns:[Ljava/lang/Object;
     const/4 v3, 0x0
 
@@ -1298,7 +1175,6 @@
 
     if-ge v3, v5, :cond_0
 
-    .line 398
     aget-object v5, v2, v3
 
     check-cast v5, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings$SettingDefn;
@@ -1307,10 +1183,8 @@
 
     aput-byte v5, v1, v4
 
-    .line 399
     add-int/lit8 v4, v4, 0x1
 
-    .line 400
     aget-object v5, v2, v3
 
     check-cast v5, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings$SettingDefn;
@@ -1319,19 +1193,15 @@
 
     aput-byte v5, v1, v4
 
-    .line 401
     add-int/lit8 v4, v4, 0x1
 
-    .line 396
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 403
     :cond_0
     invoke-direct {p0, v0, v1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->_invokeSetParameter([B[B)I
 
-    .line 404
     return-void
 .end method
 
@@ -1341,18 +1211,15 @@
     .parameter "value"
 
     .prologue
-    .line 327
     invoke-direct {p0, p1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->intToByteArray(I)[B
 
     move-result-object v0
 
-    .line 328
     .local v0, baParam:[B
     invoke-direct {p0, p2}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->intToByteArray(I)[B
 
     move-result-object v1
 
-    .line 329
     .local v1, baValue:[B
     invoke-direct {p0, v0, v1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->_invokeSetParameter([B[B)I
 
@@ -1366,14 +1233,12 @@
     .parameter "value"
 
     .prologue
-    .line 222
     const/4 v1, 0x4
 
     invoke-static {v1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    .line 223
     .local v0, converter:Ljava/nio/ByteBuffer;
     invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
 
@@ -1381,10 +1246,8 @@
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    .line 224
     invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    .line 225
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object v1
@@ -1402,13 +1265,11 @@
 
     const/4 v2, 0x1
 
-    .line 432
     const/4 v1, 0x0
 
     .local v1, value:I
     const/4 v0, -0x1
 
-    .line 433
     .local v0, iRet:I
     const-string v4, "DolbyMobile"
 
@@ -1416,12 +1277,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 435
     invoke-direct {p0, v2, v1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->_getIntParameter(II)I
 
     move-result v0
 
-    .line 436
     if-gez v0, :cond_1
 
     move v4, v2
@@ -1436,7 +1295,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 438
     const-string v2, "DolbyMobile"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1459,17 +1317,14 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 439
     const/4 v0, -0x1
 
-    .line 441
     :cond_0
     return v0
 
     :cond_1
     move v4, v3
 
-    .line 436
     goto :goto_0
 
     :cond_2
@@ -1482,13 +1337,11 @@
     .locals 4
 
     .prologue
-    .line 612
     const/4 v1, 0x0
 
     .local v1, value:I
     const/4 v0, 0x0
 
-    .line 613
     .local v0, iRet:I
     const-string v2, "DolbyMobile"
 
@@ -1496,24 +1349,20 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 615
     const/4 v2, 0x5
 
     invoke-direct {p0, v2, v1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->_getIntParameter(II)I
 
     move-result v0
 
-    .line 616
     if-gez v0, :cond_0
 
-    .line 617
     const-string v2, "DolbyMobile"
 
     const-string v3, "getDdpPortableMode(): Error in getting the ddp portable mode"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 618
     :cond_0
     if-lez v0, :cond_1
 
@@ -1537,7 +1386,6 @@
     .end annotation
 
     .prologue
-    .line 202
     iget-object v0, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->audioEffect:Landroid/media/audiofx/AudioEffect;
 
     invoke-virtual {v0}, Landroid/media/audiofx/AudioEffect;->getEnabled()Z
@@ -1551,13 +1399,11 @@
     .locals 4
 
     .prologue
-    .line 629
     const/4 v1, 0x0
 
     .local v1, value:I
     const/4 v0, 0x0
 
-    .line 630
     .local v0, iRet:I
     const-string v2, "DolbyMobile"
 
@@ -1565,24 +1411,20 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 632
     const/4 v2, 0x6
 
     invoke-direct {p0, v2, v1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->_getIntParameter(II)I
 
     move-result v0
 
-    .line 633
     if-gez v0, :cond_0
 
-    .line 634
     const-string v2, "DolbyMobile"
 
     const-string v3, "getMsrEnable(): Error in getting the mobile surround enable state"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 635
     :cond_0
     if-lez v0, :cond_1
 
@@ -1605,13 +1447,11 @@
 
     const/4 v3, 0x0
 
-    .line 674
     const/4 v1, 0x0
 
     .local v1, value:I
     const/4 v0, -0x1
 
-    .line 675
     .local v0, iRet:I
     const-string v4, "DolbyMobile"
 
@@ -1619,14 +1459,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 677
     const/4 v4, 0x7
 
     invoke-direct {p0, v4, v1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->_getIntParameter(II)I
 
     move-result v0
 
-    .line 678
     if-gez v0, :cond_1
 
     move v4, v2
@@ -1641,7 +1479,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 680
     const-string v2, "DolbyMobile"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1664,17 +1501,14 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 681
     const/4 v0, -0x1
 
-    .line 683
     :cond_0
     return v0
 
     :cond_1
     move v4, v3
 
-    .line 678
     goto :goto_0
 
     :cond_2
@@ -1691,13 +1525,11 @@
 
     const/4 v3, 0x0
 
-    .line 660
     const/4 v1, 0x0
 
     .local v1, value:I
     const/4 v0, -0x1
 
-    .line 661
     .local v0, iRet:I
     const-string v4, "DolbyMobile"
 
@@ -1705,14 +1537,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 663
     const/16 v4, 0x9
 
     invoke-direct {p0, v4, v1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->_getIntParameter(II)I
 
     move-result v0
 
-    .line 664
     if-gez v0, :cond_1
 
     move v4, v2
@@ -1727,7 +1557,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 666
     const-string v2, "DolbyMobile"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1750,17 +1579,14 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 667
     const/4 v0, -0x1
 
-    .line 669
     :cond_0
     return v0
 
     :cond_1
     move v4, v3
 
-    .line 664
     goto :goto_0
 
     :cond_2
@@ -1777,13 +1603,11 @@
 
     const/4 v3, 0x0
 
-    .line 646
     const/4 v1, 0x0
 
     .local v1, value:I
     const/4 v0, -0x1
 
-    .line 647
     .local v0, iRet:I
     const-string v4, "DolbyMobile"
 
@@ -1791,14 +1615,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 649
     const/16 v4, 0x8
 
     invoke-direct {p0, v4, v1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->_getIntParameter(II)I
 
     move-result v0
 
-    .line 650
     if-gez v0, :cond_1
 
     move v4, v2
@@ -1813,7 +1635,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 652
     const-string v2, "DolbyMobile"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1836,17 +1657,14 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 653
     const/4 v0, -0x1
 
-    .line 655
     :cond_0
     return v0
 
     :cond_1
     move v4, v3
 
-    .line 650
     goto :goto_0
 
     :cond_2
@@ -1864,7 +1682,6 @@
     .end annotation
 
     .prologue
-    .line 217
     iget-object v0, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->audioEffect:Landroid/media/audiofx/AudioEffect;
 
     invoke-virtual {v0}, Landroid/media/audiofx/AudioEffect;->hasControl()Z
@@ -1878,12 +1695,10 @@
     .locals 1
 
     .prologue
-    .line 173
     iget-object v0, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->audioEffect:Landroid/media/audiofx/AudioEffect;
 
     invoke-virtual {v0}, Landroid/media/audiofx/AudioEffect;->release()V
 
-    .line 174
     return-void
 .end method
 
@@ -1892,18 +1707,15 @@
     .parameter "settings"
 
     .prologue
-    .line 505
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 508
     .local v0, m:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/media/audiofx/dolbymobileaudioeffect/AudioDevice;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     sget-object v1, Landroid/media/audiofx/dolbymobileaudioeffect/AudioDevice;->DEVICE_WIRED_HEADPHONE:Landroid/media/audiofx/dolbymobileaudioeffect/AudioDevice;
 
     invoke-virtual {v0, v1, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 509
     invoke-virtual {p0, v0}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->setAllSettings(Ljava/util/Map;)I
 
     move-result v1
@@ -1926,7 +1738,6 @@
     .end annotation
 
     .prologue
-    .line 533
     .local p1, allSettings:Ljava/util/Map;,"Ljava/util/Map<Landroid/media/audiofx/dolbymobileaudioeffect/AudioDevice;Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;>;"
     const/4 v9, 0x3
 
@@ -1934,13 +1745,11 @@
 
     move-result-object v0
 
-    .line 534
     .local v0, baParam:[B
     invoke-interface {p1}, Ljava/util/Map;->size()I
 
     move-result v6
 
-    .line 535
     .local v6, nDevCount:I
     invoke-static {}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->GetNumSettingsPerDevice()I
 
@@ -1956,11 +1765,9 @@
 
     new-array v1, v9, [B
 
-    .line 536
     .local v1, baValue:[B
     const/4 v5, 0x0
 
-    .line 537
     .local v5, index:I
     invoke-static {v6, v1, v5}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->SetInt16InByteArray(I[BI)I
 
@@ -1968,7 +1775,6 @@
 
     add-int/2addr v5, v9
 
-    .line 538
     invoke-interface {p1}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v9
@@ -1991,7 +1797,6 @@
 
     check-cast v2, Landroid/media/audiofx/dolbymobileaudioeffect/AudioDevice;
 
-    .line 540
     .local v2, device:Landroid/media/audiofx/dolbymobileaudioeffect/AudioDevice;
     invoke-interface {p1, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1999,7 +1804,6 @@
 
     check-cast v7, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
 
-    .line 542
     .local v7, s:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
     invoke-virtual {v2}, Landroid/media/audiofx/dolbymobileaudioeffect/AudioDevice;->toInt()I
 
@@ -2011,12 +1815,10 @@
 
     add-int/2addr v5, v9
 
-    .line 544
     invoke-virtual {v7}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->getValues()[I
 
     move-result-object v8
 
-    .line 545
     .local v8, values:[I
     const/4 v3, 0x0
 
@@ -2026,7 +1828,6 @@
 
     if-ge v3, v9, :cond_0
 
-    .line 546
     aget v9, v8, v3
 
     invoke-static {v9, v1, v5}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->SetInt16InByteArray(I[BI)I
@@ -2035,12 +1836,10 @@
 
     add-int/2addr v5, v9
 
-    .line 545
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 548
     .end local v2           #device:Landroid/media/audiofx/dolbymobileaudioeffect/AudioDevice;
     .end local v3           #i:I
     .end local v7           #s:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;
@@ -2060,7 +1859,6 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 419
     const-string v0, "DolbyMobile"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2089,7 +1887,6 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 421
     if-eqz p1, :cond_0
 
     move v0, v1
@@ -2112,7 +1909,6 @@
     .parameter "enable"
 
     .prologue
-    .line 594
     const-string v0, "DolbyMobile"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2141,12 +1937,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 596
     iget v0, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->_audioSessionId:I
 
     if-eqz v0, :cond_1
 
-    .line 597
     const/4 v1, 0x5
 
     if-eqz p1, :cond_0
@@ -2158,17 +1952,14 @@
 
     move-result v0
 
-    .line 600
     :goto_1
     return v0
 
-    .line 597
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 599
     :cond_1
     const-string v0, "DolbyMobile"
 
@@ -2176,7 +1967,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 600
     const/4 v0, -0x1
 
     goto :goto_1
@@ -2192,7 +1982,6 @@
     .end annotation
 
     .prologue
-    .line 188
     iget-object v0, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->audioEffect:Landroid/media/audiofx/AudioEffect;
 
     invoke-virtual {v0, p1}, Landroid/media/audiofx/AudioEffect;->setEnabled(Z)I
@@ -2210,7 +1999,6 @@
     .parameter "device"
 
     .prologue
-    .line 464
     const-string v4, "DolbyMobile"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -2263,18 +2051,15 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 465
     invoke-static {p1, p2}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSettings;->GetTdasSettingIndex(II)I
 
     move-result v2
 
-    .line 466
     .local v2, i:I
     const/4 v4, -0x1
 
     if-ne v2, v4, :cond_0
 
-    .line 468
     const-string v4, "DolbyMobile"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -2307,14 +2092,11 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 469
     const/4 v4, -0x5
 
-    .line 487
     :goto_0
     return v4
 
-    .line 481
     :cond_0
     const/4 v4, 0x2
 
@@ -2322,17 +2104,14 @@
 
     move-result-object v0
 
-    .line 482
     .local v0, baParam:[B
     const/16 v4, 0x8
 
     new-array v1, v4, [B
 
-    .line 483
     .local v1, baValue:[B
     const/4 v3, 0x0
 
-    .line 484
     .local v3, index:I
     invoke-virtual {p4}, Landroid/media/audiofx/dolbymobileaudioeffect/AudioDevice;->toInt()I
 
@@ -2344,21 +2123,18 @@
 
     add-int/2addr v3, v4
 
-    .line 485
     invoke-static {v2, v1, v3}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->SetInt16InByteArray(I[BI)I
 
     move-result v4
 
     add-int/2addr v3, v4
 
-    .line 486
     invoke-static {p3, v1, v3}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->SetInt16InByteArray(I[BI)I
 
     move-result v4
 
     add-int/2addr v3, v4
 
-    .line 487
     invoke-direct {p0, v0, v1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->_invokeSetParameter([B[B)I
 
     move-result v4
@@ -2372,7 +2148,6 @@
     .parameter "coeffs"
 
     .prologue
-    .line 562
     const-string v4, "DolbyMobile"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -2409,10 +2184,8 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 569
     array-length v3, p2
 
-    .line 570
     .local v3, size:I
     const/4 v4, 0x4
 
@@ -2420,17 +2193,14 @@
 
     move-result-object v0
 
-    .line 571
     .local v0, baParam:[B
     add-int/lit8 v4, v3, 0x8
 
     new-array v1, v4, [B
 
-    .line 572
     .local v1, baValue:[B
     const/4 v2, 0x0
 
-    .line 573
     .local v2, index:I
     invoke-static {p1, v1, v2}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->SetInt32InByteArray(I[BI)I
 
@@ -2438,22 +2208,18 @@
 
     add-int/2addr v2, v4
 
-    .line 574
     invoke-static {v3, v1, v2}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->SetInt32InByteArray(I[BI)I
 
     move-result v4
 
     add-int/2addr v2, v4
 
-    .line 575
     const/4 v4, 0x0
 
     invoke-static {p2, v4, v1, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 576
     add-int/2addr v2, v3
 
-    .line 577
     invoke-direct {p0, v0, v1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;->_invokeSetParameter([B[B)I
 
     move-result v4

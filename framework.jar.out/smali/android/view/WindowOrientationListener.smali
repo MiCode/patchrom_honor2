@@ -39,7 +39,6 @@
     .locals 2
 
     .prologue
-    .line 45
     const-string v0, "debug.orientation.log"
 
     const/4 v1, 0x0
@@ -71,16 +70,13 @@
     .parameter "rate"
 
     .prologue
-    .line 77
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 55
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/view/WindowOrientationListener;->mCurrentRotation:I
 
-    .line 78
-    const-string/jumbo v0, "sensor"
+    const-string v0, "sensor"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -90,10 +86,8 @@
 
     iput-object v0, p0, Landroid/view/WindowOrientationListener;->mSensorManager:Landroid/hardware/SensorManager;
 
-    .line 79
     iput p2, p0, Landroid/view/WindowOrientationListener;->mRate:I
 
-    .line 80
     iget-object v0, p0, Landroid/view/WindowOrientationListener;->mSensorManager:Landroid/hardware/SensorManager;
 
     const/4 v1, 0x1
@@ -104,19 +98,16 @@
 
     iput-object v0, p0, Landroid/view/WindowOrientationListener;->mSensor:Landroid/hardware/Sensor;
 
-    .line 82
     iget-object v0, p0, Landroid/view/WindowOrientationListener;->mSensor:Landroid/hardware/Sensor;
 
     if-eqz v0, :cond_0
 
-    .line 84
     new-instance v0, Landroid/view/WindowOrientationListener$SensorEventListenerImpl;
 
     invoke-direct {v0, p0}, Landroid/view/WindowOrientationListener$SensorEventListenerImpl;-><init>(Landroid/view/WindowOrientationListener;)V
 
     iput-object v0, p0, Landroid/view/WindowOrientationListener;->mSensorEventListener:Landroid/view/WindowOrientationListener$SensorEventListenerImpl;
 
-    .line 86
     :cond_0
     return-void
 .end method
@@ -125,7 +116,6 @@
     .locals 1
 
     .prologue
-    .line 43
     sget-boolean v0, Landroid/view/WindowOrientationListener;->LOG:Z
 
     return v0
@@ -137,7 +127,6 @@
     .locals 1
 
     .prologue
-    .line 151
     iget-object v0, p0, Landroid/view/WindowOrientationListener;->mSensor:Landroid/hardware/Sensor;
 
     if-eqz v0, :cond_0
@@ -157,24 +146,20 @@
     .locals 2
 
     .prologue
-    .line 110
     iget-object v0, p0, Landroid/view/WindowOrientationListener;->mSensor:Landroid/hardware/Sensor;
 
     if-nez v0, :cond_1
 
-    .line 111
     const-string v0, "WindowOrientationListener"
 
     const-string v1, "Cannot detect sensors. Invalid disable"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 121
     :cond_0
     :goto_0
     return-void
 
-    .line 114
     :cond_1
     iget-boolean v0, p0, Landroid/view/WindowOrientationListener;->mEnabled:Z
 
@@ -182,19 +167,16 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 115
     sget-boolean v0, Landroid/view/WindowOrientationListener;->LOG:Z
 
     if-eqz v0, :cond_2
 
-    .line 116
     const-string v0, "WindowOrientationListener"
 
     const-string v1, "WindowOrientationListener disabled"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 118
     :cond_2
     iget-object v0, p0, Landroid/view/WindowOrientationListener;->mSensorManager:Landroid/hardware/SensorManager;
 
@@ -202,7 +184,6 @@
 
     invoke-virtual {v0, v1}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;)V
 
-    .line 119
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/view/WindowOrientationListener;->mEnabled:Z
@@ -214,42 +195,35 @@
     .locals 4
 
     .prologue
-    .line 93
     iget-object v0, p0, Landroid/view/WindowOrientationListener;->mSensor:Landroid/hardware/Sensor;
 
     if-nez v0, :cond_1
 
-    .line 94
     const-string v0, "WindowOrientationListener"
 
     const-string v1, "Cannot detect sensors. Not enabled"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 104
     :cond_0
     :goto_0
     return-void
 
-    .line 97
     :cond_1
     iget-boolean v0, p0, Landroid/view/WindowOrientationListener;->mEnabled:Z
 
     if-nez v0, :cond_0
 
-    .line 98
     sget-boolean v0, Landroid/view/WindowOrientationListener;->LOG:Z
 
     if-eqz v0, :cond_2
 
-    .line 99
     const-string v0, "WindowOrientationListener"
 
     const-string v1, "WindowOrientationListener enabled"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 101
     :cond_2
     iget-object v0, p0, Landroid/view/WindowOrientationListener;->mSensorManager:Landroid/hardware/SensorManager;
 
@@ -261,7 +235,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
 
-    .line 102
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/view/WindowOrientationListener;->mEnabled:Z
@@ -273,19 +246,16 @@
     .locals 1
 
     .prologue
-    .line 141
     iget-boolean v0, p0, Landroid/view/WindowOrientationListener;->mEnabled:Z
 
     if-eqz v0, :cond_0
 
-    .line 142
     iget-object v0, p0, Landroid/view/WindowOrientationListener;->mSensorEventListener:Landroid/view/WindowOrientationListener$SensorEventListenerImpl;
 
     invoke-virtual {v0}, Landroid/view/WindowOrientationListener$SensorEventListenerImpl;->getProposedRotation()I
 
     move-result v0
 
-    .line 144
     :goto_0
     return v0
 
@@ -303,9 +273,7 @@
     .parameter "rotation"
 
     .prologue
-    .line 129
     iput p1, p0, Landroid/view/WindowOrientationListener;->mCurrentRotation:I
 
-    .line 130
     return-void
 .end method

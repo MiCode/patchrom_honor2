@@ -42,10 +42,8 @@
     .locals 1
 
     .prologue
-    .line 22
     invoke-direct {p0}, Landroid/pmqos/Pmqos;-><init>()V
 
-    .line 23
     const-string v0, "ipps_policy"
 
     invoke-static {v0}, Landroid/pmqos/Pmqos;->pm_qos_open(Ljava/lang/String;)I
@@ -54,7 +52,6 @@
 
     iput v0, p0, Landroid/pmqos/Ipps_policy;->fd:I
 
-    .line 24
     return-void
 .end method
 
@@ -64,19 +61,16 @@
     .locals 2
 
     .prologue
-    .line 35
     const/4 v0, 0x0
 
     iget v1, p0, Landroid/pmqos/Ipps_policy;->fd:I
 
     invoke-static {v0, v1}, Landroid/pmqos/Pmqos;->pm_qos_write(II)I
 
-    .line 36
     iget v0, p0, Landroid/pmqos/Ipps_policy;->fd:I
 
     invoke-static {v0}, Landroid/pmqos/Pmqos;->pm_qos_close(I)V
 
-    .line 37
     return-void
 .end method
 
@@ -84,12 +78,10 @@
     .locals 1
 
     .prologue
-    .line 27
     iget v0, p0, Landroid/pmqos/Ipps_policy;->fd:I
 
     invoke-static {v0}, Landroid/pmqos/Pmqos;->pm_qos_read(I)I
 
-    .line 28
     return-void
 .end method
 
@@ -98,11 +90,9 @@
     .parameter "buffer"
 
     .prologue
-    .line 31
     iget v0, p0, Landroid/pmqos/Ipps_policy;->fd:I
 
     invoke-static {p1, v0}, Landroid/pmqos/Pmqos;->pm_qos_write(II)I
 
-    .line 32
     return-void
 .end method

@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 368
     iput-object p1, p0, Lcom/android/server/wm/InputMonitor$1;->this$0:Lcom/android/server/wm/InputMonitor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,14 +40,12 @@
     .locals 5
 
     .prologue
-    .line 370
     const-string v3, "WindowManager"
 
     const-string v4, "before setModemPower(true)"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 371
     const-string v3, "phone"
 
     invoke-static {v3}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -59,12 +56,10 @@
 
     move-result-object v2
 
-    .line 372
     .local v2, modePhone:Lcom/android/internal/telephony/ITelephony;
     :goto_0
     if-nez v2, :cond_0
 
-    .line 374
     const-wide/16 v3, 0x14
 
     :try_start_0
@@ -72,7 +67,6 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 377
     :goto_1
     const-string v3, "phone"
 
@@ -86,7 +80,6 @@
 
     goto :goto_0
 
-    .line 381
     :cond_0
     const/4 v3, 0x1
 
@@ -95,7 +88,6 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 386
     :goto_2
     const-string v3, "WindowManager"
 
@@ -103,7 +95,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 387
     iget-object v3, p0, Lcom/android/server/wm/InputMonitor$1;->this$0:Lcom/android/server/wm/InputMonitor;
 
     #getter for: Lcom/android/server/wm/InputMonitor;->mService:Lcom/android/server/wm/WindowManagerService;
@@ -115,25 +106,20 @@
 
     move-result-object v0
 
-    .line 388
     .local v0, context:Landroid/content/Context;
     invoke-static {v0}, Lcom/android/internal/policy/Powerstate;->restoreAirMode(Landroid/content/Context;)V
 
-    .line 389
     return-void
 
-    .line 382
     .end local v0           #context:Landroid/content/Context;
     :catch_0
     move-exception v1
 
-    .line 383
     .local v1, e:Landroid/os/RemoteException;
     invoke-virtual {v1}, Landroid/os/RemoteException;->printStackTrace()V
 
     goto :goto_2
 
-    .line 375
     .end local v1           #e:Landroid/os/RemoteException;
     :catch_1
     move-exception v3

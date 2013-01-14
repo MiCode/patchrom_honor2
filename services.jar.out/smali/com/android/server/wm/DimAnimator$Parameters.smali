@@ -33,21 +33,15 @@
     .parameter "dimTarget"
 
     .prologue
-    .line 208
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 209
     iput-object p1, p0, Lcom/android/server/wm/DimAnimator$Parameters;->mDimWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
 
-    .line 210
     iput p2, p0, Lcom/android/server/wm/DimAnimator$Parameters;->mDimWidth:I
 
-    .line 211
     iput p3, p0, Lcom/android/server/wm/DimAnimator$Parameters;->mDimHeight:I
 
-    .line 212
     iput p4, p0, Lcom/android/server/wm/DimAnimator$Parameters;->mDimTarget:F
 
-    .line 213
     return-void
 .end method

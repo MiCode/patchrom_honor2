@@ -33,27 +33,21 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 153
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 154
     iput v0, p0, Lcom/android/server/AlarmManagerService$FilterStats;->mAdjust:I
 
-    .line 155
     iput-boolean v0, p0, Lcom/android/server/AlarmManagerService$FilterStats;->isPeriodic:Z
 
-    .line 156
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/server/AlarmManagerService$FilterStats;->mRecordRTCTime:J
 
-    .line 157
     new-instance v0, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;
 
     invoke-direct {v0}, Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/AlarmManagerService$FilterStats;->mIntentTimeOutHistory:Lcom/android/server/AlarmManagerService$AlarmPolicy$IntentTimeOutHistory;
 
-    .line 158
     return-void
 .end method

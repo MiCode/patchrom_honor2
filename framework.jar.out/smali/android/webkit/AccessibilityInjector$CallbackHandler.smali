@@ -38,37 +38,30 @@
     .parameter "interfaceName"
 
     .prologue
-    .line 563
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 556
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
 
     iput-object v0, p0, Landroid/webkit/AccessibilityInjector$CallbackHandler;->mResultIdCounter:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 557
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/webkit/AccessibilityInjector$CallbackHandler;->mResultLock:Ljava/lang/Object;
 
-    .line 560
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/webkit/AccessibilityInjector$CallbackHandler;->mResult:Z
 
-    .line 561
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Landroid/webkit/AccessibilityInjector$CallbackHandler;->mResultId:J
 
-    .line 564
     iput-object p1, p0, Landroid/webkit/AccessibilityInjector$CallbackHandler;->mInterfaceName:Ljava/lang/String;
 
-    .line 565
     return-void
 .end method
 
@@ -78,7 +71,6 @@
     .parameter "x1"
 
     .prologue
-    .line 549
     invoke-direct {p0, p1}, Landroid/webkit/AccessibilityInjector$CallbackHandler;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -91,7 +83,6 @@
     .parameter "x2"
 
     .prologue
-    .line 549
     invoke-direct {p0, p1, p2}, Landroid/webkit/AccessibilityInjector$CallbackHandler;->performAction(Landroid/webkit/WebView;Ljava/lang/String;)Z
 
     move-result v0
@@ -103,17 +94,14 @@
     .locals 2
 
     .prologue
-    .line 602
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Landroid/webkit/AccessibilityInjector$CallbackHandler;->mResultId:J
 
-    .line 603
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/webkit/AccessibilityInjector$CallbackHandler;->mResult:Z
 
-    .line 604
     return-void
 .end method
 
@@ -122,41 +110,34 @@
     .parameter "resultId"
 
     .prologue
-    .line 590
     iget-object v3, p0, Landroid/webkit/AccessibilityInjector$CallbackHandler;->mResultLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 591
     :try_start_0
     invoke-direct {p0, p1}, Landroid/webkit/AccessibilityInjector$CallbackHandler;->waitForResultTimedLocked(I)Z
 
     move-result v1
 
-    .line 592
     .local v1, success:Z
     if-eqz v1, :cond_0
 
     iget-boolean v0, p0, Landroid/webkit/AccessibilityInjector$CallbackHandler;->mResult:Z
 
-    .line 593
     .local v0, result:Z
     :goto_0
     invoke-direct {p0}, Landroid/webkit/AccessibilityInjector$CallbackHandler;->clearResultLocked()V
 
-    .line 594
     monitor-exit v3
 
     return v0
 
-    .line 592
     .end local v0           #result:Z
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 595
     .end local v1           #success:Z
     :catchall_0
     move-exception v2
@@ -174,14 +155,12 @@
     .parameter "code"
 
     .prologue
-    .line 575
     iget-object v2, p0, Landroid/webkit/AccessibilityInjector$CallbackHandler;->mResultIdCounter:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
 
     move-result v0
 
-    .line 576
     .local v0, resultId:I
     const-string v2, "javascript:(function() { %s.onResult(%d, %s); })();"
 
@@ -211,11 +190,9 @@
 
     move-result-object v1
 
-    .line 578
     .local v1, url:Ljava/lang/String;
     invoke-virtual {p1, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
-    .line 580
     invoke-direct {p0, v0}, Landroid/webkit/AccessibilityInjector$CallbackHandler;->getResultAndClear(I)Z
 
     move-result v2
@@ -230,16 +207,13 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 613
     const-wide/16 v4, 0x1388
 
-    .line 614
     .local v4, waitTimeMillis:J
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
 
-    .line 617
     .local v2, startTimeMillis:J
     :goto_0
     :try_start_0
@@ -251,14 +225,11 @@
 
     if-nez v7, :cond_1
 
-    .line 618
     const/4 v6, 0x1
 
-    .line 626
     :cond_0
     return v6
 
-    .line 620
     :cond_1
     iget-wide v7, p0, Landroid/webkit/AccessibilityInjector$CallbackHandler;->mResultId:J
 
@@ -268,27 +239,23 @@
 
     if-gtz v7, :cond_0
 
-    .line 623
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v7
 
     sub-long v0, v7, v2
 
-    .line 624
     .local v0, elapsedTimeMillis:J
     const-wide/16 v7, 0x1388
 
     sub-long v4, v7, v0
 
-    .line 625
     const-wide/16 v7, 0x0
 
     cmp-long v7, v4, v7
 
     if-lez v7, :cond_0
 
-    .line 628
     iget-object v7, p0, Landroid/webkit/AccessibilityInjector$CallbackHandler;->mResultLock:Ljava/lang/Object;
 
     invoke-virtual {v7, v4, v5}, Ljava/lang/Object;->wait(J)V
@@ -297,7 +264,6 @@
 
     goto :goto_0
 
-    .line 629
     .end local v0           #elapsedTimeMillis:J
     :catch_0
     move-exception v7
@@ -315,7 +281,6 @@
     .end annotation
 
     .prologue
-    .line 648
     :try_start_0
     invoke-static {p1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
     :try_end_0
@@ -323,13 +288,11 @@
 
     move-result-wide v1
 
-    .line 653
     .local v1, resultId:J
     iget-object v4, p0, Landroid/webkit/AccessibilityInjector$CallbackHandler;->mResultLock:Ljava/lang/Object;
 
     monitor-enter v4
 
-    .line 654
     :try_start_1
     iget-wide v5, p0, Landroid/webkit/AccessibilityInjector$CallbackHandler;->mResultId:J
 
@@ -337,39 +300,31 @@
 
     if-lez v3, :cond_0
 
-    .line 655
     invoke-static {p2}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
     move-result v3
 
     iput-boolean v3, p0, Landroid/webkit/AccessibilityInjector$CallbackHandler;->mResult:Z
 
-    .line 656
     iput-wide v1, p0, Landroid/webkit/AccessibilityInjector$CallbackHandler;->mResultId:J
 
-    .line 658
     :cond_0
     iget-object v3, p0, Landroid/webkit/AccessibilityInjector$CallbackHandler;->mResultLock:Ljava/lang/Object;
 
     invoke-virtual {v3}, Ljava/lang/Object;->notifyAll()V
 
-    .line 659
     monitor-exit v4
 
-    .line 660
     .end local v1           #resultId:J
     :goto_0
     return-void
 
-    .line 649
     :catch_0
     move-exception v0
 
-    .line 650
     .local v0, e:Ljava/lang/NumberFormatException;
     goto :goto_0
 
-    .line 659
     .end local v0           #e:Ljava/lang/NumberFormatException;
     .restart local v1       #resultId:J
     :catchall_0

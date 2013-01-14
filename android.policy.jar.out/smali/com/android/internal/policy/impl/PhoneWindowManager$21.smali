@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 4885
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$21;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,18 +40,15 @@
     .locals 2
 
     .prologue
-    .line 4887
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$502(Z)Z
 
-    .line 4888
     const-string v0, "WindowManager"
 
     const-string v1, "300ms run out.no HOME double click event."
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4889
     return-void
 .end method

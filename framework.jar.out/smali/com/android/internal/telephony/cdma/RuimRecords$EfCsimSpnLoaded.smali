@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 328
     iput-object p1, p0, Lcom/android/internal/telephony/cdma/RuimRecords$EfCsimSpnLoaded;->this$0:Lcom/android/internal/telephony/cdma/RuimRecords;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .parameter "x1"
 
     .prologue
-    .line 328
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/cdma/RuimRecords$EfCsimSpnLoaded;-><init>(Lcom/android/internal/telephony/cdma/RuimRecords;)V
 
     return-void
@@ -53,7 +51,6 @@
     .locals 1
 
     .prologue
-    .line 330
     const-string v0, "EF_CSIM_SPN"
 
     return-object v0
@@ -72,7 +69,6 @@
 
     const/4 v8, 0x0
 
-    .line 334
     iget-object v6, p1, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
     check-cast v6, [B
@@ -81,7 +77,6 @@
 
     check-cast v0, [B
 
-    .line 335
     .local v0, data:[B
     iget-object v6, p0, Lcom/android/internal/telephony/cdma/RuimRecords$EfCsimSpnLoaded;->this$0:Lcom/android/internal/telephony/cdma/RuimRecords;
 
@@ -109,7 +104,6 @@
 
     invoke-virtual {v6, v10}, Lcom/android/internal/telephony/cdma/RuimRecords;->log(Ljava/lang/String;)V
 
-    .line 339
     iget-object v10, p0, Lcom/android/internal/telephony/cdma/RuimRecords$EfCsimSpnLoaded;->this$0:Lcom/android/internal/telephony/cdma/RuimRecords;
 
     aget-byte v6, v0, v8
@@ -123,18 +117,14 @@
     :goto_0
     iput-boolean v6, v10, Lcom/android/internal/telephony/cdma/RuimRecords;->mCsimSpnDisplayCondition:Z
 
-    .line 341
     aget-byte v2, v0, v7
 
-    .line 342
     .local v2, encoding:I
     aget-byte v3, v0, v12
 
-    .line 343
     .local v3, language:I
     new-array v5, v9, [B
 
-    .line 344
     .local v5, spnData:[B
     const/4 v7, 0x3
 
@@ -147,7 +137,6 @@
     :goto_1
     invoke-static {v0, v7, v5, v8, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 347
     const/4 v4, 0x0
 
     .local v4, numBytes:I
@@ -156,7 +145,6 @@
 
     if-ge v4, v6, :cond_0
 
-    .line 348
     aget-byte v6, v5, v4
 
     and-int/lit16 v6, v6, 0xff
@@ -165,11 +153,9 @@
 
     if-ne v6, v7, :cond_4
 
-    .line 351
     :cond_0
     if-nez v4, :cond_5
 
-    .line 352
     iget-object v6, p0, Lcom/android/internal/telephony/cdma/RuimRecords$EfCsimSpnLoaded;->this$0:Lcom/android/internal/telephony/cdma/RuimRecords;
 
     const-string v7, ""
@@ -177,7 +163,6 @@
     #setter for: Lcom/android/internal/telephony/cdma/RuimRecords;->spn:Ljava/lang/String;
     invoke-static {v6, v7}, Lcom/android/internal/telephony/cdma/RuimRecords;->access$202(Lcom/android/internal/telephony/cdma/RuimRecords;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 384
     :cond_1
     :goto_3
     return-void
@@ -189,7 +174,6 @@
     :cond_2
     move v6, v8
 
-    .line 339
     goto :goto_0
 
     .restart local v2       #encoding:I
@@ -198,21 +182,17 @@
     :cond_3
     move v6, v9
 
-    .line 344
     goto :goto_1
 
-    .line 347
     .restart local v4       #numBytes:I
     :cond_4
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_2
 
-    .line 356
     :cond_5
     packed-switch v2, :pswitch_data_0
 
-    .line 372
     :pswitch_0
     :try_start_0
     iget-object v6, p0, Lcom/android/internal/telephony/cdma/RuimRecords$EfCsimSpnLoaded;->this$0:Lcom/android/internal/telephony/cdma/RuimRecords;
@@ -223,7 +203,6 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 377
     :goto_4
     iget-object v6, p0, Lcom/android/internal/telephony/cdma/RuimRecords$EfCsimSpnLoaded;->this$0:Lcom/android/internal/telephony/cdma/RuimRecords;
 
@@ -231,7 +210,7 @@
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v8, "spn="
+    const-string v8, "spn="
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -254,14 +233,13 @@
 
     invoke-virtual {v6, v7}, Lcom/android/internal/telephony/cdma/RuimRecords;->log(Ljava/lang/String;)V
 
-    .line 378
     iget-object v6, p0, Lcom/android/internal/telephony/cdma/RuimRecords$EfCsimSpnLoaded;->this$0:Lcom/android/internal/telephony/cdma/RuimRecords;
 
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v8, "spnCondition="
+    const-string v8, "spnCondition="
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -281,7 +259,6 @@
 
     invoke-virtual {v6, v7}, Lcom/android/internal/telephony/cdma/RuimRecords;->log(Ljava/lang/String;)V
 
-    .line 380
     iget-object v6, p0, Lcom/android/internal/telephony/cdma/RuimRecords$EfCsimSpnLoaded;->this$0:Lcom/android/internal/telephony/cdma/RuimRecords;
 
     const-string v7, "gsm.sim.operator.alpha"
@@ -296,7 +273,6 @@
     #calls: Lcom/android/internal/telephony/cdma/RuimRecords;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
     invoke-static {v6, v7, v8}, Lcom/android/internal/telephony/cdma/RuimRecords;->access$900(Lcom/android/internal/telephony/cdma/RuimRecords;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 381
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v6
@@ -307,7 +283,6 @@
 
     if-eqz v6, :cond_1
 
-    .line 382
     iget-object v6, p0, Lcom/android/internal/telephony/cdma/RuimRecords$EfCsimSpnLoaded;->this$0:Lcom/android/internal/telephony/cdma/RuimRecords;
 
     #getter for: Lcom/android/internal/telephony/cdma/RuimRecords;->mRecordsEventsRegistrants:Landroid/os/RegistrantList;
@@ -323,7 +298,6 @@
 
     goto :goto_3
 
-    .line 359
     :pswitch_1
     :try_start_1
     iget-object v6, p0, Lcom/android/internal/telephony/cdma/RuimRecords$EfCsimSpnLoaded;->this$0:Lcom/android/internal/telephony/cdma/RuimRecords;
@@ -343,11 +317,9 @@
 
     goto :goto_4
 
-    .line 374
     :catch_0
     move-exception v1
 
-    .line 375
     .local v1, e:Ljava/lang/Exception;
     iget-object v6, p0, Lcom/android/internal/telephony/cdma/RuimRecords$EfCsimSpnLoaded;->this$0:Lcom/android/internal/telephony/cdma/RuimRecords;
 
@@ -355,7 +327,7 @@
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v8, "spn decode error: "
+    const-string v8, "spn decode error: "
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -373,7 +345,6 @@
 
     goto/16 :goto_4
 
-    .line 363
     .end local v1           #e:Ljava/lang/Exception;
     :pswitch_2
     :try_start_2
@@ -394,7 +365,6 @@
 
     goto/16 :goto_4
 
-    .line 366
     :pswitch_3
     iget-object v6, p0, Lcom/android/internal/telephony/cdma/RuimRecords$EfCsimSpnLoaded;->this$0:Lcom/android/internal/telephony/cdma/RuimRecords;
 
@@ -411,7 +381,6 @@
 
     goto/16 :goto_4
 
-    .line 369
     :pswitch_4
     iget-object v6, p0, Lcom/android/internal/telephony/cdma/RuimRecords$EfCsimSpnLoaded;->this$0:Lcom/android/internal/telephony/cdma/RuimRecords;
 
@@ -419,7 +388,7 @@
 
     const/4 v8, 0x0
 
-    const-string/jumbo v9, "utf-16"
+    const-string v9, "utf-16"
 
     invoke-direct {v7, v5, v8, v4, v9}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
 
@@ -430,7 +399,6 @@
 
     goto/16 :goto_4
 
-    .line 356
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1

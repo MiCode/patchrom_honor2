@@ -8,7 +8,6 @@
     .locals 0
 
     .prologue
-    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,7 +18,6 @@
     .parameter "obj"
 
     .prologue
-    .line 48
     new-instance v0, Lcom/huawei/android/util/NoExtAPIException;
 
     const-string v1, "method not supported."
@@ -38,9 +36,7 @@
     .parameter "flags"
 
     .prologue
-    .line 61
     invoke-virtual {p1, p2, p3}, Lcom/android/internal/telephony/AdnRecord;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 62
     return-void
 .end method

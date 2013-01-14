@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 218
     iput-object p1, p0, Lcom/android/server/UiModeManagerService$3;->this$0:Lcom/android/server/UiModeManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +39,6 @@
     .parameter "intent"
 
     .prologue
-    .line 221
     const-string v1, "android.intent.extra.DOCK_STATE"
 
     const/4 v2, 0x0
@@ -49,12 +47,10 @@
 
     move-result v0
 
-    .line 223
     .local v0, state:I
     iget-object v1, p0, Lcom/android/server/UiModeManagerService$3;->this$0:Lcom/android/server/UiModeManagerService;
 
     invoke-virtual {v1, v0}, Lcom/android/server/UiModeManagerService;->updateDockState(I)V
 
-    .line 224
     return-void
 .end method

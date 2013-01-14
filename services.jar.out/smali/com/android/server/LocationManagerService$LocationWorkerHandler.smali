@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 1948
     iput-object p1, p0, Lcom/android/server/LocationManagerService$LocationWorkerHandler;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -38,7 +37,6 @@
     .parameter "x1"
 
     .prologue
-    .line 1948
     invoke-direct {p0, p1}, Lcom/android/server/LocationManagerService$LocationWorkerHandler;-><init>(Lcom/android/server/LocationManagerService;)V
 
     return-void
@@ -55,13 +53,11 @@
 
     const/4 v8, 0x0
 
-    .line 1953
     :try_start_0
     iget v9, p1, Landroid/os/Message;->what:I
 
     if-ne v9, v6, :cond_5
 
-    .line 1956
     iget-object v9, p0, Lcom/android/server/LocationManagerService$LocationWorkerHandler;->this$0:Lcom/android/server/LocationManagerService;
 
     #getter for: Lcom/android/server/LocationManagerService;->mLock:Ljava/lang/Object;
@@ -73,30 +69,25 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1957
     :try_start_1
     iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v3, Landroid/location/Location;
 
-    .line 1958
     .local v3, location:Landroid/location/Location;
     invoke-virtual {v3}, Landroid/location/Location;->getProvider()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 1959
     .local v7, provider:Ljava/lang/String;
     iget v10, p1, Landroid/os/Message;->arg1:I
 
     if-ne v10, v6, :cond_1
 
-    .line 1961
     .local v6, passive:Z
     :goto_0
     if-nez v6, :cond_2
 
-    .line 1963
     iget-object v8, p0, Lcom/android/server/LocationManagerService$LocationWorkerHandler;->this$0:Lcom/android/server/LocationManagerService;
 
     #getter for: Lcom/android/server/LocationManagerService;->mProviders:Ljava/util/ArrayList;
@@ -114,7 +105,6 @@
     :goto_1
     if-ltz v2, :cond_2
 
-    .line 1964
     iget-object v8, p0, Lcom/android/server/LocationManagerService$LocationWorkerHandler;->this$0:Lcom/android/server/LocationManagerService;
 
     #getter for: Lcom/android/server/LocationManagerService;->mProviders:Ljava/util/ArrayList;
@@ -128,7 +118,6 @@
 
     check-cast v4, Lcom/android/server/location/LocationProviderInterface;
 
-    .line 1965
     .local v4, p:Lcom/android/server/location/LocationProviderInterface;
     invoke-interface {v4}, Lcom/android/server/location/LocationProviderInterface;->getName()Ljava/lang/String;
 
@@ -140,10 +129,8 @@
 
     if-nez v8, :cond_0
 
-    .line 1966
     invoke-interface {v4, v3}, Lcom/android/server/location/LocationProviderInterface;->updateLocation(Landroid/location/Location;)V
 
-    .line 1963
     :cond_0
     add-int/lit8 v2, v2, -0x1
 
@@ -155,10 +142,8 @@
     :cond_1
     move v6, v8
 
-    .line 1959
     goto :goto_0
 
-    .line 1971
     .restart local v6       #passive:Z
     :cond_2
     iget-object v8, p0, Lcom/android/server/LocationManagerService$LocationWorkerHandler;->this$0:Lcom/android/server/LocationManagerService;
@@ -170,17 +155,14 @@
 
     if-eqz v8, :cond_3
 
-    .line 1972
     iget-object v8, p0, Lcom/android/server/LocationManagerService$LocationWorkerHandler;->this$0:Lcom/android/server/LocationManagerService;
 
     #calls: Lcom/android/server/LocationManagerService;->handleLocationChangedLocked(Landroid/location/Location;Z)V
     invoke-static {v8, v3, v6}, Lcom/android/server/LocationManagerService;->access$2100(Lcom/android/server/LocationManagerService;Landroid/location/Location;Z)V
 
-    .line 1974
     :cond_3
     monitor-exit v9
 
-    .line 2010
     .end local v3           #location:Landroid/location/Location;
     .end local v6           #passive:Z
     .end local v7           #provider:Ljava/lang/String;
@@ -188,7 +170,6 @@
     :goto_2
     return-void
 
-    .line 1974
     :catchall_0
     move-exception v8
 
@@ -201,11 +182,9 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 2006
     :catch_0
     move-exception v1
 
-    .line 2008
     .local v1, e:Ljava/lang/Exception;
     const-string v8, "LocationManagerService"
 
@@ -215,7 +194,6 @@
 
     goto :goto_2
 
-    .line 1975
     .end local v1           #e:Ljava/lang/Exception;
     :cond_5
     :try_start_3
@@ -225,12 +203,10 @@
 
     if-ne v8, v9, :cond_4
 
-    .line 1976
     iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v5, Ljava/lang/String;
 
-    .line 1979
     .local v5, packageName:Ljava/lang/String;
     iget-object v8, p0, Lcom/android/server/LocationManagerService$LocationWorkerHandler;->this$0:Lcom/android/server/LocationManagerService;
 
@@ -266,7 +242,6 @@
 
     if-eqz v8, :cond_6
 
-    .line 1984
     iget-object v8, p0, Lcom/android/server/LocationManagerService$LocationWorkerHandler;->this$0:Lcom/android/server/LocationManagerService;
 
     const-string v9, "com.android.location.service.NetworkLocationProvider"
@@ -282,7 +257,6 @@
 
     move-result-object v0
 
-    .line 1987
     .local v0, bestPackage:Ljava/lang/String;
     invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -290,20 +264,17 @@
 
     if-eqz v8, :cond_6
 
-    .line 1988
     iget-object v8, p0, Lcom/android/server/LocationManagerService$LocationWorkerHandler;->this$0:Lcom/android/server/LocationManagerService;
 
     iget-object v8, v8, Lcom/android/server/LocationManagerService;->mNetworkLocationProvider:Lcom/android/server/location/LocationProviderProxy;
 
     invoke-virtual {v8, v0}, Lcom/android/server/location/LocationProviderProxy;->reconnect(Ljava/lang/String;)V
 
-    .line 1989
     iget-object v8, p0, Lcom/android/server/LocationManagerService$LocationWorkerHandler;->this$0:Lcom/android/server/LocationManagerService;
 
     #setter for: Lcom/android/server/LocationManagerService;->mNetworkLocationProviderPackageName:Ljava/lang/String;
     invoke-static {v8, v5}, Lcom/android/server/LocationManagerService;->access$2202(Lcom/android/server/LocationManagerService;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 1992
     .end local v0           #bestPackage:Ljava/lang/String;
     :cond_6
     iget-object v8, p0, Lcom/android/server/LocationManagerService$LocationWorkerHandler;->this$0:Lcom/android/server/LocationManagerService;
@@ -340,7 +311,6 @@
 
     if-eqz v8, :cond_4
 
-    .line 1997
     iget-object v8, p0, Lcom/android/server/LocationManagerService$LocationWorkerHandler;->this$0:Lcom/android/server/LocationManagerService;
 
     const-string v9, "com.android.location.service.GeocodeProvider"
@@ -356,7 +326,6 @@
 
     move-result-object v0
 
-    .line 2000
     .restart local v0       #bestPackage:Ljava/lang/String;
     invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -364,7 +333,6 @@
 
     if-eqz v8, :cond_4
 
-    .line 2001
     iget-object v8, p0, Lcom/android/server/LocationManagerService$LocationWorkerHandler;->this$0:Lcom/android/server/LocationManagerService;
 
     #getter for: Lcom/android/server/LocationManagerService;->mGeocodeProvider:Lcom/android/server/location/GeocoderProxy;
@@ -374,7 +342,6 @@
 
     invoke-virtual {v8, v0}, Lcom/android/server/location/GeocoderProxy;->reconnect(Ljava/lang/String;)V
 
-    .line 2002
     iget-object v8, p0, Lcom/android/server/LocationManagerService$LocationWorkerHandler;->this$0:Lcom/android/server/LocationManagerService;
 
     #setter for: Lcom/android/server/LocationManagerService;->mGeocodeProviderPackageName:Ljava/lang/String;

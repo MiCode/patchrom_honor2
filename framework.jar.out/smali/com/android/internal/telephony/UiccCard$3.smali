@@ -23,7 +23,6 @@
     .locals 3
 
     .prologue
-    .line 277
     invoke-static {}, Lcom/android/internal/telephony/UiccManager$AppFamily;->values()[Lcom/android/internal/telephony/UiccManager$AppFamily;
 
     move-result-object v0

@@ -35,37 +35,29 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 76
     iput-object p1, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->this$0:Lcom/android/internal/telephony/msim/CardSubscriptionManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 77
     iput-object p2, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->mUiccCard:Lcom/android/internal/telephony/UiccCard;
 
-    .line 78
     if-eqz p2, :cond_0
 
-    .line 79
     invoke-virtual {p2}, Lcom/android/internal/telephony/UiccCard;->getCardState()Lcom/android/internal/telephony/IccCardStatus$CardState;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->mCardState:Lcom/android/internal/telephony/IccCardStatus$CardState;
 
-    .line 83
     :goto_0
     iput-object v1, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->mIccId:Ljava/lang/String;
 
-    .line 84
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->mReadIccIdInProgress:Z
 
-    .line 85
     return-void
 
-    .line 81
     :cond_0
     iput-object v1, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->mCardState:Lcom/android/internal/telephony/IccCardStatus$CardState;
 
@@ -78,7 +70,6 @@
     .locals 1
 
     .prologue
-    .line 111
     iget-object v0, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->mCardState:Lcom/android/internal/telephony/IccCardStatus$CardState;
 
     return-object v0
@@ -88,7 +79,6 @@
     .locals 1
 
     .prologue
-    .line 123
     iget-object v0, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->mIccId:Ljava/lang/String;
 
     return-object v0
@@ -98,7 +88,6 @@
     .locals 1
 
     .prologue
-    .line 88
     iget-object v0, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->mUiccCard:Lcom/android/internal/telephony/UiccCard;
 
     return-object v0
@@ -108,7 +97,6 @@
     .locals 1
 
     .prologue
-    .line 115
     iget-boolean v0, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->mReadIccIdInProgress:Z
 
     return v0
@@ -119,10 +107,8 @@
     .parameter "cardState"
 
     .prologue
-    .line 107
     iput-object p1, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->mCardState:Lcom/android/internal/telephony/IccCardStatus$CardState;
 
-    .line 108
     return-void
 .end method
 
@@ -131,10 +117,8 @@
     .parameter "iccId"
 
     .prologue
-    .line 127
     iput-object p1, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->mIccId:Ljava/lang/String;
 
-    .line 128
     return-void
 .end method
 
@@ -143,10 +127,8 @@
     .parameter "read"
 
     .prologue
-    .line 119
     iput-boolean p1, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->mReadIccIdInProgress:Z
 
-    .line 120
     return-void
 .end method
 
@@ -159,15 +141,12 @@
 
     const/4 v2, 0x0
 
-    .line 92
     iput-object p1, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->mUiccCard:Lcom/android/internal/telephony/UiccCard;
 
-    .line 93
     iget-object v0, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->mUiccCard:Lcom/android/internal/telephony/UiccCard;
 
     if-eqz v0, :cond_1
 
-    .line 94
     iget-object v0, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->mUiccCard:Lcom/android/internal/telephony/UiccCard;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/UiccCard;->getCardState()Lcom/android/internal/telephony/IccCardStatus$CardState;
@@ -176,32 +155,25 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->mCardState:Lcom/android/internal/telephony/IccCardStatus$CardState;
 
-    .line 95
     iget-object v0, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->mCardState:Lcom/android/internal/telephony/IccCardStatus$CardState;
 
     sget-object v1, Lcom/android/internal/telephony/IccCardStatus$CardState;->CARDSTATE_PRESENT:Lcom/android/internal/telephony/IccCardStatus$CardState;
 
     if-eq v0, v1, :cond_0
 
-    .line 96
     iput-object v2, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->mIccId:Ljava/lang/String;
 
-    .line 97
     iput-boolean v3, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->mReadIccIdInProgress:Z
 
-    .line 104
     :cond_0
     :goto_0
     return-void
 
-    .line 100
     :cond_1
     iput-object v2, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->mCardState:Lcom/android/internal/telephony/IccCardStatus$CardState;
 
-    .line 101
     iput-object v2, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->mIccId:Ljava/lang/String;
 
-    .line 102
     iput-boolean v3, p0, Lcom/android/internal/telephony/msim/CardSubscriptionManager$CardInfo;->mReadIccIdInProgress:Z
 
     goto :goto_0
@@ -211,7 +183,6 @@
     .locals 2
 
     .prologue
-    .line 131
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

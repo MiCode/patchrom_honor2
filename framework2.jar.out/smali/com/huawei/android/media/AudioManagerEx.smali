@@ -70,10 +70,8 @@
     .locals 1
 
     .prologue
-    .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 91
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/huawei/android/media/AudioManagerEx;->currentDeviceType:I
@@ -87,7 +85,6 @@
     .parameter "modemType"
 
     .prologue
-    .line 95
     const/4 v0, 0x0
 
     return v0
@@ -100,6 +97,5 @@
     .parameter "on"
 
     .prologue
-    .line 100
     return-void
 .end method

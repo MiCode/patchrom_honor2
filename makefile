@@ -44,7 +44,7 @@ local-pre-zip-misc:
 	rm -f $(ZIP_DIR)/system/framework/hwframework.jar
 	cp out/framework2.jar $(ZIP_DIR)/system/framework/framework_ext.jar
 	rm -f $(ZIP_DIR)/system/framework/framework2.jar
-	cp other/build_B530.prop $(ZIP_DIR)/system/build.prop
+	cp other/build_B542.prop $(ZIP_DIR)/system/build.prop
 	@echo update bootanimation
 	rm $(ZIP_DIR)/system/bin/bootanimation
 	cp $(OUT_SYS_PATH)/bin/bootanimation $(ZIP_DIR)/system/bin/bootanimation

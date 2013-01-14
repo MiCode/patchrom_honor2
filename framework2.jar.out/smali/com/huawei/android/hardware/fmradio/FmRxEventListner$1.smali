@@ -30,7 +30,6 @@
     .parameter
 
     .prologue
-    .line 71
     iput-object p1, p0, Lcom/huawei/android/hardware/fmradio/FmRxEventListner$1;->this$0:Lcom/huawei/android/hardware/fmradio/FmRxEventListner;
 
     iput p2, p0, Lcom/huawei/android/hardware/fmradio/FmRxEventListner$1;->val$fd:I
@@ -48,7 +47,6 @@
     .locals 7
 
     .prologue
-    .line 74
     const-string v4, "FMRadio"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -73,7 +71,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 76
     :cond_0
     :goto_0
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
@@ -86,17 +83,14 @@
 
     if-nez v4, :cond_1
 
-    .line 79
     const/4 v3, 0x0
 
-    .line 80
     .local v3, index:I
     const/16 v4, 0x40
 
     :try_start_0
     new-array v0, v4, [B
 
-    .line 81
     .local v0, buff:[B
     iget v4, p0, Lcom/huawei/android/hardware/fmradio/FmRxEventListner$1;->val$fd:I
 
@@ -106,7 +100,6 @@
 
     move-result v1
 
-    .line 82
     .local v1, eventCount:I
     const-string v4, "FMRadio"
 
@@ -130,13 +123,11 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 84
     const/4 v3, 0x0
 
     :goto_1
     if-ge v3, v1, :cond_0
 
-    .line 85
     const-string v4, "FMRadio"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -167,25 +158,21 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 87
     aget-byte v4, v0, v3
 
     packed-switch v4, :pswitch_data_0
 
-    .line 159
     const-string v4, "FMRadio"
 
     const-string v5, "Unknown event"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 84
     :goto_2
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 90
     :pswitch_0
     const-string v4, "FMRadio"
 
@@ -193,7 +180,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 91
     iget-object v4, p0, Lcom/huawei/android/hardware/fmradio/FmRxEventListner$1;->val$cb:Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;
 
     invoke-interface {v4}, Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;->FmRxEvEnableReceiver()V
@@ -202,13 +188,11 @@
 
     goto :goto_2
 
-    .line 163
     .end local v0           #buff:[B
     .end local v1           #eventCount:I
     :catch_0
     move-exception v2
 
-    .line 164
     .local v2, ex:Ljava/lang/Exception;
     const-string v4, "FMRadio"
 
@@ -216,7 +200,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 165
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v4
@@ -225,7 +208,6 @@
 
     goto :goto_0
 
-    .line 94
     .end local v2           #ex:Ljava/lang/Exception;
     .restart local v0       #buff:[B
     .restart local v1       #eventCount:I
@@ -237,7 +219,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 95
     iget-object v4, p0, Lcom/huawei/android/hardware/fmradio/FmRxEventListner$1;->val$cb:Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;
 
     iget v5, p0, Lcom/huawei/android/hardware/fmradio/FmRxEventListner$1;->val$fd:I
@@ -250,7 +231,6 @@
 
     goto :goto_2
 
-    .line 98
     :pswitch_2
     const-string v4, "FMRadio"
 
@@ -258,7 +238,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 99
     iget-object v4, p0, Lcom/huawei/android/hardware/fmradio/FmRxEventListner$1;->val$cb:Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;
 
     iget v5, p0, Lcom/huawei/android/hardware/fmradio/FmRxEventListner$1;->val$fd:I
@@ -271,7 +250,6 @@
 
     goto :goto_2
 
-    .line 102
     :pswitch_3
     const-string v4, "FMRadio"
 
@@ -279,14 +257,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 103
     iget-object v4, p0, Lcom/huawei/android/hardware/fmradio/FmRxEventListner$1;->val$cb:Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;
 
     invoke-interface {v4}, Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;->FmRxEvSearchInProgress()V
 
     goto :goto_2
 
-    .line 106
     :pswitch_4
     const-string v4, "FMRadio"
 
@@ -294,14 +270,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 107
     iget-object v4, p0, Lcom/huawei/android/hardware/fmradio/FmRxEventListner$1;->val$cb:Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;
 
     invoke-interface {v4}, Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;->FmRxEvRdsGroupData()V
 
     goto :goto_2
 
-    .line 110
     :pswitch_5
     const-string v4, "FMRadio"
 
@@ -309,14 +283,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 111
     iget-object v4, p0, Lcom/huawei/android/hardware/fmradio/FmRxEventListner$1;->val$cb:Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;
 
     invoke-interface {v4}, Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;->FmRxEvRdsRtInfo()V
 
     goto :goto_2
 
-    .line 114
     :pswitch_6
     const-string v4, "FMRadio"
 
@@ -324,14 +296,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 115
     iget-object v4, p0, Lcom/huawei/android/hardware/fmradio/FmRxEventListner$1;->val$cb:Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;
 
     invoke-interface {v4}, Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;->FmRxEvRdsPsInfo()V
 
     goto :goto_2
 
-    .line 118
     :pswitch_7
     const-string v4, "FMRadio"
 
@@ -341,7 +311,6 @@
 
     goto/16 :goto_2
 
-    .line 121
     :pswitch_8
     const-string v4, "FMRadio"
 
@@ -349,7 +318,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 122
     iget-object v4, p0, Lcom/huawei/android/hardware/fmradio/FmRxEventListner$1;->val$cb:Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;
 
     const/4 v5, 0x0
@@ -358,7 +326,6 @@
 
     goto/16 :goto_2
 
-    .line 125
     :pswitch_9
     const-string v4, "FMRadio"
 
@@ -366,7 +333,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 126
     iget-object v4, p0, Lcom/huawei/android/hardware/fmradio/FmRxEventListner$1;->val$cb:Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;
 
     const/4 v5, 0x1
@@ -375,7 +341,6 @@
 
     goto/16 :goto_2
 
-    .line 129
     :pswitch_a
     const-string v4, "FMRadio"
 
@@ -383,7 +348,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 130
     iget-object v4, p0, Lcom/huawei/android/hardware/fmradio/FmRxEventListner$1;->val$cb:Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;
 
     const/4 v5, 0x1
@@ -392,7 +356,6 @@
 
     goto/16 :goto_2
 
-    .line 133
     :pswitch_b
     const-string v4, "FMRadio"
 
@@ -400,7 +363,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 134
     iget-object v4, p0, Lcom/huawei/android/hardware/fmradio/FmRxEventListner$1;->val$cb:Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;
 
     const/4 v5, 0x0
@@ -409,7 +371,6 @@
 
     goto/16 :goto_2
 
-    .line 137
     :pswitch_c
     const-string v4, "FMRadio"
 
@@ -417,7 +378,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 138
     iget-object v4, p0, Lcom/huawei/android/hardware/fmradio/FmRxEventListner$1;->val$cb:Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;
 
     const/4 v5, 0x1
@@ -426,7 +386,6 @@
 
     goto/16 :goto_2
 
-    .line 141
     :pswitch_d
     const-string v4, "FMRadio"
 
@@ -434,7 +393,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 142
     iget-object v4, p0, Lcom/huawei/android/hardware/fmradio/FmRxEventListner$1;->val$cb:Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;
 
     const/4 v5, 0x0
@@ -443,7 +401,6 @@
 
     goto/16 :goto_2
 
-    .line 145
     :pswitch_e
     const-string v4, "FMRadio"
 
@@ -451,14 +408,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 146
     iget-object v4, p0, Lcom/huawei/android/hardware/fmradio/FmRxEventListner$1;->val$cb:Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;
 
     invoke-interface {v4}, Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;->FmRxEvSearchListComplete()V
 
     goto/16 :goto_2
 
-    .line 149
     :pswitch_f
     const-string v4, "FMRadio"
 
@@ -466,14 +421,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 150
     iget-object v4, p0, Lcom/huawei/android/hardware/fmradio/FmRxEventListner$1;->val$cb:Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;
 
     invoke-interface {v4}, Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;->FmRxEvRdsAfInfo()V
 
     goto/16 :goto_2
 
-    .line 154
     :pswitch_10
     const-string v4, "FMRadio"
 
@@ -481,7 +434,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 155
     iget-object v4, p0, Lcom/huawei/android/hardware/fmradio/FmRxEventListner$1;->val$cb:Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;
 
     invoke-interface {v4}, Lcom/huawei/android/hardware/fmradio/FmRxEvCallbacks;->FmRxEvSignalUpdate()V
@@ -490,14 +442,12 @@
 
     goto/16 :goto_2
 
-    .line 168
     .end local v0           #buff:[B
     .end local v1           #eventCount:I
     .end local v3           #index:I
     :cond_1
     return-void
 
-    .line 87
     nop
 
     :pswitch_data_0

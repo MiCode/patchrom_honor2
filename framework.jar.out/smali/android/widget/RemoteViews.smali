@@ -93,14 +93,12 @@
     .locals 1
 
     .prologue
-    .line 130
     new-instance v0, Landroid/widget/RemoteViews$OnClickHandler;
 
     invoke-direct {v0}, Landroid/widget/RemoteViews$OnClickHandler;-><init>()V
 
     sput-object v0, Landroid/widget/RemoteViews;->DEFAULT_ON_CLICK_HANDLER:Landroid/widget/RemoteViews$OnClickHandler;
 
-    .line 2246
     new-instance v0, Landroid/widget/RemoteViews$1;
 
     invoke-direct {v0}, Landroid/widget/RemoteViews$1;-><init>()V
@@ -115,12 +113,10 @@
     .parameter "parcel"
 
     .prologue
-    .line 1371
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroid/widget/RemoteViews;-><init>(Landroid/os/Parcel;Landroid/widget/RemoteViews$BitmapCache;)V
 
-    .line 1372
     return-void
 .end method
 
@@ -136,56 +132,44 @@
 
     const/4 v4, 0x1
 
-    .line 1374
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 104
     iput-boolean v4, p0, Landroid/widget/RemoteViews;->mIsRoot:Z
 
-    .line 118
     iput-object v7, p0, Landroid/widget/RemoteViews;->mLandscape:Landroid/widget/RemoteViews;
 
-    .line 119
     iput-object v7, p0, Landroid/widget/RemoteViews;->mPortrait:Landroid/widget/RemoteViews;
 
-    .line 128
     iput-boolean v5, p0, Landroid/widget/RemoteViews;->mIsWidgetCollectionChild:Z
 
-    .line 1375
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 1378
     .local v2, mode:I
     if-nez p2, :cond_0
 
-    .line 1379
     new-instance v6, Landroid/widget/RemoteViews$BitmapCache;
 
     invoke-direct {v6, p1}, Landroid/widget/RemoteViews$BitmapCache;-><init>(Landroid/os/Parcel;)V
 
     iput-object v6, p0, Landroid/widget/RemoteViews;->mBitmapCache:Landroid/widget/RemoteViews$BitmapCache;
 
-    .line 1385
     :goto_0
     if-nez v2, :cond_2
 
-    .line 1386
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v6
 
     iput-object v6, p0, Landroid/widget/RemoteViews;->mPackage:Ljava/lang/String;
 
-    .line 1387
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
     iput v6, p0, Landroid/widget/RemoteViews;->mLayoutId:I
 
-    .line 1388
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
@@ -195,39 +179,32 @@
     :goto_1
     iput-boolean v4, p0, Landroid/widget/RemoteViews;->mIsWidgetCollectionChild:Z
 
-    .line 1390
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 1391
     .local v0, count:I
     if-lez v0, :cond_3
 
-    .line 1392
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4, v0}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v4, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
-    .line 1393
     const/4 v1, 0x0
 
     .local v1, i:I
     :goto_2
     if-ge v1, v0, :cond_3
 
-    .line 1394
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
-    .line 1395
     .local v3, tag:I
     packed-switch v3, :pswitch_data_0
 
-    .line 1436
     :pswitch_0
     new-instance v4, Landroid/widget/RemoteViews$ActionException;
 
@@ -259,14 +236,12 @@
 
     throw v4
 
-    .line 1381
     .end local v0           #count:I
     .end local v1           #i:I
     .end local v3           #tag:I
     :cond_0
     invoke-direct {p0, p2}, Landroid/widget/RemoteViews;->setBitmapCache(Landroid/widget/RemoteViews$BitmapCache;)V
 
-    .line 1382
     invoke-virtual {p0}, Landroid/widget/RemoteViews;->setNotRoot()V
 
     goto :goto_0
@@ -274,10 +249,8 @@
     :cond_1
     move v4, v5
 
-    .line 1388
     goto :goto_1
 
-    .line 1397
     .restart local v0       #count:I
     .restart local v1       #i:I
     .restart local v3       #tag:I
@@ -290,13 +263,11 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1393
     :goto_3
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    .line 1400
     :pswitch_2
     iget-object v4, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
@@ -308,7 +279,6 @@
 
     goto :goto_3
 
-    .line 1403
     :pswitch_3
     iget-object v4, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
@@ -320,7 +290,6 @@
 
     goto :goto_3
 
-    .line 1406
     :pswitch_4
     iget-object v4, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
@@ -334,7 +303,6 @@
 
     goto :goto_3
 
-    .line 1409
     :pswitch_5
     iget-object v4, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
@@ -346,7 +314,6 @@
 
     goto :goto_3
 
-    .line 1412
     :pswitch_6
     iget-object v4, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
@@ -358,7 +325,6 @@
 
     goto :goto_3
 
-    .line 1415
     :pswitch_7
     iget-object v4, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
@@ -370,7 +336,6 @@
 
     goto :goto_3
 
-    .line 1418
     :pswitch_8
     iget-object v4, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
@@ -382,7 +347,6 @@
 
     goto :goto_3
 
-    .line 1421
     :pswitch_9
     iget-object v4, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
@@ -394,7 +358,6 @@
 
     goto :goto_3
 
-    .line 1424
     :pswitch_a
     iget-object v4, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
@@ -406,7 +369,6 @@
 
     goto :goto_3
 
-    .line 1427
     :pswitch_b
     iget-object v4, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
@@ -418,7 +380,6 @@
 
     goto :goto_3
 
-    .line 1430
     :pswitch_c
     iget-object v4, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
@@ -430,7 +391,6 @@
 
     goto :goto_3
 
-    .line 1433
     :pswitch_d
     iget-object v4, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
@@ -442,7 +402,6 @@
 
     goto/16 :goto_3
 
-    .line 1442
     .end local v0           #count:I
     .end local v1           #i:I
     .end local v3           #tag:I
@@ -455,7 +414,6 @@
 
     iput-object v4, p0, Landroid/widget/RemoteViews;->mLandscape:Landroid/widget/RemoteViews;
 
-    .line 1443
     new-instance v4, Landroid/widget/RemoteViews;
 
     iget-object v5, p0, Landroid/widget/RemoteViews;->mBitmapCache:Landroid/widget/RemoteViews$BitmapCache;
@@ -464,7 +422,6 @@
 
     iput-object v4, p0, Landroid/widget/RemoteViews;->mPortrait:Landroid/widget/RemoteViews;
 
-    .line 1444
     iget-object v4, p0, Landroid/widget/RemoteViews;->mPortrait:Landroid/widget/RemoteViews;
 
     invoke-virtual {v4}, Landroid/widget/RemoteViews;->getPackage()Ljava/lang/String;
@@ -473,7 +430,6 @@
 
     iput-object v4, p0, Landroid/widget/RemoteViews;->mPackage:Ljava/lang/String;
 
-    .line 1445
     iget-object v4, p0, Landroid/widget/RemoteViews;->mPortrait:Landroid/widget/RemoteViews;
 
     invoke-virtual {v4}, Landroid/widget/RemoteViews;->getLayoutId()I
@@ -482,7 +438,6 @@
 
     iput v4, p0, Landroid/widget/RemoteViews;->mLayoutId:I
 
-    .line 1449
     :cond_3
     new-instance v4, Landroid/widget/RemoteViews$MemoryUsageCounter;
 
@@ -490,13 +445,10 @@
 
     iput-object v4, p0, Landroid/widget/RemoteViews;->mMemoryUsageCounter:Landroid/widget/RemoteViews$MemoryUsageCounter;
 
-    .line 1450
     invoke-direct {p0}, Landroid/widget/RemoteViews;->recalculateMemoryUsage()V
 
-    .line 1451
     return-void
 
-    .line 1395
     nop
 
     :pswitch_data_0
@@ -525,7 +477,6 @@
     .parameter "x2"
 
     .prologue
-    .line 63
     invoke-direct {p0, p1, p2}, Landroid/widget/RemoteViews;-><init>(Landroid/os/Parcel;Landroid/widget/RemoteViews$BitmapCache;)V
 
     return-void
@@ -539,31 +490,24 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1342
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 104
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/RemoteViews;->mIsRoot:Z
 
-    .line 118
     iput-object v2, p0, Landroid/widget/RemoteViews;->mLandscape:Landroid/widget/RemoteViews;
 
-    .line 119
     iput-object v2, p0, Landroid/widget/RemoteViews;->mPortrait:Landroid/widget/RemoteViews;
 
-    .line 128
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/widget/RemoteViews;->mIsWidgetCollectionChild:Z
 
-    .line 1343
     if-eqz p1, :cond_0
 
     if-nez p2, :cond_1
 
-    .line 1344
     :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -573,7 +517,6 @@
 
     throw v0
 
-    .line 1346
     :cond_1
     invoke-virtual {p1}, Landroid/widget/RemoteViews;->getPackage()Ljava/lang/String;
 
@@ -589,7 +532,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 1347
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Both RemoteViews must share the same package"
@@ -598,7 +540,6 @@
 
     throw v0
 
-    .line 1349
     :cond_2
     invoke-virtual {p2}, Landroid/widget/RemoteViews;->getPackage()Ljava/lang/String;
 
@@ -606,43 +547,34 @@
 
     iput-object v0, p0, Landroid/widget/RemoteViews;->mPackage:Ljava/lang/String;
 
-    .line 1350
     invoke-virtual {p2}, Landroid/widget/RemoteViews;->getLayoutId()I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/RemoteViews;->mLayoutId:I
 
-    .line 1352
     iput-object p1, p0, Landroid/widget/RemoteViews;->mLandscape:Landroid/widget/RemoteViews;
 
-    .line 1353
     iput-object p2, p0, Landroid/widget/RemoteViews;->mPortrait:Landroid/widget/RemoteViews;
 
-    .line 1356
     new-instance v0, Landroid/widget/RemoteViews$MemoryUsageCounter;
 
     invoke-direct {v0, p0, v2}, Landroid/widget/RemoteViews$MemoryUsageCounter;-><init>(Landroid/widget/RemoteViews;Landroid/widget/RemoteViews$1;)V
 
     iput-object v0, p0, Landroid/widget/RemoteViews;->mMemoryUsageCounter:Landroid/widget/RemoteViews$MemoryUsageCounter;
 
-    .line 1358
     new-instance v0, Landroid/widget/RemoteViews$BitmapCache;
 
     invoke-direct {v0}, Landroid/widget/RemoteViews$BitmapCache;-><init>()V
 
     iput-object v0, p0, Landroid/widget/RemoteViews;->mBitmapCache:Landroid/widget/RemoteViews$BitmapCache;
 
-    .line 1359
     invoke-direct {p0, p1}, Landroid/widget/RemoteViews;->configureRemoteViewsAsChild(Landroid/widget/RemoteViews;)V
 
-    .line 1360
     invoke-direct {p0, p2}, Landroid/widget/RemoteViews;->configureRemoteViewsAsChild(Landroid/widget/RemoteViews;)V
 
-    .line 1362
     invoke-direct {p0}, Landroid/widget/RemoteViews;->recalculateMemoryUsage()V
 
-    .line 1363
     return-void
 .end method
 
@@ -654,49 +586,38 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1321
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 104
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/RemoteViews;->mIsRoot:Z
 
-    .line 118
     iput-object v1, p0, Landroid/widget/RemoteViews;->mLandscape:Landroid/widget/RemoteViews;
 
-    .line 119
     iput-object v1, p0, Landroid/widget/RemoteViews;->mPortrait:Landroid/widget/RemoteViews;
 
-    .line 128
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/widget/RemoteViews;->mIsWidgetCollectionChild:Z
 
-    .line 1322
     iput-object p1, p0, Landroid/widget/RemoteViews;->mPackage:Ljava/lang/String;
 
-    .line 1323
     iput p2, p0, Landroid/widget/RemoteViews;->mLayoutId:I
 
-    .line 1324
     new-instance v0, Landroid/widget/RemoteViews$BitmapCache;
 
     invoke-direct {v0}, Landroid/widget/RemoteViews$BitmapCache;-><init>()V
 
     iput-object v0, p0, Landroid/widget/RemoteViews;->mBitmapCache:Landroid/widget/RemoteViews$BitmapCache;
 
-    .line 1327
     new-instance v0, Landroid/widget/RemoteViews$MemoryUsageCounter;
 
     invoke-direct {v0, p0, v1}, Landroid/widget/RemoteViews$MemoryUsageCounter;-><init>(Landroid/widget/RemoteViews;Landroid/widget/RemoteViews$1;)V
 
     iput-object v0, p0, Landroid/widget/RemoteViews;->mMemoryUsageCounter:Landroid/widget/RemoteViews$MemoryUsageCounter;
 
-    .line 1328
     invoke-direct {p0}, Landroid/widget/RemoteViews;->recalculateMemoryUsage()V
 
-    .line 1329
     return-void
 .end method
 
@@ -705,7 +626,6 @@
     .parameter "x0"
 
     .prologue
-    .line 63
     iget-boolean v0, p0, Landroid/widget/RemoteViews;->mIsWidgetCollectionChild:Z
 
     return v0
@@ -716,7 +636,6 @@
     .parameter "x0"
 
     .prologue
-    .line 63
     iget-object v0, p0, Landroid/widget/RemoteViews;->mBitmapCache:Landroid/widget/RemoteViews$BitmapCache;
 
     return-object v0
@@ -728,7 +647,6 @@
     .parameter "x1"
 
     .prologue
-    .line 63
     invoke-direct {p0, p1}, Landroid/widget/RemoteViews;->configureRemoteViewsAsChild(Landroid/widget/RemoteViews;)V
 
     return-void
@@ -740,7 +658,6 @@
     .parameter "x1"
 
     .prologue
-    .line 63
     invoke-direct {p0, p1}, Landroid/widget/RemoteViews;->setBitmapCache(Landroid/widget/RemoteViews$BitmapCache;)V
 
     return-void
@@ -751,14 +668,12 @@
     .parameter "a"
 
     .prologue
-    .line 1554
     invoke-direct {p0}, Landroid/widget/RemoteViews;->hasLandscapeAndPortraitLayouts()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1555
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "RemoteViews specifying separate landscape and portrait layouts cannot be modified. Instead, fully configure the landscape and portrait layouts individually before constructing the combined layout."
@@ -767,31 +682,26 @@
 
     throw v0
 
-    .line 1559
     :cond_0
     iget-object v0, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
     if-nez v0, :cond_1
 
-    .line 1560
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
-    .line 1562
     :cond_1
     iget-object v0, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1565
     iget-object v0, p0, Landroid/widget/RemoteViews;->mMemoryUsageCounter:Landroid/widget/RemoteViews$MemoryUsageCounter;
 
     invoke-virtual {p1, v0}, Landroid/widget/RemoteViews$Action;->updateMemoryUsageEstimate(Landroid/widget/RemoteViews$MemoryUsageCounter;)V
 
-    .line 1566
     return-void
 .end method
 
@@ -800,22 +710,18 @@
     .parameter "rv"
 
     .prologue
-    .line 1061
     iget-object v0, p0, Landroid/widget/RemoteViews;->mBitmapCache:Landroid/widget/RemoteViews$BitmapCache;
 
     iget-object v1, p1, Landroid/widget/RemoteViews;->mBitmapCache:Landroid/widget/RemoteViews$BitmapCache;
 
     invoke-virtual {v0, v1}, Landroid/widget/RemoteViews$BitmapCache;->assimilate(Landroid/widget/RemoteViews$BitmapCache;)V
 
-    .line 1062
     iget-object v0, p0, Landroid/widget/RemoteViews;->mBitmapCache:Landroid/widget/RemoteViews$BitmapCache;
 
     invoke-direct {p1, v0}, Landroid/widget/RemoteViews;->setBitmapCache(Landroid/widget/RemoteViews$BitmapCache;)V
 
-    .line 1063
     invoke-virtual {p1}, Landroid/widget/RemoteViews;->setNotRoot()V
 
-    .line 1064
     return-void
 .end method
 
@@ -824,14 +730,12 @@
     .parameter "context"
 
     .prologue
-    .line 2087
     invoke-direct {p0}, Landroid/widget/RemoteViews;->hasLandscapeAndPortraitLayouts()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 2088
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -842,23 +746,19 @@
 
     iget v0, v1, Landroid/content/res/Configuration;->orientation:I
 
-    .line 2089
     .local v0, orientation:I
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_1
 
-    .line 2090
     iget-object p0, p0, Landroid/widget/RemoteViews;->mLandscape:Landroid/widget/RemoteViews;
 
-    .line 2095
     .end local v0           #orientation:I
     .end local p0
     :cond_0
     :goto_0
     return-object p0
 
-    .line 2092
     .restart local v0       #orientation:I
     .restart local p0
     :cond_1
@@ -871,7 +771,6 @@
     .locals 1
 
     .prologue
-    .line 1332
     iget-object v0, p0, Landroid/widget/RemoteViews;->mLandscape:Landroid/widget/RemoteViews;
 
     if-eqz v0, :cond_0
@@ -898,19 +797,16 @@
     .parameter "handler"
 
     .prologue
-    .line 2169
     iget-object v3, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
     if-eqz v3, :cond_0
 
-    .line 2170
     iget-object v3, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 2171
     .local v1, count:I
     const/4 v2, 0x0
 
@@ -918,7 +814,6 @@
     :goto_0
     if-ge v2, v1, :cond_0
 
-    .line 2172
     iget-object v3, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -927,16 +822,13 @@
 
     check-cast v0, Landroid/widget/RemoteViews$Action;
 
-    .line 2173
     .local v0, a:Landroid/widget/RemoteViews$Action;
     invoke-virtual {v0, p1, p2, p3}, Landroid/widget/RemoteViews$Action;->apply(Landroid/view/View;Landroid/view/ViewGroup;Landroid/widget/RemoteViews$OnClickHandler;)V
 
-    .line 2171
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 2176
     .end local v0           #a:Landroid/widget/RemoteViews$Action;
     .end local v1           #count:I
     .end local v2           #i:I
@@ -949,14 +841,11 @@
     .parameter "context"
 
     .prologue
-    .line 2180
     iget-object v2, p0, Landroid/widget/RemoteViews;->mPackage:Ljava/lang/String;
 
-    .line 2182
     .local v2, packageName:Ljava/lang/String;
     if-eqz v2, :cond_0
 
-    .line 2184
     const/4 v3, 0x4
 
     :try_start_0
@@ -966,17 +855,14 @@
 
     move-result-object v0
 
-    .line 2193
     .local v0, c:Landroid/content/Context;
     :goto_0
     return-object v0
 
-    .line 2185
     .end local v0           #c:Landroid/content/Context;
     :catch_0
     move-exception v1
 
-    .line 2186
     .local v1, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v3, "RemoteViews"
 
@@ -1006,14 +892,11 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2187
     move-object v0, p1
 
-    .line 2188
     .restart local v0       #c:Landroid/content/Context;
     goto :goto_0
 
-    .line 2190
     .end local v0           #c:Landroid/content/Context;
     .end local v1           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
     :cond_0
@@ -1027,31 +910,26 @@
     .locals 4
 
     .prologue
-    .line 1502
     iget-object v2, p0, Landroid/widget/RemoteViews;->mMemoryUsageCounter:Landroid/widget/RemoteViews$MemoryUsageCounter;
 
     invoke-virtual {v2}, Landroid/widget/RemoteViews$MemoryUsageCounter;->clear()V
 
-    .line 1504
     invoke-direct {p0}, Landroid/widget/RemoteViews;->hasLandscapeAndPortraitLayouts()Z
 
     move-result v2
 
     if-nez v2, :cond_2
 
-    .line 1506
     iget-object v2, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
     if-eqz v2, :cond_0
 
-    .line 1507
     iget-object v2, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 1508
     .local v0, count:I
     const/4 v1, 0x0
 
@@ -1059,7 +937,6 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 1509
     iget-object v2, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1072,12 +949,10 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/RemoteViews$Action;->updateMemoryUsageEstimate(Landroid/widget/RemoteViews$MemoryUsageCounter;)V
 
-    .line 1508
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1512
     .end local v0           #count:I
     .end local v1           #i:I
     :cond_0
@@ -1085,19 +960,16 @@
 
     if-eqz v2, :cond_1
 
-    .line 1513
     iget-object v2, p0, Landroid/widget/RemoteViews;->mBitmapCache:Landroid/widget/RemoteViews$BitmapCache;
 
     iget-object v3, p0, Landroid/widget/RemoteViews;->mMemoryUsageCounter:Landroid/widget/RemoteViews$MemoryUsageCounter;
 
     invoke-virtual {v2, v3}, Landroid/widget/RemoteViews$BitmapCache;->addBitmapMemory(Landroid/widget/RemoteViews$MemoryUsageCounter;)V
 
-    .line 1520
     :cond_1
     :goto_1
     return-void
 
-    .line 1516
     :cond_2
     iget-object v2, p0, Landroid/widget/RemoteViews;->mMemoryUsageCounter:Landroid/widget/RemoteViews$MemoryUsageCounter;
 
@@ -1109,7 +981,6 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/RemoteViews$MemoryUsageCounter;->increment(I)V
 
-    .line 1517
     iget-object v2, p0, Landroid/widget/RemoteViews;->mMemoryUsageCounter:Landroid/widget/RemoteViews$MemoryUsageCounter;
 
     iget-object v3, p0, Landroid/widget/RemoteViews;->mPortrait:Landroid/widget/RemoteViews;
@@ -1120,7 +991,6 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/RemoteViews$MemoryUsageCounter;->increment(I)V
 
-    .line 1518
     iget-object v2, p0, Landroid/widget/RemoteViews;->mBitmapCache:Landroid/widget/RemoteViews$BitmapCache;
 
     iget-object v3, p0, Landroid/widget/RemoteViews;->mMemoryUsageCounter:Landroid/widget/RemoteViews$MemoryUsageCounter;
@@ -1135,29 +1005,24 @@
     .parameter "bitmapCache"
 
     .prologue
-    .line 1526
     iput-object p1, p0, Landroid/widget/RemoteViews;->mBitmapCache:Landroid/widget/RemoteViews$BitmapCache;
 
-    .line 1527
     invoke-direct {p0}, Landroid/widget/RemoteViews;->hasLandscapeAndPortraitLayouts()Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 1528
     iget-object v2, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
     if-eqz v2, :cond_1
 
-    .line 1529
     iget-object v2, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 1530
     .local v0, count:I
     const/4 v1, 0x0
 
@@ -1165,7 +1030,6 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 1531
     iget-object v2, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1176,12 +1040,10 @@
 
     invoke-virtual {v2, p1}, Landroid/widget/RemoteViews$Action;->setBitmapCache(Landroid/widget/RemoteViews$BitmapCache;)V
 
-    .line 1530
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1535
     .end local v0           #count:I
     .end local v1           #i:I
     :cond_0
@@ -1189,12 +1051,10 @@
 
     invoke-direct {v2, p1}, Landroid/widget/RemoteViews;->setBitmapCache(Landroid/widget/RemoteViews$BitmapCache;)V
 
-    .line 1536
     iget-object v2, p0, Landroid/widget/RemoteViews;->mPortrait:Landroid/widget/RemoteViews;
 
     invoke-direct {v2, p1}, Landroid/widget/RemoteViews;->setBitmapCache(Landroid/widget/RemoteViews$BitmapCache;)V
 
-    .line 1538
     :cond_1
     return-void
 .end method
@@ -1205,7 +1065,6 @@
     .parameter "inflater"
 
     .prologue
-    .line 2260
     :try_start_0
     new-instance v1, Landroid/widget/WidgetFactoryHuaWei;
 
@@ -1218,15 +1077,12 @@
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 2266
     :goto_0
     return-void
 
-    .line 2261
     :catch_0
     move-exception v0
 
-    .line 2262
     .local v0, e:Ljava/lang/IllegalStateException;
     const-string v1, "RemoteViews"
 
@@ -1238,12 +1094,10 @@
 
     goto :goto_0
 
-    .line 2263
     .end local v0           #e:Ljava/lang/IllegalStateException;
     :catch_1
     move-exception v0
 
-    .line 2264
     .local v0, e:Ljava/lang/NullPointerException;
     const-string v1, "RemoteViews"
 
@@ -1264,14 +1118,12 @@
     .parameter "nestedView"
 
     .prologue
-    .line 1579
     new-instance v0, Landroid/widget/RemoteViews$ViewGroupAction;
 
     invoke-direct {v0, p0, p1, p2}, Landroid/widget/RemoteViews$ViewGroupAction;-><init>(Landroid/widget/RemoteViews;ILandroid/widget/RemoteViews;)V
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1580
     return-void
 .end method
 
@@ -1281,7 +1133,6 @@
     .parameter "parent"
 
     .prologue
-    .line 2110
     sget-object v0, Landroid/widget/RemoteViews;->DEFAULT_ON_CLICK_HANDLER:Landroid/widget/RemoteViews$OnClickHandler;
 
     invoke-virtual {p0, p1, p2, v0}, Landroid/widget/RemoteViews;->apply(Landroid/content/Context;Landroid/view/ViewGroup;Landroid/widget/RemoteViews$OnClickHandler;)Landroid/view/View;
@@ -1298,18 +1149,15 @@
     .parameter "handler"
 
     .prologue
-    .line 2115
     invoke-direct {p0, p1}, Landroid/widget/RemoteViews;->getRemoteViewsToApply(Landroid/content/Context;)Landroid/widget/RemoteViews;
 
     move-result-object v3
 
-    .line 2119
     .local v3, rvToApply:Landroid/widget/RemoteViews;
     invoke-direct {p0, p1}, Landroid/widget/RemoteViews;->prepareContext(Landroid/content/Context;)Landroid/content/Context;
 
     move-result-object v0
 
-    .line 2121
     .local v0, c:Landroid/content/Context;
     iget v4, p0, Landroid/widget/RemoteViews;->mDefaultTheme:I
 
@@ -1323,19 +1171,15 @@
 
     check-cast v1, Landroid/view/LayoutInflater;
 
-    .line 2124
     .local v1, inflater:Landroid/view/LayoutInflater;
     invoke-virtual {v1, v0}, Landroid/view/LayoutInflater;->cloneInContext(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v1
 
-    .line 2125
     invoke-virtual {v1, p0}, Landroid/view/LayoutInflater;->setFilter(Landroid/view/LayoutInflater$Filter;)V
 
-    .line 2129
     invoke-direct {p0, p1, v1}, Landroid/widget/RemoteViews;->setWidgetFactoryHuaWei(Landroid/content/Context;Landroid/view/LayoutInflater;)V
 
-    .line 2131
     invoke-virtual {v3}, Landroid/widget/RemoteViews;->getLayoutId()I
 
     move-result v4
@@ -1346,11 +1190,9 @@
 
     move-result-object v2
 
-    .line 2133
     .local v2, result:Landroid/view/View;
     invoke-direct {v3, v2, p2, p3}, Landroid/widget/RemoteViews;->performApply(Landroid/view/View;Landroid/view/ViewGroup;Landroid/widget/RemoteViews$OnClickHandler;)V
 
-    .line 2135
     return-object v2
 .end method
 
@@ -1358,14 +1200,12 @@
     .locals 5
 
     .prologue
-    .line 1456
     invoke-direct {p0}, Landroid/widget/RemoteViews;->hasLandscapeAndPortraitLayouts()Z
 
     move-result v3
 
     if-nez v3, :cond_1
 
-    .line 1457
     new-instance v2, Landroid/widget/RemoteViews;
 
     iget-object v3, p0, Landroid/widget/RemoteViews;->mPackage:Ljava/lang/String;
@@ -1374,13 +1214,11 @@
 
     invoke-direct {v2, v3, v4}, Landroid/widget/RemoteViews;-><init>(Ljava/lang/String;I)V
 
-    .line 1459
     .local v2, that:Landroid/widget/RemoteViews;
     iget-object v3, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
     if-eqz v3, :cond_0
 
-    .line 1460
     iget-object v3, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clone()Ljava/lang/Object;
@@ -1391,15 +1229,12 @@
 
     iput-object v3, v2, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
-    .line 1468
     :cond_0
     :goto_0
     invoke-direct {v2}, Landroid/widget/RemoteViews;->recalculateMemoryUsage()V
 
-    .line 1469
     return-object v2
 
-    .line 1463
     .end local v2           #that:Landroid/widget/RemoteViews;
     :cond_1
     iget-object v3, p0, Landroid/widget/RemoteViews;->mLandscape:Landroid/widget/RemoteViews;
@@ -1408,7 +1243,6 @@
 
     move-result-object v0
 
-    .line 1464
     .local v0, land:Landroid/widget/RemoteViews;
     iget-object v3, p0, Landroid/widget/RemoteViews;->mPortrait:Landroid/widget/RemoteViews;
 
@@ -1416,7 +1250,6 @@
 
     move-result-object v1
 
-    .line 1465
     .local v1, port:Landroid/widget/RemoteViews;
     new-instance v2, Landroid/widget/RemoteViews;
 
@@ -1435,7 +1268,6 @@
     .end annotation
 
     .prologue
-    .line 63
     invoke-virtual {p0}, Landroid/widget/RemoteViews;->clone()Landroid/widget/RemoteViews;
 
     move-result-object v0
@@ -1447,7 +1279,6 @@
     .locals 1
 
     .prologue
-    .line 2206
     const/4 v0, 0x0
 
     return v0
@@ -1457,7 +1288,6 @@
     .locals 1
 
     .prologue
-    .line 1545
     iget-object v0, p0, Landroid/widget/RemoteViews;->mMemoryUsageCounter:Landroid/widget/RemoteViews$MemoryUsageCounter;
 
     invoke-virtual {v0}, Landroid/widget/RemoteViews$MemoryUsageCounter;->getMemoryUsage()I
@@ -1471,7 +1301,6 @@
     .locals 1
 
     .prologue
-    .line 1484
     iget v0, p0, Landroid/widget/RemoteViews;->mLayoutId:I
 
     return v0
@@ -1481,7 +1310,6 @@
     .locals 1
 
     .prologue
-    .line 1473
     iget-object v0, p0, Landroid/widget/RemoteViews;->mPackage:Ljava/lang/String;
 
     return-object v0
@@ -1492,7 +1320,6 @@
     .parameter "clazz"
 
     .prologue
-    .line 2202
     const-class v0, Landroid/widget/RemoteViews$RemoteView;
 
     invoke-virtual {p1, v0}, Ljava/lang/Class;->isAnnotationPresent(Ljava/lang/Class;)Z
@@ -1508,12 +1335,10 @@
     .parameter "v"
 
     .prologue
-    .line 2147
     sget-object v0, Landroid/widget/RemoteViews;->DEFAULT_ON_CLICK_HANDLER:Landroid/widget/RemoteViews$OnClickHandler;
 
     invoke-virtual {p0, p1, p2, v0}, Landroid/widget/RemoteViews;->reapply(Landroid/content/Context;Landroid/view/View;Landroid/widget/RemoteViews$OnClickHandler;)V
 
-    .line 2148
     return-void
 .end method
 
@@ -1524,12 +1349,10 @@
     .parameter "handler"
 
     .prologue
-    .line 2152
     invoke-direct {p0, p1}, Landroid/widget/RemoteViews;->getRemoteViewsToApply(Landroid/content/Context;)Landroid/widget/RemoteViews;
 
     move-result-object v0
 
-    .line 2157
     .local v0, rvToApply:Landroid/widget/RemoteViews;
     invoke-direct {p0}, Landroid/widget/RemoteViews;->hasLandscapeAndPortraitLayouts()Z
 
@@ -1537,7 +1360,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 2158
     invoke-virtual {p2}, Landroid/view/View;->getId()I
 
     move-result v1
@@ -1548,7 +1370,6 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 2159
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Attempting to re-apply RemoteViews to a view that that does not share the same root layout id."
@@ -1557,11 +1378,9 @@
 
     throw v1
 
-    .line 2164
     :cond_0
     invoke-direct {p0, p1}, Landroid/widget/RemoteViews;->prepareContext(Landroid/content/Context;)Landroid/content/Context;
 
-    .line 2165
     invoke-virtual {p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
@@ -1570,7 +1389,6 @@
 
     invoke-direct {v0, p2, v1, p3}, Landroid/widget/RemoteViews;->performApply(Landroid/view/View;Landroid/view/ViewGroup;Landroid/widget/RemoteViews$OnClickHandler;)V
 
-    .line 2166
     return-void
 .end method
 
@@ -1579,7 +1397,6 @@
     .parameter "viewId"
 
     .prologue
-    .line 1589
     new-instance v0, Landroid/widget/RemoteViews$ViewGroupAction;
 
     const/4 v1, 0x0
@@ -1588,7 +1405,6 @@
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1590
     return-void
 .end method
 
@@ -1599,14 +1415,12 @@
     .parameter "value"
 
     .prologue
-    .line 2051
     new-instance v0, Landroid/widget/RemoteViews$BitmapReflectionAction;
 
     invoke-direct {v0, p0, p1, p2, p3}, Landroid/widget/RemoteViews$BitmapReflectionAction;-><init>(Landroid/widget/RemoteViews;ILjava/lang/String;Landroid/graphics/Bitmap;)V
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 2052
     return-void
 .end method
 
@@ -1617,7 +1431,6 @@
     .parameter "value"
 
     .prologue
-    .line 1927
     new-instance v0, Landroid/widget/RemoteViews$ReflectionAction;
 
     const/4 v4, 0x1
@@ -1636,7 +1449,6 @@
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1928
     return-void
 .end method
 
@@ -1647,7 +1459,6 @@
     .parameter "value"
 
     .prologue
-    .line 2062
     new-instance v0, Landroid/widget/RemoteViews$ReflectionAction;
 
     const/16 v4, 0xd
@@ -1664,7 +1475,6 @@
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 2063
     return-void
 .end method
 
@@ -1675,7 +1485,6 @@
     .parameter "value"
 
     .prologue
-    .line 1938
     new-instance v0, Landroid/widget/RemoteViews$ReflectionAction;
 
     const/4 v4, 0x2
@@ -1694,7 +1503,6 @@
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1939
     return-void
 .end method
 
@@ -1705,7 +1513,6 @@
     .parameter "value"
 
     .prologue
-    .line 2004
     new-instance v0, Landroid/widget/RemoteViews$ReflectionAction;
 
     const/16 v4, 0x8
@@ -1724,7 +1531,6 @@
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 2005
     return-void
 .end method
 
@@ -1735,7 +1541,6 @@
     .parameter "value"
 
     .prologue
-    .line 2026
     new-instance v0, Landroid/widget/RemoteViews$ReflectionAction;
 
     const/16 v4, 0xa
@@ -1752,7 +1557,6 @@
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 2027
     return-void
 .end method
 
@@ -1764,22 +1568,18 @@
     .parameter "started"
 
     .prologue
-    .line 1732
-    const-string/jumbo v0, "setBase"
+    const-string v0, "setBase"
 
     invoke-virtual {p0, p1, v0, p2, p3}, Landroid/widget/RemoteViews;->setLong(ILjava/lang/String;J)V
 
-    .line 1733
-    const-string/jumbo v0, "setFormat"
+    const-string v0, "setFormat"
 
     invoke-virtual {p0, p1, v0, p4}, Landroid/widget/RemoteViews;->setString(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 1734
-    const-string/jumbo v0, "setStarted"
+    const-string v0, "setStarted"
 
     invoke-virtual {p0, p1, v0, p5}, Landroid/widget/RemoteViews;->setBoolean(ILjava/lang/String;Z)V
 
-    .line 1735
     return-void
 .end method
 
@@ -1789,12 +1589,10 @@
     .parameter "contentDescription"
 
     .prologue
-    .line 2083
-    const-string/jumbo v0, "setContentDescription"
+    const-string v0, "setContentDescription"
 
     invoke-virtual {p0, p1, v0, p2}, Landroid/widget/RemoteViews;->setCharSequence(ILjava/lang/String;Ljava/lang/CharSequence;)V
 
-    .line 2084
     return-void
 .end method
 
@@ -1804,12 +1602,10 @@
     .parameter "childIndex"
 
     .prologue
-    .line 1617
-    const-string/jumbo v0, "setDisplayedChild"
+    const-string v0, "setDisplayedChild"
 
     invoke-virtual {p0, p1, v0, p2}, Landroid/widget/RemoteViews;->setInt(ILjava/lang/String;I)V
 
-    .line 1618
     return-void
 .end method
 
@@ -1820,7 +1616,6 @@
     .parameter "value"
 
     .prologue
-    .line 1993
     new-instance v0, Landroid/widget/RemoteViews$ReflectionAction;
 
     const/4 v4, 0x7
@@ -1839,7 +1634,6 @@
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1994
     return-void
 .end method
 
@@ -1853,7 +1647,6 @@
     .parameter "level"
 
     .prologue
-    .line 1843
     new-instance v0, Landroid/widget/RemoteViews$SetDrawableParameters;
 
     move-object v1, p0
@@ -1874,7 +1667,6 @@
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1845
     return-void
 .end method
 
@@ -1884,14 +1676,12 @@
     .parameter "emptyViewId"
 
     .prologue
-    .line 1714
     new-instance v0, Landroid/widget/RemoteViews$SetEmptyView;
 
     invoke-direct {v0, p0, p1, p2}, Landroid/widget/RemoteViews$SetEmptyView;-><init>(Landroid/widget/RemoteViews;II)V
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1715
     return-void
 .end method
 
@@ -1902,7 +1692,6 @@
     .parameter "value"
 
     .prologue
-    .line 1982
     new-instance v0, Landroid/widget/RemoteViews$ReflectionAction;
 
     const/4 v4, 0x6
@@ -1921,7 +1710,6 @@
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1983
     return-void
 .end method
 
@@ -1931,12 +1719,10 @@
     .parameter "bitmap"
 
     .prologue
-    .line 1704
-    const-string/jumbo v0, "setImageBitmap"
+    const-string v0, "setImageBitmap"
 
     invoke-virtual {p0, p1, v0, p2}, Landroid/widget/RemoteViews;->setBitmap(ILjava/lang/String;Landroid/graphics/Bitmap;)V
 
-    .line 1705
     return-void
 .end method
 
@@ -1946,12 +1732,10 @@
     .parameter "srcId"
 
     .prologue
-    .line 1684
-    const-string/jumbo v0, "setImageResource"
+    const-string v0, "setImageResource"
 
     invoke-virtual {p0, p1, v0, p2}, Landroid/widget/RemoteViews;->setInt(ILjava/lang/String;I)V
 
-    .line 1685
     return-void
 .end method
 
@@ -1961,12 +1745,10 @@
     .parameter "uri"
 
     .prologue
-    .line 1694
-    const-string/jumbo v0, "setImageURI"
+    const-string v0, "setImageURI"
 
     invoke-virtual {p0, p1, v0, p2}, Landroid/widget/RemoteViews;->setUri(ILjava/lang/String;Landroid/net/Uri;)V
 
-    .line 1695
     return-void
 .end method
 
@@ -1977,7 +1759,6 @@
     .parameter "value"
 
     .prologue
-    .line 1960
     new-instance v0, Landroid/widget/RemoteViews$ReflectionAction;
 
     const/4 v4, 0x4
@@ -1996,7 +1777,6 @@
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1961
     return-void
 .end method
 
@@ -2007,7 +1787,6 @@
     .parameter "value"
 
     .prologue
-    .line 2073
     new-instance v0, Landroid/widget/RemoteViews$ReflectionAction;
 
     const/16 v4, 0xe
@@ -2024,7 +1803,6 @@
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 2074
     return-void
 .end method
 
@@ -2033,10 +1811,8 @@
     .parameter "isWidgetCollectionChild"
 
     .prologue
-    .line 1495
     iput-boolean p1, p0, Landroid/widget/RemoteViews;->mIsWidgetCollectionChild:Z
 
-    .line 1496
     return-void
 .end method
 
@@ -2047,7 +1823,6 @@
     .parameter "value"
 
     .prologue
-    .line 1971
     new-instance v0, Landroid/widget/RemoteViews$ReflectionAction;
 
     const/4 v4, 0x5
@@ -2066,7 +1841,6 @@
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1972
     return-void
 .end method
 
@@ -2074,12 +1848,10 @@
     .locals 1
 
     .prologue
-    .line 1067
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/widget/RemoteViews;->mIsRoot:Z
 
-    .line 1068
     return-void
 .end method
 
@@ -2089,14 +1861,12 @@
     .parameter "fillInIntent"
 
     .prologue
-    .line 1812
     new-instance v0, Landroid/widget/RemoteViews$SetOnClickFillInIntent;
 
     invoke-direct {v0, p0, p1, p2}, Landroid/widget/RemoteViews$SetOnClickFillInIntent;-><init>(Landroid/widget/RemoteViews;ILandroid/content/Intent;)V
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1813
     return-void
 .end method
 
@@ -2106,14 +1876,12 @@
     .parameter "pendingIntent"
 
     .prologue
-    .line 1773
     new-instance v0, Landroid/widget/RemoteViews$SetOnClickPendingIntent;
 
     invoke-direct {v0, p0, p1, p2}, Landroid/widget/RemoteViews$SetOnClickPendingIntent;-><init>(Landroid/widget/RemoteViews;ILandroid/app/PendingIntent;)V
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1774
     return-void
 .end method
 
@@ -2123,14 +1891,12 @@
     .parameter "pendingIntentTemplate"
 
     .prologue
-    .line 1789
     new-instance v0, Landroid/widget/RemoteViews$SetPendingIntentTemplate;
 
     invoke-direct {v0, p0, p1, p2}, Landroid/widget/RemoteViews$SetPendingIntentTemplate;-><init>(Landroid/widget/RemoteViews;ILandroid/app/PendingIntent;)V
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1790
     return-void
 .end method
 
@@ -2142,25 +1908,20 @@
     .parameter "indeterminate"
 
     .prologue
-    .line 1752
-    const-string/jumbo v0, "setIndeterminate"
+    const-string v0, "setIndeterminate"
 
     invoke-virtual {p0, p1, v0, p4}, Landroid/widget/RemoteViews;->setBoolean(ILjava/lang/String;Z)V
 
-    .line 1753
     if-nez p4, :cond_0
 
-    .line 1754
-    const-string/jumbo v0, "setMax"
+    const-string v0, "setMax"
 
     invoke-virtual {p0, p1, v0, p2}, Landroid/widget/RemoteViews;->setInt(ILjava/lang/String;I)V
 
-    .line 1755
-    const-string/jumbo v0, "setProgress"
+    const-string v0, "setProgress"
 
     invoke-virtual {p0, p1, v0, p3}, Landroid/widget/RemoteViews;->setInt(ILjava/lang/String;I)V
 
-    .line 1757
     :cond_0
     return-void
 .end method
@@ -2171,12 +1932,10 @@
     .parameter "offset"
 
     .prologue
-    .line 1903
-    const-string/jumbo v0, "smoothScrollByOffset"
+    const-string v0, "smoothScrollByOffset"
 
     invoke-virtual {p0, p1, v0, p2}, Landroid/widget/RemoteViews;->setInt(ILjava/lang/String;I)V
 
-    .line 1904
     return-void
 .end method
 
@@ -2189,10 +1948,8 @@
     .end annotation
 
     .prologue
-    .line 1871
     invoke-virtual {p0, p2, p3}, Landroid/widget/RemoteViews;->setRemoteAdapter(ILandroid/content/Intent;)V
 
-    .line 1872
     return-void
 .end method
 
@@ -2202,14 +1959,12 @@
     .parameter "intent"
 
     .prologue
-    .line 1883
     new-instance v0, Landroid/widget/RemoteViews$SetRemoteViewsAdapterIntent;
 
     invoke-direct {v0, p0, p1, p2}, Landroid/widget/RemoteViews$SetRemoteViewsAdapterIntent;-><init>(Landroid/widget/RemoteViews;ILandroid/content/Intent;)V
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1884
     return-void
 .end method
 
@@ -2219,12 +1974,10 @@
     .parameter "position"
 
     .prologue
-    .line 1893
-    const-string/jumbo v0, "smoothScrollToPosition"
+    const-string v0, "smoothScrollToPosition"
 
     invoke-virtual {p0, p1, v0, p2}, Landroid/widget/RemoteViews;->setInt(ILjava/lang/String;I)V
 
-    .line 1894
     return-void
 .end method
 
@@ -2235,7 +1988,6 @@
     .parameter "value"
 
     .prologue
-    .line 1949
     new-instance v0, Landroid/widget/RemoteViews$ReflectionAction;
 
     const/4 v4, 0x3
@@ -2254,7 +2006,6 @@
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1950
     return-void
 .end method
 
@@ -2265,7 +2016,6 @@
     .parameter "value"
 
     .prologue
-    .line 2015
     new-instance v0, Landroid/widget/RemoteViews$ReflectionAction;
 
     const/16 v4, 0x9
@@ -2282,7 +2032,6 @@
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 2016
     return-void
 .end method
 
@@ -2292,12 +2041,10 @@
     .parameter "color"
 
     .prologue
-    .line 1855
-    const-string/jumbo v0, "setTextColor"
+    const-string v0, "setTextColor"
 
     invoke-virtual {p0, p1, v0, p2}, Landroid/widget/RemoteViews;->setInt(ILjava/lang/String;I)V
 
-    .line 1856
     return-void
 .end method
 
@@ -2310,7 +2057,6 @@
     .parameter "bottom"
 
     .prologue
-    .line 1662
     new-instance v0, Landroid/widget/RemoteViews$TextViewDrawableAction;
 
     const/4 v3, 0x0
@@ -2331,7 +2077,6 @@
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1663
     return-void
 .end method
 
@@ -2344,7 +2089,6 @@
     .parameter "bottom"
 
     .prologue
-    .line 1674
     new-instance v0, Landroid/widget/RemoteViews$TextViewDrawableAction;
 
     const/4 v3, 0x1
@@ -2365,7 +2109,6 @@
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1675
     return-void
 .end method
 
@@ -2375,12 +2118,10 @@
     .parameter "text"
 
     .prologue
-    .line 1637
-    const-string/jumbo v0, "setText"
+    const-string v0, "setText"
 
     invoke-virtual {p0, p1, v0, p2}, Landroid/widget/RemoteViews;->setCharSequence(ILjava/lang/String;Ljava/lang/CharSequence;)V
 
-    .line 1638
     return-void
 .end method
 
@@ -2391,14 +2132,12 @@
     .parameter "size"
 
     .prologue
-    .line 1648
     new-instance v0, Landroid/widget/RemoteViews$TextViewSizeAction;
 
     invoke-direct {v0, p0, p1, p2, p3}, Landroid/widget/RemoteViews$TextViewSizeAction;-><init>(Landroid/widget/RemoteViews;IIF)V
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1649
     return-void
 .end method
 
@@ -2409,7 +2148,6 @@
     .parameter "value"
 
     .prologue
-    .line 2037
     new-instance v0, Landroid/widget/RemoteViews$ReflectionAction;
 
     const/16 v4, 0xb
@@ -2426,7 +2164,6 @@
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 2038
     return-void
 .end method
 
@@ -2439,7 +2176,6 @@
     .parameter "bottom"
 
     .prologue
-    .line 1916
     new-instance v0, Landroid/widget/RemoteViews$ViewPaddingAction;
 
     move-object v1, p0
@@ -2458,7 +2194,6 @@
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1917
     return-void
 .end method
 
@@ -2468,12 +2203,10 @@
     .parameter "visibility"
 
     .prologue
-    .line 1627
-    const-string/jumbo v0, "setVisibility"
+    const-string v0, "setVisibility"
 
     invoke-virtual {p0, p1, v0, p2}, Landroid/widget/RemoteViews;->setInt(ILjava/lang/String;I)V
 
-    .line 1628
     return-void
 .end method
 
@@ -2482,16 +2215,14 @@
     .parameter "viewId"
 
     .prologue
-    .line 1598
     new-instance v0, Landroid/widget/RemoteViews$ReflectionActionWithoutParams;
 
-    const-string/jumbo v1, "showNext"
+    const-string v1, "showNext"
 
     invoke-direct {v0, p0, p1, v1}, Landroid/widget/RemoteViews$ReflectionActionWithoutParams;-><init>(Landroid/widget/RemoteViews;ILjava/lang/String;)V
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1599
     return-void
 .end method
 
@@ -2500,16 +2231,14 @@
     .parameter "viewId"
 
     .prologue
-    .line 1607
     new-instance v0, Landroid/widget/RemoteViews$ReflectionActionWithoutParams;
 
-    const-string/jumbo v1, "showPrevious"
+    const-string v1, "showPrevious"
 
     invoke-direct {v0, p0, p1, v1}, Landroid/widget/RemoteViews$ReflectionActionWithoutParams;-><init>(Landroid/widget/RemoteViews;ILjava/lang/String;)V
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
-    .line 1608
     return-void
 .end method
 
@@ -2523,38 +2252,31 @@
 
     const/4 v4, 0x0
 
-    .line 2210
     invoke-direct {p0}, Landroid/widget/RemoteViews;->hasLandscapeAndPortraitLayouts()Z
 
     move-result v5
 
     if-nez v5, :cond_3
 
-    .line 2211
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2214
     iget-boolean v5, p0, Landroid/widget/RemoteViews;->mIsRoot:Z
 
     if-eqz v5, :cond_0
 
-    .line 2215
     iget-object v5, p0, Landroid/widget/RemoteViews;->mBitmapCache:Landroid/widget/RemoteViews$BitmapCache;
 
     invoke-virtual {v5, p1, p2}, Landroid/widget/RemoteViews$BitmapCache;->writeBitmapsToParcel(Landroid/os/Parcel;I)V
 
-    .line 2217
     :cond_0
     iget-object v5, p0, Landroid/widget/RemoteViews;->mPackage:Ljava/lang/String;
 
     invoke-virtual {p1, v5}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 2218
     iget v5, p0, Landroid/widget/RemoteViews;->mLayoutId:I
 
     invoke-virtual {p1, v5}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2219
     iget-boolean v5, p0, Landroid/widget/RemoteViews;->mIsWidgetCollectionChild:Z
 
     if-eqz v5, :cond_1
@@ -2562,31 +2284,26 @@
     :goto_0
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2221
     iget-object v3, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
     if-eqz v3, :cond_2
 
-    .line 2222
     iget-object v3, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 2226
     .local v1, count:I
     :goto_1
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2227
     const/4 v2, 0x0
 
     .local v2, i:I
     :goto_2
     if-ge v2, v1, :cond_5
 
-    .line 2228
     iget-object v3, p0, Landroid/widget/RemoteViews;->mActions:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2595,11 +2312,9 @@
 
     check-cast v0, Landroid/widget/RemoteViews$Action;
 
-    .line 2229
     .local v0, a:Landroid/widget/RemoteViews$Action;
     invoke-virtual {v0, p1, v4}, Landroid/widget/RemoteViews$Action;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 2227
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_2
@@ -2610,43 +2325,35 @@
     :cond_1
     move v3, v4
 
-    .line 2219
     goto :goto_0
 
-    .line 2224
     :cond_2
     const/4 v1, 0x0
 
     .restart local v1       #count:I
     goto :goto_1
 
-    .line 2232
     .end local v1           #count:I
     :cond_3
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2235
     iget-boolean v3, p0, Landroid/widget/RemoteViews;->mIsRoot:Z
 
     if-eqz v3, :cond_4
 
-    .line 2236
     iget-object v3, p0, Landroid/widget/RemoteViews;->mBitmapCache:Landroid/widget/RemoteViews$BitmapCache;
 
     invoke-virtual {v3, p1, p2}, Landroid/widget/RemoteViews$BitmapCache;->writeBitmapsToParcel(Landroid/os/Parcel;I)V
 
-    .line 2238
     :cond_4
     iget-object v3, p0, Landroid/widget/RemoteViews;->mLandscape:Landroid/widget/RemoteViews;
 
     invoke-virtual {v3, p1, p2}, Landroid/widget/RemoteViews;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 2239
     iget-object v3, p0, Landroid/widget/RemoteViews;->mPortrait:Landroid/widget/RemoteViews;
 
     invoke-virtual {v3, p1, p2}, Landroid/widget/RemoteViews;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 2241
     :cond_5
     return-void
 .end method

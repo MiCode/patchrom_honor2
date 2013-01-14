@@ -25,13 +25,10 @@
     .parameter "listener"
 
     .prologue
-    .line 439
     iput-object p1, p0, Lcom/android/server/sip/SipSessionGroup$SipSessionCallReceiverImpl;->this$0:Lcom/android/server/sip/SipSessionGroup;
 
-    .line 440
     invoke-direct {p0, p1, p2}, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;-><init>(Lcom/android/server/sip/SipSessionGroup;Landroid/net/sip/ISipSessionListener;)V
 
-    .line 441
     return-void
 .end method
 
@@ -43,12 +40,10 @@
     .prologue
     const/16 v4, 0x1e1
 
-    .line 445
     invoke-interface {p2}, Lgov/nist/javax/sip/header/extensions/ReplacesHeader;->getCallId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 446
     .local v0, callId:Ljava/lang/String;
     iget-object v5, p0, Lcom/android/server/sip/SipSessionGroup$SipSessionCallReceiverImpl;->this$0:Lcom/android/server/sip/SipSessionGroup;
 
@@ -63,20 +58,16 @@
 
     check-cast v3, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
 
-    .line 447
     .local v3, session:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
     if-nez v3, :cond_1
 
-    .line 466
     :cond_0
     :goto_0
     return v4
 
-    .line 451
     :cond_1
     iget-object v1, v3, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;->mDialog:Ljavax/sip/Dialog;
 
-    .line 452
     .local v1, dialog:Ljavax/sip/Dialog;
     if-nez v1, :cond_2
 
@@ -84,7 +75,6 @@
 
     goto :goto_0
 
-    .line 454
     :cond_2
     invoke-interface {v1}, Ljavax/sip/Dialog;->getLocalTag()Ljava/lang/String;
 
@@ -114,7 +104,6 @@
 
     if-eqz v5, :cond_0
 
-    .line 460
     invoke-virtual {p1}, Ljavax/sip/RequestEvent;->getRequest()Ljavax/sip/message/Request;
 
     move-result-object v5
@@ -127,7 +116,6 @@
 
     check-cast v2, Lgov/nist/javax/sip/header/extensions/ReferredByHeader;
 
-    .line 462
     .local v2, referredBy:Lgov/nist/javax/sip/header/extensions/ReferredByHeader;
     if-eqz v2, :cond_0
 
@@ -145,7 +133,6 @@
 
     if-eqz v5, :cond_0
 
-    .line 466
     const/16 v4, 0xc8
 
     goto :goto_0
@@ -163,7 +150,6 @@
     .prologue
     const/4 v8, 0x3
 
-    .line 471
     invoke-virtual {p1}, Ljavax/sip/RequestEvent;->getRequest()Ljavax/sip/message/Request;
 
     move-result-object v4
@@ -176,26 +162,21 @@
 
     check-cast v2, Lgov/nist/javax/sip/header/extensions/ReplacesHeader;
 
-    .line 473
     .local v2, replaces:Lgov/nist/javax/sip/header/extensions/ReplacesHeader;
     const/4 v0, 0x0
 
-    .line 474
     .local v0, newSession:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
     if-eqz v2, :cond_2
 
-    .line 475
     invoke-direct {p0, p1, v2}, Lcom/android/server/sip/SipSessionGroup$SipSessionCallReceiverImpl;->processInviteWithReplaces(Ljavax/sip/RequestEvent;Lgov/nist/javax/sip/header/extensions/ReplacesHeader;)I
 
     move-result v3
 
-    .line 480
     .local v3, response:I
     const/16 v4, 0xc8
 
     if-ne v3, v4, :cond_1
 
-    .line 481
     iget-object v4, p0, Lcom/android/server/sip/SipSessionGroup$SipSessionCallReceiverImpl;->this$0:Lcom/android/server/sip/SipSessionGroup;
 
     #getter for: Lcom/android/server/sip/SipSessionGroup;->mSessionMap:Ljava/util/Map;
@@ -213,7 +194,6 @@
 
     check-cast v1, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
 
-    .line 484
     .local v1, replacedSession:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
     iget-object v4, p0, Lcom/android/server/sip/SipSessionGroup$SipSessionCallReceiverImpl;->this$0:Lcom/android/server/sip/SipSessionGroup;
 
@@ -239,14 +219,12 @@
 
     move-result-object v0
 
-    .line 488
     iget-object v4, v0, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;->mProxy:Lcom/android/server/sip/SipSessionListenerProxy;
 
     iget-object v5, v0, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;->mPeerSessionDescription:Ljava/lang/String;
 
     invoke-virtual {v4, v0, v5}, Lcom/android/server/sip/SipSessionListenerProxy;->onCallTransferring(Landroid/net/sip/ISipSession;Ljava/lang/String;)V
 
-    .line 501
     .end local v1           #replacedSession:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
     .end local v3           #response:I
     :goto_0
@@ -257,11 +235,9 @@
     #calls: Lcom/android/server/sip/SipSessionGroup;->addSipSession(Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;)V
     invoke-static {v4, v0}, Lcom/android/server/sip/SipSessionGroup;->access$500(Lcom/android/server/sip/SipSessionGroup;Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;)V
 
-    .line 502
     :cond_0
     return-void
 
-    .line 491
     .restart local v3       #response:I
     :cond_1
     iget-object v4, p0, Lcom/android/server/sip/SipSessionGroup$SipSessionCallReceiverImpl;->this$0:Lcom/android/server/sip/SipSessionGroup;
@@ -275,7 +251,6 @@
 
     goto :goto_0
 
-    .line 495
     .end local v3           #response:I
     :cond_2
     iget-object v4, p0, Lcom/android/server/sip/SipSessionGroup$SipSessionCallReceiverImpl;->this$0:Lcom/android/server/sip/SipSessionGroup;
@@ -302,7 +277,6 @@
 
     move-result-object v0
 
-    .line 498
     iget-object v4, p0, Lcom/android/server/sip/SipSessionGroup$SipSessionCallReceiverImpl;->mProxy:Lcom/android/server/sip/SipSessionListenerProxy;
 
     iget-object v5, v0, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;->mPeerProfile:Landroid/net/sip/SipProfile;
@@ -328,7 +302,6 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 505
     #calls: Lcom/android/server/sip/SipSessionGroup;->isLoggable(Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;Ljava/util/EventObject;)Z
     invoke-static {p0, p1}, Lcom/android/server/sip/SipSessionGroup;->access$600(Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;Ljava/util/EventObject;)Z
 
@@ -389,7 +362,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 508
     :cond_0
     const-string v1, "INVITE"
 
@@ -400,17 +372,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 509
     check-cast p1, Ljavax/sip/RequestEvent;
 
     .end local p1
     invoke-direct {p0, p1}, Lcom/android/server/sip/SipSessionGroup$SipSessionCallReceiverImpl;->processNewInviteRequest(Ljavax/sip/RequestEvent;)V
 
-    .line 515
     :goto_0
     return v0
 
-    .line 511
     .restart local p1
     :cond_1
     const-string v1, "OPTIONS"
@@ -422,7 +391,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 512
     iget-object v1, p0, Lcom/android/server/sip/SipSessionGroup$SipSessionCallReceiverImpl;->this$0:Lcom/android/server/sip/SipSessionGroup;
 
     #getter for: Lcom/android/server/sip/SipSessionGroup;->mSipHelper:Lcom/android/server/sip/SipHelper;
@@ -439,7 +407,6 @@
 
     goto :goto_0
 
-    .line 515
     .restart local p1
     :cond_2
     const/4 v0, 0x0

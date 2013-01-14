@@ -18,10 +18,8 @@
     .parameter "ci"
 
     .prologue
-    .line 35
     invoke-direct {p0, p1, p2, p3}, Lcom/android/internal/telephony/IccFileHandler;-><init>(Lcom/android/internal/telephony/UiccCardApplication;Ljava/lang/String;Lcom/android/internal/telephony/CommandsInterface;)V
 
-    .line 36
     return-void
 .end method
 
@@ -31,12 +29,10 @@
     .locals 1
 
     .prologue
-    .line 39
     const-string v0, "IsimFileHandler finalized"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/ims/IsimFileHandler;->logd(Ljava/lang/String;)V
 
-    .line 40
     return-void
 .end method
 
@@ -45,25 +41,20 @@
     .parameter "efid"
 
     .prologue
-    .line 43
     packed-switch p1, :pswitch_data_0
 
-    .line 49
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/ims/IsimFileHandler;->getCommonIccEFPath(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 50
     :goto_0
     return-object v0
 
-    .line 47
     :pswitch_0
     const-string v0, "3F007FFF"
 
     goto :goto_0
 
-    .line 43
     nop
 
     :pswitch_data_0
@@ -79,12 +70,10 @@
     .parameter "msg"
 
     .prologue
-    .line 54
     const-string v0, "RIL_IsimFH"
 
     invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 55
     return-void
 .end method
 
@@ -93,11 +82,9 @@
     .parameter "msg"
 
     .prologue
-    .line 58
     const-string v0, "RIL_IsimFH"
 
     invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 59
     return-void
 .end method

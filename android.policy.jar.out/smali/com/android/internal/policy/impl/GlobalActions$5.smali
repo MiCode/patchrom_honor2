@@ -25,7 +25,6 @@
     .parameter "x0"
 
     .prologue
-    .line 308
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$5;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-direct {p0, p2}, Lcom/android/internal/policy/impl/GlobalActions$SingleMessageAction;-><init>(I)V
@@ -39,7 +38,6 @@
     .locals 0
 
     .prologue
-    .line 310
     return-void
 .end method
 
@@ -47,7 +45,6 @@
     .locals 1
 
     .prologue
-    .line 317
     const/4 v0, 0x1
 
     return v0
@@ -57,7 +54,6 @@
     .locals 1
 
     .prologue
-    .line 313
     const/4 v0, 0x1
 
     return v0

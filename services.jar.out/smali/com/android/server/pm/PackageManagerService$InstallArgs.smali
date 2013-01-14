@@ -36,25 +36,18 @@
     .parameter "manifestDigest"
 
     .prologue
-    .line 6540
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 6541
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->packageURI:Landroid/net/Uri;
 
-    .line 6542
     iput p3, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->flags:I
 
-    .line 6543
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->observer:Landroid/content/pm/IPackageInstallObserver;
 
-    .line 6544
     iput-object p4, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->installerPackageName:Ljava/lang/String;
 
-    .line 6545
     iput-object p5, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->manifestDigest:Landroid/content/pm/ManifestDigest;
 
-    .line 6546
     return-void
 .end method
 
@@ -87,7 +80,6 @@
     .parameter "uid"
 
     .prologue
-    .line 6579
     const/4 v0, 0x1
 
     return v0
@@ -103,7 +95,6 @@
     .locals 1
 
     .prologue
-    .line 6568
     const/4 v0, 0x1
 
     return v0
@@ -128,7 +119,6 @@
     .locals 1
 
     .prologue
-    .line 6583
     iget v0, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->flags:I
 
     and-int/lit8 v0, v0, 0x1

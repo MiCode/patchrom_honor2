@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 1394
     iput-object p1, p0, Lcom/android/internal/telephony/SMSDispatcher$1;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -42,7 +41,6 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1397
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v2
@@ -67,18 +65,15 @@
 
     if-eqz v2, :cond_1
 
-    .line 1410
     :cond_0
     :goto_0
     return-void
 
-    .line 1403
     :cond_1
     invoke-virtual {p0}, Lcom/android/internal/telephony/SMSDispatcher$1;->getResultCode()I
 
     move-result v0
 
-    .line 1404
     .local v0, rc:I
     const/4 v2, -0x1
 
@@ -86,7 +81,6 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 1408
     .local v1, success:Z
     :cond_2
     :goto_1
@@ -98,7 +92,6 @@
 
     goto :goto_0
 
-    .line 1404
     .end local v1           #success:Z
     :cond_3
     const/4 v1, 0x0

@@ -27,15 +27,11 @@
     .parameter "score"
 
     .prologue
-    .line 218
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 219
     iput-object p1, p0, Lcom/android/server/CommonTimeManagementService$InterfaceScoreRule;->mPrefix:Ljava/lang/String;
 
-    .line 220
     iput-byte p2, p0, Lcom/android/server/CommonTimeManagementService$InterfaceScoreRule;->mScore:B
 
-    .line 221
     return-void
 .end method

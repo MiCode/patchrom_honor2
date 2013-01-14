@@ -23,7 +23,6 @@
     .locals 3
 
     .prologue
-    .line 102
     invoke-static {}, Lcom/android/internal/telephony/gsm/GsmNationalAlphabet$Encodetable;->values()[Lcom/android/internal/telephony/gsm/GsmNationalAlphabet$Encodetable;
 
     move-result-object v0

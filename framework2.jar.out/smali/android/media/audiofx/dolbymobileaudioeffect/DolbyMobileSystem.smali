@@ -26,29 +26,23 @@
 
     const/4 v9, 0x4
 
-    .line 51
     sput-object v7, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_presets:[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
-    .line 56
     new-array v6, v9, [[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     sput-object v6, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_categoryPresets:[[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
-    .line 61
     sput-object v7, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_customPresets:[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
-    .line 78
     invoke-static {}, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->GetPresets()Ljava/util/Vector;
 
     move-result-object v5
 
-    .line 82
     .local v5, presets:Ljava/util/Vector;,"Ljava/util/Vector<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;>;"
     invoke-static {}, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->GetInitialCustomPresets()Ljava/util/Vector;
 
     move-result-object v2
 
-    .line 84
     .local v2, customPresets:Ljava/util/Vector;,"Ljava/util/Vector<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;>;"
     invoke-virtual {v2}, Ljava/util/Vector;->size()I
 
@@ -64,15 +58,12 @@
 
     sput-object v6, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_customPresets:[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
-    .line 86
     invoke-virtual {v5, v2}, Ljava/util/Vector;->addAll(Ljava/util/Collection;)Z
 
-    .line 88
     new-instance v1, Ljava/util/Vector;
 
     invoke-direct {v1, v9}, Ljava/util/Vector;-><init>(I)V
 
-    .line 89
     .local v1, categoryPresets:Ljava/util/Vector;,"Ljava/util/Vector<Ljava/util/Vector<Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;>;>;"
     const/4 v0, 0x0
 
@@ -80,19 +71,16 @@
     :goto_0
     if-ge v0, v9, :cond_0
 
-    .line 90
     new-instance v6, Ljava/util/Vector;
 
     invoke-direct {v6}, Ljava/util/Vector;-><init>()V
 
     invoke-virtual {v1, v6}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 89
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 91
     :cond_0
     invoke-virtual {v5}, Ljava/util/Vector;->iterator()Ljava/util/Iterator;
 
@@ -112,7 +100,6 @@
 
     check-cast v4, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
-    .line 92
     .local v4, preset:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
     invoke-virtual {v4}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;->getCategory()Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;
 
@@ -132,7 +119,6 @@
 
     goto :goto_1
 
-    .line 94
     .end local v4           #preset:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
     :cond_1
     const/4 v0, 0x0
@@ -140,7 +126,6 @@
     :goto_2
     if-ge v0, v9, :cond_2
 
-    .line 95
     sget-object v8, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_categoryPresets:[[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     invoke-virtual {v1, v0}, Ljava/util/Vector;->get(I)Ljava/lang/Object;
@@ -169,12 +154,10 @@
 
     aput-object v6, v8, v0
 
-    .line 94
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    .line 99
     :cond_2
     invoke-virtual {v5}, Ljava/util/Vector;->size()I
 
@@ -190,7 +173,6 @@
 
     sput-object v6, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_presets:[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
-    .line 101
     const-string v6, "DolbyMobileSystem"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -217,7 +199,6 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 102
     const-string v6, "DolbyMobileSystem"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -240,13 +221,11 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 103
     const/4 v0, 0x0
 
     :goto_3
     if-ge v0, v9, :cond_3
 
-    .line 104
     const-string v6, "DolbyMobileSystem"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -285,12 +264,10 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 103
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_3
 
-    .line 106
     :cond_3
     return-void
 .end method
@@ -313,20 +290,16 @@
 
     const/4 v4, 0x0
 
-    .line 130
     invoke-direct {p0, p1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobile;-><init>(I)V
 
-    .line 66
     const/4 v1, 0x0
 
     iput-object v1, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_currentPreset:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
-    .line 70
     new-array v1, v5, [Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     iput-object v1, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_lastCategoryPreset:[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
-    .line 131
     const-string v1, "DolbyMobileSystem"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -355,21 +328,18 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 134
     sget-object v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_presets:[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     array-length v1, v1
 
     if-lez v1, :cond_0
 
-    .line 135
     sget-object v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_presets:[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     aget-object v1, v1, v4
 
     iput-object v1, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_currentPreset:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
-    .line 136
     :cond_0
     const/4 v0, 0x0
 
@@ -377,7 +347,6 @@
     :goto_0
     if-ge v0, v5, :cond_2
 
-    .line 138
     sget-object v1, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_categoryPresets:[[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     aget-object v1, v1, v0
@@ -386,7 +355,6 @@
 
     if-lez v1, :cond_1
 
-    .line 139
     iget-object v1, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_lastCategoryPreset:[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     sget-object v2, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_categoryPresets:[[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
@@ -397,24 +365,20 @@
 
     aput-object v2, v1, v0
 
-    .line 136
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 142
     :cond_2
     iget-object v1, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_currentPreset:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     if-eqz v1, :cond_3
 
-    .line 143
     iget-object v1, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_currentPreset:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     invoke-virtual {p0, v1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->applyPreset(Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;)V
 
-    .line 148
     :cond_3
     invoke-static {}, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->GetSpeakerCoefficients48000()[B
 
@@ -422,7 +386,6 @@
 
     invoke-virtual {p0, v4, v1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->setSpeakerCoeffs(I[B)I
 
-    .line 149
     const/4 v1, 0x1
 
     invoke-static {}, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->GetSpeakerCoefficients44100()[B
@@ -431,7 +394,6 @@
 
     invoke-virtual {p0, v1, v2}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->setSpeakerCoeffs(I[B)I
 
-    .line 150
     const/4 v1, 0x2
 
     invoke-static {}, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->GetSpeakerCoefficients32000()[B
@@ -440,7 +402,6 @@
 
     invoke-virtual {p0, v1, v2}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->setSpeakerCoeffs(I[B)I
 
-    .line 151
     const/4 v1, 0x3
 
     invoke-static {}, Landroid/media/audiofx/dolbymobileaudioeffect/Configuration;->GetSpeakerCoefficients24000()[B
@@ -449,7 +410,6 @@
 
     invoke-virtual {p0, v1, v2}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->setSpeakerCoeffs(I[B)I
 
-    .line 152
     return-void
 .end method
 
@@ -460,7 +420,6 @@
     .parameter "preset"
 
     .prologue
-    .line 199
     const-string v0, "DolbyMobileSystem"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -493,17 +452,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 200
     invoke-virtual {p1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;->getAllSettings()Ljava/util/Map;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->setAllSettings(Ljava/util/Map;)I
 
-    .line 203
     iput-object p1, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_currentPreset:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
-    .line 204
     iget-object v0, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_lastCategoryPreset:[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     invoke-virtual {p1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;->getCategory()Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;
@@ -516,7 +472,6 @@
 
     aput-object p1, v0, v1
 
-    .line 205
     return-void
 .end method
 
@@ -524,7 +479,6 @@
     .locals 1
 
     .prologue
-    .line 221
     iget-object v0, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_currentPreset:Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     return-object v0
@@ -534,7 +488,6 @@
     .locals 1
 
     .prologue
-    .line 176
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_customPresets:[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     invoke-virtual {v0}, [Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;->clone()Ljava/lang/Object;
@@ -551,7 +504,6 @@
     .parameter "category"
 
     .prologue
-    .line 185
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_categoryPresets:[[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     invoke-virtual {p1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;->toInt()I
@@ -574,7 +526,6 @@
     .parameter "category"
 
     .prologue
-    .line 231
     iget-object v0, p0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_lastCategoryPreset:[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     invoke-virtual {p1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;->toInt()I
@@ -590,7 +541,6 @@
     .locals 1
 
     .prologue
-    .line 159
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_presets:[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     invoke-virtual {v0}, [Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;->clone()Ljava/lang/Object;
@@ -607,7 +557,6 @@
     .parameter "category"
 
     .prologue
-    .line 168
     sget-object v0, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobileSystem;->_categoryPresets:[[Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset;
 
     invoke-virtual {p1}, Landroid/media/audiofx/dolbymobileaudioeffect/DolbyMobilePreset$Category;->toInt()I
@@ -629,6 +578,5 @@
     .locals 0
 
     .prologue
-    .line 214
     return-void
 .end method

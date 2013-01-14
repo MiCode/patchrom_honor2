@@ -27,15 +27,12 @@
     .parameter "pin"
 
     .prologue
-    .line 113
     iput-object p1, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$CheckSimPin;->this$0:Lcom/android/internal/policy/impl/MSimSimUnlockScreen;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
-    .line 114
     iput-object p2, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$CheckSimPin;->mPin:Ljava/lang/String;
 
-    .line 115
     return-void
 .end method
 
@@ -48,7 +45,6 @@
     .locals 5
 
     .prologue
-    .line 122
     :try_start_0
     const-string v2, "phone_msim"
 
@@ -73,7 +69,6 @@
 
     move-result v1
 
-    .line 124
     .local v1, result:I
     iget-object v2, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$CheckSimPin;->this$0:Lcom/android/internal/policy/impl/MSimSimUnlockScreen;
 
@@ -85,16 +80,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 136
     .end local v1           #result:I
     :goto_0
     return-void
 
-    .line 129
     :catch_0
     move-exception v0
 
-    .line 130
     .local v0, e:Landroid/os/RemoteException;
     iget-object v2, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$CheckSimPin;->this$0:Lcom/android/internal/policy/impl/MSimSimUnlockScreen;
 
