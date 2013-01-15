@@ -26,7 +26,7 @@ remount:
 local-porting-sdcard:=/mnt/sdcard/porting
 local-porting-tools:=$(local-porting-sdcard)/tools
 root-phone: remount
-	adb shell mkdir -p $(local-porting-tools)/
+	adb shell su2 -c  mkdir -p $(local-porting-tools)/
 	adb push other/adbd $(local-porting-tools)/
 	adb push other/insecure $(local-porting-tools)/
 	adb shell su2 -c busybox cp $(local-porting-tools)/insecure /system/xbin/
@@ -53,7 +53,7 @@ fullota-to-phone:
 local-rec-cmd :=
 
 push-rec-cmd:
-	adb shell mkdir -p $(local-porting-tools)
+	adb shell su2 -c mkdir -p $(local-porting-tools)
 	adb push customize-make/$(strip $(local-rec-cmd)) $(local-porting-tools)/command
 	adb shell su2 -c busybox cp $(local-porting-tools)/command /cache/recovery/command
 	adb reboot recovery

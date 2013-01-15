@@ -22,10 +22,17 @@ def PerpareData(info):
                 output_zip.writestr(info2, data)
     return
 
+def RemoveCache(info):
+    info.script.Mount("/data")
+    info.script.AppendExtra('delete_recursive("/data/dalvik-cache");')
+    info.script.Unmount("/data")
+    return
+
 def FullOTA_InstallEnd(info):
     AddAssertions(info)
     PerpareData(info)
-    return 
+    RemoveCache(info)
+    return
 
 def IncrementalOTA_InstallEnd(info):
     AddAssertions(info)

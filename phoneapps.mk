@@ -30,7 +30,6 @@ private-phone-apps := ApplicationsProvider \
 					  Pmqos \
 					  PowerSavingMode \
 					  ProjectMenuAct \
-					  ps \
 					  SettingsProvider \
 					  SharedStorageBackup \
 					  SmartcardService \
