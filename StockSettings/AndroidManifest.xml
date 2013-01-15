@@ -48,5 +48,13 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.DeviceSpecial" />
         </activity>
+
+        <receiver android:name=".SetPowerSavingOff">
+            <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
     </application>
 </manifest>
