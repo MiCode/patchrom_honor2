@@ -49,7 +49,7 @@
     <!-- DTS2012020106584 f00189446 20120201 begin -->
     <!-- DTS2012020700535  fengwei 00209624 20120207 begin -->
     <!-- DTS2012021100251 fengwei 00209624 20120211 begin -->
-    <string white_languages="zh_CN,en_US"/>
+    <string white_languages="zh_CN,zh_TW,en_US"/>
 	<!-- string white_languages="zh_CN,en_GB,en_US,pt_PT,es_ES,fr_FR,de_DE,ru_RU,it_IT,zh_TW,zh_HK,es_US,pt_BR,ja_JP,sv_SE,nb_NO,da_DK,tr_TR,cs_CZ,sk_SK,hu_HU,pl_PL,el_GR,et_EE,lv_LV,lt_LT,sl_SI,fi_FI,mk_MK,bg_BG,hr_HR,ro_RO,ar_EG,sr_RS,vi_VN,in_ID,bs_BA,uk_UA,fa_IR,th_TH,ms_MY,nl_NL,ko_KR,en_AU"/-->
     <!--string white_languages="zh_CN,en_US"/-->
     <!-- DTS2012021100251 fengwei 00209624 20120211 end -->
