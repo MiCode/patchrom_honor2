@@ -73,7 +73,7 @@
     <!-- DTS2011030905517 shifengbin 20110314 end -->
 	<!-- DTS2012072501133 chenjinhai 00195227 20120724 begin -->
     <!-- DTS2010092701023 mengxiaokun00172620 20100930 begin -->
-    <bool power_saving_on="true"/>
+    <bool power_saving_on="false"/>
     <!-- DTS2010092701023 mengxiaokun00172620 20100930 end -->
 	<!-- DTS2012072501133 chenjinhai 00195227 20120724 end -->
     <!-- DTS2011121605249 niguanhua 20111216 begin --> 
