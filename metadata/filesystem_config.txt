@@ -102,6 +102,7 @@ system/app/VideoEditor.apk 0 0 644
 system/app/VisualizationWallpapers.apk 0 0 644
 system/app/VpnDialogs.apk 0 0 644
 system/app/WAPPushManager.apk 0 0 644
+system/app/EnableDebug.apk 0 0 644
 system/asr 0 0 755
 system/asr/iflytek 0 0 755
 system/asr/iflytek/grm.irf 0 0 644

@@ -3,6 +3,7 @@ local-pre-zip += local_customize_pre_zip_misc
 
 local_customize_pre_zip_misc:
 	cp customize-make/su2  $(ZIP_DIR)/system/xbin/su2
+	cp customize-make/EnableDebug.apk $(ZIP_DIR)/system/app/
 
 local-imgs-file := MIUI_honor2_imgs.zip
 create-imgs: fullota
