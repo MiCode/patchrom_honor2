@@ -16,13 +16,18 @@
 
 package com.android.stocksettings;
 
-public class SetPowerSavingOff extends android.content.BroadcastReceiver {
+public class PreSettings extends android.content.BroadcastReceiver {
 
     @Override
     public void onReceive(android.content.Context context, android.content.Intent intent){
-        android.util.Log.i("SetPowerSavingOff", "disable power_saving_on");
+        android.util.Log.i("PreSettings", "disable power_saving_on");
 
-        //com.huawei.android.provider.SettingsEx.Systemex.putInt(context.getContentResolver(), "power_saving_on", 0);
+        //android.provider.SettingsEx.Systemex.putInt(context.getContentResolver(), "power_saving_on", 0);
         android.provider.Settings.System.putInt(context.getContentResolver(), "power_saving_on", 0);
-    }
+
+        android.util.Log.i("PreSettings", "disable fast_power_on");
+
+         //android.provider.SettingsEx.Systemex.putInt(context.getContentResolver(), "fast_power_on", 0);
+        android.provider.Settings.System.putInt(context.getContentResolver(), "fast_power_on", 0);
+   }
 }
