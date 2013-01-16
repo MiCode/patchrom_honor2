@@ -60,6 +60,31 @@ def PerpareData(info):
                 output_zip.writestr(info2, data)
     return
 
+def FullOTAFlashFirmwares(info):
+    try:
+        input_firmware = info.input_zip.read("reserved1.img")
+        common.ZipWriteStr(info.output_zip, "reserved1.img", input_firmware)
+        info.script.AppendExtra('package_extract_file("reserved1.img", "/dev/block/platform/hi_mci.1/by-name/reserved1");')
+    except KeyError:
+        print "no reserved1.img in target_files; skipping install"
+    return
+
+def IncrementalOTAFlashFirmwares(info):
+    try:
+        target_firmware = info.target_zip.read("reserved1.img")
+        try:
+            source_firmware = info.source_zip.read("reserved1.img")
+        except KeyError:
+            source_firmware = None
+        if target_firmware == source_firmware:
+            print "reserved1.img unchanged; skipping"
+        else:
+            common.ZipWriteStr(info.output_zip, "reserved1.img", target_firmware)
+            info.script.AppendExtra('package_extract_file("reserved1.img", "/dev/block/platform/hi_mci.1/by-name/reserved1");')
+    except KeyError:
+        print "no reserved1.img in target_files; skipping install"
+    return
+
 def RemoveCache(info):
     info.script.Mount("/data")
     info.script.AppendExtra('delete_recursive("/data/dalvik-cache");')
@@ -68,12 +93,14 @@ def RemoveCache(info):
 
 def FullOTA_InstallEnd(info):
     AddDeviceAssertions(info)
-    AddFirmwareVersionAssertions(info)
+    #AddFirmwareVersionAssertions(info)
     PerpareData(info)
     RemoveCache(info)
+    FullOTAFlashFirmwares(info)
     return
 
 def IncrementalOTA_InstallEnd(info):
     AddDeviceAssertions(info)
+    IncrementalOTAFlashFirmwares(info)
     return
 
