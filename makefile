@@ -51,6 +51,7 @@ local-pre-zip-misc:
 	cp other/StockSettings.apk $(ZIP_DIR)/system/app/
 	cp other/Settings_ex.apk $(ZIP_DIR)/system/app/
 	cp other/boot_b542.img $(ZIP_DIR)/boot.img
+	cp other/Generic.kl $(ZIP_DIR)/system/usr/keylayout/
 
 #jar
 %.phone : out/%.jar
