@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array translatable="false" name="patchrom_component_name_map">
+        <item>com.android.camera/com.android.camera.Camera=com.android.gallery3d/com.android.hwcamera</item>
+        <item>com.miui.fmradio/com.miui.fmradio.FMRadioMain=com.huawei.android.FMRadio/com.huawei.android.FMRadio.FMRadioMainActivity</item>
+    </string-array>
+</resources>

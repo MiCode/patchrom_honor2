@@ -64,6 +64,7 @@ local-pre-zip-misc:
 out/framework2.jar : out/framework.jar
 framework_ext.phone : framework2.phone
 	adb push out/framework2.jar /system/framework/framework_ext.jar
+	adb shell chmod 644 /system/framework/framework_ext.jar
 
 #apk
 %.sign-plat : out/%
