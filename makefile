@@ -46,8 +46,7 @@ local-pre-zip-misc:
 	rm -f $(ZIP_DIR)/system/framework/framework2.jar
 	cp other/build_b542.prop $(ZIP_DIR)/system/build.prop
 	@echo update bootanimation
-	rm $(ZIP_DIR)/system/bin/bootanimation
-	cp $(OUT_SYS_PATH)/bin/bootanimation $(ZIP_DIR)/system/bin/bootanimation
+	cp other/bootanimation $(ZIP_DIR)/system/bin/bootanimation
 	cp other/StockSettings.apk $(ZIP_DIR)/system/app/
 	cp other/Settings_ex.apk $(ZIP_DIR)/system/app/
 	cp other/boot_b542.img $(ZIP_DIR)/boot.img
